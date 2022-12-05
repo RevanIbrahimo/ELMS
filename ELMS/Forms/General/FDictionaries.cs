@@ -29,6 +29,7 @@ namespace ELMS.Forms.General
             old_row_id,
             documentTypeID,
             countryID,
+            cardIssuingID,
             orderid;
         bool FormStatus = false;
 
@@ -61,11 +62,17 @@ namespace ELMS.Forms.General
                     case 1:
                         LoadCountry();
                         break;
-                    
+                    case 2:
+                        LoadCardIssuing();
+                        break;
                 }
             }
         }
 
+        private void LoadCardIssuing()
+        {
+            CardIssuingGridControl.DataSource = CardIssuingDAL.SelectCardIssuingByID(null).ToList<CardIssuing>();
+        }
         private void LoadCountry()
         {
             CountriesGridControl.DataSource = CountriesDAL.SelectCountriesByID(null).ToList<Countries>();
@@ -91,10 +98,7 @@ namespace ELMS.Forms.General
             LoadFDocumentTypeAddEdit(TransactionTypeEnum.Update, documentTypeID);
         }
 
-        void UpdateCountry()
-        {
-            LoadFCountryAddEdit(TransactionTypeEnum.Update, countryID);
-        }
+        
 
         private void DocumentTypeGridView_FocusedRowObjectChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowObjectChangedEventArgs e)
         {
@@ -120,21 +124,7 @@ namespace ELMS.Forms.General
             }
         }
 
-        void DeleteCountry()
-        {
-            int UsedUserID = Convert.ToInt16(GlobalFunctions.GetGridRowCellValue(CountriesGridView, "USED_USER_ID"));
-            if (UsedUserID < 0)
-            {
-
-                if (GlobalFunctions.CallDialogResult("Seçilmiş Ölkəni silmək istəyirsiniz?", "Ölkənin silinməsi") == DialogResult.Yes)
-                    CountriesDAL.DeleteCountries(countryID);
-            }
-            else
-            {
-                string used_user_name = GlobalVariables.lstUsers.Find(u => u.ID == UsedUserID).FULL_NAME;
-                GlobalProcedures.ShowWarningMessage($@"Seçilmiş məlumat hal-hazırda {used_user_name} tərəfindən istifadə ediliyi üçün silinə bilməz.");
-            }
-        }
+       
 
         private void DeleteDocumentTypeBarButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
@@ -148,28 +138,7 @@ namespace ELMS.Forms.General
             GlobalProcedures.GridRowCellStyleForBlock((sender as GridView), e);
         }
 
-        private void CountriesGridView_CustomUnboundColumnData(object sender, DevExpress.XtraGrid.Views.Base.CustomColumnDataEventArgs e)
-        {
-            GlobalProcedures.GenerateAutoRowNumber(sender, Country_SS, e);
-        }
-
-        private void CountriesGridView_MouseUp(object sender, MouseEventArgs e)
-        {
-            GlobalProcedures.GridMouseUpForPopupMenu(CountriesGridView, CountriesPopupMenu, e);
-        }
-
-        private void NewCountriesBarButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            LoadFCountryAddEdit(TransactionTypeEnum.Insert, null);
-        }
-
         
-
-        private void DeleteCountriesBarButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            DeleteCountry();
-            LoadCountry();
-        }
 
 
         private void UpDocumentTypeBarButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -179,19 +148,7 @@ namespace ELMS.Forms.General
             DocumentTypeGridView.FocusedRowHandle = orderid - 1;
         }
 
-        private void UpCountriesBarButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            GlobalProcedures.ChangeOrderID("COUNTRY", countryID, "up", out orderid);
-            LoadCountry();
-            CountriesGridView.FocusedRowHandle = orderid - 1;
-        }
-
-        private void DownCountriesBarButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            GlobalProcedures.ChangeOrderID("COUNTRY", countryID, "down", out orderid);
-            LoadCountry();
-            CountriesGridView.FocusedRowHandle = orderid - 1;
-        }
+        
 
 
         private void DownDocumentTypeBarButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -201,22 +158,7 @@ namespace ELMS.Forms.General
             DocumentTypeGridView.FocusedRowHandle = orderid - 1;
         }
 
-        private void CountriesGridView_FocusedRowObjectChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowObjectChangedEventArgs e)
-        {
-            countryID = Convert.ToInt32(GlobalFunctions.GetGridRowCellValue((sender as GridView), "ID"));
-            //UpProfessionBarButton.Enabled = !((sender as GridView).FocusedRowHandle == 0);
-            //DawnProfessionBarButton.Enabled = !((sender as GridView).FocusedRowHandle == (sender as GridView).RowCount - 1);
-        }
-
-        private void CountriesGridView_RowCellStyle(object sender, RowCellStyleEventArgs e)
-        {
-            GlobalProcedures.GridRowCellStyleForBlock((sender as GridView), e);
-        }
-
-        private void EditCountriesBarButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            UpdateCountry();
-        }
+       
 
         private void EditDocumentTypeBarButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
@@ -238,7 +180,28 @@ namespace ELMS.Forms.General
             DocumentTypeGridView.FocusedRowHandle = old_row_id;
         }
 
-        private void LoadFCountryAddEdit(TransactionTypeEnum transactionType, int? id)
+
+        //"Country" -a aid olan kod hissəsi burdan başlayır
+        //\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+        //\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+        //\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+        //\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+        //\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+        //\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+        //\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+        //\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+        //\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+        //\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+        //\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+        //\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+        //\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+        private void NewCountriesBarButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            LoadFCountryAddEdit(TransactionTypeEnum.Insert, null);
+        }
+
+  private void LoadFCountryAddEdit(TransactionTypeEnum transactionType, int? id)
         {
             topindex = CountriesGridView.TopRowIndex;
             old_row_id = CountriesGridView.FocusedRowHandle;
@@ -252,5 +215,189 @@ namespace ELMS.Forms.General
             CountriesGridView.TopRowIndex = topindex;
             CountriesGridView.FocusedRowHandle = old_row_id;
         }
+
+        private void EditCountriesBarButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            UpdateCountry();
+        }
+
+        void UpdateCountry()
+        {
+            LoadFCountryAddEdit(TransactionTypeEnum.Update, countryID);
+        }
+        
+        private void DeleteCountriesBarButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            DeleteCountry();
+            LoadCountry();
+        }
+
+        void DeleteCountry()
+        {
+            int UsedUserID = Convert.ToInt16(GlobalFunctions.GetGridRowCellValue(CountriesGridView, "USED_USER_ID"));
+            if (UsedUserID < 0)
+            {
+
+                if (GlobalFunctions.CallDialogResult("Seçilmiş Ölkəni silmək istəyirsiniz?", "Ölkənin silinməsi") == DialogResult.Yes)
+                    CountriesDAL.DeleteCountries(countryID);
+            }
+            else
+            {
+                string used_user_name = GlobalVariables.lstUsers.Find(u => u.ID == UsedUserID).FULL_NAME;
+                GlobalProcedures.ShowWarningMessage($@"Seçilmiş məlumat hal-hazırda {used_user_name} tərəfindən istifadə ediliyi üçün silinə bilməz.");
+            }
+        }
+
+        
+        private void UpCountriesBarButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            GlobalProcedures.ChangeOrderID("COUNTRY", countryID, "up", out orderid);
+            LoadCountry();
+            CountriesGridView.FocusedRowHandle = orderid - 1;
+        }
+
+        private void DownCountriesBarButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            GlobalProcedures.ChangeOrderID("COUNTRY", countryID, "down", out orderid);
+            LoadCountry();
+            CountriesGridView.FocusedRowHandle = orderid - 1;
+        }
+
+
+        private void CountriesGridView_CustomUnboundColumnData(object sender, DevExpress.XtraGrid.Views.Base.CustomColumnDataEventArgs e)
+        {
+            GlobalProcedures.GenerateAutoRowNumber(sender, Country_SS, e);
+        }
+
+        private void CountriesGridView_MouseUp(object sender, MouseEventArgs e)
+        {
+            GlobalProcedures.GridMouseUpForPopupMenu(CountriesGridView, CountriesPopupMenu, e);
+        }
+
+        private void CountriesGridView_FocusedRowObjectChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowObjectChangedEventArgs e)
+        {
+            countryID = Convert.ToInt32(GlobalFunctions.GetGridRowCellValue((sender as GridView), "ID"));
+            //UpProfessionBarButton.Enabled = !((sender as GridView).FocusedRowHandle == 0);
+            //DawnProfessionBarButton.Enabled = !((sender as GridView).FocusedRowHandle == (sender as GridView).RowCount - 1);
+        }
+
+        private void CountriesGridView_RowCellStyle(object sender, RowCellStyleEventArgs e)
+        {
+            GlobalProcedures.GridRowCellStyleForBlock((sender as GridView), e);
+        }
+
+        //"Country" -a aid olan kod hissəsi burda bitir
+        //.////////////////////////////////////////////
+        //.///////////////////////////////////////////
+        //.//////////////////////////////////////////
+        //./////////////////////////////////////////
+        //.////////////////////////////////////////
+        //.///////////////////////////////////////
+        //.//////////////////////////////////////
+        //./////////////////////////////////////
+        //.////////////////////////////////////
+        //.///////////////////////////////////
+        //.//////////////////////////////////
+        //./////////////////////////////////
+        //.////////////////////////////////
+
+        private void NewCardIssuingBarButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            LoadFCardIssuingAddEdit(TransactionTypeEnum.Insert, null);
+
+        }
+
+        private void LoadFCardIssuingAddEdit(TransactionTypeEnum transactionType, int? id)
+        {
+            topindex = CardIssuingGridView.TopRowIndex;
+            old_row_id = CardIssuingGridView.FocusedRowHandle;
+            FCardIssuingAddEdit fd = new FCardIssuingAddEdit()
+            {
+                TransactionType = transactionType,
+                CardIssuingID = id
+            };
+            fd.RefreshDataGridView += new FCardIssuingAddEdit.DoEvent(LoadCardIssuing);
+            fd.ShowDialog();
+            CardIssuingGridView.TopRowIndex = topindex;
+            CardIssuingGridView.FocusedRowHandle = old_row_id;
+        }
+
+        private void EditCardIssuingBarButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            UpdateCardIssuing();
+        }
+
+        void UpdateCardIssuing()
+        {
+            LoadFCardIssuingAddEdit(TransactionTypeEnum.Update, cardIssuingID);
+
+        }
+
+        private void DeleteCardIssuingBarButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            DeleteCardIssuing();
+            LoadCardIssuing();
+        }
+
+        void DeleteCardIssuing()
+        {
+            int UsedUserID = Convert.ToInt16(GlobalFunctions.GetGridRowCellValue(CardIssuingGridView, "USED_USER_ID"));
+            if (UsedUserID < 0)
+            {
+
+                if (GlobalFunctions.CallDialogResult("Seçilmiş Orqanı silmək istəyirsiniz?", "Orqanın silinməsi") == DialogResult.Yes)
+                    CardIssuingDAL.DeleteCardIssuing(cardIssuingID);
+            }
+            else
+            {
+                string used_user_name = GlobalVariables.lstUsers.Find(u => u.ID == UsedUserID).FULL_NAME;
+                GlobalProcedures.ShowWarningMessage($@"Seçilmiş məlumat hal-hazırda {used_user_name} tərəfindən istifadə ediliyi üçün silinə bilməz.");
+            }
+        }
+
+        private void UpCardIssuingBarButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            GlobalProcedures.ChangeOrderID("CARD_ISSUING", cardIssuingID, "up", out orderid);
+            LoadCardIssuing();
+            CardIssuingGridView.FocusedRowHandle = orderid - 1;
+        }
+
+        private void DownCardIssuingBarButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            GlobalProcedures.ChangeOrderID("CARD_ISSUING", cardIssuingID, "down", out orderid);
+            LoadCardIssuing();
+            CardIssuingGridView.FocusedRowHandle = orderid - 1;
+        }
+
+        private void CardIssuingGridView_CustomUnboundColumnData(object sender, DevExpress.XtraGrid.Views.Base.CustomColumnDataEventArgs e)
+        {
+            GlobalProcedures.GenerateAutoRowNumber(sender, CardIssuing_SS, e);
+
+        }
+
+        private void CardIssuingGridView_FocusedRowObjectChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowObjectChangedEventArgs e)
+        {
+            cardIssuingID = Convert.ToInt32(GlobalFunctions.GetGridRowCellValue((sender as GridView), "ID"));
+            //UpProfessionBarButton.Enabled = !((sender as GridView).FocusedRowHandle == 0);
+            //DawnProfessionBarButton.Enabled = !((sender as GridView).FocusedRowHandle == (sender as GridView).RowCount - 1);
+
+        }
+
+        private void CardIssuingGridView_MouseUp(object sender, MouseEventArgs e)
+        {
+            GlobalProcedures.GridMouseUpForPopupMenu(CardIssuingGridView, CardIssuingPopupMenu, e);
+
+        }
+
+
+        private void CardIssuingGridView_RowCellStyle(object sender, RowCellStyleEventArgs e)
+        {
+            GlobalProcedures.GridRowCellStyleForBlock((sender as GridView), e);
+
+        }
+
+
+
+
     }
 }

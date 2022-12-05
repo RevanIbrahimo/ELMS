@@ -305,3 +305,4 @@ F:\project\Sadiq\Elloni\ELMS\ELMS\obj\Debug\ELMS.csprojAssemblyReference.cache
 F:\project\Sadiq\Elloni\ELMS\ELMS\obj\Debug\ELMS.Forms.General.FDictionaries.resources
 F:\project\Sadiq\Elloni\ELMS\ELMS\obj\Debug\ELMS.Forms.General.FDocumentTypeAddEdit.resources
 F:\project\Sadiq\Elloni\ELMS\ELMS\obj\Debug\ELMS.Forms.General.FCountryAddEdit.resources
+F:\project\Sadiq\Elloni\ELMS\ELMS\obj\Debug\ELMS.Forms.General.FCardIssuingAddEdit.resources

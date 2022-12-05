@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FDictionaries));
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
             this.BackstageViewControl = new DevExpress.XtraBars.Ribbon.BackstageViewControl();
             this.backstageViewClientControl1 = new DevExpress.XtraBars.Ribbon.BackstageViewClientControl();
             this.DocumentTypeGridControl = new DevExpress.XtraGrid.GridControl();
@@ -85,6 +86,30 @@
             this.barDockControl3 = new DevExpress.XtraBars.BarDockControl();
             this.barDockControl4 = new DevExpress.XtraBars.BarDockControl();
             this.CountriesPopupMenu = new DevExpress.XtraBars.PopupMenu(this.components);
+            this.backstageViewClientControl3 = new DevExpress.XtraBars.Ribbon.BackstageViewClientControl();
+            this.CardIssuingBackstageViewTab = new DevExpress.XtraBars.Ribbon.BackstageViewTabItem();
+            this.CardIssuingStandaloneBarDockControl = new DevExpress.XtraBars.StandaloneBarDockControl();
+            this.CardIssuingBarManager = new DevExpress.XtraBars.BarManager(this.components);
+            this.barDockControl5 = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControl6 = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControl7 = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControl8 = new DevExpress.XtraBars.BarDockControl();
+            this.CardIssuingBar = new DevExpress.XtraBars.Bar();
+            this.NewCardIssuingBarButton = new DevExpress.XtraBars.BarButtonItem();
+            this.EditCardIssuingBarButton = new DevExpress.XtraBars.BarButtonItem();
+            this.barCheckItem1 = new DevExpress.XtraBars.BarCheckItem();
+            this.DeleteCardIssuingBarButton = new DevExpress.XtraBars.BarButtonItem();
+            this.RefreshCardIssuingBarButton = new DevExpress.XtraBars.BarButtonItem();
+            this.UpCardIssuingBarButton = new DevExpress.XtraBars.BarButtonItem();
+            this.DownCardIssuingBarButton = new DevExpress.XtraBars.BarButtonItem();
+            this.CardIssuingGridControl = new DevExpress.XtraGrid.GridControl();
+            this.CardIssuingGridView = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.CardIssuing_SS = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.CardIssuing_ID = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.CardIssuing_Name = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.CardIssuing_Note = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.CardIssuing_UsedUserID = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.CardIssuingPopupMenu = new DevExpress.XtraBars.PopupMenu(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.BackstageViewControl)).BeginInit();
             this.BackstageViewControl.SuspendLayout();
             this.backstageViewClientControl1.SuspendLayout();
@@ -97,20 +122,27 @@
             ((System.ComponentModel.ISupportInitialize)(this.DocumentTypePopupMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CountriesBarManager)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CountriesPopupMenu)).BeginInit();
+            this.backstageViewClientControl3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.CardIssuingBarManager)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CardIssuingGridControl)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CardIssuingGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CardIssuingPopupMenu)).BeginInit();
             this.SuspendLayout();
             // 
             // BackstageViewControl
             // 
             this.BackstageViewControl.Controls.Add(this.backstageViewClientControl1);
             this.BackstageViewControl.Controls.Add(this.backstageViewClientControl2);
+            this.BackstageViewControl.Controls.Add(this.backstageViewClientControl3);
             this.BackstageViewControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.BackstageViewControl.Items.Add(this.DocumentTypeBackstageViewTab);
             this.BackstageViewControl.Items.Add(this.CountriesBackstageViewTab);
+            this.BackstageViewControl.Items.Add(this.CardIssuingBackstageViewTab);
             this.BackstageViewControl.Location = new System.Drawing.Point(0, 0);
             this.BackstageViewControl.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BackstageViewControl.Name = "BackstageViewControl";
-            this.BackstageViewControl.SelectedTab = this.CountriesBackstageViewTab;
-            this.BackstageViewControl.SelectedTabIndex = 1;
+            this.BackstageViewControl.SelectedTab = this.CardIssuingBackstageViewTab;
+            this.BackstageViewControl.SelectedTabIndex = 2;
             this.BackstageViewControl.Size = new System.Drawing.Size(1119, 585);
             this.BackstageViewControl.TabIndex = 0;
             this.BackstageViewControl.Text = "backstageViewControl1";
@@ -120,9 +152,9 @@
             // 
             this.backstageViewClientControl1.Controls.Add(this.DocumentTypeGridControl);
             this.backstageViewClientControl1.Controls.Add(this.DocumentTypeStandaloneBarDockControl);
-            this.backstageViewClientControl1.Location = new System.Drawing.Point(132, 0);
+            this.backstageViewClientControl1.Location = new System.Drawing.Point(166, 0);
             this.backstageViewClientControl1.Name = "backstageViewClientControl1";
-            this.backstageViewClientControl1.Size = new System.Drawing.Size(987, 585);
+            this.backstageViewClientControl1.Size = new System.Drawing.Size(953, 585);
             this.backstageViewClientControl1.TabIndex = 1;
             // 
             // DocumentTypeGridControl
@@ -132,7 +164,7 @@
             this.DocumentTypeGridControl.MainView = this.DocumentTypeGridView;
             this.DocumentTypeGridControl.MenuManager = this.DocumentTypeBarManager;
             this.DocumentTypeGridControl.Name = "DocumentTypeGridControl";
-            this.DocumentTypeGridControl.Size = new System.Drawing.Size(987, 556);
+            this.DocumentTypeGridControl.Size = new System.Drawing.Size(953, 556);
             this.DocumentTypeGridControl.TabIndex = 1;
             this.DocumentTypeGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.DocumentTypeGridView});
@@ -256,6 +288,7 @@
             this.DocumentTypeBarManager.DockControls.Add(this.barDockControlRight);
             this.DocumentTypeBarManager.DockControls.Add(this.DocumentTypeStandaloneBarDockControl);
             this.DocumentTypeBarManager.DockControls.Add(this.CountriesStandaloneBarDockControl);
+            this.DocumentTypeBarManager.DockControls.Add(this.CardIssuingStandaloneBarDockControl);
             this.DocumentTypeBarManager.Form = this;
             this.DocumentTypeBarManager.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.NewDocumentTypeBarButton,
@@ -271,9 +304,16 @@
             this.DeleteCountriesBarButton,
             this.RefreshCountriesBarButton,
             this.UpCountriesBarButton,
-            this.DownCountriesBarButton});
+            this.DownCountriesBarButton,
+            this.NewCardIssuingBarButton,
+            this.EditCardIssuingBarButton,
+            this.barCheckItem1,
+            this.DeleteCardIssuingBarButton,
+            this.RefreshCardIssuingBarButton,
+            this.UpCardIssuingBarButton,
+            this.DownCardIssuingBarButton});
             this.DocumentTypeBarManager.MainMenu = this.DocumentTypeToolBar;
-            this.DocumentTypeBarManager.MaxItemId = 14;
+            this.DocumentTypeBarManager.MaxItemId = 21;
             // 
             // DocumentTypeToolBar
             // 
@@ -353,7 +393,7 @@
             this.DocumentTypeStandaloneBarDockControl.Manager = this.DocumentTypeBarManager;
             this.DocumentTypeStandaloneBarDockControl.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.DocumentTypeStandaloneBarDockControl.Name = "DocumentTypeStandaloneBarDockControl";
-            this.DocumentTypeStandaloneBarDockControl.Size = new System.Drawing.Size(987, 29);
+            this.DocumentTypeStandaloneBarDockControl.Size = new System.Drawing.Size(953, 29);
             this.DocumentTypeStandaloneBarDockControl.Text = "standaloneBarDockControl1";
             // 
             // barDockControlTop
@@ -396,7 +436,7 @@
             this.CountriesStandaloneBarDockControl.Manager = this.DocumentTypeBarManager;
             this.CountriesStandaloneBarDockControl.Margin = new System.Windows.Forms.Padding(3, 2, 2, 3);
             this.CountriesStandaloneBarDockControl.Name = "CountriesStandaloneBarDockControl";
-            this.CountriesStandaloneBarDockControl.Size = new System.Drawing.Size(987, 29);
+            this.CountriesStandaloneBarDockControl.Size = new System.Drawing.Size(953, 29);
             this.CountriesStandaloneBarDockControl.Text = "standaloneBarDockControl1";
             // 
             // UpSenedTypeBarButton
@@ -470,9 +510,9 @@
             // 
             this.backstageViewClientControl2.Controls.Add(this.CountriesGridControl);
             this.backstageViewClientControl2.Controls.Add(this.CountriesStandaloneBarDockControl);
-            this.backstageViewClientControl2.Location = new System.Drawing.Point(132, 0);
+            this.backstageViewClientControl2.Location = new System.Drawing.Point(166, 0);
             this.backstageViewClientControl2.Name = "backstageViewClientControl2";
-            this.backstageViewClientControl2.Size = new System.Drawing.Size(987, 585);
+            this.backstageViewClientControl2.Size = new System.Drawing.Size(953, 585);
             this.backstageViewClientControl2.TabIndex = 2;
             // 
             // CountriesGridControl
@@ -480,9 +520,9 @@
             this.CountriesGridControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.CountriesGridControl.Location = new System.Drawing.Point(0, 29);
             this.CountriesGridControl.MainView = this.CountriesGridView;
-            this.CountriesGridControl.MenuManager = this.DocumentTypeBarManager;
+            this.CountriesGridControl.MenuManager = this.CountriesBarManager;
             this.CountriesGridControl.Name = "CountriesGridControl";
-            this.CountriesGridControl.Size = new System.Drawing.Size(987, 556);
+            this.CountriesGridControl.Size = new System.Drawing.Size(953, 556);
             this.CountriesGridControl.TabIndex = 1;
             this.CountriesGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.CountriesGridView});
@@ -597,7 +637,6 @@
             this.CountriesBackstageViewTab.Caption = "Ölkələr";
             this.CountriesBackstageViewTab.ContentControl = this.backstageViewClientControl2;
             this.CountriesBackstageViewTab.Name = "CountriesBackstageViewTab";
-            this.CountriesBackstageViewTab.Selected = true;
             // 
             // bar3
             // 
@@ -708,6 +747,270 @@
             this.CountriesPopupMenu.Manager = this.CountriesBarManager;
             this.CountriesPopupMenu.Name = "CountriesPopupMenu";
             // 
+            // backstageViewClientControl3
+            // 
+            this.backstageViewClientControl3.Controls.Add(this.CardIssuingGridControl);
+            this.backstageViewClientControl3.Controls.Add(this.CardIssuingStandaloneBarDockControl);
+            this.backstageViewClientControl3.Location = new System.Drawing.Point(166, 0);
+            this.backstageViewClientControl3.Name = "backstageViewClientControl3";
+            this.backstageViewClientControl3.Size = new System.Drawing.Size(953, 585);
+            this.backstageViewClientControl3.TabIndex = 3;
+            // 
+            // CardIssuingBackstageViewTab
+            // 
+            this.CardIssuingBackstageViewTab.Caption = "Sənəd verən orqanlar";
+            this.CardIssuingBackstageViewTab.ContentControl = this.backstageViewClientControl3;
+            this.CardIssuingBackstageViewTab.Name = "CardIssuingBackstageViewTab";
+            this.CardIssuingBackstageViewTab.Selected = true;
+            // 
+            // CardIssuingStandaloneBarDockControl
+            // 
+            this.CardIssuingStandaloneBarDockControl.CausesValidation = false;
+            this.CardIssuingStandaloneBarDockControl.Dock = System.Windows.Forms.DockStyle.Top;
+            this.CardIssuingStandaloneBarDockControl.Location = new System.Drawing.Point(0, 0);
+            this.CardIssuingStandaloneBarDockControl.Manager = this.DocumentTypeBarManager;
+            this.CardIssuingStandaloneBarDockControl.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.CardIssuingStandaloneBarDockControl.Name = "CardIssuingStandaloneBarDockControl";
+            this.CardIssuingStandaloneBarDockControl.Size = new System.Drawing.Size(953, 29);
+            this.CardIssuingStandaloneBarDockControl.Text = "standaloneBarDockControl1";
+            // 
+            // CardIssuingBarManager
+            // 
+            this.CardIssuingBarManager.Bars.AddRange(new DevExpress.XtraBars.Bar[] {
+            this.CardIssuingBar});
+            this.CardIssuingBarManager.DockControls.Add(this.barDockControl5);
+            this.CardIssuingBarManager.DockControls.Add(this.barDockControl6);
+            this.CardIssuingBarManager.DockControls.Add(this.barDockControl7);
+            this.CardIssuingBarManager.DockControls.Add(this.barDockControl8);
+            this.CardIssuingBarManager.Form = this;
+            this.CardIssuingBarManager.MainMenu = this.CardIssuingBar;
+            this.CardIssuingBarManager.MaxItemId = 0;
+            // 
+            // barDockControl5
+            // 
+            this.barDockControl5.CausesValidation = false;
+            this.barDockControl5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.barDockControl5.Location = new System.Drawing.Point(0, 0);
+            this.barDockControl5.Manager = this.CardIssuingBarManager;
+            this.barDockControl5.Size = new System.Drawing.Size(1119, 0);
+            // 
+            // barDockControl6
+            // 
+            this.barDockControl6.CausesValidation = false;
+            this.barDockControl6.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.barDockControl6.Location = new System.Drawing.Point(0, 585);
+            this.barDockControl6.Manager = this.CardIssuingBarManager;
+            this.barDockControl6.Size = new System.Drawing.Size(1119, 0);
+            // 
+            // barDockControl7
+            // 
+            this.barDockControl7.CausesValidation = false;
+            this.barDockControl7.Dock = System.Windows.Forms.DockStyle.Left;
+            this.barDockControl7.Location = new System.Drawing.Point(0, 0);
+            this.barDockControl7.Manager = this.CardIssuingBarManager;
+            this.barDockControl7.Size = new System.Drawing.Size(0, 585);
+            // 
+            // barDockControl8
+            // 
+            this.barDockControl8.CausesValidation = false;
+            this.barDockControl8.Dock = System.Windows.Forms.DockStyle.Right;
+            this.barDockControl8.Location = new System.Drawing.Point(1119, 0);
+            this.barDockControl8.Manager = this.CardIssuingBarManager;
+            this.barDockControl8.Size = new System.Drawing.Size(0, 585);
+            // 
+            // CardIssuingBar
+            // 
+            this.CardIssuingBar.BarName = "Main menu";
+            this.CardIssuingBar.DockCol = 0;
+            this.CardIssuingBar.DockRow = 0;
+            this.CardIssuingBar.DockStyle = DevExpress.XtraBars.BarDockStyle.Standalone;
+            this.CardIssuingBar.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.NewCardIssuingBarButton),
+            new DevExpress.XtraBars.LinkPersistInfo(this.EditCardIssuingBarButton),
+            new DevExpress.XtraBars.LinkPersistInfo(this.DeleteCardIssuingBarButton),
+            new DevExpress.XtraBars.LinkPersistInfo(this.RefreshCardIssuingBarButton),
+            new DevExpress.XtraBars.LinkPersistInfo(this.UpCardIssuingBarButton),
+            new DevExpress.XtraBars.LinkPersistInfo(this.DownCardIssuingBarButton)});
+            this.CardIssuingBar.OptionsBar.DrawBorder = false;
+            this.CardIssuingBar.OptionsBar.DrawDragBorder = false;
+            this.CardIssuingBar.OptionsBar.MultiLine = true;
+            this.CardIssuingBar.OptionsBar.UseWholeRow = true;
+            this.CardIssuingBar.StandaloneBarDockControl = this.CardIssuingStandaloneBarDockControl;
+            this.CardIssuingBar.Text = "Main menu";
+            // 
+            // NewCardIssuingBarButton
+            // 
+            this.NewCardIssuingBarButton.Caption = "Yeni";
+            this.NewCardIssuingBarButton.Id = 14;
+            this.NewCardIssuingBarButton.ImageOptions.Image = global::ELMS.Properties.Resources.plus_16;
+            this.NewCardIssuingBarButton.Name = "NewCardIssuingBarButton";
+            this.NewCardIssuingBarButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.NewCardIssuingBarButton_ItemClick);
+            // 
+            // EditCardIssuingBarButton
+            // 
+            this.EditCardIssuingBarButton.Caption = "Dəyiş";
+            this.EditCardIssuingBarButton.Id = 15;
+            this.EditCardIssuingBarButton.ImageOptions.Image = global::ELMS.Properties.Resources.edit_16;
+            this.EditCardIssuingBarButton.Name = "EditCardIssuingBarButton";
+            this.EditCardIssuingBarButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.EditCardIssuingBarButton_ItemClick);
+            // 
+            // barCheckItem1
+            // 
+            this.barCheckItem1.Caption = "barCheckItem1";
+            this.barCheckItem1.Id = 16;
+            this.barCheckItem1.Name = "barCheckItem1";
+            // 
+            // DeleteCardIssuingBarButton
+            // 
+            this.DeleteCardIssuingBarButton.Caption = "Sil";
+            this.DeleteCardIssuingBarButton.Id = 17;
+            this.DeleteCardIssuingBarButton.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
+            this.DeleteCardIssuingBarButton.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
+            this.DeleteCardIssuingBarButton.Name = "DeleteCardIssuingBarButton";
+            this.DeleteCardIssuingBarButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.DeleteCardIssuingBarButton_ItemClick);
+            // 
+            // RefreshCardIssuingBarButton
+            // 
+            this.RefreshCardIssuingBarButton.Caption = "Yenilə";
+            this.RefreshCardIssuingBarButton.Id = 18;
+            this.RefreshCardIssuingBarButton.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image1")));
+            this.RefreshCardIssuingBarButton.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage1")));
+            this.RefreshCardIssuingBarButton.Name = "RefreshCardIssuingBarButton";
+            // 
+            // UpCardIssuingBarButton
+            // 
+            this.UpCardIssuingBarButton.Caption = "Yerini Yuxarı Dəyiş";
+            this.UpCardIssuingBarButton.Id = 19;
+            this.UpCardIssuingBarButton.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image2")));
+            this.UpCardIssuingBarButton.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage2")));
+            this.UpCardIssuingBarButton.Name = "UpCardIssuingBarButton";
+            this.UpCardIssuingBarButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.UpCardIssuingBarButton_ItemClick);
+            // 
+            // DownCardIssuingBarButton
+            // 
+            this.DownCardIssuingBarButton.Caption = "Yerini Aşağı Dəyiş";
+            this.DownCardIssuingBarButton.Id = 20;
+            this.DownCardIssuingBarButton.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image3")));
+            this.DownCardIssuingBarButton.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage3")));
+            this.DownCardIssuingBarButton.Name = "DownCardIssuingBarButton";
+            this.DownCardIssuingBarButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.DownCardIssuingBarButton_ItemClick);
+            // 
+            // CardIssuingGridControl
+            // 
+            this.CardIssuingGridControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            gridLevelNode1.RelationName = "Level1";
+            this.CardIssuingGridControl.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
+            gridLevelNode1});
+            this.CardIssuingGridControl.Location = new System.Drawing.Point(0, 29);
+            this.CardIssuingGridControl.MainView = this.CardIssuingGridView;
+            this.CardIssuingGridControl.MenuManager = this.CardIssuingBarManager;
+            this.CardIssuingGridControl.Name = "CardIssuingGridControl";
+            this.CardIssuingGridControl.Size = new System.Drawing.Size(953, 556);
+            this.CardIssuingGridControl.TabIndex = 1;
+            this.CardIssuingGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.CardIssuingGridView});
+            // 
+            // CardIssuingGridView
+            // 
+            this.CardIssuingGridView.Appearance.FooterPanel.FontStyleDelta = System.Drawing.FontStyle.Bold;
+            this.CardIssuingGridView.Appearance.FooterPanel.Options.UseFont = true;
+            this.CardIssuingGridView.Appearance.FooterPanel.Options.UseTextOptions = true;
+            this.CardIssuingGridView.Appearance.FooterPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.CardIssuingGridView.Appearance.FooterPanel.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.CardIssuingGridView.Appearance.HeaderPanel.Options.UseTextOptions = true;
+            this.CardIssuingGridView.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.CardIssuingGridView.Appearance.HeaderPanel.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.CardIssuingGridView.Appearance.ViewCaption.FontStyleDelta = System.Drawing.FontStyle.Bold;
+            this.CardIssuingGridView.Appearance.ViewCaption.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.CardIssuingGridView.Appearance.ViewCaption.Options.UseFont = true;
+            this.CardIssuingGridView.Appearance.ViewCaption.Options.UseForeColor = true;
+            this.CardIssuingGridView.Appearance.ViewCaption.Options.UseTextOptions = true;
+            this.CardIssuingGridView.Appearance.ViewCaption.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.CardIssuingGridView.Appearance.ViewCaption.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.CardIssuingGridView.Appearance.ViewCaption.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.CardIssuingGridView.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.CardIssuing_SS,
+            this.CardIssuing_ID,
+            this.CardIssuing_Name,
+            this.CardIssuing_Note,
+            this.CardIssuing_UsedUserID});
+            this.CardIssuingGridView.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFullFocus;
+            this.CardIssuingGridView.GridControl = this.CardIssuingGridControl;
+            this.CardIssuingGridView.Name = "CardIssuingGridView";
+            this.CardIssuingGridView.OptionsBehavior.AutoExpandAllGroups = true;
+            this.CardIssuingGridView.OptionsBehavior.AutoSelectAllInEditor = false;
+            this.CardIssuingGridView.OptionsBehavior.Editable = false;
+            this.CardIssuingGridView.OptionsFilter.UseNewCustomFilterDialog = true;
+            this.CardIssuingGridView.OptionsFind.FindDelay = 100;
+            this.CardIssuingGridView.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.CardIssuingGridView.OptionsView.EnableAppearanceEvenRow = true;
+            this.CardIssuingGridView.OptionsView.ShowFooter = true;
+            this.CardIssuingGridView.OptionsView.ShowGroupPanel = false;
+            this.CardIssuingGridView.OptionsView.ShowIndicator = false;
+            this.CardIssuingGridView.OptionsView.ShowViewCaption = true;
+            this.CardIssuingGridView.PaintStyleName = "Skin";
+            this.CardIssuingGridView.ScrollStyle = DevExpress.XtraGrid.Views.Grid.ScrollStyleFlags.LiveVertScroll;
+            this.CardIssuingGridView.ViewCaption = "Sənəd verən orqanlar";
+            this.CardIssuingGridView.RowCellStyle += new DevExpress.XtraGrid.Views.Grid.RowCellStyleEventHandler(this.CardIssuingGridView_RowCellStyle);
+            this.CardIssuingGridView.FocusedRowObjectChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowObjectChangedEventHandler(this.CardIssuingGridView_FocusedRowObjectChanged);
+            this.CardIssuingGridView.CustomUnboundColumnData += new DevExpress.XtraGrid.Views.Base.CustomColumnDataEventHandler(this.CardIssuingGridView_CustomUnboundColumnData);
+            this.CardIssuingGridView.MouseUp += new System.Windows.Forms.MouseEventHandler(this.CardIssuingGridView_MouseUp);
+            // 
+            // CardIssuing_SS
+            // 
+            this.CardIssuing_SS.Caption = "S/s";
+            this.CardIssuing_SS.FieldName = "CardIssuing_SS";
+            this.CardIssuing_SS.Name = "CardIssuing_SS";
+            this.CardIssuing_SS.OptionsColumn.FixedWidth = true;
+            this.CardIssuing_SS.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Count, "CardIssuing_SS", "{0}")});
+            this.CardIssuing_SS.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
+            this.CardIssuing_SS.Visible = true;
+            this.CardIssuing_SS.VisibleIndex = 0;
+            this.CardIssuing_SS.Width = 50;
+            // 
+            // CardIssuing_ID
+            // 
+            this.CardIssuing_ID.Caption = "ID";
+            this.CardIssuing_ID.FieldName = "ID";
+            this.CardIssuing_ID.Name = "CardIssuing_ID";
+            this.CardIssuing_ID.OptionsColumn.AllowShowHide = false;
+            // 
+            // CardIssuing_Name
+            // 
+            this.CardIssuing_Name.Caption = "Adı";
+            this.CardIssuing_Name.FieldName = "NAME";
+            this.CardIssuing_Name.Name = "CardIssuing_Name";
+            this.CardIssuing_Name.Visible = true;
+            this.CardIssuing_Name.VisibleIndex = 1;
+            // 
+            // CardIssuing_Note
+            // 
+            this.CardIssuing_Note.Caption = "Qeyd";
+            this.CardIssuing_Note.FieldName = "NOTE";
+            this.CardIssuing_Note.Name = "CardIssuing_Note";
+            this.CardIssuing_Note.Visible = true;
+            this.CardIssuing_Note.VisibleIndex = 2;
+            // 
+            // CardIssuing_UsedUserID
+            // 
+            this.CardIssuing_UsedUserID.Caption = "UsedUserID";
+            this.CardIssuing_UsedUserID.FieldName = "USED_USER_ID";
+            this.CardIssuing_UsedUserID.Name = "CardIssuing_UsedUserID";
+            this.CardIssuing_UsedUserID.OptionsColumn.AllowShowHide = false;
+            // 
+            // CardIssuingPopupMenu
+            // 
+            this.CardIssuingPopupMenu.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.NewCardIssuingBarButton),
+            new DevExpress.XtraBars.LinkPersistInfo(this.EditCardIssuingBarButton),
+            new DevExpress.XtraBars.LinkPersistInfo(this.DeleteCardIssuingBarButton),
+            new DevExpress.XtraBars.LinkPersistInfo(this.RefreshCardIssuingBarButton),
+            new DevExpress.XtraBars.LinkPersistInfo(this.UpCardIssuingBarButton),
+            new DevExpress.XtraBars.LinkPersistInfo(this.DownCardIssuingBarButton)});
+            this.CardIssuingPopupMenu.Manager = this.DocumentTypeBarManager;
+            this.CardIssuingPopupMenu.Name = "CardIssuingPopupMenu";
+            // 
             // FDictionaries
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -722,6 +1025,10 @@
             this.Controls.Add(this.barDockControl4);
             this.Controls.Add(this.barDockControl2);
             this.Controls.Add(this.barDockControl1);
+            this.Controls.Add(this.barDockControl7);
+            this.Controls.Add(this.barDockControl8);
+            this.Controls.Add(this.barDockControl6);
+            this.Controls.Add(this.barDockControl5);
             this.MinimizeBox = false;
             this.Name = "FDictionaries";
             this.ShowIcon = false;
@@ -741,6 +1048,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.DocumentTypePopupMenu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CountriesBarManager)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CountriesPopupMenu)).EndInit();
+            this.backstageViewClientControl3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.CardIssuingBarManager)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CardIssuingGridControl)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CardIssuingGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CardIssuingPopupMenu)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -803,5 +1115,29 @@
         private DevExpress.XtraGrid.Columns.GridColumn Country_ID;
         private DevExpress.XtraBars.PopupMenu CountriesPopupMenu;
         private DevExpress.XtraGrid.Columns.GridColumn Country_Note;
+        private DevExpress.XtraBars.Ribbon.BackstageViewClientControl backstageViewClientControl3;
+        private DevExpress.XtraBars.Ribbon.BackstageViewTabItem CardIssuingBackstageViewTab;
+        private DevExpress.XtraBars.StandaloneBarDockControl CardIssuingStandaloneBarDockControl;
+        private DevExpress.XtraBars.BarDockControl barDockControl7;
+        private DevExpress.XtraBars.BarManager CardIssuingBarManager;
+        private DevExpress.XtraBars.Bar CardIssuingBar;
+        private DevExpress.XtraBars.BarButtonItem NewCardIssuingBarButton;
+        private DevExpress.XtraBars.BarButtonItem EditCardIssuingBarButton;
+        private DevExpress.XtraBars.BarButtonItem DeleteCardIssuingBarButton;
+        private DevExpress.XtraBars.BarButtonItem RefreshCardIssuingBarButton;
+        private DevExpress.XtraBars.BarButtonItem UpCardIssuingBarButton;
+        private DevExpress.XtraBars.BarButtonItem DownCardIssuingBarButton;
+        private DevExpress.XtraBars.BarDockControl barDockControl5;
+        private DevExpress.XtraBars.BarDockControl barDockControl6;
+        private DevExpress.XtraBars.BarDockControl barDockControl8;
+        private DevExpress.XtraBars.BarCheckItem barCheckItem1;
+        private DevExpress.XtraGrid.GridControl CardIssuingGridControl;
+        private DevExpress.XtraGrid.Views.Grid.GridView CardIssuingGridView;
+        private DevExpress.XtraGrid.Columns.GridColumn CardIssuing_SS;
+        private DevExpress.XtraGrid.Columns.GridColumn CardIssuing_ID;
+        private DevExpress.XtraGrid.Columns.GridColumn CardIssuing_Name;
+        private DevExpress.XtraGrid.Columns.GridColumn CardIssuing_Note;
+        private DevExpress.XtraGrid.Columns.GridColumn CardIssuing_UsedUserID;
+        private DevExpress.XtraBars.PopupMenu CardIssuingPopupMenu;
     }
 }

@@ -80,6 +80,7 @@
     </Compile>
     <Compile Include="Class\ComponentLocalization.cs" />
     <Compile Include="Class\DataAccess\BranchDAL.cs" />
+    <Compile Include="Class\DataAccess\CardIssuingDAL.cs" />
     <Compile Include="Class\DataAccess\CountriesDAL.cs" />
     <Compile Include="Class\DataAccess\DocumentGroupDAL.cs" />
     <Compile Include="Class\DataAccess\DocumentTypeDAL.cs" />
@@ -92,12 +93,19 @@
     <Compile Include="Class\GlobalVariables.cs" />
     <Compile Include="Class\RegexUtilities.cs" />
     <Compile Include="Class\Tables\Branch.cs" />
+    <Compile Include="Class\Tables\CardIssuing.cs" />
     <Compile Include="Class\Tables\ColumnPrintable.cs" />
     <Compile Include="Class\Tables\Countries.cs" />
     <Compile Include="Class\Tables\DocumentGroup.cs" />
     <Compile Include="Class\Tables\DocumentType.cs" />
     <Compile Include="Class\Tables\PersonType.cs" />
     <Compile Include="Class\Tables\Users.cs" />
+    <Compile Include="Forms\General\FCardIssuingAddEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\General\FCardIssuingAddEdit.Designer.cs">
+      <DependentUpon>FCardIssuingAddEdit.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\General\FCountryAddEdit.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -154,6 +162,9 @@
     <Compile Include="UserControls\OrderUserControl.Designer.cs">
       <DependentUpon>OrderUserControl.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Forms\General\FCardIssuingAddEdit.resx">
+      <DependentUpon>FCardIssuingAddEdit.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\General\FCountryAddEdit.resx">
       <DependentUpon>FCountryAddEdit.cs</DependentUpon>
     </EmbeddedResource>
