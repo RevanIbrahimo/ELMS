@@ -11,10 +11,10 @@ namespace ELMS.Class.DataAccess
 {
     class CountriesDAL
     {
-        public static DataSet SelectCountriesByID(int? typeID)
+        public static DataSet SelectCountriesByID(int? countryID)
         {
             string sql = null;
-            if (typeID == null)
+            if (countryID == null)
                 sql = $@"SELECT C.ID,
                                  C.NAME,
                                  C.ALPHA3CODE,
@@ -31,7 +31,7 @@ namespace ELMS.Class.DataAccess
                                  C.USED_USER_ID,
                                  C.ORDER_ID
                             FROM ELMS_USER.COUNTRY C 
-                           WHERE C.ID = {typeID}";
+                           WHERE C.ID = {countryID}";
 
             try
             {
@@ -48,18 +48,6 @@ namespace ELMS.Class.DataAccess
                 return null;
             }
         }
-
-
-
-
-
-
-
-
-
-
-
-
 
         public static void InsertCountries(Countries countries)
         {
@@ -80,9 +68,9 @@ namespace ELMS.Class.DataAccess
                         transaction = connection.BeginTransaction();
                         command.Transaction = transaction;
                         command.CommandText = $@"INSERT INTO ELMS_USER.COUNTRY(NAME,
-                                                                                    NOTE,
-                                                                                    ALPHA3CODE,
-                                                                                    INSERT_USER)
+                                                                               NOTE,
+                                                                               ALPHA3CODE,
+                                                                               INSERT_USER)
                                                     VALUES(:inNAME,
                                                            :inNOTE,
                                                            :inALPHA3CODE,
@@ -100,7 +88,7 @@ namespace ELMS.Class.DataAccess
                 catch (Exception exx)
                 {
                     transaction.Rollback();
-                    GlobalProcedures.LogWrite("Sənəd bazaya daxil edilmədi.", commandSql, GlobalVariables.V_UserName, "CountriesDAL", "InsertCountries", exx);
+                    GlobalProcedures.LogWrite("Ölkə bazaya daxil edilmədi.", commandSql, GlobalVariables.V_UserName, "CountriesDAL", "InsertCountries", exx);
                 }
                 finally
                 {
@@ -153,7 +141,7 @@ namespace ELMS.Class.DataAccess
                 catch (Exception exx)
                 {
                     transaction.Rollback();
-                    GlobalProcedures.LogWrite("Sənəd bazada dəyişdirilmədi.", commandSql, GlobalVariables.V_UserName, "CountriesDAL", "UpdateCountries", exx);
+                    GlobalProcedures.LogWrite("Ölkə bazada dəyişdirilmədi.", commandSql, GlobalVariables.V_UserName, "CountriesDAL", "UpdateCountries", exx);
                 }
                 finally
                 {
@@ -221,7 +209,7 @@ namespace ELMS.Class.DataAccess
                 catch (Exception exx)
                 {
                     transaction.Rollback();
-                    GlobalProcedures.LogWrite("Sənəd bazadan silinmədi.", commandSql, GlobalVariables.V_UserName, "CountriesDAL", "DeleteCountries", exx);
+                    GlobalProcedures.LogWrite("Ölkə bazadan silinmədi.", commandSql, GlobalVariables.V_UserName, "CountriesDAL", "DeleteCountries", exx);
                 }
                 finally
                 {

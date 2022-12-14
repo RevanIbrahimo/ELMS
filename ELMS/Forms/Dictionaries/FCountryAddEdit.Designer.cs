@@ -1,4 +1,4 @@
-﻿namespace ELMS.Forms.General
+﻿namespace ELMS.Forms.Dictionaries
 {
     partial class FCountryAddEdit
     {
@@ -35,7 +35,6 @@
             this.AlphaCodeLabel = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.NameText = new DevExpress.XtraEditors.TextEdit();
             this.Alpha3CodeText = new DevExpress.XtraEditors.TextEdit();
             this.NoteText = new DevExpress.XtraEditors.TextEdit();
@@ -94,16 +93,6 @@
             this.labelControl3.TabIndex = 4;
             this.labelControl3.Text = "Qeyd";
             // 
-            // labelControl4
-            // 
-            this.labelControl4.Appearance.ForeColor = System.Drawing.Color.Red;
-            this.labelControl4.Appearance.Options.UseForeColor = true;
-            this.labelControl4.Location = new System.Drawing.Point(84, 66);
-            this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(6, 13);
-            this.labelControl4.TabIndex = 5;
-            this.labelControl4.Text = "*";
-            // 
             // NameText
             // 
             this.NameText.Location = new System.Drawing.Point(96, 12);
@@ -113,7 +102,7 @@
             this.NameText.Properties.NullValuePrompt = "Ölkənin adını daxil edin";
             this.NameText.Properties.NullValuePromptShowForEmptyValue = true;
             this.NameText.Size = new System.Drawing.Size(369, 20);
-            this.NameText.TabIndex = 6;
+            this.NameText.TabIndex = 0;
             // 
             // Alpha3CodeText
             // 
@@ -126,7 +115,7 @@
             this.Alpha3CodeText.Properties.NullValuePrompt = "AZE";
             this.Alpha3CodeText.Properties.NullValuePromptShowForEmptyValue = true;
             this.Alpha3CodeText.Size = new System.Drawing.Size(100, 20);
-            this.Alpha3CodeText.TabIndex = 7;
+            this.Alpha3CodeText.TabIndex = 1;
             // 
             // NoteText
             // 
@@ -135,7 +124,7 @@
             this.NoteText.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NoteText.Properties.Appearance.Options.UseFont = true;
             this.NoteText.Size = new System.Drawing.Size(369, 20);
-            this.NoteText.TabIndex = 8;
+            this.NoteText.TabIndex = 2;
             // 
             // panelControl1
             // 
@@ -230,7 +219,6 @@
             this.Controls.Add(this.NoteText);
             this.Controls.Add(this.Alpha3CodeText);
             this.Controls.Add(this.NameText);
-            this.Controls.Add(this.labelControl4);
             this.Controls.Add(this.labelControl3);
             this.Controls.Add(this.labelControl1);
             this.Controls.Add(this.AlphaCodeLabel);
@@ -264,7 +252,6 @@
         private DevExpress.XtraEditors.LabelControl AlphaCodeLabel;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.LabelControl labelControl3;
-        private DevExpress.XtraEditors.LabelControl labelControl4;
         private DevExpress.XtraEditors.TextEdit NameText;
         private DevExpress.XtraEditors.TextEdit Alpha3CodeText;
         private DevExpress.XtraEditors.TextEdit NoteText;

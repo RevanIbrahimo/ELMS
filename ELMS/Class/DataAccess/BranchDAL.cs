@@ -15,9 +15,9 @@ namespace ELMS.Class.DataAccess
         {
             string sql = null;
             if (ID == null)
-                sql = "SELECT ID,NAME,CODE,ADDRESS,PHONE,NOTE,USED_USER_ID,ORDER_ID FROM ELMS_USER.BRANCH ORDER BY ORDER_ID";
+                sql = "SELECT ID,NAME,LEADING_NAME,ADDRESS,PHONE,NOTE,USED_USER_ID,ORDER_ID FROM ELMS_USER.BRANCH ORDER BY ORDER_ID";
             else
-                sql = $@"SELECT ID,NAME,CODE,ADDRESS,PHONE,NOTE,USED_USER_ID,ORDER_ID FROM ELMS_USER.BRANCH WHERE ID = {ID}";
+                sql = $@"SELECT ID,NAME,LEADING_NAME,ADDRESS,PHONE,NOTE,USED_USER_ID,ORDER_ID FROM ELMS_USER.BRANCH WHERE ID = {ID}";
 
             try
             {
@@ -54,19 +54,19 @@ namespace ELMS.Class.DataAccess
                         transaction = connection.BeginTransaction();
                         command.Transaction = transaction;
                         command.CommandText = $@"INSERT INTO ELMS_USER.BRANCH(NAME,
-                                                                                CODE,
+                                                                                LEADING_NAME,
                                                                                 ADDRESS,
                                                                                 PHONE,
                                                                                 NOTE,
                                                                                 INSERT_USER)
                                                     VALUES(:inNAME,
-                                                           :inCODE,
+                                                           :inLEADING_NAME,
                                                            :inADDRESS,
                                                            :inPHONE,
                                                            :inNOTE,
                                                            :inINSERTUSER)";
                         command.Parameters.Add(new OracleParameter("inNAME", branch.NAME));
-                        command.Parameters.Add(new OracleParameter("inCODE", branch.CODE));
+                        command.Parameters.Add(new OracleParameter("inLEADING_NAME", branch.LEADING_NAME));
                         command.Parameters.Add(new OracleParameter("inADDRESS", branch.ADDRESS));
                         command.Parameters.Add(new OracleParameter("inPHONE", branch.PHONE));
                         command.Parameters.Add(new OracleParameter("inNOTE", branch.NOTE));
@@ -109,7 +109,7 @@ namespace ELMS.Class.DataAccess
                         transaction = connection.BeginTransaction();
                         command.Transaction = transaction;
                         command.CommandText = $@"UPDATE ELMS_USER.BRANCH SET NAME = :inNAME,
-                                                                                  CODE = :inCODE,
+                                                                                  LEADING_NAME = :inLEADING_NAME,
                                                                                   ADDRESS = :inADDRESS,
                                                                                   PHONE = :inPHONE,
                                                                                   NOTE = :inNOTE,
@@ -119,7 +119,7 @@ namespace ELMS.Class.DataAccess
                                                                                   UPDATE_DATE = SYSDATE
                                                                     WHERE ID = :inID";
                         command.Parameters.Add(new OracleParameter("inNAME", branch.NAME));
-                        command.Parameters.Add(new OracleParameter("inCODE", branch.CODE));
+                        command.Parameters.Add(new OracleParameter("inLEADING_NAME", branch.LEADING_NAME));
                         command.Parameters.Add(new OracleParameter("inADDRESS", branch.ADDRESS));
                         command.Parameters.Add(new OracleParameter("inPHONE", branch.PHONE));
                         command.Parameters.Add(new OracleParameter("inNOTE", branch.NOTE));

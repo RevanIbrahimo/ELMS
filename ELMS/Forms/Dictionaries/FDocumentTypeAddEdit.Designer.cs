@@ -1,4 +1,4 @@
-﻿namespace ELMS.Forms.General
+﻿namespace ELMS.Forms.Dictionaries
 {
     partial class FDocumentTypeAddEdit
     {
@@ -42,7 +42,6 @@
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
             this.NameText = new DevExpress.XtraEditors.TextEdit();
             this.GroupNameLookUp = new DevExpress.XtraEditors.LookUpEdit();
             this.CodeText = new DevExpress.XtraEditors.TextEdit();
@@ -62,9 +61,10 @@
             this.panelControl1.Controls.Add(this.BCancel);
             this.panelControl1.Controls.Add(this.BOK);
             this.panelControl1.Controls.Add(this.labelControl1);
-            this.panelControl1.Location = new System.Drawing.Point(0, 129);
+            this.panelControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelControl1.Location = new System.Drawing.Point(0, 147);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(522, 50);
+            this.panelControl1.Size = new System.Drawing.Size(521, 50);
             this.panelControl1.TabIndex = 0;
             // 
             // BCancel
@@ -90,7 +90,7 @@
             this.BCancel.ColorTable = office2010Red1;
             this.BCancel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.BCancel.Location = new System.Drawing.Point(433, 13);
+            this.BCancel.Location = new System.Drawing.Point(432, 13);
             this.BCancel.Name = "BCancel";
             this.BCancel.Size = new System.Drawing.Size(75, 25);
             this.BCancel.TabIndex = 2;
@@ -121,7 +121,7 @@
             office2010Blue1.TextColor = System.Drawing.Color.White;
             this.BOK.ColorTable = office2010Blue1;
             this.BOK.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BOK.Location = new System.Drawing.Point(352, 13);
+            this.BOK.Location = new System.Drawing.Point(351, 13);
             this.BOK.Name = "BOK";
             this.BOK.Size = new System.Drawing.Size(75, 25);
             this.BOK.TabIndex = 1;
@@ -154,7 +154,7 @@
             // 
             this.labelControl3.Appearance.ForeColor = System.Drawing.Color.Red;
             this.labelControl3.Appearance.Options.UseForeColor = true;
-            this.labelControl3.Location = new System.Drawing.Point(95, 10);
+            this.labelControl3.Location = new System.Drawing.Point(95, 13);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(6, 13);
             this.labelControl3.TabIndex = 2;
@@ -162,7 +162,7 @@
             // 
             // AzNameLabel
             // 
-            this.AzNameLabel.Location = new System.Drawing.Point(10, 35);
+            this.AzNameLabel.Location = new System.Drawing.Point(10, 39);
             this.AzNameLabel.Name = "AzNameLabel";
             this.AzNameLabel.Size = new System.Drawing.Size(15, 13);
             this.AzNameLabel.TabIndex = 3;
@@ -172,7 +172,7 @@
             // 
             this.labelControl5.Appearance.ForeColor = System.Drawing.Color.Red;
             this.labelControl5.Appearance.Options.UseForeColor = true;
-            this.labelControl5.Location = new System.Drawing.Point(95, 32);
+            this.labelControl5.Location = new System.Drawing.Point(95, 39);
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(6, 13);
             this.labelControl5.TabIndex = 4;
@@ -180,7 +180,7 @@
             // 
             // labelControl6
             // 
-            this.labelControl6.Location = new System.Drawing.Point(10, 58);
+            this.labelControl6.Location = new System.Drawing.Point(10, 65);
             this.labelControl6.Name = "labelControl6";
             this.labelControl6.Size = new System.Drawing.Size(66, 13);
             this.labelControl6.TabIndex = 5;
@@ -190,7 +190,7 @@
             // 
             this.labelControl7.Appearance.ForeColor = System.Drawing.Color.Red;
             this.labelControl7.Appearance.Options.UseForeColor = true;
-            this.labelControl7.Location = new System.Drawing.Point(95, 55);
+            this.labelControl7.Location = new System.Drawing.Point(95, 65);
             this.labelControl7.Name = "labelControl7";
             this.labelControl7.Size = new System.Drawing.Size(6, 13);
             this.labelControl7.TabIndex = 6;
@@ -198,7 +198,7 @@
             // 
             // labelControl8
             // 
-            this.labelControl8.Location = new System.Drawing.Point(10, 81);
+            this.labelControl8.Location = new System.Drawing.Point(10, 91);
             this.labelControl8.Name = "labelControl8";
             this.labelControl8.Size = new System.Drawing.Size(48, 13);
             this.labelControl8.TabIndex = 7;
@@ -208,32 +208,22 @@
             // 
             this.labelControl9.Appearance.ForeColor = System.Drawing.Color.Red;
             this.labelControl9.Appearance.Options.UseForeColor = true;
-            this.labelControl9.Location = new System.Drawing.Point(95, 78);
+            this.labelControl9.Location = new System.Drawing.Point(95, 91);
             this.labelControl9.Name = "labelControl9";
             this.labelControl9.Size = new System.Drawing.Size(6, 13);
             this.labelControl9.TabIndex = 8;
             this.labelControl9.Text = "*";
             // 
-            // labelControl10
-            // 
-            this.labelControl10.Appearance.ForeColor = System.Drawing.Color.Red;
-            this.labelControl10.Appearance.Options.UseForeColor = true;
-            this.labelControl10.Location = new System.Drawing.Point(95, 101);
-            this.labelControl10.Name = "labelControl10";
-            this.labelControl10.Size = new System.Drawing.Size(6, 13);
-            this.labelControl10.TabIndex = 9;
-            this.labelControl10.Text = "*";
-            // 
             // NameText
             // 
-            this.NameText.Location = new System.Drawing.Point(107, 32);
+            this.NameText.Location = new System.Drawing.Point(107, 36);
             this.NameText.Name = "NameText";
             this.NameText.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NameText.Properties.Appearance.Options.UseFont = true;
             this.NameText.Properties.NullValuePrompt = "Adı daxil edin";
             this.NameText.Properties.NullValuePromptShowForEmptyValue = true;
             this.NameText.Size = new System.Drawing.Size(404, 20);
-            this.NameText.TabIndex = 10;
+            this.NameText.TabIndex = 1;
             // 
             // GroupNameLookUp
             // 
@@ -242,6 +232,9 @@
             this.GroupNameLookUp.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.GroupNameLookUp.Properties.ButtonsStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.GroupNameLookUp.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("ID", "ID"),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("NAME", "Name")});
             this.GroupNameLookUp.Properties.DisplayMember = "NAME";
             this.GroupNameLookUp.Properties.DropDownRows = 15;
             this.GroupNameLookUp.Properties.NullValuePrompt = "Sənədin qrupunu seçin";
@@ -252,22 +245,22 @@
             this.GroupNameLookUp.Properties.ValidateOnEnterKey = true;
             this.GroupNameLookUp.Properties.ValueMember = "ID";
             this.GroupNameLookUp.Size = new System.Drawing.Size(404, 20);
-            this.GroupNameLookUp.TabIndex = 11;
+            this.GroupNameLookUp.TabIndex = 0;
             this.GroupNameLookUp.EditValueChanged += new System.EventHandler(this.GroupNameLookUp_EditValueChanged);
             // 
             // CodeText
             // 
-            this.CodeText.Location = new System.Drawing.Point(107, 55);
+            this.CodeText.Location = new System.Drawing.Point(107, 62);
             this.CodeText.Name = "CodeText";
             this.CodeText.Properties.NullValuePrompt = "Yoxlama kodunu daxil edin";
             this.CodeText.Properties.NullValuePromptShowForEmptyValue = true;
             this.CodeText.Size = new System.Drawing.Size(404, 20);
-            this.CodeText.TabIndex = 12;
+            this.CodeText.TabIndex = 2;
             // 
             // PersonTypeLookUp
             // 
             this.PersonTypeLookUp.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.PersonTypeLookUp.Location = new System.Drawing.Point(107, 78);
+            this.PersonTypeLookUp.Location = new System.Drawing.Point(107, 88);
             this.PersonTypeLookUp.Name = "PersonTypeLookUp";
             this.PersonTypeLookUp.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -282,14 +275,14 @@
             this.PersonTypeLookUp.Properties.ValidateOnEnterKey = true;
             this.PersonTypeLookUp.Properties.ValueMember = "ID";
             this.PersonTypeLookUp.Size = new System.Drawing.Size(115, 20);
-            this.PersonTypeLookUp.TabIndex = 13;
+            this.PersonTypeLookUp.TabIndex = 3;
             this.PersonTypeLookUp.EditValueChanged += new System.EventHandler(this.PersonTypeLookUp_EditValueChanged);
             // 
             // NoResidentRadioGroup
             // 
             this.NoResidentRadioGroup.Cursor = System.Windows.Forms.Cursors.Hand;
             this.NoResidentRadioGroup.EditValue = ((short)(0));
-            this.NoResidentRadioGroup.Location = new System.Drawing.Point(107, 101);
+            this.NoResidentRadioGroup.Location = new System.Drawing.Point(107, 113);
             this.NoResidentRadioGroup.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.NoResidentRadioGroup.Name = "NoResidentRadioGroup";
             this.NoResidentRadioGroup.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
@@ -308,13 +301,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.BCancel;
-            this.ClientSize = new System.Drawing.Size(521, 179);
+            this.ClientSize = new System.Drawing.Size(521, 197);
             this.Controls.Add(this.NoResidentRadioGroup);
             this.Controls.Add(this.PersonTypeLookUp);
             this.Controls.Add(this.CodeText);
             this.Controls.Add(this.GroupNameLookUp);
             this.Controls.Add(this.NameText);
-            this.Controls.Add(this.labelControl10);
             this.Controls.Add(this.labelControl9);
             this.Controls.Add(this.labelControl8);
             this.Controls.Add(this.labelControl7);
@@ -362,7 +354,6 @@
         private DevExpress.XtraEditors.LabelControl labelControl7;
         private DevExpress.XtraEditors.LabelControl labelControl8;
         private DevExpress.XtraEditors.LabelControl labelControl9;
-        private DevExpress.XtraEditors.LabelControl labelControl10;
         private DevExpress.XtraEditors.TextEdit NameText;
         private DevExpress.XtraEditors.LookUpEdit GroupNameLookUp;
         private DevExpress.XtraEditors.TextEdit CodeText;

@@ -14,7 +14,7 @@ using ELMS.Class.DataAccess;
 using static ELMS.Class.Enum;
 
 
-namespace ELMS.Forms.General
+namespace ELMS.Forms.Dictionaries
 {
     public partial class FCardIssuingAddEdit : DevExpress.XtraEditors.XtraForm
     {
@@ -41,10 +41,8 @@ namespace ELMS.Forms.General
 
         private void FCardIssuingAddEdit_Load(object sender, EventArgs e)
         {
-
             if (TransactionType == TransactionTypeEnum.Update)
             {
-
                 this.Text = "Orqanların düzəliş edilməsi";
                 GlobalProcedures.Lock_or_UnLock_UserID("ELMS_USER.CARD_ISSUING", GlobalVariables.V_UserID, "WHERE ID = " + CardIssuingID + " AND USED_USER_ID = -1");
                 LoadDetails();
@@ -66,30 +64,7 @@ namespace ELMS.Forms.General
                 ComponentEnabled(CurrentStatus);
             }
             else
-                this.Text = "Orqanların əlavə edilməsi";
-            //if (TransactionName == "EDIT")
-            //{
-            //    GlobalProcedures.Lock_or_UnLock_UserID("COMS_USER.CARD_ISSUING", GlobalVariables.V_UserID, "WHERE ID = " + IssuingID + " AND USED_USER_ID = -1");
-            //    lstIssuing = CardIssuingDAL.SelectCardIssuingByID(int.Parse(IssuingID)).ToList<CardIssuing>();
-            //    IssuingUsedUserID = lstIssuing.First().USED_USER_ID;
-            //    IssuingUsed = (IssuingUsedUserID > 0);
-
-            //    if (IssuingUsed)
-            //    {
-            //        if (GlobalVariables.V_UserID != IssuingUsedUserID)
-            //        {
-            //            string used_user_name = GlobalVariables.lstUsers.Find(u => u.ID == IssuingUsedUserID).FULLNAME;
-            //            XtraMessageBox.Show("Seçilmiş orqanın adı hal-hazırda " + used_user_name + " tərəfindən istifadə edilir. Onun məlumatları dəyişdirilə bilməz. Siz yalnız məlumatlara baxa bilərsiniz.", "Seçilmiş orqanın hal-hazırkı statusu", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            //            CurrentStatus = true;
-            //        }
-            //        else
-            //            CurrentStatus = false;
-            //    }
-            //    else
-            //        CurrentStatus = false;
-            //    ComponentEnabled(CurrentStatus);
-            //    LoadSeriesDetails();
-            //}
+                this.Text = "Orqanların əlavə edilməsi";            
         }
 
         private void ComponentEnabled(bool status)
@@ -97,13 +72,10 @@ namespace ELMS.Forms.General
             NameText.Enabled =
                 NoteText.Enabled =
                 BOK.Visible = !status;
-
         }
 
         private void LoadDetails()
-        {
-           
-
+        {       
             List<CardIssuing> lstCardIssuing = CardIssuingDAL.SelectCardIssuingByID(CardIssuingID).ToList<CardIssuing>();
             if (lstCardIssuing.Count > 0)
             {
@@ -117,7 +89,6 @@ namespace ELMS.Forms.General
 
         private bool ControlDetail()
         {
-
             bool b = false;
 
             if (NameText.Text.Length == 0)
@@ -132,20 +103,17 @@ namespace ELMS.Forms.General
                 b = true;
            
 
-            return b;
-            
+            return b;            
         }
 
         private void InsertDetail()
         {
             CardIssuing cardIssuing = new CardIssuing
             {
-
                 NAME = NameText.Text.Trim(),
                 NOTE = NoteText.Text.Trim()
             };
-            CardIssuingDAL.InsertCardIssuing(cardIssuing);
-            
+            CardIssuingDAL.InsertCardIssuing(cardIssuing);            
         }
 
         private void UpdateDetail()
@@ -162,13 +130,7 @@ namespace ELMS.Forms.General
             };
 
             CardIssuingDAL.UpdateCardIssuing(cardIssuing);
-        }
-
-        
-
-        
-
-        
+        }        
 
         private void BOK_Click(object sender, EventArgs e)
         {
@@ -179,11 +141,7 @@ namespace ELMS.Forms.General
                 else
                     UpdateDetail();
                 this.Close();
-            }
-
-            
-            
-            
+            }            
         }
 
         private void BCancel_Click(object sender, EventArgs e)

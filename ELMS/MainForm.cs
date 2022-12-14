@@ -242,7 +242,7 @@ namespace ELMS
 
         private void DictionaryBarButton_ItemClick(object sender, ItemClickEventArgs e)
         {
-            Forms.General.FDictionaries fd = new Forms.General.FDictionaries();
+            Forms.Dictionaries.FDictionaries fd = new Forms.Dictionaries.FDictionaries();
             fd.ShowDialog();
         }
     }

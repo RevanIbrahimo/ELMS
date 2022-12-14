@@ -11,10 +11,10 @@ namespace ELMS.Class.DataAccess
 {
     class CardIssuingDAL
     {
-        public static DataSet SelectCardIssuingByID(int? typeID)
+        public static DataSet SelectCardIssuingByID(int? issuingID)
         {
             string sql = null;
-            if (typeID == null)
+            if (issuingID == null)
                 sql = $@"SELECT C.ID,
                                  C.NAME,
                                  C.NOTE,
@@ -29,7 +29,7 @@ namespace ELMS.Class.DataAccess
                                  C.USED_USER_ID,
                                  C.ORDER_ID
                             FROM ELMS_USER.CARD_ISSUING C 
-                           WHERE C.ID = {typeID}";
+                           WHERE C.ID = {issuingID}";
 
             try
             {
@@ -84,7 +84,7 @@ namespace ELMS.Class.DataAccess
                 catch (Exception exx)
                 {
                     transaction.Rollback();
-                    GlobalProcedures.LogWrite("Sənəd bazaya daxil edilmədi.", commandSql, GlobalVariables.V_UserName, "CardIssuingDAL", "InsertCardIssuing", exx);
+                    GlobalProcedures.LogWrite("Sənədi verən orqan bazaya daxil edilmədi.", commandSql, GlobalVariables.V_UserName, "CardIssuingDAL", "InsertCardIssuing", exx);
                 }
                 finally
                 {
@@ -135,7 +135,7 @@ namespace ELMS.Class.DataAccess
                 catch (Exception exx)
                 {
                     transaction.Rollback();
-                    GlobalProcedures.LogWrite("Sənəd bazada dəyişdirilmədi.", commandSql, GlobalVariables.V_UserName, "CardIssuingDAL", "UpdateCardIssuing", exx);
+                    GlobalProcedures.LogWrite("Sənədi verən orqan bazada dəyişdirilmədi.", commandSql, GlobalVariables.V_UserName, "CardIssuingDAL", "UpdateCardIssuing", exx);
                 }
                 finally
                 {
@@ -202,7 +202,7 @@ namespace ELMS.Class.DataAccess
                 catch (Exception exx)
                 {
                     transaction.Rollback();
-                    GlobalProcedures.LogWrite("Sənəd bazadan silinmədi.", commandSql, GlobalVariables.V_UserName, "CardIssuingDAL", "DeleteCardIssuing", exx);
+                    GlobalProcedures.LogWrite("Sənədi verən orqan bazadan silinmədi.", commandSql, GlobalVariables.V_UserName, "CardIssuingDAL", "DeleteCardIssuing", exx);
                 }
                 finally
                 {

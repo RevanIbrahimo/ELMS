@@ -233,6 +233,16 @@ namespace ELMS.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap sexsiyyet_vesiqesi {
+            get {
+                object obj = ResourceManager.GetObject("sexsiyyet_vesiqesi", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap table_excel_32 {
             get {
                 object obj = ResourceManager.GetObject("table_excel_32", resourceCulture);

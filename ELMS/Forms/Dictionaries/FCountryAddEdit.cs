@@ -13,7 +13,7 @@ using ELMS.Class;
 using ELMS.Class.Tables;
 using ELMS.Class.DataAccess;
 
-namespace ELMS.Forms.General
+namespace ELMS.Forms.Dictionaries
 {
     public partial class FCountryAddEdit : DevExpress.XtraEditors.XtraForm
     {
@@ -42,7 +42,6 @@ namespace ELMS.Forms.General
         {
             if (TransactionType == TransactionTypeEnum.Update)
             {
-
                 this.Text = "Ölkələrin düzəliş edilməsi";
                 GlobalProcedures.Lock_or_UnLock_UserID("ELMS_USER.COUNTRY", GlobalVariables.V_UserID, "WHERE ID = " + CountryID + " AND USED_USER_ID = -1");
                 LoadDetails();
@@ -66,7 +65,6 @@ namespace ELMS.Forms.General
             else
                 this.Text = "Ölkələrin əlavə edilməsi";
         }
-
 
         private void LoadDetails()
         {
@@ -102,7 +100,6 @@ namespace ELMS.Forms.General
             }
         }
 
-
         private bool ControlDetail()
         {
             bool b = false;
@@ -118,11 +115,10 @@ namespace ELMS.Forms.General
             else
                 b = true;
 
-
             if (Alpha3CodeText.Text.Length == 0)
             {
                 Alpha3CodeText.BackColor = Color.Red;
-                GlobalProcedures.ShowErrorMessage("Alpha kodu daxil edilməyib.");
+                GlobalProcedures.ShowErrorMessage("Alpha3 kodu daxil edilməyib.");
                 Alpha3CodeText.Focus();
                 Alpha3CodeText.BackColor = GlobalFunctions.ElementColor();
                 return false;
@@ -136,8 +132,7 @@ namespace ELMS.Forms.General
         private void InsertDetail()
         {
             Countries countries = new Countries
-            {
-               
+            {               
                 NAME = NameText.Text.Trim(),
                 ALPHA3CODE = Alpha3CodeText.Text.Trim(),
                 NOTE = NoteText.Text.Trim()
@@ -161,6 +156,5 @@ namespace ELMS.Forms.General
 
             CountriesDAL.UpdateCountries(countries);
         }
-
     }
 }

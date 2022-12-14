@@ -13,6 +13,7 @@ using ELMS.Class;
 using DevExpress.XtraGrid.Views.Grid;
 using static ELMS.Class.Enum;
 using ELMS.Class.Tables;
+using ELMS.Forms.Customer;
 
 namespace ELMS.UserControls
 {
@@ -54,7 +55,12 @@ namespace ELMS.UserControls
                 EditBarButton.Enabled = DeleteBarButton.Enabled = HistroryBarButton.Enabled = false;
         }
 
-        void RefreshCustomer(string customerName)
+        //void RefreshCustomer(string customerName)
+        //{
+        //    LoadCustomerData();
+        //}
+
+         void RefreshCustomer()
         {
             LoadCustomerData();
         }
@@ -63,6 +69,13 @@ namespace ELMS.UserControls
         {
             topindex = CustomerGridView.TopRowIndex;
             old_row_id = CustomerGridView.FocusedRowHandle;
+            Forms.Customer.FCustomerAddEdit fc = new Forms.Customer.FCustomerAddEdit()
+            {
+                TransactionType = transaction,
+                CustomerID = id
+            };
+            fc.RefreshDataGridView += new FCustomerAddEdit.DoEvent(RefreshCustomer);
+            fc.ShowDialog();
             //Forms.Cards.FCardAddEdit fc = new Forms.Cards.FCardAddEdit()
             //{
             //    TransactionType = transaction,

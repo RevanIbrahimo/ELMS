@@ -13,7 +13,7 @@ using ELMS.Class;
 using ELMS.Class.Tables;
 using ELMS.Class.DataAccess;
 
-namespace ELMS.Forms.General
+namespace ELMS.Forms.Dictionaries
 {
     public partial class FDocumentTypeAddEdit : DevExpress.XtraEditors.XtraForm
     {
@@ -21,19 +21,7 @@ namespace ELMS.Forms.General
         {
             InitializeComponent();
         }
-
-        //public TransactionTypeEnum TransactionType;
-        //public int? TreatmentTypeID;
-
-        //public delegate void DoEvent();
-        //public event DoEvent RefreshDataGridView;
-
-        //private void FDocumentTypeAddEdit_Load(object sender, EventArgs e)
-        //{
-
-        //}
-
-
+               
         public TransactionTypeEnum TransactionType;
         public int? DocumentTypeID;
 
@@ -49,12 +37,10 @@ namespace ELMS.Forms.General
         {
             GlobalProcedures.FillLookUpEdit(GroupNameLookUp, DocumentGroupDAL.SelectDocumentGroupByID(null).Tables[0]);
 
-            GlobalProcedures.FillLookUpEdit(PersonTypeLookUp, PersonTypeDAL.SelectPersonTypeByID(null).Tables[0]);            
-
+            GlobalProcedures.FillLookUpEdit(PersonTypeLookUp, PersonTypeDAL.SelectPersonTypeByID(null).Tables[0]);  
 
             if (TransactionType == TransactionTypeEnum.Update)
             {
-
                 this.Text = "Sənədin düzəliş edilməsi";
                 GlobalProcedures.Lock_or_UnLock_UserID("ELMS_USER.DOCUMENT_TYPE", GlobalVariables.V_UserID, "WHERE ID = " + DocumentTypeID + " AND USED_USER_ID = -1");
                 LoadDetails();
@@ -76,7 +62,7 @@ namespace ELMS.Forms.General
                 ComponentEnabled(CurrentStatus);
             }
             else
-                this.Text = "İxtisasın əlavə edilməsi";
+                this.Text = "Sənədin əlavə edilməsi";
         }
 
         private void FDocumentTypeAddEdit_FormClosing(object sender, FormClosingEventArgs e)
@@ -96,7 +82,6 @@ namespace ELMS.Forms.General
                 CodeText.EditValue = documentType.PTTRN;
                 GlobalProcedures.LookUpEditValue(GroupNameLookUp, documentType.GROUP_NAME);
                 GlobalProcedures.LookUpEditValue(PersonTypeLookUp, documentType.PERSON_TYPE_NAME);
-
                 UsedUserID = documentType.USED_USER_ID;
                 orderID = documentType.ORDER_ID;
             }
@@ -194,7 +179,6 @@ namespace ELMS.Forms.General
             }
             else
                 b = true;
-
 
             if (CodeText.Text.Length == 0)
             {

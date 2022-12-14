@@ -1,6 +1,6 @@
-﻿namespace ELMS.Forms.General
+﻿namespace ELMS.Forms.Dictionaries
 {
-    partial class FCardIssuingAddEdit
+    partial class FProductAddEdit
     {
         /// <summary>
         /// Required designer variable.
@@ -31,7 +31,7 @@
             DevExpress.Utils.SuperToolTip superToolTip1 = new DevExpress.Utils.SuperToolTip();
             DevExpress.Utils.ToolTipTitleItem toolTipTitleItem1 = new DevExpress.Utils.ToolTipTitleItem();
             DevExpress.Utils.ToolTipItem toolTipItem1 = new DevExpress.Utils.ToolTipItem();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FCardIssuingAddEdit));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FProductAddEdit));
             DevExpress.Utils.SuperToolTip superToolTip2 = new DevExpress.Utils.SuperToolTip();
             DevExpress.Utils.ToolTipTitleItem toolTipTitleItem2 = new DevExpress.Utils.ToolTipTitleItem();
             DevExpress.Utils.ToolTipItem toolTipItem2 = new DevExpress.Utils.ToolTipItem();
@@ -88,11 +88,11 @@
             this.NameText.Name = "NameText";
             this.NameText.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NameText.Properties.Appearance.Options.UseFont = true;
-            this.NameText.Properties.NullValuePrompt = "Sənədi verən orqanın adını daxil edin";
+            this.NameText.Properties.NullValuePrompt = "Məhsulun adını daxil edin";
             this.NameText.Properties.NullValuePromptShowForEmptyValue = true;
             this.NameText.Size = new System.Drawing.Size(367, 20);
             superToolTip2.AllowHtmlText = DevExpress.Utils.DefaultBoolean.True;
-            toolTipTitleItem2.Text = "<color=255,0,0>Sənəd verən orqanın adı</color>";
+            toolTipTitleItem2.Text = "<color=255,0,0>Məhsulun adı</color>";
             toolTipItem2.Appearance.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
             toolTipItem2.Appearance.Options.UseImage = true;
             toolTipItem2.Image = ((System.Drawing.Image)(resources.GetObject("toolTipItem2.Image")));
@@ -207,7 +207,7 @@
             this.labelControl3.TabIndex = 207;
             this.labelControl3.Text = "*";
             // 
-            // FCardIssuingAddEdit
+            // FProductAddEdit
             // 
             this.AcceptButton = this.BOK;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -223,13 +223,13 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "FCardIssuingAddEdit";
+            this.Name = "FProductAddEdit";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Sənədi verən orqanın adının əlavə/düzəliş edilməsi";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FCardIssuingAddEdit_FormClosing);
-            this.Load += new System.EventHandler(this.FCardIssuingAddEdit_Load);
+            this.Text = "Məhsulların adının əlavə/düzəliş edilməsi";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FProductAddEdit_FormClosing);
+            this.Load += new System.EventHandler(this.FProductAddEdit_Load);
             ((System.ComponentModel.ISupportInitialize)(this.NoteText.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.NameText.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PanelOption)).EndInit();
