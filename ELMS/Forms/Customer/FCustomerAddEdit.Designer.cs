@@ -29,16 +29,16 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.Utils.SuperToolTip superToolTip3 = new DevExpress.Utils.SuperToolTip();
-            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem4 = new DevExpress.Utils.ToolTipTitleItem();
-            DevExpress.Utils.ToolTipItem toolTipItem3 = new DevExpress.Utils.ToolTipItem();
-            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem5 = new DevExpress.Utils.ToolTipTitleItem();
             DevExpress.Utils.SuperToolTip superToolTip1 = new DevExpress.Utils.SuperToolTip();
             DevExpress.Utils.ToolTipTitleItem toolTipTitleItem1 = new DevExpress.Utils.ToolTipTitleItem();
             DevExpress.Utils.ToolTipItem toolTipItem1 = new DevExpress.Utils.ToolTipItem();
+            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem2 = new DevExpress.Utils.ToolTipTitleItem();
+            DevExpress.Utils.SuperToolTip superToolTip2 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem3 = new DevExpress.Utils.ToolTipTitleItem();
+            DevExpress.Utils.ToolTipItem toolTipItem2 = new DevExpress.Utils.ToolTipItem();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FCustomerAddEdit));
-            ManiXButton.Office2010Red office2010Red2 = new ManiXButton.Office2010Red();
-            ManiXButton.Office2010Blue office2010Blue2 = new ManiXButton.Office2010Blue();
+            ManiXButton.Office2010Red office2010Red1 = new ManiXButton.Office2010Red();
+            ManiXButton.Office2010Blue office2010Blue1 = new ManiXButton.Office2010Blue();
             this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
             this.behaviorManager1 = new DevExpress.Utils.Behaviors.BehaviorManager(this.components);
             this.PersonalDetailsGroupBox = new DevExpress.XtraEditors.GroupControl();
@@ -96,16 +96,25 @@
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.PhoneTab = new DevExpress.XtraTab.XtraTabPage();
-            this.NumberText = new DevExpress.XtraEditors.TextEdit();
-            this.NumberLabel = new DevExpress.XtraEditors.LabelControl();
-            this.DescriptionLookUp = new DevExpress.XtraEditors.LookUpEdit();
-            this.DescriptionLabel = new DevExpress.XtraEditors.LabelControl();
             this.WorkTab = new DevExpress.XtraTab.XtraTabPage();
             this.RelativeTab = new DevExpress.XtraTab.XtraTabPage();
             this.PanelOption = new DevExpress.XtraEditors.PanelControl();
             this.BCancel = new ManiXButton.XButton();
             this.BOK = new ManiXButton.XButton();
             this.labelControl12 = new DevExpress.XtraEditors.LabelControl();
+            this.PhoneStandaloneBarDockControl = new DevExpress.XtraBars.StandaloneBarDockControl();
+            this.PhoneBarManager = new DevExpress.XtraBars.BarManager(this.components);
+            this.barDockControl1 = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControl2 = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControl3 = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControl4 = new DevExpress.XtraBars.BarDockControl();
+            this.PhoneBar = new DevExpress.XtraBars.Bar();
+            this.NewPhoneBarButton = new DevExpress.XtraBars.BarButtonItem();
+            this.EditPhoneBarButton = new DevExpress.XtraBars.BarButtonItem();
+            this.DeletePhoneBarButton = new DevExpress.XtraBars.BarButtonItem();
+            this.RefreshPhoneBarButton = new DevExpress.XtraBars.BarButtonItem();
+            this.PhoneGridControl = new DevExpress.XtraGrid.GridControl();
+            this.PhoneGridView = new DevExpress.XtraGrid.Views.Grid.GridView();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PersonalDetailsGroupBox)).BeginInit();
             this.PersonalDetailsGroupBox.SuspendLayout();
@@ -129,10 +138,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.DocumentGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DocumentBarManager)).BeginInit();
             this.PhoneTab.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.NumberText.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DescriptionLookUp.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PanelOption)).BeginInit();
             this.PanelOption.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PhoneBarManager)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PhoneGridControl)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PhoneGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // PersonalDetailsGroupBox
@@ -266,15 +276,15 @@
             this.CustomerPictureBox.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
             this.CustomerPictureBox.Properties.ZoomAccelerationFactor = 1D;
             this.CustomerPictureBox.Size = new System.Drawing.Size(139, 162);
-            superToolTip3.AllowHtmlText = DevExpress.Utils.DefaultBoolean.True;
-            toolTipTitleItem4.Text = "<color=255,0,0>Müştərinin şəkili</color>";
-            toolTipItem3.LeftIndent = 6;
-            toolTipItem3.Text = "Müştərinin şəkilini göstərmək üçün nəzərdə tutulub.";
-            toolTipTitleItem5.LeftIndent = 6;
-            superToolTip3.Items.Add(toolTipTitleItem4);
-            superToolTip3.Items.Add(toolTipItem3);
-            superToolTip3.Items.Add(toolTipTitleItem5);
-            this.CustomerPictureBox.SuperTip = superToolTip3;
+            superToolTip1.AllowHtmlText = DevExpress.Utils.DefaultBoolean.True;
+            toolTipTitleItem1.Text = "<color=255,0,0>Müştərinin şəkili</color>";
+            toolTipItem1.LeftIndent = 6;
+            toolTipItem1.Text = "Müştərinin şəkilini göstərmək üçün nəzərdə tutulub.";
+            toolTipTitleItem2.LeftIndent = 6;
+            superToolTip1.Items.Add(toolTipTitleItem1);
+            superToolTip1.Items.Add(toolTipItem1);
+            superToolTip1.Items.Add(toolTipTitleItem2);
+            this.CustomerPictureBox.SuperTip = superToolTip1;
             this.CustomerPictureBox.TabIndex = 18;
             // 
             // separatorControl1
@@ -426,13 +436,13 @@
             this.NameText.Properties.NullValuePrompt = "Soyadı, adı və atasının adını daxil edin";
             this.NameText.Properties.NullValuePromptShowForEmptyValue = true;
             this.NameText.Size = new System.Drawing.Size(496, 20);
-            toolTipTitleItem1.Text = "<color=255,0,0>Müştərinin tam adı</color>";
-            toolTipItem1.LeftIndent = 6;
-            toolTipItem1.Text = "Bu xanaya dırnaq işarəsi daxil etmək olmaz. Əgər daxil etsəz, müştərinin məlumatl" +
+            toolTipTitleItem3.Text = "<color=255,0,0>Müştərinin tam adı</color>";
+            toolTipItem2.LeftIndent = 6;
+            toolTipItem2.Text = "Bu xanaya dırnaq işarəsi daxil etmək olmaz. Əgər daxil etsəz, müştərinin məlumatl" +
     "arı <b><color=104,6,6>bazada saxlanılmayacaq</b></color>.\r\n";
-            superToolTip1.Items.Add(toolTipTitleItem1);
-            superToolTip1.Items.Add(toolTipItem1);
-            this.NameText.SuperTip = superToolTip1;
+            superToolTip2.Items.Add(toolTipTitleItem3);
+            superToolTip2.Items.Add(toolTipItem2);
+            this.NameText.SuperTip = superToolTip2;
             this.NameText.TabIndex = 0;
             this.NameText.ToolTip = "Yalnız hərf yazmağınız tövsiyə olunur.";
             // 
@@ -630,6 +640,7 @@
             this.DocumentBarManager.DockControls.Add(this.barDockControlLeft);
             this.DocumentBarManager.DockControls.Add(this.barDockControlRight);
             this.DocumentBarManager.DockControls.Add(this.DocumentStandaloneBarDockControl);
+            this.DocumentBarManager.DockControls.Add(this.PhoneStandaloneBarDockControl);
             this.DocumentBarManager.Form = this;
             this.DocumentBarManager.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.NewDocumentBarButton,
@@ -738,56 +749,22 @@
             // 
             // PhoneTab
             // 
-            this.PhoneTab.Controls.Add(this.NumberText);
-            this.PhoneTab.Controls.Add(this.NumberLabel);
-            this.PhoneTab.Controls.Add(this.DescriptionLookUp);
-            this.PhoneTab.Controls.Add(this.DescriptionLabel);
+            this.PhoneTab.Controls.Add(this.PhoneGridControl);
+            this.PhoneTab.Controls.Add(this.PhoneStandaloneBarDockControl);
             this.PhoneTab.Name = "PhoneTab";
-            this.PhoneTab.Size = new System.Drawing.Size(849, 242);
+            this.PhoneTab.Size = new System.Drawing.Size(849, 264);
             this.PhoneTab.Text = "Telefonlar";
-            // 
-            // NumberText
-            // 
-            this.NumberText.Location = new System.Drawing.Point(54, 52);
-            this.NumberText.Name = "NumberText";
-            this.NumberText.Size = new System.Drawing.Size(100, 20);
-            this.NumberText.TabIndex = 3;
-            // 
-            // NumberLabel
-            // 
-            this.NumberLabel.Location = new System.Drawing.Point(9, 55);
-            this.NumberLabel.Name = "NumberLabel";
-            this.NumberLabel.Size = new System.Drawing.Size(31, 13);
-            this.NumberLabel.TabIndex = 2;
-            this.NumberLabel.Text = "Nömrə";
-            // 
-            // DescriptionLookUp
-            // 
-            this.DescriptionLookUp.Location = new System.Drawing.Point(54, 18);
-            this.DescriptionLookUp.Name = "DescriptionLookUp";
-            this.DescriptionLookUp.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.DescriptionLookUp.Size = new System.Drawing.Size(100, 20);
-            this.DescriptionLookUp.TabIndex = 1;
-            // 
-            // DescriptionLabel
-            // 
-            this.DescriptionLabel.Location = new System.Drawing.Point(9, 21);
-            this.DescriptionLabel.Name = "DescriptionLabel";
-            this.DescriptionLabel.Size = new System.Drawing.Size(29, 13);
-            this.DescriptionLabel.TabIndex = 0;
-            this.DescriptionLabel.Text = "Təsvir";
             // 
             // WorkTab
             // 
             this.WorkTab.Name = "WorkTab";
-            this.WorkTab.Size = new System.Drawing.Size(849, 242);
+            this.WorkTab.Size = new System.Drawing.Size(849, 264);
             this.WorkTab.Text = "İş yeri";
             // 
             // RelativeTab
             // 
             this.RelativeTab.Name = "RelativeTab";
-            this.RelativeTab.Size = new System.Drawing.Size(849, 242);
+            this.RelativeTab.Size = new System.Drawing.Size(849, 264);
             this.RelativeTab.Text = "Qohumlar";
             // 
             // PanelOption
@@ -804,24 +781,24 @@
             // BCancel
             // 
             this.BCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            office2010Red2.BorderColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(72)))), ((int)(((byte)(161)))));
-            office2010Red2.BorderColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(135)))), ((int)(((byte)(228)))));
-            office2010Red2.ButtonMouseOverColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(199)))), ((int)(((byte)(87)))));
-            office2010Red2.ButtonMouseOverColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(243)))), ((int)(((byte)(215)))));
-            office2010Red2.ButtonMouseOverColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(225)))), ((int)(((byte)(137)))));
-            office2010Red2.ButtonMouseOverColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(249)))), ((int)(((byte)(224)))));
-            office2010Red2.ButtonNormalColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(77)))), ((int)(((byte)(45)))));
-            office2010Red2.ButtonNormalColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(148)))), ((int)(((byte)(64)))));
-            office2010Red2.ButtonNormalColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(77)))), ((int)(((byte)(45)))));
-            office2010Red2.ButtonNormalColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(148)))), ((int)(((byte)(64)))));
-            office2010Red2.ButtonSelectedColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(199)))), ((int)(((byte)(87)))));
-            office2010Red2.ButtonSelectedColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(243)))), ((int)(((byte)(215)))));
-            office2010Red2.ButtonSelectedColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(229)))), ((int)(((byte)(117)))));
-            office2010Red2.ButtonSelectedColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(216)))), ((int)(((byte)(107)))));
-            office2010Red2.HoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
-            office2010Red2.SelectedTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
-            office2010Red2.TextColor = System.Drawing.Color.White;
-            this.BCancel.ColorTable = office2010Red2;
+            office2010Red1.BorderColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(72)))), ((int)(((byte)(161)))));
+            office2010Red1.BorderColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(135)))), ((int)(((byte)(228)))));
+            office2010Red1.ButtonMouseOverColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(199)))), ((int)(((byte)(87)))));
+            office2010Red1.ButtonMouseOverColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(243)))), ((int)(((byte)(215)))));
+            office2010Red1.ButtonMouseOverColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(225)))), ((int)(((byte)(137)))));
+            office2010Red1.ButtonMouseOverColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(249)))), ((int)(((byte)(224)))));
+            office2010Red1.ButtonNormalColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(77)))), ((int)(((byte)(45)))));
+            office2010Red1.ButtonNormalColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(148)))), ((int)(((byte)(64)))));
+            office2010Red1.ButtonNormalColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(77)))), ((int)(((byte)(45)))));
+            office2010Red1.ButtonNormalColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(148)))), ((int)(((byte)(64)))));
+            office2010Red1.ButtonSelectedColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(199)))), ((int)(((byte)(87)))));
+            office2010Red1.ButtonSelectedColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(243)))), ((int)(((byte)(215)))));
+            office2010Red1.ButtonSelectedColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(229)))), ((int)(((byte)(117)))));
+            office2010Red1.ButtonSelectedColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(216)))), ((int)(((byte)(107)))));
+            office2010Red1.HoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
+            office2010Red1.SelectedTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
+            office2010Red1.TextColor = System.Drawing.Color.White;
+            this.BCancel.ColorTable = office2010Red1;
             this.BCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.BCancel.Location = new System.Drawing.Point(796, 13);
             this.BCancel.Name = "BCancel";
@@ -834,24 +811,24 @@
             // BOK
             // 
             this.BOK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            office2010Blue2.BorderColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(72)))), ((int)(((byte)(161)))));
-            office2010Blue2.BorderColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(135)))), ((int)(((byte)(228)))));
-            office2010Blue2.ButtonMouseOverColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(199)))), ((int)(((byte)(87)))));
-            office2010Blue2.ButtonMouseOverColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(243)))), ((int)(((byte)(215)))));
-            office2010Blue2.ButtonMouseOverColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(225)))), ((int)(((byte)(137)))));
-            office2010Blue2.ButtonMouseOverColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(249)))), ((int)(((byte)(224)))));
-            office2010Blue2.ButtonNormalColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(72)))), ((int)(((byte)(161)))));
-            office2010Blue2.ButtonNormalColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(135)))), ((int)(((byte)(228)))));
-            office2010Blue2.ButtonNormalColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(97)))), ((int)(((byte)(181)))));
-            office2010Blue2.ButtonNormalColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(125)))), ((int)(((byte)(219)))));
-            office2010Blue2.ButtonSelectedColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(199)))), ((int)(((byte)(87)))));
-            office2010Blue2.ButtonSelectedColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(243)))), ((int)(((byte)(215)))));
-            office2010Blue2.ButtonSelectedColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(229)))), ((int)(((byte)(117)))));
-            office2010Blue2.ButtonSelectedColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(216)))), ((int)(((byte)(107)))));
-            office2010Blue2.HoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
-            office2010Blue2.SelectedTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
-            office2010Blue2.TextColor = System.Drawing.Color.White;
-            this.BOK.ColorTable = office2010Blue2;
+            office2010Blue1.BorderColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(72)))), ((int)(((byte)(161)))));
+            office2010Blue1.BorderColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(135)))), ((int)(((byte)(228)))));
+            office2010Blue1.ButtonMouseOverColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(199)))), ((int)(((byte)(87)))));
+            office2010Blue1.ButtonMouseOverColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(243)))), ((int)(((byte)(215)))));
+            office2010Blue1.ButtonMouseOverColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(225)))), ((int)(((byte)(137)))));
+            office2010Blue1.ButtonMouseOverColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(249)))), ((int)(((byte)(224)))));
+            office2010Blue1.ButtonNormalColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(72)))), ((int)(((byte)(161)))));
+            office2010Blue1.ButtonNormalColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(135)))), ((int)(((byte)(228)))));
+            office2010Blue1.ButtonNormalColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(97)))), ((int)(((byte)(181)))));
+            office2010Blue1.ButtonNormalColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(125)))), ((int)(((byte)(219)))));
+            office2010Blue1.ButtonSelectedColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(199)))), ((int)(((byte)(87)))));
+            office2010Blue1.ButtonSelectedColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(243)))), ((int)(((byte)(215)))));
+            office2010Blue1.ButtonSelectedColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(229)))), ((int)(((byte)(117)))));
+            office2010Blue1.ButtonSelectedColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(216)))), ((int)(((byte)(107)))));
+            office2010Blue1.HoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
+            office2010Blue1.SelectedTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
+            office2010Blue1.TextColor = System.Drawing.Color.White;
+            this.BOK.ColorTable = office2010Blue1;
             this.BOK.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BOK.Location = new System.Drawing.Point(715, 13);
             this.BOK.Name = "BOK";
@@ -873,6 +850,133 @@
             this.labelControl12.TabIndex = 0;
             this.labelControl12.Text = "<color=255,0,0>*</color> - lu xanalar mütləq doldurulmalıdır";
             // 
+            // PhoneStandaloneBarDockControl
+            // 
+            this.PhoneStandaloneBarDockControl.CausesValidation = false;
+            this.PhoneStandaloneBarDockControl.Dock = System.Windows.Forms.DockStyle.Top;
+            this.PhoneStandaloneBarDockControl.Location = new System.Drawing.Point(0, 0);
+            this.PhoneStandaloneBarDockControl.Manager = this.DocumentBarManager;
+            this.PhoneStandaloneBarDockControl.Name = "PhoneStandaloneBarDockControl";
+            this.PhoneStandaloneBarDockControl.Size = new System.Drawing.Size(849, 25);
+            this.PhoneStandaloneBarDockControl.Text = "standaloneBarDockControl1";
+            // 
+            // PhoneBarManager
+            // 
+            this.PhoneBarManager.Bars.AddRange(new DevExpress.XtraBars.Bar[] {
+            this.PhoneBar});
+            this.PhoneBarManager.DockControls.Add(this.barDockControl1);
+            this.PhoneBarManager.DockControls.Add(this.barDockControl2);
+            this.PhoneBarManager.DockControls.Add(this.barDockControl3);
+            this.PhoneBarManager.DockControls.Add(this.barDockControl4);
+            this.PhoneBarManager.Form = this;
+            this.PhoneBarManager.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
+            this.NewPhoneBarButton,
+            this.EditPhoneBarButton,
+            this.DeletePhoneBarButton,
+            this.RefreshPhoneBarButton});
+            this.PhoneBarManager.MainMenu = this.PhoneBar;
+            this.PhoneBarManager.MaxItemId = 4;
+            // 
+            // barDockControl1
+            // 
+            this.barDockControl1.CausesValidation = false;
+            this.barDockControl1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.barDockControl1.Location = new System.Drawing.Point(0, 0);
+            this.barDockControl1.Manager = this.PhoneBarManager;
+            this.barDockControl1.Size = new System.Drawing.Size(885, 0);
+            // 
+            // barDockControl2
+            // 
+            this.barDockControl2.CausesValidation = false;
+            this.barDockControl2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.barDockControl2.Location = new System.Drawing.Point(0, 656);
+            this.barDockControl2.Manager = this.PhoneBarManager;
+            this.barDockControl2.Size = new System.Drawing.Size(885, 0);
+            // 
+            // barDockControl3
+            // 
+            this.barDockControl3.CausesValidation = false;
+            this.barDockControl3.Dock = System.Windows.Forms.DockStyle.Left;
+            this.barDockControl3.Location = new System.Drawing.Point(0, 0);
+            this.barDockControl3.Manager = this.PhoneBarManager;
+            this.barDockControl3.Size = new System.Drawing.Size(0, 656);
+            // 
+            // barDockControl4
+            // 
+            this.barDockControl4.CausesValidation = false;
+            this.barDockControl4.Dock = System.Windows.Forms.DockStyle.Right;
+            this.barDockControl4.Location = new System.Drawing.Point(885, 0);
+            this.barDockControl4.Manager = this.PhoneBarManager;
+            this.barDockControl4.Size = new System.Drawing.Size(0, 656);
+            // 
+            // PhoneBar
+            // 
+            this.PhoneBar.BarName = "Main menu";
+            this.PhoneBar.DockCol = 0;
+            this.PhoneBar.DockRow = 0;
+            this.PhoneBar.DockStyle = DevExpress.XtraBars.BarDockStyle.Standalone;
+            this.PhoneBar.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.NewPhoneBarButton),
+            new DevExpress.XtraBars.LinkPersistInfo(this.EditPhoneBarButton),
+            new DevExpress.XtraBars.LinkPersistInfo(this.DeletePhoneBarButton),
+            new DevExpress.XtraBars.LinkPersistInfo(this.RefreshPhoneBarButton)});
+            this.PhoneBar.OptionsBar.DrawBorder = false;
+            this.PhoneBar.OptionsBar.DrawDragBorder = false;
+            this.PhoneBar.OptionsBar.MultiLine = true;
+            this.PhoneBar.OptionsBar.UseWholeRow = true;
+            this.PhoneBar.StandaloneBarDockControl = this.PhoneStandaloneBarDockControl;
+            this.PhoneBar.Text = "Main menu";
+            // 
+            // NewPhoneBarButton
+            // 
+            this.NewPhoneBarButton.Caption = "Yeni";
+            this.NewPhoneBarButton.Id = 0;
+            this.NewPhoneBarButton.ImageOptions.Image = global::ELMS.Properties.Resources.plus_16;
+            this.NewPhoneBarButton.Name = "NewPhoneBarButton";
+            this.NewPhoneBarButton.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            // 
+            // EditPhoneBarButton
+            // 
+            this.EditPhoneBarButton.Caption = "Dəyiş";
+            this.EditPhoneBarButton.Id = 1;
+            this.EditPhoneBarButton.ImageOptions.Image = global::ELMS.Properties.Resources.edit_16;
+            this.EditPhoneBarButton.Name = "EditPhoneBarButton";
+            this.EditPhoneBarButton.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            // 
+            // DeletePhoneBarButton
+            // 
+            this.DeletePhoneBarButton.Caption = "Sil";
+            this.DeletePhoneBarButton.Id = 2;
+            this.DeletePhoneBarButton.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("DeletePhoneBarButton.ImageOptions.Image")));
+            this.DeletePhoneBarButton.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("DeletePhoneBarButton.ImageOptions.LargeImage")));
+            this.DeletePhoneBarButton.Name = "DeletePhoneBarButton";
+            this.DeletePhoneBarButton.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            // 
+            // RefreshPhoneBarButton
+            // 
+            this.RefreshPhoneBarButton.Caption = "Təzələ";
+            this.RefreshPhoneBarButton.Id = 3;
+            this.RefreshPhoneBarButton.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("RefreshPhoneBarButton.ImageOptions.Image")));
+            this.RefreshPhoneBarButton.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("RefreshPhoneBarButton.ImageOptions.LargeImage")));
+            this.RefreshPhoneBarButton.Name = "RefreshPhoneBarButton";
+            this.RefreshPhoneBarButton.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            // 
+            // PhoneGridControl
+            // 
+            this.PhoneGridControl.Location = new System.Drawing.Point(0, 31);
+            this.PhoneGridControl.MainView = this.PhoneGridView;
+            this.PhoneGridControl.MenuManager = this.PhoneBarManager;
+            this.PhoneGridControl.Name = "PhoneGridControl";
+            this.PhoneGridControl.Size = new System.Drawing.Size(400, 200);
+            this.PhoneGridControl.TabIndex = 1;
+            this.PhoneGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.PhoneGridView});
+            // 
+            // PhoneGridView
+            // 
+            this.PhoneGridView.GridControl = this.PhoneGridControl;
+            this.PhoneGridView.Name = "PhoneGridView";
+            // 
             // FCustomerAddEdit
             // 
             this.AcceptButton = this.BOK;
@@ -887,6 +991,10 @@
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
+            this.Controls.Add(this.barDockControl3);
+            this.Controls.Add(this.barDockControl4);
+            this.Controls.Add(this.barDockControl2);
+            this.Controls.Add(this.barDockControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -918,12 +1026,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.DocumentGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DocumentBarManager)).EndInit();
             this.PhoneTab.ResumeLayout(false);
-            this.PhoneTab.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.NumberText.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DescriptionLookUp.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PanelOption)).EndInit();
             this.PanelOption.ResumeLayout(false);
             this.PanelOption.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PhoneBarManager)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PhoneGridControl)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PhoneGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -972,10 +1080,6 @@
         private DevExpress.XtraTab.XtraTabPage RelativeTab;
         private ManiXButton.XButton BCancel;
         private ManiXButton.XButton BOK;
-        private DevExpress.XtraEditors.LookUpEdit DescriptionLookUp;
-        private DevExpress.XtraEditors.LabelControl DescriptionLabel;
-        private DevExpress.XtraEditors.TextEdit NumberText;
-        private DevExpress.XtraEditors.LabelControl NumberLabel;
         private DevExpress.XtraBars.StandaloneBarDockControl DocumentStandaloneBarDockControl;
         private DevExpress.XtraBars.BarManager DocumentBarManager;
         private DevExpress.XtraBars.Bar bar2;
@@ -998,5 +1102,18 @@
         private DevExpress.XtraGrid.Columns.GridColumn Document_IssueDate;
         private DevExpress.XtraGrid.Columns.GridColumn Document_ReliableDate;
         private DevExpress.XtraGrid.Columns.GridColumn Document_ID;
+        private DevExpress.XtraBars.StandaloneBarDockControl PhoneStandaloneBarDockControl;
+        private DevExpress.XtraBars.BarDockControl barDockControl3;
+        private DevExpress.XtraBars.BarManager PhoneBarManager;
+        private DevExpress.XtraBars.Bar PhoneBar;
+        private DevExpress.XtraBars.BarButtonItem NewPhoneBarButton;
+        private DevExpress.XtraBars.BarButtonItem EditPhoneBarButton;
+        private DevExpress.XtraBars.BarButtonItem DeletePhoneBarButton;
+        private DevExpress.XtraBars.BarButtonItem RefreshPhoneBarButton;
+        private DevExpress.XtraBars.BarDockControl barDockControl1;
+        private DevExpress.XtraBars.BarDockControl barDockControl2;
+        private DevExpress.XtraBars.BarDockControl barDockControl4;
+        private DevExpress.XtraGrid.GridControl PhoneGridControl;
+        private DevExpress.XtraGrid.Views.Grid.GridView PhoneGridView;
     }
 }
