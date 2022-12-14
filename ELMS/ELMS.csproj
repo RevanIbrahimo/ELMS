@@ -379,6 +379,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="management.ico" />
+    <None Include="Resources\sexsiyyet_vesiqesi.png" />
     <None Include="Resources\edit-16.png" />
     <None Include="Resources\plus-16.png" />
     <None Include="Resources\dictionary-32.png" />
