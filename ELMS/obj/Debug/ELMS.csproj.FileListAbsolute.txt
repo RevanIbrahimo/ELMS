@@ -305,3 +305,30 @@ F:\project\Sadiq\Elloni\ELMS\ELMS\obj\Debug\ELMS.csprojAssemblyReference.cache
 F:\project\Sadiq\Elloni\ELMS\ELMS\obj\Debug\ELMS.Forms.General.FDictionaries.resources
 F:\project\Sadiq\Elloni\ELMS\ELMS\obj\Debug\ELMS.Forms.General.FDocumentTypeAddEdit.resources
 F:\project\Sadiq\Elloni\ELMS\ELMS\obj\Debug\ELMS.Forms.General.FCountryAddEdit.resources
+C:\Users\user\Documents\Github\ELMS\ELMS\obj\Debug\ELMS.csprojAssemblyReference.cache
+C:\Users\user\Documents\Github\ELMS\ELMS\obj\Debug\ELMS.Forms.Customer.FCardAddEdit.resources
+C:\Users\user\Documents\Github\ELMS\ELMS\obj\Debug\ELMS.Forms.Customer.FCustomerAddEdit.resources
+C:\Users\user\Documents\Github\ELMS\ELMS\obj\Debug\ELMS.Forms.Dictionaries.FBranchAddEdit.resources
+C:\Users\user\Documents\Github\ELMS\ELMS\obj\Debug\ELMS.Forms.Dictionaries.FCardIssuingAddEdit.resources
+C:\Users\user\Documents\Github\ELMS\ELMS\obj\Debug\ELMS.Forms.Dictionaries.FCountryAddEdit.resources
+C:\Users\user\Documents\Github\ELMS\ELMS\obj\Debug\ELMS.Forms.Dictionaries.FDictionaries.resources
+C:\Users\user\Documents\Github\ELMS\ELMS\obj\Debug\ELMS.Forms.Dictionaries.FDocumentTypeAddEdit.resources
+C:\Users\user\Documents\Github\ELMS\ELMS\obj\Debug\ELMS.Forms.Dictionaries.FKindShipAddEdit.resources
+C:\Users\user\Documents\Github\ELMS\ELMS\obj\Debug\ELMS.Forms.Dictionaries.FPhoneDescriptionsAddEdit.resources
+C:\Users\user\Documents\Github\ELMS\ELMS\obj\Debug\ELMS.Forms.Dictionaries.FPhonePrefixAddEdit.resources
+C:\Users\user\Documents\Github\ELMS\ELMS\obj\Debug\ELMS.Forms.Dictionaries.FProductAddEdit.resources
+C:\Users\user\Documents\Github\ELMS\ELMS\obj\Debug\ELMS.Forms.Dictionaries.FProfessionAddEdit.resources
+C:\Users\user\Documents\Github\ELMS\ELMS\obj\Debug\ELMS.DentalSplashScreen.resources
+C:\Users\user\Documents\Github\ELMS\ELMS\obj\Debug\ELMS.MainForm.resources
+C:\Users\user\Documents\Github\ELMS\ELMS\obj\Debug\ELMS.FLoginSystem.resources
+C:\Users\user\Documents\Github\ELMS\ELMS\obj\Debug\ELMS.FPrintableCheck.resources
+C:\Users\user\Documents\Github\ELMS\ELMS\obj\Debug\ELMS.Properties.Resources.resources
+C:\Users\user\Documents\Github\ELMS\ELMS\obj\Debug\ELMS.UserControls.ConfirmationUserControl.resources
+C:\Users\user\Documents\Github\ELMS\ELMS\obj\Debug\ELMS.UserControls.ContractUserControl.resources
+C:\Users\user\Documents\Github\ELMS\ELMS\obj\Debug\ELMS.UserControls.CustomerUserControl.resources
+C:\Users\user\Documents\Github\ELMS\ELMS\obj\Debug\ELMS.UserControls.RegressionUserControl.resources
+C:\Users\user\Documents\Github\ELMS\ELMS\obj\Debug\ELMS.csproj.GenerateResource.cache
+C:\Users\user\Documents\Github\ELMS\ELMS\obj\Debug\Elloni Management System.exe.licenses
+C:\Users\user\Documents\Github\ELMS\ELMS\obj\Debug\ELMS.csproj.CoreCompileInputs.cache
+C:\Users\user\Documents\Github\ELMS\ELMS\obj\Debug\Elloni Management System.exe
+C:\Users\user\Documents\Github\ELMS\ELMS\obj\Debug\Elloni Management System.pdb

@@ -80,10 +80,16 @@
     </Compile>
     <Compile Include="Class\ComponentLocalization.cs" />
     <Compile Include="Class\DataAccess\BranchDAL.cs" />
+    <Compile Include="Class\DataAccess\CardIssuingDAL.cs" />
     <Compile Include="Class\DataAccess\CountriesDAL.cs" />
     <Compile Include="Class\DataAccess\DocumentGroupDAL.cs" />
     <Compile Include="Class\DataAccess\DocumentTypeDAL.cs" />
+    <Compile Include="Class\DataAccess\KindShipDAL.cs" />
     <Compile Include="Class\DataAccess\PersonTypeDAL.cs" />
+    <Compile Include="Class\DataAccess\PhoneDescriptionDAL.cs" />
+    <Compile Include="Class\DataAccess\PhonePrefixDAL.cs" />
+    <Compile Include="Class\DataAccess\ProductDAL.cs" />
+    <Compile Include="Class\DataAccess\ProfessionDAL.cs" />
     <Compile Include="Class\DataAccess\UserDAL.cs" />
     <Compile Include="Class\Enum.cs" />
     <Compile Include="Class\Extensions.cs" />
@@ -92,41 +98,101 @@
     <Compile Include="Class\GlobalVariables.cs" />
     <Compile Include="Class\RegexUtilities.cs" />
     <Compile Include="Class\Tables\Branch.cs" />
+    <Compile Include="Class\Tables\CardIssuing.cs" />
     <Compile Include="Class\Tables\ColumnPrintable.cs" />
     <Compile Include="Class\Tables\Countries.cs" />
     <Compile Include="Class\Tables\DocumentGroup.cs" />
     <Compile Include="Class\Tables\DocumentType.cs" />
+    <Compile Include="Class\Tables\KindShip.cs" />
     <Compile Include="Class\Tables\PersonType.cs" />
+    <Compile Include="Class\Tables\PhoneDescription.cs" />
+    <Compile Include="Class\Tables\PhonePrefix.cs" />
+    <Compile Include="Class\Tables\Product.cs" />
+    <Compile Include="Class\Tables\Profession.cs" />
     <Compile Include="Class\Tables\Users.cs" />
-    <Compile Include="Forms\General\FCountryAddEdit.cs">
+    <Compile Include="Forms\Customer\FCardAddEdit.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\General\FCountryAddEdit.Designer.cs">
+    <Compile Include="Forms\Customer\FCardAddEdit.Designer.cs">
+      <DependentUpon>FCardAddEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Customer\FCustomerAddEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Customer\FCustomerAddEdit.Designer.cs">
+      <DependentUpon>FCustomerAddEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Dictionaries\FBranchAddEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Dictionaries\FBranchAddEdit.Designer.cs">
+      <DependentUpon>FBranchAddEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Dictionaries\FCardIssuingAddEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Dictionaries\FCardIssuingAddEdit.Designer.cs">
+      <DependentUpon>FCardIssuingAddEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Dictionaries\FCountryAddEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Dictionaries\FCountryAddEdit.Designer.cs">
       <DependentUpon>FCountryAddEdit.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\General\FDictionaries.cs">
+    <Compile Include="Forms\Dictionaries\FDictionaries.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\General\FDictionaries.Designer.cs">
+    <Compile Include="Forms\Dictionaries\FDictionaries.Designer.cs">
       <DependentUpon>FDictionaries.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\General\FDocumentTypeAddEdit.cs">
+    <Compile Include="Forms\Dictionaries\FDocumentTypeAddEdit.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\General\FDocumentTypeAddEdit.Designer.cs">
+    <Compile Include="Forms\Dictionaries\FDocumentTypeAddEdit.Designer.cs">
       <DependentUpon>FDocumentTypeAddEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Dictionaries\FKindShipAddEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Dictionaries\FKindShipAddEdit.Designer.cs">
+      <DependentUpon>FKindShipAddEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Dictionaries\FPhoneDescriptionsAddEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Dictionaries\FPhoneDescriptionsAddEdit.Designer.cs">
+      <DependentUpon>FPhoneDescriptionsAddEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Dictionaries\FPhonePrefixAddEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Dictionaries\FPhonePrefixAddEdit.Designer.cs">
+      <DependentUpon>FPhonePrefixAddEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Dictionaries\FProductAddEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Dictionaries\FProductAddEdit.Designer.cs">
+      <DependentUpon>FProductAddEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Dictionaries\FProfessionAddEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Dictionaries\FProfessionAddEdit.Designer.cs">
+      <DependentUpon>FProfessionAddEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\General\ELMSSplashScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\General\ELMSSplashScreen.Designer.cs">
+      <DependentUpon>ELMSSplashScreen.cs</DependentUpon>
     </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\General\DentalSplashScreen.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\General\DentalSplashScreen.Designer.cs">
-      <DependentUpon>DentalSplashScreen.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\General\FLoginSystem.cs">
       <SubType>Form</SubType>
@@ -142,6 +208,18 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserControls\ConfirmationUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ConfirmationUserControl.Designer.cs">
+      <DependentUpon>ConfirmationUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ContractUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ContractUserControl.Designer.cs">
+      <DependentUpon>ContractUserControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\CustomerUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -154,20 +232,53 @@
     <Compile Include="UserControls\OrderUserControl.Designer.cs">
       <DependentUpon>OrderUserControl.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Forms\General\FCountryAddEdit.resx">
+    <Compile Include="UserControls\RegressionUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\RegressionUserControl.Designer.cs">
+      <DependentUpon>RegressionUserControl.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Forms\Customer\FCardAddEdit.resx">
+      <DependentUpon>FCardAddEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Customer\FCustomerAddEdit.resx">
+      <DependentUpon>FCustomerAddEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Dictionaries\FBranchAddEdit.resx">
+      <DependentUpon>FBranchAddEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Dictionaries\FCardIssuingAddEdit.resx">
+      <DependentUpon>FCardIssuingAddEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Dictionaries\FCountryAddEdit.resx">
       <DependentUpon>FCountryAddEdit.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\General\FDictionaries.resx">
+    <EmbeddedResource Include="Forms\Dictionaries\FDictionaries.resx">
       <DependentUpon>FDictionaries.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\General\FDocumentTypeAddEdit.resx">
+    <EmbeddedResource Include="Forms\Dictionaries\FDocumentTypeAddEdit.resx">
       <DependentUpon>FDocumentTypeAddEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Dictionaries\FKindShipAddEdit.resx">
+      <DependentUpon>FKindShipAddEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Dictionaries\FPhoneDescriptionsAddEdit.resx">
+      <DependentUpon>FPhoneDescriptionsAddEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Dictionaries\FPhonePrefixAddEdit.resx">
+      <DependentUpon>FPhonePrefixAddEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Dictionaries\FProductAddEdit.resx">
+      <DependentUpon>FProductAddEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Dictionaries\FProfessionAddEdit.resx">
+      <DependentUpon>FProfessionAddEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\General\ELMSSplashScreen.resx">
+      <DependentUpon>ELMSSplashScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\General\DentalSplashScreen.resx">
-      <DependentUpon>DentalSplashScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\General\FLoginSystem.resx">
       <DependentUpon>FLoginSystem.cs</DependentUpon>
@@ -186,8 +297,17 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="UserControls\ConfirmationUserControl.resx">
+      <DependentUpon>ConfirmationUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ContractUserControl.resx">
+      <DependentUpon>ContractUserControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\CustomerUserControl.resx">
       <DependentUpon>CustomerUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\RegressionUserControl.resx">
+      <DependentUpon>RegressionUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.config">
       <SubType>Designer</SubType>
