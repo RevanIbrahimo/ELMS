@@ -98,5 +98,12 @@ namespace ELMS.Class
             Left = 2,
             Right = 3
         }
+
+        public enum DocumentTypeEnum
+        {
+            KohneSexsiyyetVesiqesi = 43,
+            YeniSexsiyyetVesiqesi = 94,
+            VoenFizikiSexs = 9
+        }
     }
 }

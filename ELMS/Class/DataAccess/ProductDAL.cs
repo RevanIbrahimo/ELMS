@@ -9,15 +9,27 @@ using System.Threading.Tasks;
 
 namespace ELMS.Class.DataAccess
 {
-    public class BranchDAL
+    class ProductDAL
     {
-        public static DataSet SelectBranchByID(int? ID)
+        public static DataSet SelectProductByID(int? issuingID)
         {
             string sql = null;
-            if (ID == null)
-                sql = "SELECT ID,NAME,LEADING_NAME,ADDRESS,PHONE,NOTE,USED_USER_ID,ORDER_ID FROM ELMS_USER.BRANCH ORDER BY ORDER_ID";
+            if (issuingID == null)
+                sql = $@"SELECT C.ID,
+                                 C.NAME,
+                                 C.NOTE,
+                                 C.USED_USER_ID,
+                                 C.ORDER_ID
+                            FROM ELMS_USER.PRODUCT C
+                            ORDER BY C.ORDER_ID";
             else
-                sql = $@"SELECT ID,NAME,LEADING_NAME,ADDRESS,PHONE,NOTE,USED_USER_ID,ORDER_ID FROM ELMS_USER.BRANCH WHERE ID = {ID}";
+                sql = $@"SELECT C.ID,
+                                 C.NAME,
+                                 C.NOTE,
+                                 C.USED_USER_ID,
+                                 C.ORDER_ID
+                            FROM ELMS_USER.PRODUCT C 
+                           WHERE C.ID = {issuingID}";
 
             try
             {
@@ -30,12 +42,13 @@ namespace ELMS.Class.DataAccess
             }
             catch (Exception exx)
             {
-                GlobalProcedures.LogWrite("Filial açılmadı.", sql, GlobalVariables.V_UserName, "BranchDAL", "SelectBranchByID", exx);
+                GlobalProcedures.LogWrite("Məhsul açılmadı.", sql, GlobalVariables.V_UserName, "ProductDAL", "SelectProductByID", exx);
                 return null;
             }
         }
 
-        public static void InsertBranch(Branch branch)
+
+        public static void InsertProduct(Product product)
         {
             string commandSql = null;
             using (OracleConnection connection = new OracleConnection())
@@ -53,24 +66,15 @@ namespace ELMS.Class.DataAccess
                     {
                         transaction = connection.BeginTransaction();
                         command.Transaction = transaction;
-                        command.CommandText = $@"INSERT INTO ELMS_USER.BRANCH(NAME,
-                                                                                LEADING_NAME,
-                                                                                ADDRESS,
-                                                                                PHONE,
-                                                                                NOTE,
-                                                                                INSERT_USER)
+                        command.CommandText = $@"INSERT INTO ELMS_USER.PRODUCT(NAME,
+                                                                                    NOTE,
+                                                                                    INSERT_USER)
                                                     VALUES(:inNAME,
-                                                           :inLEADING_NAME,
-                                                           :inADDRESS,
-                                                           :inPHONE,
                                                            :inNOTE,
-                                                           :inINSERTUSER)";
-                        command.Parameters.Add(new OracleParameter("inNAME", branch.NAME));
-                        command.Parameters.Add(new OracleParameter("inLEADING_NAME", branch.LEADING_NAME));
-                        command.Parameters.Add(new OracleParameter("inADDRESS", branch.ADDRESS));
-                        command.Parameters.Add(new OracleParameter("inPHONE", branch.PHONE));
-                        command.Parameters.Add(new OracleParameter("inNOTE", branch.NOTE));
-                        command.Parameters.Add(new OracleParameter("inINSERTUSER", GlobalVariables.V_UserID));
+                                                           :inINSERT_USER)";
+                        command.Parameters.Add(new OracleParameter("inNAME", product.NAME));
+                        command.Parameters.Add(new OracleParameter("inNOTE", product.NOTE));
+                        command.Parameters.Add(new OracleParameter("inINSERT_USER", GlobalVariables.V_UserID));
                         commandSql = command.CommandText;
                         command.ExecuteNonQuery();
                         transaction.Commit();
@@ -80,7 +84,7 @@ namespace ELMS.Class.DataAccess
                 catch (Exception exx)
                 {
                     transaction.Rollback();
-                    GlobalProcedures.LogWrite("Filial bazaya daxil edilmədi.", commandSql, GlobalVariables.V_UserName, "BranchDAL", "InsertBranch", exx);
+                    GlobalProcedures.LogWrite("Məhsul bazaya daxil edilmədi.", commandSql, GlobalVariables.V_UserName, "ProductDAL", "InsertProduct", exx);
                 }
                 finally
                 {
@@ -90,7 +94,8 @@ namespace ELMS.Class.DataAccess
             }
         }
 
-        public static void UpdateBranch(Branch branch)
+
+        public static void UpdateProduct(Product product)
         {
             string commandSql = null;
             using (OracleConnection connection = new OracleConnection())
@@ -108,25 +113,19 @@ namespace ELMS.Class.DataAccess
                     {
                         transaction = connection.BeginTransaction();
                         command.Transaction = transaction;
-                        command.CommandText = $@"UPDATE ELMS_USER.BRANCH SET NAME = :inNAME,
-                                                                                  LEADING_NAME = :inLEADING_NAME,
-                                                                                  ADDRESS = :inADDRESS,
-                                                                                  PHONE = :inPHONE,
+                        command.CommandText = $@"UPDATE ELMS_USER.PRODUCT SET NAME = :inNAME,
                                                                                   NOTE = :inNOTE,
                                                                                   USED_USER_ID = :inUSEDUSERID,
                                                                                   ORDER_ID = :inORDERID,
                                                                                   UPDATE_USER = :inUPDATEUSER,
                                                                                   UPDATE_DATE = SYSDATE
                                                                     WHERE ID = :inID";
-                        command.Parameters.Add(new OracleParameter("inNAME", branch.NAME));
-                        command.Parameters.Add(new OracleParameter("inLEADING_NAME", branch.LEADING_NAME));
-                        command.Parameters.Add(new OracleParameter("inADDRESS", branch.ADDRESS));
-                        command.Parameters.Add(new OracleParameter("inPHONE", branch.PHONE));
-                        command.Parameters.Add(new OracleParameter("inNOTE", branch.NOTE));
-                        command.Parameters.Add(new OracleParameter("inUSEDUSERID", branch.USED_USER_ID));
-                        command.Parameters.Add(new OracleParameter("inORDERID", branch.ORDER_ID));
+                        command.Parameters.Add(new OracleParameter("inNAME", product.NAME));
+                        command.Parameters.Add(new OracleParameter("inNOTE", product.NOTE));
+                        command.Parameters.Add(new OracleParameter("inUSEDUSERID", product.USED_USER_ID));
+                        command.Parameters.Add(new OracleParameter("inORDERID", product.ORDER_ID));
                         command.Parameters.Add(new OracleParameter("inUPDATEUSER", GlobalVariables.V_UserID));
-                        command.Parameters.Add(new OracleParameter("inID", branch.ID));
+                        command.Parameters.Add(new OracleParameter("inID", product.ID));
                         commandSql = command.CommandText;
                         command.ExecuteNonQuery();
                         transaction.Commit();
@@ -136,7 +135,7 @@ namespace ELMS.Class.DataAccess
                 catch (Exception exx)
                 {
                     transaction.Rollback();
-                    GlobalProcedures.LogWrite("Filial bazada dəyişdirilmədi.", commandSql, GlobalVariables.V_UserName, "BranchDAL", "UpdateBranch", exx);
+                    GlobalProcedures.LogWrite("Məhsul bazada dəyişdirilmədi.", commandSql, GlobalVariables.V_UserName, "ProductDAL", "UpdateProduct", exx);
                 }
                 finally
                 {
@@ -146,7 +145,35 @@ namespace ELMS.Class.DataAccess
             }
         }
 
-        public static void DeleteBranch(int branchID)
+        public static DataTable SelectViewData(int? ID)
+        {
+            string s = $@"SELECT C.ID,
+                                 C.NAME,
+                                 C.NOTE,
+                                 C.USED_USER_ID,
+                                 C.ORDER_ID
+                            FROM ELMS_USER.PRODUCT C
+                           WHERE C.ID = {ID}";
+
+            try
+            {
+                using (OracleDataAdapter da = new OracleDataAdapter(s, GlobalFunctions.GetConnectionString()))
+                {
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+                    return dt;
+                }
+            }
+            catch (Exception exx)
+            {
+                GlobalProcedures.LogWrite("Məhsulun məlumatları açılmadı.", s, GlobalVariables.V_UserName, "ProductDAL", "SelectViewData", exx);
+                return null;
+            }
+        }
+
+
+
+        public static void DeleteProduct(int productID)
         {
             string commandSql = null;
             using (OracleConnection connection = new OracleConnection())
@@ -164,8 +191,8 @@ namespace ELMS.Class.DataAccess
                     {
                         transaction = connection.BeginTransaction();
                         command.Transaction = transaction;
-                        command.CommandText = $@"DELETE FROM ELMS_USER.BRANCH WHERE ID = :inID";
-                        command.Parameters.Add(new OracleParameter("inID", branchID));
+                        command.CommandText = $@"DELETE FROM ELMS_USER.PRODUCT WHERE ID = :inID";
+                        command.Parameters.Add(new OracleParameter("inID", productID));
                         commandSql = command.CommandText;
                         command.ExecuteNonQuery();
                         transaction.Commit();
@@ -175,7 +202,7 @@ namespace ELMS.Class.DataAccess
                 catch (Exception exx)
                 {
                     transaction.Rollback();
-                    GlobalProcedures.LogWrite("Filial bazadan silinmədi.", commandSql, GlobalVariables.V_UserName, "BranchDAL", "DeleteBranch", exx);
+                    GlobalProcedures.LogWrite("Məhsul bazadan silinmədi.", commandSql, GlobalVariables.V_UserName, "ProductDAL", "DeleteProduct", exx);
                 }
                 finally
                 {

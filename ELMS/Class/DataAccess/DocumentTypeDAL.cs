@@ -141,14 +141,14 @@ namespace ELMS.Class.DataAccess
                         transaction = connection.BeginTransaction();
                         command.Transaction = transaction;
                         command.CommandText = $@"UPDATE ELMS_USER.DOCUMENT_TYPE SET NAME = :inNAME,
-                                                                                  PTTRN = :inPTTRN,
-                                                                                  PERSONTYPEID = :inPERSONTYPEID,
-                                                                                  DOCUMENTGROUPID = :inDOCUMENTGROUPID,
-                                                                                  NORESIDENT = :inNORESIDENT,
-                                                                                  USED_USER_ID = :inUSEDUSERID,
-                                                                                  ORDER_ID = :inORDERID,
-                                                                                  UPDATE_USER = :inUPDATEUSER,
-                                                                                  UPDATE_DATE = SYSDATE
+                                                                                      PTTRN = :inPTTRN,
+                                                                                      PERSONTYPEID = :inPERSONTYPEID,
+                                                                                      DOCUMENTGROUPID = :inDOCUMENTGROUPID,
+                                                                                      NORESIDENT = :inNORESIDENT,
+                                                                                      USED_USER_ID = :inUSEDUSERID,
+                                                                                      ORDER_ID = :inORDERID,
+                                                                                      UPDATE_USER = :inUPDATEUSER,
+                                                                                      UPDATE_DATE = SYSDATE
                                                                     WHERE ID = :inID";
                         command.Parameters.Add(new OracleParameter("inNAME", documentType.NAME));
                         command.Parameters.Add(new OracleParameter("inPTTRN", documentType.PTTRN));
@@ -207,13 +207,11 @@ namespace ELMS.Class.DataAccess
             }
             catch (Exception exx)
             {
-                GlobalProcedures.LogWrite("Həkimin məlumatları açılmadı.", s, GlobalVariables.V_UserName, "DoctorDAL", "SelectViewData", exx);
+                GlobalProcedures.LogWrite("Sənədin məlumatları açılmadı.", s, GlobalVariables.V_UserName, "DocumentTypeDAL", "SelectViewData", exx);
                 return null;
             }
         }
-
-
-
+               
         public static void DeleteDocumentType(int professionID)
         {
             string commandSql = null;
@@ -252,6 +250,5 @@ namespace ELMS.Class.DataAccess
                 }
             }
         }
-
     }
 }
