@@ -484,3 +484,4 @@ C:\Users\user\Documents\Github\ELMS\ELMS\obj\Debug\ELMS.csproj.CoreCompileInputs
 C:\Users\user\Documents\Github\ELMS\ELMS\obj\Debug\ELMS.csproj.CopyComplete
 C:\Users\user\Documents\Github\ELMS\ELMS\obj\Debug\Elloni Management System.exe
 C:\Users\user\Documents\Github\ELMS\ELMS\obj\Debug\Elloni Management System.pdb
+C:\Users\user\Documents\Github\ELMS\ELMS\obj\Debug\ELMS.Forms.Phone.FPhoneAddEdit.resources

@@ -87,6 +87,7 @@
     <Compile Include="Class\DataAccess\DocumentTypeDAL.cs" />
     <Compile Include="Class\DataAccess\KindShipDAL.cs" />
     <Compile Include="Class\DataAccess\PersonTypeDAL.cs" />
+    <Compile Include="Class\DataAccess\PhoneDAL.cs" />
     <Compile Include="Class\DataAccess\PhoneDescriptionDAL.cs" />
     <Compile Include="Class\DataAccess\PhonePrefixDAL.cs" />
     <Compile Include="Class\DataAccess\ProductDAL.cs" />
@@ -106,6 +107,7 @@
     <Compile Include="Class\Tables\DocumentType.cs" />
     <Compile Include="Class\Tables\KindShip.cs" />
     <Compile Include="Class\Tables\PersonType.cs" />
+    <Compile Include="Class\Tables\Phone.cs" />
     <Compile Include="Class\Tables\PhoneDescription.cs" />
     <Compile Include="Class\Tables\PhonePrefix.cs" />
     <Compile Include="Class\Tables\Product.cs" />
@@ -182,6 +184,12 @@
     </Compile>
     <Compile Include="Forms\Dictionaries\FProfessionAddEdit.Designer.cs">
       <DependentUpon>FProfessionAddEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Phone\FPhoneAddEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Phone\FPhoneAddEdit.Designer.cs">
+      <DependentUpon>FPhoneAddEdit.cs</DependentUpon>
     </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
@@ -274,6 +282,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Dictionaries\FProfessionAddEdit.resx">
       <DependentUpon>FProfessionAddEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Phone\FPhoneAddEdit.resx">
+      <DependentUpon>FPhoneAddEdit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>

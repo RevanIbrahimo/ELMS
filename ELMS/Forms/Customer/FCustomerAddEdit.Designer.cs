@@ -29,16 +29,16 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            DevExpress.Utils.SuperToolTip superToolTip3 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem4 = new DevExpress.Utils.ToolTipTitleItem();
+            DevExpress.Utils.ToolTipItem toolTipItem3 = new DevExpress.Utils.ToolTipItem();
+            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem5 = new DevExpress.Utils.ToolTipTitleItem();
             DevExpress.Utils.SuperToolTip superToolTip1 = new DevExpress.Utils.SuperToolTip();
             DevExpress.Utils.ToolTipTitleItem toolTipTitleItem1 = new DevExpress.Utils.ToolTipTitleItem();
             DevExpress.Utils.ToolTipItem toolTipItem1 = new DevExpress.Utils.ToolTipItem();
-            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem2 = new DevExpress.Utils.ToolTipTitleItem();
-            DevExpress.Utils.SuperToolTip superToolTip2 = new DevExpress.Utils.SuperToolTip();
-            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem3 = new DevExpress.Utils.ToolTipTitleItem();
-            DevExpress.Utils.ToolTipItem toolTipItem2 = new DevExpress.Utils.ToolTipItem();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FCustomerAddEdit));
-            ManiXButton.Office2010Red office2010Red1 = new ManiXButton.Office2010Red();
-            ManiXButton.Office2010Blue office2010Blue1 = new ManiXButton.Office2010Blue();
+            ManiXButton.Office2010Red office2010Red2 = new ManiXButton.Office2010Red();
+            ManiXButton.Office2010Blue office2010Blue2 = new ManiXButton.Office2010Blue();
             this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
             this.behaviorManager1 = new DevExpress.Utils.Behaviors.BehaviorManager(this.components);
             this.PersonalDetailsGroupBox = new DevExpress.XtraEditors.GroupControl();
@@ -95,26 +95,33 @@
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
+            this.PhoneStandaloneBarDockControl = new DevExpress.XtraBars.StandaloneBarDockControl();
             this.PhoneTab = new DevExpress.XtraTab.XtraTabPage();
+            this.PhoneGridControl = new DevExpress.XtraGrid.GridControl();
+            this.PhoneGridView = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.CustomerPhone_SS = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.CustomerPhone_ID = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.CustomerPhone_Description = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.CustomerPhone_Number = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.CustomerPhone_Note = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.CustomerPhone_IsSendSMS = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.PhoneBarManager = new DevExpress.XtraBars.BarManager(this.components);
+            this.PhoneBar = new DevExpress.XtraBars.Bar();
+            this.NewPhoneBarButton = new DevExpress.XtraBars.BarButtonItem();
+            this.EditPhoneBarButton = new DevExpress.XtraBars.BarButtonItem();
+            this.DeletePhoneBarButton = new DevExpress.XtraBars.BarButtonItem();
+            this.RefreshPhoneBarButton = new DevExpress.XtraBars.BarButtonItem();
+            this.barDockControl1 = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControl2 = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControl3 = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControl4 = new DevExpress.XtraBars.BarDockControl();
             this.WorkTab = new DevExpress.XtraTab.XtraTabPage();
             this.RelativeTab = new DevExpress.XtraTab.XtraTabPage();
             this.PanelOption = new DevExpress.XtraEditors.PanelControl();
             this.BCancel = new ManiXButton.XButton();
             this.BOK = new ManiXButton.XButton();
             this.labelControl12 = new DevExpress.XtraEditors.LabelControl();
-            this.PhoneStandaloneBarDockControl = new DevExpress.XtraBars.StandaloneBarDockControl();
-            this.PhoneBarManager = new DevExpress.XtraBars.BarManager(this.components);
-            this.barDockControl1 = new DevExpress.XtraBars.BarDockControl();
-            this.barDockControl2 = new DevExpress.XtraBars.BarDockControl();
-            this.barDockControl3 = new DevExpress.XtraBars.BarDockControl();
-            this.barDockControl4 = new DevExpress.XtraBars.BarDockControl();
-            this.PhoneBar = new DevExpress.XtraBars.Bar();
-            this.NewPhoneBarButton = new DevExpress.XtraBars.BarButtonItem();
-            this.EditPhoneBarButton = new DevExpress.XtraBars.BarButtonItem();
-            this.DeletePhoneBarButton = new DevExpress.XtraBars.BarButtonItem();
-            this.RefreshPhoneBarButton = new DevExpress.XtraBars.BarButtonItem();
-            this.PhoneGridControl = new DevExpress.XtraGrid.GridControl();
-            this.PhoneGridView = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.PhonePopupMenu = new DevExpress.XtraBars.PopupMenu(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PersonalDetailsGroupBox)).BeginInit();
             this.PersonalDetailsGroupBox.SuspendLayout();
@@ -138,11 +145,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.DocumentGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DocumentBarManager)).BeginInit();
             this.PhoneTab.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PanelOption)).BeginInit();
-            this.PanelOption.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PhoneBarManager)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PhoneGridControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PhoneGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PhoneBarManager)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PanelOption)).BeginInit();
+            this.PanelOption.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PhonePopupMenu)).BeginInit();
             this.SuspendLayout();
             // 
             // PersonalDetailsGroupBox
@@ -276,15 +284,15 @@
             this.CustomerPictureBox.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
             this.CustomerPictureBox.Properties.ZoomAccelerationFactor = 1D;
             this.CustomerPictureBox.Size = new System.Drawing.Size(139, 162);
-            superToolTip1.AllowHtmlText = DevExpress.Utils.DefaultBoolean.True;
-            toolTipTitleItem1.Text = "<color=255,0,0>Müştərinin şəkili</color>";
-            toolTipItem1.LeftIndent = 6;
-            toolTipItem1.Text = "Müştərinin şəkilini göstərmək üçün nəzərdə tutulub.";
-            toolTipTitleItem2.LeftIndent = 6;
-            superToolTip1.Items.Add(toolTipTitleItem1);
-            superToolTip1.Items.Add(toolTipItem1);
-            superToolTip1.Items.Add(toolTipTitleItem2);
-            this.CustomerPictureBox.SuperTip = superToolTip1;
+            superToolTip3.AllowHtmlText = DevExpress.Utils.DefaultBoolean.True;
+            toolTipTitleItem4.Text = "<color=255,0,0>Müştərinin şəkili</color>";
+            toolTipItem3.LeftIndent = 6;
+            toolTipItem3.Text = "Müştərinin şəkilini göstərmək üçün nəzərdə tutulub.";
+            toolTipTitleItem5.LeftIndent = 6;
+            superToolTip3.Items.Add(toolTipTitleItem4);
+            superToolTip3.Items.Add(toolTipItem3);
+            superToolTip3.Items.Add(toolTipTitleItem5);
+            this.CustomerPictureBox.SuperTip = superToolTip3;
             this.CustomerPictureBox.TabIndex = 18;
             // 
             // separatorControl1
@@ -436,13 +444,13 @@
             this.NameText.Properties.NullValuePrompt = "Soyadı, adı və atasının adını daxil edin";
             this.NameText.Properties.NullValuePromptShowForEmptyValue = true;
             this.NameText.Size = new System.Drawing.Size(496, 20);
-            toolTipTitleItem3.Text = "<color=255,0,0>Müştərinin tam adı</color>";
-            toolTipItem2.LeftIndent = 6;
-            toolTipItem2.Text = "Bu xanaya dırnaq işarəsi daxil etmək olmaz. Əgər daxil etsəz, müştərinin məlumatl" +
+            toolTipTitleItem1.Text = "<color=255,0,0>Müştərinin tam adı</color>";
+            toolTipItem1.LeftIndent = 6;
+            toolTipItem1.Text = "Bu xanaya dırnaq işarəsi daxil etmək olmaz. Əgər daxil etsəz, müştərinin məlumatl" +
     "arı <b><color=104,6,6>bazada saxlanılmayacaq</b></color>.\r\n";
-            superToolTip2.Items.Add(toolTipTitleItem3);
-            superToolTip2.Items.Add(toolTipItem2);
-            this.NameText.SuperTip = superToolTip2;
+            superToolTip1.Items.Add(toolTipTitleItem1);
+            superToolTip1.Items.Add(toolTipItem1);
+            this.NameText.SuperTip = superToolTip1;
             this.NameText.TabIndex = 0;
             this.NameText.ToolTip = "Yalnız hərf yazmağınız tövsiyə olunur.";
             // 
@@ -747,109 +755,6 @@
             this.barDockControlRight.Manager = this.DocumentBarManager;
             this.barDockControlRight.Size = new System.Drawing.Size(0, 656);
             // 
-            // PhoneTab
-            // 
-            this.PhoneTab.Controls.Add(this.PhoneGridControl);
-            this.PhoneTab.Controls.Add(this.PhoneStandaloneBarDockControl);
-            this.PhoneTab.Name = "PhoneTab";
-            this.PhoneTab.Size = new System.Drawing.Size(849, 264);
-            this.PhoneTab.Text = "Telefonlar";
-            // 
-            // WorkTab
-            // 
-            this.WorkTab.Name = "WorkTab";
-            this.WorkTab.Size = new System.Drawing.Size(849, 264);
-            this.WorkTab.Text = "İş yeri";
-            // 
-            // RelativeTab
-            // 
-            this.RelativeTab.Name = "RelativeTab";
-            this.RelativeTab.Size = new System.Drawing.Size(849, 264);
-            this.RelativeTab.Text = "Qohumlar";
-            // 
-            // PanelOption
-            // 
-            this.PanelOption.Controls.Add(this.BCancel);
-            this.PanelOption.Controls.Add(this.BOK);
-            this.PanelOption.Controls.Add(this.labelControl12);
-            this.PanelOption.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.PanelOption.Location = new System.Drawing.Point(0, 606);
-            this.PanelOption.Name = "PanelOption";
-            this.PanelOption.Size = new System.Drawing.Size(885, 50);
-            this.PanelOption.TabIndex = 3;
-            // 
-            // BCancel
-            // 
-            this.BCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            office2010Red1.BorderColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(72)))), ((int)(((byte)(161)))));
-            office2010Red1.BorderColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(135)))), ((int)(((byte)(228)))));
-            office2010Red1.ButtonMouseOverColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(199)))), ((int)(((byte)(87)))));
-            office2010Red1.ButtonMouseOverColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(243)))), ((int)(((byte)(215)))));
-            office2010Red1.ButtonMouseOverColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(225)))), ((int)(((byte)(137)))));
-            office2010Red1.ButtonMouseOverColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(249)))), ((int)(((byte)(224)))));
-            office2010Red1.ButtonNormalColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(77)))), ((int)(((byte)(45)))));
-            office2010Red1.ButtonNormalColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(148)))), ((int)(((byte)(64)))));
-            office2010Red1.ButtonNormalColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(77)))), ((int)(((byte)(45)))));
-            office2010Red1.ButtonNormalColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(148)))), ((int)(((byte)(64)))));
-            office2010Red1.ButtonSelectedColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(199)))), ((int)(((byte)(87)))));
-            office2010Red1.ButtonSelectedColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(243)))), ((int)(((byte)(215)))));
-            office2010Red1.ButtonSelectedColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(229)))), ((int)(((byte)(117)))));
-            office2010Red1.ButtonSelectedColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(216)))), ((int)(((byte)(107)))));
-            office2010Red1.HoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
-            office2010Red1.SelectedTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
-            office2010Red1.TextColor = System.Drawing.Color.White;
-            this.BCancel.ColorTable = office2010Red1;
-            this.BCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.BCancel.Location = new System.Drawing.Point(796, 13);
-            this.BCancel.Name = "BCancel";
-            this.BCancel.Size = new System.Drawing.Size(75, 25);
-            this.BCancel.TabIndex = 2;
-            this.BCancel.Text = "İmtina et";
-            this.BCancel.Theme = ManiXButton.Theme.MSOffice2010_RED;
-            this.BCancel.UseVisualStyleBackColor = true;
-            // 
-            // BOK
-            // 
-            this.BOK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            office2010Blue1.BorderColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(72)))), ((int)(((byte)(161)))));
-            office2010Blue1.BorderColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(135)))), ((int)(((byte)(228)))));
-            office2010Blue1.ButtonMouseOverColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(199)))), ((int)(((byte)(87)))));
-            office2010Blue1.ButtonMouseOverColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(243)))), ((int)(((byte)(215)))));
-            office2010Blue1.ButtonMouseOverColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(225)))), ((int)(((byte)(137)))));
-            office2010Blue1.ButtonMouseOverColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(249)))), ((int)(((byte)(224)))));
-            office2010Blue1.ButtonNormalColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(72)))), ((int)(((byte)(161)))));
-            office2010Blue1.ButtonNormalColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(135)))), ((int)(((byte)(228)))));
-            office2010Blue1.ButtonNormalColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(97)))), ((int)(((byte)(181)))));
-            office2010Blue1.ButtonNormalColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(125)))), ((int)(((byte)(219)))));
-            office2010Blue1.ButtonSelectedColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(199)))), ((int)(((byte)(87)))));
-            office2010Blue1.ButtonSelectedColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(243)))), ((int)(((byte)(215)))));
-            office2010Blue1.ButtonSelectedColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(229)))), ((int)(((byte)(117)))));
-            office2010Blue1.ButtonSelectedColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(216)))), ((int)(((byte)(107)))));
-            office2010Blue1.HoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
-            office2010Blue1.SelectedTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
-            office2010Blue1.TextColor = System.Drawing.Color.White;
-            this.BOK.ColorTable = office2010Blue1;
-            this.BOK.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BOK.Location = new System.Drawing.Point(715, 13);
-            this.BOK.Name = "BOK";
-            this.BOK.Size = new System.Drawing.Size(75, 25);
-            this.BOK.TabIndex = 1;
-            this.BOK.TabStop = false;
-            this.BOK.Text = "Yadda saxla";
-            this.BOK.Theme = ManiXButton.Theme.MSOffice2010_BLUE;
-            this.BOK.UseVisualStyleBackColor = true;
-            // 
-            // labelControl12
-            // 
-            this.labelControl12.AllowHtmlString = true;
-            this.labelControl12.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Italic);
-            this.labelControl12.Appearance.Options.UseFont = true;
-            this.labelControl12.Location = new System.Drawing.Point(12, 19);
-            this.labelControl12.Name = "labelControl12";
-            this.labelControl12.Size = new System.Drawing.Size(172, 13);
-            this.labelControl12.TabIndex = 0;
-            this.labelControl12.Text = "<color=255,0,0>*</color> - lu xanalar mütləq doldurulmalıdır";
-            // 
             // PhoneStandaloneBarDockControl
             // 
             this.PhoneStandaloneBarDockControl.CausesValidation = false;
@@ -859,6 +764,109 @@
             this.PhoneStandaloneBarDockControl.Name = "PhoneStandaloneBarDockControl";
             this.PhoneStandaloneBarDockControl.Size = new System.Drawing.Size(849, 25);
             this.PhoneStandaloneBarDockControl.Text = "standaloneBarDockControl1";
+            // 
+            // PhoneTab
+            // 
+            this.PhoneTab.Controls.Add(this.PhoneGridControl);
+            this.PhoneTab.Controls.Add(this.PhoneStandaloneBarDockControl);
+            this.PhoneTab.Name = "PhoneTab";
+            this.PhoneTab.Size = new System.Drawing.Size(849, 264);
+            this.PhoneTab.Text = "Telefonlar";
+            // 
+            // PhoneGridControl
+            // 
+            this.PhoneGridControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.PhoneGridControl.Location = new System.Drawing.Point(0, 25);
+            this.PhoneGridControl.MainView = this.PhoneGridView;
+            this.PhoneGridControl.MenuManager = this.PhoneBarManager;
+            this.PhoneGridControl.Name = "PhoneGridControl";
+            this.PhoneGridControl.Size = new System.Drawing.Size(849, 239);
+            this.PhoneGridControl.TabIndex = 1;
+            this.PhoneGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.PhoneGridView});
+            // 
+            // PhoneGridView
+            // 
+            this.PhoneGridView.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.CustomerPhone_SS,
+            this.CustomerPhone_ID,
+            this.CustomerPhone_Description,
+            this.CustomerPhone_Number,
+            this.CustomerPhone_Note,
+            this.CustomerPhone_IsSendSMS});
+            this.PhoneGridView.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFullFocus;
+            this.PhoneGridView.GridControl = this.PhoneGridControl;
+            this.PhoneGridView.Name = "PhoneGridView";
+            this.PhoneGridView.OptionsBehavior.AutoExpandAllGroups = true;
+            this.PhoneGridView.OptionsBehavior.AutoSelectAllInEditor = false;
+            this.PhoneGridView.OptionsBehavior.Editable = false;
+            this.PhoneGridView.OptionsFilter.UseNewCustomFilterDialog = true;
+            this.PhoneGridView.OptionsFind.FindDelay = 100;
+            this.PhoneGridView.OptionsSelection.CheckBoxSelectorColumnWidth = 30;
+            this.PhoneGridView.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.PhoneGridView.OptionsSelection.MultiSelect = true;
+            this.PhoneGridView.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.CheckBoxRowSelect;
+            this.PhoneGridView.OptionsSelection.ShowCheckBoxSelectorInColumnHeader = DevExpress.Utils.DefaultBoolean.True;
+            this.PhoneGridView.OptionsSelection.ShowCheckBoxSelectorInGroupRow = DevExpress.Utils.DefaultBoolean.True;
+            this.PhoneGridView.OptionsView.EnableAppearanceEvenRow = true;
+            this.PhoneGridView.OptionsView.ShowGroupPanel = false;
+            this.PhoneGridView.OptionsView.ShowIndicator = false;
+            this.PhoneGridView.PaintStyleName = "Skin";
+            this.PhoneGridView.ScrollStyle = DevExpress.XtraGrid.Views.Grid.ScrollStyleFlags.LiveVertScroll;
+            this.PhoneGridView.FocusedRowObjectChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowObjectChangedEventHandler(this.PhoneGridView_FocusedRowObjectChanged);
+            this.PhoneGridView.CustomUnboundColumnData += new DevExpress.XtraGrid.Views.Base.CustomColumnDataEventHandler(this.PhoneGridView_CustomUnboundColumnData);
+            this.PhoneGridView.MouseUp += new System.Windows.Forms.MouseEventHandler(this.PhoneGridView_MouseUp);
+            this.PhoneGridView.DoubleClick += new System.EventHandler(this.PhoneGridView_DoubleClick);
+            // 
+            // CustomerPhone_SS
+            // 
+            this.CustomerPhone_SS.AppearanceCell.Options.UseTextOptions = true;
+            this.CustomerPhone_SS.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.CustomerPhone_SS.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.CustomerPhone_SS.Caption = "S/s";
+            this.CustomerPhone_SS.FieldName = "CustomerPhone_SS";
+            this.CustomerPhone_SS.Name = "CustomerPhone_SS";
+            this.CustomerPhone_SS.OptionsColumn.FixedWidth = true;
+            this.CustomerPhone_SS.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
+            this.CustomerPhone_SS.Visible = true;
+            this.CustomerPhone_SS.VisibleIndex = 1;
+            this.CustomerPhone_SS.Width = 40;
+            // 
+            // CustomerPhone_ID
+            // 
+            this.CustomerPhone_ID.Caption = "ID";
+            this.CustomerPhone_ID.FieldName = "ID";
+            this.CustomerPhone_ID.Name = "CustomerPhone_ID";
+            // 
+            // CustomerPhone_Description
+            // 
+            this.CustomerPhone_Description.Caption = "Təsvir";
+            this.CustomerPhone_Description.FieldName = "DESCRIPTION_NAME";
+            this.CustomerPhone_Description.Name = "CustomerPhone_Description";
+            this.CustomerPhone_Description.Visible = true;
+            this.CustomerPhone_Description.VisibleIndex = 2;
+            // 
+            // CustomerPhone_Number
+            // 
+            this.CustomerPhone_Number.Caption = "Nömrə";
+            this.CustomerPhone_Number.FieldName = "PHONE_NUMBER";
+            this.CustomerPhone_Number.Name = "CustomerPhone_Number";
+            this.CustomerPhone_Number.Visible = true;
+            this.CustomerPhone_Number.VisibleIndex = 3;
+            // 
+            // CustomerPhone_Note
+            // 
+            this.CustomerPhone_Note.Caption = "Qeyd";
+            this.CustomerPhone_Note.FieldName = "NOTE";
+            this.CustomerPhone_Note.Name = "CustomerPhone_Note";
+            this.CustomerPhone_Note.Visible = true;
+            this.CustomerPhone_Note.VisibleIndex = 4;
+            // 
+            // CustomerPhone_IsSendSMS
+            // 
+            this.CustomerPhone_IsSendSMS.Caption = "SMS";
+            this.CustomerPhone_IsSendSMS.FieldName = "IS_SEND_SMS";
+            this.CustomerPhone_IsSendSMS.Name = "CustomerPhone_IsSendSMS";
             // 
             // PhoneBarManager
             // 
@@ -876,6 +884,62 @@
             this.RefreshPhoneBarButton});
             this.PhoneBarManager.MainMenu = this.PhoneBar;
             this.PhoneBarManager.MaxItemId = 4;
+            // 
+            // PhoneBar
+            // 
+            this.PhoneBar.BarName = "Main menu";
+            this.PhoneBar.DockCol = 0;
+            this.PhoneBar.DockRow = 0;
+            this.PhoneBar.DockStyle = DevExpress.XtraBars.BarDockStyle.Standalone;
+            this.PhoneBar.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.NewPhoneBarButton),
+            new DevExpress.XtraBars.LinkPersistInfo(this.EditPhoneBarButton),
+            new DevExpress.XtraBars.LinkPersistInfo(this.DeletePhoneBarButton),
+            new DevExpress.XtraBars.LinkPersistInfo(this.RefreshPhoneBarButton)});
+            this.PhoneBar.OptionsBar.DrawBorder = false;
+            this.PhoneBar.OptionsBar.DrawDragBorder = false;
+            this.PhoneBar.OptionsBar.MultiLine = true;
+            this.PhoneBar.OptionsBar.UseWholeRow = true;
+            this.PhoneBar.StandaloneBarDockControl = this.PhoneStandaloneBarDockControl;
+            this.PhoneBar.Text = "Main menu";
+            // 
+            // NewPhoneBarButton
+            // 
+            this.NewPhoneBarButton.Caption = "Yeni";
+            this.NewPhoneBarButton.Id = 0;
+            this.NewPhoneBarButton.ImageOptions.Image = global::ELMS.Properties.Resources.plus_16;
+            this.NewPhoneBarButton.Name = "NewPhoneBarButton";
+            this.NewPhoneBarButton.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.NewPhoneBarButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.NewPhoneBarButton_ItemClick);
+            // 
+            // EditPhoneBarButton
+            // 
+            this.EditPhoneBarButton.Caption = "Dəyiş";
+            this.EditPhoneBarButton.Id = 1;
+            this.EditPhoneBarButton.ImageOptions.Image = global::ELMS.Properties.Resources.edit_16;
+            this.EditPhoneBarButton.Name = "EditPhoneBarButton";
+            this.EditPhoneBarButton.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.EditPhoneBarButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.EditPhoneBarButton_ItemClick);
+            // 
+            // DeletePhoneBarButton
+            // 
+            this.DeletePhoneBarButton.Caption = "Sil";
+            this.DeletePhoneBarButton.Id = 2;
+            this.DeletePhoneBarButton.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("DeletePhoneBarButton.ImageOptions.Image")));
+            this.DeletePhoneBarButton.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("DeletePhoneBarButton.ImageOptions.LargeImage")));
+            this.DeletePhoneBarButton.Name = "DeletePhoneBarButton";
+            this.DeletePhoneBarButton.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.DeletePhoneBarButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.DeletePhoneBarButton_ItemClick);
+            // 
+            // RefreshPhoneBarButton
+            // 
+            this.RefreshPhoneBarButton.Caption = "Təzələ";
+            this.RefreshPhoneBarButton.Id = 3;
+            this.RefreshPhoneBarButton.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("RefreshPhoneBarButton.ImageOptions.Image")));
+            this.RefreshPhoneBarButton.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("RefreshPhoneBarButton.ImageOptions.LargeImage")));
+            this.RefreshPhoneBarButton.Name = "RefreshPhoneBarButton";
+            this.RefreshPhoneBarButton.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.RefreshPhoneBarButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.RefreshPhoneBarButton_ItemClick);
             // 
             // barDockControl1
             // 
@@ -909,73 +973,110 @@
             this.barDockControl4.Manager = this.PhoneBarManager;
             this.barDockControl4.Size = new System.Drawing.Size(0, 656);
             // 
-            // PhoneBar
+            // WorkTab
             // 
-            this.PhoneBar.BarName = "Main menu";
-            this.PhoneBar.DockCol = 0;
-            this.PhoneBar.DockRow = 0;
-            this.PhoneBar.DockStyle = DevExpress.XtraBars.BarDockStyle.Standalone;
-            this.PhoneBar.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            this.WorkTab.Name = "WorkTab";
+            this.WorkTab.Size = new System.Drawing.Size(849, 264);
+            this.WorkTab.Text = "İş yeri";
+            // 
+            // RelativeTab
+            // 
+            this.RelativeTab.Name = "RelativeTab";
+            this.RelativeTab.Size = new System.Drawing.Size(849, 264);
+            this.RelativeTab.Text = "Qohumlar";
+            // 
+            // PanelOption
+            // 
+            this.PanelOption.Controls.Add(this.BCancel);
+            this.PanelOption.Controls.Add(this.BOK);
+            this.PanelOption.Controls.Add(this.labelControl12);
+            this.PanelOption.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.PanelOption.Location = new System.Drawing.Point(0, 606);
+            this.PanelOption.Name = "PanelOption";
+            this.PanelOption.Size = new System.Drawing.Size(885, 50);
+            this.PanelOption.TabIndex = 3;
+            // 
+            // BCancel
+            // 
+            this.BCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            office2010Red2.BorderColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(72)))), ((int)(((byte)(161)))));
+            office2010Red2.BorderColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(135)))), ((int)(((byte)(228)))));
+            office2010Red2.ButtonMouseOverColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(199)))), ((int)(((byte)(87)))));
+            office2010Red2.ButtonMouseOverColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(243)))), ((int)(((byte)(215)))));
+            office2010Red2.ButtonMouseOverColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(225)))), ((int)(((byte)(137)))));
+            office2010Red2.ButtonMouseOverColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(249)))), ((int)(((byte)(224)))));
+            office2010Red2.ButtonNormalColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(77)))), ((int)(((byte)(45)))));
+            office2010Red2.ButtonNormalColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(148)))), ((int)(((byte)(64)))));
+            office2010Red2.ButtonNormalColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(77)))), ((int)(((byte)(45)))));
+            office2010Red2.ButtonNormalColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(148)))), ((int)(((byte)(64)))));
+            office2010Red2.ButtonSelectedColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(199)))), ((int)(((byte)(87)))));
+            office2010Red2.ButtonSelectedColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(243)))), ((int)(((byte)(215)))));
+            office2010Red2.ButtonSelectedColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(229)))), ((int)(((byte)(117)))));
+            office2010Red2.ButtonSelectedColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(216)))), ((int)(((byte)(107)))));
+            office2010Red2.HoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
+            office2010Red2.SelectedTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
+            office2010Red2.TextColor = System.Drawing.Color.White;
+            this.BCancel.ColorTable = office2010Red2;
+            this.BCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.BCancel.Location = new System.Drawing.Point(796, 13);
+            this.BCancel.Name = "BCancel";
+            this.BCancel.Size = new System.Drawing.Size(75, 25);
+            this.BCancel.TabIndex = 2;
+            this.BCancel.Text = "İmtina et";
+            this.BCancel.Theme = ManiXButton.Theme.MSOffice2010_RED;
+            this.BCancel.UseVisualStyleBackColor = true;
+            // 
+            // BOK
+            // 
+            this.BOK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            office2010Blue2.BorderColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(72)))), ((int)(((byte)(161)))));
+            office2010Blue2.BorderColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(135)))), ((int)(((byte)(228)))));
+            office2010Blue2.ButtonMouseOverColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(199)))), ((int)(((byte)(87)))));
+            office2010Blue2.ButtonMouseOverColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(243)))), ((int)(((byte)(215)))));
+            office2010Blue2.ButtonMouseOverColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(225)))), ((int)(((byte)(137)))));
+            office2010Blue2.ButtonMouseOverColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(249)))), ((int)(((byte)(224)))));
+            office2010Blue2.ButtonNormalColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(72)))), ((int)(((byte)(161)))));
+            office2010Blue2.ButtonNormalColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(135)))), ((int)(((byte)(228)))));
+            office2010Blue2.ButtonNormalColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(97)))), ((int)(((byte)(181)))));
+            office2010Blue2.ButtonNormalColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(125)))), ((int)(((byte)(219)))));
+            office2010Blue2.ButtonSelectedColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(199)))), ((int)(((byte)(87)))));
+            office2010Blue2.ButtonSelectedColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(243)))), ((int)(((byte)(215)))));
+            office2010Blue2.ButtonSelectedColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(229)))), ((int)(((byte)(117)))));
+            office2010Blue2.ButtonSelectedColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(216)))), ((int)(((byte)(107)))));
+            office2010Blue2.HoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
+            office2010Blue2.SelectedTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
+            office2010Blue2.TextColor = System.Drawing.Color.White;
+            this.BOK.ColorTable = office2010Blue2;
+            this.BOK.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BOK.Location = new System.Drawing.Point(715, 13);
+            this.BOK.Name = "BOK";
+            this.BOK.Size = new System.Drawing.Size(75, 25);
+            this.BOK.TabIndex = 1;
+            this.BOK.TabStop = false;
+            this.BOK.Text = "Yadda saxla";
+            this.BOK.Theme = ManiXButton.Theme.MSOffice2010_BLUE;
+            this.BOK.UseVisualStyleBackColor = true;
+            // 
+            // labelControl12
+            // 
+            this.labelControl12.AllowHtmlString = true;
+            this.labelControl12.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Italic);
+            this.labelControl12.Appearance.Options.UseFont = true;
+            this.labelControl12.Location = new System.Drawing.Point(12, 19);
+            this.labelControl12.Name = "labelControl12";
+            this.labelControl12.Size = new System.Drawing.Size(172, 13);
+            this.labelControl12.TabIndex = 0;
+            this.labelControl12.Text = "<color=255,0,0>*</color> - lu xanalar mütləq doldurulmalıdır";
+            // 
+            // PhonePopupMenu
+            // 
+            this.PhonePopupMenu.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(this.NewPhoneBarButton),
             new DevExpress.XtraBars.LinkPersistInfo(this.EditPhoneBarButton),
             new DevExpress.XtraBars.LinkPersistInfo(this.DeletePhoneBarButton),
             new DevExpress.XtraBars.LinkPersistInfo(this.RefreshPhoneBarButton)});
-            this.PhoneBar.OptionsBar.DrawBorder = false;
-            this.PhoneBar.OptionsBar.DrawDragBorder = false;
-            this.PhoneBar.OptionsBar.MultiLine = true;
-            this.PhoneBar.OptionsBar.UseWholeRow = true;
-            this.PhoneBar.StandaloneBarDockControl = this.PhoneStandaloneBarDockControl;
-            this.PhoneBar.Text = "Main menu";
-            // 
-            // NewPhoneBarButton
-            // 
-            this.NewPhoneBarButton.Caption = "Yeni";
-            this.NewPhoneBarButton.Id = 0;
-            this.NewPhoneBarButton.ImageOptions.Image = global::ELMS.Properties.Resources.plus_16;
-            this.NewPhoneBarButton.Name = "NewPhoneBarButton";
-            this.NewPhoneBarButton.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            // 
-            // EditPhoneBarButton
-            // 
-            this.EditPhoneBarButton.Caption = "Dəyiş";
-            this.EditPhoneBarButton.Id = 1;
-            this.EditPhoneBarButton.ImageOptions.Image = global::ELMS.Properties.Resources.edit_16;
-            this.EditPhoneBarButton.Name = "EditPhoneBarButton";
-            this.EditPhoneBarButton.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            // 
-            // DeletePhoneBarButton
-            // 
-            this.DeletePhoneBarButton.Caption = "Sil";
-            this.DeletePhoneBarButton.Id = 2;
-            this.DeletePhoneBarButton.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("DeletePhoneBarButton.ImageOptions.Image")));
-            this.DeletePhoneBarButton.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("DeletePhoneBarButton.ImageOptions.LargeImage")));
-            this.DeletePhoneBarButton.Name = "DeletePhoneBarButton";
-            this.DeletePhoneBarButton.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            // 
-            // RefreshPhoneBarButton
-            // 
-            this.RefreshPhoneBarButton.Caption = "Təzələ";
-            this.RefreshPhoneBarButton.Id = 3;
-            this.RefreshPhoneBarButton.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("RefreshPhoneBarButton.ImageOptions.Image")));
-            this.RefreshPhoneBarButton.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("RefreshPhoneBarButton.ImageOptions.LargeImage")));
-            this.RefreshPhoneBarButton.Name = "RefreshPhoneBarButton";
-            this.RefreshPhoneBarButton.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            // 
-            // PhoneGridControl
-            // 
-            this.PhoneGridControl.Location = new System.Drawing.Point(0, 31);
-            this.PhoneGridControl.MainView = this.PhoneGridView;
-            this.PhoneGridControl.MenuManager = this.PhoneBarManager;
-            this.PhoneGridControl.Name = "PhoneGridControl";
-            this.PhoneGridControl.Size = new System.Drawing.Size(400, 200);
-            this.PhoneGridControl.TabIndex = 1;
-            this.PhoneGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.PhoneGridView});
-            // 
-            // PhoneGridView
-            // 
-            this.PhoneGridView.GridControl = this.PhoneGridControl;
-            this.PhoneGridView.Name = "PhoneGridView";
+            this.PhonePopupMenu.Manager = this.PhoneBarManager;
+            this.PhonePopupMenu.Name = "PhonePopupMenu";
             // 
             // FCustomerAddEdit
             // 
@@ -1026,12 +1127,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.DocumentGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DocumentBarManager)).EndInit();
             this.PhoneTab.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.PhoneGridControl)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PhoneGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PhoneBarManager)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PanelOption)).EndInit();
             this.PanelOption.ResumeLayout(false);
             this.PanelOption.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PhoneBarManager)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PhoneGridControl)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PhoneGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PhonePopupMenu)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1115,5 +1217,12 @@
         private DevExpress.XtraBars.BarDockControl barDockControl4;
         private DevExpress.XtraGrid.GridControl PhoneGridControl;
         private DevExpress.XtraGrid.Views.Grid.GridView PhoneGridView;
+        private DevExpress.XtraGrid.Columns.GridColumn CustomerPhone_SS;
+        private DevExpress.XtraGrid.Columns.GridColumn CustomerPhone_ID;
+        private DevExpress.XtraGrid.Columns.GridColumn CustomerPhone_Description;
+        private DevExpress.XtraGrid.Columns.GridColumn CustomerPhone_Number;
+        private DevExpress.XtraGrid.Columns.GridColumn CustomerPhone_Note;
+        private DevExpress.XtraGrid.Columns.GridColumn CustomerPhone_IsSendSMS;
+        private DevExpress.XtraBars.PopupMenu PhonePopupMenu;
     }
 }
