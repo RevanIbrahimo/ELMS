@@ -245,5 +245,11 @@ namespace ELMS
             Forms.Dictionaries.FDictionaries fd = new Forms.Dictionaries.FDictionaries();
             fd.ShowDialog();
         }
+
+        private void UserBarButton_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Forms.Option.FUsers fu = new Forms.Option.FUsers();
+            fu.ShowDialog();
+        }
     }
 }

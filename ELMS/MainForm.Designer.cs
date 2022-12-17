@@ -39,10 +39,14 @@
             this.barStaticItem1 = new DevExpress.XtraBars.BarStaticItem();
             this.CurrentDayBarStatic = new DevExpress.XtraBars.BarStaticItem();
             this.DictionaryBarButton = new DevExpress.XtraBars.BarButtonItem();
+            this.OptionBarButton = new DevExpress.XtraBars.BarButtonItem();
+            this.UserBarButton = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroupNavigation = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.dockManager = new DevExpress.XtraBars.Docking.DockManager(this.components);
             this.dockPanel = new DevExpress.XtraBars.Docking.DockPanel();
@@ -90,13 +94,16 @@
             this.UserNameBarStaticItem,
             this.barStaticItem1,
             this.CurrentDayBarStatic,
-            this.DictionaryBarButton});
+            this.DictionaryBarButton,
+            this.OptionBarButton,
+            this.UserBarButton});
             this.ribbonControl.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl.MaxItemId = 52;
+            this.ribbonControl.MaxItemId = 54;
             this.ribbonControl.MdiMergeStyle = DevExpress.XtraBars.Ribbon.RibbonMdiMergeStyle.Always;
             this.ribbonControl.Name = "ribbonControl";
             this.ribbonControl.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
-            this.ribbonPage});
+            this.ribbonPage,
+            this.ribbonPage1});
             this.ribbonControl.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2013;
             this.ribbonControl.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.False;
             this.ribbonControl.Size = new System.Drawing.Size(1376, 143);
@@ -159,6 +166,23 @@
             this.DictionaryBarButton.Name = "DictionaryBarButton";
             this.DictionaryBarButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.DictionaryBarButton_ItemClick);
             // 
+            // OptionBarButton
+            // 
+            this.OptionBarButton.Caption = "Sazlamalar";
+            this.OptionBarButton.Id = 52;
+            this.OptionBarButton.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("OptionBarButton.ImageOptions.Image")));
+            this.OptionBarButton.Name = "OptionBarButton";
+            this.OptionBarButton.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            // 
+            // UserBarButton
+            // 
+            this.UserBarButton.Caption = "İstifadəçilər";
+            this.UserBarButton.Id = 53;
+            this.UserBarButton.ImageOptions.Image = global::ELMS.Properties.Resources.login;
+            this.UserBarButton.Name = "UserBarButton";
+            this.UserBarButton.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.UserBarButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.UserBarButton_ItemClick);
+            // 
             // ribbonPage
             // 
             this.ribbonPage.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -187,6 +211,20 @@
             this.ribbonPageGroup1.ItemLinks.Add(this.DictionaryBarButton);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             this.ribbonPageGroup1.Text = "Məlumat";
+            // 
+            // ribbonPage1
+            // 
+            this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.ribbonPageGroup2});
+            this.ribbonPage1.Name = "ribbonPage1";
+            this.ribbonPage1.Text = "Ayarlar";
+            // 
+            // ribbonPageGroup2
+            // 
+            this.ribbonPageGroup2.ItemLinks.Add(this.OptionBarButton);
+            this.ribbonPageGroup2.ItemLinks.Add(this.UserBarButton);
+            this.ribbonPageGroup2.Name = "ribbonPageGroup2";
+            this.ribbonPageGroup2.Text = "Sazlamalar";
             // 
             // ribbonStatusBar
             // 
@@ -444,5 +482,9 @@
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement6;
         private DevExpress.XtraBars.Navigation.AccordionControlSeparator accordionControlSeparator8;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement7;
+        private DevExpress.XtraBars.BarButtonItem OptionBarButton;
+        private DevExpress.XtraBars.BarButtonItem UserBarButton;
+        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage1;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
     }
 }

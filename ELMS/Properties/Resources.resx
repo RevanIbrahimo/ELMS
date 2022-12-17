@@ -118,8 +118,8 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="csv_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\csv-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="explorer_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\explorer-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="dental_splash" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\dental_splash.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -132,6 +132,9 @@
   </data>
   <data name="table_export_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\table-export-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="sexsiyyet_vesiqesi" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sexsiyyet_vesiqesi.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="html_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\html-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -163,8 +166,8 @@
   <data name="delete_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\delete-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="explorer_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\explorer-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="csv_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\csv-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="edit-16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\edit-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -181,7 +184,37 @@
   <data name="login" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\login.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="sexsiyyet_vesiqesi" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\sexsiyyet_vesiqesi.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="lock-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\lock-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="lock-off-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\lock-off-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mail-add-16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mail-add-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mail-delete-16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mail-delete-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mail-edit-16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mail-edit-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="phone-add-16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\phone-add-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="phone-delete-16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\phone-delete-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="phone-edit-16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\phone-edit-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="user-add-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\user-add-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="user-delete-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\user-delete-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="user-edit-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\user-edit-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

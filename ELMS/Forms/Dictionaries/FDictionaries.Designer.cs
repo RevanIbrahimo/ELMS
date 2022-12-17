@@ -138,6 +138,12 @@
             this.KindShip_Name = new DevExpress.XtraGrid.Columns.GridColumn();
             this.KindShip_Note = new DevExpress.XtraGrid.Columns.GridColumn();
             this.UsedUserId = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.KindShipBarManager = new DevExpress.XtraBars.BarManager(this.components);
+            this.KindShipBar = new DevExpress.XtraBars.Bar();
+            this.barDockControl9 = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControl10 = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControl11 = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControl12 = new DevExpress.XtraBars.BarDockControl();
             this.backstageViewClientControl5 = new DevExpress.XtraBars.Ribbon.BackstageViewClientControl();
             this.PhoneDescriptionGridControl = new DevExpress.XtraGrid.GridControl();
             this.PhoneDescriptionGridView = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -146,6 +152,18 @@
             this.PhoneDescription_Note = new DevExpress.XtraGrid.Columns.GridColumn();
             this.PhoneDescription_ID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.PhoneDescription_UsedUserId = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.PhoneDescriptionBarManager = new DevExpress.XtraBars.BarManager(this.components);
+            this.PhoneDescriptionBar = new DevExpress.XtraBars.Bar();
+            this.NewPhoneDescriptionBarButton = new DevExpress.XtraBars.BarButtonItem();
+            this.EditPhoneDescriptionBarButton = new DevExpress.XtraBars.BarButtonItem();
+            this.DeletePhoneDescriptionBarButton = new DevExpress.XtraBars.BarButtonItem();
+            this.RefreshPhoneDescriptionBarButton = new DevExpress.XtraBars.BarButtonItem();
+            this.UpPhoneDescriptionBarButton = new DevExpress.XtraBars.BarButtonItem();
+            this.DownPhoneDescriptionBarButton = new DevExpress.XtraBars.BarButtonItem();
+            this.barDockControl13 = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControl14 = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControl15 = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControl16 = new DevExpress.XtraBars.BarDockControl();
             this.backstageViewClientControl6 = new DevExpress.XtraBars.Ribbon.BackstageViewClientControl();
             this.ProductGridControl = new DevExpress.XtraGrid.GridControl();
             this.ProductGridView = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -154,6 +172,12 @@
             this.Product_Note = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Product_ID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Product_UsedUserId = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.ProductBarManager = new DevExpress.XtraBars.BarManager(this.components);
+            this.ProductBar = new DevExpress.XtraBars.Bar();
+            this.barDockControl17 = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControl18 = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControl19 = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControl20 = new DevExpress.XtraBars.BarDockControl();
             this.backstageViewClientControl7 = new DevExpress.XtraBars.Ribbon.BackstageViewClientControl();
             this.BranchGridControl = new DevExpress.XtraGrid.GridControl();
             this.BranchGridView = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -165,6 +189,12 @@
             this.Branch_Phone = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Branch_LeadingName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Branch_Note = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.BranchBarManager = new DevExpress.XtraBars.BarManager(this.components);
+            this.BranchBar = new DevExpress.XtraBars.Bar();
+            this.barDockControl21 = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControl22 = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControl23 = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControl24 = new DevExpress.XtraBars.BarDockControl();
             this.backstageViewClientControl8 = new DevExpress.XtraBars.Ribbon.BackstageViewClientControl();
             this.ProfessionGridControl = new DevExpress.XtraGrid.GridControl();
             this.ProfessionGridView = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -173,6 +203,12 @@
             this.Profession_Note = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Profession_ID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Profession_UsedUserId = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.ProfessionBarManager = new DevExpress.XtraBars.BarManager(this.components);
+            this.ProfessionBar = new DevExpress.XtraBars.Bar();
+            this.barDockControl25 = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControl26 = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControl27 = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControl28 = new DevExpress.XtraBars.BarDockControl();
             this.DocumentTypeBackstageViewTab = new DevExpress.XtraBars.Ribbon.BackstageViewTabItem();
             this.CountriesBackstageViewTab = new DevExpress.XtraBars.Ribbon.BackstageViewTabItem();
             this.CardIssuingBackstageViewTab = new DevExpress.XtraBars.Ribbon.BackstageViewTabItem();
@@ -187,44 +223,8 @@
             this.DocumentTypePopupMenu = new DevExpress.XtraBars.PopupMenu(this.components);
             this.CountriesPopupMenu = new DevExpress.XtraBars.PopupMenu(this.components);
             this.CardIssuingPopupMenu = new DevExpress.XtraBars.PopupMenu(this.components);
-            this.KindShipBarManager = new DevExpress.XtraBars.BarManager(this.components);
-            this.KindShipBar = new DevExpress.XtraBars.Bar();
-            this.barDockControl9 = new DevExpress.XtraBars.BarDockControl();
-            this.barDockControl10 = new DevExpress.XtraBars.BarDockControl();
-            this.barDockControl11 = new DevExpress.XtraBars.BarDockControl();
-            this.barDockControl12 = new DevExpress.XtraBars.BarDockControl();
             this.KindShipPopupMenu = new DevExpress.XtraBars.PopupMenu(this.components);
-            this.PhoneDescriptionBarManager = new DevExpress.XtraBars.BarManager(this.components);
-            this.PhoneDescriptionBar = new DevExpress.XtraBars.Bar();
-            this.NewPhoneDescriptionBarButton = new DevExpress.XtraBars.BarButtonItem();
-            this.EditPhoneDescriptionBarButton = new DevExpress.XtraBars.BarButtonItem();
-            this.DeletePhoneDescriptionBarButton = new DevExpress.XtraBars.BarButtonItem();
-            this.RefreshPhoneDescriptionBarButton = new DevExpress.XtraBars.BarButtonItem();
-            this.UpPhoneDescriptionBarButton = new DevExpress.XtraBars.BarButtonItem();
-            this.DownPhoneDescriptionBarButton = new DevExpress.XtraBars.BarButtonItem();
-            this.barDockControl13 = new DevExpress.XtraBars.BarDockControl();
-            this.barDockControl14 = new DevExpress.XtraBars.BarDockControl();
-            this.barDockControl15 = new DevExpress.XtraBars.BarDockControl();
-            this.barDockControl16 = new DevExpress.XtraBars.BarDockControl();
             this.PhoneDescriptionPopupMenu = new DevExpress.XtraBars.PopupMenu(this.components);
-            this.ProductBarManager = new DevExpress.XtraBars.BarManager(this.components);
-            this.ProductBar = new DevExpress.XtraBars.Bar();
-            this.barDockControl17 = new DevExpress.XtraBars.BarDockControl();
-            this.barDockControl18 = new DevExpress.XtraBars.BarDockControl();
-            this.barDockControl19 = new DevExpress.XtraBars.BarDockControl();
-            this.barDockControl20 = new DevExpress.XtraBars.BarDockControl();
-            this.BranchBarManager = new DevExpress.XtraBars.BarManager(this.components);
-            this.BranchBar = new DevExpress.XtraBars.Bar();
-            this.barDockControl21 = new DevExpress.XtraBars.BarDockControl();
-            this.barDockControl22 = new DevExpress.XtraBars.BarDockControl();
-            this.barDockControl23 = new DevExpress.XtraBars.BarDockControl();
-            this.barDockControl24 = new DevExpress.XtraBars.BarDockControl();
-            this.ProfessionBarManager = new DevExpress.XtraBars.BarManager(this.components);
-            this.ProfessionBar = new DevExpress.XtraBars.Bar();
-            this.barDockControl25 = new DevExpress.XtraBars.BarDockControl();
-            this.barDockControl26 = new DevExpress.XtraBars.BarDockControl();
-            this.barDockControl27 = new DevExpress.XtraBars.BarDockControl();
-            this.barDockControl28 = new DevExpress.XtraBars.BarDockControl();
             this.BranchPopupMenu = new DevExpress.XtraBars.PopupMenu(this.components);
             this.ProductPopupMenu = new DevExpress.XtraBars.PopupMenu(this.components);
             this.ProfessionPopupMenu = new DevExpress.XtraBars.PopupMenu(this.components);
@@ -245,28 +245,28 @@
             this.backstageViewClientControl4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.KindShipGridControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.KindShipGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.KindShipBarManager)).BeginInit();
             this.backstageViewClientControl5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PhoneDescriptionGridControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PhoneDescriptionGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PhoneDescriptionBarManager)).BeginInit();
             this.backstageViewClientControl6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ProductGridControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ProductGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ProductBarManager)).BeginInit();
             this.backstageViewClientControl7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BranchGridControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BranchGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BranchBarManager)).BeginInit();
             this.backstageViewClientControl8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ProfessionGridControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ProfessionGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ProfessionBarManager)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DocumentTypePopupMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CountriesPopupMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CardIssuingPopupMenu)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.KindShipBarManager)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.KindShipPopupMenu)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PhoneDescriptionBarManager)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PhoneDescriptionPopupMenu)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ProductBarManager)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BranchBarManager)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ProfessionBarManager)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BranchPopupMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ProductPopupMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ProfessionPopupMenu)).BeginInit();
@@ -294,8 +294,8 @@
             this.BackstageViewControl.Location = new System.Drawing.Point(0, 0);
             this.BackstageViewControl.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BackstageViewControl.Name = "BackstageViewControl";
-            this.BackstageViewControl.SelectedTab = this.PhoneDescriptionBackstageViewTabItem;
-            this.BackstageViewControl.SelectedTabIndex = 4;
+            this.BackstageViewControl.SelectedTab = this.DocumentTypeBackstageViewTab;
+            this.BackstageViewControl.SelectedTabIndex = 0;
             this.BackstageViewControl.Size = new System.Drawing.Size(1119, 585);
             this.BackstageViewControl.TabIndex = 0;
             this.BackstageViewControl.Text = "backstageViewControl1";
@@ -1490,6 +1490,70 @@
             this.UsedUserId.FieldName = "USED_USER_ID";
             this.UsedUserId.Name = "UsedUserId";
             // 
+            // KindShipBarManager
+            // 
+            this.KindShipBarManager.Bars.AddRange(new DevExpress.XtraBars.Bar[] {
+            this.KindShipBar});
+            this.KindShipBarManager.DockControls.Add(this.barDockControl9);
+            this.KindShipBarManager.DockControls.Add(this.barDockControl10);
+            this.KindShipBarManager.DockControls.Add(this.barDockControl11);
+            this.KindShipBarManager.DockControls.Add(this.barDockControl12);
+            this.KindShipBarManager.Form = this;
+            this.KindShipBarManager.MainMenu = this.KindShipBar;
+            this.KindShipBarManager.MaxItemId = 0;
+            // 
+            // KindShipBar
+            // 
+            this.KindShipBar.BarName = "Main menu";
+            this.KindShipBar.DockCol = 0;
+            this.KindShipBar.DockRow = 0;
+            this.KindShipBar.DockStyle = DevExpress.XtraBars.BarDockStyle.Standalone;
+            this.KindShipBar.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.NewKindShipBarButton),
+            new DevExpress.XtraBars.LinkPersistInfo(this.EditKindShipBarButton),
+            new DevExpress.XtraBars.LinkPersistInfo(this.DeleteKindShipBarButton),
+            new DevExpress.XtraBars.LinkPersistInfo(this.RefreshKindShipBarButton),
+            new DevExpress.XtraBars.LinkPersistInfo(this.UpKindShipBarButton),
+            new DevExpress.XtraBars.LinkPersistInfo(this.DownKindShipBarButton)});
+            this.KindShipBar.OptionsBar.DrawBorder = false;
+            this.KindShipBar.OptionsBar.DrawDragBorder = false;
+            this.KindShipBar.OptionsBar.MultiLine = true;
+            this.KindShipBar.OptionsBar.UseWholeRow = true;
+            this.KindShipBar.StandaloneBarDockControl = this.KindShipStandaloneBarDockControl;
+            this.KindShipBar.Text = "Main menu";
+            // 
+            // barDockControl9
+            // 
+            this.barDockControl9.CausesValidation = false;
+            this.barDockControl9.Dock = System.Windows.Forms.DockStyle.Top;
+            this.barDockControl9.Location = new System.Drawing.Point(0, 0);
+            this.barDockControl9.Manager = this.KindShipBarManager;
+            this.barDockControl9.Size = new System.Drawing.Size(1119, 0);
+            // 
+            // barDockControl10
+            // 
+            this.barDockControl10.CausesValidation = false;
+            this.barDockControl10.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.barDockControl10.Location = new System.Drawing.Point(0, 585);
+            this.barDockControl10.Manager = this.KindShipBarManager;
+            this.barDockControl10.Size = new System.Drawing.Size(1119, 0);
+            // 
+            // barDockControl11
+            // 
+            this.barDockControl11.CausesValidation = false;
+            this.barDockControl11.Dock = System.Windows.Forms.DockStyle.Left;
+            this.barDockControl11.Location = new System.Drawing.Point(0, 0);
+            this.barDockControl11.Manager = this.KindShipBarManager;
+            this.barDockControl11.Size = new System.Drawing.Size(0, 585);
+            // 
+            // barDockControl12
+            // 
+            this.barDockControl12.CausesValidation = false;
+            this.barDockControl12.Dock = System.Windows.Forms.DockStyle.Right;
+            this.barDockControl12.Location = new System.Drawing.Point(1119, 0);
+            this.barDockControl12.Manager = this.KindShipBarManager;
+            this.barDockControl12.Size = new System.Drawing.Size(0, 585);
+            // 
             // backstageViewClientControl5
             // 
             this.backstageViewClientControl5.Controls.Add(this.PhoneDescriptionGridControl);
@@ -1604,6 +1668,129 @@
             this.PhoneDescription_UsedUserId.FieldName = "USED_USER_ID";
             this.PhoneDescription_UsedUserId.Name = "PhoneDescription_UsedUserId";
             // 
+            // PhoneDescriptionBarManager
+            // 
+            this.PhoneDescriptionBarManager.Bars.AddRange(new DevExpress.XtraBars.Bar[] {
+            this.PhoneDescriptionBar});
+            this.PhoneDescriptionBarManager.DockControls.Add(this.barDockControl13);
+            this.PhoneDescriptionBarManager.DockControls.Add(this.barDockControl14);
+            this.PhoneDescriptionBarManager.DockControls.Add(this.barDockControl15);
+            this.PhoneDescriptionBarManager.DockControls.Add(this.barDockControl16);
+            this.PhoneDescriptionBarManager.Form = this;
+            this.PhoneDescriptionBarManager.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
+            this.NewPhoneDescriptionBarButton,
+            this.EditPhoneDescriptionBarButton,
+            this.DeletePhoneDescriptionBarButton,
+            this.RefreshPhoneDescriptionBarButton,
+            this.UpPhoneDescriptionBarButton,
+            this.DownPhoneDescriptionBarButton});
+            this.PhoneDescriptionBarManager.MainMenu = this.PhoneDescriptionBar;
+            this.PhoneDescriptionBarManager.MaxItemId = 6;
+            // 
+            // PhoneDescriptionBar
+            // 
+            this.PhoneDescriptionBar.BarName = "Main menu";
+            this.PhoneDescriptionBar.DockCol = 0;
+            this.PhoneDescriptionBar.DockRow = 0;
+            this.PhoneDescriptionBar.DockStyle = DevExpress.XtraBars.BarDockStyle.Standalone;
+            this.PhoneDescriptionBar.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.NewPhoneDescriptionBarButton),
+            new DevExpress.XtraBars.LinkPersistInfo(this.EditPhoneDescriptionBarButton),
+            new DevExpress.XtraBars.LinkPersistInfo(this.DeletePhoneDescriptionBarButton),
+            new DevExpress.XtraBars.LinkPersistInfo(this.RefreshPhoneDescriptionBarButton),
+            new DevExpress.XtraBars.LinkPersistInfo(this.UpPhoneDescriptionBarButton),
+            new DevExpress.XtraBars.LinkPersistInfo(this.DownPhoneDescriptionBarButton)});
+            this.PhoneDescriptionBar.OptionsBar.DrawBorder = false;
+            this.PhoneDescriptionBar.OptionsBar.DrawDragBorder = false;
+            this.PhoneDescriptionBar.OptionsBar.MultiLine = true;
+            this.PhoneDescriptionBar.OptionsBar.UseWholeRow = true;
+            this.PhoneDescriptionBar.StandaloneBarDockControl = this.PhoneDescriptionStandaloneBarDockControl;
+            this.PhoneDescriptionBar.Text = "Main menu";
+            // 
+            // NewPhoneDescriptionBarButton
+            // 
+            this.NewPhoneDescriptionBarButton.Caption = "Yeni";
+            this.NewPhoneDescriptionBarButton.Id = 0;
+            this.NewPhoneDescriptionBarButton.ImageOptions.Image = global::ELMS.Properties.Resources.plus_16;
+            this.NewPhoneDescriptionBarButton.Name = "NewPhoneDescriptionBarButton";
+            this.NewPhoneDescriptionBarButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.NewPhoneDescriptionBarButton_ItemClick);
+            // 
+            // EditPhoneDescriptionBarButton
+            // 
+            this.EditPhoneDescriptionBarButton.Caption = "Dəyiş";
+            this.EditPhoneDescriptionBarButton.Id = 1;
+            this.EditPhoneDescriptionBarButton.ImageOptions.Image = global::ELMS.Properties.Resources.edit_16;
+            this.EditPhoneDescriptionBarButton.Name = "EditPhoneDescriptionBarButton";
+            this.EditPhoneDescriptionBarButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.EditPhoneDescriptionBarButton_ItemClick);
+            // 
+            // DeletePhoneDescriptionBarButton
+            // 
+            this.DeletePhoneDescriptionBarButton.Caption = "Sil";
+            this.DeletePhoneDescriptionBarButton.Id = 2;
+            this.DeletePhoneDescriptionBarButton.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("DeletePhoneDescriptionBarButton.ImageOptions.Image")));
+            this.DeletePhoneDescriptionBarButton.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("DeletePhoneDescriptionBarButton.ImageOptions.LargeImage")));
+            this.DeletePhoneDescriptionBarButton.Name = "DeletePhoneDescriptionBarButton";
+            this.DeletePhoneDescriptionBarButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.DeletePhoneDescriptionBarButton_ItemClick);
+            // 
+            // RefreshPhoneDescriptionBarButton
+            // 
+            this.RefreshPhoneDescriptionBarButton.Caption = "Təzələ";
+            this.RefreshPhoneDescriptionBarButton.Id = 3;
+            this.RefreshPhoneDescriptionBarButton.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("RefreshPhoneDescriptionBarButton.ImageOptions.Image")));
+            this.RefreshPhoneDescriptionBarButton.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("RefreshPhoneDescriptionBarButton.ImageOptions.LargeImage")));
+            this.RefreshPhoneDescriptionBarButton.Name = "RefreshPhoneDescriptionBarButton";
+            this.RefreshPhoneDescriptionBarButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.RefreshPhoneDescriptionBarButton_ItemClick);
+            // 
+            // UpPhoneDescriptionBarButton
+            // 
+            this.UpPhoneDescriptionBarButton.Caption = "YeriniYuxarıDəyiş";
+            this.UpPhoneDescriptionBarButton.Id = 4;
+            this.UpPhoneDescriptionBarButton.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("UpPhoneDescriptionBarButton.ImageOptions.Image")));
+            this.UpPhoneDescriptionBarButton.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("UpPhoneDescriptionBarButton.ImageOptions.LargeImage")));
+            this.UpPhoneDescriptionBarButton.Name = "UpPhoneDescriptionBarButton";
+            this.UpPhoneDescriptionBarButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.UpPhoneDescriptionBarButton_ItemClick);
+            // 
+            // DownPhoneDescriptionBarButton
+            // 
+            this.DownPhoneDescriptionBarButton.Caption = "YeriniAşağıDəyiş";
+            this.DownPhoneDescriptionBarButton.Id = 5;
+            this.DownPhoneDescriptionBarButton.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("DownPhoneDescriptionBarButton.ImageOptions.Image")));
+            this.DownPhoneDescriptionBarButton.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("DownPhoneDescriptionBarButton.ImageOptions.LargeImage")));
+            this.DownPhoneDescriptionBarButton.Name = "DownPhoneDescriptionBarButton";
+            this.DownPhoneDescriptionBarButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.DownPhoneDescriptionBarButton_ItemClick);
+            // 
+            // barDockControl13
+            // 
+            this.barDockControl13.CausesValidation = false;
+            this.barDockControl13.Dock = System.Windows.Forms.DockStyle.Top;
+            this.barDockControl13.Location = new System.Drawing.Point(0, 0);
+            this.barDockControl13.Manager = this.PhoneDescriptionBarManager;
+            this.barDockControl13.Size = new System.Drawing.Size(1119, 0);
+            // 
+            // barDockControl14
+            // 
+            this.barDockControl14.CausesValidation = false;
+            this.barDockControl14.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.barDockControl14.Location = new System.Drawing.Point(0, 585);
+            this.barDockControl14.Manager = this.PhoneDescriptionBarManager;
+            this.barDockControl14.Size = new System.Drawing.Size(1119, 0);
+            // 
+            // barDockControl15
+            // 
+            this.barDockControl15.CausesValidation = false;
+            this.barDockControl15.Dock = System.Windows.Forms.DockStyle.Left;
+            this.barDockControl15.Location = new System.Drawing.Point(0, 0);
+            this.barDockControl15.Manager = this.PhoneDescriptionBarManager;
+            this.barDockControl15.Size = new System.Drawing.Size(0, 585);
+            // 
+            // barDockControl16
+            // 
+            this.barDockControl16.CausesValidation = false;
+            this.barDockControl16.Dock = System.Windows.Forms.DockStyle.Right;
+            this.barDockControl16.Location = new System.Drawing.Point(1119, 0);
+            this.barDockControl16.Manager = this.PhoneDescriptionBarManager;
+            this.barDockControl16.Size = new System.Drawing.Size(0, 585);
+            // 
             // backstageViewClientControl6
             // 
             this.backstageViewClientControl6.Controls.Add(this.ProductGridControl);
@@ -1715,6 +1902,70 @@
             this.Product_UsedUserId.Caption = "Product_UsedUserId";
             this.Product_UsedUserId.FieldName = "USED_USER_ID";
             this.Product_UsedUserId.Name = "Product_UsedUserId";
+            // 
+            // ProductBarManager
+            // 
+            this.ProductBarManager.Bars.AddRange(new DevExpress.XtraBars.Bar[] {
+            this.ProductBar});
+            this.ProductBarManager.DockControls.Add(this.barDockControl17);
+            this.ProductBarManager.DockControls.Add(this.barDockControl18);
+            this.ProductBarManager.DockControls.Add(this.barDockControl19);
+            this.ProductBarManager.DockControls.Add(this.barDockControl20);
+            this.ProductBarManager.Form = this;
+            this.ProductBarManager.MainMenu = this.ProductBar;
+            this.ProductBarManager.MaxItemId = 0;
+            // 
+            // ProductBar
+            // 
+            this.ProductBar.BarName = "Main menu";
+            this.ProductBar.DockCol = 0;
+            this.ProductBar.DockRow = 0;
+            this.ProductBar.DockStyle = DevExpress.XtraBars.BarDockStyle.Standalone;
+            this.ProductBar.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.NewProductBarButton),
+            new DevExpress.XtraBars.LinkPersistInfo(this.EditProductBarButton),
+            new DevExpress.XtraBars.LinkPersistInfo(this.DeleteProductBarButton),
+            new DevExpress.XtraBars.LinkPersistInfo(this.RefreshProductBarButton),
+            new DevExpress.XtraBars.LinkPersistInfo(this.UpProductBarButton),
+            new DevExpress.XtraBars.LinkPersistInfo(this.DownProductBarButton)});
+            this.ProductBar.OptionsBar.DrawBorder = false;
+            this.ProductBar.OptionsBar.DrawDragBorder = false;
+            this.ProductBar.OptionsBar.MultiLine = true;
+            this.ProductBar.OptionsBar.UseWholeRow = true;
+            this.ProductBar.StandaloneBarDockControl = this.ProductStandaloneBarDockControl;
+            this.ProductBar.Text = "Main menu";
+            // 
+            // barDockControl17
+            // 
+            this.barDockControl17.CausesValidation = false;
+            this.barDockControl17.Dock = System.Windows.Forms.DockStyle.Top;
+            this.barDockControl17.Location = new System.Drawing.Point(0, 0);
+            this.barDockControl17.Manager = this.ProductBarManager;
+            this.barDockControl17.Size = new System.Drawing.Size(1119, 0);
+            // 
+            // barDockControl18
+            // 
+            this.barDockControl18.CausesValidation = false;
+            this.barDockControl18.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.barDockControl18.Location = new System.Drawing.Point(0, 585);
+            this.barDockControl18.Manager = this.ProductBarManager;
+            this.barDockControl18.Size = new System.Drawing.Size(1119, 0);
+            // 
+            // barDockControl19
+            // 
+            this.barDockControl19.CausesValidation = false;
+            this.barDockControl19.Dock = System.Windows.Forms.DockStyle.Left;
+            this.barDockControl19.Location = new System.Drawing.Point(0, 0);
+            this.barDockControl19.Manager = this.ProductBarManager;
+            this.barDockControl19.Size = new System.Drawing.Size(0, 585);
+            // 
+            // barDockControl20
+            // 
+            this.barDockControl20.CausesValidation = false;
+            this.barDockControl20.Dock = System.Windows.Forms.DockStyle.Right;
+            this.barDockControl20.Location = new System.Drawing.Point(1119, 0);
+            this.barDockControl20.Manager = this.ProductBarManager;
+            this.barDockControl20.Size = new System.Drawing.Size(0, 585);
             // 
             // backstageViewClientControl7
             // 
@@ -1855,6 +2106,70 @@
             this.Branch_Note.Visible = true;
             this.Branch_Note.VisibleIndex = 5;
             // 
+            // BranchBarManager
+            // 
+            this.BranchBarManager.Bars.AddRange(new DevExpress.XtraBars.Bar[] {
+            this.BranchBar});
+            this.BranchBarManager.DockControls.Add(this.barDockControl21);
+            this.BranchBarManager.DockControls.Add(this.barDockControl22);
+            this.BranchBarManager.DockControls.Add(this.barDockControl23);
+            this.BranchBarManager.DockControls.Add(this.barDockControl24);
+            this.BranchBarManager.Form = this;
+            this.BranchBarManager.MainMenu = this.BranchBar;
+            this.BranchBarManager.MaxItemId = 1;
+            // 
+            // BranchBar
+            // 
+            this.BranchBar.BarName = "Main menu";
+            this.BranchBar.DockCol = 0;
+            this.BranchBar.DockRow = 0;
+            this.BranchBar.DockStyle = DevExpress.XtraBars.BarDockStyle.Standalone;
+            this.BranchBar.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.NewBranchBarButton),
+            new DevExpress.XtraBars.LinkPersistInfo(this.EditBranchBarButton),
+            new DevExpress.XtraBars.LinkPersistInfo(this.DeleteBranchBarButton),
+            new DevExpress.XtraBars.LinkPersistInfo(this.RefreshBranchBarButton),
+            new DevExpress.XtraBars.LinkPersistInfo(this.UpBranchBarButton),
+            new DevExpress.XtraBars.LinkPersistInfo(this.DownBranchBarButton)});
+            this.BranchBar.OptionsBar.DrawBorder = false;
+            this.BranchBar.OptionsBar.DrawDragBorder = false;
+            this.BranchBar.OptionsBar.MultiLine = true;
+            this.BranchBar.OptionsBar.UseWholeRow = true;
+            this.BranchBar.StandaloneBarDockControl = this.BranchStandaloneBarDockControl;
+            this.BranchBar.Text = "Main menu";
+            // 
+            // barDockControl21
+            // 
+            this.barDockControl21.CausesValidation = false;
+            this.barDockControl21.Dock = System.Windows.Forms.DockStyle.Top;
+            this.barDockControl21.Location = new System.Drawing.Point(0, 0);
+            this.barDockControl21.Manager = this.BranchBarManager;
+            this.barDockControl21.Size = new System.Drawing.Size(1119, 0);
+            // 
+            // barDockControl22
+            // 
+            this.barDockControl22.CausesValidation = false;
+            this.barDockControl22.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.barDockControl22.Location = new System.Drawing.Point(0, 585);
+            this.barDockControl22.Manager = this.BranchBarManager;
+            this.barDockControl22.Size = new System.Drawing.Size(1119, 0);
+            // 
+            // barDockControl23
+            // 
+            this.barDockControl23.CausesValidation = false;
+            this.barDockControl23.Dock = System.Windows.Forms.DockStyle.Left;
+            this.barDockControl23.Location = new System.Drawing.Point(0, 0);
+            this.barDockControl23.Manager = this.BranchBarManager;
+            this.barDockControl23.Size = new System.Drawing.Size(0, 585);
+            // 
+            // barDockControl24
+            // 
+            this.barDockControl24.CausesValidation = false;
+            this.barDockControl24.Dock = System.Windows.Forms.DockStyle.Right;
+            this.barDockControl24.Location = new System.Drawing.Point(1119, 0);
+            this.barDockControl24.Manager = this.BranchBarManager;
+            this.barDockControl24.Size = new System.Drawing.Size(0, 585);
+            // 
             // backstageViewClientControl8
             // 
             this.backstageViewClientControl8.Controls.Add(this.ProfessionGridControl);
@@ -1967,11 +2282,76 @@
             this.Profession_UsedUserId.FieldName = "USED_USER_ID";
             this.Profession_UsedUserId.Name = "Profession_UsedUserId";
             // 
+            // ProfessionBarManager
+            // 
+            this.ProfessionBarManager.Bars.AddRange(new DevExpress.XtraBars.Bar[] {
+            this.ProfessionBar});
+            this.ProfessionBarManager.DockControls.Add(this.barDockControl25);
+            this.ProfessionBarManager.DockControls.Add(this.barDockControl26);
+            this.ProfessionBarManager.DockControls.Add(this.barDockControl27);
+            this.ProfessionBarManager.DockControls.Add(this.barDockControl28);
+            this.ProfessionBarManager.Form = this;
+            this.ProfessionBarManager.MainMenu = this.ProfessionBar;
+            this.ProfessionBarManager.MaxItemId = 0;
+            // 
+            // ProfessionBar
+            // 
+            this.ProfessionBar.BarName = "Main menu";
+            this.ProfessionBar.DockCol = 0;
+            this.ProfessionBar.DockRow = 0;
+            this.ProfessionBar.DockStyle = DevExpress.XtraBars.BarDockStyle.Standalone;
+            this.ProfessionBar.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.NewProfessionBarButton),
+            new DevExpress.XtraBars.LinkPersistInfo(this.EditProfessionBarButton),
+            new DevExpress.XtraBars.LinkPersistInfo(this.DeleteProfessionBarButton),
+            new DevExpress.XtraBars.LinkPersistInfo(this.RefreshProfessionBarButton),
+            new DevExpress.XtraBars.LinkPersistInfo(this.UpProfessionBarButton),
+            new DevExpress.XtraBars.LinkPersistInfo(this.DownProfessionBarButton)});
+            this.ProfessionBar.OptionsBar.DrawBorder = false;
+            this.ProfessionBar.OptionsBar.DrawDragBorder = false;
+            this.ProfessionBar.OptionsBar.MultiLine = true;
+            this.ProfessionBar.OptionsBar.UseWholeRow = true;
+            this.ProfessionBar.StandaloneBarDockControl = this.ProfessionStandaloneBarDockControl;
+            this.ProfessionBar.Text = "Main menu";
+            // 
+            // barDockControl25
+            // 
+            this.barDockControl25.CausesValidation = false;
+            this.barDockControl25.Dock = System.Windows.Forms.DockStyle.Top;
+            this.barDockControl25.Location = new System.Drawing.Point(0, 0);
+            this.barDockControl25.Manager = this.ProfessionBarManager;
+            this.barDockControl25.Size = new System.Drawing.Size(1119, 0);
+            // 
+            // barDockControl26
+            // 
+            this.barDockControl26.CausesValidation = false;
+            this.barDockControl26.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.barDockControl26.Location = new System.Drawing.Point(0, 585);
+            this.barDockControl26.Manager = this.ProfessionBarManager;
+            this.barDockControl26.Size = new System.Drawing.Size(1119, 0);
+            // 
+            // barDockControl27
+            // 
+            this.barDockControl27.CausesValidation = false;
+            this.barDockControl27.Dock = System.Windows.Forms.DockStyle.Left;
+            this.barDockControl27.Location = new System.Drawing.Point(0, 0);
+            this.barDockControl27.Manager = this.ProfessionBarManager;
+            this.barDockControl27.Size = new System.Drawing.Size(0, 585);
+            // 
+            // barDockControl28
+            // 
+            this.barDockControl28.CausesValidation = false;
+            this.barDockControl28.Dock = System.Windows.Forms.DockStyle.Right;
+            this.barDockControl28.Location = new System.Drawing.Point(1119, 0);
+            this.barDockControl28.Manager = this.ProfessionBarManager;
+            this.barDockControl28.Size = new System.Drawing.Size(0, 585);
+            // 
             // DocumentTypeBackstageViewTab
             // 
             this.DocumentTypeBackstageViewTab.Caption = "Sənədin növləri";
             this.DocumentTypeBackstageViewTab.ContentControl = this.backstageViewClientControl1;
             this.DocumentTypeBackstageViewTab.Name = "DocumentTypeBackstageViewTab";
+            this.DocumentTypeBackstageViewTab.Selected = true;
             // 
             // CountriesBackstageViewTab
             // 
@@ -1996,7 +2376,6 @@
             this.PhoneDescriptionBackstageViewTabItem.Caption = "Telefon təsvirləri";
             this.PhoneDescriptionBackstageViewTabItem.ContentControl = this.backstageViewClientControl5;
             this.PhoneDescriptionBackstageViewTabItem.Name = "PhoneDescriptionBackstageViewTabItem";
-            this.PhoneDescriptionBackstageViewTabItem.Selected = true;
             // 
             // ProductBackStageViewTab
             // 
@@ -2073,70 +2452,6 @@
             this.CardIssuingPopupMenu.Manager = this.CardIssuingBarManager;
             this.CardIssuingPopupMenu.Name = "CardIssuingPopupMenu";
             // 
-            // KindShipBarManager
-            // 
-            this.KindShipBarManager.Bars.AddRange(new DevExpress.XtraBars.Bar[] {
-            this.KindShipBar});
-            this.KindShipBarManager.DockControls.Add(this.barDockControl9);
-            this.KindShipBarManager.DockControls.Add(this.barDockControl10);
-            this.KindShipBarManager.DockControls.Add(this.barDockControl11);
-            this.KindShipBarManager.DockControls.Add(this.barDockControl12);
-            this.KindShipBarManager.Form = this;
-            this.KindShipBarManager.MainMenu = this.KindShipBar;
-            this.KindShipBarManager.MaxItemId = 0;
-            // 
-            // KindShipBar
-            // 
-            this.KindShipBar.BarName = "Main menu";
-            this.KindShipBar.DockCol = 0;
-            this.KindShipBar.DockRow = 0;
-            this.KindShipBar.DockStyle = DevExpress.XtraBars.BarDockStyle.Standalone;
-            this.KindShipBar.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.NewKindShipBarButton),
-            new DevExpress.XtraBars.LinkPersistInfo(this.EditKindShipBarButton),
-            new DevExpress.XtraBars.LinkPersistInfo(this.DeleteKindShipBarButton),
-            new DevExpress.XtraBars.LinkPersistInfo(this.RefreshKindShipBarButton),
-            new DevExpress.XtraBars.LinkPersistInfo(this.UpKindShipBarButton),
-            new DevExpress.XtraBars.LinkPersistInfo(this.DownKindShipBarButton)});
-            this.KindShipBar.OptionsBar.DrawBorder = false;
-            this.KindShipBar.OptionsBar.DrawDragBorder = false;
-            this.KindShipBar.OptionsBar.MultiLine = true;
-            this.KindShipBar.OptionsBar.UseWholeRow = true;
-            this.KindShipBar.StandaloneBarDockControl = this.KindShipStandaloneBarDockControl;
-            this.KindShipBar.Text = "Main menu";
-            // 
-            // barDockControl9
-            // 
-            this.barDockControl9.CausesValidation = false;
-            this.barDockControl9.Dock = System.Windows.Forms.DockStyle.Top;
-            this.barDockControl9.Location = new System.Drawing.Point(0, 0);
-            this.barDockControl9.Manager = this.KindShipBarManager;
-            this.barDockControl9.Size = new System.Drawing.Size(1119, 0);
-            // 
-            // barDockControl10
-            // 
-            this.barDockControl10.CausesValidation = false;
-            this.barDockControl10.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControl10.Location = new System.Drawing.Point(0, 585);
-            this.barDockControl10.Manager = this.KindShipBarManager;
-            this.barDockControl10.Size = new System.Drawing.Size(1119, 0);
-            // 
-            // barDockControl11
-            // 
-            this.barDockControl11.CausesValidation = false;
-            this.barDockControl11.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControl11.Location = new System.Drawing.Point(0, 0);
-            this.barDockControl11.Manager = this.KindShipBarManager;
-            this.barDockControl11.Size = new System.Drawing.Size(0, 585);
-            // 
-            // barDockControl12
-            // 
-            this.barDockControl12.CausesValidation = false;
-            this.barDockControl12.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControl12.Location = new System.Drawing.Point(1119, 0);
-            this.barDockControl12.Manager = this.KindShipBarManager;
-            this.barDockControl12.Size = new System.Drawing.Size(0, 585);
-            // 
             // KindShipPopupMenu
             // 
             this.KindShipPopupMenu.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
@@ -2149,129 +2464,6 @@
             this.KindShipPopupMenu.Manager = this.KindShipBarManager;
             this.KindShipPopupMenu.Name = "KindShipPopupMenu";
             // 
-            // PhoneDescriptionBarManager
-            // 
-            this.PhoneDescriptionBarManager.Bars.AddRange(new DevExpress.XtraBars.Bar[] {
-            this.PhoneDescriptionBar});
-            this.PhoneDescriptionBarManager.DockControls.Add(this.barDockControl13);
-            this.PhoneDescriptionBarManager.DockControls.Add(this.barDockControl14);
-            this.PhoneDescriptionBarManager.DockControls.Add(this.barDockControl15);
-            this.PhoneDescriptionBarManager.DockControls.Add(this.barDockControl16);
-            this.PhoneDescriptionBarManager.Form = this;
-            this.PhoneDescriptionBarManager.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
-            this.NewPhoneDescriptionBarButton,
-            this.EditPhoneDescriptionBarButton,
-            this.DeletePhoneDescriptionBarButton,
-            this.RefreshPhoneDescriptionBarButton,
-            this.UpPhoneDescriptionBarButton,
-            this.DownPhoneDescriptionBarButton});
-            this.PhoneDescriptionBarManager.MainMenu = this.PhoneDescriptionBar;
-            this.PhoneDescriptionBarManager.MaxItemId = 6;
-            // 
-            // PhoneDescriptionBar
-            // 
-            this.PhoneDescriptionBar.BarName = "Main menu";
-            this.PhoneDescriptionBar.DockCol = 0;
-            this.PhoneDescriptionBar.DockRow = 0;
-            this.PhoneDescriptionBar.DockStyle = DevExpress.XtraBars.BarDockStyle.Standalone;
-            this.PhoneDescriptionBar.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.NewPhoneDescriptionBarButton),
-            new DevExpress.XtraBars.LinkPersistInfo(this.EditPhoneDescriptionBarButton),
-            new DevExpress.XtraBars.LinkPersistInfo(this.DeletePhoneDescriptionBarButton),
-            new DevExpress.XtraBars.LinkPersistInfo(this.RefreshPhoneDescriptionBarButton),
-            new DevExpress.XtraBars.LinkPersistInfo(this.UpPhoneDescriptionBarButton),
-            new DevExpress.XtraBars.LinkPersistInfo(this.DownPhoneDescriptionBarButton)});
-            this.PhoneDescriptionBar.OptionsBar.DrawBorder = false;
-            this.PhoneDescriptionBar.OptionsBar.DrawDragBorder = false;
-            this.PhoneDescriptionBar.OptionsBar.MultiLine = true;
-            this.PhoneDescriptionBar.OptionsBar.UseWholeRow = true;
-            this.PhoneDescriptionBar.StandaloneBarDockControl = this.PhoneDescriptionStandaloneBarDockControl;
-            this.PhoneDescriptionBar.Text = "Main menu";
-            // 
-            // NewPhoneDescriptionBarButton
-            // 
-            this.NewPhoneDescriptionBarButton.Caption = "Yeni";
-            this.NewPhoneDescriptionBarButton.Id = 0;
-            this.NewPhoneDescriptionBarButton.ImageOptions.Image = global::ELMS.Properties.Resources.plus_16;
-            this.NewPhoneDescriptionBarButton.Name = "NewPhoneDescriptionBarButton";
-            this.NewPhoneDescriptionBarButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.NewPhoneDescriptionBarButton_ItemClick);
-            // 
-            // EditPhoneDescriptionBarButton
-            // 
-            this.EditPhoneDescriptionBarButton.Caption = "Dəyiş";
-            this.EditPhoneDescriptionBarButton.Id = 1;
-            this.EditPhoneDescriptionBarButton.ImageOptions.Image = global::ELMS.Properties.Resources.edit_16;
-            this.EditPhoneDescriptionBarButton.Name = "EditPhoneDescriptionBarButton";
-            this.EditPhoneDescriptionBarButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.EditPhoneDescriptionBarButton_ItemClick);
-            // 
-            // DeletePhoneDescriptionBarButton
-            // 
-            this.DeletePhoneDescriptionBarButton.Caption = "Sil";
-            this.DeletePhoneDescriptionBarButton.Id = 2;
-            this.DeletePhoneDescriptionBarButton.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("DeletePhoneDescriptionBarButton.ImageOptions.Image")));
-            this.DeletePhoneDescriptionBarButton.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("DeletePhoneDescriptionBarButton.ImageOptions.LargeImage")));
-            this.DeletePhoneDescriptionBarButton.Name = "DeletePhoneDescriptionBarButton";
-            this.DeletePhoneDescriptionBarButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.DeletePhoneDescriptionBarButton_ItemClick);
-            // 
-            // RefreshPhoneDescriptionBarButton
-            // 
-            this.RefreshPhoneDescriptionBarButton.Caption = "Təzələ";
-            this.RefreshPhoneDescriptionBarButton.Id = 3;
-            this.RefreshPhoneDescriptionBarButton.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("RefreshPhoneDescriptionBarButton.ImageOptions.Image")));
-            this.RefreshPhoneDescriptionBarButton.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("RefreshPhoneDescriptionBarButton.ImageOptions.LargeImage")));
-            this.RefreshPhoneDescriptionBarButton.Name = "RefreshPhoneDescriptionBarButton";
-            this.RefreshPhoneDescriptionBarButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.RefreshPhoneDescriptionBarButton_ItemClick);
-            // 
-            // UpPhoneDescriptionBarButton
-            // 
-            this.UpPhoneDescriptionBarButton.Caption = "YeriniYuxarıDəyiş";
-            this.UpPhoneDescriptionBarButton.Id = 4;
-            this.UpPhoneDescriptionBarButton.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("UpPhoneDescriptionBarButton.ImageOptions.Image")));
-            this.UpPhoneDescriptionBarButton.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("UpPhoneDescriptionBarButton.ImageOptions.LargeImage")));
-            this.UpPhoneDescriptionBarButton.Name = "UpPhoneDescriptionBarButton";
-            this.UpPhoneDescriptionBarButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.UpPhoneDescriptionBarButton_ItemClick);
-            // 
-            // DownPhoneDescriptionBarButton
-            // 
-            this.DownPhoneDescriptionBarButton.Caption = "YeriniAşağıDəyiş";
-            this.DownPhoneDescriptionBarButton.Id = 5;
-            this.DownPhoneDescriptionBarButton.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("DownPhoneDescriptionBarButton.ImageOptions.Image")));
-            this.DownPhoneDescriptionBarButton.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("DownPhoneDescriptionBarButton.ImageOptions.LargeImage")));
-            this.DownPhoneDescriptionBarButton.Name = "DownPhoneDescriptionBarButton";
-            this.DownPhoneDescriptionBarButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.DownPhoneDescriptionBarButton_ItemClick);
-            // 
-            // barDockControl13
-            // 
-            this.barDockControl13.CausesValidation = false;
-            this.barDockControl13.Dock = System.Windows.Forms.DockStyle.Top;
-            this.barDockControl13.Location = new System.Drawing.Point(0, 0);
-            this.barDockControl13.Manager = this.PhoneDescriptionBarManager;
-            this.barDockControl13.Size = new System.Drawing.Size(1119, 0);
-            // 
-            // barDockControl14
-            // 
-            this.barDockControl14.CausesValidation = false;
-            this.barDockControl14.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControl14.Location = new System.Drawing.Point(0, 585);
-            this.barDockControl14.Manager = this.PhoneDescriptionBarManager;
-            this.barDockControl14.Size = new System.Drawing.Size(1119, 0);
-            // 
-            // barDockControl15
-            // 
-            this.barDockControl15.CausesValidation = false;
-            this.barDockControl15.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControl15.Location = new System.Drawing.Point(0, 0);
-            this.barDockControl15.Manager = this.PhoneDescriptionBarManager;
-            this.barDockControl15.Size = new System.Drawing.Size(0, 585);
-            // 
-            // barDockControl16
-            // 
-            this.barDockControl16.CausesValidation = false;
-            this.barDockControl16.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControl16.Location = new System.Drawing.Point(1119, 0);
-            this.barDockControl16.Manager = this.PhoneDescriptionBarManager;
-            this.barDockControl16.Size = new System.Drawing.Size(0, 585);
-            // 
             // PhoneDescriptionPopupMenu
             // 
             this.PhoneDescriptionPopupMenu.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
@@ -2283,198 +2475,6 @@
             new DevExpress.XtraBars.LinkPersistInfo(this.DownKindShipBarButton)});
             this.PhoneDescriptionPopupMenu.Manager = this.PhoneDescriptionBarManager;
             this.PhoneDescriptionPopupMenu.Name = "PhoneDescriptionPopupMenu";
-            // 
-            // ProductBarManager
-            // 
-            this.ProductBarManager.Bars.AddRange(new DevExpress.XtraBars.Bar[] {
-            this.ProductBar});
-            this.ProductBarManager.DockControls.Add(this.barDockControl17);
-            this.ProductBarManager.DockControls.Add(this.barDockControl18);
-            this.ProductBarManager.DockControls.Add(this.barDockControl19);
-            this.ProductBarManager.DockControls.Add(this.barDockControl20);
-            this.ProductBarManager.Form = this;
-            this.ProductBarManager.MainMenu = this.ProductBar;
-            this.ProductBarManager.MaxItemId = 0;
-            // 
-            // ProductBar
-            // 
-            this.ProductBar.BarName = "Main menu";
-            this.ProductBar.DockCol = 0;
-            this.ProductBar.DockRow = 0;
-            this.ProductBar.DockStyle = DevExpress.XtraBars.BarDockStyle.Standalone;
-            this.ProductBar.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.NewProductBarButton),
-            new DevExpress.XtraBars.LinkPersistInfo(this.EditProductBarButton),
-            new DevExpress.XtraBars.LinkPersistInfo(this.DeleteProductBarButton),
-            new DevExpress.XtraBars.LinkPersistInfo(this.RefreshProductBarButton),
-            new DevExpress.XtraBars.LinkPersistInfo(this.UpProductBarButton),
-            new DevExpress.XtraBars.LinkPersistInfo(this.DownProductBarButton)});
-            this.ProductBar.OptionsBar.DrawBorder = false;
-            this.ProductBar.OptionsBar.DrawDragBorder = false;
-            this.ProductBar.OptionsBar.MultiLine = true;
-            this.ProductBar.OptionsBar.UseWholeRow = true;
-            this.ProductBar.StandaloneBarDockControl = this.ProductStandaloneBarDockControl;
-            this.ProductBar.Text = "Main menu";
-            // 
-            // barDockControl17
-            // 
-            this.barDockControl17.CausesValidation = false;
-            this.barDockControl17.Dock = System.Windows.Forms.DockStyle.Top;
-            this.barDockControl17.Location = new System.Drawing.Point(0, 0);
-            this.barDockControl17.Manager = this.ProductBarManager;
-            this.barDockControl17.Size = new System.Drawing.Size(1119, 0);
-            // 
-            // barDockControl18
-            // 
-            this.barDockControl18.CausesValidation = false;
-            this.barDockControl18.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControl18.Location = new System.Drawing.Point(0, 585);
-            this.barDockControl18.Manager = this.ProductBarManager;
-            this.barDockControl18.Size = new System.Drawing.Size(1119, 0);
-            // 
-            // barDockControl19
-            // 
-            this.barDockControl19.CausesValidation = false;
-            this.barDockControl19.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControl19.Location = new System.Drawing.Point(0, 0);
-            this.barDockControl19.Manager = this.ProductBarManager;
-            this.barDockControl19.Size = new System.Drawing.Size(0, 585);
-            // 
-            // barDockControl20
-            // 
-            this.barDockControl20.CausesValidation = false;
-            this.barDockControl20.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControl20.Location = new System.Drawing.Point(1119, 0);
-            this.barDockControl20.Manager = this.ProductBarManager;
-            this.barDockControl20.Size = new System.Drawing.Size(0, 585);
-            // 
-            // BranchBarManager
-            // 
-            this.BranchBarManager.Bars.AddRange(new DevExpress.XtraBars.Bar[] {
-            this.BranchBar});
-            this.BranchBarManager.DockControls.Add(this.barDockControl21);
-            this.BranchBarManager.DockControls.Add(this.barDockControl22);
-            this.BranchBarManager.DockControls.Add(this.barDockControl23);
-            this.BranchBarManager.DockControls.Add(this.barDockControl24);
-            this.BranchBarManager.Form = this;
-            this.BranchBarManager.MainMenu = this.BranchBar;
-            this.BranchBarManager.MaxItemId = 1;
-            // 
-            // BranchBar
-            // 
-            this.BranchBar.BarName = "Main menu";
-            this.BranchBar.DockCol = 0;
-            this.BranchBar.DockRow = 0;
-            this.BranchBar.DockStyle = DevExpress.XtraBars.BarDockStyle.Standalone;
-            this.BranchBar.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.NewBranchBarButton),
-            new DevExpress.XtraBars.LinkPersistInfo(this.EditBranchBarButton),
-            new DevExpress.XtraBars.LinkPersistInfo(this.DeleteBranchBarButton),
-            new DevExpress.XtraBars.LinkPersistInfo(this.RefreshBranchBarButton),
-            new DevExpress.XtraBars.LinkPersistInfo(this.UpBranchBarButton),
-            new DevExpress.XtraBars.LinkPersistInfo(this.DownBranchBarButton)});
-            this.BranchBar.OptionsBar.DrawBorder = false;
-            this.BranchBar.OptionsBar.DrawDragBorder = false;
-            this.BranchBar.OptionsBar.MultiLine = true;
-            this.BranchBar.OptionsBar.UseWholeRow = true;
-            this.BranchBar.StandaloneBarDockControl = this.BranchStandaloneBarDockControl;
-            this.BranchBar.Text = "Main menu";
-            // 
-            // barDockControl21
-            // 
-            this.barDockControl21.CausesValidation = false;
-            this.barDockControl21.Dock = System.Windows.Forms.DockStyle.Top;
-            this.barDockControl21.Location = new System.Drawing.Point(0, 0);
-            this.barDockControl21.Manager = this.BranchBarManager;
-            this.barDockControl21.Size = new System.Drawing.Size(1119, 0);
-            // 
-            // barDockControl22
-            // 
-            this.barDockControl22.CausesValidation = false;
-            this.barDockControl22.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControl22.Location = new System.Drawing.Point(0, 585);
-            this.barDockControl22.Manager = this.BranchBarManager;
-            this.barDockControl22.Size = new System.Drawing.Size(1119, 0);
-            // 
-            // barDockControl23
-            // 
-            this.barDockControl23.CausesValidation = false;
-            this.barDockControl23.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControl23.Location = new System.Drawing.Point(0, 0);
-            this.barDockControl23.Manager = this.BranchBarManager;
-            this.barDockControl23.Size = new System.Drawing.Size(0, 585);
-            // 
-            // barDockControl24
-            // 
-            this.barDockControl24.CausesValidation = false;
-            this.barDockControl24.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControl24.Location = new System.Drawing.Point(1119, 0);
-            this.barDockControl24.Manager = this.BranchBarManager;
-            this.barDockControl24.Size = new System.Drawing.Size(0, 585);
-            // 
-            // ProfessionBarManager
-            // 
-            this.ProfessionBarManager.Bars.AddRange(new DevExpress.XtraBars.Bar[] {
-            this.ProfessionBar});
-            this.ProfessionBarManager.DockControls.Add(this.barDockControl25);
-            this.ProfessionBarManager.DockControls.Add(this.barDockControl26);
-            this.ProfessionBarManager.DockControls.Add(this.barDockControl27);
-            this.ProfessionBarManager.DockControls.Add(this.barDockControl28);
-            this.ProfessionBarManager.Form = this;
-            this.ProfessionBarManager.MainMenu = this.ProfessionBar;
-            this.ProfessionBarManager.MaxItemId = 0;
-            // 
-            // ProfessionBar
-            // 
-            this.ProfessionBar.BarName = "Main menu";
-            this.ProfessionBar.DockCol = 0;
-            this.ProfessionBar.DockRow = 0;
-            this.ProfessionBar.DockStyle = DevExpress.XtraBars.BarDockStyle.Standalone;
-            this.ProfessionBar.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.NewProfessionBarButton),
-            new DevExpress.XtraBars.LinkPersistInfo(this.EditProfessionBarButton),
-            new DevExpress.XtraBars.LinkPersistInfo(this.DeleteProfessionBarButton),
-            new DevExpress.XtraBars.LinkPersistInfo(this.RefreshProfessionBarButton),
-            new DevExpress.XtraBars.LinkPersistInfo(this.UpProfessionBarButton),
-            new DevExpress.XtraBars.LinkPersistInfo(this.DownProfessionBarButton)});
-            this.ProfessionBar.OptionsBar.DrawBorder = false;
-            this.ProfessionBar.OptionsBar.DrawDragBorder = false;
-            this.ProfessionBar.OptionsBar.MultiLine = true;
-            this.ProfessionBar.OptionsBar.UseWholeRow = true;
-            this.ProfessionBar.StandaloneBarDockControl = this.ProfessionStandaloneBarDockControl;
-            this.ProfessionBar.Text = "Main menu";
-            // 
-            // barDockControl25
-            // 
-            this.barDockControl25.CausesValidation = false;
-            this.barDockControl25.Dock = System.Windows.Forms.DockStyle.Top;
-            this.barDockControl25.Location = new System.Drawing.Point(0, 0);
-            this.barDockControl25.Manager = this.ProfessionBarManager;
-            this.barDockControl25.Size = new System.Drawing.Size(1119, 0);
-            // 
-            // barDockControl26
-            // 
-            this.barDockControl26.CausesValidation = false;
-            this.barDockControl26.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControl26.Location = new System.Drawing.Point(0, 585);
-            this.barDockControl26.Manager = this.ProfessionBarManager;
-            this.barDockControl26.Size = new System.Drawing.Size(1119, 0);
-            // 
-            // barDockControl27
-            // 
-            this.barDockControl27.CausesValidation = false;
-            this.barDockControl27.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControl27.Location = new System.Drawing.Point(0, 0);
-            this.barDockControl27.Manager = this.ProfessionBarManager;
-            this.barDockControl27.Size = new System.Drawing.Size(0, 585);
-            // 
-            // barDockControl28
-            // 
-            this.barDockControl28.CausesValidation = false;
-            this.barDockControl28.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControl28.Location = new System.Drawing.Point(1119, 0);
-            this.barDockControl28.Manager = this.ProfessionBarManager;
-            this.barDockControl28.Size = new System.Drawing.Size(0, 585);
             // 
             // BranchPopupMenu
             // 
@@ -2574,28 +2574,28 @@
             this.backstageViewClientControl4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.KindShipGridControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.KindShipGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.KindShipBarManager)).EndInit();
             this.backstageViewClientControl5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.PhoneDescriptionGridControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PhoneDescriptionGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PhoneDescriptionBarManager)).EndInit();
             this.backstageViewClientControl6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ProductGridControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ProductGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ProductBarManager)).EndInit();
             this.backstageViewClientControl7.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.BranchGridControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BranchGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BranchBarManager)).EndInit();
             this.backstageViewClientControl8.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ProfessionGridControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ProfessionGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ProfessionBarManager)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DocumentTypePopupMenu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CountriesPopupMenu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CardIssuingPopupMenu)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.KindShipBarManager)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.KindShipPopupMenu)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PhoneDescriptionBarManager)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PhoneDescriptionPopupMenu)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ProductBarManager)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BranchBarManager)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ProfessionBarManager)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BranchPopupMenu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ProductPopupMenu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ProfessionPopupMenu)).EndInit();

@@ -124,5 +124,118 @@ namespace ELMS.Class.DataAccess
 
             command.Dispose();
         }
+
+
+        public static void InsertUsers(Users users)
+        {
+            string commandSql = null;
+            using (OracleConnection connection = new OracleConnection())
+            {
+                OracleTransaction transaction = null;
+                try
+                {
+                    if (connection.State == ConnectionState.Closed || connection.State == ConnectionState.Broken)
+                    {
+                        connection.ConnectionString = GlobalFunctions.GetConnectionString();
+                        connection.Open();
+                    }
+
+                    using (OracleCommand command = connection.CreateCommand())
+                    {
+                        transaction = connection.BeginTransaction();
+                        command.Transaction = transaction;
+                        command.CommandText = $@"INSERT INTO ELMS_USER.SYSTEM_USER(FULL_NAME,
+                                                            LOGIN_NAME,
+                                                            PASSWORD,
+                                                            EMAIL,
+                                                            NOTE,
+                                                            INSERT_USER)
+                                                    VALUES(:inFULL_NAME,
+                                                           :inLOGIN_NAME,
+                                                           :inPASSWORD,
+                                                           :inEMAIL,
+                                                           :inNOTE,
+                                                           :inINSERT_USER)";
+                        command.Parameters.Add(new OracleParameter("inFULL_NAME", users.FULL_NAME));
+                        command.Parameters.Add(new OracleParameter("inLOGIN_NAME", users.LOGIN_NAME));
+                        command.Parameters.Add(new OracleParameter("inPASSWORD", users.PASSWORD));
+                        command.Parameters.Add(new OracleParameter("inEMAIL", users.EMAIL));
+                        command.Parameters.Add(new OracleParameter("inNOTE", users.NOTE));
+                        command.Parameters.Add(new OracleParameter("inINSERT_USER", GlobalVariables.V_UserID));
+                        commandSql = command.CommandText;
+                        command.ExecuteNonQuery();
+                        transaction.Commit();
+                        command.Connection.Close();
+                    }
+                }
+                catch (Exception exx)
+                {
+                    transaction.Rollback();
+                    GlobalProcedures.LogWrite("İstifadəçi bazaya daxil edilmədi.", commandSql, GlobalVariables.V_UserName, "UsersDAL", "InsertUsers", exx);
+                }
+                finally
+                {
+                    transaction.Dispose();
+                    connection.Dispose();
+                }
+            }
+        }
+
+
+        public static void UpdateUsers(Users users)
+        {
+            string commandSql = null;
+            using (OracleConnection connection = new OracleConnection())
+            {
+                OracleTransaction transaction = null;
+                try
+                {
+                    if (connection.State == ConnectionState.Closed || connection.State == ConnectionState.Broken)
+                    {
+                        connection.ConnectionString = GlobalFunctions.GetConnectionString();
+                        connection.Open();
+                    }
+
+                    using (OracleCommand command = connection.CreateCommand())
+                    {
+                        transaction = connection.BeginTransaction();
+                        command.Transaction = transaction;
+                        command.CommandText = $@"UPDATE ELMS_USER.SYSTEM_USER SET FULL_NAME = :inFULL_NAME,
+                                                                                  LOGIN_NAME = :inLOGIN_NAME,
+                                                                                  PASSWORD = :inPASSWORD,
+                                                                                  EMAIL = :inEMAIL,
+                                                                                  IS_ACTIVE = :inIS_ACTIVE,
+                                                                                  NOTE = :inNOTE,
+                                                                                  USED_USER_ID = :inUSEDUSERID,
+                                                                                  UPDATE_USER = :inUPDATEUSER,
+                                                                                  UPDATE_DATE = SYSDATE
+                                                                    WHERE ID = :inID";
+                        command.Parameters.Add(new OracleParameter("inFULL_NAME", users.FULL_NAME));
+                        command.Parameters.Add(new OracleParameter("inLOGIN_NAME", users.LOGIN_NAME));
+                        command.Parameters.Add(new OracleParameter("inPASSWORD", users.PASSWORD));
+                        command.Parameters.Add(new OracleParameter("inEMAIL", users.EMAIL));
+                        command.Parameters.Add(new OracleParameter("inIS_ACTIVE", users.IS_ACTIVE));
+                        command.Parameters.Add(new OracleParameter("inNOTE", users.NOTE));
+                        command.Parameters.Add(new OracleParameter("inUSEDUSERID", users.USED_USER_ID));
+                        command.Parameters.Add(new OracleParameter("inUPDATEUSER", GlobalVariables.V_UserID));
+                        command.Parameters.Add(new OracleParameter("inID", users.ID));
+                        commandSql = command.CommandText;
+                        command.ExecuteNonQuery();
+                        transaction.Commit();
+                        command.Connection.Close();
+                    }
+                }
+                catch (Exception exx)
+                {
+                    transaction.Rollback();
+                    GlobalProcedures.LogWrite("İstifadəçi bazada dəyişdirilmədi.", commandSql, GlobalVariables.V_UserName, "UsersDAL", "UpdateUsers", exx);
+                }
+                finally
+                {
+                    transaction.Dispose();
+                    connection.Dispose();
+                }
+            }
+        }
     }
 }

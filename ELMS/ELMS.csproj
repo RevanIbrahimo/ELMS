@@ -86,6 +86,7 @@
     <Compile Include="Class\DataAccess\DocumentTypeDAL.cs" />
     <Compile Include="Class\DataAccess\KindShipDAL.cs" />
     <Compile Include="Class\DataAccess\PersonTypeDAL.cs" />
+    <Compile Include="Class\DataAccess\PhoneDAL.cs" />
     <Compile Include="Class\DataAccess\PhoneDescriptionDAL.cs" />
     <Compile Include="Class\DataAccess\PhonePrefixDAL.cs" />
     <Compile Include="Class\DataAccess\ProductDAL.cs" />
@@ -105,6 +106,7 @@
     <Compile Include="Class\Tables\DocumentType.cs" />
     <Compile Include="Class\Tables\KindShip.cs" />
     <Compile Include="Class\Tables\PersonType.cs" />
+    <Compile Include="Class\Tables\Phone.cs" />
     <Compile Include="Class\Tables\PhoneDescription.cs" />
     <Compile Include="Class\Tables\PhonePrefix.cs" />
     <Compile Include="Class\Tables\Product.cs" />
@@ -188,11 +190,23 @@
     <Compile Include="Forms\General\ELMSSplashScreen.Designer.cs">
       <DependentUpon>ELMSSplashScreen.cs</DependentUpon>
     </Compile>
-    <Compile Include="MainForm.cs">
+    <Compile Include="Forms\Option\FUserAddEdit.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainForm.Designer.cs">
-      <DependentUpon>MainForm.cs</DependentUpon>
+    <Compile Include="Forms\Option\FUserAddEdit.Designer.cs">
+      <DependentUpon>FUserAddEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Option\FUsers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Option\FUsers.Designer.cs">
+      <DependentUpon>FUsers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Phone\FPhoneAddEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Phone\FPhoneAddEdit.Designer.cs">
+      <DependentUpon>FPhoneAddEdit.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\General\FLoginSystem.cs">
       <SubType>Form</SubType>
@@ -206,10 +220,12 @@
     <Compile Include="Forms\General\FPrintableCheck.designer.cs">
       <DependentUpon>FPrintableCheck.cs</DependentUpon>
     </Compile>
-    <Compile Include="obj\Debug\.NETFramework,Version=v4.6.1.AssemblyAttributes.cs" />
-    <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
-    <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
-    <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UserControls\ConfirmationUserControl.cs">
@@ -281,8 +297,14 @@
     <EmbeddedResource Include="Forms\General\ELMSSplashScreen.resx">
       <DependentUpon>ELMSSplashScreen.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainForm.resx">
-      <DependentUpon>MainForm.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Option\FUserAddEdit.resx">
+      <DependentUpon>FUserAddEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Option\FUsers.resx">
+      <DependentUpon>FUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Phone\FPhoneAddEdit.resx">
+      <DependentUpon>FPhoneAddEdit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\General\FLoginSystem.resx">
       <DependentUpon>FLoginSystem.cs</DependentUpon>
@@ -290,15 +312,9 @@
     <EmbeddedResource Include="Forms\General\FPrintableCheck.resx">
       <DependentUpon>FPrintableCheck.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="obj\Debug\ELMS.DentalSplashScreen.resources" />
-    <EmbeddedResource Include="obj\Debug\ELMS.FLoginSystem.resources" />
-    <EmbeddedResource Include="obj\Debug\ELMS.Forms.General.FCountryAddEdit.resources" />
-    <EmbeddedResource Include="obj\Debug\ELMS.Forms.General.FDictionaries.resources" />
-    <EmbeddedResource Include="obj\Debug\ELMS.Forms.General.FDocumentTypeAddEdit.resources" />
-    <EmbeddedResource Include="obj\Debug\ELMS.FPrintableCheck.resources" />
-    <EmbeddedResource Include="obj\Debug\ELMS.MainForm.resources" />
-    <EmbeddedResource Include="obj\Debug\ELMS.Properties.Resources.resources" />
-    <EmbeddedResource Include="obj\Debug\ELMS.UserControls.CustomerUserControl.resources" />
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -326,14 +342,6 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="bin\Debug\Elloni Management System.exe.config" />
-    <None Include="obj\Debug\DesignTimeResolveAssemblyReferences.cache" />
-    <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
-    <None Include="obj\Debug\ELMS.csproj.CopyComplete" />
-    <None Include="obj\Debug\ELMS.csproj.CoreCompileInputs.cache" />
-    <None Include="obj\Debug\ELMS.csproj.GenerateResource.cache" />
-    <None Include="obj\Debug\ELMS.csprojAssemblyReference.cache" />
-    <None Include="obj\Release\ELMS.csproj.CoreCompileInputs.cache" />
-    <None Include="obj\Release\ELMS.csprojAssemblyReference.cache" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -400,14 +408,158 @@
     <None Include="Resources\info_32.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="bin\Debug\DevExpress.BonusSkins.v17.1.dll" />
+    <Content Include="bin\Debug\DevExpress.Charts.v17.1.Core.dll" />
+    <Content Include="bin\Debug\DevExpress.CodeParser.v17.1.dll" />
+    <Content Include="bin\Debug\DevExpress.Data.v17.1.dll" />
+    <Content Include="bin\Debug\DevExpress.Data.v17.1.xml" />
+    <Content Include="bin\Debug\DevExpress.DataAccess.v17.1.dll" />
+    <Content Include="bin\Debug\DevExpress.DataAccess.v17.1.xml" />
+    <Content Include="bin\Debug\DevExpress.ExpressApp.TreeListEditors.v17.1.dll" />
+    <Content Include="bin\Debug\DevExpress.ExpressApp.TreeListEditors.v17.1.xml" />
+    <Content Include="bin\Debug\DevExpress.ExpressApp.v17.1.dll" />
+    <Content Include="bin\Debug\DevExpress.ExpressApp.v17.1.xml" />
+    <Content Include="bin\Debug\DevExpress.Images.v17.1.dll" />
+    <Content Include="bin\Debug\DevExpress.Office.v17.1.Core.dll" />
+    <Content Include="bin\Debug\DevExpress.Office.v17.1.Core.xml" />
+    <Content Include="bin\Debug\DevExpress.Pdf.v17.1.Core.dll" />
+    <Content Include="bin\Debug\DevExpress.Pdf.v17.1.Core.xml" />
+    <Content Include="bin\Debug\DevExpress.Persistent.Base.v17.1.dll" />
+    <Content Include="bin\Debug\DevExpress.Persistent.Base.v17.1.xml" />
+    <Content Include="bin\Debug\DevExpress.PivotGrid.v17.1.Core.dll" />
+    <Content Include="bin\Debug\DevExpress.PivotGrid.v17.1.Core.xml" />
+    <Content Include="bin\Debug\DevExpress.Printing.v17.1.Core.dll" />
+    <Content Include="bin\Debug\DevExpress.Printing.v17.1.Core.xml" />
+    <Content Include="bin\Debug\DevExpress.RichEdit.v17.1.Core.dll" />
+    <Content Include="bin\Debug\DevExpress.RichEdit.v17.1.Core.xml" />
+    <Content Include="bin\Debug\DevExpress.Sparkline.v17.1.Core.dll" />
+    <Content Include="bin\Debug\DevExpress.Sparkline.v17.1.Core.xml" />
+    <Content Include="bin\Debug\DevExpress.Utils.v17.1.dll" />
+    <Content Include="bin\Debug\DevExpress.Utils.v17.1.xml" />
+    <Content Include="bin\Debug\DevExpress.Xpo.v17.1.dll" />
+    <Content Include="bin\Debug\DevExpress.Xpo.v17.1.xml" />
+    <Content Include="bin\Debug\DevExpress.XtraBars.v17.1.dll" />
+    <Content Include="bin\Debug\DevExpress.XtraBars.v17.1.xml" />
+    <Content Include="bin\Debug\DevExpress.XtraCharts.v17.1.dll" />
+    <Content Include="bin\Debug\DevExpress.XtraCharts.v17.1.xml" />
+    <Content Include="bin\Debug\DevExpress.XtraEditors.v17.1.dll" />
+    <Content Include="bin\Debug\DevExpress.XtraEditors.v17.1.xml" />
+    <Content Include="bin\Debug\DevExpress.XtraGauges.v17.1.Core.dll" />
+    <Content Include="bin\Debug\DevExpress.XtraGauges.v17.1.Core.xml" />
+    <Content Include="bin\Debug\DevExpress.XtraGrid.v17.1.dll" />
+    <Content Include="bin\Debug\DevExpress.XtraGrid.v17.1.xml" />
+    <Content Include="bin\Debug\DevExpress.XtraLayout.v17.1.dll" />
+    <Content Include="bin\Debug\DevExpress.XtraLayout.v17.1.xml" />
+    <Content Include="bin\Debug\DevExpress.XtraPivotGrid.v17.1.dll" />
+    <Content Include="bin\Debug\DevExpress.XtraPivotGrid.v17.1.xml" />
+    <Content Include="bin\Debug\DevExpress.XtraPrinting.v17.1.dll" />
+    <Content Include="bin\Debug\DevExpress.XtraPrinting.v17.1.xml" />
+    <Content Include="bin\Debug\DevExpress.XtraReports.v17.1.dll" />
+    <Content Include="bin\Debug\DevExpress.XtraReports.v17.1.xml" />
+    <Content Include="bin\Debug\DevExpress.XtraTreeList.v17.1.dll" />
+    <Content Include="bin\Debug\DevExpress.XtraTreeList.v17.1.xml" />
+    <Content Include="bin\Debug\de\DevExpress.Data.v17.1.resources.dll" />
+    <Content Include="bin\Debug\de\DevExpress.DataAccess.v17.1.resources.dll" />
+    <Content Include="bin\Debug\de\DevExpress.ExpressApp.v17.1.resources.dll" />
+    <Content Include="bin\Debug\de\DevExpress.Office.v17.1.Core.resources.dll" />
+    <Content Include="bin\Debug\de\DevExpress.Pdf.v17.1.Core.resources.dll" />
+    <Content Include="bin\Debug\de\DevExpress.PivotGrid.v17.1.Core.resources.dll" />
+    <Content Include="bin\Debug\de\DevExpress.Printing.v17.1.Core.resources.dll" />
+    <Content Include="bin\Debug\de\DevExpress.RichEdit.v17.1.Core.resources.dll" />
+    <Content Include="bin\Debug\de\DevExpress.Sparkline.v17.1.Core.resources.dll" />
+    <Content Include="bin\Debug\de\DevExpress.Utils.v17.1.resources.dll" />
+    <Content Include="bin\Debug\de\DevExpress.Xpo.v17.1.resources.dll" />
+    <Content Include="bin\Debug\de\DevExpress.XtraBars.v17.1.resources.dll" />
+    <Content Include="bin\Debug\de\DevExpress.XtraCharts.v17.1.resources.dll" />
+    <Content Include="bin\Debug\de\DevExpress.XtraEditors.v17.1.resources.dll" />
+    <Content Include="bin\Debug\de\DevExpress.XtraGauges.v17.1.Core.resources.dll" />
+    <Content Include="bin\Debug\de\DevExpress.XtraGrid.v17.1.resources.dll" />
+    <Content Include="bin\Debug\de\DevExpress.XtraLayout.v17.1.resources.dll" />
+    <Content Include="bin\Debug\de\DevExpress.XtraPivotGrid.v17.1.resources.dll" />
+    <Content Include="bin\Debug\de\DevExpress.XtraPrinting.v17.1.resources.dll" />
+    <Content Include="bin\Debug\de\DevExpress.XtraReports.v17.1.resources.dll" />
+    <Content Include="bin\Debug\de\DevExpress.XtraTreeList.v17.1.resources.dll" />
     <Content Include="bin\Debug\Elloni Management System.exe" />
     <Content Include="bin\Debug\Elloni Management System.pdb" />
+    <Content Include="bin\Debug\es\DevExpress.Data.v17.1.resources.dll" />
+    <Content Include="bin\Debug\es\DevExpress.DataAccess.v17.1.resources.dll" />
+    <Content Include="bin\Debug\es\DevExpress.ExpressApp.v17.1.resources.dll" />
+    <Content Include="bin\Debug\es\DevExpress.Office.v17.1.Core.resources.dll" />
+    <Content Include="bin\Debug\es\DevExpress.Pdf.v17.1.Core.resources.dll" />
+    <Content Include="bin\Debug\es\DevExpress.PivotGrid.v17.1.Core.resources.dll" />
+    <Content Include="bin\Debug\es\DevExpress.Printing.v17.1.Core.resources.dll" />
+    <Content Include="bin\Debug\es\DevExpress.RichEdit.v17.1.Core.resources.dll" />
+    <Content Include="bin\Debug\es\DevExpress.Sparkline.v17.1.Core.resources.dll" />
+    <Content Include="bin\Debug\es\DevExpress.Utils.v17.1.resources.dll" />
+    <Content Include="bin\Debug\es\DevExpress.Xpo.v17.1.resources.dll" />
+    <Content Include="bin\Debug\es\DevExpress.XtraBars.v17.1.resources.dll" />
+    <Content Include="bin\Debug\es\DevExpress.XtraCharts.v17.1.resources.dll" />
+    <Content Include="bin\Debug\es\DevExpress.XtraEditors.v17.1.resources.dll" />
+    <Content Include="bin\Debug\es\DevExpress.XtraGauges.v17.1.Core.resources.dll" />
+    <Content Include="bin\Debug\es\DevExpress.XtraGrid.v17.1.resources.dll" />
+    <Content Include="bin\Debug\es\DevExpress.XtraLayout.v17.1.resources.dll" />
+    <Content Include="bin\Debug\es\DevExpress.XtraPivotGrid.v17.1.resources.dll" />
+    <Content Include="bin\Debug\es\DevExpress.XtraPrinting.v17.1.resources.dll" />
+    <Content Include="bin\Debug\es\DevExpress.XtraReports.v17.1.resources.dll" />
+    <Content Include="bin\Debug\es\DevExpress.XtraTreeList.v17.1.resources.dll" />
+    <Content Include="bin\Debug\ja\DevExpress.Data.v17.1.resources.dll" />
+    <Content Include="bin\Debug\ja\DevExpress.DataAccess.v17.1.resources.dll" />
+    <Content Include="bin\Debug\ja\DevExpress.ExpressApp.v17.1.resources.dll" />
+    <Content Include="bin\Debug\ja\DevExpress.Office.v17.1.Core.resources.dll" />
+    <Content Include="bin\Debug\ja\DevExpress.Pdf.v17.1.Core.resources.dll" />
+    <Content Include="bin\Debug\ja\DevExpress.PivotGrid.v17.1.Core.resources.dll" />
+    <Content Include="bin\Debug\ja\DevExpress.Printing.v17.1.Core.resources.dll" />
+    <Content Include="bin\Debug\ja\DevExpress.RichEdit.v17.1.Core.resources.dll" />
+    <Content Include="bin\Debug\ja\DevExpress.Sparkline.v17.1.Core.resources.dll" />
+    <Content Include="bin\Debug\ja\DevExpress.Utils.v17.1.resources.dll" />
+    <Content Include="bin\Debug\ja\DevExpress.Xpo.v17.1.resources.dll" />
+    <Content Include="bin\Debug\ja\DevExpress.XtraBars.v17.1.resources.dll" />
+    <Content Include="bin\Debug\ja\DevExpress.XtraCharts.v17.1.resources.dll" />
+    <Content Include="bin\Debug\ja\DevExpress.XtraEditors.v17.1.resources.dll" />
+    <Content Include="bin\Debug\ja\DevExpress.XtraGauges.v17.1.Core.resources.dll" />
+    <Content Include="bin\Debug\ja\DevExpress.XtraGrid.v17.1.resources.dll" />
+    <Content Include="bin\Debug\ja\DevExpress.XtraLayout.v17.1.resources.dll" />
+    <Content Include="bin\Debug\ja\DevExpress.XtraPivotGrid.v17.1.resources.dll" />
+    <Content Include="bin\Debug\ja\DevExpress.XtraPrinting.v17.1.resources.dll" />
+    <Content Include="bin\Debug\ja\DevExpress.XtraReports.v17.1.resources.dll" />
+    <Content Include="bin\Debug\ja\DevExpress.XtraTreeList.v17.1.resources.dll" />
+    <Content Include="bin\Debug\Oracle.ManagedDataAccess.dll" />
+    <Content Include="bin\Debug\ru\DevExpress.Data.v17.1.resources.dll" />
+    <Content Include="bin\Debug\ru\DevExpress.DataAccess.v17.1.resources.dll" />
+    <Content Include="bin\Debug\ru\DevExpress.ExpressApp.v17.1.resources.dll" />
+    <Content Include="bin\Debug\ru\DevExpress.Office.v17.1.Core.resources.dll" />
+    <Content Include="bin\Debug\ru\DevExpress.Pdf.v17.1.Core.resources.dll" />
+    <Content Include="bin\Debug\ru\DevExpress.PivotGrid.v17.1.Core.resources.dll" />
+    <Content Include="bin\Debug\ru\DevExpress.Printing.v17.1.Core.resources.dll" />
+    <Content Include="bin\Debug\ru\DevExpress.RichEdit.v17.1.Core.resources.dll" />
+    <Content Include="bin\Debug\ru\DevExpress.Sparkline.v17.1.Core.resources.dll" />
+    <Content Include="bin\Debug\ru\DevExpress.Utils.v17.1.resources.dll" />
+    <Content Include="bin\Debug\ru\DevExpress.Xpo.v17.1.resources.dll" />
+    <Content Include="bin\Debug\ru\DevExpress.XtraBars.v17.1.resources.dll" />
+    <Content Include="bin\Debug\ru\DevExpress.XtraCharts.v17.1.resources.dll" />
+    <Content Include="bin\Debug\ru\DevExpress.XtraEditors.v17.1.resources.dll" />
+    <Content Include="bin\Debug\ru\DevExpress.XtraGauges.v17.1.Core.resources.dll" />
+    <Content Include="bin\Debug\ru\DevExpress.XtraGrid.v17.1.resources.dll" />
+    <Content Include="bin\Debug\ru\DevExpress.XtraLayout.v17.1.resources.dll" />
+    <Content Include="bin\Debug\ru\DevExpress.XtraPivotGrid.v17.1.resources.dll" />
+    <Content Include="bin\Debug\ru\DevExpress.XtraPrinting.v17.1.resources.dll" />
+    <Content Include="bin\Debug\ru\DevExpress.XtraReports.v17.1.resources.dll" />
+    <Content Include="bin\Debug\ru\DevExpress.XtraTreeList.v17.1.resources.dll" />
+    <Content Include="bin\Debug\Tulpep.NotificationWindow.dll" />
     <Content Include="management.ico" />
-    <Content Include="obj\Debug\Elloni Management System.exe" />
-    <Content Include="obj\Debug\elloni management system.exe.licenses" />
-    <Content Include="obj\Debug\Elloni Management System.pdb" />
-    <Content Include="obj\Debug\ELMS.csproj.FileListAbsolute.txt" />
-    <Content Include="obj\Debug\TempPE\Properties.Resources.Designer.cs.dll" />
+    <Content Include="Resources\folder_search_16.png" />
+    <Content Include="Resources\lock-32.png" />
+    <Content Include="Resources\lock-off-32.png" />
+    <Content Include="Resources\mail-add-16.png" />
+    <Content Include="Resources\mail-delete-16.png" />
+    <Content Include="Resources\mail-edit-16.png" />
+    <Content Include="Resources\minus_16.png" />
+    <Content Include="Resources\phone-add-16.png" />
+    <Content Include="Resources\phone-delete-16.png" />
+    <Content Include="Resources\phone-edit-16.png" />
+    <Content Include="Resources\user-add-32.png" />
+    <Content Include="Resources\user-delete-32.png" />
+    <Content Include="Resources\user-edit-32.png" />
     <None Include="Resources\sexsiyyet_vesiqesi.png" />
     <None Include="Resources\edit-16.png" />
     <None Include="Resources\plus-16.png" />
@@ -415,6 +567,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="bin\Release\" />
+    <Folder Include="obj\Debug\" />
+    <Folder Include="obj\Release\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
