@@ -85,6 +85,7 @@
     <Compile Include="Class\DataAccess\DocumentGroupDAL.cs" />
     <Compile Include="Class\DataAccess\DocumentTypeDAL.cs" />
     <Compile Include="Class\DataAccess\KindShipDAL.cs" />
+    <Compile Include="Class\DataAccess\MailDAL.cs" />
     <Compile Include="Class\DataAccess\PersonTypeDAL.cs" />
     <Compile Include="Class\DataAccess\PhoneDAL.cs" />
     <Compile Include="Class\DataAccess\PhoneDescriptionDAL.cs" />
@@ -105,6 +106,7 @@
     <Compile Include="Class\Tables\DocumentGroup.cs" />
     <Compile Include="Class\Tables\DocumentType.cs" />
     <Compile Include="Class\Tables\KindShip.cs" />
+    <Compile Include="Class\Tables\Mail.cs" />
     <Compile Include="Class\Tables\PersonType.cs" />
     <Compile Include="Class\Tables\Phone.cs" />
     <Compile Include="Class\Tables\PhoneDescription.cs" />
@@ -190,17 +192,53 @@
     <Compile Include="Forms\General\ELMSSplashScreen.Designer.cs">
       <DependentUpon>ELMSSplashScreen.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Image\FImageCrop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Image\FImageCrop.Designer.cs">
+      <DependentUpon>FImageCrop.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Mail\FMailAddEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Mail\FMailAddEdit.Designer.cs">
+      <DependentUpon>FMailAddEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Option\FListOfAutomaticAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Option\FListOfAutomaticAdd.Designer.cs">
+      <DependentUpon>FListOfAutomaticAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Option\FPermissionAddEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Option\FPermissionAddEdit.Designer.cs">
+      <DependentUpon>FPermissionAddEdit.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Option\FUserAddEdit.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Option\FUserAddEdit.Designer.cs">
       <DependentUpon>FUserAddEdit.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Option\FUserGroupAddEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Option\FUserGroupAddEdit.Designer.cs">
+      <DependentUpon>FUserGroupAddEdit.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Option\FUsers.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Option\FUsers.Designer.cs">
       <DependentUpon>FUsers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Option\FUsersGroups.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Option\FUsersGroups.Designer.cs">
+      <DependentUpon>FUsersGroups.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Phone\FPhoneAddEdit.cs">
       <SubType>Form</SubType>
@@ -258,6 +296,12 @@
     <Compile Include="UserControls\RegressionUserControl.Designer.cs">
       <DependentUpon>RegressionUserControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="WaitForms\FWait.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WaitForms\FWait.Designer.cs">
+      <DependentUpon>FWait.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Forms\Customer\FCardAddEdit.resx">
       <DependentUpon>FCardAddEdit.cs</DependentUpon>
     </EmbeddedResource>
@@ -297,11 +341,29 @@
     <EmbeddedResource Include="Forms\General\ELMSSplashScreen.resx">
       <DependentUpon>ELMSSplashScreen.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Image\FImageCrop.resx">
+      <DependentUpon>FImageCrop.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Mail\FMailAddEdit.resx">
+      <DependentUpon>FMailAddEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Option\FListOfAutomaticAdd.resx">
+      <DependentUpon>FListOfAutomaticAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Option\FPermissionAddEdit.resx">
+      <DependentUpon>FPermissionAddEdit.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Option\FUserAddEdit.resx">
       <DependentUpon>FUserAddEdit.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Option\FUserGroupAddEdit.resx">
+      <DependentUpon>FUserGroupAddEdit.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Option\FUsers.resx">
       <DependentUpon>FUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Option\FUsersGroups.resx">
+      <DependentUpon>FUsersGroups.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Phone\FPhoneAddEdit.resx">
       <DependentUpon>FPhoneAddEdit.cs</DependentUpon>
@@ -337,6 +399,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\RegressionUserControl.resx">
       <DependentUpon>RegressionUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WaitForms\FWait.resx">
+      <DependentUpon>FWait.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.config">
       <SubType>Designer</SubType>
@@ -547,6 +612,11 @@
     <Content Include="bin\Debug\ru\DevExpress.XtraTreeList.v17.1.resources.dll" />
     <Content Include="bin\Debug\Tulpep.NotificationWindow.dll" />
     <Content Include="management.ico" />
+    <None Include="Resources\webcamera-16.png" />
+    <None Include="Resources\user-group-edit-32.png" />
+    <None Include="Resources\user-group-delete-32.png" />
+    <None Include="Resources\user-group-add-32.png" />
+    <None Include="Resources\check-box-16.png" />
     <Content Include="Resources\folder_search_16.png" />
     <Content Include="Resources\lock-32.png" />
     <Content Include="Resources\lock-off-32.png" />
@@ -557,8 +627,12 @@
     <Content Include="Resources\phone-add-16.png" />
     <Content Include="Resources\phone-delete-16.png" />
     <Content Include="Resources\phone-edit-16.png" />
+    <None Include="Resources\split-vertical.png" />
+    <None Include="Resources\user-add-16.png" />
     <Content Include="Resources\user-add-32.png" />
+    <None Include="Resources\user-delete-16.png" />
     <Content Include="Resources\user-delete-32.png" />
+    <None Include="Resources\user-edit-16.png" />
     <Content Include="Resources\user-edit-32.png" />
     <None Include="Resources\sexsiyyet_vesiqesi.png" />
     <None Include="Resources\edit-16.png" />

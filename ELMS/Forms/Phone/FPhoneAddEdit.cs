@@ -24,7 +24,7 @@ namespace ELMS.Forms.Phone
         }
         public TransactionTypeEnum TransactionType;
         public PhoneOwnerEnum PhoneOwner;
-        public int OwnerID;
+        public int? OwnerID;
         public int? PhoneID;
 
         public delegate void DoEvent();
@@ -42,7 +42,7 @@ namespace ELMS.Forms.Phone
 
         private void LoadDetail()
         {
-            DataTable dt = PhoneDAL.SelectPhoneByOwnerID(OwnerID, PhoneOwner, PhoneID);
+            DataTable dt = PhoneDAL.SelectPhoneByOwnerID((int)OwnerID, PhoneOwner, PhoneID);
 
             if (dt.Rows.Count > 0)
             {
@@ -149,7 +149,7 @@ namespace ELMS.Forms.Phone
             Class.Tables.Phone phone = new Class.Tables.Phone
             {
                 OWNER_TYPE = (int)PhoneOwner,
-                OWNER_ID = OwnerID,
+                OWNER_ID = (int)OwnerID,
                 PHONE_DESCRIPTION_ID = descriptionID,
                 PHONE_NUMBER = "+9940" + PhoneText.Text.Trim().Replace("(", "").Replace(")", "").Replace("-", "").Replace("_", ""),
                 NOTE = NoteText.Text.Trim(),
@@ -165,7 +165,7 @@ namespace ELMS.Forms.Phone
             Class.Tables.Phone phone = new Class.Tables.Phone
             {
                 OWNER_TYPE = (int)PhoneOwner,
-                OWNER_ID = OwnerID,
+                OWNER_ID = (int)OwnerID,
                 PHONE_DESCRIPTION_ID = descriptionID,
                 PHONE_NUMBER = "+9940" + PhoneText.Text.Trim().Replace("(", "").Replace(")", "").Replace("-", "").Replace("_", ""),
                 NOTE = NoteText.Text.Trim(),

@@ -136,7 +136,6 @@ C:\Users\user\Documents\Github\ELMS\ELMS\obj\Debug\ELMS.Forms.Dictionaries.FPhon
 C:\Users\user\Documents\Github\ELMS\ELMS\obj\Debug\ELMS.Forms.Dictionaries.FProductAddEdit.resources
 C:\Users\user\Documents\Github\ELMS\ELMS\obj\Debug\ELMS.Forms.Dictionaries.FProfessionAddEdit.resources
 C:\Users\user\Documents\Github\ELMS\ELMS\obj\Debug\ELMS.DentalSplashScreen.resources
-C:\Users\user\Documents\Github\ELMS\ELMS\obj\Debug\ELMS.Forms.Option.FUserAddEdit.resources
 C:\Users\user\Documents\Github\ELMS\ELMS\obj\Debug\ELMS.Forms.Option.FUsers.resources
 C:\Users\user\Documents\Github\ELMS\ELMS\obj\Debug\ELMS.Forms.Phone.FPhoneAddEdit.resources
 C:\Users\user\Documents\Github\ELMS\ELMS\obj\Debug\ELMS.FLoginSystem.resources
@@ -154,3 +153,11 @@ C:\Users\user\Documents\Github\ELMS\ELMS\obj\Debug\ELMS.csproj.CopyComplete
 C:\Users\user\Documents\Github\ELMS\ELMS\obj\Debug\Elloni Management System.exe
 C:\Users\user\Documents\Github\ELMS\ELMS\obj\Debug\Elloni Management System.pdb
 C:\Users\user\Documents\Github\ELMS\ELMS\obj\Debug\ELMS.csprojAssemblyReference.cache
+C:\Users\user\Documents\Github\ELMS\ELMS\obj\Debug\ELMS.Forms.FImageCrop.resources
+C:\Users\user\Documents\Github\ELMS\ELMS\obj\Debug\ELMS.Forms.FMailAddEdit.resources
+C:\Users\user\Documents\Github\ELMS\ELMS\obj\Debug\ELMS.Forms.FListOfAutomaticAdd.resources
+C:\Users\user\Documents\Github\ELMS\ELMS\obj\Debug\ELMS.Forms.FPermissionAddEdit.resources
+C:\Users\user\Documents\Github\ELMS\ELMS\obj\Debug\ELMS.Forms.FUserAddEdit.resources
+C:\Users\user\Documents\Github\ELMS\ELMS\obj\Debug\ELMS.Forms.FUserGroupAddEdit.resources
+C:\Users\user\Documents\Github\ELMS\ELMS\obj\Debug\ELMS.Forms.FUsersGroups.resources
+C:\Users\user\Documents\Github\ELMS\ELMS\obj\Debug\ELMS.WaitForms.FWait.resources
