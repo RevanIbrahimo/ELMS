@@ -28,7 +28,7 @@ namespace ELMS.Forms
             InitializeComponent();
         }
         public TransactionTypeEnum TransactionType;
-        public int? UserID,GroupID;
+        public int? UserID, GroupID;
 
         string PhoneNumber,
             UserImage,
@@ -62,7 +62,6 @@ namespace ELMS.Forms
             if (GlobalVariables.V_UserID > 0)
             {
                 GroupNameLookUp.Properties.Buttons[1].Visible = GlobalVariables.UsersGroup;
-                
             }
 
             GlobalProcedures.FillLookUpEdit(SexLookUp, "SEX", "ID", "NAME", "1 = 1 ORDER BY ID");
@@ -71,7 +70,7 @@ namespace ELMS.Forms
             if (TransactionType == TransactionTypeEnum.Update)
             {
                 GlobalProcedures.Lock_or_UnLock_UserID("ELMS_USER.SYSTEM_USER", GlobalVariables.V_UserID, "WHERE ID = " + UserID + " AND USED_USER_ID = -1");
-                
+
                 List<Users> lstComsUser = UserDAL.SelectUserByID(UserID).ToList<Users>();
                 var user = lstComsUser.First();
 
@@ -89,9 +88,9 @@ namespace ELMS.Forms
                 UsedUserID = user.USED_USER_ID;
                 UserUsed = (user.USED_USER_ID > 0);
 
-                if (((UserClosed) && (UserUsed)) || ((UserClosed) && (!UserUsed)))
+                if ((UserClosed && UserUsed) || (UserClosed && !UserUsed))
                 {
-                    XtraMessageBox.Show("İstifadəçi sistemdə bağlanılıb. Onun məlumatları dəyişdirilə bilməz. Siz yalnız məlumatlara baxa bilərsiniz.", "Seçilmiş istifadəçinin hal-hazırkı statusu", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    GlobalProcedures.ShowWarningMessage("İstifadəçi sistemdə bağlanılıb. Onun məlumatları dəyişdirilə bilməz. Siz yalnız məlumatlara baxa bilərsiniz.");
                     CurrentStatus = true;
                 }
                 else if ((!UserClosed) && (UserUsed))
@@ -99,12 +98,12 @@ namespace ELMS.Forms
                     if (GlobalVariables.V_UserID != UsedUserID)
                     {
                         string used_user_name = GlobalVariables.lstUsers.Find(u => u.ID == UsedUserID).FULL_NAME;
-                        XtraMessageBox.Show("İstifadəçinin məlumatları hal-hazırda " + used_user_name + " tərəfindən istifadə edilir. Onun məlumatları dəyişdirilə bilməz. Siz yalnız məlumatlara baxa bilərsiniz.", "Seçilmiş istifadəçinin hal-hazırkı statusu", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        GlobalProcedures.ShowWarningMessage("İstifadəçinin məlumatları hal-hazırda " + used_user_name + " tərəfindən istifadə edilir. Onun məlumatları dəyişdirilə bilməz. Siz yalnız məlumatlara baxa bilərsiniz.");
                         CurrentStatus = true;
                     }
                     else if (UserConnected)
                     {
-                        XtraMessageBox.Show("İstifadəçi sistemə daxil olub. Onun məlumatları dəyişdirilə bilməz. Siz yalnız məlumatlara baxa bilərsiniz.", "Seçilmiş istifadəçinin hal-hazırkı statusu", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        GlobalProcedures.ShowWarningMessage("İstifadəçi sistemə daxil olub. Onun məlumatları dəyişdirilə bilməz. Siz yalnız məlumatlara baxa bilərsiniz.");
                         CurrentStatus = true;
                     }
                     else
@@ -113,7 +112,6 @@ namespace ELMS.Forms
                 else
                     CurrentStatus = false;
 
-                
                 ComponentEnable(CurrentStatus);
                 InsertTemps();
                 LoadUserDetails();
@@ -123,29 +121,18 @@ namespace ELMS.Forms
                 maildetails = permissiondetails = true;
                 UserID = GlobalFunctions.GetOracleSequenceValue("SYSTEM_USER_SEQUENCE");
                 RegistrationIDText.EditValue = UserID;
-                //switch (GlobalVariables.SelectedLanguage)
-                //{
-                //    case "RU":
-                //        UserPictureBox.Properties.NullText = "Пользователь фото";
-                //        break;
-                //    case "EN":
-                //        UserPictureBox.Properties.NullText = "User picture";
-                //        break;
-                //}
             }
         }
 
         private void ComponentEnable(bool status)
         {
-
-                BLoadPicture.Enabled =
+            BLoadPicture.Enabled =
                 PhoneStandaloneBarDockControl.Enabled =
                 MailStandaloneBarDockControl.Enabled =
                 GroupNameLookUp.Enabled =
                 BranchLookUp.Enabled =
                 UserNameText.Enabled =
                 PasswordValue.Enabled =
-                BLoadPicture.Enabled =
                 FullNameText.Enabled =
                 BirthdayDate.Enabled =
                 AddressText.Enabled =
@@ -184,15 +171,12 @@ namespace ELMS.Forms
             {
                 DataTable dt = GlobalFunctions.GenerateDataTable(s);
 
-
                 foreach (DataRow dr in dt.Rows)
                 {
                     RegistrationIDText.Text = dr["ID"].ToString();
                     FullNameText.Text = dr["FULL_NAME"].ToString();
                     UserNameText.Text = GlobalFunctions.Decrypt(dr["LOGIN_NAME"].ToString());
                     PasswordValue.Text = GlobalFunctions.Decrypt(dr["PASSWORD"].ToString());
-                   
-                    CloseDateValue.Enabled = !(status_id == 2);
                     BOK.Enabled = !(status_id == 2);
                     NoteText.Enabled = !(status_id == 2);
                     BLoadPicture.Enabled = !(status_id == 2);
@@ -203,15 +187,7 @@ namespace ELMS.Forms
                     AddressText.Text = dr["ADDRESS"].ToString();
                     group_name = dr["GROUP_NAME"].ToString();
                     group_id = Convert.ToInt32(dr["GROUP_ID"].ToString());
-                    if (!String.IsNullOrEmpty(dr["CLOSED_DATE"].ToString()))
-                        CloseDateValue.EditValue = DateTime.Parse(dr["CLOSED_DATE"].ToString());
-                    else
-                        CloseDateValue.EditValue = DateTime.Today;
-
-                    CloseDateValue.Properties.MinValue = DateTime.Parse(dr["INSERT_DATE"].ToString());
-
                     NoteText.Text = dr["NOTE"].ToString();
-
                     if (!DBNull.Value.Equals(dr["IMAGE"]))
                     {
                         existsImage = true;
@@ -240,15 +216,6 @@ namespace ELMS.Forms
                             BLoadPicture.Enabled = !CurrentStatus;
                         BDeletePicture.Enabled = false;
                         UserImage = null;
-                        //switch (GlobalVariables.SelectedLanguage)
-                        //{
-                        //    case "RU":
-                        //        UserPictureBox.Properties.NullText = "Пользователь фото";
-                        //        break;
-                        //    case "EN":
-                        //        UserPictureBox.Properties.NullText = "User picture";
-                        //        break;
-                        //}
                     }
                 }
             }
@@ -534,7 +501,6 @@ namespace ELMS.Forms
             {
                 sqlUser = $@"UPDATE ELMS_USER.SYSTEM_USER SET 
                                                 IS_ACTIVE = {status_id},
-                                                CLOSED_DATE = TO_DATE('{CloseDateValue.Text}','DD/MM/YYYY'),
                                                 NOTE = '{NoteText.Text}' 
                             WHERE ID = {UserID}";
             }
@@ -569,7 +535,7 @@ namespace ELMS.Forms
 
         private void DeleteAllTemp()
         {
-            GlobalProcedures.ExecuteProcedureWithParametr("ELMS_USER_TEMP.PROC_USER_DELETE_ALL_TEMP", "P_USED_USER_ID", GlobalVariables.V_UserID, "İstifadəçinin məlumatları temp cədvəldən silinmədi.");
+            GlobalProcedures.ExecuteProcedureWithTwoParametr("ELMS_USER_TEMP.PROC_USER_DELETE_ALL_TEMP", "P_USED_USER_ID", GlobalVariables.V_UserID, "P_OWNER_TYPE", MailOwnerEnum.User, "İstifadəçinin məlumatları temp cədvəldən silinmədi.");
         }
 
         private void FUserAddEdit_FormClosing(object sender, FormClosingEventArgs e)
@@ -726,7 +692,7 @@ namespace ELMS.Forms
             if (TransactionType == TransactionTypeEnum.Insert)
                 return;
             GlobalProcedures.ExecuteProcedureWithTwoParametrAndUser("ELMS_USER_TEMP.PROC_INSERT_USER_TEMP", "P_USER_ID", UserID.Value, "P_OWNER_TYPE", (int)PhoneOwnerEnum.User, "İstifadəçinin məlumatları temp cədvələ daxil edilmədi.");
-            
+
         }
 
         private void BirthdayDate_EditValueChanged(object sender, EventArgs e)
@@ -819,7 +785,7 @@ namespace ELMS.Forms
             DialogResult dialogResult = XtraMessageBox.Show(PhoneNumber + " nömrəsini silmək istəyirsiniz?", "Telefon nömrəsinin silinməsi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dialogResult == DialogResult.Yes)
             {
-                GlobalProcedures.ExecuteQuery("UPDATE ELMS_USER_TEMP.PHONE_TEMP SET IS_CHANGE = 2 WHERE OWNER_TYPE = "+ PhoneOwnerEnum.User + " AND OWNER_ID = " + UserID + " AND ID = " + PhoneID, "Telefon nömrəsi temp cədvəldən silinmədi.");
+                GlobalProcedures.ExecuteQuery("UPDATE ELMS_USER_TEMP.PHONE_TEMP SET IS_CHANGE = 2 WHERE OWNER_TYPE = " + PhoneOwnerEnum.User + " AND OWNER_ID = " + UserID + " AND ID = " + PhoneID, "Telefon nömrəsi temp cədvəldən silinmədi.");
             }
         }
 
@@ -844,7 +810,7 @@ namespace ELMS.Forms
             LoadMailDataGridView();
         }
 
-        public void LoadFMailAddEdit(TransactionTypeEnum transaction,  int? id)
+        public void LoadFMailAddEdit(TransactionTypeEnum transaction, int? id)
         {
             FMailAddEdit fp = new FMailAddEdit();
             fp.TransactionType = transaction;
@@ -871,7 +837,7 @@ namespace ELMS.Forms
             PhoneGridView.FocusedRowHandle = orderid - 1;
         }
 
-        
+
 
         private void BranchLookUp_EditValueChanged(object sender, EventArgs e)
         {
@@ -904,7 +870,7 @@ namespace ELMS.Forms
 
         }
 
-        
+
         private void FullNameText_EditValueChanged(object sender, EventArgs e)
         {
             if (FullNameText.EditorContainsFocus)
@@ -999,12 +965,12 @@ namespace ELMS.Forms
             DataRow row = MailGridView.GetFocusedDataRow();
             if (row != null)
                 MailID = Convert.ToInt32(row["ID"].ToString());
-                
+
         }
 
-        
 
-        
+
+
 
         void SelectionImage(string a, int count)
         {

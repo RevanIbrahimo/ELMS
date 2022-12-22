@@ -32,7 +32,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FUserAddEdit));
             ManiXButton.Office2010Blue office2010Blue1 = new ManiXButton.Office2010Blue();
             ManiXButton.Office2010Red office2010Red1 = new ManiXButton.Office2010Red();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions6 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             DevExpress.Utils.SuperToolTip superToolTip1 = new DevExpress.Utils.SuperToolTip();
             DevExpress.Utils.ToolTipTitleItem toolTipTitleItem1 = new DevExpress.Utils.ToolTipTitleItem();
@@ -47,8 +46,8 @@
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions3 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions4 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions5 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions6 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions7 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions8 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             this.PhoneGridView = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.Phone_SS = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Phone_ID = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -101,8 +100,6 @@
             this.barDockControl6 = new DevExpress.XtraBars.BarDockControl();
             this.barDockControl5 = new DevExpress.XtraBars.BarDockControl();
             this.AgeLabel = new DevExpress.XtraEditors.LabelControl();
-            this.CloseDateValue = new DevExpress.XtraEditors.DateEdit();
-            this.CloseDateLabel = new DevExpress.XtraEditors.LabelControl();
             this.NoteLabel = new DevExpress.XtraEditors.LabelControl();
             this.AddressLabel = new DevExpress.XtraEditors.LabelControl();
             this.BirthdayDate = new DevExpress.XtraEditors.DateEdit();
@@ -166,8 +163,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.MailGridView)).BeginInit();
             this.ContactTabPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PhonePopupMenu)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CloseDateValue.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CloseDateValue.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BirthdayDate.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BirthdayDate.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NoteText.Properties)).BeginInit();
@@ -816,45 +811,16 @@
             this.AgeLabel.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.AgeLabel.Appearance.Options.UseFont = true;
             this.AgeLabel.Appearance.Options.UseForeColor = true;
-            this.AgeLabel.Location = new System.Drawing.Point(288, 107);
+            this.AgeLabel.Location = new System.Drawing.Point(288, 118);
             this.AgeLabel.Name = "AgeLabel";
             this.AgeLabel.Size = new System.Drawing.Size(30, 13);
             this.AgeLabel.TabIndex = 54;
             this.AgeLabel.Text = "0 yaş";
             // 
-            // CloseDateValue
-            // 
-            this.CloseDateValue.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.CloseDateValue.EditValue = null;
-            this.CloseDateValue.Location = new System.Drawing.Point(531, 122);
-            this.CloseDateValue.Name = "CloseDateValue";
-            this.CloseDateValue.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Ellipsis, "", -1, true, true, false, editorButtonImageOptions6, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), "Kalendarı aç")});
-            this.CloseDateValue.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.CloseDateValue.Properties.DisplayFormat.FormatString = "dd.MM.yyyy";
-            this.CloseDateValue.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            this.CloseDateValue.Properties.EditFormat.FormatString = "dd.MM.yyyy";
-            this.CloseDateValue.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            this.CloseDateValue.Properties.Mask.EditMask = "dd.MM.yyyy";
-            this.CloseDateValue.Properties.NullValuePrompt = "dd.mm.yyyy";
-            this.CloseDateValue.Properties.NullValuePromptShowForEmptyValue = true;
-            this.CloseDateValue.Size = new System.Drawing.Size(100, 20);
-            this.CloseDateValue.TabIndex = 9;
-            this.CloseDateValue.Visible = false;
-            // 
-            // CloseDateLabel
-            // 
-            this.CloseDateLabel.Location = new System.Drawing.Point(501, 124);
-            this.CloseDateLabel.Name = "CloseDateLabel";
-            this.CloseDateLabel.Size = new System.Drawing.Size(24, 13);
-            this.CloseDateLabel.TabIndex = 38;
-            this.CloseDateLabel.Text = "Tarix";
-            this.CloseDateLabel.Visible = false;
-            // 
             // NoteLabel
             // 
-            this.NoteLabel.Location = new System.Drawing.Point(19, 155);
+            this.NoteLabel.Location = new System.Drawing.Point(17, 174);
+            this.NoteLabel.Margin = new System.Windows.Forms.Padding(4);
             this.NoteLabel.Name = "NoteLabel";
             this.NoteLabel.Size = new System.Drawing.Size(26, 13);
             this.NoteLabel.TabIndex = 28;
@@ -862,7 +828,8 @@
             // 
             // AddressLabel
             // 
-            this.AddressLabel.Location = new System.Drawing.Point(19, 131);
+            this.AddressLabel.Location = new System.Drawing.Point(17, 146);
+            this.AddressLabel.Margin = new System.Windows.Forms.Padding(4);
             this.AddressLabel.Name = "AddressLabel";
             this.AddressLabel.Size = new System.Drawing.Size(72, 13);
             this.AddressLabel.TabIndex = 27;
@@ -872,7 +839,8 @@
             // 
             this.BirthdayDate.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BirthdayDate.EditValue = null;
-            this.BirthdayDate.Location = new System.Drawing.Point(161, 104);
+            this.BirthdayDate.Location = new System.Drawing.Point(161, 115);
+            this.BirthdayDate.Margin = new System.Windows.Forms.Padding(4);
             this.BirthdayDate.Name = "BirthdayDate";
             this.BirthdayDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Ellipsis, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), "Kalendarı aç")});
@@ -891,9 +859,10 @@
             // 
             // NoteText
             // 
-            this.NoteText.Location = new System.Drawing.Point(161, 152);
+            this.NoteText.Location = new System.Drawing.Point(161, 171);
+            this.NoteText.Margin = new System.Windows.Forms.Padding(4);
             this.NoteText.Name = "NoteText";
-            this.NoteText.Size = new System.Drawing.Size(473, 20);
+            this.NoteText.Size = new System.Drawing.Size(471, 20);
             superToolTip1.AllowHtmlText = DevExpress.Utils.DefaultBoolean.True;
             toolTipTitleItem1.Text = "<color=255,0,0>Qeyd</color>";
             toolTipItem1.Appearance.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
@@ -909,11 +878,12 @@
             // 
             // AddressText
             // 
-            this.AddressText.Location = new System.Drawing.Point(161, 128);
+            this.AddressText.Location = new System.Drawing.Point(161, 143);
+            this.AddressText.Margin = new System.Windows.Forms.Padding(4);
             this.AddressText.Name = "AddressText";
             this.AddressText.Properties.NullValuePrompt = "İstifadəçinin hal-hazırda yaşadığı ünvanı daxil edin";
             this.AddressText.Properties.NullValuePromptShowForEmptyValue = true;
-            this.AddressText.Size = new System.Drawing.Size(473, 20);
+            this.AddressText.Size = new System.Drawing.Size(471, 20);
             superToolTip2.AllowHtmlText = DevExpress.Utils.DefaultBoolean.True;
             toolTipTitleItem2.Text = "<color=255,0,0>İstifadəçinin hal-hazırda yaşadığı ünvan</color>";
             toolTipItem2.Appearance.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
@@ -929,11 +899,12 @@
             // 
             // FullNameText
             // 
-            this.FullNameText.Location = new System.Drawing.Point(161, 55);
+            this.FullNameText.Location = new System.Drawing.Point(161, 59);
+            this.FullNameText.Margin = new System.Windows.Forms.Padding(4);
             this.FullNameText.Name = "FullNameText";
             this.FullNameText.Properties.NullValuePrompt = "Tam adı daxil edin";
             this.FullNameText.Properties.NullValuePromptShowForEmptyValue = true;
-            this.FullNameText.Size = new System.Drawing.Size(473, 20);
+            this.FullNameText.Size = new System.Drawing.Size(471, 20);
             superToolTip3.AllowHtmlText = DevExpress.Utils.DefaultBoolean.True;
             toolTipTitleItem3.Text = "<color=255,0,0>İstifadəçinin tam adı</color>";
             toolTipItem3.Appearance.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
@@ -952,13 +923,15 @@
             // 
             this.RegistrationIDText.Enabled = false;
             this.RegistrationIDText.Location = new System.Drawing.Point(161, 31);
+            this.RegistrationIDText.Margin = new System.Windows.Forms.Padding(4);
             this.RegistrationIDText.Name = "RegistrationIDText";
             this.RegistrationIDText.Size = new System.Drawing.Size(100, 20);
             this.RegistrationIDText.TabIndex = 13;
             // 
             // BirthdayLabel
             // 
-            this.BirthdayLabel.Location = new System.Drawing.Point(19, 106);
+            this.BirthdayLabel.Location = new System.Drawing.Point(17, 118);
+            this.BirthdayLabel.Margin = new System.Windows.Forms.Padding(4);
             this.BirthdayLabel.Name = "BirthdayLabel";
             this.BirthdayLabel.Size = new System.Drawing.Size(60, 13);
             this.BirthdayLabel.TabIndex = 9;
@@ -966,7 +939,8 @@
             // 
             // SexLabel
             // 
-            this.SexLabel.Location = new System.Drawing.Point(19, 82);
+            this.SexLabel.Location = new System.Drawing.Point(17, 90);
+            this.SexLabel.Margin = new System.Windows.Forms.Padding(4);
             this.SexLabel.Name = "SexLabel";
             this.SexLabel.Size = new System.Drawing.Size(22, 13);
             this.SexLabel.TabIndex = 8;
@@ -986,7 +960,8 @@
             // 
             // SurnameLabel
             // 
-            this.SurnameLabel.Location = new System.Drawing.Point(19, 58);
+            this.SurnameLabel.Location = new System.Drawing.Point(17, 62);
+            this.SurnameLabel.Margin = new System.Windows.Forms.Padding(4);
             this.SurnameLabel.Name = "SurnameLabel";
             this.SurnameLabel.Size = new System.Drawing.Size(114, 13);
             this.SurnameLabel.TabIndex = 5;
@@ -994,7 +969,8 @@
             // 
             // RegistrationLabel
             // 
-            this.RegistrationLabel.Location = new System.Drawing.Point(19, 34);
+            this.RegistrationLabel.Location = new System.Drawing.Point(17, 34);
+            this.RegistrationLabel.Margin = new System.Windows.Forms.Padding(4);
             this.RegistrationLabel.Name = "RegistrationLabel";
             this.RegistrationLabel.Size = new System.Drawing.Size(90, 13);
             this.RegistrationLabel.TabIndex = 4;
@@ -1047,7 +1023,8 @@
             // 
             this.labelControl2.Appearance.ForeColor = System.Drawing.Color.Maroon;
             this.labelControl2.Appearance.Options.UseForeColor = true;
-            this.labelControl2.Location = new System.Drawing.Point(149, 106);
+            this.labelControl2.Location = new System.Drawing.Point(147, 118);
+            this.labelControl2.Margin = new System.Windows.Forms.Padding(4);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(6, 13);
             this.labelControl2.TabIndex = 178;
@@ -1066,7 +1043,8 @@
             // SexLookUp
             // 
             this.SexLookUp.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.SexLookUp.Location = new System.Drawing.Point(161, 80);
+            this.SexLookUp.Location = new System.Drawing.Point(161, 87);
+            this.SexLookUp.Margin = new System.Windows.Forms.Padding(4);
             this.SexLookUp.Name = "SexLookUp";
             this.SexLookUp.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), "Siyahını aç")});
@@ -1087,7 +1065,8 @@
             // 
             this.labelControl5.Appearance.ForeColor = System.Drawing.Color.Maroon;
             this.labelControl5.Appearance.Options.UseForeColor = true;
-            this.labelControl5.Location = new System.Drawing.Point(149, 82);
+            this.labelControl5.Location = new System.Drawing.Point(150, 90);
+            this.labelControl5.Margin = new System.Windows.Forms.Padding(4);
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(6, 13);
             this.labelControl5.TabIndex = 175;
@@ -1097,7 +1076,8 @@
             // 
             this.labelControl4.Appearance.ForeColor = System.Drawing.Color.Maroon;
             this.labelControl4.Appearance.Options.UseForeColor = true;
-            this.labelControl4.Location = new System.Drawing.Point(149, 58);
+            this.labelControl4.Location = new System.Drawing.Point(147, 62);
+            this.labelControl4.Margin = new System.Windows.Forms.Padding(4);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(6, 13);
             this.labelControl4.TabIndex = 172;
@@ -1124,8 +1104,6 @@
             this.ConnectTabPage.Controls.Add(this.BranchLookUp);
             this.ConnectTabPage.Controls.Add(this.labelControl7);
             this.ConnectTabPage.Controls.Add(this.labelControl6);
-            this.ConnectTabPage.Controls.Add(this.CloseDateValue);
-            this.ConnectTabPage.Controls.Add(this.CloseDateLabel);
             this.ConnectTabPage.Controls.Add(this.UserNameText);
             this.ConnectTabPage.Controls.Add(this.PasswordLabel);
             this.ConnectTabPage.Controls.Add(this.ManualUserNameLabel);
@@ -1347,8 +1325,8 @@
             this.GroupNameLookUp.Location = new System.Drawing.Point(134, 17);
             this.GroupNameLookUp.Name = "GroupNameLookUp";
             this.GroupNameLookUp.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo, "", -1, true, true, false, editorButtonImageOptions7, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), "Siyahını aç"),
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Ellipsis, "", -1, true, true, false, editorButtonImageOptions8, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), "Düzəliş etmək üçün qrupların siyahısını aç")});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo, "", -1, true, true, false, editorButtonImageOptions6, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), "Siyahını aç"),
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Ellipsis, "", -1, true, true, false, editorButtonImageOptions7, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), "Düzəliş etmək üçün qrupların siyahısını aç")});
             this.GroupNameLookUp.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("ID", "ID", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default),
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("GROUP_NAME", "Name")});
@@ -1541,8 +1519,6 @@
             this.ContactTabPage.ResumeLayout(false);
             this.ContactTabPage.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PhonePopupMenu)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CloseDateValue.Properties.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CloseDateValue.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BirthdayDate.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BirthdayDate.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.NoteText.Properties)).EndInit();
@@ -1591,8 +1567,6 @@
         private ManiXButton.XButton BCancel;
         private DevExpress.XtraEditors.GroupControl PersonalDetailsGroupBox;
         private DevExpress.XtraEditors.LabelControl AgeLabel;
-        private DevExpress.XtraEditors.DateEdit CloseDateValue;
-        private DevExpress.XtraEditors.LabelControl CloseDateLabel;
         private DevExpress.XtraEditors.LabelControl NoteLabel;
         private DevExpress.XtraEditors.LabelControl AddressLabel;
         private DevExpress.XtraEditors.DateEdit BirthdayDate;
