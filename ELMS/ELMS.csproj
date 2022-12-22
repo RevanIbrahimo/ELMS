@@ -186,11 +186,11 @@
     <Compile Include="Forms\Dictionaries\FProfessionAddEdit.Designer.cs">
       <DependentUpon>FProfessionAddEdit.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\General\ELMSSplashScreen.cs">
+    <Compile Include="Forms\General\ProjectSplashScreen.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\General\ELMSSplashScreen.Designer.cs">
-      <DependentUpon>ELMSSplashScreen.cs</DependentUpon>
+    <Compile Include="Forms\General\ProjectSplashScreen.Designer.cs">
+      <DependentUpon>ProjectSplashScreen.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Image\FImageCrop.cs">
       <SubType>Form</SubType>
@@ -338,8 +338,8 @@
     <EmbeddedResource Include="Forms\Dictionaries\FProfessionAddEdit.resx">
       <DependentUpon>FProfessionAddEdit.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\General\ELMSSplashScreen.resx">
-      <DependentUpon>ELMSSplashScreen.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\General\ProjectSplashScreen.resx">
+      <DependentUpon>ProjectSplashScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Image\FImageCrop.resx">
       <DependentUpon>FImageCrop.cs</DependentUpon>

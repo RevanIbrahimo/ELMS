@@ -135,7 +135,6 @@ C:\Users\user\Documents\Github\ELMS\ELMS\obj\Debug\ELMS.Forms.Dictionaries.FPhon
 C:\Users\user\Documents\Github\ELMS\ELMS\obj\Debug\ELMS.Forms.Dictionaries.FPhonePrefixAddEdit.resources
 C:\Users\user\Documents\Github\ELMS\ELMS\obj\Debug\ELMS.Forms.Dictionaries.FProductAddEdit.resources
 C:\Users\user\Documents\Github\ELMS\ELMS\obj\Debug\ELMS.Forms.Dictionaries.FProfessionAddEdit.resources
-C:\Users\user\Documents\Github\ELMS\ELMS\obj\Debug\ELMS.DentalSplashScreen.resources
 C:\Users\user\Documents\Github\ELMS\ELMS\obj\Debug\ELMS.Forms.Option.FUsers.resources
 C:\Users\user\Documents\Github\ELMS\ELMS\obj\Debug\ELMS.Forms.Phone.FPhoneAddEdit.resources
 C:\Users\user\Documents\Github\ELMS\ELMS\obj\Debug\ELMS.FLoginSystem.resources
@@ -161,3 +160,4 @@ C:\Users\user\Documents\Github\ELMS\ELMS\obj\Debug\ELMS.Forms.FUserAddEdit.resou
 C:\Users\user\Documents\Github\ELMS\ELMS\obj\Debug\ELMS.Forms.FUserGroupAddEdit.resources
 C:\Users\user\Documents\Github\ELMS\ELMS\obj\Debug\ELMS.Forms.FUsersGroups.resources
 C:\Users\user\Documents\Github\ELMS\ELMS\obj\Debug\ELMS.WaitForms.FWait.resources
+C:\Users\user\Documents\Github\ELMS\ELMS\obj\Debug\ELMS.Forms.General.ProjectSplashScreen.resources

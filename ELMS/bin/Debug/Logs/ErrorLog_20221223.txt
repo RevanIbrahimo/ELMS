@@ -1,0 +1,11 @@
+
+Log Entry : 1:02:55 AM Friday, December 23, 2022
+  
+   UserName =  SuperAdmin
+   FormName =  GlobalProcedures
+   ProcedureName =  ExecuteQuery
+  
+   ShowMessage: Mail temp cədvələ daxil edilmədi.
+   Exception Message: ORA-02289: sequence does not exist
+   SQL Text      :  INSERT INTO ELMS_USER_TEMP.MAILS_TEMP(ID,OWNER_ID,OWNER_TYPE,MAIL,NOTE,IS_CHANGE,USED_USER_ID)VALUES(MAIL_SEQUENCE.NEXTVAL,1,'User','test@mail.ru','',1,0)
+-------------------------------------------------

@@ -62,8 +62,9 @@
             this.panel1.Controls.Add(this.labelControl1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(500, 88);
+            this.panel1.Size = new System.Drawing.Size(375, 72);
             this.panel1.TabIndex = 0;
             // 
             // VersionLabel
@@ -72,10 +73,9 @@
             this.VersionLabel.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.VersionLabel.Appearance.Options.UseFont = true;
             this.VersionLabel.Appearance.Options.UseForeColor = true;
-            this.VersionLabel.Location = new System.Drawing.Point(387, 67);
-            this.VersionLabel.Margin = new System.Windows.Forms.Padding(4);
+            this.VersionLabel.Location = new System.Drawing.Point(290, 54);
             this.VersionLabel.Name = "VersionLabel";
-            this.VersionLabel.Size = new System.Drawing.Size(56, 17);
+            this.VersionLabel.Size = new System.Drawing.Size(44, 13);
             this.VersionLabel.TabIndex = 21;
             this.VersionLabel.Text = "v1.0.2.0";
             // 
@@ -84,18 +84,20 @@
             this.labelControl1.AllowHtmlString = true;
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Bold);
             this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Location = new System.Drawing.Point(19, 31);
+            this.labelControl1.Location = new System.Drawing.Point(14, 25);
+            this.labelControl1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(430, 30);
+            this.labelControl1.Size = new System.Drawing.Size(292, 24);
             this.labelControl1.TabIndex = 3;
-            this.labelControl1.Text = "<color=104,20,150>Dental Clinic</color><color=255,255,255> Management System</col" +
-    "or>";
+            this.labelControl1.Text = "<color=104,20,150>ELLONI</color><color=255,255,255> Management System</color>";
             // 
             // separatorControl1
             // 
-            this.separatorControl1.Location = new System.Drawing.Point(31, 500);
+            this.separatorControl1.Location = new System.Drawing.Point(23, 406);
+            this.separatorControl1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.separatorControl1.Name = "separatorControl1";
-            this.separatorControl1.Size = new System.Drawing.Size(441, 23);
+            this.separatorControl1.Padding = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.separatorControl1.Size = new System.Drawing.Size(331, 19);
             this.separatorControl1.TabIndex = 2;
             // 
             // labelControl2
@@ -103,9 +105,10 @@
             this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Italic);
             this.labelControl2.Appearance.Options.UseFont = true;
             this.labelControl2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.labelControl2.Location = new System.Drawing.Point(353, 383);
+            this.labelControl2.Location = new System.Drawing.Point(265, 311);
+            this.labelControl2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(119, 17);
+            this.labelControl2.Size = new System.Drawing.Size(92, 13);
             this.labelControl2.TabIndex = 3;
             this.labelControl2.Text = "Şifrəni unutmusuz?";
             this.labelControl2.Click += new System.EventHandler(this.labelControl2_Click);
@@ -113,13 +116,12 @@
             // SaveCheck
             // 
             this.SaveCheck.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.SaveCheck.Location = new System.Drawing.Point(31, 381);
-            this.SaveCheck.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.SaveCheck.Location = new System.Drawing.Point(23, 310);
+            this.SaveCheck.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.SaveCheck.Name = "SaveCheck";
-            this.SaveCheck.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F);
             this.SaveCheck.Properties.Appearance.Options.UseFont = true;
             this.SaveCheck.Properties.Caption = "Yadda saxla";
-            this.SaveCheck.Size = new System.Drawing.Size(120, 21);
+            this.SaveCheck.Size = new System.Drawing.Size(90, 19);
             this.SaveCheck.TabIndex = 18;
             this.SaveCheck.TabStop = false;
             // 
@@ -129,10 +131,10 @@
             this.PasswordLabel.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.PasswordLabel.Appearance.Options.UseFont = true;
             this.PasswordLabel.Appearance.Options.UseForeColor = true;
-            this.PasswordLabel.Location = new System.Drawing.Point(32, 308);
-            this.PasswordLabel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.PasswordLabel.Location = new System.Drawing.Point(24, 250);
+            this.PasswordLabel.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.PasswordLabel.Name = "PasswordLabel";
-            this.PasswordLabel.Size = new System.Drawing.Size(31, 17);
+            this.PasswordLabel.Size = new System.Drawing.Size(26, 13);
             this.PasswordLabel.TabIndex = 17;
             this.PasswordLabel.Text = "Şifrə";
             // 
@@ -142,10 +144,10 @@
             this.UserNameLabel.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.UserNameLabel.Appearance.Options.UseFont = true;
             this.UserNameLabel.Appearance.Options.UseForeColor = true;
-            this.UserNameLabel.Location = new System.Drawing.Point(31, 237);
-            this.UserNameLabel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.UserNameLabel.Location = new System.Drawing.Point(23, 193);
+            this.UserNameLabel.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.UserNameLabel.Name = "UserNameLabel";
-            this.UserNameLabel.Size = new System.Drawing.Size(87, 17);
+            this.UserNameLabel.Size = new System.Drawing.Size(73, 13);
             this.UserNameLabel.TabIndex = 16;
             this.UserNameLabel.Text = "İstifadəçi adı";
             // 
@@ -153,8 +155,8 @@
             // 
             this.PasswordText.Cursor = System.Windows.Forms.Cursors.Hand;
             this.PasswordText.EditValue = "";
-            this.PasswordText.Location = new System.Drawing.Point(32, 332);
-            this.PasswordText.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.PasswordText.Location = new System.Drawing.Point(24, 270);
+            this.PasswordText.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.PasswordText.Name = "PasswordText";
             this.PasswordText.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9F);
             this.PasswordText.Properties.Appearance.Options.UseFont = true;
@@ -166,7 +168,7 @@
             this.PasswordText.Properties.NullValuePrompt = "Şifrəni daxil edin";
             this.PasswordText.Properties.NullValuePromptShowForEmptyValue = true;
             this.PasswordText.Properties.PasswordChar = '*';
-            this.PasswordText.Size = new System.Drawing.Size(440, 24);
+            this.PasswordText.Size = new System.Drawing.Size(330, 22);
             this.PasswordText.TabIndex = 1;
             this.PasswordText.TextChanged += new System.EventHandler(this.UserNameText_TextChanged);
             // 
@@ -174,8 +176,8 @@
             // 
             this.UserNameText.Cursor = System.Windows.Forms.Cursors.Hand;
             this.UserNameText.EditValue = "";
-            this.UserNameText.Location = new System.Drawing.Point(32, 260);
-            this.UserNameText.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.UserNameText.Location = new System.Drawing.Point(24, 211);
+            this.UserNameText.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.UserNameText.Name = "UserNameText";
             this.UserNameText.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9F);
             this.UserNameText.Properties.Appearance.Options.UseFont = true;
@@ -187,17 +189,16 @@
             this.UserNameText.Properties.NullText = "df";
             this.UserNameText.Properties.NullValuePrompt = "İstifadəçi adını daxil edin";
             this.UserNameText.Properties.NullValuePromptShowForEmptyValue = true;
-            this.UserNameText.Size = new System.Drawing.Size(440, 24);
+            this.UserNameText.Size = new System.Drawing.Size(330, 22);
             this.UserNameText.TabIndex = 0;
             this.UserNameText.TextChanged += new System.EventHandler(this.UserNameText_TextChanged);
             // 
             // CopyrightLabel
             // 
             this.CopyrightLabel.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.CopyrightLabel.Location = new System.Drawing.Point(200, 551);
-            this.CopyrightLabel.Margin = new System.Windows.Forms.Padding(4);
+            this.CopyrightLabel.Location = new System.Drawing.Point(150, 448);
             this.CopyrightLabel.Name = "CopyrightLabel";
-            this.CopyrightLabel.Size = new System.Drawing.Size(102, 16);
+            this.CopyrightLabel.Size = new System.Drawing.Size(87, 13);
             this.CopyrightLabel.TabIndex = 20;
             this.CopyrightLabel.Text = "Copyright © 2019";
             // 
@@ -224,10 +225,10 @@
             this.BCancel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.BCancel.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
-            this.BCancel.Location = new System.Drawing.Point(260, 446);
-            this.BCancel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.BCancel.Location = new System.Drawing.Point(195, 362);
+            this.BCancel.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.BCancel.Name = "BCancel";
-            this.BCancel.Size = new System.Drawing.Size(212, 47);
+            this.BCancel.Size = new System.Drawing.Size(159, 38);
             this.BCancel.TabIndex = 21;
             this.BCancel.Text = "İmtina et";
             this.BCancel.Theme = ManiXButton.Theme.MSOffice2010_RED;
@@ -256,10 +257,10 @@
             this.BOK.ColorTable = office2010Blue1;
             this.BOK.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BOK.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
-            this.BOK.Location = new System.Drawing.Point(32, 446);
-            this.BOK.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.BOK.Location = new System.Drawing.Point(24, 362);
+            this.BOK.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.BOK.Name = "BOK";
-            this.BOK.Size = new System.Drawing.Size(212, 47);
+            this.BOK.Size = new System.Drawing.Size(159, 38);
             this.BOK.TabIndex = 19;
             this.BOK.Text = "Daxil ol";
             this.BOK.Theme = ManiXButton.Theme.MSOffice2010_BLUE;
@@ -270,23 +271,24 @@
             // 
             this.pictureEdit1.Cursor = System.Windows.Forms.Cursors.Default;
             this.pictureEdit1.EditValue = global::ELMS.Properties.Resources.login;
-            this.pictureEdit1.Location = new System.Drawing.Point(200, 111);
+            this.pictureEdit1.Location = new System.Drawing.Point(150, 90);
+            this.pictureEdit1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureEdit1.Name = "pictureEdit1";
             this.pictureEdit1.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.pictureEdit1.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
             this.pictureEdit1.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Zoom;
             this.pictureEdit1.Properties.ZoomAccelerationFactor = 1D;
-            this.pictureEdit1.Size = new System.Drawing.Size(100, 96);
+            this.pictureEdit1.Size = new System.Drawing.Size(75, 78);
             this.pictureEdit1.TabIndex = 4;
             // 
             // FLoginSystem
             // 
             this.AcceptButton = this.BOK;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.CancelButton = this.BCancel;
-            this.ClientSize = new System.Drawing.Size(500, 580);
+            this.ClientSize = new System.Drawing.Size(375, 471);
             this.Controls.Add(this.BCancel);
             this.Controls.Add(this.CopyrightLabel);
             this.Controls.Add(this.BOK);
@@ -301,6 +303,7 @@
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FLoginSystem";

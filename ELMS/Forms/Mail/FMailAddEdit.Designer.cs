@@ -60,10 +60,9 @@
             this.PanelOption.Controls.Add(this.BOK);
             this.PanelOption.Controls.Add(this.BCancel);
             this.PanelOption.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.PanelOption.Location = new System.Drawing.Point(0, 81);
-            this.PanelOption.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.PanelOption.Location = new System.Drawing.Point(0, 66);
             this.PanelOption.Name = "PanelOption";
-            this.PanelOption.Size = new System.Drawing.Size(506, 62);
+            this.PanelOption.Size = new System.Drawing.Size(434, 50);
             this.PanelOption.TabIndex = 12;
             // 
             // labelControl15
@@ -71,10 +70,9 @@
             this.labelControl15.AllowHtmlString = true;
             this.labelControl15.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Italic);
             this.labelControl15.Appearance.Options.UseFont = true;
-            this.labelControl15.Location = new System.Drawing.Point(14, 23);
-            this.labelControl15.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.labelControl15.Location = new System.Drawing.Point(12, 19);
             this.labelControl15.Name = "labelControl15";
-            this.labelControl15.Size = new System.Drawing.Size(222, 17);
+            this.labelControl15.Size = new System.Drawing.Size(172, 13);
             this.labelControl15.TabIndex = 136;
             this.labelControl15.Text = "<color=104,0,0>*</color> - lu xanalar mütləq doldurulmalıdır";
             // 
@@ -100,10 +98,9 @@
             office2010Blue1.TextColor = System.Drawing.Color.White;
             this.BOK.ColorTable = office2010Blue1;
             this.BOK.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BOK.Location = new System.Drawing.Point(310, 16);
-            this.BOK.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.BOK.Location = new System.Drawing.Point(266, 13);
             this.BOK.Name = "BOK";
-            this.BOK.Size = new System.Drawing.Size(87, 31);
+            this.BOK.Size = new System.Drawing.Size(75, 25);
             this.BOK.TabIndex = 3;
             this.BOK.Text = "Yadda saxla";
             this.BOK.Theme = ManiXButton.Theme.MSOffice2010_BLUE;
@@ -133,10 +130,9 @@
             this.BCancel.ColorTable = office2010Red1;
             this.BCancel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.BCancel.Location = new System.Drawing.Point(404, 16);
-            this.BCancel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.BCancel.Location = new System.Drawing.Point(346, 13);
             this.BCancel.Name = "BCancel";
-            this.BCancel.Size = new System.Drawing.Size(87, 31);
+            this.BCancel.Size = new System.Drawing.Size(75, 25);
             this.BCancel.TabIndex = 4;
             this.BCancel.Text = "İmtina et";
             this.BCancel.Theme = ManiXButton.Theme.MSOffice2010_RED;
@@ -145,10 +141,9 @@
             // 
             // NoteText
             // 
-            this.NoteText.Location = new System.Drawing.Point(126, 45);
-            this.NoteText.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.NoteText.Location = new System.Drawing.Point(108, 37);
             this.NoteText.Name = "NoteText";
-            this.NoteText.Size = new System.Drawing.Size(365, 22);
+            this.NoteText.Size = new System.Drawing.Size(313, 20);
             superToolTip1.AllowHtmlText = DevExpress.Utils.DefaultBoolean.True;
             toolTipTitleItem1.Text = "<color=255,0,0>Qeyd</color>";
             toolTipItem1.Appearance.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
@@ -164,21 +159,21 @@
             // 
             // MailLabel
             // 
-            this.MailLabel.Location = new System.Drawing.Point(14, 18);
-            this.MailLabel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.MailLabel.Location = new System.Drawing.Point(12, 15);
             this.MailLabel.Name = "MailLabel";
-            this.MailLabel.Size = new System.Drawing.Size(84, 16);
+            this.MailLabel.Size = new System.Drawing.Size(72, 13);
             this.MailLabel.TabIndex = 13;
             this.MailLabel.Text = "Elektron ünvan";
             // 
             // MailText
             // 
-            this.MailText.Location = new System.Drawing.Point(126, 15);
-            this.MailText.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.MailText.Location = new System.Drawing.Point(108, 12);
             this.MailText.Name = "MailText";
+            this.MailText.Properties.Mask.EditMask = "\\w+([-+.\']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*";
+            this.MailText.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.MailText.Properties.NullValuePrompt = "email.name@company";
             this.MailText.Properties.NullValuePromptShowForEmptyValue = true;
-            this.MailText.Size = new System.Drawing.Size(365, 22);
+            this.MailText.Size = new System.Drawing.Size(313, 20);
             superToolTip2.AllowHtmlText = DevExpress.Utils.DefaultBoolean.True;
             toolTipTitleItem2.Text = "<color=255,0,0>Elektron ünvan</color>";
             toolTipItem2.Appearance.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
@@ -197,10 +192,9 @@
             // 
             // NoteLabel
             // 
-            this.NoteLabel.Location = new System.Drawing.Point(13, 48);
-            this.NoteLabel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.NoteLabel.Location = new System.Drawing.Point(11, 39);
             this.NoteLabel.Name = "NoteLabel";
-            this.NoteLabel.Size = new System.Drawing.Size(29, 16);
+            this.NoteLabel.Size = new System.Drawing.Size(26, 13);
             this.NoteLabel.TabIndex = 14;
             this.NoteLabel.Text = "Qeyd";
             // 
@@ -208,20 +202,19 @@
             // 
             this.labelControl17.Appearance.ForeColor = System.Drawing.Color.Maroon;
             this.labelControl17.Appearance.Options.UseForeColor = true;
-            this.labelControl17.Location = new System.Drawing.Point(112, 18);
-            this.labelControl17.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.labelControl17.Location = new System.Drawing.Point(96, 15);
             this.labelControl17.Name = "labelControl17";
-            this.labelControl17.Size = new System.Drawing.Size(8, 16);
+            this.labelControl17.Size = new System.Drawing.Size(6, 13);
             this.labelControl17.TabIndex = 266;
             this.labelControl17.Text = "*";
             // 
             // FMailAddEdit
             // 
             this.AcceptButton = this.BOK;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.BCancel;
-            this.ClientSize = new System.Drawing.Size(506, 143);
+            this.ClientSize = new System.Drawing.Size(434, 116);
             this.Controls.Add(this.labelControl17);
             this.Controls.Add(this.PanelOption);
             this.Controls.Add(this.NoteText);
@@ -230,7 +223,6 @@
             this.Controls.Add(this.NoteLabel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FMailAddEdit";
