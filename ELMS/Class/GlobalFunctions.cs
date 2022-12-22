@@ -397,7 +397,7 @@ namespace ELMS.Class
         public static int GetOracleTempSequenceValue(string SequenceName)
         {
             int seqVal = -1;
-            string sql = $@"SELECT COMS_USER_TEMP.{SequenceName}.NEXTVAL FROM DUAL";
+            string sql = $@"SELECT ELMS_USER_TEMP.{SequenceName}.NEXTVAL FROM DUAL";
             using (OracleConnection connection = new OracleConnection())
             {
                 OracleCommand command = null;
@@ -1019,7 +1019,7 @@ namespace ELMS.Class
             string sql = null;
             try
             {
-                sql = "SELECT ID,NIKNAME FROM ELMS_USER.COMS_USERS WHERE STATUS_ID = 1 AND NIKNAME = '" + UserNikeName + "'";
+                sql = "SELECT ID,NIKNAME FROM ELMS_USER.SYSTEM_USER WHERE STATUS_ID = 1 AND NIKNAME = '" + UserNikeName + "'";
                 DataTable dt = GenerateDataTable(sql, "FindUserName");
                 foreach (DataRow dr in dt.Rows)
                 {
@@ -1065,7 +1065,7 @@ namespace ELMS.Class
             string sql = null;
             try
             {
-                sql = "SELECT " + valuemembercolumn + " FROM COMS_USER_TEMP." + tablename + " WHERE " + displeynamecolumn + " = '" + comboboxtext + "'";
+                sql = "SELECT " + valuemembercolumn + " FROM ELMS_USER_TEMP." + tablename + " WHERE " + displeynamecolumn + " = '" + comboboxtext + "'";
                 foreach (DataRow dr in GenerateDataTable(sql, "FindTempComboBoxSelectedValue").Rows)
                 {
                     if (!String.IsNullOrEmpty(dr[0].ToString()))

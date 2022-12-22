@@ -48,6 +48,7 @@ namespace ELMS.Class
         public static bool AddUserGroup = false;
         public static bool EditUserGroup = false;
         public static bool DeleteUserGroup = false;
-        public static bool CopyUserGroup = false;        
+        public static bool CopyUserGroup = false;
+        public static bool Status = false;
     }
 }
