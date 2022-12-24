@@ -1,7 +1,11 @@
 {
   "ExpandedNodes": [
+    "",
     "\\ELMS",
-    "\\ELMS\\Forms"
+    "\\ELMS\\Class",
+    "\\ELMS\\Forms",
+    "\\ELMS\\Forms\\Option"
   ],
+  "SelectedNode": "\\ELMS\\Class\\Tables",
   "PreviewInSolutionExplorer": false
 }

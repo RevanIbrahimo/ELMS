@@ -50,6 +50,7 @@
             this.User_SessionID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.RepositoryItemPictureEdit = new DevExpress.XtraEditors.Repository.RepositoryItemPictureEdit();
             this.PopupMenu = new DevExpress.XtraBars.PopupMenu(this.components);
+            this.User_ID = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.UsersRibbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.UsersGridControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.UsersGridView)).BeginInit();
@@ -197,6 +198,7 @@
             this.UsersGridView.Appearance.ViewCaption.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.UsersGridView.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.User_SS,
+            this.User_ID,
             this.User_CustomerFullName,
             this.User_Note,
             this.User_IsActive,
@@ -231,11 +233,12 @@
             this.User_SS.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.User_SS.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.User_SS.Caption = "S/s";
-            this.User_SS.FieldName = "SS";
+            this.User_SS.FieldName = "User_SS";
             this.User_SS.Name = "User_SS";
             this.User_SS.OptionsColumn.FixedWidth = true;
             this.User_SS.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Count, "SS", "{0}")});
+            this.User_SS.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
             this.User_SS.Visible = true;
             this.User_SS.VisibleIndex = 0;
             this.User_SS.Width = 45;
@@ -243,7 +246,7 @@
             // User_CustomerFullName
             // 
             this.User_CustomerFullName.Caption = "İstifadəçinin tam adı";
-            this.User_CustomerFullName.FieldName = "CUSTOMERFULLNAME";
+            this.User_CustomerFullName.FieldName = "FULL_NAME";
             this.User_CustomerFullName.Name = "User_CustomerFullName";
             this.User_CustomerFullName.Visible = true;
             this.User_CustomerFullName.VisibleIndex = 1;
@@ -292,6 +295,14 @@
             this.PopupMenu.ItemLinks.Add(this.LockBarButton);
             this.PopupMenu.Name = "PopupMenu";
             this.PopupMenu.Ribbon = this.UsersRibbon;
+            // 
+            // User_ID
+            // 
+            this.User_ID.Caption = "User_ID";
+            this.User_ID.FieldName = "ID";
+            this.User_ID.Name = "User_ID";
+            this.User_ID.Visible = true;
+            this.User_ID.VisibleIndex = 3;
             // 
             // FUsers
             // 
@@ -345,5 +356,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn User_SessionID;
         private DevExpress.XtraBars.BarButtonItem UnLockBarButton;
         private DevExpress.XtraBars.BarButtonItem LockBarButton;
+        private DevExpress.XtraGrid.Columns.GridColumn User_ID;
     }
 }

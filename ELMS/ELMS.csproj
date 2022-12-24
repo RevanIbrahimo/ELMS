@@ -86,6 +86,7 @@
     <Compile Include="Class\DataAccess\DocumentTypeDAL.cs" />
     <Compile Include="Class\DataAccess\KindShipDAL.cs" />
     <Compile Include="Class\DataAccess\MailDAL.cs" />
+    <Compile Include="Class\DataAccess\PermissionDAL.cs" />
     <Compile Include="Class\DataAccess\PersonTypeDAL.cs" />
     <Compile Include="Class\DataAccess\PhoneDAL.cs" />
     <Compile Include="Class\DataAccess\PhoneDescriptionDAL.cs" />
@@ -93,6 +94,8 @@
     <Compile Include="Class\DataAccess\ProductDAL.cs" />
     <Compile Include="Class\DataAccess\ProfessionDAL.cs" />
     <Compile Include="Class\DataAccess\UserDAL.cs" />
+    <Compile Include="Class\DataAccess\UserListDAL.cs" />
+    <Compile Include="Class\DataAccess\UsersGroupDAL.cs" />
     <Compile Include="Class\Enum.cs" />
     <Compile Include="Class\Extensions.cs" />
     <Compile Include="Class\GlobalFunctions.cs" />
@@ -107,13 +110,16 @@
     <Compile Include="Class\Tables\DocumentType.cs" />
     <Compile Include="Class\Tables\KindShip.cs" />
     <Compile Include="Class\Tables\Mail.cs" />
+    <Compile Include="Class\Tables\Permission.cs" />
     <Compile Include="Class\Tables\PersonType.cs" />
     <Compile Include="Class\Tables\Phone.cs" />
     <Compile Include="Class\Tables\PhoneDescription.cs" />
     <Compile Include="Class\Tables\PhonePrefix.cs" />
     <Compile Include="Class\Tables\Product.cs" />
     <Compile Include="Class\Tables\Profession.cs" />
+    <Compile Include="Class\Tables\UserList.cs" />
     <Compile Include="Class\Tables\Users.cs" />
+    <Compile Include="Class\Tables\UsersGroup.cs" />
     <Compile Include="Forms\Customer\FCardAddEdit.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -588,6 +594,8 @@
     <Content Include="bin\Debug\ja\DevExpress.XtraPrinting.v17.1.resources.dll" />
     <Content Include="bin\Debug\ja\DevExpress.XtraReports.v17.1.resources.dll" />
     <Content Include="bin\Debug\ja\DevExpress.XtraTreeList.v17.1.resources.dll" />
+    <Content Include="bin\Debug\Logs\ErrorLog_20221223.txt" />
+    <Content Include="bin\Debug\Logs\ErrorLog_20221224.txt" />
     <Content Include="bin\Debug\Oracle.ManagedDataAccess.dll" />
     <Content Include="bin\Debug\ru\DevExpress.Data.v17.1.resources.dll" />
     <Content Include="bin\Debug\ru\DevExpress.DataAccess.v17.1.resources.dll" />

@@ -31,6 +31,33 @@ namespace ELMS.Class.DataAccess
             }
         }
 
+
+        public static DataSet SelectUserByGroupID(int? GroupID)
+        {
+            string sql = $@"SELECT FULL_NAME,
+                                 ID,
+                                 USED_USER_ID,
+                                 SEX_ID,
+                                 SESSION_ID
+                            FROM ELMS_USER.SYSTEM_USER
+                           WHERE IS_ACTIVE = 1 AND GROUP_ID = {GroupID}
+                        ORDER BY FULL_NAME";
+            try
+            {
+                using (OracleDataAdapter adapter = new OracleDataAdapter(sql, GlobalFunctions.GetConnectionString()))
+                {
+                    DataSet dsAdapter = new DataSet();
+                    adapter.Fill(dsAdapter);
+                    return dsAdapter;
+                }
+            }
+            catch (Exception exx)
+            {
+                GlobalProcedures.LogWrite("Qrupa daxil olan istifadəçilərin siyahısı cədvələ yüklənmədi.", sql, GlobalVariables.V_UserName, "UserDAL", "SelectUserByGroupID", exx);
+                return null;
+            }
+        }
+
         public static Int32 InsertUser(OracleTransaction tran, Users user)
         {
             Int32 id = 0;

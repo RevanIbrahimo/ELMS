@@ -10,6 +10,9 @@ using DevExpress.Utils;
 using DevExpress.XtraEditors;
 using ELMS.Class;
 using static ELMS.Class.Enum;
+using ELMS.Class.Tables;
+using ELMS.Class.DataAccess;
+using DevExpress.XtraGrid.Views.Grid;
 
 namespace ELMS.Forms
 {
@@ -42,44 +45,48 @@ namespace ELMS.Forms
 
         private void LoadUsersGroupDataGridView()
         {
-            string s = "SELECT 1 SS,ID,GROUP_NAME,GROUP_NAME_EN,GROUP_NAME_RU,NOTE,G.USED_USER_ID FROM ELMS_USER.USER_GROUP G";
-            try
-            {
-                GroupGridControl.DataSource = GlobalFunctions.GenerateDataTable(s, this.Name + "/LoadUsersGroupDataGridView");
-                
-                if (GroupGridView.RowCount > 0)
-                {
-                    if (GlobalVariables.V_UserID > 0)
-                    {
-                        EditBarButton.Enabled = GlobalVariables.EditUserGroup;
-                        DeleteBarButton.Enabled = GlobalVariables.DeleteUserGroup;
-                        CopyBarButton.Enabled = GlobalVariables.CopyUserGroup;
-                    }
-                    else
-                        EditBarButton.Enabled = DeleteBarButton.Enabled = CopyBarButton.Enabled = true;
 
-                    GroupGridView.Columns[0].SummaryItem.SetSummary(DevExpress.Data.SummaryItemType.Count, "{0:n0}");
-                }
-                else
-                    EditBarButton.Enabled = DeleteBarButton.Enabled = false;
-            }
-            catch (Exception exx)
-            {
-                GlobalProcedures.LogWrite("İstifadəçi qrupları cədvələ yüklənmədi.", s, GlobalVariables.V_UserName, this.Name, this.GetType().FullName + "/" + System.Reflection.MethodBase.GetCurrentMethod().Name, exx);
-            }
+            GroupGridControl.DataSource = UsersGroupDAL.SelectUsersGroupByID(null).ToList<UsersGroup>();
+            //string s = "SELECT 1 SS,ID,GROUP_NAME,GROUP_NAME_EN,GROUP_NAME_RU,NOTE,G.USED_USER_ID FROM ELMS_USER.USER_GROUP G";
+            //try
+            //{
+            //    GroupGridControl.DataSource = GlobalFunctions.GenerateDataTable(s, this.Name + "/LoadUsersGroupDataGridView");
+                
+            //    if (GroupGridView.RowCount > 0)
+            //    {
+            //        if (GlobalVariables.V_UserID > 0)
+            //        {
+            //            EditBarButton.Enabled = GlobalVariables.EditUserGroup;
+            //            DeleteBarButton.Enabled = GlobalVariables.DeleteUserGroup;
+            //            CopyBarButton.Enabled = GlobalVariables.CopyUserGroup;
+            //        }
+            //        else
+            //            EditBarButton.Enabled = DeleteBarButton.Enabled = CopyBarButton.Enabled = true;
+
+            //        GroupGridView.Columns[0].SummaryItem.SetSummary(DevExpress.Data.SummaryItemType.Count, "{0:n0}");
+            //    }
+            //    else
+            //        EditBarButton.Enabled = DeleteBarButton.Enabled = false;
+            //}
+            //catch (Exception exx)
+            //{
+            //    GlobalProcedures.LogWrite("İstifadəçi qrupları cədvələ yüklənmədi.", s, GlobalVariables.V_UserName, this.Name, this.GetType().FullName + "/" + System.Reflection.MethodBase.GetCurrentMethod().Name, exx);
+            //}
         }
 
         private void LoadUsersDataGridView()
         {
-            string s = $@"SELECT FULL_NAME,
-                                 ID,
-                                 USED_USER_ID,
-                                 SEX_ID,
-                                 SESSION_ID
-                            FROM ELMS_USER.SYSTEM_USER
-                           WHERE IS_ACTIVE = 1 AND GROUP_ID = {GroupID}
-                        ORDER BY FULL_NAME";
-            UserGridControl.DataSource = GlobalFunctions.GenerateDataTable(s, this.Name + "/LoadUsersDataGridView", "Qrupa daxil olan istifadəçilərin siyahısı cədvələ yüklənmədi.");            
+            UserGridControl.DataSource = UserDAL.SelectUserByGroupID(GroupID).ToList<Users>();
+
+            //string s = $@"SELECT FULL_NAME,
+            //                     ID,
+            //                     USED_USER_ID,
+            //                     SEX_ID,
+            //                     SESSION_ID
+            //                FROM ELMS_USER.SYSTEM_USER
+            //               WHERE IS_ACTIVE = 1 AND GROUP_ID = {GroupID}
+            //            ORDER BY FULL_NAME";
+            //UserGridControl.DataSource = GlobalFunctions.GenerateDataTable(s, this.Name + "/LoadUsersDataGridView", "Qrupa daxil olan istifadəçilərin siyahısı cədvələ yüklənmədi.");            
         }
 
         private void GroupGridView_CustomColumnDisplayText(object sender, DevExpress.XtraGrid.Views.Base.CustomColumnDisplayTextEventArgs e)
@@ -155,13 +162,20 @@ namespace ELMS.Forms
 
         private void GroupGridView_FocusedRowObjectChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowObjectChangedEventArgs e)
         {
-            DataRow row = GroupGridView.GetFocusedDataRow();
-            if (row != null)
-            {
-                GroupID = Convert.ToInt32(row["ID"].ToString());
-                GroupName = row["GROUP_NAME"].ToString();
+            
+            GroupID = Convert.ToInt32(GlobalFunctions.GetGridRowCellValue((sender as GridView), "ID"));
+            GroupName = GlobalFunctions.GetGridRowCellValue((sender as GridView), "GROUP_NAME").ToString();
+
                 LoadUsersDataGridView();
-            }
+            
+            //DataRow row = GroupGridView.GetFocusedDataRow();
+            //if (row != null)
+            //{
+            //     //GroupID = Convert.ToInt32(row["ID"].ToString());
+            //    //GroupName = row["GROUP_NAME"].ToString();
+            //    LoadUsersDataGridView();
+            //}
+            
         }
 
         private void LoadFUserGroupAddEdit(TransactionTypeEnum transaction, int? groupID)

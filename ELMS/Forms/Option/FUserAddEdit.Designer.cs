@@ -1270,7 +1270,7 @@
             // Permission_Description
             // 
             this.Permission_Description.Caption = "Modulun adı";
-            this.Permission_Description.FieldName = "ROLE_DESCRIPTION";
+            this.Permission_Description.FieldName = "ROLES_DESCRIPTION";
             this.Permission_Description.Name = "Permission_Description";
             this.Permission_Description.Visible = true;
             this.Permission_Description.VisibleIndex = 0;
@@ -1278,7 +1278,7 @@
             // Permission_DetailName
             // 
             this.Permission_DetailName.Caption = "Hüquqlar";
-            this.Permission_DetailName.FieldName = "DETAIL_NAME";
+            this.Permission_DetailName.FieldName = "ROLE_DETAIL_NAME";
             this.Permission_DetailName.Name = "Permission_DetailName";
             this.Permission_DetailName.Visible = true;
             this.Permission_DetailName.VisibleIndex = 0;

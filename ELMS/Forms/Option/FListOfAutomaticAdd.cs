@@ -47,7 +47,7 @@ namespace ELMS.Forms
             try
             {
                 if (TransactionType == TransactionTypeEnum.Update)
-                    s = "SELECT 1 SS,ID,SURNAME||' '||NAME||' '||PATRONYMIC||' '||DECODE(SEX_ID,1,'oğlu','qızı') FULL_NAME FROM ELMS_USER.SYSTEM_USER WHERE STATUS_ID = 1 AND SESSION_ID = 0 AND USED_USER_ID = -1 AND GROUP_ID <> " + GroupID;
+                    s = "SELECT 1 SS,ID,SURNAME||' '||NAME||' '||PASSWORD||' '||DECODE(SEX_ID,1,'oğlu','qızı') FULL_NAME FROM ELMS_USER.SYSTEM_USER WHERE IS_ACTIVE = 1 AND SESSION_ID = 0 AND USED_USER_ID = -1 AND GROUP_ID <> " + GroupID;
                 else
                     s = "";
 

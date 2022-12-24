@@ -99,6 +99,9 @@
             this.UserPopupMenu = new DevExpress.XtraBars.PopupMenu(this.components);
             this.InfoGroupControl = new DevExpress.XtraEditors.GroupControl();
             this.labelControl18 = new DevExpress.XtraEditors.LabelControl();
+            this.Permission_Description = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Permission_DetailName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Permission_ID = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.PanelOption)).BeginInit();
             this.PanelOption.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NoteText.Properties)).BeginInit();
@@ -279,14 +282,22 @@
             this.PermissionGridView.Appearance.FooterPanel.Options.UseTextOptions = true;
             this.PermissionGridView.Appearance.FooterPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
             this.PermissionGridView.Appearance.FooterPanel.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.PermissionGridView.Appearance.HeaderPanel.Options.UseTextOptions = true;
+            this.PermissionGridView.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.PermissionGridView.Appearance.HeaderPanel.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.PermissionGridView.Appearance.ViewCaption.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.PermissionGridView.Appearance.ViewCaption.Options.UseBackColor = true;
             this.PermissionGridView.Appearance.ViewCaption.Options.UseTextOptions = true;
             this.PermissionGridView.Appearance.ViewCaption.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.PermissionGridView.Appearance.ViewCaption.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.PermissionGridView.Appearance.ViewCaption.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.PermissionGridView.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.Permission_Description,
+            this.Permission_DetailName,
+            this.Permission_ID});
             this.PermissionGridView.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFullFocus;
             this.PermissionGridView.GridControl = this.PermissionGridControl;
+            this.PermissionGridView.GroupCount = 1;
             this.PermissionGridView.Name = "PermissionGridView";
             this.PermissionGridView.OptionsBehavior.AutoExpandAllGroups = true;
             this.PermissionGridView.OptionsBehavior.AutoSelectAllInEditor = false;
@@ -301,6 +312,8 @@
             this.PermissionGridView.OptionsView.ShowIndicator = false;
             this.PermissionGridView.PaintStyleName = "Skin";
             this.PermissionGridView.ScrollStyle = DevExpress.XtraGrid.Views.Grid.ScrollStyleFlags.LiveVertScroll;
+            this.PermissionGridView.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.Permission_Description, DevExpress.Data.ColumnSortOrder.Ascending)});
             this.PermissionGridView.MouseUp += new System.Windows.Forms.MouseEventHandler(this.PermissionGridView_MouseUp);
             // 
             // StandaloneBarDockControl
@@ -729,6 +742,28 @@
             this.labelControl18.TabIndex = 174;
             this.labelControl18.Text = "*";
             // 
+            // Permission_Description
+            // 
+            this.Permission_Description.Caption = "Modulun adı";
+            this.Permission_Description.FieldName = "ROLES_DESCRIPTION";
+            this.Permission_Description.Name = "Permission_Description";
+            this.Permission_Description.Visible = true;
+            this.Permission_Description.VisibleIndex = 0;
+            // 
+            // Permission_DetailName
+            // 
+            this.Permission_DetailName.Caption = "Hüquqlar";
+            this.Permission_DetailName.FieldName = "ROLE_DETAIL_NAME";
+            this.Permission_DetailName.Name = "Permission_DetailName";
+            this.Permission_DetailName.Visible = true;
+            this.Permission_DetailName.VisibleIndex = 0;
+            // 
+            // Permission_ID
+            // 
+            this.Permission_ID.Caption = "RoleID";
+            this.Permission_ID.FieldName = "ID";
+            this.Permission_ID.Name = "Permission_ID";
+            // 
             // FUserGroupAddEdit
             // 
             this.AcceptButton = this.BOK;
@@ -829,5 +864,8 @@
         private DevExpress.XtraGrid.Columns.GridColumn User_FullName;
         private DevExpress.XtraGrid.Columns.GridColumn User_SessionID;
         private DevExpress.XtraGrid.Columns.GridColumn User_ID;
+        private DevExpress.XtraGrid.Columns.GridColumn Permission_Description;
+        private DevExpress.XtraGrid.Columns.GridColumn Permission_DetailName;
+        private DevExpress.XtraGrid.Columns.GridColumn Permission_ID;
     }
 }

@@ -108,7 +108,6 @@
             this.MhtBarButton,
             this.CopyBarButton});
             this.Ribbon.Location = new System.Drawing.Point(0, 0);
-            this.Ribbon.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Ribbon.MaxItemId = 1;
             this.Ribbon.Name = "Ribbon";
             this.Ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
@@ -116,7 +115,7 @@
             this.Ribbon.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2013;
             this.Ribbon.ShowQatLocationSelector = false;
             this.Ribbon.ShowToolbarCustomizeItem = false;
-            this.Ribbon.Size = new System.Drawing.Size(854, 179);
+            this.Ribbon.Size = new System.Drawing.Size(732, 143);
             this.Ribbon.Toolbar.ShowCustomizeItem = false;
             this.Ribbon.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden;
             // 
@@ -334,12 +333,10 @@
             // UserGridControl
             // 
             this.UserGridControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.UserGridControl.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.UserGridControl.Location = new System.Drawing.Point(0, 448);
+            this.UserGridControl.Location = new System.Drawing.Point(0, 362);
             this.UserGridControl.MainView = this.UserGridView;
-            this.UserGridControl.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.UserGridControl.Name = "UserGridControl";
-            this.UserGridControl.Size = new System.Drawing.Size(854, 249);
+            this.UserGridControl.Size = new System.Drawing.Size(732, 205);
             this.UserGridControl.TabIndex = 62;
             this.UserGridControl.ToolTipController = this.UserToolTipController;
             this.UserGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -453,10 +450,9 @@
             // splitterControl1
             // 
             this.splitterControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.splitterControl1.Location = new System.Drawing.Point(0, 442);
-            this.splitterControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.splitterControl1.Location = new System.Drawing.Point(0, 357);
             this.splitterControl1.Name = "splitterControl1";
-            this.splitterControl1.Size = new System.Drawing.Size(854, 6);
+            this.splitterControl1.Size = new System.Drawing.Size(732, 5);
             this.splitterControl1.TabIndex = 61;
             this.splitterControl1.TabStop = false;
             // 
@@ -514,11 +510,12 @@
             this.Group_SS.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.Group_SS.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Group_SS.Caption = "S/s";
-            this.Group_SS.FieldName = "SS";
+            this.Group_SS.FieldName = "Group_SS";
             this.Group_SS.Name = "Group_SS";
             this.Group_SS.OptionsColumn.FixedWidth = true;
             this.Group_SS.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Count, "SS", "{0}")});
+            this.Group_SS.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
             this.Group_SS.Visible = true;
             this.Group_SS.VisibleIndex = 0;
             this.Group_SS.Width = 45;
@@ -554,12 +551,10 @@
             // GroupGridControl
             // 
             this.GroupGridControl.Dock = System.Windows.Forms.DockStyle.Top;
-            this.GroupGridControl.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.GroupGridControl.Location = new System.Drawing.Point(0, 179);
+            this.GroupGridControl.Location = new System.Drawing.Point(0, 143);
             this.GroupGridControl.MainView = this.GroupGridView;
-            this.GroupGridControl.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.GroupGridControl.Name = "GroupGridControl";
-            this.GroupGridControl.Size = new System.Drawing.Size(854, 263);
+            this.GroupGridControl.Size = new System.Drawing.Size(732, 214);
             this.GroupGridControl.TabIndex = 60;
             this.GroupGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.GroupGridView});
@@ -587,10 +582,9 @@
             this.BCancel.ColorTable = office2010Red1;
             this.BCancel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.BCancel.Location = new System.Drawing.Point(752, 16);
-            this.BCancel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.BCancel.Location = new System.Drawing.Point(645, 13);
             this.BCancel.Name = "BCancel";
-            this.BCancel.Size = new System.Drawing.Size(87, 31);
+            this.BCancel.Size = new System.Drawing.Size(75, 25);
             this.BCancel.TabIndex = 6;
             this.BCancel.Text = "Bağla";
             this.BCancel.Theme = ManiXButton.Theme.MSOffice2010_RED;
@@ -601,10 +595,9 @@
             // 
             this.PanelOption.Controls.Add(this.BCancel);
             this.PanelOption.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.PanelOption.Location = new System.Drawing.Point(0, 697);
-            this.PanelOption.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.PanelOption.Location = new System.Drawing.Point(0, 567);
             this.PanelOption.Name = "PanelOption";
-            this.PanelOption.Size = new System.Drawing.Size(854, 62);
+            this.PanelOption.Size = new System.Drawing.Size(732, 50);
             this.PanelOption.TabIndex = 59;
             // 
             // PopupMenu
@@ -621,11 +614,11 @@
             // 
             // FUsersGroups
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.BCancel;
             this.CausesValidation = false;
-            this.ClientSize = new System.Drawing.Size(854, 759);
+            this.ClientSize = new System.Drawing.Size(732, 617);
             this.Controls.Add(this.UserGridControl);
             this.Controls.Add(this.splitterControl1);
             this.Controls.Add(this.GroupGridControl);
@@ -633,7 +626,6 @@
             this.Controls.Add(this.Ribbon);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MinimizeBox = false;
             this.Name = "FUsersGroups";
             this.Ribbon = this.Ribbon;

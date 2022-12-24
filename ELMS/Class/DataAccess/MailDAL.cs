@@ -50,7 +50,7 @@ namespace ELMS.Class.DataAccess
             }
             catch (Exception exx)
             {
-                GlobalProcedures.LogWrite("Telefon açılmadı...", sql, GlobalVariables.V_UserName, "MailDAL", "SelectMailByID", exx);
+                GlobalProcedures.LogWrite("Mail açılmadı...", sql, GlobalVariables.V_UserName, "MailDAL", "SelectMailByID", exx);
                 return null;
             }
         }
@@ -80,12 +80,12 @@ namespace ELMS.Class.DataAccess
             }
             catch (Exception exx)
             {
-                GlobalProcedures.LogWrite("Telefon açılmadı..", sql, GlobalVariables.V_UserName, "MailDAL", "SelectMailByOwnerID", exx);
+                GlobalProcedures.LogWrite("Mail açılmadı..", sql, GlobalVariables.V_UserName, "MailDAL", "SelectMailByOwnerID", exx);
                 return null;
             }
         }
 
-        public static void InsertMail(Mail phone)
+        public static void InsertMail(Mail mail)
         {
             string commandSql = null;
             using (OracleConnection connection = new OracleConnection())
@@ -107,22 +107,22 @@ namespace ELMS.Class.DataAccess
                                                                                            OWNER_ID,
                                                                                            MAIL,
                                                                                            NOTE,
-                                                                                           IS_SEND_SMS,
+                                                                                           IS_SEND,
                                                                                            IS_CHANGE,
                                                                                            USED_USER_ID)
                                                      VALUES(:inOWNERTYPE,
                                                             :inOWNERID,
                                                             :inMAIL,
                                                             :inNOTE,
-                                                            :inISSENDSMS,
+                                                            :inISSEND,
                                                             :inISCHANGE,
                                                             :inUSEDUSERID)";
-                        command.Parameters.Add(new OracleParameter("inOWNERTYPE", phone.OWNER_TYPE));
-                        command.Parameters.Add(new OracleParameter("inOWNERID", phone.OWNER_ID));
-                        command.Parameters.Add(new OracleParameter("inMAIL", phone.MAIL));
-                        command.Parameters.Add(new OracleParameter("inNOTE", phone.NOTE));
-                        command.Parameters.Add(new OracleParameter("inISSENDSMS", phone.IS_SEND));
-                        command.Parameters.Add(new OracleParameter("inISCHANGE", phone.IS_CHANGE));
+                        command.Parameters.Add(new OracleParameter("inOWNERTYPE", mail.OWNER_TYPE));
+                        command.Parameters.Add(new OracleParameter("inOWNERID", mail.OWNER_ID));
+                        command.Parameters.Add(new OracleParameter("inMAIL", mail.MAIL));
+                        command.Parameters.Add(new OracleParameter("inNOTE", mail.NOTE));
+                        command.Parameters.Add(new OracleParameter("inISSEND", mail.IS_SEND));
+                        command.Parameters.Add(new OracleParameter("inISCHANGE", mail.IS_CHANGE));
                         command.Parameters.Add(new OracleParameter("inUSEDUSERID", GlobalVariables.V_UserID));
                         commandSql = command.CommandText;
                         command.ExecuteNonQuery();
@@ -143,7 +143,7 @@ namespace ELMS.Class.DataAccess
             }
         }
 
-        public static void UpdateMail(Mail phone)
+        public static void UpdateMail(Mail mail)
         {
             string commandSql = null;
             using (OracleConnection connection = new OracleConnection())
@@ -165,18 +165,18 @@ namespace ELMS.Class.DataAccess
                                                                                            OWNER_ID = :inOWNERID,
                                                                                            MAIL = :inMAIL,
                                                                                            NOTE = :inNOTE,
-                                                                                           IS_SEND_SMS = :inISSENDSMS,
+                                                                                           IS_SEND = :inISSEND,
                                                                                            IS_CHANGE = :inISCHANGE,
                                                                                            USED_USER_ID = :inUSEDUSERID
                                                             WHERE ID = :inID";
-                        command.Parameters.Add(new OracleParameter("inOWNERTYPE", phone.OWNER_TYPE));
-                        command.Parameters.Add(new OracleParameter("inOWNERID", phone.OWNER_ID));
-                        command.Parameters.Add(new OracleParameter("inMAIL", phone.MAIL));
-                        command.Parameters.Add(new OracleParameter("inNOTE", phone.NOTE));
-                        command.Parameters.Add(new OracleParameter("inISSENDSMS", phone.IS_SEND));
-                        command.Parameters.Add(new OracleParameter("inISCHANGE", phone.IS_CHANGE));
+                        command.Parameters.Add(new OracleParameter("inOWNERTYPE", mail.OWNER_TYPE));
+                        command.Parameters.Add(new OracleParameter("inOWNERID", mail.OWNER_ID));
+                        command.Parameters.Add(new OracleParameter("inMAIL", mail.MAIL));
+                        command.Parameters.Add(new OracleParameter("inNOTE", mail.NOTE));
+                        command.Parameters.Add(new OracleParameter("inISSEND", mail.IS_SEND));
+                        command.Parameters.Add(new OracleParameter("inISCHANGE", mail.IS_CHANGE));
                         command.Parameters.Add(new OracleParameter("inUSEDUSERID", GlobalVariables.V_UserID));
-                        command.Parameters.Add(new OracleParameter("inID", phone.ID));
+                        command.Parameters.Add(new OracleParameter("inID", mail.ID));
                         commandSql = command.CommandText;
                         command.ExecuteNonQuery();
                         transaction.Commit();
@@ -196,7 +196,7 @@ namespace ELMS.Class.DataAccess
             }
         }
 
-        public static void DeleteMail(int phoneID, int ownerID, MailOwnerEnum phoneOwner)
+        public static void DeleteMail(int mailID, int ownerID, MailOwnerEnum mailOwner)
         {
             string commandSql = null;
             using (OracleConnection connection = new OracleConnection())
@@ -218,9 +218,9 @@ namespace ELMS.Class.DataAccess
                                                         WHERE OWNER_TYPE = :inOWNERTYPE
                                                           AND OWNER_ID = :inOWNERID
                                                           AND ID = :inID";
-                        command.Parameters.Add(new OracleParameter("inOWNERTYPE", (int)phoneOwner));
+                        command.Parameters.Add(new OracleParameter("inOWNERTYPE", (int)mailOwner));
                         command.Parameters.Add(new OracleParameter("inOWNERID", ownerID));
-                        command.Parameters.Add(new OracleParameter("inID", phoneID));
+                        command.Parameters.Add(new OracleParameter("inID", mailID));
                         commandSql = command.CommandText;
                         command.ExecuteNonQuery();
                         transaction.Commit();
@@ -240,13 +240,13 @@ namespace ELMS.Class.DataAccess
             }
         }
 
-        public static void DeleteMailTemp(OracleTransaction tran, MailOwnerEnum phoneOwner)
+        public static void DeleteMailTemp(OracleTransaction tran, MailOwnerEnum mailOwner)
         {
             OracleCommand command = tran.Connection.CreateCommand();
             command.CommandText = $@"DELETE FROM ELMS_USER_TEMP.MAILS_TEMP 
                                                         WHERE OWNER_TYPE = :inOWNERTYPE
                                                           AND USED_USER_ID = :inUSEDUSERID";
-            command.Parameters.Add(new OracleParameter("inOWNERTYPE", (int)phoneOwner));
+            command.Parameters.Add(new OracleParameter("inOWNERTYPE", (int)mailOwner));
             command.Parameters.Add(new OracleParameter("inUSEDUSERID", GlobalVariables.V_UserID));
 
             if (tran != null)

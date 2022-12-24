@@ -9,3 +9,861 @@ Log Entry : 1:02:55 AM Friday, December 23, 2022
    Exception Message: ORA-02289: sequence does not exist
    SQL Text      :  INSERT INTO ELMS_USER_TEMP.MAILS_TEMP(ID,OWNER_ID,OWNER_TYPE,MAIL,NOTE,IS_CHANGE,USED_USER_ID)VALUES(MAIL_SEQUENCE.NEXTVAL,1,'User','test@mail.ru','',1,0)
 -------------------------------------------------
+
+Log Entry : 4:07:30 AM Friday, December 23, 2022
+  
+   UserName =  SuperAdmin
+   FormName =  GlobalFunctions
+   ProcedureName =  GenerateDataTable : FMailAddEdit/LoadMailDetails
+  
+   ShowMessage: Elektron ünvan açılmadı.
+   Exception Message: ORA-01722: invalid number
+   SQL Text      :  SELECT MAIL,NOTE FROM ELMS_USER_TEMP.MAILS_TEMP WHERE OWNER_TYPE = 'User' AND USED_USER_ID = 0 AND ID = 1
+-------------------------------------------------
+
+Log Entry : 4:14:17 AM Friday, December 23, 2022
+  
+   UserName =  SuperAdmin
+   FormName =  GlobalFunctions
+   ProcedureName =  GenerateDataTable : FMailAddEdit/LoadMailDetails
+  
+   ShowMessage: Elektron ünvan açılmadı.
+   Exception Message: ORA-01722: invalid number
+   SQL Text      :  SELECT MAIL,NOTE FROM ELMS_USER_TEMP.MAILS_TEMP WHERE OWNER_TYPE = User AND USED_USER_ID = 0 AND ID = 1
+-------------------------------------------------
+
+Log Entry : 4:16:10 AM Friday, December 23, 2022
+  
+   UserName =  SuperAdmin
+   FormName =  GlobalFunctions
+   ProcedureName =  GenerateDataTable : FMailAddEdit/LoadMailDetails
+  
+   ShowMessage: Elektron ünvan açılmadı.
+   Exception Message: ORA-01722: invalid number
+   SQL Text      :  SELECT MAIL,NOTE FROM ELMS_USER_TEMP.MAILS_TEMP WHERE OWNER_TYPE = User AND USED_USER_ID = 0 AND ID = 1
+-------------------------------------------------
+
+Log Entry : 4:28:27 AM Friday, December 23, 2022
+  
+   UserName =  SuperAdmin
+   FormName =  GlobalFunctions
+   ProcedureName =  GenerateDataTable : FMailAddEdit/LoadMailDetails
+  
+   ShowMessage: Elektron ünvan açılmadı.
+   Exception Message: ORA-01722: invalid number
+   SQL Text      :  SELECT MAIL,NOTE FROM ELMS_USER_TEMP.MAILS_TEMP WHERE OWNER_TYPE = User AND USED_USER_ID = 0 AND ID = 1
+-------------------------------------------------
+
+Log Entry : 4:33:06 AM Friday, December 23, 2022
+  
+   UserName =  SuperAdmin
+   FormName =  GlobalFunctions
+   ProcedureName =  GenerateDataTable : FMailAddEdit/LoadMailDetails
+  
+   ShowMessage: Elektron ünvan açılmadı.
+   Exception Message: ORA-01722: invalid number
+   SQL Text      :  SELECT MAIL,NOTE FROM ELMS_USER_TEMP.MAILS_TEMP WHERE OWNER_TYPE = User AND USED_USER_ID = 0 AND ID = 1
+-------------------------------------------------
+
+Log Entry : 4:38:32 AM Friday, December 23, 2022
+  
+   UserName =  SuperAdmin
+   FormName =  GlobalFunctions
+   ProcedureName =  GenerateDataTable : FMailAddEdit/LoadMailDetails
+  
+   ShowMessage: Elektron ünvan açılmadı.
+   Exception Message: ORA-00911: invalid character
+   SQL Text      :  SELECT MAIL,NOTE FROM ELMS_USER_TEMP.MAILS_TEMP WHERE OWNER_TYPE = User AND USED_USER_ID = {GlobalVariables.V_UserID} AND ID = {MailID.Value}
+-------------------------------------------------
+
+Log Entry : 4:45:20 AM Friday, December 23, 2022
+  
+   UserName =  SuperAdmin
+   FormName =  GlobalProcedures
+   ProcedureName =  ExecuteQuery
+  
+   ShowMessage: Mail temp cədvələ daxil edilmədi.
+   Exception Message: ORA-02289: sequence does not exist
+   SQL Text      :  INSERT INTO ELMS_USER_TEMP.MAILS_TEMP(ID,OWNER_ID,OWNER_TYPE,MAIL,NOTE,IS_CHANGE,USED_USER_ID)VALUES(MAIL_SEQUENCE.NEXTVAL,2,'User','re@dds.com','',1,0)
+-------------------------------------------------
+
+Log Entry : 4:45:33 AM Friday, December 23, 2022
+  
+   UserName =  SuperAdmin
+   FormName =  GlobalFunctions
+   ProcedureName =  GenerateDataTable : FMailAddEdit/LoadMailDetails
+  
+   ShowMessage: Elektron ünvan açılmadı.
+   Exception Message: ORA-00911: invalid character
+   SQL Text      :  SELECT MAIL,NOTE FROM ELMS_USER_TEMP.MAILS_TEMP WHERE OWNER_TYPE = User AND USED_USER_ID = {GlobalVariables.V_UserID} AND ID = {MailID.Value}
+-------------------------------------------------
+
+Log Entry : 5:08:22 AM Friday, December 23, 2022
+  
+   UserName =  SuperAdmin
+   FormName =  GlobalFunctions
+   ProcedureName =  GenerateDataTable : FMailAddEdit/LoadMailDetails
+  
+   ShowMessage: Elektron ünvan açılmadı.
+   Exception Message: ORA-00911: invalid character
+   SQL Text      :  SELECT MAIL,NOTE FROM ELMS_USER_TEMP.MAILS_TEMP WHERE OWNER_TYPE = User AND USED_USER_ID = {GlobalVariables.V_UserID} AND ID = {MailID.Value}
+-------------------------------------------------
+
+Log Entry : 5:09:06 AM Friday, December 23, 2022
+  
+   UserName =  SuperAdmin
+   FormName =  GlobalProcedures
+   ProcedureName =  ExecuteQuery
+  
+   ShowMessage: Mail temp cədvələ daxil edilmədi.
+   Exception Message: ORA-02289: sequence does not exist
+   SQL Text      :  INSERT INTO ELMS_USER_TEMP.MAILS_TEMP(ID,OWNER_ID,OWNER_TYPE,MAIL,NOTE,IS_CHANGE,USED_USER_ID)VALUES(MAIL_SEQUENCE.NEXTVAL,7,User,'Salam@gmail.com','',1,0)
+-------------------------------------------------
+
+Log Entry : 4:52:18 PM Friday, December 23, 2022
+  
+   UserName =  SuperAdmin
+   FormName =  GlobalFunctions
+   ProcedureName =  RunInOneTransaction
+  
+   ShowMessage: İstifadəçinin məlumatları bazada dəyişdirilmədi.
+   Exception Message: ORA-06550: line 1, column 7:
+PLS-00201: identifier 'ELMS_USER.PROC_INSERT_USER_DETAILS' must be declared
+ORA-06550: line 1, column 7:
+PL/SQL: Statement ignored
+-------------------------------------------------
+
+Log Entry : 4:56:54 PM Friday, December 23, 2022
+  
+   UserName =  SuperAdmin
+   FormName =  GlobalFunctions
+   ProcedureName =  RunInOneTransaction
+  
+   ShowMessage: İstifadəçinin məlumatları bazada dəyişdirilmədi.
+   Exception Message: ORA-06550: line 1, column 7:
+PLS-00201: identifier 'ELMS_USER.PROC_INSERT_USER_DETAILS' must be declared
+ORA-06550: line 1, column 7:
+PL/SQL: Statement ignored
+-------------------------------------------------
+
+Log Entry : 5:12:45 PM Friday, December 23, 2022
+  
+   UserName =  SuperAdmin
+   FormName =  GlobalFunctions
+   ProcedureName =  RunInOneTransaction
+  
+   ShowMessage: İstifadəçinin məlumatları bazada dəyişdirilmədi.
+   Exception Message: ORA-02289: sequence does not exist
+-------------------------------------------------
+
+Log Entry : 5:14:06 PM Friday, December 23, 2022
+  
+   UserName =  SuperAdmin
+   FormName =  GlobalFunctions
+   ProcedureName =  RunInOneTransaction
+  
+   ShowMessage: İstifadəçinin məlumatları bazada dəyişdirilmədi.
+   Exception Message: ORA-02289: sequence does not exist
+-------------------------------------------------
+
+Log Entry : 9:29:33 PM Friday, December 23, 2022
+  
+   UserName =  SuperAdmin
+   FormName =  GlobalFunctions
+   ProcedureName =  GenerateDataTable : FUsersGroups/LoadUsersGroupDataGridView
+  
+   ShowMessage: DataTable yaradılmadı.
+   Exception Message: ORA-00904: "GROUP_NAME_RU": invalid identifier
+   SQL Text      :  SELECT 1 SS,ID,GROUP_NAME,GROUP_NAME_EN,GROUP_NAME_RU,NOTE,G.USED_USER_ID FROM ELMS_USER.USER_GROUP G
+-------------------------------------------------
+
+Log Entry : 9:31:11 PM Friday, December 23, 2022
+  
+   UserName =  SuperAdmin
+   FormName =  GlobalProcedures
+   ProcedureName =  ExecuteQuery/Lock_or_UnLock_UserID
+  
+   ShowMessage: ELMS_USER.USER_GROUP cədvəli bloka düşmədi.
+   Exception Message: ORA-00936: missing expression
+   SQL Text      :  UPDATE ELMS_USER.USER_GROUP SET USED_USER_ID = 0 WHERE ID =  AND USED_USER_ID = -1
+-------------------------------------------------
+
+Log Entry : 9:31:14 PM Friday, December 23, 2022
+  
+   UserName =  SuperAdmin
+   FormName =  GlobalProcedures
+   ProcedureName =  ExecuteProcedureWithParametr/ELMS_USER_TEMP.PROC_INS_GROUP_PERMISSION_TEMP
+  
+   ShowMessage: İstifadəçi qrupunun hüquqları temp cədvələ daxil edilmədi.
+   Exception Message: ORA-06550: line 1, column 7:
+PLS-00201: identifier 'ELMS_USER_TEMP.PROC_INS_GROUP_PERMISSION_TEMP' must be declared
+ORA-06550: line 1, column 7:
+PL/SQL: Statement ignored
+   SQL Text      :  ELMS_USER_TEMP.PROC_INS_GROUP_PERMISSION_TEMP
+-------------------------------------------------
+
+Log Entry : 9:31:16 PM Friday, December 23, 2022
+  
+   UserName =  SuperAdmin
+   FormName =  GlobalFunctions
+   ProcedureName =  GenerateDataTable : GetID
+  
+   ShowMessage: ID tapılmadı.
+   Exception Message: ORA-00936: missing expression
+   SQL Text      :  SELECT USED_USER_ID FROM ELMS_USER.USER_GROUP WHERE ID = 
+-------------------------------------------------
+
+Log Entry : 9:31:17 PM Friday, December 23, 2022
+  
+   UserName =  SuperAdmin
+   FormName =  GlobalFunctions
+   ProcedureName =  GenerateDataTable
+  
+   ShowMessage: DataTable yaradılmadı.
+   Exception Message: ORA-00936: missing expression
+   SQL Text      :  SELECT GROUP_NAME,NOTE FROM ELMS_USER.USER_GROUP WHERE ID = 
+-------------------------------------------------
+
+Log Entry : 9:31:19 PM Friday, December 23, 2022
+  
+   UserName =  SuperAdmin
+   FormName =  FUserGroupAddEdit
+   ProcedureName =  ELMS.Forms.FUserGroupAddEdit/LoadGroupDetails
+  
+   ShowMessage: İstifadəçi qrupunun parametrləri açılmadı.
+   Exception Message: Object reference not set to an instance of an object.
+   SQL Text      :  SELECT GROUP_NAME,NOTE FROM ELMS_USER.USER_GROUP WHERE ID = 
+-------------------------------------------------
+
+Log Entry : 9:31:20 PM Friday, December 23, 2022
+  
+   UserName =  SuperAdmin
+   FormName =  GlobalFunctions
+   ProcedureName =  GenerateDataTable : FUserGroupAddEdit/LoadPermissionDataGridView
+  
+   ShowMessage: DataTable yaradılmadı.
+   Exception Message: ORA-00936: missing expression
+   SQL Text      :  SELECT R.DESCRIPTION,RD.DETAIL_NAME FROM ELMS_USER.ALL_USER_GROUP_ROLE_DETAILS UGRD,ELMS_USER.ROLES R, ELMS_USER.ALL_ROLE_DETAILS RD WHERE RD.ID = UGRD.ROLE_DETAIL_ID AND R.ID = RD.ROLE_ID AND UGRD.GROUP_ID = 
+-------------------------------------------------
+
+Log Entry : 9:31:22 PM Friday, December 23, 2022
+  
+   UserName =  SuperAdmin
+   FormName =  FUserGroupAddEdit
+   ProcedureName =  ELMS.Forms.FUserGroupAddEdit/LoadPermissionDataGridView
+  
+   ShowMessage: Hüquqlar cədvələ yüklənmədi.
+   Exception Message: Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+   SQL Text      :  SELECT R.DESCRIPTION,RD.DETAIL_NAME FROM ELMS_USER.ALL_USER_GROUP_ROLE_DETAILS UGRD,ELMS_USER.ROLES R, ELMS_USER.ALL_ROLE_DETAILS RD WHERE RD.ID = UGRD.ROLE_DETAIL_ID AND R.ID = RD.ROLE_ID AND UGRD.GROUP_ID = 
+-------------------------------------------------
+
+Log Entry : 9:31:34 PM Friday, December 23, 2022
+  
+   UserName =  SuperAdmin
+   FormName =  GlobalFunctions
+   ProcedureName =  GenerateDataTable : FUserGroupAddEdit/LoadUsersDataGridView
+  
+   ShowMessage: Qrupa daxil olan istifadəçilərin siyahısı cədvələ yüklənmədi.
+   Exception Message: ORA-00936: missing expression
+   SQL Text      :  SELECT E.FULL_NAME,
+                             E.SESSION_ID,
+                             E.ID
+                        FROM ELMS_USER.SYSTEM_USER E
+                       WHERE E.GROUP_ID = 
+                    ORDER BY E.FULL_NAME
+-------------------------------------------------
+
+Log Entry : 9:33:43 PM Friday, December 23, 2022
+  
+   UserName =  SuperAdmin
+   FormName =  GlobalFunctions
+   ProcedureName =  GenerateDataTable : FUserGroupAddEdit/LoadPermissionDataGridView
+  
+   ShowMessage: DataTable yaradılmadı.
+   Exception Message: ORA-00936: missing expression
+   SQL Text      :  SELECT R.DESCRIPTION,RD.DETAIL_NAME FROM ELMS_USER.ALL_USER_GROUP_ROLE_DETAILS UGRD,ELMS_USER.ROLES R, ELMS_USER.ALL_ROLE_DETAILS RD WHERE RD.ID = UGRD.ROLE_DETAIL_ID AND R.ID = RD.ROLE_ID AND UGRD.GROUP_ID = 
+-------------------------------------------------
+
+Log Entry : 9:33:49 PM Friday, December 23, 2022
+  
+   UserName =  SuperAdmin
+   FormName =  FUserGroupAddEdit
+   ProcedureName =  ELMS.Forms.FUserGroupAddEdit/LoadPermissionDataGridView
+  
+   ShowMessage: Hüquqlar cədvələ yüklənmədi.
+   Exception Message: Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+   SQL Text      :  SELECT R.DESCRIPTION,RD.DETAIL_NAME FROM ELMS_USER.ALL_USER_GROUP_ROLE_DETAILS UGRD,ELMS_USER.ROLES R, ELMS_USER.ALL_ROLE_DETAILS RD WHERE RD.ID = UGRD.ROLE_DETAIL_ID AND R.ID = RD.ROLE_ID AND UGRD.GROUP_ID = 
+-------------------------------------------------
+
+Log Entry : 9:34:04 PM Friday, December 23, 2022
+  
+   UserName =  SuperAdmin
+   FormName =  GlobalFunctions
+   ProcedureName =  GenerateDataTable : FPermissionAddEdit ()/LoadAllPermissionDataGridView
+  
+   ShowMessage: Verilməmiş hüquqlar cədvələ yüklənmədi.
+   Exception Message: ORA-00936: missing expression
+   SQL Text      :  SELECT R.DESCRIPTION,RD.DETAIL_NAME,RD.ID FROM ELMS_USER.ALL_ROLE_DETAILS RD,ELMS_USER.ROLES R WHERE RD.ROLE_ID = R.ID AND RD.ID NOT IN (SELECT ROLE_DETAIL_ID FROM ELMS_USER_TEMP.USER_GROUP_ROLE_DETAILS_TEMP WHERE GROUP_ID = ) ORDER BY RD.ROLE_ID,RD.ORDER_ID
+-------------------------------------------------
+
+Log Entry : 9:34:09 PM Friday, December 23, 2022
+  
+   UserName =  SuperAdmin
+   FormName =  GlobalFunctions
+   ProcedureName =  GenerateDataTable : FPermissionAddEdit ()/LoadUsedPermissionDataGridView
+  
+   ShowMessage: DataTable yaradılmadı.
+   Exception Message: ORA-00936: missing expression
+   SQL Text      :  SELECT R.DESCRIPTION,RD.DETAIL_NAME,RD.ID FROM ELMS_USER_TEMP.USER_GROUP_ROLE_DETAILS_TEMP RDT,ELMS_USER.ROLES R, ELMS_USER.ALL_ROLE_DETAILS RD WHERE RD.ID = RDT.ROLE_DETAIL_ID AND R.ID = RD.ROLE_ID AND RDT.GROUP_ID =  ORDER BY RD.ROLE_ID,RD.ORDER_ID
+-------------------------------------------------
+
+Log Entry : 9:34:11 PM Friday, December 23, 2022
+  
+   UserName =  SuperAdmin
+   FormName =  FPermissionAddEdit ()
+   ProcedureName =  ELMS.Forms.FPermissionAddEdit/LoadUsedPermissionDataGridView
+  
+   ShowMessage: Verilmiş hüquqlar cədvələ yüklənmədi.
+   Exception Message: Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+   SQL Text      :  SELECT R.DESCRIPTION,RD.DETAIL_NAME,RD.ID FROM ELMS_USER_TEMP.USER_GROUP_ROLE_DETAILS_TEMP RDT,ELMS_USER.ROLES R, ELMS_USER.ALL_ROLE_DETAILS RD WHERE RD.ID = RDT.ROLE_DETAIL_ID AND R.ID = RD.ROLE_ID AND RDT.GROUP_ID =  ORDER BY RD.ROLE_ID,RD.ORDER_ID
+-------------------------------------------------
+
+Log Entry : 9:34:46 PM Friday, December 23, 2022
+  
+   UserName =  SuperAdmin
+   FormName =  GlobalFunctions
+   ProcedureName =  GenerateDataTable : FUserGroupAddEdit/LoadPermissionDataGridView
+  
+   ShowMessage: DataTable yaradılmadı.
+   Exception Message: ORA-00936: missing expression
+   SQL Text      :  SELECT R.DESCRIPTION,RD.DETAIL_NAME FROM ELMS_USER.ALL_USER_GROUP_ROLE_DETAILS UGRD,ELMS_USER.ROLES R, ELMS_USER.ALL_ROLE_DETAILS RD WHERE RD.ID = UGRD.ROLE_DETAIL_ID AND R.ID = RD.ROLE_ID AND UGRD.GROUP_ID = 
+-------------------------------------------------
+
+Log Entry : 9:34:53 PM Friday, December 23, 2022
+  
+   UserName =  SuperAdmin
+   FormName =  FUserGroupAddEdit
+   ProcedureName =  ELMS.Forms.FUserGroupAddEdit/LoadPermissionDataGridView
+  
+   ShowMessage: Hüquqlar cədvələ yüklənmədi.
+   Exception Message: Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+   SQL Text      :  SELECT R.DESCRIPTION,RD.DETAIL_NAME FROM ELMS_USER.ALL_USER_GROUP_ROLE_DETAILS UGRD,ELMS_USER.ROLES R, ELMS_USER.ALL_ROLE_DETAILS RD WHERE RD.ID = UGRD.ROLE_DETAIL_ID AND R.ID = RD.ROLE_ID AND UGRD.GROUP_ID = 
+-------------------------------------------------
+
+Log Entry : 9:34:57 PM Friday, December 23, 2022
+  
+   UserName =  SuperAdmin
+   FormName =  GlobalFunctions
+   ProcedureName =  GenerateDataTable : FUserGroupAddEdit/LoadUsersDataGridView
+  
+   ShowMessage: Qrupa daxil olan istifadəçilərin siyahısı cədvələ yüklənmədi.
+   Exception Message: ORA-00936: missing expression
+   SQL Text      :  SELECT E.FULL_NAME,
+                             E.SESSION_ID,
+                             E.ID
+                        FROM ELMS_USER.SYSTEM_USER E
+                       WHERE E.GROUP_ID = 
+                    ORDER BY E.FULL_NAME
+-------------------------------------------------
+
+Log Entry : 9:35:02 PM Friday, December 23, 2022
+  
+   UserName =  SuperAdmin
+   FormName =  GlobalFunctions
+   ProcedureName =  GenerateDataTable : FListOfAutomaticAdd/LoadListDataGridView
+  
+   ShowMessage: DataTable yaradılmadı.
+   Exception Message: ORA-00936: missing expression
+   SQL Text      :  SELECT 1 SS,ID,SURNAME||' '||NAME||' '||PATRONYMIC||' '||DECODE(SEX_ID,1,'oğlu','qızı') FULL_NAME FROM ELMS_USER.SYSTEM_USER WHERE STATUS_ID = 1 AND SESSION_ID = 0 AND USED_USER_ID = -1 AND GROUP_ID <> 
+-------------------------------------------------
+
+Log Entry : 9:35:05 PM Friday, December 23, 2022
+  
+   UserName =  SuperAdmin
+   FormName =  FListOfAutomaticAdd
+   ProcedureName =  ELMS.Forms.FListOfAutomaticAdd/LoadListDataGridView
+  
+   ShowMessage: Verilmiş hüquqlar cədvələ yüklənmədi.
+   Exception Message: Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+   SQL Text      :  SELECT 1 SS,ID,SURNAME||' '||NAME||' '||PATRONYMIC||' '||DECODE(SEX_ID,1,'oğlu','qızı') FULL_NAME FROM ELMS_USER.SYSTEM_USER WHERE STATUS_ID = 1 AND SESSION_ID = 0 AND USED_USER_ID = -1 AND GROUP_ID <> 
+-------------------------------------------------
+
+Log Entry : 9:35:50 PM Friday, December 23, 2022
+  
+   UserName =  SuperAdmin
+   FormName =  GlobalFunctions
+   ProcedureName =  GenerateDataTable : FUserGroupAddEdit/LoadUsersDataGridView
+  
+   ShowMessage: Qrupa daxil olan istifadəçilərin siyahısı cədvələ yüklənmədi.
+   Exception Message: ORA-00936: missing expression
+   SQL Text      :  SELECT E.FULL_NAME,
+                             E.SESSION_ID,
+                             E.ID
+                        FROM ELMS_USER.SYSTEM_USER E
+                       WHERE E.GROUP_ID = 
+                    ORDER BY E.FULL_NAME
+-------------------------------------------------
+
+Log Entry : 9:35:56 PM Friday, December 23, 2022
+  
+   UserName =  SuperAdmin
+   FormName =  GlobalProcedures
+   ProcedureName =  ExecuteQuery/Lock_or_UnLock_UserID
+  
+   ShowMessage: ELMS_USER.USER_GROUP cədvəli bloka düşmədi.
+   Exception Message: ORA-00936: missing expression
+   SQL Text      :  UPDATE ELMS_USER.USER_GROUP SET USED_USER_ID = -1 WHERE ID =  AND USED_USER_ID = 0
+-------------------------------------------------
+
+Log Entry : 9:35:58 PM Friday, December 23, 2022
+  
+   UserName =  SuperAdmin
+   FormName =  GlobalProcedures
+   ProcedureName =  ExecuteQuery/FUserGroupAddEdit/DeleteUserGroupPermissionTemp
+  
+   ShowMessage: İstifadəçi qrupunun hüquqları üçün olan temp məlumatlar silinmədi.
+   Exception Message: ORA-00936: missing expression
+   SQL Text      :  DELETE FROM ELMS_USER_TEMP.USER_GROUP_ROLE_DETAILS_TEMP WHERE GROUP_ID = 
+-------------------------------------------------
+
+Log Entry : 9:42:09 PM Friday, December 23, 2022
+  
+   UserName =  SuperAdmin
+   FormName =  GlobalFunctions
+   ProcedureName =  GenerateDataTable : FUsersGroups/LoadUsersGroupDataGridView
+  
+   ShowMessage: DataTable yaradılmadı.
+   Exception Message: ORA-00904: "GROUP_NAME_RU": invalid identifier
+   SQL Text      :  SELECT 1 SS,ID,GROUP_NAME,GROUP_NAME_EN,GROUP_NAME_RU,NOTE,G.USED_USER_ID FROM ELMS_USER.USER_GROUP G
+-------------------------------------------------
+
+Log Entry : 9:42:12 PM Friday, December 23, 2022
+  
+   UserName =  SuperAdmin
+   FormName =  GlobalProcedures
+   ProcedureName =  ExecuteQuery/Lock_or_UnLock_UserID
+  
+   ShowMessage: ELMS_USER.USER_GROUP cədvəli bloka düşmədi.
+   Exception Message: ORA-00936: missing expression
+   SQL Text      :  UPDATE ELMS_USER.USER_GROUP SET USED_USER_ID = 0 WHERE ID =  AND USED_USER_ID = -1
+-------------------------------------------------
+
+Log Entry : 9:42:15 PM Friday, December 23, 2022
+  
+   UserName =  SuperAdmin
+   FormName =  GlobalProcedures
+   ProcedureName =  ExecuteProcedureWithParametr/ELMS_USER_TEMP.PROC_INS_GROUP_PERMISSION_TEMP
+  
+   ShowMessage: İstifadəçi qrupunun hüquqları temp cədvələ daxil edilmədi.
+   Exception Message: ORA-06550: line 1, column 7:
+PLS-00201: identifier 'ELMS_USER_TEMP.PROC_INS_GROUP_PERMISSION_TEMP' must be declared
+ORA-06550: line 1, column 7:
+PL/SQL: Statement ignored
+   SQL Text      :  ELMS_USER_TEMP.PROC_INS_GROUP_PERMISSION_TEMP
+-------------------------------------------------
+
+Log Entry : 9:42:16 PM Friday, December 23, 2022
+  
+   UserName =  SuperAdmin
+   FormName =  GlobalFunctions
+   ProcedureName =  GenerateDataTable : GetID
+  
+   ShowMessage: ID tapılmadı.
+   Exception Message: ORA-00936: missing expression
+   SQL Text      :  SELECT USED_USER_ID FROM ELMS_USER.USER_GROUP WHERE ID = 
+-------------------------------------------------
+
+Log Entry : 9:42:17 PM Friday, December 23, 2022
+  
+   UserName =  SuperAdmin
+   FormName =  GlobalFunctions
+   ProcedureName =  GenerateDataTable
+  
+   ShowMessage: DataTable yaradılmadı.
+   Exception Message: ORA-00936: missing expression
+   SQL Text      :  SELECT GROUP_NAME,NOTE FROM ELMS_USER.USER_GROUP WHERE ID = 
+-------------------------------------------------
+
+Log Entry : 9:42:18 PM Friday, December 23, 2022
+  
+   UserName =  SuperAdmin
+   FormName =  FUserGroupAddEdit
+   ProcedureName =  ELMS.Forms.FUserGroupAddEdit/LoadGroupDetails
+  
+   ShowMessage: İstifadəçi qrupunun parametrləri açılmadı.
+   Exception Message: Object reference not set to an instance of an object.
+   SQL Text      :  SELECT GROUP_NAME,NOTE FROM ELMS_USER.USER_GROUP WHERE ID = 
+-------------------------------------------------
+
+Log Entry : 9:42:19 PM Friday, December 23, 2022
+  
+   UserName =  SuperAdmin
+   FormName =  GlobalFunctions
+   ProcedureName =  GenerateDataTable : FUserGroupAddEdit/LoadPermissionDataGridView
+  
+   ShowMessage: DataTable yaradılmadı.
+   Exception Message: ORA-00936: missing expression
+   SQL Text      :  SELECT R.DESCRIPTION,RD.DETAIL_NAME FROM ELMS_USER.ALL_USER_GROUP_ROLE_DETAILS UGRD,ELMS_USER.ROLES R, ELMS_USER.ALL_ROLE_DETAILS RD WHERE RD.ID = UGRD.ROLE_DETAIL_ID AND R.ID = RD.ROLE_ID AND UGRD.GROUP_ID = 
+-------------------------------------------------
+
+Log Entry : 9:42:21 PM Friday, December 23, 2022
+  
+   UserName =  SuperAdmin
+   FormName =  FUserGroupAddEdit
+   ProcedureName =  ELMS.Forms.FUserGroupAddEdit/LoadPermissionDataGridView
+  
+   ShowMessage: Hüquqlar cədvələ yüklənmədi.
+   Exception Message: Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+   SQL Text      :  SELECT R.DESCRIPTION,RD.DETAIL_NAME FROM ELMS_USER.ALL_USER_GROUP_ROLE_DETAILS UGRD,ELMS_USER.ROLES R, ELMS_USER.ALL_ROLE_DETAILS RD WHERE RD.ID = UGRD.ROLE_DETAIL_ID AND R.ID = RD.ROLE_ID AND UGRD.GROUP_ID = 
+-------------------------------------------------
+
+Log Entry : 9:43:01 PM Friday, December 23, 2022
+  
+   UserName =  SuperAdmin
+   FormName =  GlobalFunctions
+   ProcedureName =  GenerateDataTable : FUserGroupAddEdit/LoadUsersDataGridView
+  
+   ShowMessage: Qrupa daxil olan istifadəçilərin siyahısı cədvələ yüklənmədi.
+   Exception Message: ORA-00936: missing expression
+   SQL Text      :  SELECT E.FULL_NAME,
+                             E.SESSION_ID,
+                             E.ID
+                        FROM ELMS_USER.SYSTEM_USER E
+                       WHERE E.GROUP_ID = 
+                    ORDER BY E.FULL_NAME
+-------------------------------------------------
+
+Log Entry : 9:43:05 PM Friday, December 23, 2022
+  
+   UserName =  SuperAdmin
+   FormName =  GlobalFunctions
+   ProcedureName =  GenerateDataTable : FListOfAutomaticAdd/LoadListDataGridView
+  
+   ShowMessage: DataTable yaradılmadı.
+   Exception Message: ORA-00936: missing expression
+   SQL Text      :  SELECT 1 SS,ID,SURNAME||' '||NAME||' '||PATRONYMIC||' '||DECODE(SEX_ID,1,'oğlu','qızı') FULL_NAME FROM ELMS_USER.SYSTEM_USER WHERE STATUS_ID = 1 AND SESSION_ID = 0 AND USED_USER_ID = -1 AND GROUP_ID <> 
+-------------------------------------------------
+
+Log Entry : 9:43:07 PM Friday, December 23, 2022
+  
+   UserName =  SuperAdmin
+   FormName =  FListOfAutomaticAdd
+   ProcedureName =  ELMS.Forms.FListOfAutomaticAdd/LoadListDataGridView
+  
+   ShowMessage: Verilmiş hüquqlar cədvələ yüklənmədi.
+   Exception Message: Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+   SQL Text      :  SELECT 1 SS,ID,SURNAME||' '||NAME||' '||PATRONYMIC||' '||DECODE(SEX_ID,1,'oğlu','qızı') FULL_NAME FROM ELMS_USER.SYSTEM_USER WHERE STATUS_ID = 1 AND SESSION_ID = 0 AND USED_USER_ID = -1 AND GROUP_ID <> 
+-------------------------------------------------
+
+Log Entry : 9:43:29 PM Friday, December 23, 2022
+  
+   UserName =  SuperAdmin
+   FormName =  GlobalFunctions
+   ProcedureName =  GenerateDataTable : FUserGroupAddEdit/LoadUsersDataGridView
+  
+   ShowMessage: Qrupa daxil olan istifadəçilərin siyahısı cədvələ yüklənmədi.
+   Exception Message: ORA-00936: missing expression
+   SQL Text      :  SELECT E.FULL_NAME,
+                             E.SESSION_ID,
+                             E.ID
+                        FROM ELMS_USER.SYSTEM_USER E
+                       WHERE E.GROUP_ID = 
+                    ORDER BY E.FULL_NAME
+-------------------------------------------------
+
+Log Entry : 9:43:33 PM Friday, December 23, 2022
+  
+   UserName =  SuperAdmin
+   FormName =  GlobalProcedures
+   ProcedureName =  ExecuteQuery/Lock_or_UnLock_UserID
+  
+   ShowMessage: ELMS_USER.USER_GROUP cədvəli bloka düşmədi.
+   Exception Message: ORA-00936: missing expression
+   SQL Text      :  UPDATE ELMS_USER.USER_GROUP SET USED_USER_ID = -1 WHERE ID =  AND USED_USER_ID = 0
+-------------------------------------------------
+
+Log Entry : 9:43:34 PM Friday, December 23, 2022
+  
+   UserName =  SuperAdmin
+   FormName =  GlobalProcedures
+   ProcedureName =  ExecuteQuery/FUserGroupAddEdit/DeleteUserGroupPermissionTemp
+  
+   ShowMessage: İstifadəçi qrupunun hüquqları üçün olan temp məlumatlar silinmədi.
+   Exception Message: ORA-00936: missing expression
+   SQL Text      :  DELETE FROM ELMS_USER_TEMP.USER_GROUP_ROLE_DETAILS_TEMP WHERE GROUP_ID = 
+-------------------------------------------------
+
+Log Entry : 9:44:40 PM Friday, December 23, 2022
+  
+   UserName =  SuperAdmin
+   FormName =  GlobalFunctions
+   ProcedureName =  GenerateDataTable : FUsersGroups/LoadUsersGroupDataGridView
+  
+   ShowMessage: DataTable yaradılmadı.
+   Exception Message: ORA-00904: "GROUP_NAME_RU": invalid identifier
+   SQL Text      :  SELECT 1 SS,ID,GROUP_NAME,GROUP_NAME_EN,GROUP_NAME_RU,NOTE,G.USED_USER_ID FROM ELMS_USER.USER_GROUP G
+-------------------------------------------------
+
+Log Entry : 9:44:56 PM Friday, December 23, 2022
+  
+   UserName =  SuperAdmin
+   FormName =  GlobalProcedures
+   ProcedureName =  ExecuteQuery/Lock_or_UnLock_UserID
+  
+   ShowMessage: ELMS_USER.USER_GROUP cədvəli bloka düşmədi.
+   Exception Message: ORA-00936: missing expression
+   SQL Text      :  UPDATE ELMS_USER.USER_GROUP SET USED_USER_ID = 0 WHERE ID =  AND USED_USER_ID = -1
+-------------------------------------------------
+
+Log Entry : 9:44:58 PM Friday, December 23, 2022
+  
+   UserName =  SuperAdmin
+   FormName =  GlobalProcedures
+   ProcedureName =  ExecuteProcedureWithParametr/ELMS_USER_TEMP.PROC_INS_GROUP_PERMISSION_TEMP
+  
+   ShowMessage: İstifadəçi qrupunun hüquqları temp cədvələ daxil edilmədi.
+   Exception Message: ORA-06550: line 1, column 7:
+PLS-00201: identifier 'ELMS_USER_TEMP.PROC_INS_GROUP_PERMISSION_TEMP' must be declared
+ORA-06550: line 1, column 7:
+PL/SQL: Statement ignored
+   SQL Text      :  ELMS_USER_TEMP.PROC_INS_GROUP_PERMISSION_TEMP
+-------------------------------------------------
+
+Log Entry : 9:44:59 PM Friday, December 23, 2022
+  
+   UserName =  SuperAdmin
+   FormName =  GlobalFunctions
+   ProcedureName =  GenerateDataTable : GetID
+  
+   ShowMessage: ID tapılmadı.
+   Exception Message: ORA-00936: missing expression
+   SQL Text      :  SELECT USED_USER_ID FROM ELMS_USER.USER_GROUP WHERE ID = 
+-------------------------------------------------
+
+Log Entry : 9:44:59 PM Friday, December 23, 2022
+  
+   UserName =  SuperAdmin
+   FormName =  GlobalFunctions
+   ProcedureName =  GenerateDataTable
+  
+   ShowMessage: DataTable yaradılmadı.
+   Exception Message: ORA-00936: missing expression
+   SQL Text      :  SELECT GROUP_NAME,NOTE FROM ELMS_USER.USER_GROUP WHERE ID = 
+-------------------------------------------------
+
+Log Entry : 9:45:00 PM Friday, December 23, 2022
+  
+   UserName =  SuperAdmin
+   FormName =  FUserGroupAddEdit
+   ProcedureName =  ELMS.Forms.FUserGroupAddEdit/LoadGroupDetails
+  
+   ShowMessage: İstifadəçi qrupunun parametrləri açılmadı.
+   Exception Message: Object reference not set to an instance of an object.
+   SQL Text      :  SELECT GROUP_NAME,NOTE FROM ELMS_USER.USER_GROUP WHERE ID = 
+-------------------------------------------------
+
+Log Entry : 9:45:01 PM Friday, December 23, 2022
+  
+   UserName =  SuperAdmin
+   FormName =  GlobalFunctions
+   ProcedureName =  GenerateDataTable : FUserGroupAddEdit/LoadPermissionDataGridView
+  
+   ShowMessage: DataTable yaradılmadı.
+   Exception Message: ORA-00936: missing expression
+   SQL Text      :  SELECT R.DESCRIPTION,RD.DETAIL_NAME FROM ELMS_USER.ALL_USER_GROUP_ROLE_DETAILS UGRD,ELMS_USER.ROLES R, ELMS_USER.ALL_ROLE_DETAILS RD WHERE RD.ID = UGRD.ROLE_DETAIL_ID AND R.ID = RD.ROLE_ID AND UGRD.GROUP_ID = 
+-------------------------------------------------
+
+Log Entry : 9:45:01 PM Friday, December 23, 2022
+  
+   UserName =  SuperAdmin
+   FormName =  FUserGroupAddEdit
+   ProcedureName =  ELMS.Forms.FUserGroupAddEdit/LoadPermissionDataGridView
+  
+   ShowMessage: Hüquqlar cədvələ yüklənmədi.
+   Exception Message: Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+   SQL Text      :  SELECT R.DESCRIPTION,RD.DETAIL_NAME FROM ELMS_USER.ALL_USER_GROUP_ROLE_DETAILS UGRD,ELMS_USER.ROLES R, ELMS_USER.ALL_ROLE_DETAILS RD WHERE RD.ID = UGRD.ROLE_DETAIL_ID AND R.ID = RD.ROLE_ID AND UGRD.GROUP_ID = 
+-------------------------------------------------
+
+Log Entry : 9:45:15 PM Friday, December 23, 2022
+  
+   UserName =  SuperAdmin
+   FormName =  GlobalFunctions
+   ProcedureName =  GenerateDataTable : FPermissionAddEdit ()/LoadAllPermissionDataGridView
+  
+   ShowMessage: Verilməmiş hüquqlar cədvələ yüklənmədi.
+   Exception Message: ORA-00936: missing expression
+   SQL Text      :  SELECT R.DESCRIPTION,RD.DETAIL_NAME,RD.ID FROM ELMS_USER.ALL_ROLE_DETAILS RD,ELMS_USER.ROLES R WHERE RD.ROLE_ID = R.ID AND RD.ID NOT IN (SELECT ROLE_DETAIL_ID FROM ELMS_USER_TEMP.USER_GROUP_ROLE_DETAILS_TEMP WHERE GROUP_ID = ) ORDER BY RD.ROLE_ID,RD.ORDER_ID
+-------------------------------------------------
+
+Log Entry : 9:45:17 PM Friday, December 23, 2022
+  
+   UserName =  SuperAdmin
+   FormName =  GlobalFunctions
+   ProcedureName =  GenerateDataTable : FPermissionAddEdit ()/LoadUsedPermissionDataGridView
+  
+   ShowMessage: DataTable yaradılmadı.
+   Exception Message: ORA-00936: missing expression
+   SQL Text      :  SELECT R.DESCRIPTION,RD.DETAIL_NAME,RD.ID FROM ELMS_USER_TEMP.USER_GROUP_ROLE_DETAILS_TEMP RDT,ELMS_USER.ROLES R, ELMS_USER.ALL_ROLE_DETAILS RD WHERE RD.ID = RDT.ROLE_DETAIL_ID AND R.ID = RD.ROLE_ID AND RDT.GROUP_ID =  ORDER BY RD.ROLE_ID,RD.ORDER_ID
+-------------------------------------------------
+
+Log Entry : 9:45:18 PM Friday, December 23, 2022
+  
+   UserName =  SuperAdmin
+   FormName =  FPermissionAddEdit ()
+   ProcedureName =  ELMS.Forms.FPermissionAddEdit/LoadUsedPermissionDataGridView
+  
+   ShowMessage: Verilmiş hüquqlar cədvələ yüklənmədi.
+   Exception Message: Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+   SQL Text      :  SELECT R.DESCRIPTION,RD.DETAIL_NAME,RD.ID FROM ELMS_USER_TEMP.USER_GROUP_ROLE_DETAILS_TEMP RDT,ELMS_USER.ROLES R, ELMS_USER.ALL_ROLE_DETAILS RD WHERE RD.ID = RDT.ROLE_DETAIL_ID AND R.ID = RD.ROLE_ID AND RDT.GROUP_ID =  ORDER BY RD.ROLE_ID,RD.ORDER_ID
+-------------------------------------------------
+
+Log Entry : 9:45:34 PM Friday, December 23, 2022
+  
+   UserName =  SuperAdmin
+   FormName =  GlobalFunctions
+   ProcedureName =  GenerateDataTable : FUserGroupAddEdit/LoadPermissionDataGridView
+  
+   ShowMessage: DataTable yaradılmadı.
+   Exception Message: ORA-00936: missing expression
+   SQL Text      :  SELECT R.DESCRIPTION,RD.DETAIL_NAME FROM ELMS_USER.ALL_USER_GROUP_ROLE_DETAILS UGRD,ELMS_USER.ROLES R, ELMS_USER.ALL_ROLE_DETAILS RD WHERE RD.ID = UGRD.ROLE_DETAIL_ID AND R.ID = RD.ROLE_ID AND UGRD.GROUP_ID = 
+-------------------------------------------------
+
+Log Entry : 9:45:39 PM Friday, December 23, 2022
+  
+   UserName =  SuperAdmin
+   FormName =  FUserGroupAddEdit
+   ProcedureName =  ELMS.Forms.FUserGroupAddEdit/LoadPermissionDataGridView
+  
+   ShowMessage: Hüquqlar cədvələ yüklənmədi.
+   Exception Message: Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+   SQL Text      :  SELECT R.DESCRIPTION,RD.DETAIL_NAME FROM ELMS_USER.ALL_USER_GROUP_ROLE_DETAILS UGRD,ELMS_USER.ROLES R, ELMS_USER.ALL_ROLE_DETAILS RD WHERE RD.ID = UGRD.ROLE_DETAIL_ID AND R.ID = RD.ROLE_ID AND UGRD.GROUP_ID = 
+-------------------------------------------------
+
+Log Entry : 9:45:42 PM Friday, December 23, 2022
+  
+   UserName =  SuperAdmin
+   FormName =  GlobalFunctions
+   ProcedureName =  GenerateDataTable : FUserGroupAddEdit/LoadUsersDataGridView
+  
+   ShowMessage: Qrupa daxil olan istifadəçilərin siyahısı cədvələ yüklənmədi.
+   Exception Message: ORA-00936: missing expression
+   SQL Text      :  SELECT E.FULL_NAME,
+                             E.SESSION_ID,
+                             E.ID
+                        FROM ELMS_USER.SYSTEM_USER E
+                       WHERE E.GROUP_ID = 
+                    ORDER BY E.FULL_NAME
+-------------------------------------------------
+
+Log Entry : 9:47:09 PM Friday, December 23, 2022
+  
+   UserName =  SuperAdmin
+   FormName =  GlobalFunctions
+   ProcedureName =  GenerateDataTable : FListOfAutomaticAdd/LoadListDataGridView
+  
+   ShowMessage: DataTable yaradılmadı.
+   Exception Message: ORA-00936: missing expression
+   SQL Text      :  SELECT 1 SS,ID,SURNAME||' '||NAME||' '||PATRONYMIC||' '||DECODE(SEX_ID,1,'oğlu','qızı') FULL_NAME FROM ELMS_USER.SYSTEM_USER WHERE STATUS_ID = 1 AND SESSION_ID = 0 AND USED_USER_ID = -1 AND GROUP_ID <> 
+-------------------------------------------------
+
+Log Entry : 9:47:10 PM Friday, December 23, 2022
+  
+   UserName =  SuperAdmin
+   FormName =  FListOfAutomaticAdd
+   ProcedureName =  ELMS.Forms.FListOfAutomaticAdd/LoadListDataGridView
+  
+   ShowMessage: Verilmiş hüquqlar cədvələ yüklənmədi.
+   Exception Message: Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+   SQL Text      :  SELECT 1 SS,ID,SURNAME||' '||NAME||' '||PATRONYMIC||' '||DECODE(SEX_ID,1,'oğlu','qızı') FULL_NAME FROM ELMS_USER.SYSTEM_USER WHERE STATUS_ID = 1 AND SESSION_ID = 0 AND USED_USER_ID = -1 AND GROUP_ID <> 
+-------------------------------------------------
+
+Log Entry : 9:47:38 PM Friday, December 23, 2022
+  
+   UserName =  SuperAdmin
+   FormName =  GlobalFunctions
+   ProcedureName =  GenerateDataTable : FUserGroupAddEdit/LoadUsersDataGridView
+  
+   ShowMessage: Qrupa daxil olan istifadəçilərin siyahısı cədvələ yüklənmədi.
+   Exception Message: ORA-00936: missing expression
+   SQL Text      :  SELECT E.FULL_NAME,
+                             E.SESSION_ID,
+                             E.ID
+                        FROM ELMS_USER.SYSTEM_USER E
+                       WHERE E.GROUP_ID = 
+                    ORDER BY E.FULL_NAME
+-------------------------------------------------
+
+Log Entry : 9:47:41 PM Friday, December 23, 2022
+  
+   UserName =  SuperAdmin
+   FormName =  GlobalProcedures
+   ProcedureName =  ExecuteQuery/Lock_or_UnLock_UserID
+  
+   ShowMessage: ELMS_USER.USER_GROUP cədvəli bloka düşmədi.
+   Exception Message: ORA-00936: missing expression
+   SQL Text      :  UPDATE ELMS_USER.USER_GROUP SET USED_USER_ID = -1 WHERE ID =  AND USED_USER_ID = 0
+-------------------------------------------------
+
+Log Entry : 9:47:43 PM Friday, December 23, 2022
+  
+   UserName =  SuperAdmin
+   FormName =  GlobalProcedures
+   ProcedureName =  ExecuteQuery/FUserGroupAddEdit/DeleteUserGroupPermissionTemp
+  
+   ShowMessage: İstifadəçi qrupunun hüquqları üçün olan temp məlumatlar silinmədi.
+   Exception Message: ORA-00936: missing expression
+   SQL Text      :  DELETE FROM ELMS_USER_TEMP.USER_GROUP_ROLE_DETAILS_TEMP WHERE GROUP_ID = 
+-------------------------------------------------
+
+Log Entry : 10:45:26 PM Friday, December 23, 2022
+  
+   UserName =  SuperAdmin
+   FormName =  GlobalFunctions
+   ProcedureName =  RunInOneTransaction
+  
+   ShowMessage: İstifadəçinin məlumatları bazaya daxil edilmədi.
+   Exception Message: ORA-00001: unique constraint (ELMS_USER.SYS_C008576) violated
+-------------------------------------------------
+
+Log Entry : 11:10:22 PM Friday, December 23, 2022
+  
+   UserName =  SuperAdmin
+   FormName =  GlobalProcedures
+   ProcedureName =  ExecuteQuery
+  
+   ShowMessage: İstifadəçi bloklanmadı.
+   Exception Message: ORA-00942: table or view does not exist
+   SQL Text      :  UPDATE MCMS.MCMS_USERS SET IS_ACTIVE = 0, SESSION_ID = 0 WHERE ID = 9
+-------------------------------------------------
+
+Log Entry : 11:10:29 PM Friday, December 23, 2022
+  
+   UserName =  SuperAdmin
+   FormName =  GlobalProcedures
+   ProcedureName =  ExecuteQuery
+  
+   ShowMessage: İstifadəçi blokdan çıxmadı.
+   Exception Message: ORA-00942: table or view does not exist
+   SQL Text      :  UPDATE MCMS.MCMS_USERS SET IS_ACTIVE = 1, SESSION_ID = 0 WHERE ID = 9
+-------------------------------------------------
+
+Log Entry : 11:16:13 PM Friday, December 23, 2022
+  
+   UserName =  SuperAdmin
+   FormName =  GlobalFunctions
+   ProcedureName =  RunInOneTransaction
+  
+   ShowMessage: İstifadəçinin məlumatları bazada dəyişdirilmədi.
+   Exception Message: ORA-02289: sequence does not exist
+-------------------------------------------------

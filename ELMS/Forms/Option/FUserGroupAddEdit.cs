@@ -9,6 +9,9 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using ELMS.Class;
 using static ELMS.Class.Enum;
+using ELMS.Class.DataAccess;
+using ELMS.Class.Tables;
+using DevExpress.XtraGrid.Views.Grid;
 
 namespace ELMS.Forms
 {
@@ -33,14 +36,14 @@ namespace ELMS.Forms
             //permision
             if (GlobalVariables.V_UserID > 0)
             {
-                NewUserBarButton.Enabled = Class.GlobalVariables.NewUser;
-                EditUserBarButton.Enabled = Class.GlobalVariables.EditUser;
+                NewUserBarButton.Enabled = GlobalVariables.NewUser;
+                EditUserBarButton.Enabled = GlobalVariables.EditUser;
             }
 
-            if (TransactionType == TransactionTypeEnum.Insert)
+            if (TransactionType == TransactionTypeEnum.Update)
             {
-                GlobalProcedures.Lock_or_UnLock_UserID("ELMS_USER.USER_GROUP", Class.GlobalVariables.V_UserID, "WHERE ID = " + GroupID + " AND USED_USER_ID = -1");
-                InsertUserGroupPermissionTemp();
+                GlobalProcedures.Lock_or_UnLock_UserID("ELMS_USER.USER_GROUP", GlobalVariables.V_UserID, "WHERE ID = " + GroupID + " AND USED_USER_ID = -1");
+               // InsertUserGroupPermissionTemp();
                 GroupUsedUserID = GlobalFunctions.GetID("SELECT USED_USER_ID FROM ELMS_USER.USER_GROUP WHERE ID = " + GroupID);
                 GroupUsed = (GroupUsedUserID >= 0);
 
@@ -81,87 +84,104 @@ namespace ELMS.Forms
 
         private void LoadGroupDetails()
         {
-            string s = "SELECT GROUP_NAME,NOTE FROM ELMS_USER.USER_GROUP WHERE ID = " + GroupID;
-            try
+            
+            List<UsersGroup> lstUsersGroup = UsersGroupDAL.SelectUsersGroupByID(GroupID).ToList<UsersGroup>();
+            if (lstUsersGroup.Count > 0)
             {
-                DataTable dt = GlobalFunctions.GenerateDataTable(s);
-                foreach (DataRow dr in dt.Rows)
-                {
-                    AzGroupNameText.Text = dr["GROUP_NAME"].ToString();
-                    NoteText.Text = dr["NOTE"].ToString();
-                }
+                var usersGroup = lstUsersGroup.LastOrDefault();
+                AzGroupNameText.EditValue = usersGroup.GROUP_NAME;
+                NoteText.EditValue = usersGroup.NOTE;
             }
-            catch (Exception exx)
             {
-                GlobalProcedures.LogWrite("İstifadəçi qrupunun parametrləri açılmadı.", s, GlobalVariables.V_UserName, this.Name, this.GetType().FullName + "/" + System.Reflection.MethodBase.GetCurrentMethod().Name, exx);
+                //string s = "SELECT GROUP_NAME,NOTE FROM ELMS_USER.USER_GROUP WHERE ID = " + GroupID;
+                //try
+                //{
+                //    DataTable dt = GlobalFunctions.GenerateDataTable(s);
+                //    foreach (DataRow dr in dt.Rows)
+                //    {
+                //        AzGroupNameText.Text = dr["GROUP_NAME"].ToString();
+                //        NoteText.Text = dr["NOTE"].ToString();
+                //    }
+                //}
+                //catch (Exception exx)
+                //{
+                //    GlobalProcedures.LogWrite("İstifadəçi qrupunun parametrləri açılmadı.", s, GlobalVariables.V_UserName, this.Name, this.GetType().FullName + "/" + System.Reflection.MethodBase.GetCurrentMethod().Name, exx);
+                //}
             }
         }
 
         private void LoadPermissionDataGridView()
         {
-            string s = null;
-            try
-            {
-                
-                        s = "SELECT R.DESCRIPTION,RD.DETAIL_NAME FROM ELMS_USER.ALL_USER_GROUP_ROLE_DETAILS UGRD,ELMS_USER.ROLES R, ELMS_USER.ALL_ROLE_DETAILS RD WHERE RD.ID = UGRD.ROLE_DETAIL_ID AND R.ID = RD.ROLE_ID AND UGRD.GROUP_ID = " + GroupID;
-               
+            PermissionGridControl.DataSource = PermissionDAL.SelectPermissionByID(GroupID).ToList<Permission>();
 
-                DataTable dt = GlobalFunctions.GenerateDataTable(s, this.Name + "/LoadPermissionDataGridView");
+            { 
+            //string s = null;
+            //try
+            //{
 
-                PermissionGridControl.DataSource = dt;
-                PermissionGridView.PopulateColumns();
-                PermissionGridView.Columns[0].Caption = "Modulun adı";
-                PermissionGridView.Columns[1].Caption = "Hüququn adı";
+            //            s = "SELECT R.DESCRIPTION ROLES_DESCRIPTION ,RD.DETAIL_NAME ROLE_DETAIL_NAME FROM ELMS_USER.ALL_USER_GROUP_ROLE_DETAILS UGRD,ELMS_USER.ROLES R, ELMS_USER.ALL_ROLE_DETAILS RD WHERE RD.ID = UGRD.ROLE_DETAIL_ID AND R.ID = RD.ROLE_ID AND UGRD.GROUP_ID = " + GroupID;
 
-                for (int i = 0; i < PermissionGridView.Columns.Count; i++)
-                {
-                    PermissionGridView.Columns[i].AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-                    PermissionGridView.Columns[i].AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-                }
 
-                PermissionGridView.BeginSort();
-                try
-                {
-                    PermissionGridView.Columns[0].GroupIndex = 0;
-                }
-                finally
-                {
-                    PermissionGridView.EndSort();
-                }
+            //    DataTable dt = GlobalFunctions.GenerateDataTable(s, this.Name + "/LoadPermissionDataGridView");
 
-                PermissionGridView.BestFitColumns();
-            }
-            catch (Exception exx)
-            {
-                GlobalProcedures.LogWrite("Hüquqlar cədvələ yüklənmədi.", s, GlobalVariables.V_UserName, this.Name, this.GetType().FullName + "/" + System.Reflection.MethodBase.GetCurrentMethod().Name, exx);
-            }
+            //    PermissionGridControl.DataSource = dt;
+            //    PermissionGridView.PopulateColumns();
+            //    PermissionGridView.Columns[0].Caption = "Modulun adı";
+            //    PermissionGridView.Columns[1].Caption = "Hüququn adı";
+
+            //    for (int i = 0; i < PermissionGridView.Columns.Count; i++)
+            //    {
+            //        PermissionGridView.Columns[i].AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            //        PermissionGridView.Columns[i].AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            //    }
+
+            //    PermissionGridView.BeginSort();
+            //    try
+            //    {
+            //        PermissionGridView.Columns[0].GroupIndex = 0;
+            //    }
+            //    finally
+            //    {
+            //        PermissionGridView.EndSort();
+            //    }
+
+            //    PermissionGridView.BestFitColumns();
+            //}
+            //catch (Exception exx)
+            //{
+            //    GlobalProcedures.LogWrite("Hüquqlar cədvələ yüklənmədi.", s, GlobalVariables.V_UserName, this.Name, this.GetType().FullName + "/" + System.Reflection.MethodBase.GetCurrentMethod().Name, exx);
+            //}
+        }
         }
 
         private void LoadUsersDataGridView()
         {
-            string s = $@"SELECT E.FULL_NAME,
-                             E.SESSION_ID,
-                             E.ID
-                        FROM ELMS_USER.SYSTEM_USER E
-                       WHERE E.GROUP_ID = {GroupID}
-                    ORDER BY E.FULL_NAME";
+            UsersGridControl.DataSource = UserDAL.SelectUserByGroupID(GroupID).ToList<UserList>();
 
-            DataTable dt = GlobalFunctions.GenerateDataTable(s, this.Name + "/LoadUsersDataGridView", "Qrupa daxil olan istifadəçilərin siyahısı cədvələ yüklənmədi.");
+            { //string s = $@"SELECT E.FULL_NAME,
+              //                 E.SESSION_ID,
+              //                 E.ID
+              //            FROM ELMS_USER.SYSTEM_USER E
+              //           WHERE E.GROUP_ID = {GroupID}
+              //        ORDER BY E.FULL_NAME";
+
+                //DataTable dt = GlobalFunctions.GenerateDataTable(s, this.Name + "/LoadUsersDataGridView", "Qrupa daxil olan istifadəçilərin siyahısı cədvələ yüklənmədi.");
 
 
-            UsersGridControl.DataSource = dt;
+                //UsersGridControl.DataSource = dt;
 
-            if (UsersGridView.RowCount > 0)
-            {
-                if (GlobalVariables.V_UserID > 0)
-                    EditUserBarButton.Enabled = GlobalVariables.EditUser;
-                else
-                    EditUserBarButton.Enabled = true;
-                DeleteUserBarButton.Enabled = true;
+                //if (UsersGridView.RowCount > 0)
+                //{
+                //    if (GlobalVariables.V_UserID > 0)
+                //        EditUserBarButton.Enabled = GlobalVariables.EditUser;
+                //    else
+                //        EditUserBarButton.Enabled = true;
+                //    DeleteUserBarButton.Enabled = true;
+                //}
+                //else
+                //    EditUserBarButton.Enabled = DeleteUserBarButton.Enabled = false;
+                //UsersGridView.BestFitColumns();
             }
-            else
-                EditUserBarButton.Enabled = DeleteUserBarButton.Enabled = false;
-            UsersGridView.BestFitColumns();
         }
 
         private bool ControlGroupDetails()
@@ -178,29 +198,7 @@ namespace ELMS.Forms
             }
             else
                 b = true;
-
-            //if (EnGroupNameText.Text.Length == 0)
-            //{
-            //    EnGroupNameText.BackColor = Color.Red;
-            //    GlobalProcedures.ShowErrorMessage("İngilis dilində qrupun adı daxil edilməyib.");                
-            //    EnGroupNameText.BackColor = GlobalFunctions.ElementColor();
-            //    EnGroupNameText.Focus();
-            //    return false;
-            //}
-            //else
-            //    b = true;
-
-            //if (RuGroupNameText.Text.Length == 0)
-            //{
-            //    RuGroupNameText.BackColor = Color.Red;
-            //    GlobalProcedures.ShowErrorMessage("Rus dilində qrupun adı daxil edilməyib.");               
-            //    RuGroupNameText.BackColor = GlobalFunctions.ElementColor();
-            //    RuGroupNameText.Focus();
-            //    return false;
-            //}
-            //else
-            //    b = true;
-
+            
             if (PermissionGridView.RowCount == 0)
             {
                 XtraMessageBox.Show("Qrupa hüquq verilməyib.");
@@ -233,7 +231,7 @@ namespace ELMS.Forms
                     InsertUserGroup();
                 else
                     UpdateUserGroup();
-                InsertUserGroupPermission();
+                //InsertUserGroupPermission();
                 this.Close();
             }
         }
@@ -293,7 +291,7 @@ namespace ELMS.Forms
         private void FUserGroupAddEdit_FormClosing(object sender, FormClosingEventArgs e)
         {
             GlobalProcedures.Lock_or_UnLock_UserID("ELMS_USER.USER_GROUP", -1, "WHERE ID = " + GroupID + " AND USED_USER_ID = " + GlobalVariables.V_UserID);
-            DeleteUserGroupPermissionTemp();
+            //DeleteUserGroupPermissionTemp();
             this.RefreshUserGroupDataGridView();
         }
 
@@ -350,9 +348,13 @@ namespace ELMS.Forms
 
         private void UsersGridView_FocusedRowObjectChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowObjectChangedEventArgs e)
         {
-            DataRow row = UsersGridView.GetFocusedDataRow();
-            if (row != null)
-                UserID = Convert.ToInt32(row["ID"].ToString());
+
+            UserID = Convert.ToInt32(GlobalFunctions.GetGridRowCellValue((sender as GridView), "ID"));
+            {
+                //DataRow row = UsersGridView.GetFocusedDataRow();
+                //if (row != null)
+                //UserID = Convert.ToInt32(row["ID"].ToString());
+            }
         }
 
         private void UsersGridView_RowCellStyle(object sender, DevExpress.XtraGrid.Views.Grid.RowCellStyleEventArgs e)
@@ -364,7 +366,7 @@ namespace ELMS.Forms
         {
             if (EditUserBarButton.Enabled)
             {
-                if (GlobalFunctions.GetID($@"SELECT SESSION_ID FROM ELMS_USER.ELMS_USERS WHERE ID = {UserID}") != 0)
+                if (GlobalFunctions.GetID($@"SELECT SESSION_ID FROM ELMS_USER.SYSTEM_USER WHERE ID = {UserID}") != 0)
                     XtraMessageBox.Show("İstifadəçi sistemə daxil olduğu üçün onu bu qrupdan silmək olmaz. İstifadəçini qrupdan silmək üçün onu sistemdən çıxmaq lazımdır.", "Seçilmiş istifadəçinin hal-hazırkı statusu", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 else
                 {

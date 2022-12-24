@@ -28,7 +28,7 @@ namespace ELMS.Forms
             InitializeComponent();
         }
         public TransactionTypeEnum TransactionType;
-        public int? UserID, GroupID;
+        public int? UserID,GroupID;
 
         string PhoneNumber,
             UserImage,
@@ -39,7 +39,6 @@ namespace ELMS.Forms
             MailID,
             status_id = 1,
             sex_id,
-            group_id,
             UsedUserID = -1,
             crop_image_count = 0,
             mail_selected_count = 0,
@@ -186,7 +185,7 @@ namespace ELMS.Forms
                     SexLookUp.EditValue = SexLookUp.Properties.GetKeyValueByDisplayText(dr["SEX_NAME"].ToString());
                     AddressText.Text = dr["ADDRESS"].ToString();
                     group_name = dr["GROUP_NAME"].ToString();
-                    group_id = Convert.ToInt32(dr["GROUP_ID"].ToString());
+                    GroupID = Convert.ToInt32(dr["GROUP_ID"].ToString());
                     NoteText.Text = dr["NOTE"].ToString();
                     if (!DBNull.Value.Equals(dr["IMAGE"]))
                     {
@@ -440,6 +439,10 @@ namespace ELMS.Forms
 
         private void InsertUser(OracleTransaction tran)
         {
+            if(GroupID == 0)
+            {
+                GroupID = 2;
+            }
             status_id = 1;
 
             string sqlUser = $@"INSERT INTO ELMS_USER.SYSTEM_USER(ID,
@@ -463,7 +466,7 @@ namespace ELMS.Forms
                                     TO_DATE('{BirthdayDate.Text}','DD/MM/YYYY'),
                                     {sex_id},
                                     '{AddressText.Text.Trim()}',
-                                    {group_id},
+                                    {GroupID},
                                     '{NoteText.Text.Trim()}',
                                     {GlobalVariables.V_UserID})",
                        sqlImage = null;
@@ -492,7 +495,7 @@ namespace ELMS.Forms
                                                 SEX_ID = {sex_id},
                                                 NOTE = '{NoteText.Text}',
                                                 ADDRESS = '{AddressText.Text}',
-                                                GROUP_ID = {group_id},
+                                                GROUP_ID = {GroupID},
                                                 UPDATE_USER = {GlobalVariables.V_UserID},
                                                 UPDATE_DATE = SYSDATE
                                         WHERE ID = {UserID}";
@@ -523,14 +526,16 @@ namespace ELMS.Forms
 
         private void LoadUserGroupPermissionDataGridView()
         {
-            string s = $@"SELECT R.DESCRIPTION, RD.DETAIL_NAME, RD.ID
-                                  FROM ELMS_USER.ALL_USER_GROUP_ROLE_DETAILS RDT,
-                                       ELMS_USER.ROLES R,
-                                       ELMS_USER.ALL_ROLE_DETAILS RD
-                                 WHERE     RD.ID = RDT.ROLE_DETAIL_ID
-                                       AND R.ID = RD.ROLE_ID
-                                       AND RDT.GROUP_ID = {group_id}";
-            PermissionGridControl.DataSource = GlobalFunctions.GenerateDataTable(s);
+            PermissionGridControl.DataSource = PermissionDAL.SelectPermissionByID(GroupID).ToList<Permission>();
+
+            //string s = $@"SELECT R.DESCRIPTION ROLES_DESCRIPTION, RD.DETAIL_NAME ROLE_DETAIL_NAME, RD.ID
+            //                      FROM ELMS_USER.ALL_USER_GROUP_ROLE_DETAILS RDT,
+            //                           ELMS_USER.ROLES R,
+            //                           ELMS_USER.ALL_ROLE_DETAILS RD
+            //                     WHERE     RD.ID = RDT.ROLE_DETAIL_ID
+            //                           AND R.ID = RD.ROLE_ID
+            //                           AND RDT.GROUP_ID = {GroupID}";
+            //PermissionGridControl.DataSource = GlobalFunctions.GenerateDataTable(s);
         }
 
         private void DeleteAllTemp()
@@ -682,8 +687,8 @@ namespace ELMS.Forms
             if (listID != null)
             {
                 listID = listID.TrimEnd(',');
-                GlobalProcedures.ExecuteTwoQuery(tran, $@"UPDATE ELMS_USER_TEMP.MAILS_TEMP SET IS_SEND = 0, IS_CHANGE = 1 WHERE IS_SEND = 1 AND OWNER_ID = {UserID} AND OWNER_TYPE = {PhoneOwnerEnum.User} AND USED_USER_ID = {GlobalVariables.V_UserID}",
-                                                       $@"UPDATE ELMS_USER_TEMP.MAILS_TEMP SET IS_SEND = 1, IS_CHANGE = 1 WHERE ID IN ({listID}) AND OWNER_TYPE = {PhoneOwnerEnum.User} AND USED_USER_ID = {GlobalVariables.V_UserID}");
+                GlobalProcedures.ExecuteTwoQuery(tran, $@"UPDATE ELMS_USER_TEMP.MAILS_TEMP SET IS_SEND = 0, IS_CHANGE = 1 WHERE IS_SEND = 1 AND OWNER_ID = {UserID} AND OWNER_TYPE = {MailOwnerEnum.User} AND USED_USER_ID = {GlobalVariables.V_UserID}",
+                                                       $@"UPDATE ELMS_USER_TEMP.MAILS_TEMP SET IS_SEND = 1, IS_CHANGE = 1 WHERE ID IN ({listID}) AND OWNER_TYPE = {MailOwnerEnum.User} AND USED_USER_ID = {GlobalVariables.V_UserID}");
             }
         }
 
@@ -704,7 +709,7 @@ namespace ELMS.Forms
         {
             if (permissiondetails)
                 GlobalProcedures.ExecuteTwoQuery(tran, "DELETE FROM ELMS_USER.USER_GROUP_PERMISSION WHERE USER_ID = " + UserID,
-                                                       $@"INSERT INTO ELMS_USER.USER_GROUP_PERMISSION(ID,USER_ID,GROUP_ID) VALUES(USER_GROUP_ROLE_SEQUENCE.NEXTVAL,{UserID},{group_id})");
+                                                       $@"INSERT INTO ELMS_USER.USER_GROUP_PERMISSION(ID,USER_ID,GROUP_ID) VALUES(USER_GROUP_PERMISSION_SEQUENCE.NEXTVAL,{UserID},{GroupID})");
         }
 
         private void BOK_Click(object sender, EventArgs e)
@@ -719,10 +724,10 @@ namespace ELMS.Forms
                     else
                         UppdateUser(tran);
 
-                    InsertUserGroupPermission(tran);
-                    UpdatePhoneSendSms(tran);
-                    UpdateMailSend(tran);
-                    InsertUserDetails(tran);
+                    //InsertUserGroupPermission(tran);
+                    //UpdatePhoneSendSms(tran);
+                    //UpdateMailSend(tran);
+                    //InsertUserDetails(tran);
                     return 1;
                 }, TransactionType == TransactionTypeEnum.Insert ? "İstifadəçinin məlumatları bazaya daxil edilmədi." : "İstifadəçinin məlumatları bazada dəyişdirilmədi.");
 
@@ -733,7 +738,7 @@ namespace ELMS.Forms
 
         private void InsertUserDetails(OracleTransaction tran)
         {
-            GlobalProcedures.ExecuteProcedureWithUser(tran, "ELMS_USER.PROC_INSERT_USER_DETAILS", "P_CUSTOMER_ID", UserID);
+            GlobalProcedures.ExecuteProcedureWithTwoParametrAndUser(tran, "ELMS_USER.PROC_INSERT_USER_DETAILS", "P_USER_ID", UserID,"P_OWNER_TYPE",1);
         }
 
         void RefreshPhone()
@@ -814,8 +819,8 @@ namespace ELMS.Forms
         {
             FMailAddEdit fp = new FMailAddEdit();
             fp.TransactionType = transaction;
-            fp.OwnerID = UserID.Value;
-            fp.OwnerType = MailOwnerEnum.User;
+            fp.OwnerID = UserID;
+            fp.MailOwner = MailOwnerEnum.User;
             fp.MailID = id;
             fp.RefreshEmailDataGridView += new FMailAddEdit.DoEvent(RefreshMail);
             fp.ShowDialog();
@@ -907,7 +912,7 @@ namespace ELMS.Forms
             if (GroupNameLookUp.EditValue == null)
                 return;
 
-            group_id = Convert.ToInt32(GroupNameLookUp.EditValue);
+            GroupID = Convert.ToInt32(GroupNameLookUp.EditValue);
             LoadUserGroupPermissionDataGridView();
         }
 

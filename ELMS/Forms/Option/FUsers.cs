@@ -11,6 +11,9 @@ using DevExpress.XtraBars;
 using ELMS.Class;
 using DevExpress.XtraEditors;
 using static ELMS.Class.Enum;
+using ELMS.Class.DataAccess;
+using ELMS.Class.Tables;
+using DevExpress.XtraGrid.Views.Grid;
 
 namespace ELMS.Forms.Option
 {
@@ -52,17 +55,20 @@ namespace ELMS.Forms.Option
 
         private void LoadUserDetails()
         {
-            string s = $@"SELECT 1 SS,
-                                   ID,
-                                   FULL_NAME CUSTOMERFULLNAME,
-                                   NOTE,
-                                   IS_ACTIVE,
-                                   USED_USER_ID,
-                                   SESSION_ID
-                              FROM ELMS_USER.SYSTEM_USER";
 
-            UsersGridControl.DataSource = GlobalFunctions.GenerateDataTable(s, this.Name + "/LoadUserDetails", "İstifadəçilərin siyahısı yüklənmədi");
+            UsersGridControl.DataSource = UserListDAL.SelectUserListByID(null).ToList<UserList>();
+            { //string s = $@"SELECT 1 SS,
+            //                       ID,
+            //                       FULL_NAME CUSTOMERFULLNAME,
+            //                       NOTE,
+            //                       IS_ACTIVE,
+            //                       USED_USER_ID,
+            //                       SESSION_ID
+            //                  FROM ELMS_USER.SYSTEM_USER";
 
+            //UsersGridControl.DataSource = GlobalFunctions.GenerateDataTable(s, this.Name + "/LoadUserDetails", "İstifadəçilərin siyahısı yüklənmədi");
+}
+            
             if (UsersGridView.RowCount > 0)
             {
                 if (GlobalVariables.V_UserID > 1)
@@ -90,12 +96,18 @@ namespace ELMS.Forms.Option
 
         private void UsersGridView_FocusedRowObjectChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowObjectChangedEventArgs e)
         {
-            DataRow row = UsersGridView.GetFocusedDataRow();
-            if (row != null)
+            userID = Convert.ToInt32(GlobalFunctions.GetGridRowCellValue((sender as GridView), "ID"));
+            session_id = Convert.ToInt32(GlobalFunctions.GetGridRowCellValue((sender as GridView), "SESSION_ID"));
+            used_user_id = Convert.ToInt32(GlobalFunctions.GetGridRowCellValue((sender as GridView), "USED_USER_ID"));
+
             {
-                userID = Convert.ToInt32(row["ID"]);
-                session_id = Convert.ToInt32(row["SESSION_ID"].ToString());
-                used_user_id = Convert.ToInt32(row["USED_USER_ID"].ToString());
+                //DataRow row = UsersGridView.GetFocusedDataRow();
+                //if (row != null)
+                //{
+                //    //userID = Convert.ToInt32(row["ID"]);
+                //    //session_id = Convert.ToInt32(row["SESSION_ID"].ToString());
+                //    //used_user_id = Convert.ToInt32(row["USED_USER_ID"].ToString());
+                //}
             }
         }
 
@@ -156,7 +168,7 @@ namespace ELMS.Forms.Option
             DialogResult dialogResult = XtraMessageBox.Show("Seçilmiş istifadəçini silmək istəyirsiniz?", "İstifadəçinin silinməsi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dialogResult == DialogResult.Yes)
             {
-                GlobalProcedures.ExecuteProcedureWithParametr("MCMS.PROC_USER_DELETE", "P_USER_ID", userID, "Seçilmiş istifadəçi bazadan silinmədi.");
+                GlobalProcedures.ExecuteProcedureWithTwoParametr("ELMS_USER.PROC_USER_DELETE", "P_USER_ID", userID,"P_OWNER_TYPE", PhoneOwnerEnum.User, "Seçilmiş istifadəçi bazadan silinmədi.");
             }
         }
 

@@ -1,0 +1,388 @@
+
+Log Entry : 3:06:43 PM Saturday, December 24, 2022
+  
+   UserName =  SuperAdmin
+   FormName =  GlobalFunctions
+   ProcedureName =  GenerateDataTable : FUsersGroups/LoadUsersGroupDataGridView
+  
+   ShowMessage: DataTable yaradılmadı.
+   Exception Message: ORA-00904: "GROUP_NAME_RU": invalid identifier
+   SQL Text      :  SELECT 1 SS,ID,GROUP_NAME,GROUP_NAME_EN,GROUP_NAME_RU,NOTE,G.USED_USER_ID FROM ELMS_USER.USER_GROUP G
+-------------------------------------------------
+
+Log Entry : 4:41:08 PM Saturday, December 24, 2022
+  
+   UserName =  SuperAdmin
+   FormName =  GlobalProcedures
+   ProcedureName =  ExecuteProcedureWithParametr/ELMS_USER_TEMP.PROC_INS_GROUP_PERMISSION_TEMP
+  
+   ShowMessage: İstifadəçi qrupunun hüquqları temp cədvələ daxil edilmədi.
+   Exception Message: ORA-06550: line 1, column 7:
+PLS-00201: identifier 'ELMS_USER_TEMP.PROC_INS_GROUP_PERMISSION_TEMP' must be declared
+ORA-06550: line 1, column 7:
+PL/SQL: Statement ignored
+   SQL Text      :  ELMS_USER_TEMP.PROC_INS_GROUP_PERMISSION_TEMP
+-------------------------------------------------
+
+Log Entry : 4:42:27 PM Saturday, December 24, 2022
+  
+   UserName =  SuperAdmin
+   FormName =  GlobalFunctions
+   ProcedureName =  GenerateDataTable : FListOfAutomaticAdd/LoadListDataGridView
+  
+   ShowMessage: DataTable yaradılmadı.
+   Exception Message: ORA-00904: "STATUS_ID": invalid identifier
+   SQL Text      :  SELECT 1 SS,ID,SURNAME||' '||NAME||' '||PATRONYMIC||' '||DECODE(SEX_ID,1,'oğlu','qızı') FULL_NAME FROM ELMS_USER.SYSTEM_USER WHERE STATUS_ID = 1 AND SESSION_ID = 0 AND USED_USER_ID = -1 AND GROUP_ID <> 1
+-------------------------------------------------
+
+Log Entry : 4:42:29 PM Saturday, December 24, 2022
+  
+   UserName =  SuperAdmin
+   FormName =  FListOfAutomaticAdd
+   ProcedureName =  ELMS.Forms.FListOfAutomaticAdd/LoadListDataGridView
+  
+   ShowMessage: Verilmiş hüquqlar cədvələ yüklənmədi.
+   Exception Message: Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+   SQL Text      :  SELECT 1 SS,ID,SURNAME||' '||NAME||' '||PATRONYMIC||' '||DECODE(SEX_ID,1,'oğlu','qızı') FULL_NAME FROM ELMS_USER.SYSTEM_USER WHERE STATUS_ID = 1 AND SESSION_ID = 0 AND USED_USER_ID = -1 AND GROUP_ID <> 1
+-------------------------------------------------
+
+Log Entry : 4:44:12 PM Saturday, December 24, 2022
+  
+   UserName =  SuperAdmin
+   FormName =  GlobalProcedures
+   ProcedureName =  ExecuteProcedureWithParametr/ELMS_USER_TEMP.PROC_INS_GROUP_PERMISSION_TEMP
+  
+   ShowMessage: İstifadəçi qrupunun hüquqları temp cədvələ daxil edilmədi.
+   Exception Message: ORA-06550: line 1, column 7:
+PLS-00201: identifier 'ELMS_USER_TEMP.PROC_INS_GROUP_PERMISSION_TEMP' must be declared
+ORA-06550: line 1, column 7:
+PL/SQL: Statement ignored
+   SQL Text      :  ELMS_USER_TEMP.PROC_INS_GROUP_PERMISSION_TEMP
+-------------------------------------------------
+
+Log Entry : 4:44:26 PM Saturday, December 24, 2022
+  
+   UserName =  SuperAdmin
+   FormName =  GlobalFunctions
+   ProcedureName =  GenerateDataTable : FListOfAutomaticAdd/LoadListDataGridView
+  
+   ShowMessage: DataTable yaradılmadı.
+   Exception Message: ORA-00904: "STATUS_ID": invalid identifier
+   SQL Text      :  SELECT 1 SS,ID,SURNAME||' '||NAME||' '||PATRONYMIC||' '||DECODE(SEX_ID,1,'oğlu','qızı') FULL_NAME FROM ELMS_USER.SYSTEM_USER WHERE STATUS_ID = 1 AND SESSION_ID = 0 AND USED_USER_ID = -1 AND GROUP_ID <> 2
+-------------------------------------------------
+
+Log Entry : 4:44:29 PM Saturday, December 24, 2022
+  
+   UserName =  SuperAdmin
+   FormName =  FListOfAutomaticAdd
+   ProcedureName =  ELMS.Forms.FListOfAutomaticAdd/LoadListDataGridView
+  
+   ShowMessage: Verilmiş hüquqlar cədvələ yüklənmədi.
+   Exception Message: Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+   SQL Text      :  SELECT 1 SS,ID,SURNAME||' '||NAME||' '||PATRONYMIC||' '||DECODE(SEX_ID,1,'oğlu','qızı') FULL_NAME FROM ELMS_USER.SYSTEM_USER WHERE STATUS_ID = 1 AND SESSION_ID = 0 AND USED_USER_ID = -1 AND GROUP_ID <> 2
+-------------------------------------------------
+
+Log Entry : 4:45:10 PM Saturday, December 24, 2022
+  
+   UserName =  SuperAdmin
+   FormName =  GlobalProcedures
+   ProcedureName =  ExecuteProcedureWithParametr/ELMS_USER_TEMP.PROC_INS_GROUP_PERMISSION_TEMP
+  
+   ShowMessage: İstifadəçi qrupunun hüquqları temp cədvələ daxil edilmədi.
+   Exception Message: ORA-06550: line 1, column 7:
+PLS-00201: identifier 'ELMS_USER_TEMP.PROC_INS_GROUP_PERMISSION_TEMP' must be declared
+ORA-06550: line 1, column 7:
+PL/SQL: Statement ignored
+   SQL Text      :  ELMS_USER_TEMP.PROC_INS_GROUP_PERMISSION_TEMP
+-------------------------------------------------
+
+Log Entry : 4:45:49 PM Saturday, December 24, 2022
+  
+   UserName =  SuperAdmin
+   FormName =  GlobalProcedures
+   ProcedureName =  ExecuteProcedureWithParametr/ELMS_USER_TEMP.PROC_INS_GROUP_PERMISSION_TEMP
+  
+   ShowMessage: İstifadəçi qrupunun hüquqları temp cədvələ daxil edilmədi.
+   Exception Message: ORA-06550: line 1, column 7:
+PLS-00201: identifier 'ELMS_USER_TEMP.PROC_INS_GROUP_PERMISSION_TEMP' must be declared
+ORA-06550: line 1, column 7:
+PL/SQL: Statement ignored
+   SQL Text      :  ELMS_USER_TEMP.PROC_INS_GROUP_PERMISSION_TEMP
+-------------------------------------------------
+
+Log Entry : 4:54:02 PM Saturday, December 24, 2022
+  
+   UserName =  SuperAdmin
+   FormName =  GlobalProcedures
+   ProcedureName =  ExecuteProcedureWithParametr/ELMS_USER_TEMP.PROC_INS_GROUP_PERMISSION_TEMP
+  
+   ShowMessage: İstifadəçi qrupunun hüquqları temp cədvələ daxil edilmədi.
+   Exception Message: ORA-06550: line 1, column 7:
+PLS-00201: identifier 'ELMS_USER_TEMP.PROC_INS_GROUP_PERMISSION_TEMP' must be declared
+ORA-06550: line 1, column 7:
+PL/SQL: Statement ignored
+   SQL Text      :  ELMS_USER_TEMP.PROC_INS_GROUP_PERMISSION_TEMP
+-------------------------------------------------
+
+Log Entry : 5:38:54 PM Saturday, December 24, 2022
+  
+   UserName =  SuperAdmin
+   FormName =  GlobalProcedures
+   ProcedureName =  ExecuteProcedureWithParametr/ELMS_USER_TEMP.PROC_INS_GROUP_PERMISSION_TEMP
+  
+   ShowMessage: İstifadəçi qrupunun hüquqları temp cədvələ daxil edilmədi.
+   Exception Message: ORA-06550: line 1, column 7:
+PLS-00201: identifier 'ELMS_USER_TEMP.PROC_INS_GROUP_PERMISSION_TEMP' must be declared
+ORA-06550: line 1, column 7:
+PL/SQL: Statement ignored
+   SQL Text      :  ELMS_USER_TEMP.PROC_INS_GROUP_PERMISSION_TEMP
+-------------------------------------------------
+
+Log Entry : 5:39:57 PM Saturday, December 24, 2022
+  
+   UserName =  SuperAdmin
+   FormName =  GlobalProcedures
+   ProcedureName =  ExecuteProcedureWithParametr/ELMS_USER_TEMP.PROC_INS_GROUP_PERMISSION_TEMP
+  
+   ShowMessage: İstifadəçi qrupunun hüquqları temp cədvələ daxil edilmədi.
+   Exception Message: ORA-06550: line 1, column 7:
+PLS-00201: identifier 'ELMS_USER_TEMP.PROC_INS_GROUP_PERMISSION_TEMP' must be declared
+ORA-06550: line 1, column 7:
+PL/SQL: Statement ignored
+   SQL Text      :  ELMS_USER_TEMP.PROC_INS_GROUP_PERMISSION_TEMP
+-------------------------------------------------
+
+Log Entry : 6:49:00 PM Saturday, December 24, 2022
+  
+   UserName =  SuperAdmin
+   FormName =  GlobalProcedures
+   ProcedureName =  ExecuteProcedureWithParametr/ELMS_USER_TEMP.PROC_INS_GROUP_PERMISSION_TEMP
+  
+   ShowMessage: İstifadəçi qrupunun hüquqları temp cədvələ daxil edilmədi.
+   Exception Message: ORA-06550: line 1, column 7:
+PLS-00201: identifier 'ELMS_USER_TEMP.PROC_INS_GROUP_PERMISSION_TEMP' must be declared
+ORA-06550: line 1, column 7:
+PL/SQL: Statement ignored
+   SQL Text      :  ELMS_USER_TEMP.PROC_INS_GROUP_PERMISSION_TEMP
+-------------------------------------------------
+
+Log Entry : 7:07:31 PM Saturday, December 24, 2022
+  
+   UserName =  SuperAdmin
+   FormName =  GlobalProcedures
+   ProcedureName =  ExecuteProcedureWithParametr/ELMS_USER_TEMP.PROC_INS_GROUP_PERMISSION_TEMP
+  
+   ShowMessage: İstifadəçi qrupunun hüquqları temp cədvələ daxil edilmədi.
+   Exception Message: ORA-06550: line 1, column 7:
+PLS-00201: identifier 'ELMS_USER_TEMP.PROC_INS_GROUP_PERMISSION_TEMP' must be declared
+ORA-06550: line 1, column 7:
+PL/SQL: Statement ignored
+   SQL Text      :  ELMS_USER_TEMP.PROC_INS_GROUP_PERMISSION_TEMP
+-------------------------------------------------
+
+Log Entry : 7:08:10 PM Saturday, December 24, 2022
+  
+   UserName =  SuperAdmin
+   FormName =  GlobalProcedures
+   ProcedureName =  ExecuteProcedureWithParametr/ELMS_USER_TEMP.PROC_INS_GROUP_PERMISSION_TEMP
+  
+   ShowMessage: İstifadəçi qrupunun hüquqları temp cədvələ daxil edilmədi.
+   Exception Message: ORA-06550: line 1, column 7:
+PLS-00201: identifier 'ELMS_USER_TEMP.PROC_INS_GROUP_PERMISSION_TEMP' must be declared
+ORA-06550: line 1, column 7:
+PL/SQL: Statement ignored
+   SQL Text      :  ELMS_USER_TEMP.PROC_INS_GROUP_PERMISSION_TEMP
+-------------------------------------------------
+
+Log Entry : 7:09:10 PM Saturday, December 24, 2022
+  
+   UserName =  SuperAdmin
+   FormName =  GlobalProcedures
+   ProcedureName =  ExecuteProcedureWithParametr/ELMS_USER_TEMP.PROC_INS_GROUP_PERMISSION_TEMP
+  
+   ShowMessage: İstifadəçi qrupunun hüquqları temp cədvələ daxil edilmədi.
+   Exception Message: ORA-06550: line 1, column 7:
+PLS-00201: identifier 'ELMS_USER_TEMP.PROC_INS_GROUP_PERMISSION_TEMP' must be declared
+ORA-06550: line 1, column 7:
+PL/SQL: Statement ignored
+   SQL Text      :  ELMS_USER_TEMP.PROC_INS_GROUP_PERMISSION_TEMP
+-------------------------------------------------
+
+Log Entry : 7:11:08 PM Saturday, December 24, 2022
+  
+   UserName =  SuperAdmin
+   FormName =  GlobalProcedures
+   ProcedureName =  ExecuteProcedureWithParametr/ELMS_USER_TEMP.PROC_INS_GROUP_PERMISSION_TEMP
+  
+   ShowMessage: İstifadəçi qrupunun hüquqları temp cədvələ daxil edilmədi.
+   Exception Message: ORA-06550: line 1, column 7:
+PLS-00201: identifier 'ELMS_USER_TEMP.PROC_INS_GROUP_PERMISSION_TEMP' must be declared
+ORA-06550: line 1, column 7:
+PL/SQL: Statement ignored
+   SQL Text      :  ELMS_USER_TEMP.PROC_INS_GROUP_PERMISSION_TEMP
+-------------------------------------------------
+
+Log Entry : 7:11:26 PM Saturday, December 24, 2022
+  
+   UserName =  SuperAdmin
+   FormName =  GlobalProcedures
+   ProcedureName =  ExecuteProcedureWithParametr/ELMS_USER_TEMP.PROC_INS_GROUP_PERMISSION_TEMP
+  
+   ShowMessage: İstifadəçi qrupunun hüquqları temp cədvələ daxil edilmədi.
+   Exception Message: ORA-06550: line 1, column 7:
+PLS-00201: identifier 'ELMS_USER_TEMP.PROC_INS_GROUP_PERMISSION_TEMP' must be declared
+ORA-06550: line 1, column 7:
+PL/SQL: Statement ignored
+   SQL Text      :  ELMS_USER_TEMP.PROC_INS_GROUP_PERMISSION_TEMP
+-------------------------------------------------
+
+Log Entry : 7:26:48 PM Saturday, December 24, 2022
+  
+   UserName =  SuperAdmin
+   FormName =  UserDAL
+   ProcedureName =  SelectUserByGroupID
+  
+   ShowMessage: Qrupa daxil olan istifadəçilərin siyahısı cədvələ yüklənmədi.
+   Exception Message: ORA-00936: missing expression
+   SQL Text      :  SELECT FULL_NAME,
+                                 ID,
+                                 USED_USER_ID,
+                                 SEX_ID,
+                                 SESSION_ID
+                            FROM ELMS_USER.SYSTEM_USER
+                           WHERE IS_ACTIVE = 1 AND GROUP_ID = 
+                        ORDER BY FULL_NAME
+-------------------------------------------------
+
+Log Entry : 7:28:15 PM Saturday, December 24, 2022
+  
+   UserName =  SuperAdmin
+   FormName =  GlobalProcedures
+   ProcedureName =  ExecuteProcedureWithParametr/ELMS_USER.PROC_INSERT_GROUP_PERMISSION
+  
+   ShowMessage: İstifadəçi qrupunun hüquqları əsas cədvələ daxil edilmədi.
+   Exception Message: ORA-06550: line 1, column 7:
+PLS-00201: identifier 'ELMS_USER.PROC_INSERT_GROUP_PERMISSION' must be declared
+ORA-06550: line 1, column 7:
+PL/SQL: Statement ignored
+   SQL Text      :  ELMS_USER.PROC_INSERT_GROUP_PERMISSION
+-------------------------------------------------
+
+Log Entry : 9:08:27 PM Saturday, December 24, 2022
+  
+   UserName =  SuperAdmin
+   FormName =  GlobalProcedures
+   ProcedureName =  ExecuteQuery/Lock_or_UnLock_UserID
+  
+   ShowMessage: ELMS_USER.SYSTEM_USER cədvəli bloka düşmədi.
+   Exception Message: ORA-00936: missing expression
+   SQL Text      :  UPDATE ELMS_USER.SYSTEM_USER SET USED_USER_ID = 0 WHERE ID =  AND USED_USER_ID = -1
+-------------------------------------------------
+
+Log Entry : 9:32:41 PM Saturday, December 24, 2022
+  
+   UserName =  SuperAdmin
+   FormName =  GlobalFunctions
+   ProcedureName =  GenerateDataTable : GetID
+  
+   ShowMessage: ID tapılmadı.
+   Exception Message: ORA-00942: table or view does not exist
+   SQL Text      :  SELECT SESSION_ID FROM ELMS_USER.ELMS_USERS WHERE ID = 2
+-------------------------------------------------
+
+Log Entry : 9:34:03 PM Saturday, December 24, 2022
+  
+   UserName =  SuperAdmin
+   FormName =  GlobalFunctions
+   ProcedureName =  GenerateDataTable : GetID
+  
+   ShowMessage: ID tapılmadı.
+   Exception Message: ORA-00942: table or view does not exist
+   SQL Text      :  SELECT SESSION_ID FROM ELMS_USER.ELMS_USERS WHERE ID = 9
+-------------------------------------------------
+
+Log Entry : 9:38:27 PM Saturday, December 24, 2022
+  
+   UserName =  SuperAdmin
+   FormName =  GlobalFunctions
+   ProcedureName =  GenerateDataTable : FListOfAutomaticAdd/LoadListDataGridView
+  
+   ShowMessage: DataTable yaradılmadı.
+   Exception Message: ORA-00904: "STATUS_ID": invalid identifier
+   SQL Text      :  SELECT 1 SS,ID,SURNAME||' '||NAME||' '||PATRONYMIC||' '||DECODE(SEX_ID,1,'oğlu','qızı') FULL_NAME FROM ELMS_USER.SYSTEM_USER WHERE STATUS_ID = 1 AND SESSION_ID = 0 AND USED_USER_ID = -1 AND GROUP_ID <> 1
+-------------------------------------------------
+
+Log Entry : 9:38:30 PM Saturday, December 24, 2022
+  
+   UserName =  SuperAdmin
+   FormName =  FListOfAutomaticAdd
+   ProcedureName =  ELMS.Forms.FListOfAutomaticAdd/LoadListDataGridView
+  
+   ShowMessage: Verilmiş hüquqlar cədvələ yüklənmədi.
+   Exception Message: Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+   SQL Text      :  SELECT 1 SS,ID,SURNAME||' '||NAME||' '||PATRONYMIC||' '||DECODE(SEX_ID,1,'oğlu','qızı') FULL_NAME FROM ELMS_USER.SYSTEM_USER WHERE STATUS_ID = 1 AND SESSION_ID = 0 AND USED_USER_ID = -1 AND GROUP_ID <> 1
+-------------------------------------------------
+
+Log Entry : 9:38:35 PM Saturday, December 24, 2022
+  
+   UserName =  SuperAdmin
+   FormName =  GlobalFunctions
+   ProcedureName =  GenerateDataTable : FListOfAutomaticAdd/LoadListDataGridView
+  
+   ShowMessage: DataTable yaradılmadı.
+   Exception Message: ORA-00904: "STATUS_ID": invalid identifier
+   SQL Text      :  SELECT 1 SS,ID,SURNAME||' '||NAME||' '||PATRONYMIC||' '||DECODE(SEX_ID,1,'oğlu','qızı') FULL_NAME FROM ELMS_USER.SYSTEM_USER WHERE STATUS_ID = 1 AND SESSION_ID = 0 AND USED_USER_ID = -1 AND GROUP_ID <> 1
+-------------------------------------------------
+
+Log Entry : 9:38:37 PM Saturday, December 24, 2022
+  
+   UserName =  SuperAdmin
+   FormName =  FListOfAutomaticAdd
+   ProcedureName =  ELMS.Forms.FListOfAutomaticAdd/LoadListDataGridView
+  
+   ShowMessage: Verilmiş hüquqlar cədvələ yüklənmədi.
+   Exception Message: Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+   SQL Text      :  SELECT 1 SS,ID,SURNAME||' '||NAME||' '||PATRONYMIC||' '||DECODE(SEX_ID,1,'oğlu','qızı') FULL_NAME FROM ELMS_USER.SYSTEM_USER WHERE STATUS_ID = 1 AND SESSION_ID = 0 AND USED_USER_ID = -1 AND GROUP_ID <> 1
+-------------------------------------------------
+
+Log Entry : 9:55:16 PM Saturday, December 24, 2022
+  
+   UserName =  SuperAdmin
+   FormName =  GlobalFunctions
+   ProcedureName =  RunInOneTransaction
+  
+   ShowMessage: İstifadəçinin məlumatları bazaya daxil edilmədi.
+   Exception Message: ORA-00001: unique constraint (ELMS_USER.SYS_C008576) violated
+-------------------------------------------------
+
+Log Entry : 10:09:52 PM Saturday, December 24, 2022
+  
+   UserName =  SuperAdmin
+   FormName =  GlobalProcedures
+   ProcedureName =  ExecuteProcedureWithParametr/MCMS.PROC_USER_DELETE
+  
+   ShowMessage: Seçilmiş istifadəçi bazadan silinmədi.
+   Exception Message: ORA-06550: line 1, column 7:
+PLS-00201: identifier 'MCMS.PROC_USER_DELETE' must be declared
+ORA-06550: line 1, column 7:
+PL/SQL: Statement ignored
+   SQL Text      :  MCMS.PROC_USER_DELETE
+-------------------------------------------------
+
+Log Entry : 10:09:58 PM Saturday, December 24, 2022
+  
+   UserName =  SuperAdmin
+   FormName =  GlobalProcedures
+   ProcedureName =  ExecuteProcedureWithParametr/MCMS.PROC_USER_DELETE
+  
+   ShowMessage: Seçilmiş istifadəçi bazadan silinmədi.
+   Exception Message: ORA-06550: line 1, column 7:
+PLS-00201: identifier 'MCMS.PROC_USER_DELETE' must be declared
+ORA-06550: line 1, column 7:
+PL/SQL: Statement ignored
+   SQL Text      :  MCMS.PROC_USER_DELETE
+-------------------------------------------------
