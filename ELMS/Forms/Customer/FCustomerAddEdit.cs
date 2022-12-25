@@ -54,7 +54,7 @@ namespace ELMS.Forms.Customer
 
         private void LoadDocument()
         {
-            DocumentGridControl.DataSource = DocumentTypeDAL.SelectDocumentTypeByID(null).ToList<DocumentType>();
+            DocumentGridControl.DataSource = CustomerCardDAL.SelectViewData(null).ToList<CustomerCard>();
         }
 
         private void LoadFDocumentAddEdit(TransactionTypeEnum transactionType, int? id)
@@ -164,7 +164,8 @@ namespace ELMS.Forms.Customer
             else
                 this.Text = "Müştərinin əlavə edilməsi";
             InsertTemps();
-            //LoadDocument();
+            LoadDocument();
+            LoadPhone();
 
         }
 

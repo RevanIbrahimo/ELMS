@@ -13,12 +13,13 @@ namespace ELMS.Class.DataAccess
         public static DataTable SelectViewData(int? ID)
         {
             string s = $@"SELECT CC.ID,
-                                   DG.NAME DOCUMENT_GROUP_NAME,
-                                   DT.NAME DOCUMENT_TYPE_NAME,
-                                   CC.CARD_NUMBER CARD,
+                                   DG.NAME DOCUMENT_GROUP,
+                                   DT.NAME DOCUMENT_TYPE,
+                                   CC.CARD_NUMBER,
                                    CC.ISSUE_DATE,
-                                   CI.NAME CARD_ISSUE_NAME,
-                                   CC.RELIABLE_DATE
+                                   CI.NAME ISSUE_NAME,
+                                   CC.RELIABLE_DATE,
+                                   CC.PINCODE
                               FROM ELMS_USER_TEMP.CUSTOMER_CARDS_TEMP CC,
                                    ELMS_USER.DOCUMENT_TYPE DT,
                                    ELMS_USER.DOCUMENT_GROUP DG,

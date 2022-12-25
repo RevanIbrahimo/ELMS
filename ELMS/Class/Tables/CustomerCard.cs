@@ -10,10 +10,11 @@ namespace ELMS.Class.Tables
     {
         public int ID { get; set; }
         public int CUSTOMER_ID { get; set; }
-        public string DOCUMENT_GROUP_NAME { get; set; }
-        public string DOCUMENT_TYPE_NAME { get; set; }
-        public string CARD { get; set; }
-        public string CARD_ISSUE_NAME { get; set; }
+        public string DOCUMENT_GROUP { get; set; }
+        public string DOCUMENT_TYPE { get; set; }
+        public string CARD_NUMBER { get; set; }
+        public string PINCODE { get; set; }
+        public string ISSUE_NAME { get; set; }
         public DateTime RELIABLE_DATE { get; set; }
         public DateTime ISSUE_DATE { get; set; }
         public int USED_USER_ID { get; set; }
