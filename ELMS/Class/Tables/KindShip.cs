@@ -8,7 +8,6 @@ namespace ELMS.Class.Tables
 {
     class KindShip
     {
-
         public int ID { get; set; }
         public string NAME { get; set; }
         public string NOTE { get; set; }

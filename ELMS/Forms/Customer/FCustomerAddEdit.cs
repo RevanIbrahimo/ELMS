@@ -133,6 +133,74 @@ namespace ELMS.Forms.Customer
             UpdatePhone();
         }
 
+        private void FCustomerAddEdit_Load(object sender, EventArgs e)
+        {
+            GlobalProcedures.FillLookUpEdit(SexLookUp, SexDAL.SelectSexByID(null).Tables[0]);
+
+            GlobalProcedures.FillLookUpEdit(CountryLookUp, CountryDAL.SelectCountryByID(null).Tables[0]);
+
+            if (TransactionType == TransactionTypeEnum.Update)
+            {
+                this.Text = "Müştərinin düzəliş edilməsi";
+                GlobalProcedures.Lock_or_UnLock_UserID("ELMS_USER.CUSTOMER", GlobalVariables.V_UserID, "WHERE ID = " + CustomerID + " AND USED_USER_ID = -1");
+                LoadDetails();
+                Used = (UsedUserID > 0);
+
+                if (Used)
+                {
+                    if (GlobalVariables.V_UserID != UsedUserID)
+                    {
+                        string used_user_name = GlobalVariables.lstUsers.Find(u => u.ID == UsedUserID).FULL_NAME;
+                        GlobalProcedures.ShowWarningMessage("Seçilmiş müştəriyə hal-hazırda " + used_user_name + " tərəfindən düzəliş edilir. Onun məlumatları dəyişdirilə bilməz. Siz yalnız məlumatlara baxa bilərsiniz.");
+                        CurrentStatus = true;
+                    }
+                    else
+                        CurrentStatus = false;
+                }
+                else
+                    CurrentStatus = false;
+                ComponentEnabled(CurrentStatus);
+            }
+            else
+                this.Text = "Müştərinin əlavə edilməsi";
+            InsertTemps();
+            //LoadDocument();
+
+        }
+
+        private void LoadDetails()
+        {
+            DataTable dt =CustomerDAL.SelectViewData(CustomerID);
+
+            if (dt.Rows.Count > 0)
+            {
+
+                NameText.EditValue = dt.Rows[0]["FULL_NAME"];
+                BirthPlaceText.EditValue = dt.Rows[0]["BIRTH_PLACE"];
+                RegisteredAddressText.EditValue = dt.Rows[0]["REGISTERED_ADDRESS"];
+                ActualAddressText.EditValue = dt.Rows[0]["ADDRESS"];
+                NoteText.EditValue = dt.Rows[0]["NOTE"];
+                BirthdayDate.EditValue = dt.Rows[0]["BIRTHDAY"];
+                if (BirthdayDate.DateTime == DateTime.MinValue)
+                    BirthdayDate.EditValue = null;
+                GlobalProcedures.LookUpEditValue(SexLookUp, dt.Rows[0]["SEX_NAME"].ToString());
+                GlobalProcedures.LookUpEditValue(CountryLookUp, dt.Rows[0]["COUNTRY_NAME"].ToString());
+                UsedUserID = Convert.ToInt16(dt.Rows[0]["USED_USER_ID"]);
+            }
+        }
+        private void InsertTemps()
+        {
+            if (TransactionType == TransactionTypeEnum.Insert)
+                return;
+            GlobalProcedures.ExecuteProcedureWithUser("ELMS_USER_TEMP.PROC_INSERT_CUSTOMER_TEMP", "P_CUSTOMER_ID", CustomerID, "Müştərinin məlumatları temp cədvələ daxil edilmədi.");
+        }
+        private void ComponentEnabled(bool status)
+        {
+            NameText.Enabled =
+                BirthPlaceText.Enabled =
+                BOK.Visible = !status;
+        }
+
         private void PhoneGridView_DoubleClick(object sender, EventArgs e)
         {
             if (EditPhoneBarButton.Enabled)

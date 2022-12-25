@@ -28,19 +28,19 @@ namespace ELMS.UserControls
 
         private void CustomerUserControl_Load(object sender, EventArgs e)
         {
-            
+            LoadCustomerData();
         }
 
         private void CustomerUserControl_Enter(object sender, EventArgs e)
         {
-            LoadCustomerData();
+            //LoadCustomerData();
         }
 
         private void LoadCustomerData()
         {
-            //CustomerGridControl.DataSource = CustomerDAL.SelectViewData(null);
+            CustomerGridControl.DataSource = CustomerDAL.SelectViewData(null);
 
-            EnabledButton();
+            //EnabledButton();
         }
 
         void EnabledButton()
@@ -69,7 +69,7 @@ namespace ELMS.UserControls
         {
             topindex = CustomerGridView.TopRowIndex;
             old_row_id = CustomerGridView.FocusedRowHandle;
-            Forms.Customer.FCustomerAddEdit fc = new Forms.Customer.FCustomerAddEdit()
+            FCustomerAddEdit fc = new FCustomerAddEdit()
             {
                 TransactionType = transaction,
                 CustomerID = id
@@ -175,6 +175,12 @@ namespace ELMS.UserControls
             LoadFScheduleAddEdit();
         }
 
+        private void CustomerGridView_FocusedRowObjectChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowObjectChangedEventArgs e)
+        {
+            customerID = Convert.ToInt32(GlobalFunctions.GetGridRowCellValue((sender as GridView), "ID"));
+            customerName = GlobalFunctions.GetGridRowCellValue((sender as GridView), "FULL_NAME").ToString();
+        }
+
         private void HistroryBarButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             //Forms.Customers.FCustomerHistory fCustomerHistory = new Forms.Customers.FCustomerHistory
@@ -184,11 +190,7 @@ namespace ELMS.UserControls
             //fCustomerHistory.ShowDialog();
         }
 
-        private void CustomerGridView_FocusedRowObjectChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowObjectChangedEventArgs e)
-        {
-            customerID = Convert.ToInt32(GlobalFunctions.GetGridRowCellValue((sender as GridView), "ID"));
-            customerName = GlobalFunctions.GetGridRowCellValue((sender as GridView), "NAME").ToString();
-        }
+        
 
         private void NewBarButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {

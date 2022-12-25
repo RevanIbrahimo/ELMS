@@ -56,12 +56,11 @@
             this.CustomerGridView = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.Customer_SS = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Customer_ID = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Customer_BranchName = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Customer_RegistrationCode = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Customer_RegisteredAddress = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Customer_Country = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Customer_FullName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Customer_SexName = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Customer_Age = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Customer_Phone = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Customer_BirthPlace = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Customer_Address = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Customer_Note = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Customer_UsedUserID = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -182,7 +181,7 @@
             // 
             this.HistroryBarButton.Caption = "Müalicə tarixçəsi";
             this.HistroryBarButton.Id = 13;
-            this.HistroryBarButton.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.Image")));
+            this.HistroryBarButton.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("HistroryBarButton.ImageOptions.Image")));
             this.HistroryBarButton.ItemShortcut = new DevExpress.XtraBars.BarShortcut((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.H));
             this.HistroryBarButton.Name = "HistroryBarButton";
             this.HistroryBarButton.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
@@ -343,12 +342,11 @@
             this.CustomerGridView.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.Customer_SS,
             this.Customer_ID,
-            this.Customer_BranchName,
-            this.Customer_RegistrationCode,
+            this.Customer_RegisteredAddress,
+            this.Customer_Country,
             this.Customer_FullName,
             this.Customer_SexName,
-            this.Customer_Age,
-            this.Customer_Phone,
+            this.Customer_BirthPlace,
             this.Customer_Address,
             this.Customer_Note,
             this.Customer_UsedUserID});
@@ -398,32 +396,32 @@
             this.Customer_ID.Name = "Customer_ID";
             this.Customer_ID.OptionsColumn.AllowShowHide = false;
             // 
-            // Customer_BranchName
+            // Customer_RegisteredAddress
             // 
-            this.Customer_BranchName.Caption = "Filial";
-            this.Customer_BranchName.FieldName = "BRANCH_NAME";
-            this.Customer_BranchName.Name = "Customer_BranchName";
-            this.Customer_BranchName.OptionsColumn.FixedWidth = true;
-            this.Customer_BranchName.Visible = true;
-            this.Customer_BranchName.VisibleIndex = 1;
-            this.Customer_BranchName.Width = 150;
+            this.Customer_RegisteredAddress.Caption = "Qeydiyyatdadır";
+            this.Customer_RegisteredAddress.FieldName = "REGISTERED_ADDRESS";
+            this.Customer_RegisteredAddress.Name = "Customer_RegisteredAddress";
+            this.Customer_RegisteredAddress.OptionsColumn.FixedWidth = true;
+            this.Customer_RegisteredAddress.Visible = true;
+            this.Customer_RegisteredAddress.VisibleIndex = 1;
+            this.Customer_RegisteredAddress.Width = 150;
             // 
-            // Customer_RegistrationCode
+            // Customer_Country
             // 
-            this.Customer_RegistrationCode.AppearanceCell.Options.UseTextOptions = true;
-            this.Customer_RegistrationCode.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.Customer_RegistrationCode.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.Customer_RegistrationCode.Caption = "Qeydiyyat №";
-            this.Customer_RegistrationCode.FieldName = "REGISTRATION_CODE";
-            this.Customer_RegistrationCode.Name = "Customer_RegistrationCode";
-            this.Customer_RegistrationCode.OptionsColumn.FixedWidth = true;
-            this.Customer_RegistrationCode.Visible = true;
-            this.Customer_RegistrationCode.VisibleIndex = 2;
+            this.Customer_Country.AppearanceCell.Options.UseTextOptions = true;
+            this.Customer_Country.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.Customer_Country.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.Customer_Country.Caption = "Ölkə";
+            this.Customer_Country.FieldName = "COUNTRY_NAME";
+            this.Customer_Country.Name = "Customer_Country";
+            this.Customer_Country.OptionsColumn.FixedWidth = true;
+            this.Customer_Country.Visible = true;
+            this.Customer_Country.VisibleIndex = 2;
             // 
             // Customer_FullName
             // 
             this.Customer_FullName.Caption = "Tam adı";
-            this.Customer_FullName.FieldName = "NAME";
+            this.Customer_FullName.FieldName = "FULL_NAME";
             this.Customer_FullName.Name = "Customer_FullName";
             this.Customer_FullName.OptionsColumn.FixedWidth = true;
             this.Customer_FullName.Visible = true;
@@ -443,27 +441,18 @@
             this.Customer_SexName.VisibleIndex = 4;
             this.Customer_SexName.Width = 50;
             // 
-            // Customer_Age
+            // Customer_BirthPlace
             // 
-            this.Customer_Age.AppearanceCell.Options.UseTextOptions = true;
-            this.Customer_Age.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.Customer_Age.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.Customer_Age.Caption = "Yaşı";
-            this.Customer_Age.FieldName = "AGE";
-            this.Customer_Age.Name = "Customer_Age";
-            this.Customer_Age.OptionsColumn.FixedWidth = true;
-            this.Customer_Age.Visible = true;
-            this.Customer_Age.VisibleIndex = 5;
-            this.Customer_Age.Width = 50;
-            // 
-            // Customer_Phone
-            // 
-            this.Customer_Phone.Caption = "Telefon nömrələri";
-            this.Customer_Phone.FieldName = "PHONE";
-            this.Customer_Phone.Name = "Customer_Phone";
-            this.Customer_Phone.Visible = true;
-            this.Customer_Phone.VisibleIndex = 6;
-            this.Customer_Phone.Width = 388;
+            this.Customer_BirthPlace.AppearanceCell.Options.UseTextOptions = true;
+            this.Customer_BirthPlace.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.Customer_BirthPlace.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.Customer_BirthPlace.Caption = "Doğulduğu yer";
+            this.Customer_BirthPlace.FieldName = "BIRTH_PLACE";
+            this.Customer_BirthPlace.Name = "Customer_BirthPlace";
+            this.Customer_BirthPlace.OptionsColumn.FixedWidth = true;
+            this.Customer_BirthPlace.Visible = true;
+            this.Customer_BirthPlace.VisibleIndex = 5;
+            this.Customer_BirthPlace.Width = 50;
             // 
             // Customer_Address
             // 
@@ -471,15 +460,16 @@
             this.Customer_Address.FieldName = "ADDRESS";
             this.Customer_Address.Name = "Customer_Address";
             this.Customer_Address.Visible = true;
-            this.Customer_Address.VisibleIndex = 7;
+            this.Customer_Address.VisibleIndex = 6;
             this.Customer_Address.Width = 388;
             // 
             // Customer_Note
             // 
             this.Customer_Note.Caption = "Qeyd";
+            this.Customer_Note.FieldName = "NOTE";
             this.Customer_Note.Name = "Customer_Note";
             this.Customer_Note.Visible = true;
-            this.Customer_Note.VisibleIndex = 8;
+            this.Customer_Note.VisibleIndex = 7;
             this.Customer_Note.Width = 213;
             // 
             // Customer_UsedUserID
@@ -509,7 +499,7 @@
             this.CustomerPopupMenu.Manager = this.BarManager;
             this.CustomerPopupMenu.Name = "CustomerPopupMenu";
             // 
-            // CustomersControl
+            // CustomerUserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -519,7 +509,7 @@
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Name = "CustomersControl";
+            this.Name = "CustomerUserControl";
             this.Size = new System.Drawing.Size(1430, 636);
             this.Load += new System.EventHandler(this.CustomerUserControl_Load);
             this.Enter += new System.EventHandler(this.CustomerUserControl_Enter);
@@ -560,8 +550,7 @@
         private DevExpress.XtraGrid.Views.Grid.GridView CustomerGridView;
         private DevExpress.XtraGrid.Columns.GridColumn Customer_SS;
         private DevExpress.XtraGrid.Columns.GridColumn Customer_FullName;
-        private DevExpress.XtraGrid.Columns.GridColumn Customer_Age;
-        private DevExpress.XtraGrid.Columns.GridColumn Customer_Phone;
+        private DevExpress.XtraGrid.Columns.GridColumn Customer_BirthPlace;
         private DevExpress.XtraGrid.Columns.GridColumn Customer_Address;
         private DevExpress.XtraGrid.Columns.GridColumn Customer_Note;
         private DevExpress.XtraEditors.Repository.RepositoryItemPictureEdit RepositoryItemPictureEdit;
@@ -570,7 +559,7 @@
         private DevExpress.XtraBars.BarButtonItem RtfBarButton;
         private DevExpress.XtraBars.PopupMenu CustomerPopupMenu;
         private DevExpress.XtraGrid.Columns.GridColumn Customer_ID;
-        private DevExpress.XtraGrid.Columns.GridColumn Customer_BranchName;
-        private DevExpress.XtraGrid.Columns.GridColumn Customer_RegistrationCode;
+        private DevExpress.XtraGrid.Columns.GridColumn Customer_RegisteredAddress;
+        private DevExpress.XtraGrid.Columns.GridColumn Customer_Country;
     }
 }

@@ -33,6 +33,8 @@
             DevExpress.Utils.ToolTipTitleItem toolTipTitleItem4 = new DevExpress.Utils.ToolTipTitleItem();
             DevExpress.Utils.ToolTipItem toolTipItem3 = new DevExpress.Utils.ToolTipItem();
             DevExpress.Utils.ToolTipTitleItem toolTipTitleItem5 = new DevExpress.Utils.ToolTipTitleItem();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions3 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             DevExpress.Utils.SuperToolTip superToolTip1 = new DevExpress.Utils.SuperToolTip();
             DevExpress.Utils.ToolTipTitleItem toolTipTitleItem1 = new DevExpress.Utils.ToolTipTitleItem();
             DevExpress.Utils.ToolTipItem toolTipItem1 = new DevExpress.Utils.ToolTipItem();
@@ -44,7 +46,7 @@
             this.PersonalDetailsGroupBox = new DevExpress.XtraEditors.GroupControl();
             this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
-            this.textEdit2 = new DevExpress.XtraEditors.TextEdit();
+            this.NoteText = new DevExpress.XtraEditors.TextEdit();
             this.ActualAddressText = new DevExpress.XtraEditors.TextEdit();
             this.NoteLabel = new DevExpress.XtraEditors.LabelControl();
             this.Address2Label = new DevExpress.XtraEditors.LabelControl();
@@ -56,7 +58,7 @@
             this.separatorControl1 = new DevExpress.XtraEditors.SeparatorControl();
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
-            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
+            this.BirthPlaceText = new DevExpress.XtraEditors.TextEdit();
             this.CountryLookUp = new DevExpress.XtraEditors.LookUpEdit();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
@@ -125,12 +127,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PersonalDetailsGroupBox)).BeginInit();
             this.PersonalDetailsGroupBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NoteText.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ActualAddressText.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.RegisteredAddressText.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CustomerPictureBox.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.separatorControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BirthPlaceText.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CountryLookUp.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BirthdayDate.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BirthdayDate.Properties)).BeginInit();
@@ -161,7 +163,7 @@
             this.PersonalDetailsGroupBox.AppearanceCaption.Options.UseForeColor = true;
             this.PersonalDetailsGroupBox.Controls.Add(this.labelControl11);
             this.PersonalDetailsGroupBox.Controls.Add(this.labelControl10);
-            this.PersonalDetailsGroupBox.Controls.Add(this.textEdit2);
+            this.PersonalDetailsGroupBox.Controls.Add(this.NoteText);
             this.PersonalDetailsGroupBox.Controls.Add(this.ActualAddressText);
             this.PersonalDetailsGroupBox.Controls.Add(this.NoteLabel);
             this.PersonalDetailsGroupBox.Controls.Add(this.Address2Label);
@@ -173,7 +175,7 @@
             this.PersonalDetailsGroupBox.Controls.Add(this.separatorControl1);
             this.PersonalDetailsGroupBox.Controls.Add(this.labelControl8);
             this.PersonalDetailsGroupBox.Controls.Add(this.labelControl7);
-            this.PersonalDetailsGroupBox.Controls.Add(this.textEdit1);
+            this.PersonalDetailsGroupBox.Controls.Add(this.BirthPlaceText);
             this.PersonalDetailsGroupBox.Controls.Add(this.CountryLookUp);
             this.PersonalDetailsGroupBox.Controls.Add(this.labelControl6);
             this.PersonalDetailsGroupBox.Controls.Add(this.labelControl5);
@@ -213,12 +215,12 @@
             this.labelControl10.TabIndex = 27;
             this.labelControl10.Text = "*";
             // 
-            // textEdit2
+            // NoteText
             // 
-            this.textEdit2.Location = new System.Drawing.Point(162, 225);
-            this.textEdit2.Name = "textEdit2";
-            this.textEdit2.Size = new System.Drawing.Size(496, 20);
-            this.textEdit2.TabIndex = 26;
+            this.NoteText.Location = new System.Drawing.Point(162, 225);
+            this.NoteText.Name = "NoteText";
+            this.NoteText.Size = new System.Drawing.Size(496, 20);
+            this.NoteText.TabIndex = 26;
             // 
             // ActualAddressText
             // 
@@ -323,19 +325,30 @@
             this.labelControl7.TabIndex = 15;
             this.labelControl7.Text = "Ölkə";
             // 
-            // textEdit1
+            // BirthPlaceText
             // 
-            this.textEdit1.Location = new System.Drawing.Point(162, 115);
-            this.textEdit1.Name = "textEdit1";
-            this.textEdit1.Size = new System.Drawing.Size(496, 20);
-            this.textEdit1.TabIndex = 14;
+            this.BirthPlaceText.Location = new System.Drawing.Point(162, 115);
+            this.BirthPlaceText.Name = "BirthPlaceText";
+            this.BirthPlaceText.Size = new System.Drawing.Size(496, 20);
+            this.BirthPlaceText.TabIndex = 14;
             // 
             // CountryLookUp
             // 
+            this.CountryLookUp.Cursor = System.Windows.Forms.Cursors.Hand;
             this.CountryLookUp.Location = new System.Drawing.Point(162, 146);
             this.CountryLookUp.Name = "CountryLookUp";
             this.CountryLookUp.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo, "", -1, true, true, false, editorButtonImageOptions3, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), "Siyanını aç")});
+            this.CountryLookUp.Properties.ButtonsStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.CountryLookUp.Properties.DisplayMember = "NAME";
+            this.CountryLookUp.Properties.DropDownRows = 15;
+            this.CountryLookUp.Properties.NullValuePrompt = "Ölkəni seçin";
+            this.CountryLookUp.Properties.NullValuePromptShowForEmptyValue = true;
+            this.CountryLookUp.Properties.PopupFilterMode = DevExpress.XtraEditors.PopupFilterMode.Contains;
+            this.CountryLookUp.Properties.ShowHeader = false;
+            this.CountryLookUp.Properties.ThrowExceptionOnInvalidLookUpEditValueType = true;
+            this.CountryLookUp.Properties.ValidateOnEnterKey = true;
+            this.CountryLookUp.Properties.ValueMember = "ID";
             this.CountryLookUp.Size = new System.Drawing.Size(167, 20);
             this.CountryLookUp.TabIndex = 13;
             // 
@@ -405,7 +418,15 @@
             this.SexLookUp.Location = new System.Drawing.Point(162, 59);
             this.SexLookUp.Name = "SexLookUp";
             this.SexLookUp.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), "Siyahını aç")});
+            this.SexLookUp.Properties.DisplayMember = "NAME";
+            this.SexLookUp.Properties.NullValuePrompt = "Seçin";
+            this.SexLookUp.Properties.NullValuePromptShowForEmptyValue = true;
+            this.SexLookUp.Properties.PopupFilterMode = DevExpress.XtraEditors.PopupFilterMode.Contains;
+            this.SexLookUp.Properties.ShowHeader = false;
+            this.SexLookUp.Properties.ThrowExceptionOnInvalidLookUpEditValueType = true;
+            this.SexLookUp.Properties.ValidateOnEnterKey = true;
+            this.SexLookUp.Properties.ValueMember = "ID";
             this.SexLookUp.Size = new System.Drawing.Size(91, 20);
             this.SexLookUp.TabIndex = 6;
             // 
@@ -1103,16 +1124,17 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Fiziki şəxsin əlavə/düzəliş edilməsi";
+            this.Load += new System.EventHandler(this.FCustomerAddEdit_Load);
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PersonalDetailsGroupBox)).EndInit();
             this.PersonalDetailsGroupBox.ResumeLayout(false);
             this.PersonalDetailsGroupBox.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NoteText.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ActualAddressText.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.RegisteredAddressText.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CustomerPictureBox.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.separatorControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BirthPlaceText.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CountryLookUp.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BirthdayDate.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BirthdayDate.Properties)).EndInit();
@@ -1150,7 +1172,7 @@
         private DevExpress.XtraEditors.SeparatorControl separatorControl1;
         private DevExpress.XtraEditors.LabelControl labelControl8;
         private DevExpress.XtraEditors.LabelControl labelControl7;
-        private DevExpress.XtraEditors.TextEdit textEdit1;
+        private DevExpress.XtraEditors.TextEdit BirthPlaceText;
         private DevExpress.XtraEditors.LookUpEdit CountryLookUp;
         private DevExpress.XtraEditors.LabelControl labelControl6;
         private DevExpress.XtraEditors.LabelControl labelControl5;
@@ -1168,7 +1190,7 @@
         private DevExpress.XtraEditors.LabelControl labelControl9;
         private DevExpress.XtraEditors.LabelControl labelControl11;
         private DevExpress.XtraEditors.LabelControl labelControl10;
-        private DevExpress.XtraEditors.TextEdit textEdit2;
+        private DevExpress.XtraEditors.TextEdit NoteText;
         private DevExpress.XtraEditors.TextEdit ActualAddressText;
         private DevExpress.XtraEditors.LabelControl NoteLabel;
         private DevExpress.XtraEditors.LabelControl Address2Label;

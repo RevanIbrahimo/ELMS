@@ -1,0 +1,82 @@
+
+Log Entry : 3:18:58 AM Sunday, December 25, 2022
+  
+   UserName =  SuperAdmin
+   FormName =  GlobalProcedures
+   ProcedureName =  ExecuteProcedureWithTwoParametrAndUser/ELMS_USER_TEMP.PRO_INSERT_USER_TEMP
+  
+   ShowMessage: İstifadəçinin məlumatları temp cədvələ daxil edilmədi.
+   Exception Message: ORA-06550: line 1, column 7:
+PLS-00201: identifier 'ELMS_USER_TEMP.PRO_INSERT_USER_TEMP' must be declared
+ORA-06550: line 1, column 7:
+PL/SQL: Statement ignored
+   SQL Text      :  ELMS_USER_TEMP.PRO_INSERT_USER_TEMP
+-------------------------------------------------
+
+Log Entry : 7:28:36 PM Sunday, December 25, 2022
+  
+   UserName =  SuperAdmin
+   FormName =  CustomerDAL
+   ProcedureName =  SelectCustomerByID
+  
+   ShowMessage: Müştərinin məlumatları açılmadı.
+   Exception Message: ORA-00933: SQL command not properly ended
+   SQL Text      :  SELECT CU.ID,
+                               CU.FULL_NAME,                               
+                               B.NAME BRANCH_NAME,
+                               C.NAME COUNTRY_NAME,
+                               CU.BIRTH_PLACE,
+                               CU.REGISTERED_ADDRESS,                            
+                               CU.BIRTHDAY,
+                               SE.NAME SEX_NAME,                               
+                               CU.ADDRESS,                               
+                               CU.CLOSED_DATE,
+                               CU.NOTE,
+                               CU.INSERT_DATE,
+                               CI.IMAGE,
+                               CU.USED_USER_ID
+                          FROM ELMS_USER.CUSTOMER CU,
+                               ELMS_USER.SEX SE,
+                               ELMS_USER.COUNTRY C,
+                               ELMS_USER.CUSTOMER_IMAGE CI,
+                               ELMS_USER.BRANCH B
+                               WHERE     CU.COUNTRY_ID = C.ID
+                               AND CU.SEX_ID = SE.ID
+                               AND CU.ID = CI.CUSTOMER_ID
+                               AND CU.BRANCH_ID = B.ID 
+                               WHERE CU.ID = 1
+-------------------------------------------------
+
+Log Entry : 7:28:43 PM Sunday, December 25, 2022
+  
+   UserName =  SuperAdmin
+   FormName =  CustomerDAL
+   ProcedureName =  SelectCustomerByID
+  
+   ShowMessage: Müştərinin məlumatları açılmadı.
+   Exception Message: ORA-00933: SQL command not properly ended
+   SQL Text      :  SELECT CU.ID,
+                               CU.FULL_NAME,                               
+                               B.NAME BRANCH_NAME,
+                               C.NAME COUNTRY_NAME,
+                               CU.BIRTH_PLACE,
+                               CU.REGISTERED_ADDRESS,                            
+                               CU.BIRTHDAY,
+                               SE.NAME SEX_NAME,                               
+                               CU.ADDRESS,                               
+                               CU.CLOSED_DATE,
+                               CU.NOTE,
+                               CU.INSERT_DATE,
+                               CI.IMAGE,
+                               CU.USED_USER_ID
+                          FROM ELMS_USER.CUSTOMER CU,
+                               ELMS_USER.SEX SE,
+                               ELMS_USER.COUNTRY C,
+                               ELMS_USER.CUSTOMER_IMAGE CI,
+                               ELMS_USER.BRANCH B
+                               WHERE     CU.COUNTRY_ID = C.ID
+                               AND CU.SEX_ID = SE.ID
+                               AND CU.ID = CI.CUSTOMER_ID
+                               AND CU.BRANCH_ID = B.ID 
+                               WHERE CU.ID = 1
+-------------------------------------------------

@@ -553,6 +553,12 @@ namespace ELMS.Forms
 
         private void LoadPhoneDataGridView()
         {
+            if (!UserID.HasValue)
+                UserID = 0;
+
+            PhoneGridControl.DataSource = PhoneDAL.SelectPhoneByOwnerID(UserID.Value, PhoneOwnerEnum.User);
+
+            EditPhoneBarButton.Enabled = DeletePhoneBarButton.Enabled = PhoneGridView.RowCount > 0;
             //string s = $@"SELECT P.ID,
             //                     PD.NAME DESCRIPTION_NAME,
             //                     P.PHONE_NUMBER PHONE_NUMBER,
@@ -595,12 +601,7 @@ namespace ELMS.Forms
             //    GlobalProcedures.LogWrite("Telefon nömrələri cədvələ yüklənmədi.", s, GlobalVariables.V_UserName, this.Name, this.GetType().FullName + "." + System.Reflection.MethodBase.GetCurrentMethod().Name, exx);
             //}
 
-            if (!UserID.HasValue)
-                UserID = 0;
 
-            PhoneGridControl.DataSource = PhoneDAL.SelectPhoneByOwnerID(UserID.Value, PhoneOwnerEnum.User);
-
-            EditPhoneBarButton.Enabled = DeletePhoneBarButton.Enabled = PhoneGridView.RowCount > 0;
         }
 
         private void LoadMailDataGridView()
@@ -608,7 +609,7 @@ namespace ELMS.Forms
             if (!UserID.HasValue)
                 UserID = 0;
 
-            MailGridControl.DataSource = MailDAL.SelectMailByOwnerID(UserID.Value, MailOwnerEnum.User);
+            MailGridControl.DataSource = MailDAL.SelectMailByOwnerID(UserID, MailOwnerEnum.User).ToList<Mail>();
 
             EditMailBarButton.Enabled = DeleteMailBarButton.Enabled = MailGridView.RowCount > 0;
 
@@ -696,7 +697,13 @@ namespace ELMS.Forms
         {
             if (TransactionType == TransactionTypeEnum.Insert)
                 return;
-            GlobalProcedures.ExecuteProcedureWithTwoParametrAndUser("ELMS_USER_TEMP.PROC_INSERT_USER_TEMP", "P_USER_ID", UserID.Value, "P_OWNER_TYPE", (int)PhoneOwnerEnum.User, "İstifadəçinin məlumatları temp cədvələ daxil edilmədi.");
+            //GlobalProcedures.ExecuteProcedureWithTwoParametrAndUser("ELMS_USER_TEMP.PROC_INSERT_USER_TEMP", "P_USER_ID", UserID, "P_OWNER_TYPE", (int)PhoneOwnerEnum.User, "İstifadəçinin məlumatları temp cədvələ daxil edilmədi.");
+            GlobalFunctions.RunInOneTransaction<int>(tran =>
+            {
+                GlobalProcedures.ExecuteProcedureWithTwoParametrAndUser(tran, "ELMS_USER_TEMP.PROC_INSERT_PHONE_TEMP", "P_OWNER_ID", UserID.Value, "P_OWNER_TYPE", (int)PhoneOwnerEnum.Customer);
+                GlobalProcedures.ExecuteProcedureWithTwoParametrAndUser(tran, "ELMS_USER_TEMP.PROC_INSERT_USER_TEMP", "P_OWNER_ID", UserID.Value, "P_OWNER_TYPE", (int)MailOwnerEnum.Customer);
+                return 1;
+            }, "İstifadəçinin məlumatları temp cədvələ daxil edilmədi.");
 
         }
 
@@ -727,7 +734,7 @@ namespace ELMS.Forms
                     //InsertUserGroupPermission(tran);
                     //UpdatePhoneSendSms(tran);
                     //UpdateMailSend(tran);
-                    //InsertUserDetails(tran);
+                    InsertUserDetails(tran);
                     return 1;
                 }, TransactionType == TransactionTypeEnum.Insert ? "İstifadəçinin məlumatları bazaya daxil edilmədi." : "İstifadəçinin məlumatları bazada dəyişdirilmədi.");
 
