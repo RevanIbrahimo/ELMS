@@ -6,13 +6,11 @@ using System.Threading.Tasks;
 
 namespace ELMS.Class.Tables
 {
-    class Customer
+    public class Customer
     {
         public int ID { get; set; }
         public int BRANCH_ID { get; set; }
-        public string BRANCH_NAME { get; set; }
         public int COUNTRY_ID { get; set; }
-        public string COUNTRY_NAME { get; set; }
         public string FULL_NAME { get; set; }
         public string REGISTERED_ADDRESS { get; set; }
         public string BIRTH_PLACE { get; set; }

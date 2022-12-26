@@ -87,7 +87,7 @@
             this.PanelOption.Controls.Add(this.BOK);
             this.PanelOption.Controls.Add(this.labelControl1);
             this.PanelOption.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.PanelOption.Location = new System.Drawing.Point(0, 199);
+            this.PanelOption.Location = new System.Drawing.Point(0, 212);
             this.PanelOption.Name = "PanelOption";
             this.PanelOption.Size = new System.Drawing.Size(651, 50);
             this.PanelOption.TabIndex = 0;
@@ -168,6 +168,7 @@
             // labelControl2
             // 
             this.labelControl2.Location = new System.Drawing.Point(12, 14);
+            this.labelControl2.Margin = new System.Windows.Forms.Padding(4);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(69, 13);
             this.labelControl2.TabIndex = 1;
@@ -175,7 +176,8 @@
             // 
             // labelControl3
             // 
-            this.labelControl3.Location = new System.Drawing.Point(12, 40);
+            this.labelControl3.Location = new System.Drawing.Point(12, 42);
+            this.labelControl3.Margin = new System.Windows.Forms.Padding(4);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(65, 13);
             this.labelControl3.TabIndex = 2;
@@ -183,7 +185,8 @@
             // 
             // labelControl4
             // 
-            this.labelControl4.Location = new System.Drawing.Point(12, 66);
+            this.labelControl4.Location = new System.Drawing.Point(12, 70);
+            this.labelControl4.Margin = new System.Windows.Forms.Padding(4);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(78, 13);
             this.labelControl4.TabIndex = 3;
@@ -191,7 +194,8 @@
             // 
             // labelControl5
             // 
-            this.labelControl5.Location = new System.Drawing.Point(12, 92);
+            this.labelControl5.Location = new System.Drawing.Point(12, 98);
+            this.labelControl5.Margin = new System.Windows.Forms.Padding(4);
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(40, 13);
             this.labelControl5.TabIndex = 4;
@@ -199,7 +203,8 @@
             // 
             // labelControl6
             // 
-            this.labelControl6.Location = new System.Drawing.Point(12, 118);
+            this.labelControl6.Location = new System.Drawing.Point(12, 126);
+            this.labelControl6.Margin = new System.Windows.Forms.Padding(4);
             this.labelControl6.Name = "labelControl6";
             this.labelControl6.Size = new System.Drawing.Size(119, 13);
             this.labelControl6.TabIndex = 5;
@@ -207,7 +212,8 @@
             // 
             // labelControl7
             // 
-            this.labelControl7.Location = new System.Drawing.Point(12, 144);
+            this.labelControl7.Location = new System.Drawing.Point(12, 154);
+            this.labelControl7.Margin = new System.Windows.Forms.Padding(4);
             this.labelControl7.Name = "labelControl7";
             this.labelControl7.Size = new System.Drawing.Size(61, 13);
             this.labelControl7.TabIndex = 6;
@@ -215,7 +221,8 @@
             // 
             // labelControl8
             // 
-            this.labelControl8.Location = new System.Drawing.Point(12, 170);
+            this.labelControl8.Location = new System.Drawing.Point(12, 182);
+            this.labelControl8.Margin = new System.Windows.Forms.Padding(4);
             this.labelControl8.Name = "labelControl8";
             this.labelControl8.Size = new System.Drawing.Size(53, 13);
             this.labelControl8.TabIndex = 7;
@@ -224,6 +231,7 @@
             // DocumentGroupLookUp
             // 
             this.DocumentGroupLookUp.Location = new System.Drawing.Point(167, 11);
+            this.DocumentGroupLookUp.Margin = new System.Windows.Forms.Padding(4);
             this.DocumentGroupLookUp.Name = "DocumentGroupLookUp";
             this.DocumentGroupLookUp.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -231,6 +239,7 @@
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("ID", "ID", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default),
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("NAME", "Name")});
             this.DocumentGroupLookUp.Properties.DisplayMember = "NAME";
+            this.DocumentGroupLookUp.Properties.NullText = "";
             this.DocumentGroupLookUp.Properties.NullValuePrompt = "Sənədin qurupunu seçin";
             this.DocumentGroupLookUp.Properties.NullValuePromptShowForEmptyValue = true;
             this.DocumentGroupLookUp.Properties.ShowHeader = false;
@@ -244,6 +253,7 @@
             this.labelControl9.Appearance.ForeColor = System.Drawing.Color.Red;
             this.labelControl9.Appearance.Options.UseForeColor = true;
             this.labelControl9.Location = new System.Drawing.Point(155, 14);
+            this.labelControl9.Margin = new System.Windows.Forms.Padding(4);
             this.labelControl9.Name = "labelControl9";
             this.labelControl9.Size = new System.Drawing.Size(6, 13);
             this.labelControl9.TabIndex = 9;
@@ -253,7 +263,8 @@
             // 
             this.labelControl10.Appearance.ForeColor = System.Drawing.Color.Red;
             this.labelControl10.Appearance.Options.UseForeColor = true;
-            this.labelControl10.Location = new System.Drawing.Point(155, 39);
+            this.labelControl10.Location = new System.Drawing.Point(155, 41);
+            this.labelControl10.Margin = new System.Windows.Forms.Padding(4);
             this.labelControl10.Name = "labelControl10";
             this.labelControl10.Size = new System.Drawing.Size(6, 13);
             this.labelControl10.TabIndex = 10;
@@ -263,7 +274,8 @@
             // 
             this.labelControl11.Appearance.ForeColor = System.Drawing.Color.Red;
             this.labelControl11.Appearance.Options.UseForeColor = true;
-            this.labelControl11.Location = new System.Drawing.Point(155, 66);
+            this.labelControl11.Location = new System.Drawing.Point(155, 70);
+            this.labelControl11.Margin = new System.Windows.Forms.Padding(4);
             this.labelControl11.Name = "labelControl11";
             this.labelControl11.Size = new System.Drawing.Size(6, 13);
             this.labelControl11.TabIndex = 11;
@@ -273,7 +285,8 @@
             // 
             this.PinCodeStarLabel.Appearance.ForeColor = System.Drawing.Color.Red;
             this.PinCodeStarLabel.Appearance.Options.UseForeColor = true;
-            this.PinCodeStarLabel.Location = new System.Drawing.Point(155, 92);
+            this.PinCodeStarLabel.Location = new System.Drawing.Point(155, 98);
+            this.PinCodeStarLabel.Margin = new System.Windows.Forms.Padding(4);
             this.PinCodeStarLabel.Name = "PinCodeStarLabel";
             this.PinCodeStarLabel.Size = new System.Drawing.Size(6, 13);
             this.PinCodeStarLabel.TabIndex = 12;
@@ -283,7 +296,8 @@
             // 
             this.labelControl13.Appearance.ForeColor = System.Drawing.Color.Red;
             this.labelControl13.Appearance.Options.UseForeColor = true;
-            this.labelControl13.Location = new System.Drawing.Point(155, 118);
+            this.labelControl13.Location = new System.Drawing.Point(155, 126);
+            this.labelControl13.Margin = new System.Windows.Forms.Padding(4);
             this.labelControl13.Name = "labelControl13";
             this.labelControl13.Size = new System.Drawing.Size(6, 13);
             this.labelControl13.TabIndex = 13;
@@ -292,7 +306,8 @@
             // DocumentTypeLookUp
             // 
             this.DocumentTypeLookUp.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.DocumentTypeLookUp.Location = new System.Drawing.Point(167, 37);
+            this.DocumentTypeLookUp.Location = new System.Drawing.Point(167, 39);
+            this.DocumentTypeLookUp.Margin = new System.Windows.Forms.Padding(4);
             this.DocumentTypeLookUp.Name = "DocumentTypeLookUp";
             this.DocumentTypeLookUp.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), "Siyahını aç"),
@@ -301,6 +316,7 @@
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("ID", "ID", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default),
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("NAME", "Name")});
             this.DocumentTypeLookUp.Properties.DisplayMember = "NAME";
+            this.DocumentTypeLookUp.Properties.NullText = "";
             this.DocumentTypeLookUp.Properties.NullValuePrompt = "Sənədin növünü seçin";
             this.DocumentTypeLookUp.Properties.NullValuePromptShowForEmptyValue = true;
             this.DocumentTypeLookUp.Properties.PopupFilterMode = DevExpress.XtraEditors.PopupFilterMode.Contains;
@@ -315,7 +331,8 @@
             // 
             // NumberText
             // 
-            this.NumberText.Location = new System.Drawing.Point(167, 63);
+            this.NumberText.Location = new System.Drawing.Point(167, 67);
+            this.NumberText.Margin = new System.Windows.Forms.Padding(4);
             this.NumberText.Name = "NumberText";
             this.NumberText.Size = new System.Drawing.Size(147, 20);
             this.NumberText.TabIndex = 2;
@@ -326,7 +343,8 @@
             this.labelControl16.Appearance.ForeColor = System.Drawing.Color.Maroon;
             this.labelControl16.Appearance.Options.UseFont = true;
             this.labelControl16.Appearance.Options.UseForeColor = true;
-            this.labelControl16.Location = new System.Drawing.Point(320, 65);
+            this.labelControl16.Location = new System.Drawing.Point(320, 67);
+            this.labelControl16.Margin = new System.Windows.Forms.Padding(4);
             this.labelControl16.Name = "labelControl16";
             this.labelControl16.Size = new System.Drawing.Size(7, 13);
             this.labelControl16.TabIndex = 18;
@@ -360,7 +378,8 @@
             // 
             // PinCodeText
             // 
-            this.PinCodeText.Location = new System.Drawing.Point(167, 89);
+            this.PinCodeText.Location = new System.Drawing.Point(167, 95);
+            this.PinCodeText.Margin = new System.Windows.Forms.Padding(4);
             this.PinCodeText.Name = "PinCodeText";
             this.PinCodeText.Size = new System.Drawing.Size(147, 20);
             this.PinCodeText.TabIndex = 3;
@@ -371,7 +390,8 @@
             this.labelControl17.Appearance.ForeColor = System.Drawing.Color.Maroon;
             this.labelControl17.Appearance.Options.UseFont = true;
             this.labelControl17.Appearance.Options.UseForeColor = true;
-            this.labelControl17.Location = new System.Drawing.Point(320, 92);
+            this.labelControl17.Location = new System.Drawing.Point(320, 96);
+            this.labelControl17.Margin = new System.Windows.Forms.Padding(4);
             this.labelControl17.Name = "labelControl17";
             this.labelControl17.Size = new System.Drawing.Size(7, 13);
             this.labelControl17.TabIndex = 21;
@@ -380,7 +400,8 @@
             // IssuingLookUp
             // 
             this.IssuingLookUp.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.IssuingLookUp.Location = new System.Drawing.Point(167, 115);
+            this.IssuingLookUp.Location = new System.Drawing.Point(167, 123);
+            this.IssuingLookUp.Margin = new System.Windows.Forms.Padding(4);
             this.IssuingLookUp.Name = "IssuingLookUp";
             this.IssuingLookUp.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo, "", -1, true, true, false, editorButtonImageOptions3, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), "Siyahını aç"),
@@ -401,7 +422,8 @@
             // DateOfIssueDate
             // 
             this.DateOfIssueDate.EditValue = null;
-            this.DateOfIssueDate.Location = new System.Drawing.Point(167, 141);
+            this.DateOfIssueDate.Location = new System.Drawing.Point(167, 151);
+            this.DateOfIssueDate.Margin = new System.Windows.Forms.Padding(4);
             this.DateOfIssueDate.Name = "DateOfIssueDate";
             this.DateOfIssueDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Ellipsis, "", -1, true, true, false, editorButtonImageOptions5, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), "Kalendarı aç")});
@@ -415,7 +437,8 @@
             // ReliableDate
             // 
             this.ReliableDate.EditValue = null;
-            this.ReliableDate.Location = new System.Drawing.Point(167, 167);
+            this.ReliableDate.Location = new System.Drawing.Point(167, 179);
+            this.ReliableDate.Margin = new System.Windows.Forms.Padding(4);
             this.ReliableDate.Name = "ReliableDate";
             this.ReliableDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Ellipsis, "", -1, true, true, false, editorButtonImageOptions6, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), "Kalendarı aç")});
@@ -430,7 +453,8 @@
             // 
             this.labelControl14.Appearance.ForeColor = System.Drawing.Color.Red;
             this.labelControl14.Appearance.Options.UseForeColor = true;
-            this.labelControl14.Location = new System.Drawing.Point(155, 144);
+            this.labelControl14.Location = new System.Drawing.Point(155, 154);
+            this.labelControl14.Margin = new System.Windows.Forms.Padding(4);
             this.labelControl14.Name = "labelControl14";
             this.labelControl14.Size = new System.Drawing.Size(6, 13);
             this.labelControl14.TabIndex = 14;
@@ -440,7 +464,8 @@
             // 
             this.labelControl15.Appearance.ForeColor = System.Drawing.Color.Red;
             this.labelControl15.Appearance.Options.UseForeColor = true;
-            this.labelControl15.Location = new System.Drawing.Point(155, 170);
+            this.labelControl15.Location = new System.Drawing.Point(155, 182);
+            this.labelControl15.Margin = new System.Windows.Forms.Padding(4);
             this.labelControl15.Name = "labelControl15";
             this.labelControl15.Size = new System.Drawing.Size(6, 13);
             this.labelControl15.TabIndex = 15;
@@ -452,7 +477,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.BCancel;
-            this.ClientSize = new System.Drawing.Size(651, 249);
+            this.ClientSize = new System.Drawing.Size(651, 262);
             this.Controls.Add(this.ReliableDate);
             this.Controls.Add(this.DateOfIssueDate);
             this.Controls.Add(this.IssuingLookUp);

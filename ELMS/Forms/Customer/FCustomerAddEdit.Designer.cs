@@ -35,6 +35,7 @@
             DevExpress.Utils.ToolTipTitleItem toolTipTitleItem2 = new DevExpress.Utils.ToolTipTitleItem();
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions3 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             DevExpress.Utils.SuperToolTip superToolTip2 = new DevExpress.Utils.SuperToolTip();
             DevExpress.Utils.ToolTipTitleItem toolTipTitleItem3 = new DevExpress.Utils.ToolTipTitleItem();
             DevExpress.Utils.ToolTipItem toolTipItem2 = new DevExpress.Utils.ToolTipItem();
@@ -199,7 +200,8 @@
             // 
             this.labelControl11.Appearance.ForeColor = System.Drawing.Color.Red;
             this.labelControl11.Appearance.Options.UseForeColor = true;
-            this.labelControl11.Location = new System.Drawing.Point(150, 206);
+            this.labelControl11.Location = new System.Drawing.Point(150, 203);
+            this.labelControl11.Margin = new System.Windows.Forms.Padding(4);
             this.labelControl11.Name = "labelControl11";
             this.labelControl11.Size = new System.Drawing.Size(6, 13);
             this.labelControl11.TabIndex = 28;
@@ -210,6 +212,7 @@
             this.labelControl10.Appearance.ForeColor = System.Drawing.Color.Red;
             this.labelControl10.Appearance.Options.UseForeColor = true;
             this.labelControl10.Location = new System.Drawing.Point(150, 175);
+            this.labelControl10.Margin = new System.Windows.Forms.Padding(4);
             this.labelControl10.Name = "labelControl10";
             this.labelControl10.Size = new System.Drawing.Size(6, 13);
             this.labelControl10.TabIndex = 27;
@@ -217,21 +220,24 @@
             // 
             // NoteText
             // 
-            this.NoteText.Location = new System.Drawing.Point(162, 225);
+            this.NoteText.Location = new System.Drawing.Point(162, 228);
+            this.NoteText.Margin = new System.Windows.Forms.Padding(4);
             this.NoteText.Name = "NoteText";
             this.NoteText.Size = new System.Drawing.Size(496, 20);
             this.NoteText.TabIndex = 26;
             // 
             // ActualAddressText
             // 
-            this.ActualAddressText.Location = new System.Drawing.Point(162, 199);
+            this.ActualAddressText.Location = new System.Drawing.Point(162, 200);
+            this.ActualAddressText.Margin = new System.Windows.Forms.Padding(4);
             this.ActualAddressText.Name = "ActualAddressText";
             this.ActualAddressText.Size = new System.Drawing.Size(496, 20);
             this.ActualAddressText.TabIndex = 25;
             // 
             // NoteLabel
             // 
-            this.NoteLabel.Location = new System.Drawing.Point(21, 228);
+            this.NoteLabel.Location = new System.Drawing.Point(21, 231);
+            this.NoteLabel.Margin = new System.Windows.Forms.Padding(4);
             this.NoteLabel.Name = "NoteLabel";
             this.NoteLabel.Size = new System.Drawing.Size(26, 13);
             this.NoteLabel.TabIndex = 24;
@@ -239,7 +245,8 @@
             // 
             // Address2Label
             // 
-            this.Address2Label.Location = new System.Drawing.Point(21, 202);
+            this.Address2Label.Location = new System.Drawing.Point(21, 203);
+            this.Address2Label.Margin = new System.Windows.Forms.Padding(4);
             this.Address2Label.Name = "Address2Label";
             this.Address2Label.Size = new System.Drawing.Size(105, 13);
             this.Address2Label.TabIndex = 23;
@@ -248,6 +255,7 @@
             // RegisteredAddressText
             // 
             this.RegisteredAddressText.Location = new System.Drawing.Point(162, 172);
+            this.RegisteredAddressText.Margin = new System.Windows.Forms.Padding(4);
             this.RegisteredAddressText.Name = "RegisteredAddressText";
             this.RegisteredAddressText.Size = new System.Drawing.Size(496, 20);
             this.RegisteredAddressText.TabIndex = 22;
@@ -255,6 +263,7 @@
             // labelControl9
             // 
             this.labelControl9.Location = new System.Drawing.Point(21, 175);
+            this.labelControl9.Margin = new System.Windows.Forms.Padding(4);
             this.labelControl9.Name = "labelControl9";
             this.labelControl9.Size = new System.Drawing.Size(124, 13);
             this.labelControl9.TabIndex = 21;
@@ -262,7 +271,7 @@
             // 
             // simpleButton2
             // 
-            this.simpleButton2.Location = new System.Drawing.Point(779, 194);
+            this.simpleButton2.Location = new System.Drawing.Point(779, 203);
             this.simpleButton2.Name = "simpleButton2";
             this.simpleButton2.Size = new System.Drawing.Size(59, 23);
             this.simpleButton2.TabIndex = 20;
@@ -270,7 +279,7 @@
             // 
             // simpleButton1
             // 
-            this.simpleButton1.Location = new System.Drawing.Point(699, 194);
+            this.simpleButton1.Location = new System.Drawing.Point(699, 203);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(59, 23);
             this.simpleButton1.TabIndex = 19;
@@ -279,7 +288,7 @@
             // CustomerPictureBox
             // 
             this.CustomerPictureBox.Cursor = System.Windows.Forms.Cursors.Default;
-            this.CustomerPictureBox.Location = new System.Drawing.Point(699, 26);
+            this.CustomerPictureBox.Location = new System.Drawing.Point(699, 35);
             this.CustomerPictureBox.Name = "CustomerPictureBox";
             this.CustomerPictureBox.Properties.NullText = "Müştərinin şəkli";
             this.CustomerPictureBox.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
@@ -311,7 +320,8 @@
             // 
             this.labelControl8.Appearance.ForeColor = System.Drawing.Color.Red;
             this.labelControl8.Appearance.Options.UseForeColor = true;
-            this.labelControl8.Location = new System.Drawing.Point(150, 149);
+            this.labelControl8.Location = new System.Drawing.Point(150, 147);
+            this.labelControl8.Margin = new System.Windows.Forms.Padding(4);
             this.labelControl8.Name = "labelControl8";
             this.labelControl8.Size = new System.Drawing.Size(6, 13);
             this.labelControl8.TabIndex = 16;
@@ -319,7 +329,8 @@
             // 
             // labelControl7
             // 
-            this.labelControl7.Location = new System.Drawing.Point(21, 149);
+            this.labelControl7.Location = new System.Drawing.Point(21, 147);
+            this.labelControl7.Margin = new System.Windows.Forms.Padding(4);
             this.labelControl7.Name = "labelControl7";
             this.labelControl7.Size = new System.Drawing.Size(21, 13);
             this.labelControl7.TabIndex = 15;
@@ -327,7 +338,8 @@
             // 
             // BirthPlaceText
             // 
-            this.BirthPlaceText.Location = new System.Drawing.Point(162, 115);
+            this.BirthPlaceText.Location = new System.Drawing.Point(162, 116);
+            this.BirthPlaceText.Margin = new System.Windows.Forms.Padding(4);
             this.BirthPlaceText.Name = "BirthPlaceText";
             this.BirthPlaceText.Size = new System.Drawing.Size(496, 20);
             this.BirthPlaceText.TabIndex = 14;
@@ -335,13 +347,19 @@
             // CountryLookUp
             // 
             this.CountryLookUp.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.CountryLookUp.Location = new System.Drawing.Point(162, 146);
+            this.CountryLookUp.Location = new System.Drawing.Point(162, 144);
+            this.CountryLookUp.Margin = new System.Windows.Forms.Padding(4);
             this.CountryLookUp.Name = "CountryLookUp";
             this.CountryLookUp.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), "Siyanını aç")});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), "Siyanını aç"),
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Ellipsis, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), "Düzəliş etmək üçün ölkələrin siyahısını aç")});
             this.CountryLookUp.Properties.ButtonsStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.CountryLookUp.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("ID", "ID", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("NAME", "Name")});
             this.CountryLookUp.Properties.DisplayMember = "NAME";
             this.CountryLookUp.Properties.DropDownRows = 15;
+            this.CountryLookUp.Properties.NullText = "";
             this.CountryLookUp.Properties.NullValuePrompt = "Ölkəni seçin";
             this.CountryLookUp.Properties.NullValuePromptShowForEmptyValue = true;
             this.CountryLookUp.Properties.PopupFilterMode = DevExpress.XtraEditors.PopupFilterMode.Contains;
@@ -349,14 +367,17 @@
             this.CountryLookUp.Properties.ThrowExceptionOnInvalidLookUpEditValueType = true;
             this.CountryLookUp.Properties.ValidateOnEnterKey = true;
             this.CountryLookUp.Properties.ValueMember = "ID";
-            this.CountryLookUp.Size = new System.Drawing.Size(167, 20);
+            this.CountryLookUp.Size = new System.Drawing.Size(496, 20);
             this.CountryLookUp.TabIndex = 13;
+            this.CountryLookUp.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.CountryLookUp_ButtonClick);
+            this.CountryLookUp.EditValueChanged += new System.EventHandler(this.CountryLookUp_EditValueChanged);
             // 
             // labelControl6
             // 
             this.labelControl6.Appearance.ForeColor = System.Drawing.Color.Red;
             this.labelControl6.Appearance.Options.UseForeColor = true;
-            this.labelControl6.Location = new System.Drawing.Point(150, 118);
+            this.labelControl6.Location = new System.Drawing.Point(150, 119);
+            this.labelControl6.Margin = new System.Windows.Forms.Padding(4);
             this.labelControl6.Name = "labelControl6";
             this.labelControl6.Size = new System.Drawing.Size(6, 13);
             this.labelControl6.TabIndex = 12;
@@ -364,7 +385,8 @@
             // 
             // labelControl5
             // 
-            this.labelControl5.Location = new System.Drawing.Point(21, 118);
+            this.labelControl5.Location = new System.Drawing.Point(21, 119);
+            this.labelControl5.Margin = new System.Windows.Forms.Padding(4);
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(70, 13);
             this.labelControl5.TabIndex = 11;
@@ -376,7 +398,7 @@
             this.labelControl4.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.labelControl4.Appearance.Options.UseFont = true;
             this.labelControl4.Appearance.Options.UseForeColor = true;
-            this.labelControl4.Location = new System.Drawing.Point(259, 90);
+            this.labelControl4.Location = new System.Drawing.Point(259, 91);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(30, 13);
             this.labelControl4.TabIndex = 10;
@@ -385,7 +407,8 @@
             // BirthdayDate
             // 
             this.BirthdayDate.EditValue = null;
-            this.BirthdayDate.Location = new System.Drawing.Point(162, 87);
+            this.BirthdayDate.Location = new System.Drawing.Point(162, 88);
+            this.BirthdayDate.Margin = new System.Windows.Forms.Padding(4);
             this.BirthdayDate.Name = "BirthdayDate";
             this.BirthdayDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton()});
@@ -398,7 +421,8 @@
             // 
             this.labelControl3.Appearance.ForeColor = System.Drawing.Color.Red;
             this.labelControl3.Appearance.Options.UseForeColor = true;
-            this.labelControl3.Location = new System.Drawing.Point(150, 90);
+            this.labelControl3.Location = new System.Drawing.Point(149, 91);
+            this.labelControl3.Margin = new System.Windows.Forms.Padding(4);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(6, 13);
             this.labelControl3.TabIndex = 8;
@@ -406,7 +430,8 @@
             // 
             // BirthdayLabel
             // 
-            this.BirthdayLabel.Location = new System.Drawing.Point(21, 90);
+            this.BirthdayLabel.Location = new System.Drawing.Point(21, 91);
+            this.BirthdayLabel.Margin = new System.Windows.Forms.Padding(4);
             this.BirthdayLabel.Name = "BirthdayLabel";
             this.BirthdayLabel.Size = new System.Drawing.Size(60, 13);
             this.BirthdayLabel.TabIndex = 7;
@@ -415,11 +440,17 @@
             // SexLookUp
             // 
             this.SexLookUp.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.SexLookUp.Location = new System.Drawing.Point(162, 59);
+            this.SexLookUp.Location = new System.Drawing.Point(162, 60);
+            this.SexLookUp.Margin = new System.Windows.Forms.Padding(4);
             this.SexLookUp.Name = "SexLookUp";
             this.SexLookUp.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), "Siyahını aç")});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo, "", -1, true, true, false, editorButtonImageOptions3, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), "Siyahını aç")});
+            this.SexLookUp.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("ID", "ID", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("NAME", "Name")});
             this.SexLookUp.Properties.DisplayMember = "NAME";
+            this.SexLookUp.Properties.DropDownRows = 2;
+            this.SexLookUp.Properties.NullText = "";
             this.SexLookUp.Properties.NullValuePrompt = "Seçin";
             this.SexLookUp.Properties.NullValuePromptShowForEmptyValue = true;
             this.SexLookUp.Properties.PopupFilterMode = DevExpress.XtraEditors.PopupFilterMode.Contains;
@@ -429,12 +460,14 @@
             this.SexLookUp.Properties.ValueMember = "ID";
             this.SexLookUp.Size = new System.Drawing.Size(91, 20);
             this.SexLookUp.TabIndex = 6;
+            this.SexLookUp.EditValueChanged += new System.EventHandler(this.SexLookUp_EditValueChanged);
             // 
             // labelControl2
             // 
             this.labelControl2.Appearance.ForeColor = System.Drawing.Color.Red;
             this.labelControl2.Appearance.Options.UseForeColor = true;
-            this.labelControl2.Location = new System.Drawing.Point(151, 62);
+            this.labelControl2.Location = new System.Drawing.Point(150, 63);
+            this.labelControl2.Margin = new System.Windows.Forms.Padding(4);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(6, 13);
             this.labelControl2.TabIndex = 5;
@@ -442,7 +475,8 @@
             // 
             // SexLabel
             // 
-            this.SexLabel.Location = new System.Drawing.Point(21, 62);
+            this.SexLabel.Location = new System.Drawing.Point(21, 63);
+            this.SexLabel.Margin = new System.Windows.Forms.Padding(4);
             this.SexLabel.Name = "SexLabel";
             this.SexLabel.Size = new System.Drawing.Size(22, 13);
             this.SexLabel.TabIndex = 4;
@@ -452,7 +486,8 @@
             // 
             this.labelControl1.Appearance.ForeColor = System.Drawing.Color.Red;
             this.labelControl1.Appearance.Options.UseForeColor = true;
-            this.labelControl1.Location = new System.Drawing.Point(151, 35);
+            this.labelControl1.Location = new System.Drawing.Point(150, 35);
+            this.labelControl1.Margin = new System.Windows.Forms.Padding(4);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(6, 13);
             this.labelControl1.TabIndex = 2;
@@ -461,6 +496,7 @@
             // NameText
             // 
             this.NameText.Location = new System.Drawing.Point(162, 32);
+            this.NameText.Margin = new System.Windows.Forms.Padding(4);
             this.NameText.Name = "NameText";
             this.NameText.Properties.NullValuePrompt = "Soyadı, adı və atasının adını daxil edin";
             this.NameText.Properties.NullValuePromptShowForEmptyValue = true;
@@ -478,6 +514,7 @@
             // NameLabel
             // 
             this.NameLabel.Location = new System.Drawing.Point(21, 35);
+            this.NameLabel.Margin = new System.Windows.Forms.Padding(4);
             this.NameLabel.Name = "NameLabel";
             this.NameLabel.Size = new System.Drawing.Size(87, 13);
             this.NameLabel.TabIndex = 0;
@@ -609,7 +646,7 @@
             this.Document_DocumentNumber.OptionsColumn.FixedWidth = true;
             this.Document_DocumentNumber.Visible = true;
             this.Document_DocumentNumber.VisibleIndex = 3;
-            this.Document_DocumentNumber.Width = 85;
+            this.Document_DocumentNumber.Width = 100;
             // 
             // Document_FinCode
             // 
@@ -626,10 +663,9 @@
             this.Document_IssueName.Caption = "Sənəd verən orqan";
             this.Document_IssueName.FieldName = "ISSUE_NAME";
             this.Document_IssueName.Name = "Document_IssueName";
-            this.Document_IssueName.OptionsColumn.FixedWidth = true;
             this.Document_IssueName.Visible = true;
             this.Document_IssueName.VisibleIndex = 5;
-            this.Document_IssueName.Width = 140;
+            this.Document_IssueName.Width = 250;
             // 
             // Document_IssueDate
             // 
@@ -1078,6 +1114,7 @@
             this.BOK.Text = "Yadda saxla";
             this.BOK.Theme = ManiXButton.Theme.MSOffice2010_BLUE;
             this.BOK.UseVisualStyleBackColor = true;
+            this.BOK.Click += new System.EventHandler(this.BOK_Click);
             // 
             // labelControl12
             // 

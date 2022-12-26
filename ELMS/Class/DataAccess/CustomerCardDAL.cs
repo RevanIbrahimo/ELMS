@@ -6,6 +6,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static ELMS.Class.Enum;
 
 namespace ELMS.Class.DataAccess
 {
@@ -32,7 +33,7 @@ namespace ELMS.Class.DataAccess
                              WHERE CC.DOCUMENT_TYPE_ID = DT.ID
                                    AND CC.CARD_ISSUING_ID = CI.ID
                                    AND CC.DOCUMENT_GROUP_ID = DG.ID
-                                   AND CC.IS_CHANGE<> 2
+                                   AND CC.IS_CHANGE <> {(int)ChangeTypeEnum.Delete}
                         ORDER BY CC.ID";
             else
                 sql = $@"SELECT CC.ID,
@@ -51,7 +52,7 @@ namespace ELMS.Class.DataAccess
                              WHERE CC.DOCUMENT_TYPE_ID = DT.ID
                                    AND CC.CARD_ISSUING_ID = CI.ID
                                    AND CC.DOCUMENT_GROUP_ID = DG.ID
-                                   AND CC.IS_CHANGE<> 2
+                                   AND CC.IS_CHANGE <> {(int)ChangeTypeEnum.Delete}
                               AND CC.CUSTOMER_ID = {typeID}";
 
             try
@@ -88,7 +89,7 @@ namespace ELMS.Class.DataAccess
                              WHERE CC.DOCUMENT_TYPE_ID = DT.ID
                                    AND CC.CARD_ISSUING_ID = CI.ID
                                    AND CC.DOCUMENT_GROUP_ID = DG.ID
-                                   AND CC.IS_CHANGE<> 2 {(ID.HasValue ? $@" AND CC.CUSTOMER_ID = {ID}" : null)}
+                                   AND CC.IS_CHANGE <> {(int)ChangeTypeEnum.Delete} {(ID.HasValue ? $@" AND CC.CUSTOMER_ID = {ID}" : null)}
                         ORDER BY CC.ID";
 
             try
@@ -106,8 +107,6 @@ namespace ELMS.Class.DataAccess
                 return null;
             }
         }
-
-        
 
         public static void InsertCustomerCard(CustomerCard customer)
         {
@@ -127,15 +126,16 @@ namespace ELMS.Class.DataAccess
                     {
                         transaction = connection.BeginTransaction();
                         command.Transaction = transaction;
-                        command.CommandText = $@"INSERT INTO ELMS_USER.CUSTOMER_CARDS(CARD_NUMBER,
-                                                                                    DOCUMENT_GROUP_ID,
-                                                                                    DOCUMENT_TYPE_ID,
-                                                                                    ISSUE_DATE,
-                                                                                    RELIABLE_DATE,
-                                                                                    PINCODE,
-                                                                                    CARD_ISSUING_ID,
-                                                                                    CUSTOMER_ID,
-                                                                                    INSERT_USER)
+                        command.CommandText = $@"INSERT INTO ELMS_USER_TEMP.CUSTOMER_CARDS_TEMP(CARD_NUMBER,
+                                                                                                DOCUMENT_GROUP_ID,
+                                                                                                DOCUMENT_TYPE_ID,
+                                                                                                ISSUE_DATE,
+                                                                                                RELIABLE_DATE,
+                                                                                                PINCODE,
+                                                                                                CARD_ISSUING_ID,
+                                                                                                CUSTOMER_ID,
+                                                                                                IS_CHANGE,
+                                                                                                INSERT_USER)
                                                     VALUES(:inCARDNUMBER,
                                                            :inDOCUMENTGROUPID,
                                                            :inDOCUMENTTYPEID,
@@ -144,6 +144,7 @@ namespace ELMS.Class.DataAccess
                                                            :inPINCODE,
                                                            :inCARDISSUINGID,
                                                            :inCUSTOMER_ID,
+                                                           :inISCHANGE,
                                                            :inINSERT_USER)";
                         command.Parameters.Add(new OracleParameter("inCARDNUMBER", customer.CARD_NUMBER));
                         command.Parameters.Add(new OracleParameter("inDOCUMENTGROUPID", customer.DOCUMENT_GROUP_ID));
@@ -153,6 +154,7 @@ namespace ELMS.Class.DataAccess
                         command.Parameters.Add(new OracleParameter("inPINCODE", customer.PINCODE));
                         command.Parameters.Add(new OracleParameter("inCARDISSUINGID", customer.CARD_ISSUING_ID));
                         command.Parameters.Add(new OracleParameter("inCUSTOMER_ID", customer.CUSTOMER_ID));
+                        command.Parameters.Add(new OracleParameter("inISCHANGE", ChangeTypeEnum.Change));
                         command.Parameters.Add(new OracleParameter("inINSERT_USER", GlobalVariables.V_UserID));
                         commandSql = command.CommandText;
                         command.ExecuteNonQuery();
@@ -173,8 +175,6 @@ namespace ELMS.Class.DataAccess
             }
         }
 
-
-
         public static void UpdateCustomerCard(CustomerCard customer)
         {
             string commandSql = null;
@@ -193,20 +193,19 @@ namespace ELMS.Class.DataAccess
                     {
                         transaction = connection.BeginTransaction();
                         command.Transaction = transaction;
-                        command.CommandText = $@"UPDATE ELMS_USER.CUSTOMER_CARDS SET 
-                                                                        ID = :inID,
-                                                                        CARD_NUMBER = :inCARDNUMBER,
-                                                                        DOCUMENT_GROUP_ID = :inDOCUMENTGROUPID,
-                                                                        DOCUMENT_TYPE_ID = :inDOCUMENTTYPEID,
-                                                                        ISSUE_DATE = :inISSUEDATE,
-                                                                        RELIABLE_DATE = :inRELIABLEDATE,                                                                   
-                                                                        PINCODE = :inPINCODE,
-                                                                        CARD_ISSUING_ID = :inCARDISSUINGID,
-                                                                        USED_USER_ID = :inUSEDUSERID,
-                                                                        UPDATE_USER = :inUPDATEUSER,
-                                                                        UPDATE_DATE = SYSDATE
-                                                            WHERE CUSTOMER_ID = :inCUSTOMER_ID";
-                        command.Parameters.Add(new OracleParameter("inID", customer.ID));
+                        command.CommandText = $@"UPDATE ELMS_USER_TEMP.CUSTOMER_CARDS_TEMP SET CARD_NUMBER = :inCARDNUMBER,
+                                                                                                DOCUMENT_GROUP_ID = :inDOCUMENTGROUPID,
+                                                                                                DOCUMENT_TYPE_ID = :inDOCUMENTTYPEID,
+                                                                                                ISSUE_DATE = :inISSUEDATE,
+                                                                                                RELIABLE_DATE = :inRELIABLEDATE,                                                                   
+                                                                                                PINCODE = :inPINCODE,
+                                                                                                CARD_ISSUING_ID = :inCARDISSUINGID,
+                                                                                                USED_USER_ID = :inUSEDUSERID,
+                                                                                                IS_CHANGE = :inISCHANGE,
+                                                                                                UPDATE_USER = :inUPDATEUSER,
+                                                                                                UPDATE_DATE = SYSDATE
+                                                            WHERE CUSTOMER_ID = :inCUSTOMER_ID AND ID = :inID";
+                        
                         command.Parameters.Add(new OracleParameter("inCARDNUMBER", customer.CARD_NUMBER));
                         command.Parameters.Add(new OracleParameter("inDOCUMENTGROUPID", customer.DOCUMENT_GROUP_ID));
                         command.Parameters.Add(new OracleParameter("inDOCUMENTTYPEID", customer.DOCUMENT_TYPE_ID));
@@ -215,8 +214,10 @@ namespace ELMS.Class.DataAccess
                         command.Parameters.Add(new OracleParameter("inPINCODE", customer.PINCODE));
                         command.Parameters.Add(new OracleParameter("inCARDISSUINGID", customer.CARD_ISSUING_ID));
                         command.Parameters.Add(new OracleParameter("inUSEDUSERID", customer.USED_USER_ID));
+                        command.Parameters.Add(new OracleParameter("inISCHANGE", ChangeTypeEnum.Change));
                         command.Parameters.Add(new OracleParameter("inUPDATEUSER", GlobalVariables.V_UserID));
-                        command.Parameters.Add(new OracleParameter("inCUSTOMER_ID", customer.CUSTOMER_ID));
+                        command.Parameters.Add(new OracleParameter("inCUSTOMERID", customer.CUSTOMER_ID));
+                        command.Parameters.Add(new OracleParameter("inID", customer.ID));
                         commandSql = command.CommandText;
                         command.ExecuteNonQuery();
                         transaction.Commit();
@@ -234,9 +235,6 @@ namespace ELMS.Class.DataAccess
                     connection.Dispose();
                 }
             }
-        }
-
-
-        
+        }        
     }
 }

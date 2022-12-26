@@ -32,7 +32,7 @@ namespace ELMS.Forms.Customer
         int documentGroupID = 0,
             documentTypeID = 0,
             cardIssuingID = 0;
-        bool CurrentStatus = false, Used = false,isClickBOK = false;
+        bool CurrentStatus = false, Used = false, isClickBOK = false;
         int UsedUserID = -1;
 
 
@@ -149,7 +149,7 @@ namespace ELMS.Forms.Customer
         private void FCardAddEdit_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (!isClickBOK && TransactionType == TransactionTypeEnum.Update)
-                GlobalProcedures.Lock_or_UnLock_UserID("ELMS_USER.CUSTOMER_CARDS", -1, "WHERE ID = " +CardID + " AND USED_USER_ID = " + GlobalVariables.V_UserID);
+                GlobalProcedures.Lock_or_UnLock_UserID("ELMS_USER.CUSTOMER_CARDS", -1, "WHERE ID = " + CardID + " AND USED_USER_ID = " + GlobalVariables.V_UserID);
             this.RefreshDataGridView();
         }
 
@@ -308,10 +308,10 @@ namespace ELMS.Forms.Customer
                 return false;
             }
             else
-                b = true;            
+                b = true;
 
             int card_count = GlobalFunctions.GetCount($@"SELECT COUNT(*) FROM (SELECT CARD_NUMBER,DOCUMENT_GROUP_ID,DOCUMENT_TYPE_ID FROM COMS_USER_TEMP.CUSTOMER_CARDS_TEMP UNION ALL SELECT CARD_NUMBER,DOCUMENT_GROUP_ID,DOCUMENT_TYPE_ID FROM COMS_USER.CUSTOMER_CARDS) WHERE CARD_NUMBER = '{NumberText.Text.Trim()}' AND DOCUMENT_GROUP_ID = {documentGroupID} AND DOCUMENT_TYPE_ID = {documentTypeID}"); ;
-            
+
             if (card_count > 0 && TransactionType == TransactionTypeEnum.Insert)
             {
                 NumberText.BackColor = Color.Red;
@@ -324,7 +324,7 @@ namespace ELMS.Forms.Customer
                 b = true;
 
             int card_code = GlobalFunctions.GetCount($@"SELECT COUNT(*) FROM (SELECT PINCODE,CARD_NUMBER,DOCUMENT_GROUP_ID,DOCUMENT_TYPE_ID FROM COMS_USER_TEMP.CUSTOMER_CARDS_TEMP UNION ALL SELECT PINCODE,CARD_NUMBER,DOCUMENT_GROUP_ID,DOCUMENT_TYPE_ID FROM COMS_USER.CUSTOMER_CARDS) WHERE PINCODE = '{PinCodeText.Text.Trim()}' AND CARD_NUMBER = '{NumberText.Text.Trim()}' AND DOCUMENT_GROUP_ID = {documentGroupID} AND DOCUMENT_TYPE_ID = {documentTypeID}");
-            
+
             if (card_code > 0 && TransactionType == TransactionTypeEnum.Insert)
             {
                 PinCodeText.BackColor = Color.Red;
@@ -341,25 +341,12 @@ namespace ELMS.Forms.Customer
 
         private void BOK_Click(object sender, EventArgs e)
         {
-            if(ControlCardDetails())
+            if (ControlCardDetails())
             {
-                //GlobalFunctions.RunInOneTransaction<int>(tran =>
-                //{
-                //    if (TransactionType == TransactionTypeEnum.Insert)
-                //        InsertDetail();
-                //    else
-                //        UpdateDetail();
-                //    GlobalProcedures.ExecuteProcedureWithParametr(tran, "ELMS_USER.PROC_INSERT_CUSTOMER_CARD", "P_CUSTOMER_ID", CustomerID);
-
-                //    return 1;
-                //}, TransactionType == TransactionTypeEnum.Insert ? "Sənəd bazaya daxil edilmədi." : "Sənəd bazada dəyişdirilmədi.");
-
                 if (TransactionType == TransactionTypeEnum.Insert)
                     InsertDetail();
                 else
                     UpdateDetail();
-                GlobalProcedures.ExecuteProcedureWithParametr("ELMS_USER.PROC_INSERT_CUSTOMER_CARD", "P_CUSTOMER_ID", CustomerID, "Sənəd bazada dəyişdirilmədi.");
-
                 this.Close();
             }
         }
@@ -367,7 +354,7 @@ namespace ELMS.Forms.Customer
         private void IssuingLookUp_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
             if (e.Button.Index == 1)
-                LoadDictionaries(TransactionTypeEnum.Update,2);
+                LoadDictionaries(TransactionTypeEnum.Update, 2);
         }
 
         private void DocumentTypeLookUp_EditValueChanged(object sender, EventArgs e)

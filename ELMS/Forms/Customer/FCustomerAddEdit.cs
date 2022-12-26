@@ -13,6 +13,7 @@ using ELMS.Class.DataAccess;
 using ELMS.Class;
 using ELMS.Class.Tables;
 using DevExpress.XtraGrid.Views.Grid;
+using Oracle.ManagedDataAccess.Client;
 
 namespace ELMS.Forms.Customer
 {
@@ -29,8 +30,10 @@ namespace ELMS.Forms.Customer
         bool CurrentStatus = false, Used = false, isClickBOK = false;
         int UsedUserID = -1, orderID,
             documentID, topindex,
-            old_row_id, phoneID
-            ;
+            old_row_id, 
+            phoneID,
+            countryID = 0,
+            sexID = 0;
 
         public delegate void DoEvent();
         public event DoEvent RefreshDataGridView;
@@ -44,9 +47,7 @@ namespace ELMS.Forms.Customer
         {
             LoadFDocumentAddEdit(TransactionTypeEnum.Insert, null);
         }
-
         
-
         private void EditDocumentBarButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             UpdateDocument();
@@ -63,7 +64,6 @@ namespace ELMS.Forms.Customer
             old_row_id = DocumentGridView.FocusedRowHandle;
             FCardAddEdit fd = new FCardAddEdit()
             {
-
                 TransactionType = transactionType,
                 CustomerID = CustomerID, 
                 CardID = id
@@ -72,8 +72,7 @@ namespace ELMS.Forms.Customer
             fd.ShowDialog();
             DocumentGridView.TopRowIndex = topindex;
             DocumentGridView.FocusedRowHandle = old_row_id;
-        }
-        
+        }        
 
         private void DocumentGridView_DoubleClick(object sender, EventArgs e)
         {
@@ -84,10 +83,7 @@ namespace ELMS.Forms.Customer
         void UpdateDocument()
         {
             LoadFDocumentAddEdit(TransactionTypeEnum.Update, documentID);
-
         }
-
-
 
         ////Phone
 
@@ -100,7 +96,6 @@ namespace ELMS.Forms.Customer
 
             EditPhoneBarButton.Enabled = DeletePhoneBarButton.Enabled = PhoneGridView.RowCount > 0;
         }
-
         
         private void NewPhoneBarButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
@@ -124,7 +119,6 @@ namespace ELMS.Forms.Customer
             PhoneGridView.FocusedRowHandle = old_row_id;
         }
 
-
         void UpdatePhone()
         {
             LoadFPhoneAddEdit(TransactionTypeEnum.Update, phoneID);
@@ -138,8 +132,7 @@ namespace ELMS.Forms.Customer
         private void FCustomerAddEdit_Load(object sender, EventArgs e)
         {
             GlobalProcedures.FillLookUpEdit(SexLookUp, SexDAL.SelectSexByID(null).Tables[0]);
-
-            GlobalProcedures.FillLookUpEdit(CountryLookUp, CountryDAL.SelectCountryByID(null).Tables[0]);
+            RefreshDictionaries(1);
 
             if (TransactionType == TransactionTypeEnum.Update)
             {
@@ -168,7 +161,6 @@ namespace ELMS.Forms.Customer
             InsertTemps();
             LoadDocument();
             LoadPhone();
-
         }
 
         private void LoadDetails()
@@ -177,7 +169,6 @@ namespace ELMS.Forms.Customer
 
             if (dt.Rows.Count > 0)
             {
-
                 NameText.EditValue = dt.Rows[0]["FULL_NAME"];
                 BirthPlaceText.EditValue = dt.Rows[0]["BIRTH_PLACE"];
                 RegisteredAddressText.EditValue = dt.Rows[0]["REGISTERED_ADDRESS"];
@@ -209,6 +200,132 @@ namespace ELMS.Forms.Customer
             DataRow row = DocumentGridView.GetFocusedDataRow();
             if (row != null)
                 documentID = Convert.ToInt32(row["ID"].ToString());
+        }
+
+        private void InsertCustomer(OracleTransaction tran)
+        {
+            Class.Tables.Customer customer = new Class.Tables.Customer
+            {
+                FULL_NAME = NameText.Text.Trim(),
+                BRANCH_ID = GlobalVariables.V_BranchID,
+                ADDRESS = ActualAddressText.Text.Trim(),
+                BIRTH_PLACE = BirthPlaceText.Text.Trim(),
+                BIRTHDAY = BirthdayDate.DateTime,
+                COUNTRY_ID = countryID,
+                SEX_ID = sexID,
+                NOTE = NoteText.Text.Trim(),
+                REGISTERED_ADDRESS = RegisteredAddressText.Text.Trim()
+            };
+
+            CustomerDAL.InsertCustomer(tran, customer);
+        }
+
+        private void UpdateCustomer(OracleTransaction tran)
+        {
+            Class.Tables.Customer customer = new Class.Tables.Customer
+            {
+                FULL_NAME = NameText.Text.Trim(),
+                BRANCH_ID = GlobalVariables.V_BranchID,
+                ADDRESS = ActualAddressText.Text.Trim(),
+                BIRTH_PLACE = BirthPlaceText.Text.Trim(),
+                BIRTHDAY = BirthdayDate.DateTime,
+                COUNTRY_ID = countryID,
+                SEX_ID = sexID,
+                NOTE = NoteText.Text.Trim(),
+                REGISTERED_ADDRESS = RegisteredAddressText.Text.Trim()
+            };
+
+            CustomerDAL.UpdateCustomer(tran, customer);
+        }
+
+        private void BOK_Click(object sender, EventArgs e)
+        {
+            GlobalFunctions.RunInOneTransaction<int>(tran =>
+            {
+                if (TransactionType == TransactionTypeEnum.Insert)
+                {
+                    InsertCustomer(tran);
+                    InsertImageDetail(tran);
+                }
+                else
+                {
+                    UpdateCustomer(tran);
+                    UpdateImageDetail(tran);
+                }
+                
+
+                return 1;
+            }, TransactionType == TransactionTypeEnum.Insert ? "Xəstənin məlumatları bazaya daxil edilmədi." : "Xəstənin məlumatları bazada dəyişdirilmədi.");
+        }
+
+        private void InsertImageDetail(OracleTransaction tran)
+        {
+            if (PictureEdit.Image != null)
+            {
+                CustomerImage image = new CustomerImage
+                {
+                    CUSTOMER_ID = CustomerID.Value,
+                    IMAGE = GlobalFunctions.ImageToByteArray(PictureEdit.Image)
+                };
+
+                CustomerImageDAL.InsertCustomerImage(tran, image);
+            }
+            else
+                CustomerImageDAL.DeleteCustomerImage(tran, CustomerID.Value);
+        }
+
+        private void UpdateImageDetail(OracleTransaction tran)
+        {
+            if (PictureEdit.Image != null)
+            {
+                CustomerImage image = new CustomerImage
+                {
+                    CUSTOMER_ID = CustomerID.Value,
+                    IMAGE = GlobalFunctions.ImageToByteArray(PictureEdit.Image)
+                };
+
+                if (lstImage.Count > 0)
+                    CustomerImageDAL.UpdateCustomerImage(tran, image);
+                else
+                    CustomerImageDAL.InsertCustomerImage(tran, image);
+            }
+            else
+                CustomerImageDAL.DeleteCustomerImage(tran, CustomerID.Value);
+        }
+
+        void RefreshDictionaries(int index)
+        {
+            switch (index)
+            {
+                case 1:
+                    GlobalProcedures.FillLookUpEdit(CountryLookUp, CountryDAL.SelectCountryByID(null).Tables[0]);
+                    break;
+            }
+        }
+
+        private void LoadDictionaries(TransactionTypeEnum transaction, int index)
+        {
+            Dictionaries.FDictionaries fc = new Dictionaries.FDictionaries();
+            fc.TransactionType = transaction;
+            fc.ViewSelectedTabIndex = index;
+            fc.RefreshList += new Dictionaries.FDictionaries.DoEvent(RefreshDictionaries);
+            fc.ShowDialog();
+        }
+
+        private void CountryLookUp_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            if (e.Button.Index == 1)
+                LoadDictionaries(TransactionTypeEnum.Update, 1);
+        }
+
+        private void SexLookUp_EditValueChanged(object sender, EventArgs e)
+        {
+            sexID = GlobalFunctions.GetLookUpID(sender);
+        }
+
+        private void CountryLookUp_EditValueChanged(object sender, EventArgs e)
+        {
+            countryID = GlobalFunctions.GetLookUpID(sender);
         }
 
         private void PhoneGridView_DoubleClick(object sender, EventArgs e)

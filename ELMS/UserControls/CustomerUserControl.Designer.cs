@@ -113,8 +113,6 @@
             new DevExpress.XtraBars.LinkPersistInfo(this.EditBarButton),
             new DevExpress.XtraBars.LinkPersistInfo(this.DeleteBarButton),
             new DevExpress.XtraBars.LinkPersistInfo(this.RefreshBarButton),
-            new DevExpress.XtraBars.LinkPersistInfo(this.ScheduleBarButton, true),
-            new DevExpress.XtraBars.LinkPersistInfo(this.HistroryBarButton, true),
             new DevExpress.XtraBars.LinkPersistInfo(this.PrintBarButton, true),
             new DevExpress.XtraBars.LinkPersistInfo(this.ExportBarButton)});
             this.ToolBar.OptionsBar.DrawBorder = false;
