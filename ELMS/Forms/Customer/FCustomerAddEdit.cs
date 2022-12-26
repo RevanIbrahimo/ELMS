@@ -34,9 +34,14 @@ namespace ELMS.Forms.Customer
             phoneID,
             countryID = 0,
             sexID = 0;
+        string CustomerImage;
+        string UserImagePath = GlobalVariables.V_ExecutingFolder + "\\TEMP\\Images";
 
         public delegate void DoEvent();
         public event DoEvent RefreshDataGridView;
+
+
+        List<CustomerImage> lstImage = new List<CustomerImage>();
 
         private void RefreshDocumentBarButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
@@ -55,7 +60,7 @@ namespace ELMS.Forms.Customer
 
         private void LoadDocument()
         {
-            DocumentGridControl.DataSource = CustomerCardDAL.SelectViewData(null).ToList<CustomerCard>();
+            DocumentGridControl.DataSource = CustomerCardDAL.SelectViewData(null);
         }
 
         private void LoadFDocumentAddEdit(TransactionTypeEnum transactionType, int? id)
@@ -139,6 +144,7 @@ namespace ELMS.Forms.Customer
                 this.Text = "Müştərinin düzəliş edilməsi";
                 GlobalProcedures.Lock_or_UnLock_UserID("ELMS_USER.CUSTOMER", GlobalVariables.V_UserID, "WHERE ID = " + CustomerID + " AND USED_USER_ID = -1");
                 LoadDetails();
+                LoadImage();
                 Used = (UsedUserID > 0);
 
                 if (Used)
@@ -161,6 +167,19 @@ namespace ELMS.Forms.Customer
             InsertTemps();
             LoadDocument();
             LoadPhone();
+        }
+
+        private void LoadImage()
+        {
+            if (CustomerID.HasValue)
+            {
+                lstImage = CustomerImageDAL.SelectCustomerImage(CustomerID.Value).ToList<CustomerImage>();
+                if (lstImage.Count > 0)
+                {
+                    var image = lstImage.LastOrDefault();
+                    PictureEdit.EditValue = image.IMAGE;
+                }
+            }
         }
 
         private void LoadDetails()
@@ -217,11 +236,12 @@ namespace ELMS.Forms.Customer
                 REGISTERED_ADDRESS = RegisteredAddressText.Text.Trim()
             };
 
-            CustomerDAL.InsertCustomer(tran, customer);
+            CustomerID = CustomerDAL.InsertCustomer(tran, customer);
         }
 
         private void UpdateCustomer(OracleTransaction tran)
         {
+            isClickBOK = true;
             Class.Tables.Customer customer = new Class.Tables.Customer
             {
                 FULL_NAME = NameText.Text.Trim(),
@@ -255,7 +275,8 @@ namespace ELMS.Forms.Customer
                 
 
                 return 1;
-            }, TransactionType == TransactionTypeEnum.Insert ? "Xəstənin məlumatları bazaya daxil edilmədi." : "Xəstənin məlumatları bazada dəyişdirilmədi.");
+            }, TransactionType == TransactionTypeEnum.Insert ? "Müştərinin məlumatları bazaya daxil edilmədi." : "Müştərinin məlumatları bazada dəyişdirilmədi.");
+            this.Close();
         }
 
         private void InsertImageDetail(OracleTransaction tran)
@@ -318,6 +339,16 @@ namespace ELMS.Forms.Customer
                 LoadDictionaries(TransactionTypeEnum.Update, 1);
         }
 
+        private void FCustomerAddEdit_FormClosing(object sender, FormClosingEventArgs e)
+        {
+           
+                if (!isClickBOK && TransactionType == TransactionTypeEnum.Update)
+                    GlobalProcedures.Lock_or_UnLock_UserID("ELMS_USER.CUSTOMER", -1, "WHERE ID = " + CustomerID + " AND USED_USER_ID = " + GlobalVariables.V_UserID);
+                CustomerDAL.DeleteCustomer(CustomerID.Value);
+
+            this.RefreshDataGridView();
+    }
+
         private void SexLookUp_EditValueChanged(object sender, EventArgs e)
         {
             sexID = GlobalFunctions.GetLookUpID(sender);
@@ -377,5 +408,31 @@ namespace ELMS.Forms.Customer
         {
             GlobalProcedures.GenerateAutoRowNumber(sender, CustomerPhone_SS, e);
         }
+
+
+        private void UploadCustomerImageButton_Click(object sender, EventArgs e)
+        {
+            using (OpenFileDialog dlg = new OpenFileDialog())
+            {
+                dlg.Title = "Müştərinin şəkilini seçin";
+                dlg.Filter = "All files (*.jpeg;*.jpg;*.bmp;*.png)|*.jpeg;*.jpg;*.bmp;*.png|Image files (*.jpeg;*.jpg)|*.jpeg;*.jpg|Bmp files (*.bmp)|*.bmp|Png files (*.png)|*.png";
+
+                if (dlg.ShowDialog() == DialogResult.OK)
+                {
+                    PictureEdit.Image = new Bitmap(dlg.FileName);
+                    CustomerImage = dlg.FileName;
+                    DeleteCustomerImageButton.Enabled = true;
+                }
+                dlg.Dispose();
+            }
+        }
+
+        private void DeleteCustomerImageButton_Click(object sender, EventArgs e)
+        {
+            PictureEdit.Image = null;
+            CustomerImage = null;
+            DeleteCustomerImageButton.Enabled = false;
+        }
+
     }
 }

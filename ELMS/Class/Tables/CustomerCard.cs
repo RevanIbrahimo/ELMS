@@ -21,6 +21,7 @@ namespace ELMS.Class.Tables
         public int DOCUMENT_GROUP_ID { get; set; }
         public int DOCUMENT_TYPE_ID { get; set; }
         public int CARD_ISSUING_ID { get; set; }
+        public int IS_CHANGE { get; set; }
 
     }
 }

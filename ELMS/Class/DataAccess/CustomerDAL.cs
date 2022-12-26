@@ -133,29 +133,28 @@ namespace ELMS.Class.DataAccess
                                                                     COUNTRY_ID,
                                                                     SEX_ID,
                                                                     BIRTHDAY,                                                                     
-                                                                    ADDRESS,)
-                                                    VALUES(:inNAME,
-                                                           :inBRANCHID,
+                                                                    REGISTERED_ADDRESS,
+                                                                    BIRTH_PLACE,
+                                                                    ADDRESS,
+                                                                    NOTE)
+                                                    VALUES(:inFULL_NAME,
+                                                           :inBRANCH_ID,
+                                                           :inCOUNTRY_ID,
                                                            :inSEXID,
                                                            :inBIRTHDAY,
-                                                           :inAGE,                                                           
-                                                           :inADDRESS,
-                                                           :inEMAIL,
-                                                           :inWORKPLACE,                                                           
-                                                           :inNOTE,
-                                                           :inISPHONEOPTIONAL,
-                                                           :inINSERTUSER) RETURNING ID INTO :outID";
-            command.Parameters.Add(new OracleParameter("inNAME", customer.NAME));
-            command.Parameters.Add(new OracleParameter("inBRANCHID", customer.BRANCH_ID));
+                                                           :inREGISTERED_ADDRESS,                                                           
+                                                           :inBIRTH_PLACE,                                                           
+                                                           :inADDRESS,                                                        
+                                                           :inNOTE) RETURNING ID INTO :outID";
+            command.Parameters.Add(new OracleParameter("inFULL_NAME", customer.FULL_NAME));
+            command.Parameters.Add(new OracleParameter("inBRANCH_ID", customer.BRANCH_ID));
+            command.Parameters.Add(new OracleParameter("inCOUNTRY_ID", customer.COUNTRY_ID));
             command.Parameters.Add(new OracleParameter("inSEXID", customer.SEX_ID));
             command.Parameters.Add(new OracleParameter("inBIRTHDAY", customer.BIRTHDAY));
-            command.Parameters.Add(new OracleParameter("inAGE", customer.AGE));
+            command.Parameters.Add(new OracleParameter("inREGISTERED_ADDRESS", customer.REGISTERED_ADDRESS));
+            command.Parameters.Add(new OracleParameter("inBIRTH_PLACE", customer.BIRTH_PLACE));
             command.Parameters.Add(new OracleParameter("inADDRESS", customer.ADDRESS));
-            command.Parameters.Add(new OracleParameter("inEMAIL", customer.EMAIL));
-            command.Parameters.Add(new OracleParameter("inWORKPLACE", customer.WORKPLACE));
             command.Parameters.Add(new OracleParameter("inNOTE", customer.NOTE));
-            command.Parameters.Add(new OracleParameter("inISPHONEOPTIONAL", customer.IS_PHONE_OPTIONAL));
-            command.Parameters.Add(new OracleParameter("inINSERTUSER", GlobalVariables.V_UserID));
             command.Parameters.Add(new OracleParameter("outID", OracleDbType.Int32, ParameterDirection.Output));
 
             if (tran != null)
@@ -172,33 +171,29 @@ namespace ELMS.Class.DataAccess
         public static void UpdateCustomer(OracleTransaction tran, Customer customer)
         {
             OracleCommand command = tran.Connection.CreateCommand();
-            command.CommandText = $@"UPDATE DENTAL_USER.CUSTOMER SET NAME = :inNAME,
-                                                                        BRANCH_ID = :inBRANCHID,
+            command.CommandText = $@"UPDATE ELMS_USER.CUSTOMER SET FULL_NAME = :inFULL_NAME,
+                                                                        BRANCH_ID = :inBRANCH_ID,
+                                                                        COUNTRY_ID = :inCOUNTRY_ID,
                                                                         SEX_ID = :inSEXID,
                                                                         BIRTHDAY = :inBIRTHDAY,
-                                                                        AGE = :inAGE,                                                                   
+                                                                        REGISTERED_ADDRESS = :inREGISTERED_ADDRESS,                                                                   
+                                                                        BIRTH_PLACE = :inBIRTH_PLACE,
                                                                         ADDRESS = :inADDRESS,
-                                                                        EMAIL = :inEMAIL,
-                                                                        WORKPLACE = :inWORKPLACE,                                                                        
                                                                         NOTE = :inNOTE,
-                                                                        IS_PHONE_OPTIONAL = :inISPHONEOPTIONAL,
                                                                         USED_USER_ID = :inUSEDUSERID,
-                                                                        ORDER_ID = :inORDERID,
                                                                         UPDATE_USER = :inUPDATEUSER,
                                                                         UPDATE_DATE = SYSDATE
                                                             WHERE ID = :inID";
-            command.Parameters.Add(new OracleParameter("inNAME", customer.NAME));
-            command.Parameters.Add(new OracleParameter("inBRANCHID", customer.BRANCH_ID));
+            command.Parameters.Add(new OracleParameter("inFULL_NAME", customer.FULL_NAME));
+            command.Parameters.Add(new OracleParameter("inBRANCH_ID", customer.BRANCH_ID));
+            command.Parameters.Add(new OracleParameter("inCOUNTRY_ID", customer.COUNTRY_ID));
             command.Parameters.Add(new OracleParameter("inSEXID", customer.SEX_ID));
             command.Parameters.Add(new OracleParameter("inBIRTHDAY", customer.BIRTHDAY));
-            command.Parameters.Add(new OracleParameter("inAGE", customer.AGE));
+            command.Parameters.Add(new OracleParameter("inREGISTERED_ADDRESS", customer.REGISTERED_ADDRESS));
+            command.Parameters.Add(new OracleParameter("inBIRTH_PLACE", customer.BIRTH_PLACE));
             command.Parameters.Add(new OracleParameter("inADDRESS", customer.ADDRESS));
-            command.Parameters.Add(new OracleParameter("inEMAIL", customer.EMAIL));
-            command.Parameters.Add(new OracleParameter("inWORKPLACE", customer.WORKPLACE));
             command.Parameters.Add(new OracleParameter("inNOTE", customer.NOTE));
-            command.Parameters.Add(new OracleParameter("inISPHONEOPTIONAL", customer.IS_PHONE_OPTIONAL));
             command.Parameters.Add(new OracleParameter("inUSEDUSERID", customer.USED_USER_ID));
-            command.Parameters.Add(new OracleParameter("inORDERID", customer.ORDER_ID));
             command.Parameters.Add(new OracleParameter("inUPDATEUSER", GlobalVariables.V_UserID));
             command.Parameters.Add(new OracleParameter("inID", customer.ID));
 
@@ -211,7 +206,7 @@ namespace ELMS.Class.DataAccess
 
         public static void DeleteCustomer(int doctorID)
         {
-            GlobalProcedures.ExecuteProcedureWithParametr("DENTAL_USER.PROC_DELETE_CUSTOMER", "P_CUSTOMER_ID", doctorID, "Xəstə bazadan silinmədi.");
+            GlobalProcedures.ExecuteProcedureWithParametr("ELMS_USER_TEMP.PROC_DELETE_CUSTOMER_CARDS", "P_CUSTOMER_ID", doctorID, "Müştəri bazadan silinmədi.");
         }
     }
 }

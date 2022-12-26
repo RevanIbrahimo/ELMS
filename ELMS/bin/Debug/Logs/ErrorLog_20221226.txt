@@ -109,3 +109,261 @@ Log Entry : 7:01:07 AM Monday, December 26, 2022
                                                            :inCUSTOMER_ID,
                                                            :inINSERT_USER)
 -------------------------------------------------
+
+Log Entry : 4:43:35 PM Monday, December 26, 2022
+  
+   UserName =  SuperAdmin
+   FormName =  CustomerCardDAL
+   ProcedureName =  UpdateCustomerCard
+  
+   ShowMessage: Sənəd bazada dəyişdirilmədi.
+   Exception Message: Value does not fall within the expected range.
+-------------------------------------------------
+
+Log Entry : 4:59:37 PM Monday, December 26, 2022
+  
+   UserName =  SuperAdmin
+   FormName =  CustomerCardDAL
+   ProcedureName =  UpdateCustomerCard
+  
+   ShowMessage: Sənəd bazada dəyişdirilmədi.
+   Exception Message: Value does not fall within the expected range.
+-------------------------------------------------
+
+Log Entry : 5:06:32 PM Monday, December 26, 2022
+  
+   UserName =  SuperAdmin
+   FormName =  CustomerCardDAL
+   ProcedureName =  UpdateCustomerCard
+  
+   ShowMessage: Sənəd bazada dəyişdirilmədi.
+   Exception Message: Value does not fall within the expected range.
+-------------------------------------------------
+
+Log Entry : 5:08:13 PM Monday, December 26, 2022
+  
+   UserName =  SuperAdmin
+   FormName =  CustomerCardDAL
+   ProcedureName =  InsertCustomerCard
+  
+   ShowMessage: Sənəd bazaya daxil edilmədi.
+   Exception Message: Value does not fall within the expected range.
+-------------------------------------------------
+
+Log Entry : 5:32:46 PM Monday, December 26, 2022
+  
+   UserName =  SuperAdmin
+   FormName =  CustomerCardDAL
+   ProcedureName =  InsertCustomerCard
+  
+   ShowMessage: Sənəd bazaya daxil edilmədi.
+   Exception Message: Value does not fall within the expected range.
+-------------------------------------------------
+
+Log Entry : 5:36:25 PM Monday, December 26, 2022
+  
+   UserName =  SuperAdmin
+   FormName =  CustomerCardDAL
+   ProcedureName =  InsertCustomerCard
+  
+   ShowMessage: Sənəd bazaya daxil edilmədi.
+   Exception Message: Value does not fall within the expected range.
+-------------------------------------------------
+
+Log Entry : 5:40:08 PM Monday, December 26, 2022
+  
+   UserName =  SuperAdmin
+   FormName =  CustomerCardDAL
+   ProcedureName =  InsertCustomerCard
+  
+   ShowMessage: Sənəd bazaya daxil edilmədi.
+   Exception Message: Value does not fall within the expected range.
+-------------------------------------------------
+
+Log Entry : 6:48:54 PM Monday, December 26, 2022
+  
+   UserName =  SuperAdmin
+   FormName =  CustomerCardDAL
+   ProcedureName =  InsertCustomerCard
+  
+   ShowMessage: Sənəd bazaya daxil edilmədi.
+   Exception Message: Value does not fall within the expected range.
+-------------------------------------------------
+
+Log Entry : 6:59:42 PM Monday, December 26, 2022
+  
+   UserName =  SuperAdmin
+   FormName =  CustomerCardDAL
+   ProcedureName =  UpdateCustomerCard
+  
+   ShowMessage: Sənəd bazada dəyişdirilmədi.
+   Exception Message: Value does not fall within the expected range.
+-------------------------------------------------
+
+Log Entry : 7:00:34 PM Monday, December 26, 2022
+  
+   UserName =  SuperAdmin
+   FormName =  CustomerCardDAL
+   ProcedureName =  UpdateCustomerCard
+  
+   ShowMessage: Sənəd bazada dəyişdirilmədi.
+   Exception Message: Value does not fall within the expected range.
+-------------------------------------------------
+
+Log Entry : 7:11:20 PM Monday, December 26, 2022
+  
+   UserName =  SuperAdmin
+   FormName =  CustomerCardDAL
+   ProcedureName =  UpdateCustomerCard
+  
+   ShowMessage: Sənəd bazada dəyişdirilmədi.
+   Exception Message: Value does not fall within the expected range.
+-------------------------------------------------
+
+Log Entry : 7:22:09 PM Monday, December 26, 2022
+  
+   UserName =  SuperAdmin
+   FormName =  CustomerCardDAL
+   ProcedureName =  UpdateCustomerCard
+  
+   ShowMessage: Sənəd bazada dəyişdirilmədi.
+   Exception Message: Value does not fall within the expected range.
+-------------------------------------------------
+
+Log Entry : 7:36:54 PM Monday, December 26, 2022
+  
+   UserName =  SuperAdmin
+   FormName =  GlobalProcedures
+   ProcedureName =  ExecuteProcedureWithParametr/ELMS_USER.PROC_DELETE_CUSTOMER
+  
+   ShowMessage: Müştəri bazadan silinmədi.
+   Exception Message: ORA-06550: line 1, column 7:
+PLS-00201: identifier 'ELMS_USER.PROC_DELETE_CUSTOMER' must be declared
+ORA-06550: line 1, column 7:
+PL/SQL: Statement ignored
+   SQL Text      :  ELMS_USER.PROC_DELETE_CUSTOMER
+-------------------------------------------------
+
+Log Entry : 7:37:54 PM Monday, December 26, 2022
+  
+   UserName =  SuperAdmin
+   FormName =  GlobalProcedures
+   ProcedureName =  ExecuteProcedureWithParametr/ELMS_USER_TEMP.PROC_DELETE_CUSTOMER
+  
+   ShowMessage: Müştəri bazadan silinmədi.
+   Exception Message: ORA-06550: line 1, column 7:
+PLS-00201: identifier 'ELMS_USER_TEMP.PROC_DELETE_CUSTOMER' must be declared
+ORA-06550: line 1, column 7:
+PL/SQL: Statement ignored
+   SQL Text      :  ELMS_USER_TEMP.PROC_DELETE_CUSTOMER
+-------------------------------------------------
+
+Log Entry : 7:41:59 PM Monday, December 26, 2022
+  
+   UserName =  SuperAdmin
+   FormName =  CustomerCardDAL
+   ProcedureName =  UpdateCustomerCard
+  
+   ShowMessage: Sənəd bazada dəyişdirilmədi.
+   Exception Message: Value does not fall within the expected range.
+-------------------------------------------------
+
+Log Entry : 10:06:29 PM Monday, December 26, 2022
+  
+   UserName =  SuperAdmin
+   FormName =  GlobalFunctions
+   ProcedureName =  RunInOneTransaction
+  
+   ShowMessage: Müştərinin məlumatları bazada dəyişdirilmədi.
+   Exception Message: ORA-00904: "UPDATE_DATE": invalid identifier
+-------------------------------------------------
+
+Log Entry : 10:19:35 PM Monday, December 26, 2022
+  
+   UserName =  SuperAdmin
+   FormName =  GlobalFunctions
+   ProcedureName =  RunInOneTransaction
+  
+   ShowMessage: Müştərinin məlumatları bazada dəyişdirilmədi.
+   Exception Message: ORA-00904: "UPDATE_DATE": invalid identifier
+-------------------------------------------------
+
+Log Entry : 10:31:20 PM Monday, December 26, 2022
+  
+   UserName =  SuperAdmin
+   FormName =  GlobalFunctions
+   ProcedureName =  RunInOneTransaction
+  
+   ShowMessage: Müştərinin məlumatları bazaya daxil edilmədi.
+   Exception Message: ORA-00913: too many values
+-------------------------------------------------
+
+Log Entry : 10:43:35 PM Monday, December 26, 2022
+  
+   UserName =  SuperAdmin
+   FormName =  GlobalFunctions
+   ProcedureName =  RunInOneTransaction
+  
+   ShowMessage: Müştərinin məlumatları bazaya daxil edilmədi.
+   Exception Message: ORA-00913: too many values
+-------------------------------------------------
+
+Log Entry : 10:52:18 PM Monday, December 26, 2022
+  
+   UserName =  SuperAdmin
+   FormName =  GlobalFunctions
+   ProcedureName =  RunInOneTransaction
+  
+   ShowMessage: Müştərinin məlumatları bazaya daxil edilmədi.
+   Exception Message: ORA-00904: "BIRTHPLACE": invalid identifier
+-------------------------------------------------
+
+Log Entry : 10:53:54 PM Monday, December 26, 2022
+  
+   UserName =  SuperAdmin
+   FormName =  GlobalFunctions
+   ProcedureName =  RunInOneTransaction
+  
+   ShowMessage: Müştərinin məlumatları bazaya daxil edilmədi.
+   Exception Message: ORA-00001: unique constraint (ELMS_USER.CUSTOMER_PK) violated
+-------------------------------------------------
+
+Log Entry : 10:58:58 PM Monday, December 26, 2022
+  
+   UserName =  SuperAdmin
+   FormName =  GlobalFunctions
+   ProcedureName =  RunInOneTransaction
+  
+   ShowMessage: Müştərinin məlumatları bazaya daxil edilmədi.
+   Exception Message: ORA-00904: "INSERT_USER": invalid identifier
+-------------------------------------------------
+
+Log Entry : 11:02:19 PM Monday, December 26, 2022
+  
+   UserName =  SuperAdmin
+   FormName =  GlobalFunctions
+   ProcedureName =  RunInOneTransaction
+  
+   ShowMessage: Müştərinin məlumatları bazaya daxil edilmədi.
+   Exception Message: ORA-00904: "INSERT_USER": invalid identifier
+-------------------------------------------------
+
+Log Entry : 11:08:09 PM Monday, December 26, 2022
+  
+   UserName =  SuperAdmin
+   FormName =  GlobalFunctions
+   ProcedureName =  RunInOneTransaction
+  
+   ShowMessage: Müştərinin məlumatları bazaya daxil edilmədi.
+   Exception Message: ORA-00001: unique constraint (ELMS_USER.SYS_C008666) violated
+-------------------------------------------------
+
+Log Entry : 11:31:23 PM Monday, December 26, 2022
+  
+   UserName =  SuperAdmin
+   FormName =  GlobalFunctions
+   ProcedureName =  RunInOneTransaction
+  
+   ShowMessage: Müştərinin məlumatları bazada dəyişdirilmədi.
+   Exception Message: ORA-00904: "UPDATE_DATE": invalid identifier
+-------------------------------------------------

@@ -108,12 +108,14 @@ namespace ELMS.Forms.Customer
         {
             CustomerCard customerCard = new CustomerCard
             {
-                DOCUMENT_GROUP_ID = documentTypeID,
-                DOCUMENT_TYPE_ID = documentGroupID,
+                DOCUMENT_GROUP_ID = documentGroupID,
+                DOCUMENT_TYPE_ID = documentTypeID,
                 CARD_ISSUING_ID = cardIssuingID,
                 PINCODE = PinCodeText.Text.Trim(),
                 CARD_NUMBER = NumberText.Text.Trim(),
-
+                ISSUE_DATE = DateOfIssueDate.DateTime,
+                RELIABLE_DATE = ReliableDate.DateTime,
+                CUSTOMER_ID = CustomerID.Value
             };
             CustomerCardDAL.InsertCustomerCard(customerCard);
         }
@@ -124,8 +126,8 @@ namespace ELMS.Forms.Customer
 
             CustomerCard customerCard = new CustomerCard
             {
-                DOCUMENT_GROUP_ID = documentTypeID,
-                DOCUMENT_TYPE_ID = documentGroupID,
+                DOCUMENT_GROUP_ID = documentGroupID,
+                DOCUMENT_TYPE_ID = documentTypeID,
                 CARD_ISSUING_ID = cardIssuingID,
                 PINCODE = PinCodeText.Text.Trim(),
                 CARD_NUMBER = NumberText.Text.Trim(),
@@ -133,7 +135,8 @@ namespace ELMS.Forms.Customer
                 RELIABLE_DATE = ReliableDate.DateTime,
                 ID = CardID.Value,
                 CUSTOMER_ID = CustomerID.Value,
-                USED_USER_ID = -1
+                USED_USER_ID = -1,
+                IS_CHANGE = (int)ChangeTypeEnum.Change
             };
 
             CustomerCardDAL.UpdateCustomerCard(customerCard);
@@ -310,7 +313,7 @@ namespace ELMS.Forms.Customer
             else
                 b = true;
 
-            int card_count = GlobalFunctions.GetCount($@"SELECT COUNT(*) FROM (SELECT CARD_NUMBER,DOCUMENT_GROUP_ID,DOCUMENT_TYPE_ID FROM COMS_USER_TEMP.CUSTOMER_CARDS_TEMP UNION ALL SELECT CARD_NUMBER,DOCUMENT_GROUP_ID,DOCUMENT_TYPE_ID FROM COMS_USER.CUSTOMER_CARDS) WHERE CARD_NUMBER = '{NumberText.Text.Trim()}' AND DOCUMENT_GROUP_ID = {documentGroupID} AND DOCUMENT_TYPE_ID = {documentTypeID}"); ;
+            int card_count = GlobalFunctions.GetCount($@"SELECT COUNT(*) FROM (SELECT CARD_NUMBER,DOCUMENT_GROUP_ID,DOCUMENT_TYPE_ID FROM ELMS_USER_TEMP.CUSTOMER_CARDS_TEMP UNION ALL SELECT CARD_NUMBER,DOCUMENT_GROUP_ID,DOCUMENT_TYPE_ID FROM ELMS_USER.CUSTOMER_CARDS) WHERE CARD_NUMBER = '{NumberText.Text.Trim()}' AND DOCUMENT_GROUP_ID = {documentGroupID} AND DOCUMENT_TYPE_ID = {documentTypeID}"); ;
 
             if (card_count > 0 && TransactionType == TransactionTypeEnum.Insert)
             {
@@ -323,7 +326,7 @@ namespace ELMS.Forms.Customer
             else
                 b = true;
 
-            int card_code = GlobalFunctions.GetCount($@"SELECT COUNT(*) FROM (SELECT PINCODE,CARD_NUMBER,DOCUMENT_GROUP_ID,DOCUMENT_TYPE_ID FROM COMS_USER_TEMP.CUSTOMER_CARDS_TEMP UNION ALL SELECT PINCODE,CARD_NUMBER,DOCUMENT_GROUP_ID,DOCUMENT_TYPE_ID FROM COMS_USER.CUSTOMER_CARDS) WHERE PINCODE = '{PinCodeText.Text.Trim()}' AND CARD_NUMBER = '{NumberText.Text.Trim()}' AND DOCUMENT_GROUP_ID = {documentGroupID} AND DOCUMENT_TYPE_ID = {documentTypeID}");
+            int card_code = GlobalFunctions.GetCount($@"SELECT COUNT(*) FROM (SELECT PINCODE,CARD_NUMBER,DOCUMENT_GROUP_ID,DOCUMENT_TYPE_ID FROM ELMS_USER_TEMP.CUSTOMER_CARDS_TEMP UNION ALL SELECT PINCODE,CARD_NUMBER,DOCUMENT_GROUP_ID,DOCUMENT_TYPE_ID FROM ELMS_USER.CUSTOMER_CARDS) WHERE PINCODE = '{PinCodeText.Text.Trim()}' AND CARD_NUMBER = '{NumberText.Text.Trim()}' AND DOCUMENT_GROUP_ID = {documentGroupID} AND DOCUMENT_TYPE_ID = {documentTypeID}");
 
             if (card_code > 0 && TransactionType == TransactionTypeEnum.Insert)
             {

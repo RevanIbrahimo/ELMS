@@ -29,19 +29,19 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            DevExpress.Utils.SuperToolTip superToolTip3 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem4 = new DevExpress.Utils.ToolTipTitleItem();
+            DevExpress.Utils.ToolTipItem toolTipItem3 = new DevExpress.Utils.ToolTipItem();
+            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem5 = new DevExpress.Utils.ToolTipTitleItem();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions4 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions5 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             DevExpress.Utils.SuperToolTip superToolTip1 = new DevExpress.Utils.SuperToolTip();
             DevExpress.Utils.ToolTipTitleItem toolTipTitleItem1 = new DevExpress.Utils.ToolTipTitleItem();
             DevExpress.Utils.ToolTipItem toolTipItem1 = new DevExpress.Utils.ToolTipItem();
-            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem2 = new DevExpress.Utils.ToolTipTitleItem();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions3 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SuperToolTip superToolTip2 = new DevExpress.Utils.SuperToolTip();
-            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem3 = new DevExpress.Utils.ToolTipTitleItem();
-            DevExpress.Utils.ToolTipItem toolTipItem2 = new DevExpress.Utils.ToolTipItem();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FCustomerAddEdit));
-            ManiXButton.Office2010Red office2010Red1 = new ManiXButton.Office2010Red();
-            ManiXButton.Office2010Blue office2010Blue1 = new ManiXButton.Office2010Blue();
+            ManiXButton.Office2010Red office2010Red2 = new ManiXButton.Office2010Red();
+            ManiXButton.Office2010Blue office2010Blue2 = new ManiXButton.Office2010Blue();
             this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
             this.behaviorManager1 = new DevExpress.Utils.Behaviors.BehaviorManager(this.components);
             this.PersonalDetailsGroupBox = new DevExpress.XtraEditors.GroupControl();
@@ -53,9 +53,9 @@
             this.Address2Label = new DevExpress.XtraEditors.LabelControl();
             this.RegisteredAddressText = new DevExpress.XtraEditors.TextEdit();
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
-            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
-            this.CustomerPictureBox = new DevExpress.XtraEditors.PictureEdit();
+            this.DeleteCustomerImageButton = new DevExpress.XtraEditors.SimpleButton();
+            this.UploadCustomerImageButton = new DevExpress.XtraEditors.SimpleButton();
+            this.PictureEdit = new DevExpress.XtraEditors.PictureEdit();
             this.separatorControl1 = new DevExpress.XtraEditors.SeparatorControl();
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
@@ -131,7 +131,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.NoteText.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ActualAddressText.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.RegisteredAddressText.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CustomerPictureBox.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.separatorControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BirthPlaceText.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CountryLookUp.Properties)).BeginInit();
@@ -170,9 +170,9 @@
             this.PersonalDetailsGroupBox.Controls.Add(this.Address2Label);
             this.PersonalDetailsGroupBox.Controls.Add(this.RegisteredAddressText);
             this.PersonalDetailsGroupBox.Controls.Add(this.labelControl9);
-            this.PersonalDetailsGroupBox.Controls.Add(this.simpleButton2);
-            this.PersonalDetailsGroupBox.Controls.Add(this.simpleButton1);
-            this.PersonalDetailsGroupBox.Controls.Add(this.CustomerPictureBox);
+            this.PersonalDetailsGroupBox.Controls.Add(this.DeleteCustomerImageButton);
+            this.PersonalDetailsGroupBox.Controls.Add(this.UploadCustomerImageButton);
+            this.PersonalDetailsGroupBox.Controls.Add(this.PictureEdit);
             this.PersonalDetailsGroupBox.Controls.Add(this.separatorControl1);
             this.PersonalDetailsGroupBox.Controls.Add(this.labelControl8);
             this.PersonalDetailsGroupBox.Controls.Add(this.labelControl7);
@@ -269,42 +269,44 @@
             this.labelControl9.TabIndex = 21;
             this.labelControl9.Text = "Qeydiyatda olduğu ünvan";
             // 
-            // simpleButton2
+            // DeleteCustomerImageButton
             // 
-            this.simpleButton2.Location = new System.Drawing.Point(779, 203);
-            this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(59, 23);
-            this.simpleButton2.TabIndex = 20;
-            this.simpleButton2.Text = "Sil";
+            this.DeleteCustomerImageButton.Location = new System.Drawing.Point(779, 203);
+            this.DeleteCustomerImageButton.Name = "DeleteCustomerImageButton";
+            this.DeleteCustomerImageButton.Size = new System.Drawing.Size(59, 23);
+            this.DeleteCustomerImageButton.TabIndex = 20;
+            this.DeleteCustomerImageButton.Text = "Sil";
+            this.DeleteCustomerImageButton.Click += new System.EventHandler(this.DeleteCustomerImageButton_Click);
             // 
-            // simpleButton1
+            // UploadCustomerImageButton
             // 
-            this.simpleButton1.Location = new System.Drawing.Point(699, 203);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(59, 23);
-            this.simpleButton1.TabIndex = 19;
-            this.simpleButton1.Text = "Yüklə";
+            this.UploadCustomerImageButton.Location = new System.Drawing.Point(699, 203);
+            this.UploadCustomerImageButton.Name = "UploadCustomerImageButton";
+            this.UploadCustomerImageButton.Size = new System.Drawing.Size(59, 23);
+            this.UploadCustomerImageButton.TabIndex = 19;
+            this.UploadCustomerImageButton.Text = "Yüklə";
+            this.UploadCustomerImageButton.Click += new System.EventHandler(this.UploadCustomerImageButton_Click);
             // 
-            // CustomerPictureBox
+            // PictureEdit
             // 
-            this.CustomerPictureBox.Cursor = System.Windows.Forms.Cursors.Default;
-            this.CustomerPictureBox.Location = new System.Drawing.Point(699, 35);
-            this.CustomerPictureBox.Name = "CustomerPictureBox";
-            this.CustomerPictureBox.Properties.NullText = "Müştərinin şəkli";
-            this.CustomerPictureBox.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            this.CustomerPictureBox.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
-            this.CustomerPictureBox.Properties.ZoomAccelerationFactor = 1D;
-            this.CustomerPictureBox.Size = new System.Drawing.Size(139, 162);
-            superToolTip1.AllowHtmlText = DevExpress.Utils.DefaultBoolean.True;
-            toolTipTitleItem1.Text = "<color=255,0,0>Müştərinin şəkili</color>";
-            toolTipItem1.LeftIndent = 6;
-            toolTipItem1.Text = "Müştərinin şəkilini göstərmək üçün nəzərdə tutulub.";
-            toolTipTitleItem2.LeftIndent = 6;
-            superToolTip1.Items.Add(toolTipTitleItem1);
-            superToolTip1.Items.Add(toolTipItem1);
-            superToolTip1.Items.Add(toolTipTitleItem2);
-            this.CustomerPictureBox.SuperTip = superToolTip1;
-            this.CustomerPictureBox.TabIndex = 18;
+            this.PictureEdit.Cursor = System.Windows.Forms.Cursors.Default;
+            this.PictureEdit.Location = new System.Drawing.Point(699, 35);
+            this.PictureEdit.Name = "PictureEdit";
+            this.PictureEdit.Properties.NullText = "Müştərinin şəkli";
+            this.PictureEdit.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
+            this.PictureEdit.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
+            this.PictureEdit.Properties.ZoomAccelerationFactor = 1D;
+            this.PictureEdit.Size = new System.Drawing.Size(139, 162);
+            superToolTip3.AllowHtmlText = DevExpress.Utils.DefaultBoolean.True;
+            toolTipTitleItem4.Text = "<color=255,0,0>Müştərinin şəkili</color>";
+            toolTipItem3.LeftIndent = 6;
+            toolTipItem3.Text = "Müştərinin şəkilini göstərmək üçün nəzərdə tutulub.";
+            toolTipTitleItem5.LeftIndent = 6;
+            superToolTip3.Items.Add(toolTipTitleItem4);
+            superToolTip3.Items.Add(toolTipItem3);
+            superToolTip3.Items.Add(toolTipTitleItem5);
+            this.PictureEdit.SuperTip = superToolTip3;
+            this.PictureEdit.TabIndex = 18;
             // 
             // separatorControl1
             // 
@@ -351,8 +353,8 @@
             this.CountryLookUp.Margin = new System.Windows.Forms.Padding(4);
             this.CountryLookUp.Name = "CountryLookUp";
             this.CountryLookUp.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), "Siyanını aç"),
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Ellipsis, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), "Düzəliş etmək üçün ölkələrin siyahısını aç")});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo, "", -1, true, true, false, editorButtonImageOptions4, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), "Siyanını aç"),
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Ellipsis, "", -1, true, true, false, editorButtonImageOptions5, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), "Düzəliş etmək üçün ölkələrin siyahısını aç")});
             this.CountryLookUp.Properties.ButtonsStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.CountryLookUp.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("ID", "ID", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default),
@@ -444,7 +446,7 @@
             this.SexLookUp.Margin = new System.Windows.Forms.Padding(4);
             this.SexLookUp.Name = "SexLookUp";
             this.SexLookUp.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo, "", -1, true, true, false, editorButtonImageOptions3, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), "Siyahını aç")});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), "Siyahını aç")});
             this.SexLookUp.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("ID", "ID", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default),
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("NAME", "Name")});
@@ -501,13 +503,13 @@
             this.NameText.Properties.NullValuePrompt = "Soyadı, adı və atasının adını daxil edin";
             this.NameText.Properties.NullValuePromptShowForEmptyValue = true;
             this.NameText.Size = new System.Drawing.Size(496, 20);
-            toolTipTitleItem3.Text = "<color=255,0,0>Müştərinin tam adı</color>";
-            toolTipItem2.LeftIndent = 6;
-            toolTipItem2.Text = "Bu xanaya dırnaq işarəsi daxil etmək olmaz. Əgər daxil etsəz, müştərinin məlumatl" +
+            toolTipTitleItem1.Text = "<color=255,0,0>Müştərinin tam adı</color>";
+            toolTipItem1.LeftIndent = 6;
+            toolTipItem1.Text = "Bu xanaya dırnaq işarəsi daxil etmək olmaz. Əgər daxil etsəz, müştərinin məlumatl" +
     "arı <b><color=104,6,6>bazada saxlanılmayacaq</b></color>.\r\n";
-            superToolTip2.Items.Add(toolTipTitleItem3);
-            superToolTip2.Items.Add(toolTipItem2);
-            this.NameText.SuperTip = superToolTip2;
+            superToolTip1.Items.Add(toolTipTitleItem1);
+            superToolTip1.Items.Add(toolTipItem1);
+            this.NameText.SuperTip = superToolTip1;
             this.NameText.TabIndex = 0;
             this.NameText.ToolTip = "Yalnız hərf yazmağınız tövsiyə olunur.";
             // 
@@ -1057,24 +1059,24 @@
             // BCancel
             // 
             this.BCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            office2010Red1.BorderColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(72)))), ((int)(((byte)(161)))));
-            office2010Red1.BorderColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(135)))), ((int)(((byte)(228)))));
-            office2010Red1.ButtonMouseOverColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(199)))), ((int)(((byte)(87)))));
-            office2010Red1.ButtonMouseOverColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(243)))), ((int)(((byte)(215)))));
-            office2010Red1.ButtonMouseOverColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(225)))), ((int)(((byte)(137)))));
-            office2010Red1.ButtonMouseOverColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(249)))), ((int)(((byte)(224)))));
-            office2010Red1.ButtonNormalColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(77)))), ((int)(((byte)(45)))));
-            office2010Red1.ButtonNormalColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(148)))), ((int)(((byte)(64)))));
-            office2010Red1.ButtonNormalColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(77)))), ((int)(((byte)(45)))));
-            office2010Red1.ButtonNormalColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(148)))), ((int)(((byte)(64)))));
-            office2010Red1.ButtonSelectedColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(199)))), ((int)(((byte)(87)))));
-            office2010Red1.ButtonSelectedColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(243)))), ((int)(((byte)(215)))));
-            office2010Red1.ButtonSelectedColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(229)))), ((int)(((byte)(117)))));
-            office2010Red1.ButtonSelectedColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(216)))), ((int)(((byte)(107)))));
-            office2010Red1.HoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
-            office2010Red1.SelectedTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
-            office2010Red1.TextColor = System.Drawing.Color.White;
-            this.BCancel.ColorTable = office2010Red1;
+            office2010Red2.BorderColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(72)))), ((int)(((byte)(161)))));
+            office2010Red2.BorderColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(135)))), ((int)(((byte)(228)))));
+            office2010Red2.ButtonMouseOverColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(199)))), ((int)(((byte)(87)))));
+            office2010Red2.ButtonMouseOverColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(243)))), ((int)(((byte)(215)))));
+            office2010Red2.ButtonMouseOverColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(225)))), ((int)(((byte)(137)))));
+            office2010Red2.ButtonMouseOverColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(249)))), ((int)(((byte)(224)))));
+            office2010Red2.ButtonNormalColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(77)))), ((int)(((byte)(45)))));
+            office2010Red2.ButtonNormalColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(148)))), ((int)(((byte)(64)))));
+            office2010Red2.ButtonNormalColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(77)))), ((int)(((byte)(45)))));
+            office2010Red2.ButtonNormalColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(148)))), ((int)(((byte)(64)))));
+            office2010Red2.ButtonSelectedColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(199)))), ((int)(((byte)(87)))));
+            office2010Red2.ButtonSelectedColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(243)))), ((int)(((byte)(215)))));
+            office2010Red2.ButtonSelectedColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(229)))), ((int)(((byte)(117)))));
+            office2010Red2.ButtonSelectedColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(216)))), ((int)(((byte)(107)))));
+            office2010Red2.HoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
+            office2010Red2.SelectedTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
+            office2010Red2.TextColor = System.Drawing.Color.White;
+            this.BCancel.ColorTable = office2010Red2;
             this.BCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.BCancel.Location = new System.Drawing.Point(796, 13);
             this.BCancel.Name = "BCancel";
@@ -1087,24 +1089,24 @@
             // BOK
             // 
             this.BOK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            office2010Blue1.BorderColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(72)))), ((int)(((byte)(161)))));
-            office2010Blue1.BorderColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(135)))), ((int)(((byte)(228)))));
-            office2010Blue1.ButtonMouseOverColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(199)))), ((int)(((byte)(87)))));
-            office2010Blue1.ButtonMouseOverColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(243)))), ((int)(((byte)(215)))));
-            office2010Blue1.ButtonMouseOverColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(225)))), ((int)(((byte)(137)))));
-            office2010Blue1.ButtonMouseOverColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(249)))), ((int)(((byte)(224)))));
-            office2010Blue1.ButtonNormalColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(72)))), ((int)(((byte)(161)))));
-            office2010Blue1.ButtonNormalColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(135)))), ((int)(((byte)(228)))));
-            office2010Blue1.ButtonNormalColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(97)))), ((int)(((byte)(181)))));
-            office2010Blue1.ButtonNormalColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(125)))), ((int)(((byte)(219)))));
-            office2010Blue1.ButtonSelectedColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(199)))), ((int)(((byte)(87)))));
-            office2010Blue1.ButtonSelectedColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(243)))), ((int)(((byte)(215)))));
-            office2010Blue1.ButtonSelectedColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(229)))), ((int)(((byte)(117)))));
-            office2010Blue1.ButtonSelectedColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(216)))), ((int)(((byte)(107)))));
-            office2010Blue1.HoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
-            office2010Blue1.SelectedTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
-            office2010Blue1.TextColor = System.Drawing.Color.White;
-            this.BOK.ColorTable = office2010Blue1;
+            office2010Blue2.BorderColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(72)))), ((int)(((byte)(161)))));
+            office2010Blue2.BorderColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(135)))), ((int)(((byte)(228)))));
+            office2010Blue2.ButtonMouseOverColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(199)))), ((int)(((byte)(87)))));
+            office2010Blue2.ButtonMouseOverColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(243)))), ((int)(((byte)(215)))));
+            office2010Blue2.ButtonMouseOverColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(225)))), ((int)(((byte)(137)))));
+            office2010Blue2.ButtonMouseOverColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(249)))), ((int)(((byte)(224)))));
+            office2010Blue2.ButtonNormalColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(72)))), ((int)(((byte)(161)))));
+            office2010Blue2.ButtonNormalColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(135)))), ((int)(((byte)(228)))));
+            office2010Blue2.ButtonNormalColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(97)))), ((int)(((byte)(181)))));
+            office2010Blue2.ButtonNormalColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(125)))), ((int)(((byte)(219)))));
+            office2010Blue2.ButtonSelectedColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(199)))), ((int)(((byte)(87)))));
+            office2010Blue2.ButtonSelectedColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(243)))), ((int)(((byte)(215)))));
+            office2010Blue2.ButtonSelectedColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(229)))), ((int)(((byte)(117)))));
+            office2010Blue2.ButtonSelectedColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(216)))), ((int)(((byte)(107)))));
+            office2010Blue2.HoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
+            office2010Blue2.SelectedTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
+            office2010Blue2.TextColor = System.Drawing.Color.White;
+            this.BOK.ColorTable = office2010Blue2;
             this.BOK.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BOK.Location = new System.Drawing.Point(715, 13);
             this.BOK.Name = "BOK";
@@ -1162,6 +1164,7 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Fiziki şəxsin əlavə/düzəliş edilməsi";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FCustomerAddEdit_FormClosing);
             this.Load += new System.EventHandler(this.FCustomerAddEdit_Load);
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PersonalDetailsGroupBox)).EndInit();
@@ -1170,7 +1173,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.NoteText.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ActualAddressText.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.RegisteredAddressText.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CustomerPictureBox.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.separatorControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BirthPlaceText.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CountryLookUp.Properties)).EndInit();
@@ -1204,9 +1207,9 @@
         private DevExpress.LookAndFeel.DefaultLookAndFeel defaultLookAndFeel1;
         private DevExpress.Utils.Behaviors.BehaviorManager behaviorManager1;
         private DevExpress.XtraEditors.GroupControl PersonalDetailsGroupBox;
-        private DevExpress.XtraEditors.SimpleButton simpleButton2;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
-        private DevExpress.XtraEditors.PictureEdit CustomerPictureBox;
+        private DevExpress.XtraEditors.SimpleButton DeleteCustomerImageButton;
+        private DevExpress.XtraEditors.SimpleButton UploadCustomerImageButton;
+        private DevExpress.XtraEditors.PictureEdit PictureEdit;
         private DevExpress.XtraEditors.SeparatorControl separatorControl1;
         private DevExpress.XtraEditors.LabelControl labelControl8;
         private DevExpress.XtraEditors.LabelControl labelControl7;

@@ -85,6 +85,7 @@
     <Compile Include="Class\DataAccess\CountryDAL.cs" />
     <Compile Include="Class\DataAccess\CustomerCardDAL.cs" />
     <Compile Include="Class\DataAccess\CustomerDAL.cs" />
+    <Compile Include="Class\DataAccess\CustomerImageDAL.cs" />
     <Compile Include="Class\DataAccess\DocumentGroupDAL.cs" />
     <Compile Include="Class\DataAccess\DocumentTypeDAL.cs" />
     <Compile Include="Class\DataAccess\KindShipDAL.cs" />
@@ -113,6 +114,7 @@
     <Compile Include="Class\Tables\Country.cs" />
     <Compile Include="Class\Tables\Customer.cs" />
     <Compile Include="Class\Tables\CustomerCard.cs" />
+    <Compile Include="Class\Tables\CustomerImage.cs" />
     <Compile Include="Class\Tables\DocumentGroup.cs" />
     <Compile Include="Class\Tables\DocumentType.cs" />
     <Compile Include="Class\Tables\KindShip.cs" />
@@ -605,6 +607,7 @@
     <Content Include="bin\Debug\Logs\ErrorLog_20221223.txt" />
     <Content Include="bin\Debug\Logs\ErrorLog_20221224.txt" />
     <Content Include="bin\Debug\Logs\ErrorLog_20221225.txt" />
+    <Content Include="bin\Debug\Logs\ErrorLog_20221226.txt" />
     <Content Include="bin\Debug\Oracle.ManagedDataAccess.dll" />
     <Content Include="bin\Debug\ru\DevExpress.Data.v17.1.resources.dll" />
     <Content Include="bin\Debug\ru\DevExpress.DataAccess.v17.1.resources.dll" />

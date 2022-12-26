@@ -133,9 +133,7 @@ namespace ELMS.Class.DataAccess
                                                                                                 RELIABLE_DATE,
                                                                                                 PINCODE,
                                                                                                 CARD_ISSUING_ID,
-                                                                                                CUSTOMER_ID,
-                                                                                                IS_CHANGE,
-                                                                                                INSERT_USER)
+                                                                                                CUSTOMER_ID)
                                                     VALUES(:inCARDNUMBER,
                                                            :inDOCUMENTGROUPID,
                                                            :inDOCUMENTTYPEID,
@@ -143,9 +141,7 @@ namespace ELMS.Class.DataAccess
                                                            :inRELIABLEDATE,
                                                            :inPINCODE,
                                                            :inCARDISSUINGID,
-                                                           :inCUSTOMER_ID,
-                                                           :inISCHANGE,
-                                                           :inINSERT_USER)";
+                                                           :inCUSTOMER_ID)";
                         command.Parameters.Add(new OracleParameter("inCARDNUMBER", customer.CARD_NUMBER));
                         command.Parameters.Add(new OracleParameter("inDOCUMENTGROUPID", customer.DOCUMENT_GROUP_ID));
                         command.Parameters.Add(new OracleParameter("inDOCUMENTTYPEID", customer.DOCUMENT_TYPE_ID));
@@ -154,8 +150,6 @@ namespace ELMS.Class.DataAccess
                         command.Parameters.Add(new OracleParameter("inPINCODE", customer.PINCODE));
                         command.Parameters.Add(new OracleParameter("inCARDISSUINGID", customer.CARD_ISSUING_ID));
                         command.Parameters.Add(new OracleParameter("inCUSTOMER_ID", customer.CUSTOMER_ID));
-                        command.Parameters.Add(new OracleParameter("inISCHANGE", ChangeTypeEnum.Change));
-                        command.Parameters.Add(new OracleParameter("inINSERT_USER", GlobalVariables.V_UserID));
                         commandSql = command.CommandText;
                         command.ExecuteNonQuery();
                         transaction.Commit();
@@ -201,11 +195,8 @@ namespace ELMS.Class.DataAccess
                                                                                                 PINCODE = :inPINCODE,
                                                                                                 CARD_ISSUING_ID = :inCARDISSUINGID,
                                                                                                 USED_USER_ID = :inUSEDUSERID,
-                                                                                                IS_CHANGE = :inISCHANGE,
-                                                                                                UPDATE_USER = :inUPDATEUSER,
-                                                                                                UPDATE_DATE = SYSDATE
+                                                                                                IS_CHANGE = :inISCHANGE
                                                             WHERE CUSTOMER_ID = :inCUSTOMER_ID AND ID = :inID";
-                        
                         command.Parameters.Add(new OracleParameter("inCARDNUMBER", customer.CARD_NUMBER));
                         command.Parameters.Add(new OracleParameter("inDOCUMENTGROUPID", customer.DOCUMENT_GROUP_ID));
                         command.Parameters.Add(new OracleParameter("inDOCUMENTTYPEID", customer.DOCUMENT_TYPE_ID));
@@ -213,10 +204,9 @@ namespace ELMS.Class.DataAccess
                         command.Parameters.Add(new OracleParameter("inRELIABLEDATE", customer.RELIABLE_DATE));
                         command.Parameters.Add(new OracleParameter("inPINCODE", customer.PINCODE));
                         command.Parameters.Add(new OracleParameter("inCARDISSUINGID", customer.CARD_ISSUING_ID));
-                        command.Parameters.Add(new OracleParameter("inUSEDUSERID", customer.USED_USER_ID));
-                        command.Parameters.Add(new OracleParameter("inISCHANGE", ChangeTypeEnum.Change));
-                        command.Parameters.Add(new OracleParameter("inUPDATEUSER", GlobalVariables.V_UserID));
-                        command.Parameters.Add(new OracleParameter("inCUSTOMERID", customer.CUSTOMER_ID));
+                        command.Parameters.Add(new OracleParameter("inUSEDUSERID", GlobalVariables.V_UserID));
+                        command.Parameters.Add(new OracleParameter("inISCHANGE", customer.IS_CHANGE));
+                        command.Parameters.Add(new OracleParameter("inCUSTOMER_ID", customer.CUSTOMER_ID));
                         command.Parameters.Add(new OracleParameter("inID", customer.ID));
                         commandSql = command.CommandText;
                         command.ExecuteNonQuery();

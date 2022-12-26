@@ -29,6 +29,9 @@ namespace ELMS.Class
     class GlobalProcedures
     {
 
+
+      
+
         public static void SetSetting(string key, string value)
         {
             var config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
