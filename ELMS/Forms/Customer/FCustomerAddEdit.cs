@@ -28,7 +28,7 @@ namespace ELMS.Forms.Customer
 
         bool CurrentStatus = false, Used = false, isClickBOK = false;
         int UsedUserID = -1, orderID,
-            documentID=1, topindex,
+            documentID, topindex,
             old_row_id, phoneID
             ;
 
@@ -63,7 +63,9 @@ namespace ELMS.Forms.Customer
             old_row_id = DocumentGridView.FocusedRowHandle;
             FCardAddEdit fd = new FCardAddEdit()
             {
+
                 TransactionType = transactionType,
+                CustomerID = CustomerID, 
                 CardID = id
             };
             fd.RefreshDataGridView += new FCardAddEdit.DoEvent(LoadDocument);
@@ -200,6 +202,13 @@ namespace ELMS.Forms.Customer
             NameText.Enabled =
                 BirthPlaceText.Enabled =
                 BOK.Visible = !status;
+        }
+
+        private void DocumentGridView_FocusedRowObjectChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowObjectChangedEventArgs e)
+        {
+            DataRow row = DocumentGridView.GetFocusedDataRow();
+            if (row != null)
+                documentID = Convert.ToInt32(row["ID"].ToString());
         }
 
         private void PhoneGridView_DoubleClick(object sender, EventArgs e)

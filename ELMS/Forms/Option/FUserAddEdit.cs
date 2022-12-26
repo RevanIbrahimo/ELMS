@@ -112,8 +112,8 @@ namespace ELMS.Forms
                     CurrentStatus = false;
 
                 ComponentEnable(CurrentStatus);
-                InsertTemps();
                 LoadUserDetails();
+                InsertTemps();
             }
             else
             {
@@ -609,7 +609,7 @@ namespace ELMS.Forms
             if (!UserID.HasValue)
                 UserID = 0;
 
-            MailGridControl.DataSource = MailDAL.SelectMailByOwnerID(UserID, MailOwnerEnum.User).ToList<Mail>();
+            MailGridControl.DataSource = MailDAL.SelectMailByOwnerID(UserID, MailOwnerEnum.User);
 
             EditMailBarButton.Enabled = DeleteMailBarButton.Enabled = MailGridView.RowCount > 0;
 
@@ -697,13 +697,10 @@ namespace ELMS.Forms
         {
             if (TransactionType == TransactionTypeEnum.Insert)
                 return;
-            //GlobalProcedures.ExecuteProcedureWithTwoParametrAndUser("ELMS_USER_TEMP.PROC_INSERT_USER_TEMP", "P_USER_ID", UserID, "P_OWNER_TYPE", (int)PhoneOwnerEnum.User, "İstifadəçinin məlumatları temp cədvələ daxil edilmədi.");
-            GlobalFunctions.RunInOneTransaction<int>(tran =>
-            {
-                GlobalProcedures.ExecuteProcedureWithTwoParametrAndUser(tran, "ELMS_USER_TEMP.PROC_INSERT_PHONE_TEMP", "P_OWNER_ID", UserID.Value, "P_OWNER_TYPE", (int)PhoneOwnerEnum.Customer);
-                GlobalProcedures.ExecuteProcedureWithTwoParametrAndUser(tran, "ELMS_USER_TEMP.PROC_INSERT_USER_TEMP", "P_OWNER_ID", UserID.Value, "P_OWNER_TYPE", (int)MailOwnerEnum.Customer);
-                return 1;
-            }, "İstifadəçinin məlumatları temp cədvələ daxil edilmədi.");
+            GlobalProcedures.ExecuteProcedureWithTwoParametrAndUser("ELMS_USER_TEMP.PROC_INSERT_USER_PHONE_TEMP", "P_OWNER_ID", UserID, "P_OWNER_TYPE", PhoneOwnerEnum.User, "İstifadəçinin məlumatları temp cədvələ daxil edilmədi.");
+
+            GlobalProcedures.ExecuteProcedureWithTwoParametrAndUser("ELMS_USER_TEMP.PROC_INSERT_MAILS_TEMP", "P_OWNER_ID", UserID, "P_OWNER_TYPE", MailOwnerEnum.User, "İstifadəçinin məlumatları temp cədvələ daxil edilmədi.");
+            
 
         }
 
@@ -794,11 +791,13 @@ namespace ELMS.Forms
 
         private void DeletePhone()
         {
-            DialogResult dialogResult = XtraMessageBox.Show(PhoneNumber + " nömrəsini silmək istəyirsiniz?", "Telefon nömrəsinin silinməsi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (dialogResult == DialogResult.Yes)
-            {
-                GlobalProcedures.ExecuteQuery("UPDATE ELMS_USER_TEMP.PHONE_TEMP SET IS_CHANGE = 2 WHERE OWNER_TYPE = " + PhoneOwnerEnum.User + " AND OWNER_ID = " + UserID + " AND ID = " + PhoneID, "Telefon nömrəsi temp cədvəldən silinmədi.");
-            }
+            if (GlobalFunctions.CallDialogResult("Seçilmiş nömrəni silmək istəyirsiniz?", "Nömrənin silinməsi") == DialogResult.Yes)
+                PhoneDAL.DeletePhone(PhoneID,UserID,PhoneOwnerEnum.User);
+            //DialogResult dialogResult = XtraMessageBox.Show(PhoneNumber + " nömrəsini silmək istəyirsiniz?", "Telefon nömrəsinin silinməsi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            //if (dialogResult == DialogResult.Yes)
+            //{
+            //    GlobalProcedures.ExecuteQuery("UPDATE ELMS_USER_TEMP.PHONE_TEMP SET IS_CHANGE = 2 WHERE OWNER_TYPE = " + PhoneOwnerEnum.User + " AND OWNER_ID = " + UserID + " AND ID = " + PhoneID, "Telefon nömrəsi temp cədvəldən silinmədi.");
+            //}
         }
 
         private void DeletePhoneBarButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -824,12 +823,12 @@ namespace ELMS.Forms
 
         public void LoadFMailAddEdit(TransactionTypeEnum transaction, int? id)
         {
-            FMailAddEdit fp = new FMailAddEdit();
+            Mail.FMailAddEdit fp = new Mail.FMailAddEdit();
             fp.TransactionType = transaction;
             fp.OwnerID = UserID;
             fp.MailOwner = MailOwnerEnum.User;
             fp.MailID = id;
-            fp.RefreshEmailDataGridView += new FMailAddEdit.DoEvent(RefreshMail);
+            fp.RefreshEmailDataGridView += new Mail.FMailAddEdit.DoEvent(RefreshMail);
             fp.ShowDialog();
         }
 
@@ -949,11 +948,15 @@ namespace ELMS.Forms
 
         private void DeleteMail()
         {
-            DialogResult dialogResult = XtraMessageBox.Show("Seçilmiş elektron ünvanları silmək istəyirsiniz?", "Elektron ünvanların silinməsi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (dialogResult == DialogResult.Yes)
-            {
-                GlobalProcedures.ExecuteQuery("UPDATE ELMS_USER_TEMP.MAILS_TEMP SET IS_CHANGE = 2 WHERE OWNER_TYPE = " + PhoneOwnerEnum.User + " AND OWNER_ID = " + UserID + " AND ID = " + MailID, "Elektron ünvanlar temp cədvəldən silinmədi.");
-            }
+            if (GlobalFunctions.CallDialogResult("Seçilmiş elektron ünvanları silmək istəyirsiniz?", "Nömrənin silinməsi") == DialogResult.Yes)
+                MailDAL.DeleteMail(MailID, UserID, MailOwnerEnum.User);
+
+
+            //DialogResult dialogResult = XtraMessageBox.Show("Seçilmiş elektron ünvanları silmək istəyirsiniz?", "Elektron ünvanların silinməsi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            //if (dialogResult == DialogResult.Yes)
+            //{
+            //     //GlobalProcedures.ExecuteQuery("UPDATE ELMS_USER_TEMP.MAILS_TEMP SET IS_CHANGE = 2 WHERE OWNER_TYPE = " + PhoneOwnerEnum.User + " AND OWNER_ID = " + UserID + " AND ID = " + MailID, "Elektron ünvanlar temp cədvəldən silinmədi.");
+            //}
         }
 
         private void DeleteMailBarButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -979,11 +982,7 @@ namespace ELMS.Forms
                 MailID = Convert.ToInt32(row["ID"].ToString());
 
         }
-
-
-
-
-
+        
         void SelectionImage(string a, int count)
         {
             if (!String.IsNullOrEmpty(a) && File.Exists(a))

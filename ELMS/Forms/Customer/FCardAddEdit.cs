@@ -23,6 +23,7 @@ namespace ELMS.Forms.Customer
         }
 
         public TransactionTypeEnum TransactionType;
+        public int? CustomerID;
         public int? CardID;
 
         public delegate void DoEvent();
@@ -31,15 +32,113 @@ namespace ELMS.Forms.Customer
         int documentGroupID = 0,
             documentTypeID = 0,
             cardIssuingID = 0;
+        bool CurrentStatus = false, Used = false,isClickBOK = false;
+        int UsedUserID = -1;
+
+
         List<DocumentType> lstDocumentType = null;
 
         private void FCardAddEdit_Load(object sender, EventArgs e)
         {
+            GlobalProcedures.FillLookUpEdit(IssuingLookUp, CardIssuingDAL.SelectCardIssuingByID(null).Tables[0]);
+            GlobalProcedures.FillLookUpEdit(DocumentTypeLookUp, DocumentTypeDAL.SelectDocumentTypeByID(null).Tables[0]);
             GlobalProcedures.FillLookUpEdit(DocumentGroupLookUp, DocumentGroupDAL.SelectDocumentGroupByID(null).Tables[0]);
-            RefreshDictionaries(2);
-            if(TransactionType == TransactionTypeEnum.Insert)
-                DocumentGroupLookUp.EditValue = DocumentGroupLookUp.Properties.GetKeyValueByDisplayText("Şəxsiyyət vəsiqəsi");
+            if (TransactionType == TransactionTypeEnum.Update)
+            {
+                this.Text = "Sənədlərin düzəliş edilməsi";
+                GlobalProcedures.Lock_or_UnLock_UserID("ELMS_USER.CUSTOMER_CARDS", GlobalVariables.V_UserID, "WHERE ID = " + CardID + " AND USED_USER_ID = -1");
+                LoadDetails();
+                Used = (UsedUserID > 0);
+
+                if (Used)
+                {
+                    if (GlobalVariables.V_UserID != UsedUserID)
+                    {
+                        string used_user_name = GlobalVariables.lstUsers.Find(u => u.ID == UsedUserID).FULL_NAME;
+                        GlobalProcedures.ShowWarningMessage("Seçilmiş sənədlərə hal-hazırda " + used_user_name + " tərəfindən düzəliş edilir. Onun məlumatları dəyişdirilə bilməz. Siz yalnız məlumatlara baxa bilərsiniz.");
+                        CurrentStatus = true;
+                    }
+                    else
+                        CurrentStatus = false;
+                }
+                else
+                    CurrentStatus = false;
+                ComponentEnabled(CurrentStatus);
+            }
+            else
+                this.Text = "Müştərinin əlavə edilməsi";
+            //InsertTemps();
+            //LoadDocument();
+            //LoadPhone();
+            //RefreshDictionaries(2);
+            //if(TransactionType == TransactionTypeEnum.Insert)
+            //    DocumentGroupLookUp.EditValue = DocumentGroupLookUp.Properties.GetKeyValueByDisplayText("Şəxsiyyət vəsiqəsi");
         }
+
+        private void LoadDetails()
+        {
+
+            DataTable dt = CustomerCardDAL.SelectViewData(CustomerID);
+
+            if (dt.Rows.Count > 0)
+            {
+                PinCodeText.EditValue = dt.Rows[0]["PINCODE"];
+                NumberText.EditValue = dt.Rows[0]["CARD_NUMBER"];
+                DateOfIssueDate.EditValue = dt.Rows[0]["ISSUE_DATE"];
+                if (DateOfIssueDate.DateTime == DateTime.MinValue)
+                    DateOfIssueDate.EditValue = null;
+                ReliableDate.EditValue = dt.Rows[0]["RELIABLE_DATE"];
+                if (ReliableDate.DateTime == DateTime.MinValue)
+                    ReliableDate.EditValue = null;
+                GlobalProcedures.LookUpEditValue(DocumentTypeLookUp, dt.Rows[0]["DOCUMENT_TYPE"].ToString());
+                GlobalProcedures.LookUpEditValue(IssuingLookUp, dt.Rows[0]["ISSUE_NAME"].ToString());
+                GlobalProcedures.LookUpEditValue(DocumentGroupLookUp, dt.Rows[0]["DOCUMENT_GROUP"].ToString());
+                UsedUserID = Convert.ToInt16(dt.Rows[0]["USED_USER_ID"]);
+            }
+        }
+
+        private void ComponentEnabled(bool status)
+        {
+            NumberText.Enabled =
+                PinCodeText.Enabled =
+                BOK.Visible = !status;
+        }
+
+        private void InsertDetail()
+        {
+            CustomerCard customerCard = new CustomerCard
+            {
+                DOCUMENT_GROUP_ID = documentTypeID,
+                DOCUMENT_TYPE_ID = documentGroupID,
+                CARD_ISSUING_ID = cardIssuingID,
+                PINCODE = PinCodeText.Text.Trim(),
+                CARD_NUMBER = NumberText.Text.Trim(),
+
+            };
+            CustomerCardDAL.InsertCustomerCard(customerCard);
+        }
+
+        private void UpdateDetail()
+        {
+            isClickBOK = true;
+
+            CustomerCard customerCard = new CustomerCard
+            {
+                DOCUMENT_GROUP_ID = documentTypeID,
+                DOCUMENT_TYPE_ID = documentGroupID,
+                CARD_ISSUING_ID = cardIssuingID,
+                PINCODE = PinCodeText.Text.Trim(),
+                CARD_NUMBER = NumberText.Text.Trim(),
+                ISSUE_DATE = DateOfIssueDate.DateTime,
+                RELIABLE_DATE = ReliableDate.DateTime,
+                ID = CardID.Value,
+                CUSTOMER_ID = CustomerID.Value,
+                USED_USER_ID = -1
+            };
+
+            CustomerCardDAL.UpdateCustomerCard(customerCard);
+        }
+
 
         private void DocumentGroupLookUp_EditValueChanged(object sender, EventArgs e)
         {
@@ -49,6 +148,8 @@ namespace ELMS.Forms.Customer
 
         private void FCardAddEdit_FormClosing(object sender, FormClosingEventArgs e)
         {
+            if (!isClickBOK && TransactionType == TransactionTypeEnum.Update)
+                GlobalProcedures.Lock_or_UnLock_UserID("ELMS_USER.CUSTOMER_CARDS", -1, "WHERE ID = " +CardID + " AND USED_USER_ID = " + GlobalVariables.V_UserID);
             this.RefreshDataGridView();
         }
 
@@ -87,6 +188,7 @@ namespace ELMS.Forms.Customer
 
         private bool ControlCardDetails()
         {
+
             bool b = false;
 
             if (documentGroupID == 0)
@@ -184,7 +286,7 @@ namespace ELMS.Forms.Customer
                 ReliableDate.BackColor = GlobalFunctions.ElementColor(); ;
                 return false;
             }
-            else if (GlobalFunctions.ChangeStringToDate(DateOfIssueDate.Text, "ddmmyyyy") == GlobalFunctions.ChangeStringToDate(ReliableDate.Text, "ddmmyyyy"))
+            else if (!(GlobalFunctions.ChangeStringToDate(DateOfIssueDate.Text, "ddmmyyyy") == GlobalFunctions.ChangeStringToDate(ReliableDate.Text, "ddmmyyyy")))
             {
                 DateOfIssueDate.BackColor = Color.Red;
                 ReliableDate.BackColor = Color.Red;
@@ -241,6 +343,23 @@ namespace ELMS.Forms.Customer
         {
             if(ControlCardDetails())
             {
+                //GlobalFunctions.RunInOneTransaction<int>(tran =>
+                //{
+                //    if (TransactionType == TransactionTypeEnum.Insert)
+                //        InsertDetail();
+                //    else
+                //        UpdateDetail();
+                //    GlobalProcedures.ExecuteProcedureWithParametr(tran, "ELMS_USER.PROC_INSERT_CUSTOMER_CARD", "P_CUSTOMER_ID", CustomerID);
+
+                //    return 1;
+                //}, TransactionType == TransactionTypeEnum.Insert ? "Sənəd bazaya daxil edilmədi." : "Sənəd bazada dəyişdirilmədi.");
+
+                if (TransactionType == TransactionTypeEnum.Insert)
+                    InsertDetail();
+                else
+                    UpdateDetail();
+                GlobalProcedures.ExecuteProcedureWithParametr("ELMS_USER.PROC_INSERT_CUSTOMER_CARD", "P_CUSTOMER_ID", CustomerID, "Sənəd bazada dəyişdirilmədi.");
+
                 this.Close();
             }
         }

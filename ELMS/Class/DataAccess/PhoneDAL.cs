@@ -214,7 +214,7 @@ namespace ELMS.Class.DataAccess
             }
         }
 
-        public static void DeletePhone(int phoneID, int ownerID, PhoneOwnerEnum phoneOwner)
+        public static void DeletePhone(int phoneID, int? ownerID, PhoneOwnerEnum phoneOwner)
         {
             string commandSql = null;
             using (OracleConnection connection = new OracleConnection())

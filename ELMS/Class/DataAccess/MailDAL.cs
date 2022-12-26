@@ -196,7 +196,7 @@ namespace ELMS.Class.DataAccess
             }
         }
 
-        public static void DeleteMail(int mailID, int ownerID, MailOwnerEnum mailOwner)
+        public static void DeleteMail(int phoneID, int? ownerID, MailOwnerEnum phoneOwner)
         {
             string commandSql = null;
             using (OracleConnection connection = new OracleConnection())
@@ -218,9 +218,9 @@ namespace ELMS.Class.DataAccess
                                                         WHERE OWNER_TYPE = :inOWNERTYPE
                                                           AND OWNER_ID = :inOWNERID
                                                           AND ID = :inID";
-                        command.Parameters.Add(new OracleParameter("inOWNERTYPE", (int)mailOwner));
+                        command.Parameters.Add(new OracleParameter("inOWNERTYPE", (int)phoneOwner));
                         command.Parameters.Add(new OracleParameter("inOWNERID", ownerID));
-                        command.Parameters.Add(new OracleParameter("inID", mailID));
+                        command.Parameters.Add(new OracleParameter("inID", phoneID));
                         commandSql = command.CommandText;
                         command.ExecuteNonQuery();
                         transaction.Commit();
@@ -230,7 +230,7 @@ namespace ELMS.Class.DataAccess
                 catch (Exception exx)
                 {
                     transaction.Rollback();
-                    GlobalProcedures.LogWrite("Telefon temp cədvəldən silinmədi.", commandSql, GlobalVariables.V_UserName, "MailDAL", "DeleteMail", exx);
+                    GlobalProcedures.LogWrite("Telefon temp cədvəldən silinmədi.", commandSql, GlobalVariables.V_UserName, "PhoneDAL", "DeletePhone", exx);
                 }
                 finally
                 {

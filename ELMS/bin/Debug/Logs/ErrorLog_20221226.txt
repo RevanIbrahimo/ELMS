@@ -1,0 +1,111 @@
+
+Log Entry : 1:53:38 AM Monday, December 26, 2022
+  
+   UserName =  SuperAdmin
+   FormName =  GlobalProcedures
+   ProcedureName =  ExecuteQuery
+  
+   ShowMessage: Telefon nömrəsi temp cədvəldən silinmədi.
+   Exception Message: ORA-01722: invalid number
+   SQL Text      :  UPDATE ELMS_USER_TEMP.PHONE_TEMP SET IS_CHANGE = 2 WHERE OWNER_TYPE = User AND OWNER_ID = 2 AND ID = 3
+-------------------------------------------------
+
+Log Entry : 2:07:33 AM Monday, December 26, 2022
+  
+   UserName =  SuperAdmin
+   FormName =  GlobalProcedures
+   ProcedureName =  ExecuteQuery
+  
+   ShowMessage: Telefon nömrəsi temp cədvəldən silinmədi.
+   Exception Message: ORA-01722: invalid number
+   SQL Text      :  UPDATE ELMS_USER_TEMP.PHONE_TEMP SET IS_CHANGE = 2 WHERE OWNER_TYPE = User AND OWNER_ID = 2 AND ID = 3
+-------------------------------------------------
+
+Log Entry : 3:15:18 AM Monday, December 26, 2022
+  
+   UserName =  SuperAdmin
+   FormName =  GlobalProcedures
+   ProcedureName =  ExecuteQuery
+  
+   ShowMessage: Elektron ünvanlar temp cədvəldən silinmədi.
+   Exception Message: ORA-01722: invalid number
+   SQL Text      :  UPDATE ELMS_USER_TEMP.MAILS_TEMP SET IS_CHANGE = 2 WHERE OWNER_TYPE = User AND OWNER_ID = 2 AND ID = 13
+-------------------------------------------------
+
+Log Entry : 3:15:28 AM Monday, December 26, 2022
+  
+   UserName =  SuperAdmin
+   FormName =  GlobalProcedures
+   ProcedureName =  ExecuteQuery
+  
+   ShowMessage: Elektron ünvanlar temp cədvəldən silinmədi.
+   Exception Message: ORA-01722: invalid number
+   SQL Text      :  UPDATE ELMS_USER_TEMP.MAILS_TEMP SET IS_CHANGE = 2 WHERE OWNER_TYPE = User AND OWNER_ID = 2 AND ID = 14
+-------------------------------------------------
+
+Log Entry : 3:17:18 AM Monday, December 26, 2022
+  
+   UserName =  SuperAdmin
+   FormName =  GlobalProcedures
+   ProcedureName =  ExecuteQuery
+  
+   ShowMessage: Elektron ünvanlar temp cədvəldən silinmədi.
+   Exception Message: ORA-01722: invalid number
+   SQL Text      :  UPDATE ELMS_USER_TEMP.MAILS_TEMP SET IS_CHANGE = 2 WHERE OWNER_TYPE = User AND OWNER_ID = 2 AND ID = 22
+-------------------------------------------------
+
+Log Entry : 6:56:30 AM Monday, December 26, 2022
+  
+   UserName =  SuperAdmin
+   FormName =  CustomerCardDAL
+   ProcedureName =  InsertCustomerCard
+  
+   ShowMessage: Sənəd bazaya daxil edilmədi.
+   Exception Message: ORA-01400: cannot insert NULL into ("ELMS_USER"."CUSTOMER_CARDS"."ID")
+   SQL Text      :  INSERT INTO ELMS_USER.CUSTOMER_CARDS(CARD_NUMBER,
+                                                                                    DOCUMENT_GROUP_ID,
+                                                                                    DOCUMENT_TYPE_ID,
+                                                                                    ISSUE_DATE,
+                                                                                    RELIABLE_DATE,
+                                                                                    PINCODE,
+                                                                                    CARD_ISSUING_ID,
+                                                                                    CUSTOMER_ID,
+                                                                                    INSERT_USER)
+                                                    VALUES(:inCARDNUMBER,
+                                                           :inDOCUMENTGROUPID,
+                                                           :inDOCUMENTTYPEID,
+                                                           :inISSUEDATE,
+                                                           :inRELIABLEDATE,
+                                                           :inPINCODE,
+                                                           :inCARDISSUINGID,
+                                                           :inCUSTOMER_ID,
+                                                           :inINSERT_USER)
+-------------------------------------------------
+
+Log Entry : 7:01:07 AM Monday, December 26, 2022
+  
+   UserName =  SuperAdmin
+   FormName =  CustomerCardDAL
+   ProcedureName =  InsertCustomerCard
+  
+   ShowMessage: Sənəd bazaya daxil edilmədi.
+   Exception Message: ORA-01400: cannot insert NULL into ("ELMS_USER"."CUSTOMER_CARDS"."ID")
+   SQL Text      :  INSERT INTO ELMS_USER.CUSTOMER_CARDS(CARD_NUMBER,
+                                                                                    DOCUMENT_GROUP_ID,
+                                                                                    DOCUMENT_TYPE_ID,
+                                                                                    ISSUE_DATE,
+                                                                                    RELIABLE_DATE,
+                                                                                    PINCODE,
+                                                                                    CARD_ISSUING_ID,
+                                                                                    CUSTOMER_ID,
+                                                                                    INSERT_USER)
+                                                    VALUES(:inCARDNUMBER,
+                                                           :inDOCUMENTGROUPID,
+                                                           :inDOCUMENTTYPEID,
+                                                           :inISSUEDATE,
+                                                           :inRELIABLEDATE,
+                                                           :inPINCODE,
+                                                           :inCARDISSUINGID,
+                                                           :inCUSTOMER_ID,
+                                                           :inINSERT_USER)
+-------------------------------------------------

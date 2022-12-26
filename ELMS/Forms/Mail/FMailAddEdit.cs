@@ -11,7 +11,7 @@ using ELMS.Class;
 using static ELMS.Class.Enum;
 using ELMS.Class.DataAccess;
 
-namespace ELMS.Forms
+namespace ELMS.Forms.Mail
 {
     public partial class FMailAddEdit : DevExpress.XtraEditors.XtraForm
     {
@@ -31,6 +31,18 @@ namespace ELMS.Forms
         {
             if (TransactionType == TransactionTypeEnum.Update)  
                 LoadMailDetails();                
+        }
+
+        private void LoadMailDetails()
+        {
+
+            DataTable dt = MailDAL.SelectMailByOwnerID((int)OwnerID, MailOwner, MailID);
+
+            if (dt.Rows.Count > 0)
+            {
+                MailText.EditValue = dt.Rows[0]["MAIL"];
+                NoteText.EditValue = dt.Rows[0]["NOTE"];
+            }
         }
 
         private void ComponentEnabled(bool status)
@@ -154,17 +166,7 @@ namespace ELMS.Forms
             MailDAL.UpdateMail(mail);
         }
 
-        private void LoadMailDetails()
-        {
-
-            DataTable dt = MailDAL.SelectMailByOwnerID((int)OwnerID, MailOwner, MailID);
-
-            if (dt.Rows.Count > 0)
-            {
-                MailText.EditValue = dt.Rows[0]["MAIL"];
-                NoteText.EditValue = dt.Rows[0]["NOTE"];
-            }
-        }
+        
 
         private void BOK_Click(object sender, EventArgs e)
         {

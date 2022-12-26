@@ -1,4 +1,4 @@
-﻿namespace ELMS.Forms
+﻿namespace ELMS.Forms.Mail
 {
     partial class FMailAddEdit
     {
