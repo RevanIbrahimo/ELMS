@@ -107,7 +107,17 @@ namespace ELMS.Forms.Customer
 
             EditPhoneBarButton.Enabled = DeletePhoneBarButton.Enabled = PhoneGridView.RowCount > 0;
         }
-        
+
+        private void LoadRelative()
+        {
+            if (!CustomerID.HasValue)
+                CustomerID = 0;
+
+            RelativeGridControl.DataSource = RelativeCardDAL.SelectRelativeByOwnerID(CustomerID.Value);
+
+            EditPhoneBarButton.Enabled = DeletePhoneBarButton.Enabled = RelativeGridView.RowCount > 0;
+        }
+
         private void NewPhoneBarButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             LoadFPhoneAddEdit(TransactionTypeEnum.Insert, null);
@@ -213,11 +223,14 @@ namespace ELMS.Forms.Customer
             if (TransactionType == TransactionTypeEnum.Insert)
                 return;
             GlobalProcedures.ExecuteProcedureWithUser("ELMS_USER_TEMP.PROC_INSERT_CUSTOMER_TEMP", "P_CUSTOMER_ID", CustomerID, "Müştərinin məlumatları temp cədvələ daxil edilmədi.");
+            GlobalProcedures.ExecuteProcedureWithUser("ELMS_USER_TEMP.PROC_INSERT_WORKPLACE_TEMP", "P_CUSTOMER_ID", CustomerID, "Müştərinin məlumatları temp cədvələ daxil edilmədi.");
+
             GlobalFunctions.RunInOneTransaction<int>(tran =>
             {
                 GlobalProcedures.ExecuteProcedureWithTwoParametrAndUser(tran, "ELMS_USER_TEMP.PROC_INSERT_PHONE_TEMP", "P_OWNER_ID", CustomerID.Value, "P_OWNER_TYPE", (int)PhoneOwnerEnum.Customer);
+                
                 return 1;
-            }, "Xəstənin temp məlumatları cədvələ daxil edilmədi.");
+            }, "Müştərinin temp məlumatları cədvələ daxil edilmədi.");
         }
         private void ComponentEnabled(bool status)
         {
@@ -287,6 +300,7 @@ namespace ELMS.Forms.Customer
                     UpdateImageDetail(tran);
                 }
                 GlobalProcedures.ExecuteProcedureWithParametr(tran, "ELMS_USER.PROC_INSERT_CUSTOMER_CARD", "P_CUSTOMER_ID", CustomerID.Value);
+                GlobalProcedures.ExecuteProcedureWithParametr(tran, "ELMS_USER.PROC_INSERT_WORKPLACE_TEMP", "P_CUSTOMER_ID", CustomerID.Value);
                 GlobalProcedures.ExecuteProcedureWithTwoParametrAndUser(tran, "ELMS_USER.PROC_INSERT_PHONE", "P_OWNER_ID", CustomerID.Value, "P_OWNER_TYPE", (int)PhoneOwnerEnum.Customer);
 
 
@@ -361,6 +375,7 @@ namespace ELMS.Forms.Customer
                 if (!isClickBOK && TransactionType == TransactionTypeEnum.Update)
                     GlobalProcedures.Lock_or_UnLock_UserID("ELMS_USER.CUSTOMER", -1, "WHERE ID = " + CustomerID + " AND USED_USER_ID = " + GlobalVariables.V_UserID);
                 CustomerDAL.DeleteCustomer(CustomerID.Value);
+                CustomerDAL.DeleteWorkPlaceTemp(CustomerID.Value);
             GlobalFunctions.RunInOneTransaction<int>(tran =>
             {
                 PhoneDAL.DeletePhoneTemp(tran, PhoneOwnerEnum.Customer);
@@ -431,7 +446,7 @@ namespace ELMS.Forms.Customer
                     break;
                 case 3:
                     {
-                        //LoadKindShip();
+                        LoadRelative();
                     }
                     break;
             }
@@ -492,6 +507,10 @@ namespace ELMS.Forms.Customer
                 workID = Convert.ToInt32(row["ID"].ToString());
         }
 
+        private void RelativeGridView_CustomUnboundColumnData(object sender, DevExpress.XtraGrid.Views.Base.CustomColumnDataEventArgs e)
+        {
+            GlobalProcedures.GenerateAutoRowNumber(sender, RelativeCard_SS, e);
+        }
 
         void DeleteWork()
         {

@@ -208,5 +208,10 @@ namespace ELMS.Class.DataAccess
         {
             GlobalProcedures.ExecuteProcedureWithParametr("ELMS_USER_TEMP.PROC_DELETE_CUSTOMER_CARDS", "P_CUSTOMER_ID", doctorID, "Müştəri bazadan silinmədi.");
         }
+
+        public static void DeleteWorkPlaceTemp(int workID)
+        {
+            GlobalProcedures.ExecuteProcedureWithParametr("ELMS_USER_TEMP.PROC_DELETE_WORKPLACE_TEMP", "P_CUSTOMER_ID", workID, "Müştəri bazadan silinmədi.");
+        }
     }
 }

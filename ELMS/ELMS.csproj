@@ -98,6 +98,7 @@
     <Compile Include="Class\DataAccess\PhonePrefixDAL.cs" />
     <Compile Include="Class\DataAccess\ProductDAL.cs" />
     <Compile Include="Class\DataAccess\ProfessionDAL.cs" />
+    <Compile Include="Class\DataAccess\RelativeCardDAL.cs" />
     <Compile Include="Class\DataAccess\SexDAL.cs" />
     <Compile Include="Class\DataAccess\UserDAL.cs" />
     <Compile Include="Class\DataAccess\UserListDAL.cs" />
