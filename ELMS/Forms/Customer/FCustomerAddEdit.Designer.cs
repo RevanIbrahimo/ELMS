@@ -30,18 +30,18 @@
         {
             this.components = new System.ComponentModel.Container();
             DevExpress.Utils.SuperToolTip superToolTip3 = new DevExpress.Utils.SuperToolTip();
-            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem4 = new DevExpress.Utils.ToolTipTitleItem();
+            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem3 = new DevExpress.Utils.ToolTipTitleItem();
             DevExpress.Utils.ToolTipItem toolTipItem3 = new DevExpress.Utils.ToolTipItem();
-            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem5 = new DevExpress.Utils.ToolTipTitleItem();
+            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem4 = new DevExpress.Utils.ToolTipTitleItem();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions3 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions4 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions5 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             DevExpress.Utils.SuperToolTip superToolTip1 = new DevExpress.Utils.SuperToolTip();
             DevExpress.Utils.ToolTipTitleItem toolTipTitleItem1 = new DevExpress.Utils.ToolTipTitleItem();
             DevExpress.Utils.ToolTipItem toolTipItem1 = new DevExpress.Utils.ToolTipItem();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FCustomerAddEdit));
-            ManiXButton.Office2010Red office2010Red2 = new ManiXButton.Office2010Red();
-            ManiXButton.Office2010Blue office2010Blue2 = new ManiXButton.Office2010Blue();
+            ManiXButton.Office2010Red office2010Red5 = new ManiXButton.Office2010Red();
+            ManiXButton.Office2010Blue office2010Blue5 = new ManiXButton.Office2010Blue();
             this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
             this.behaviorManager1 = new DevExpress.Utils.Behaviors.BehaviorManager(this.components);
             this.PersonalDetailsGroupBox = new DevExpress.XtraEditors.GroupControl();
@@ -99,6 +99,7 @@
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.PhoneStandaloneBarDockControl = new DevExpress.XtraBars.StandaloneBarDockControl();
+            this.WorkStandaloneBarDockControl = new DevExpress.XtraBars.StandaloneBarDockControl();
             this.PhoneTab = new DevExpress.XtraTab.XtraTabPage();
             this.PhoneGridControl = new DevExpress.XtraGrid.GridControl();
             this.PhoneGridView = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -118,13 +119,42 @@
             this.barDockControl2 = new DevExpress.XtraBars.BarDockControl();
             this.barDockControl3 = new DevExpress.XtraBars.BarDockControl();
             this.barDockControl4 = new DevExpress.XtraBars.BarDockControl();
+            this.DeleteWorkBarButton = new DevExpress.XtraBars.BarButtonItem();
+            this.RefreshWorkBarButton = new DevExpress.XtraBars.BarButtonItem();
             this.WorkTab = new DevExpress.XtraTab.XtraTabPage();
+            this.WorkGridControl = new DevExpress.XtraGrid.GridControl();
+            this.WorkGridView = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.CustomerWork_SS = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.CustomerWork_ID = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.CustomerWork_PlaceName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.CustomerWork_Position = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.CustomerWork_StartDate = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.CustomerWork_EndDate = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.WorkBarManager = new DevExpress.XtraBars.BarManager(this.components);
+            this.bar3 = new DevExpress.XtraBars.Bar();
+            this.NewWorkBarButton = new DevExpress.XtraBars.BarButtonItem();
+            this.EditWorkBarButton = new DevExpress.XtraBars.BarButtonItem();
+            this.barDockControl5 = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControl16 = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControl17 = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControl18 = new DevExpress.XtraBars.BarDockControl();
             this.RelativeTab = new DevExpress.XtraTab.XtraTabPage();
             this.PanelOption = new DevExpress.XtraEditors.PanelControl();
             this.BCancel = new ManiXButton.XButton();
             this.BOK = new ManiXButton.XButton();
             this.labelControl12 = new DevExpress.XtraEditors.LabelControl();
             this.PhonePopupMenu = new DevExpress.XtraBars.PopupMenu(this.components);
+            this.barDockControl9 = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControl8 = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControl10 = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControl7 = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControl11 = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControl12 = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControl6 = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControl13 = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControl14 = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControl15 = new DevExpress.XtraBars.BarDockControl();
+            this.WorkPopupMenu = new DevExpress.XtraBars.PopupMenu(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PersonalDetailsGroupBox)).BeginInit();
             this.PersonalDetailsGroupBox.SuspendLayout();
@@ -151,9 +181,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.PhoneGridControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PhoneGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PhoneBarManager)).BeginInit();
+            this.WorkTab.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.WorkGridControl)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.WorkGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.WorkBarManager)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PanelOption)).BeginInit();
             this.PanelOption.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PhonePopupMenu)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.WorkPopupMenu)).BeginInit();
             this.SuspendLayout();
             // 
             // PersonalDetailsGroupBox
@@ -298,13 +333,13 @@
             this.PictureEdit.Properties.ZoomAccelerationFactor = 1D;
             this.PictureEdit.Size = new System.Drawing.Size(139, 162);
             superToolTip3.AllowHtmlText = DevExpress.Utils.DefaultBoolean.True;
-            toolTipTitleItem4.Text = "<color=255,0,0>Müştərinin şəkili</color>";
+            toolTipTitleItem3.Text = "<color=255,0,0>Müştərinin şəkili</color>";
             toolTipItem3.LeftIndent = 6;
             toolTipItem3.Text = "Müştərinin şəkilini göstərmək üçün nəzərdə tutulub.";
-            toolTipTitleItem5.LeftIndent = 6;
-            superToolTip3.Items.Add(toolTipTitleItem4);
+            toolTipTitleItem4.LeftIndent = 6;
+            superToolTip3.Items.Add(toolTipTitleItem3);
             superToolTip3.Items.Add(toolTipItem3);
-            superToolTip3.Items.Add(toolTipTitleItem5);
+            superToolTip3.Items.Add(toolTipTitleItem4);
             this.PictureEdit.SuperTip = superToolTip3;
             this.PictureEdit.TabIndex = 18;
             // 
@@ -353,8 +388,8 @@
             this.CountryLookUp.Margin = new System.Windows.Forms.Padding(4);
             this.CountryLookUp.Name = "CountryLookUp";
             this.CountryLookUp.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo, "", -1, true, true, false, editorButtonImageOptions4, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), "Siyanını aç"),
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Ellipsis, "", -1, true, true, false, editorButtonImageOptions5, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), "Düzəliş etmək üçün ölkələrin siyahısını aç")});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo, "", -1, true, true, false, editorButtonImageOptions3, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), "Siyanını aç"),
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Ellipsis, "", -1, true, true, false, editorButtonImageOptions4, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), "Düzəliş etmək üçün ölkələrin siyahısını aç")});
             this.CountryLookUp.Properties.ButtonsStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.CountryLookUp.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("ID", "ID", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default),
@@ -553,6 +588,7 @@
             this.WorkTab,
             this.RelativeTab});
             this.OtherInfoTabControl.TabStop = false;
+            this.OtherInfoTabControl.SelectedPageChanged += new DevExpress.XtraTab.TabPageChangedEventHandler(this.OtherInfoTabControl_SelectedPageChanged);
             // 
             // IDCardTab
             // 
@@ -605,6 +641,7 @@
             this.DocumentGridView.OptionsView.ShowGroupPanel = false;
             this.DocumentGridView.OptionsView.ShowIndicator = false;
             this.DocumentGridView.FocusedRowObjectChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowObjectChangedEventHandler(this.DocumentGridView_FocusedRowObjectChanged);
+            this.DocumentGridView.CustomUnboundColumnData += new DevExpress.XtraGrid.Views.Base.CustomColumnDataEventHandler(this.DocumentGridView_CustomUnboundColumnData);
             this.DocumentGridView.DoubleClick += new System.EventHandler(this.DocumentGridView_DoubleClick);
             // 
             // Document_SS
@@ -616,6 +653,7 @@
             this.Document_SS.FieldName = "Document_SS";
             this.Document_SS.Name = "Document_SS";
             this.Document_SS.OptionsColumn.FixedWidth = true;
+            this.Document_SS.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
             this.Document_SS.Visible = true;
             this.Document_SS.VisibleIndex = 0;
             this.Document_SS.Width = 50;
@@ -709,6 +747,7 @@
             this.DocumentBarManager.DockControls.Add(this.barDockControlRight);
             this.DocumentBarManager.DockControls.Add(this.DocumentStandaloneBarDockControl);
             this.DocumentBarManager.DockControls.Add(this.PhoneStandaloneBarDockControl);
+            this.DocumentBarManager.DockControls.Add(this.WorkStandaloneBarDockControl);
             this.DocumentBarManager.Form = this;
             this.DocumentBarManager.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.NewDocumentBarButton,
@@ -762,6 +801,7 @@
             this.DeleteDocumentBarButton.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("DeleteDocumentBarButton.ImageOptions.LargeImage")));
             this.DeleteDocumentBarButton.Name = "DeleteDocumentBarButton";
             this.DeleteDocumentBarButton.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.DeleteDocumentBarButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.DeleteDocumentBarButton_ItemClick);
             // 
             // RefreshDocumentBarButton
             // 
@@ -824,6 +864,16 @@
             this.PhoneStandaloneBarDockControl.Name = "PhoneStandaloneBarDockControl";
             this.PhoneStandaloneBarDockControl.Size = new System.Drawing.Size(849, 25);
             this.PhoneStandaloneBarDockControl.Text = "standaloneBarDockControl1";
+            // 
+            // WorkStandaloneBarDockControl
+            // 
+            this.WorkStandaloneBarDockControl.CausesValidation = false;
+            this.WorkStandaloneBarDockControl.Dock = System.Windows.Forms.DockStyle.Top;
+            this.WorkStandaloneBarDockControl.Location = new System.Drawing.Point(0, 0);
+            this.WorkStandaloneBarDockControl.Manager = this.DocumentBarManager;
+            this.WorkStandaloneBarDockControl.Name = "WorkStandaloneBarDockControl";
+            this.WorkStandaloneBarDockControl.Size = new System.Drawing.Size(849, 25);
+            this.WorkStandaloneBarDockControl.Text = "standaloneBarDockControl2";
             // 
             // PhoneTab
             // 
@@ -941,9 +991,11 @@
             this.NewPhoneBarButton,
             this.EditPhoneBarButton,
             this.DeletePhoneBarButton,
-            this.RefreshPhoneBarButton});
+            this.RefreshPhoneBarButton,
+            this.DeleteWorkBarButton,
+            this.RefreshWorkBarButton});
             this.PhoneBarManager.MainMenu = this.PhoneBar;
-            this.PhoneBarManager.MaxItemId = 4;
+            this.PhoneBarManager.MaxItemId = 6;
             // 
             // PhoneBar
             // 
@@ -1033,11 +1085,217 @@
             this.barDockControl4.Manager = this.PhoneBarManager;
             this.barDockControl4.Size = new System.Drawing.Size(0, 656);
             // 
+            // DeleteWorkBarButton
+            // 
+            this.DeleteWorkBarButton.Caption = "Sil";
+            this.DeleteWorkBarButton.Id = 4;
+            this.DeleteWorkBarButton.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("DeleteWorkBarButton.ImageOptions.Image")));
+            this.DeleteWorkBarButton.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("DeleteWorkBarButton.ImageOptions.LargeImage")));
+            this.DeleteWorkBarButton.Name = "DeleteWorkBarButton";
+            this.DeleteWorkBarButton.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.DeleteWorkBarButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.DeleteWorkBarButton_ItemClick);
+            // 
+            // RefreshWorkBarButton
+            // 
+            this.RefreshWorkBarButton.Caption = "Təzələ";
+            this.RefreshWorkBarButton.Id = 5;
+            this.RefreshWorkBarButton.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("RefreshWorkBarButton.ImageOptions.Image")));
+            this.RefreshWorkBarButton.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("RefreshWorkBarButton.ImageOptions.LargeImage")));
+            this.RefreshWorkBarButton.Name = "RefreshWorkBarButton";
+            this.RefreshWorkBarButton.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.RefreshWorkBarButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.RefreshWorkBarButton_ItemClick);
+            // 
             // WorkTab
             // 
+            this.WorkTab.Controls.Add(this.WorkGridControl);
+            this.WorkTab.Controls.Add(this.WorkStandaloneBarDockControl);
             this.WorkTab.Name = "WorkTab";
             this.WorkTab.Size = new System.Drawing.Size(849, 264);
             this.WorkTab.Text = "İş yeri";
+            // 
+            // WorkGridControl
+            // 
+            this.WorkGridControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.WorkGridControl.Location = new System.Drawing.Point(0, 25);
+            this.WorkGridControl.MainView = this.WorkGridView;
+            this.WorkGridControl.MenuManager = this.WorkBarManager;
+            this.WorkGridControl.Name = "WorkGridControl";
+            this.WorkGridControl.Size = new System.Drawing.Size(849, 239);
+            this.WorkGridControl.TabIndex = 6;
+            this.WorkGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.WorkGridView});
+            this.WorkGridControl.Click += new System.EventHandler(this.WorkGridControl_Click);
+            // 
+            // WorkGridView
+            // 
+            this.WorkGridView.Appearance.HeaderPanel.Options.UseTextOptions = true;
+            this.WorkGridView.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.WorkGridView.Appearance.HeaderPanel.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.WorkGridView.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.CustomerWork_SS,
+            this.CustomerWork_ID,
+            this.CustomerWork_PlaceName,
+            this.CustomerWork_Position,
+            this.CustomerWork_StartDate,
+            this.CustomerWork_EndDate});
+            this.WorkGridView.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFullFocus;
+            this.WorkGridView.GridControl = this.WorkGridControl;
+            this.WorkGridView.Name = "WorkGridView";
+            this.WorkGridView.OptionsBehavior.AutoExpandAllGroups = true;
+            this.WorkGridView.OptionsBehavior.AutoSelectAllInEditor = false;
+            this.WorkGridView.OptionsBehavior.Editable = false;
+            this.WorkGridView.OptionsFilter.UseNewCustomFilterDialog = true;
+            this.WorkGridView.OptionsFind.FindDelay = 100;
+            this.WorkGridView.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.WorkGridView.OptionsView.EnableAppearanceEvenRow = true;
+            this.WorkGridView.OptionsView.ShowFooter = true;
+            this.WorkGridView.OptionsView.ShowGroupPanel = false;
+            this.WorkGridView.OptionsView.ShowIndicator = false;
+            this.WorkGridView.FocusedRowObjectChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowObjectChangedEventHandler(this.WorkGridView_FocusedRowObjectChanged);
+            this.WorkGridView.CustomUnboundColumnData += new DevExpress.XtraGrid.Views.Base.CustomColumnDataEventHandler(this.WorkGridView_CustomUnboundColumnData);
+            // 
+            // CustomerWork_SS
+            // 
+            this.CustomerWork_SS.AppearanceCell.Options.UseTextOptions = true;
+            this.CustomerWork_SS.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.CustomerWork_SS.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.CustomerWork_SS.Caption = "S/s";
+            this.CustomerWork_SS.FieldName = "CustomerWork_SS";
+            this.CustomerWork_SS.Name = "CustomerWork_SS";
+            this.CustomerWork_SS.OptionsColumn.FixedWidth = true;
+            this.CustomerWork_SS.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
+            this.CustomerWork_SS.Visible = true;
+            this.CustomerWork_SS.VisibleIndex = 0;
+            this.CustomerWork_SS.Width = 50;
+            // 
+            // CustomerWork_ID
+            // 
+            this.CustomerWork_ID.Caption = "ID";
+            this.CustomerWork_ID.FieldName = "ID";
+            this.CustomerWork_ID.Name = "CustomerWork_ID";
+            // 
+            // CustomerWork_PlaceName
+            // 
+            this.CustomerWork_PlaceName.Caption = "İş yerinin adı";
+            this.CustomerWork_PlaceName.FieldName = "PLACE_NAME";
+            this.CustomerWork_PlaceName.Name = "CustomerWork_PlaceName";
+            this.CustomerWork_PlaceName.Visible = true;
+            this.CustomerWork_PlaceName.VisibleIndex = 1;
+            // 
+            // CustomerWork_Position
+            // 
+            this.CustomerWork_Position.Caption = "Vəzifəsi";
+            this.CustomerWork_Position.FieldName = "POSITION";
+            this.CustomerWork_Position.Name = "CustomerWork_Position";
+            this.CustomerWork_Position.Visible = true;
+            this.CustomerWork_Position.VisibleIndex = 2;
+            // 
+            // CustomerWork_StartDate
+            // 
+            this.CustomerWork_StartDate.AppearanceCell.Options.UseTextOptions = true;
+            this.CustomerWork_StartDate.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.CustomerWork_StartDate.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.CustomerWork_StartDate.Caption = "Başlama tarixi";
+            this.CustomerWork_StartDate.FieldName = "START_DATE";
+            this.CustomerWork_StartDate.Name = "CustomerWork_StartDate";
+            this.CustomerWork_StartDate.OptionsColumn.FixedWidth = true;
+            this.CustomerWork_StartDate.Visible = true;
+            this.CustomerWork_StartDate.VisibleIndex = 3;
+            // 
+            // CustomerWork_EndDate
+            // 
+            this.CustomerWork_EndDate.AppearanceCell.Options.UseTextOptions = true;
+            this.CustomerWork_EndDate.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.CustomerWork_EndDate.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.CustomerWork_EndDate.Caption = "Bitmə tarixi";
+            this.CustomerWork_EndDate.FieldName = "END_DATE";
+            this.CustomerWork_EndDate.Name = "CustomerWork_EndDate";
+            this.CustomerWork_EndDate.OptionsColumn.FixedWidth = true;
+            this.CustomerWork_EndDate.Visible = true;
+            this.CustomerWork_EndDate.VisibleIndex = 4;
+            // 
+            // WorkBarManager
+            // 
+            this.WorkBarManager.Bars.AddRange(new DevExpress.XtraBars.Bar[] {
+            this.bar3});
+            this.WorkBarManager.DockControls.Add(this.barDockControl5);
+            this.WorkBarManager.DockControls.Add(this.barDockControl16);
+            this.WorkBarManager.DockControls.Add(this.barDockControl17);
+            this.WorkBarManager.DockControls.Add(this.barDockControl18);
+            this.WorkBarManager.Form = this;
+            this.WorkBarManager.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
+            this.NewWorkBarButton,
+            this.EditWorkBarButton});
+            this.WorkBarManager.MainMenu = this.bar3;
+            this.WorkBarManager.MaxItemId = 2;
+            // 
+            // bar3
+            // 
+            this.bar3.BarName = "Main menu";
+            this.bar3.DockCol = 0;
+            this.bar3.DockRow = 0;
+            this.bar3.DockStyle = DevExpress.XtraBars.BarDockStyle.Standalone;
+            this.bar3.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.NewWorkBarButton),
+            new DevExpress.XtraBars.LinkPersistInfo(this.EditWorkBarButton),
+            new DevExpress.XtraBars.LinkPersistInfo(this.DeleteWorkBarButton),
+            new DevExpress.XtraBars.LinkPersistInfo(this.RefreshWorkBarButton)});
+            this.bar3.OptionsBar.DrawBorder = false;
+            this.bar3.OptionsBar.DrawDragBorder = false;
+            this.bar3.OptionsBar.MultiLine = true;
+            this.bar3.OptionsBar.UseWholeRow = true;
+            this.bar3.StandaloneBarDockControl = this.WorkStandaloneBarDockControl;
+            this.bar3.Text = "Main menu";
+            // 
+            // NewWorkBarButton
+            // 
+            this.NewWorkBarButton.Caption = "Yeni";
+            this.NewWorkBarButton.Id = 0;
+            this.NewWorkBarButton.ImageOptions.Image = global::ELMS.Properties.Resources.plus_16;
+            this.NewWorkBarButton.Name = "NewWorkBarButton";
+            this.NewWorkBarButton.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.NewWorkBarButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.NewWorkBarButton_ItemClick);
+            // 
+            // EditWorkBarButton
+            // 
+            this.EditWorkBarButton.Caption = "Dəyiş";
+            this.EditWorkBarButton.Id = 1;
+            this.EditWorkBarButton.ImageOptions.Image = global::ELMS.Properties.Resources.edit_16;
+            this.EditWorkBarButton.Name = "EditWorkBarButton";
+            this.EditWorkBarButton.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.EditWorkBarButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.EditWorkBarButton_ItemClick);
+            // 
+            // barDockControl5
+            // 
+            this.barDockControl5.CausesValidation = false;
+            this.barDockControl5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.barDockControl5.Location = new System.Drawing.Point(0, 0);
+            this.barDockControl5.Manager = this.WorkBarManager;
+            this.barDockControl5.Size = new System.Drawing.Size(885, 0);
+            // 
+            // barDockControl16
+            // 
+            this.barDockControl16.CausesValidation = false;
+            this.barDockControl16.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.barDockControl16.Location = new System.Drawing.Point(0, 656);
+            this.barDockControl16.Manager = this.WorkBarManager;
+            this.barDockControl16.Size = new System.Drawing.Size(885, 0);
+            // 
+            // barDockControl17
+            // 
+            this.barDockControl17.CausesValidation = false;
+            this.barDockControl17.Dock = System.Windows.Forms.DockStyle.Left;
+            this.barDockControl17.Location = new System.Drawing.Point(0, 0);
+            this.barDockControl17.Manager = this.WorkBarManager;
+            this.barDockControl17.Size = new System.Drawing.Size(0, 656);
+            // 
+            // barDockControl18
+            // 
+            this.barDockControl18.CausesValidation = false;
+            this.barDockControl18.Dock = System.Windows.Forms.DockStyle.Right;
+            this.barDockControl18.Location = new System.Drawing.Point(885, 0);
+            this.barDockControl18.Manager = this.WorkBarManager;
+            this.barDockControl18.Size = new System.Drawing.Size(0, 656);
             // 
             // RelativeTab
             // 
@@ -1059,24 +1317,24 @@
             // BCancel
             // 
             this.BCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            office2010Red2.BorderColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(72)))), ((int)(((byte)(161)))));
-            office2010Red2.BorderColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(135)))), ((int)(((byte)(228)))));
-            office2010Red2.ButtonMouseOverColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(199)))), ((int)(((byte)(87)))));
-            office2010Red2.ButtonMouseOverColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(243)))), ((int)(((byte)(215)))));
-            office2010Red2.ButtonMouseOverColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(225)))), ((int)(((byte)(137)))));
-            office2010Red2.ButtonMouseOverColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(249)))), ((int)(((byte)(224)))));
-            office2010Red2.ButtonNormalColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(77)))), ((int)(((byte)(45)))));
-            office2010Red2.ButtonNormalColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(148)))), ((int)(((byte)(64)))));
-            office2010Red2.ButtonNormalColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(77)))), ((int)(((byte)(45)))));
-            office2010Red2.ButtonNormalColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(148)))), ((int)(((byte)(64)))));
-            office2010Red2.ButtonSelectedColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(199)))), ((int)(((byte)(87)))));
-            office2010Red2.ButtonSelectedColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(243)))), ((int)(((byte)(215)))));
-            office2010Red2.ButtonSelectedColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(229)))), ((int)(((byte)(117)))));
-            office2010Red2.ButtonSelectedColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(216)))), ((int)(((byte)(107)))));
-            office2010Red2.HoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
-            office2010Red2.SelectedTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
-            office2010Red2.TextColor = System.Drawing.Color.White;
-            this.BCancel.ColorTable = office2010Red2;
+            office2010Red5.BorderColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(72)))), ((int)(((byte)(161)))));
+            office2010Red5.BorderColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(135)))), ((int)(((byte)(228)))));
+            office2010Red5.ButtonMouseOverColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(199)))), ((int)(((byte)(87)))));
+            office2010Red5.ButtonMouseOverColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(243)))), ((int)(((byte)(215)))));
+            office2010Red5.ButtonMouseOverColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(225)))), ((int)(((byte)(137)))));
+            office2010Red5.ButtonMouseOverColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(249)))), ((int)(((byte)(224)))));
+            office2010Red5.ButtonNormalColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(77)))), ((int)(((byte)(45)))));
+            office2010Red5.ButtonNormalColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(148)))), ((int)(((byte)(64)))));
+            office2010Red5.ButtonNormalColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(77)))), ((int)(((byte)(45)))));
+            office2010Red5.ButtonNormalColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(148)))), ((int)(((byte)(64)))));
+            office2010Red5.ButtonSelectedColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(199)))), ((int)(((byte)(87)))));
+            office2010Red5.ButtonSelectedColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(243)))), ((int)(((byte)(215)))));
+            office2010Red5.ButtonSelectedColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(229)))), ((int)(((byte)(117)))));
+            office2010Red5.ButtonSelectedColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(216)))), ((int)(((byte)(107)))));
+            office2010Red5.HoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
+            office2010Red5.SelectedTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
+            office2010Red5.TextColor = System.Drawing.Color.White;
+            this.BCancel.ColorTable = office2010Red5;
             this.BCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.BCancel.Location = new System.Drawing.Point(796, 13);
             this.BCancel.Name = "BCancel";
@@ -1089,24 +1347,24 @@
             // BOK
             // 
             this.BOK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            office2010Blue2.BorderColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(72)))), ((int)(((byte)(161)))));
-            office2010Blue2.BorderColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(135)))), ((int)(((byte)(228)))));
-            office2010Blue2.ButtonMouseOverColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(199)))), ((int)(((byte)(87)))));
-            office2010Blue2.ButtonMouseOverColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(243)))), ((int)(((byte)(215)))));
-            office2010Blue2.ButtonMouseOverColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(225)))), ((int)(((byte)(137)))));
-            office2010Blue2.ButtonMouseOverColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(249)))), ((int)(((byte)(224)))));
-            office2010Blue2.ButtonNormalColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(72)))), ((int)(((byte)(161)))));
-            office2010Blue2.ButtonNormalColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(135)))), ((int)(((byte)(228)))));
-            office2010Blue2.ButtonNormalColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(97)))), ((int)(((byte)(181)))));
-            office2010Blue2.ButtonNormalColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(125)))), ((int)(((byte)(219)))));
-            office2010Blue2.ButtonSelectedColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(199)))), ((int)(((byte)(87)))));
-            office2010Blue2.ButtonSelectedColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(243)))), ((int)(((byte)(215)))));
-            office2010Blue2.ButtonSelectedColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(229)))), ((int)(((byte)(117)))));
-            office2010Blue2.ButtonSelectedColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(216)))), ((int)(((byte)(107)))));
-            office2010Blue2.HoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
-            office2010Blue2.SelectedTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
-            office2010Blue2.TextColor = System.Drawing.Color.White;
-            this.BOK.ColorTable = office2010Blue2;
+            office2010Blue5.BorderColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(72)))), ((int)(((byte)(161)))));
+            office2010Blue5.BorderColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(135)))), ((int)(((byte)(228)))));
+            office2010Blue5.ButtonMouseOverColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(199)))), ((int)(((byte)(87)))));
+            office2010Blue5.ButtonMouseOverColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(243)))), ((int)(((byte)(215)))));
+            office2010Blue5.ButtonMouseOverColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(225)))), ((int)(((byte)(137)))));
+            office2010Blue5.ButtonMouseOverColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(249)))), ((int)(((byte)(224)))));
+            office2010Blue5.ButtonNormalColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(72)))), ((int)(((byte)(161)))));
+            office2010Blue5.ButtonNormalColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(135)))), ((int)(((byte)(228)))));
+            office2010Blue5.ButtonNormalColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(97)))), ((int)(((byte)(181)))));
+            office2010Blue5.ButtonNormalColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(125)))), ((int)(((byte)(219)))));
+            office2010Blue5.ButtonSelectedColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(199)))), ((int)(((byte)(87)))));
+            office2010Blue5.ButtonSelectedColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(243)))), ((int)(((byte)(215)))));
+            office2010Blue5.ButtonSelectedColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(229)))), ((int)(((byte)(117)))));
+            office2010Blue5.ButtonSelectedColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(216)))), ((int)(((byte)(107)))));
+            office2010Blue5.HoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
+            office2010Blue5.SelectedTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
+            office2010Blue5.TextColor = System.Drawing.Color.White;
+            this.BOK.ColorTable = office2010Blue5;
             this.BOK.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BOK.Location = new System.Drawing.Point(715, 13);
             this.BOK.Name = "BOK";
@@ -1139,6 +1397,96 @@
             this.PhonePopupMenu.Manager = this.PhoneBarManager;
             this.PhonePopupMenu.Name = "PhonePopupMenu";
             // 
+            // barDockControl9
+            // 
+            this.barDockControl9.CausesValidation = false;
+            this.barDockControl9.Dock = System.Windows.Forms.DockStyle.Right;
+            this.barDockControl9.Location = new System.Drawing.Point(0, 0);
+            this.barDockControl9.Manager = null;
+            this.barDockControl9.Size = new System.Drawing.Size(0, 0);
+            // 
+            // barDockControl8
+            // 
+            this.barDockControl8.CausesValidation = false;
+            this.barDockControl8.Dock = System.Windows.Forms.DockStyle.Left;
+            this.barDockControl8.Location = new System.Drawing.Point(0, 0);
+            this.barDockControl8.Manager = null;
+            this.barDockControl8.Size = new System.Drawing.Size(0, 0);
+            // 
+            // barDockControl10
+            // 
+            this.barDockControl10.CausesValidation = false;
+            this.barDockControl10.Dock = System.Windows.Forms.DockStyle.Right;
+            this.barDockControl10.Location = new System.Drawing.Point(0, 0);
+            this.barDockControl10.Manager = null;
+            this.barDockControl10.Size = new System.Drawing.Size(0, 0);
+            // 
+            // barDockControl7
+            // 
+            this.barDockControl7.CausesValidation = false;
+            this.barDockControl7.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.barDockControl7.Location = new System.Drawing.Point(0, 0);
+            this.barDockControl7.Manager = null;
+            this.barDockControl7.Size = new System.Drawing.Size(0, 0);
+            // 
+            // barDockControl11
+            // 
+            this.barDockControl11.CausesValidation = false;
+            this.barDockControl11.Dock = System.Windows.Forms.DockStyle.Left;
+            this.barDockControl11.Location = new System.Drawing.Point(0, 0);
+            this.barDockControl11.Manager = null;
+            this.barDockControl11.Size = new System.Drawing.Size(0, 0);
+            // 
+            // barDockControl12
+            // 
+            this.barDockControl12.CausesValidation = false;
+            this.barDockControl12.Dock = System.Windows.Forms.DockStyle.Right;
+            this.barDockControl12.Location = new System.Drawing.Point(0, 0);
+            this.barDockControl12.Manager = null;
+            this.barDockControl12.Size = new System.Drawing.Size(0, 0);
+            // 
+            // barDockControl6
+            // 
+            this.barDockControl6.CausesValidation = false;
+            this.barDockControl6.Dock = System.Windows.Forms.DockStyle.Top;
+            this.barDockControl6.Location = new System.Drawing.Point(0, 0);
+            this.barDockControl6.Manager = null;
+            this.barDockControl6.Size = new System.Drawing.Size(0, 0);
+            // 
+            // barDockControl13
+            // 
+            this.barDockControl13.CausesValidation = false;
+            this.barDockControl13.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.barDockControl13.Location = new System.Drawing.Point(0, 0);
+            this.barDockControl13.Manager = null;
+            this.barDockControl13.Size = new System.Drawing.Size(0, 0);
+            // 
+            // barDockControl14
+            // 
+            this.barDockControl14.CausesValidation = false;
+            this.barDockControl14.Dock = System.Windows.Forms.DockStyle.Left;
+            this.barDockControl14.Location = new System.Drawing.Point(0, 0);
+            this.barDockControl14.Manager = null;
+            this.barDockControl14.Size = new System.Drawing.Size(0, 0);
+            // 
+            // barDockControl15
+            // 
+            this.barDockControl15.CausesValidation = false;
+            this.barDockControl15.Dock = System.Windows.Forms.DockStyle.Right;
+            this.barDockControl15.Location = new System.Drawing.Point(0, 0);
+            this.barDockControl15.Manager = null;
+            this.barDockControl15.Size = new System.Drawing.Size(0, 0);
+            // 
+            // WorkPopupMenu
+            // 
+            this.WorkPopupMenu.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.NewWorkBarButton),
+            new DevExpress.XtraBars.LinkPersistInfo(this.EditWorkBarButton),
+            new DevExpress.XtraBars.LinkPersistInfo(this.DeleteWorkBarButton),
+            new DevExpress.XtraBars.LinkPersistInfo(this.RefreshWorkBarButton)});
+            this.WorkPopupMenu.Manager = this.PhoneBarManager;
+            this.WorkPopupMenu.Name = "WorkPopupMenu";
+            // 
             // FCustomerAddEdit
             // 
             this.AcceptButton = this.BOK;
@@ -1157,6 +1505,10 @@
             this.Controls.Add(this.barDockControl4);
             this.Controls.Add(this.barDockControl2);
             this.Controls.Add(this.barDockControl1);
+            this.Controls.Add(this.barDockControl17);
+            this.Controls.Add(this.barDockControl18);
+            this.Controls.Add(this.barDockControl16);
+            this.Controls.Add(this.barDockControl5);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -1193,10 +1545,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.PhoneGridControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PhoneGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PhoneBarManager)).EndInit();
+            this.WorkTab.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.WorkGridControl)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.WorkGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.WorkBarManager)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PanelOption)).EndInit();
             this.PanelOption.ResumeLayout(false);
             this.PanelOption.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PhonePopupMenu)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.WorkPopupMenu)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1287,5 +1644,35 @@
         private DevExpress.XtraGrid.Columns.GridColumn CustomerPhone_Note;
         private DevExpress.XtraGrid.Columns.GridColumn CustomerPhone_IsSendSMS;
         private DevExpress.XtraBars.PopupMenu PhonePopupMenu;
+        private DevExpress.XtraBars.StandaloneBarDockControl WorkStandaloneBarDockControl;
+        private DevExpress.XtraBars.BarDockControl barDockControl17;
+        private DevExpress.XtraBars.BarManager WorkBarManager;
+        private DevExpress.XtraBars.Bar bar3;
+        private DevExpress.XtraBars.BarDockControl barDockControl5;
+        private DevExpress.XtraBars.BarDockControl barDockControl16;
+        private DevExpress.XtraBars.BarDockControl barDockControl18;
+        private DevExpress.XtraGrid.GridControl WorkGridControl;
+        private DevExpress.XtraGrid.Views.Grid.GridView WorkGridView;
+        private DevExpress.XtraGrid.Columns.GridColumn CustomerWork_SS;
+        private DevExpress.XtraGrid.Columns.GridColumn CustomerWork_ID;
+        private DevExpress.XtraGrid.Columns.GridColumn CustomerWork_PlaceName;
+        private DevExpress.XtraGrid.Columns.GridColumn CustomerWork_Position;
+        private DevExpress.XtraGrid.Columns.GridColumn CustomerWork_StartDate;
+        private DevExpress.XtraGrid.Columns.GridColumn CustomerWork_EndDate;
+        private DevExpress.XtraBars.BarDockControl barDockControl9;
+        private DevExpress.XtraBars.BarDockControl barDockControl8;
+        private DevExpress.XtraBars.BarDockControl barDockControl10;
+        private DevExpress.XtraBars.BarDockControl barDockControl7;
+        private DevExpress.XtraBars.BarDockControl barDockControl11;
+        private DevExpress.XtraBars.BarDockControl barDockControl12;
+        private DevExpress.XtraBars.BarDockControl barDockControl6;
+        private DevExpress.XtraBars.BarDockControl barDockControl13;
+        private DevExpress.XtraBars.BarDockControl barDockControl14;
+        private DevExpress.XtraBars.BarDockControl barDockControl15;
+        private DevExpress.XtraBars.PopupMenu WorkPopupMenu;
+        private DevExpress.XtraBars.BarButtonItem NewWorkBarButton;
+        private DevExpress.XtraBars.BarButtonItem EditWorkBarButton;
+        private DevExpress.XtraBars.BarButtonItem DeleteWorkBarButton;
+        private DevExpress.XtraBars.BarButtonItem RefreshWorkBarButton;
     }
 }

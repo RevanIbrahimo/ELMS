@@ -31,7 +31,8 @@ namespace ELMS.Forms.Customer
         int UsedUserID = -1, orderID,
             documentID, topindex,
             old_row_id, 
-            phoneID,
+            phoneID, 
+            workID,
             countryID = 0,
             sexID = 0;
         string CustomerImage;
@@ -61,6 +62,11 @@ namespace ELMS.Forms.Customer
         private void LoadDocument()
         {
             DocumentGridControl.DataSource = CustomerCardDAL.SelectViewData(null);
+        }
+
+        private void LoadWork()
+        {
+            WorkGridControl.DataSource = CustomerWorkDAL.SelectViewData(null);
         }
 
         private void LoadFDocumentAddEdit(TransactionTypeEnum transactionType, int? id)
@@ -123,6 +129,7 @@ namespace ELMS.Forms.Customer
             PhoneGridView.TopRowIndex = topindex;
             PhoneGridView.FocusedRowHandle = old_row_id;
         }
+
 
         void UpdatePhone()
         {
@@ -206,6 +213,11 @@ namespace ELMS.Forms.Customer
             if (TransactionType == TransactionTypeEnum.Insert)
                 return;
             GlobalProcedures.ExecuteProcedureWithUser("ELMS_USER_TEMP.PROC_INSERT_CUSTOMER_TEMP", "P_CUSTOMER_ID", CustomerID, "Müştərinin məlumatları temp cədvələ daxil edilmədi.");
+            GlobalFunctions.RunInOneTransaction<int>(tran =>
+            {
+                GlobalProcedures.ExecuteProcedureWithTwoParametrAndUser(tran, "ELMS_USER_TEMP.PROC_INSERT_PHONE_TEMP", "P_OWNER_ID", CustomerID.Value, "P_OWNER_TYPE", (int)PhoneOwnerEnum.Customer);
+                return 1;
+            }, "Xəstənin temp məlumatları cədvələ daxil edilmədi.");
         }
         private void ComponentEnabled(bool status)
         {
@@ -238,7 +250,7 @@ namespace ELMS.Forms.Customer
 
             CustomerID = CustomerDAL.InsertCustomer(tran, customer);
         }
-
+        
         private void UpdateCustomer(OracleTransaction tran)
         {
             isClickBOK = true;
@@ -252,7 +264,9 @@ namespace ELMS.Forms.Customer
                 COUNTRY_ID = countryID,
                 SEX_ID = sexID,
                 NOTE = NoteText.Text.Trim(),
-                REGISTERED_ADDRESS = RegisteredAddressText.Text.Trim()
+                REGISTERED_ADDRESS = RegisteredAddressText.Text.Trim(),
+                USED_USER_ID = -1,
+                ID = CustomerID.Value
             };
 
             CustomerDAL.UpdateCustomer(tran, customer);
@@ -272,7 +286,9 @@ namespace ELMS.Forms.Customer
                     UpdateCustomer(tran);
                     UpdateImageDetail(tran);
                 }
-                
+                GlobalProcedures.ExecuteProcedureWithParametr(tran, "ELMS_USER.PROC_INSERT_CUSTOMER_CARD", "P_CUSTOMER_ID", CustomerID.Value);
+                GlobalProcedures.ExecuteProcedureWithTwoParametrAndUser(tran, "ELMS_USER.PROC_INSERT_PHONE", "P_OWNER_ID", CustomerID.Value, "P_OWNER_TYPE", (int)PhoneOwnerEnum.Customer);
+
 
                 return 1;
             }, TransactionType == TransactionTypeEnum.Insert ? "Müştərinin məlumatları bazaya daxil edilmədi." : "Müştərinin məlumatları bazada dəyişdirilmədi.");
@@ -345,7 +361,12 @@ namespace ELMS.Forms.Customer
                 if (!isClickBOK && TransactionType == TransactionTypeEnum.Update)
                     GlobalProcedures.Lock_or_UnLock_UserID("ELMS_USER.CUSTOMER", -1, "WHERE ID = " + CustomerID + " AND USED_USER_ID = " + GlobalVariables.V_UserID);
                 CustomerDAL.DeleteCustomer(CustomerID.Value);
+            GlobalFunctions.RunInOneTransaction<int>(tran =>
+            {
+                PhoneDAL.DeletePhoneTemp(tran, PhoneOwnerEnum.Customer);
 
+                return 1;
+            }, "Müştərinin məlumatları temp cədvəllərdən silinmədi.");
             this.RefreshDataGridView();
     }
 
@@ -359,11 +380,144 @@ namespace ELMS.Forms.Customer
             countryID = GlobalFunctions.GetLookUpID(sender);
         }
 
+        private void WorkGridControl_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+        void DeleteDocument()
+        {
+            var rows = GlobalFunctions.GridviewSelectedRow(DocumentGridView);
+
+            if (rows.Count == 0)
+            {
+                GlobalProcedures.ShowWarningMessage("Silmək istədiyiniz sənədi seçin.");
+                return;
+            }
+
+            if (GlobalFunctions.CallDialogResult("Seçilmiş sənədləri silmək istəyirsiniz?", "Sənədlərin silinməsi") == DialogResult.Yes)
+                for (int i = 0; i < rows.Count; i++)
+                {
+                    DataRow row = rows[i] as DataRow;
+                   CustomerCardDAL.DeleteCustomerCard(Convert.ToInt32(row["ID"]), CustomerID.Value);
+                }
+        }
+
+        private void DeleteDocumentBarButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            DeleteDocument();
+            LoadDocument();
+        }
+
+        private void OtherInfoTabControl_SelectedPageChanged(object sender, DevExpress.XtraTab.TabPageChangedEventArgs e)
+        {
+            switch (OtherInfoTabControl.SelectedTabPageIndex)
+            {
+                case 0:
+                    {
+                        LoadDocument();
+                    }
+                    break;
+                case 1:
+                    {
+                        LoadPhone();
+                    }
+                    break;
+                case 2:
+                    {
+                        LoadWork();
+                    }
+                    break;
+                case 3:
+                    {
+                        //LoadKindShip();
+                    }
+                    break;
+            }
+        }
+
+        private void WorkGridView_CustomUnboundColumnData(object sender, DevExpress.XtraGrid.Views.Base.CustomColumnDataEventArgs e)
+        {
+            GlobalProcedures.GenerateAutoRowNumber(sender, CustomerWork_SS, e);
+        }
+
+        private void DocumentGridView_CustomUnboundColumnData(object sender, DevExpress.XtraGrid.Views.Base.CustomColumnDataEventArgs e)
+        {
+            GlobalProcedures.GenerateAutoRowNumber(sender, Document_SS, e);
+        }
+
+        private void LoadFWorkAddEdit(TransactionTypeEnum transactionType, int? id)
+        {
+            topindex = WorkGridView.TopRowIndex;
+            old_row_id = WorkGridView.FocusedRowHandle;
+            FWorkAddEdit fd = new FWorkAddEdit()
+            {
+                TransactionType = transactionType,
+                CustomerID = CustomerID,
+                WorkID = id
+            };
+            fd.RefreshDataGridView += new FWorkAddEdit.DoEvent(LoadWork);
+            fd.ShowDialog();
+            WorkGridView.TopRowIndex = topindex;
+            WorkGridView.FocusedRowHandle = old_row_id;
+        }
+
+        private void NewWorkBarButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            LoadFWorkAddEdit(TransactionTypeEnum.Insert, null);
+        }
+
+        private void DeleteWorkBarButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            DeleteWork();
+            LoadWork();
+        }
+
+        private void EditWorkBarButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            LoadFWorkAddEdit(TransactionTypeEnum.Update, workID);
+
+        }
+
+        private void RefreshWorkBarButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            LoadWork();
+        }
+
+        private void WorkGridView_FocusedRowObjectChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowObjectChangedEventArgs e)
+        {
+            DataRow row = WorkGridView.GetFocusedDataRow();
+            if (row != null)
+                workID = Convert.ToInt32(row["ID"].ToString());
+        }
+
+
+        void DeleteWork()
+        {
+            var rows = GlobalFunctions.GridviewSelectedRow(WorkGridView);
+
+            if (rows.Count == 0)
+            {
+                GlobalProcedures.ShowWarningMessage("Silmək istədiyiniz iş yerini seçin.");
+                return;
+            }
+
+            if (GlobalFunctions.CallDialogResult("Seçilmiş iş yerlərini silmək istəyirsiniz?", "İş yerlərinin silinməsi") == DialogResult.Yes)
+                for (int i = 0; i < rows.Count; i++)
+                {
+                    DataRow row = rows[i] as DataRow;
+                    CustomerWorkDAL.DeleteCustomerWork(Convert.ToInt32(row["ID"]), CustomerID.Value);
+                }
+        }
+
         private void PhoneGridView_DoubleClick(object sender, EventArgs e)
         {
             if (EditPhoneBarButton.Enabled)
                 UpdatePhone();
         }
+
+
 
         void DeletePhone()
         {

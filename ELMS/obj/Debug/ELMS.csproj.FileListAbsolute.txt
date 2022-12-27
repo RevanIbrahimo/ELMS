@@ -161,3 +161,4 @@ C:\Users\user\Documents\Github\ELMS\ELMS\obj\Debug\ELMS.Forms.FUsersGroups.resou
 C:\Users\user\Documents\Github\ELMS\ELMS\obj\Debug\ELMS.WaitForms.FWait.resources
 C:\Users\user\Documents\Github\ELMS\ELMS\obj\Debug\ELMS.Forms.General.ProjectSplashScreen.resources
 C:\Users\user\Documents\Github\ELMS\ELMS\obj\Debug\ELMS.Forms.Mail.FMailAddEdit.resources
+C:\Users\user\Documents\Github\ELMS\ELMS\obj\Debug\ELMS.Forms.Customer.FWorkAddEdit.resources

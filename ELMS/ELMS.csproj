@@ -86,6 +86,7 @@
     <Compile Include="Class\DataAccess\CustomerCardDAL.cs" />
     <Compile Include="Class\DataAccess\CustomerDAL.cs" />
     <Compile Include="Class\DataAccess\CustomerImageDAL.cs" />
+    <Compile Include="Class\DataAccess\CustomerWorkDAL.cs" />
     <Compile Include="Class\DataAccess\DocumentGroupDAL.cs" />
     <Compile Include="Class\DataAccess\DocumentTypeDAL.cs" />
     <Compile Include="Class\DataAccess\KindShipDAL.cs" />
@@ -115,6 +116,7 @@
     <Compile Include="Class\Tables\Customer.cs" />
     <Compile Include="Class\Tables\CustomerCard.cs" />
     <Compile Include="Class\Tables\CustomerImage.cs" />
+    <Compile Include="Class\Tables\CustomerWork.cs" />
     <Compile Include="Class\Tables\DocumentGroup.cs" />
     <Compile Include="Class\Tables\DocumentType.cs" />
     <Compile Include="Class\Tables\KindShip.cs" />
@@ -141,6 +143,12 @@
     </Compile>
     <Compile Include="Forms\Customer\FCustomerAddEdit.Designer.cs">
       <DependentUpon>FCustomerAddEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Customer\FWorkAddEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Customer\FWorkAddEdit.Designer.cs">
+      <DependentUpon>FWorkAddEdit.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Dictionaries\FBranchAddEdit.cs">
       <SubType>Form</SubType>
@@ -323,6 +331,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Customer\FCustomerAddEdit.resx">
       <DependentUpon>FCustomerAddEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Customer\FWorkAddEdit.resx">
+      <DependentUpon>FWorkAddEdit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Dictionaries\FBranchAddEdit.resx">
       <DependentUpon>FBranchAddEdit.cs</DependentUpon>

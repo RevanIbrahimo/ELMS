@@ -225,6 +225,48 @@ namespace ELMS.Class.DataAccess
                     connection.Dispose();
                 }
             }
-        }        
+        }
+
+        public static void DeleteCustomerCard(int phoneID, int ownerID)
+        {
+            string commandSql = null;
+            using (OracleConnection connection = new OracleConnection())
+            {
+                OracleTransaction transaction = null;
+                try
+                {
+                    if (connection.State == ConnectionState.Closed || connection.State == ConnectionState.Broken)
+                    {
+                        connection.ConnectionString = GlobalFunctions.GetConnectionString();
+                        connection.Open();
+                    }
+
+                    using (OracleCommand command = connection.CreateCommand())
+                    {
+                        transaction = connection.BeginTransaction();
+                        command.Transaction = transaction;
+                        command.CommandText = $@"UPDATE ELMS_USER_TEMP.CUSTOMER_CARDS_TEMP SET IS_CHANGE = {(int)ChangeTypeEnum.Delete}
+                                                        WHERE  CUSTOMER_ID = :inCUSTOMERID
+                                                          AND ID = :inID";
+                        command.Parameters.Add(new OracleParameter("inCUSTOMERID", ownerID));
+                        command.Parameters.Add(new OracleParameter("inID", phoneID));
+                        commandSql = command.CommandText;
+                        command.ExecuteNonQuery();
+                        transaction.Commit();
+                        command.Connection.Close();
+                    }
+                }
+                catch (Exception exx)
+                {
+                    transaction.Rollback();
+                    GlobalProcedures.LogWrite("Sənəd temp cədvəldən silinmədi.", commandSql, GlobalVariables.V_UserName, "CustomerCardDAL", "DeleteCustomerCard", exx);
+                }
+                finally
+                {
+                    transaction.Dispose();
+                    connection.Dispose();
+                }
+            }
+        }
     }
 }

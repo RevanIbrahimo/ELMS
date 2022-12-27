@@ -1,0 +1,33 @@
+
+Log Entry : 5:06:04 AM Tuesday, December 27, 2022
+  
+   UserName =  SuperAdmin
+   FormName =  GlobalProcedures
+   ProcedureName =  ExecuteQuery/Lock_or_UnLock_UserID
+  
+   ShowMessage: ELMS_USER.CUSTOMER_WORKPLACE cədvəli bloka düşmədi.
+   Exception Message: ORA-00942: table or view does not exist
+   SQL Text      :  UPDATE ELMS_USER.CUSTOMER_WORKPLACE SET USED_USER_ID = 0 WHERE ID = 1 AND USED_USER_ID = -1
+-------------------------------------------------
+
+Log Entry : 5:07:20 AM Tuesday, December 27, 2022
+  
+   UserName =  SuperAdmin
+   FormName =  GlobalProcedures
+   ProcedureName =  ExecuteQuery/Lock_or_UnLock_UserID
+  
+   ShowMessage: ELMS_USER.CUSTOMER_WORKPLACE cədvəli bloka düşmədi.
+   Exception Message: ORA-00942: table or view does not exist
+   SQL Text      :  UPDATE ELMS_USER.CUSTOMER_WORKPLACE SET USED_USER_ID = 0 WHERE ID = 1 AND USED_USER_ID = -1
+-------------------------------------------------
+
+Log Entry : 5:07:39 AM Tuesday, December 27, 2022
+  
+   UserName =  SuperAdmin
+   FormName =  GlobalProcedures
+   ProcedureName =  ExecuteQuery/Lock_or_UnLock_UserID
+  
+   ShowMessage: ELMS_USER.CUSTOMER_WORKPLACE cədvəli bloka düşmədi.
+   Exception Message: ORA-00942: table or view does not exist
+   SQL Text      :  UPDATE ELMS_USER.CUSTOMER_WORKPLACE SET USED_USER_ID = -1 WHERE ID = 1 AND USED_USER_ID = 0
+-------------------------------------------------
