@@ -6,6 +6,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static ELMS.Class.Enum;
 
 namespace ELMS.Class.DataAccess
 {
@@ -106,6 +107,42 @@ namespace ELMS.Class.DataAccess
                                AND CU.SEX_ID = SE.ID
                                AND CU.ID = CI.CUSTOMER_ID
                                AND CU.BRANCH_ID = B.ID {(ID.HasValue ? $@" AND CU.ID = {ID}" : null)}
+                        ORDER BY CU.ID";
+
+            try
+            {
+                using (OracleDataAdapter da = new OracleDataAdapter(s, GlobalFunctions.GetConnectionString()))
+                {
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+                    return dt;
+                }
+            }
+            catch (Exception exx)
+            {
+                GlobalProcedures.LogWrite("Musterinin məlumatları açılmadı.", s, GlobalVariables.V_UserName, "CustomerDAL", "SelectViewData", exx);
+                return null;
+            }
+        }
+
+
+        public static DataTable SelectCustomerData(string code)
+        {
+            string s = $@"SELECT CU.ID,
+                               P.PHONE,
+                               CC.PINCODE,
+                               CU.FULL_NAME,                          
+                               CU.ADDRESS,                               
+                               CU.CLOSED_DATE,
+                               CU.NOTE,
+                               CU.INSERT_DATE,
+                               CU.USED_USER_ID
+                          FROM ELMS_USER.CUSTOMER CU,
+                               ELMS_USER.CUSTOMER_CARDS CC,
+                               (SELECT * FROM ELMS_USER.V_PHONE WHERE OWNER_TYPE = {(int)PhoneOwnerEnum.Customer}) P
+                          WHERE  CU.ID = CC.CUSTOMER_ID
+                                 AND CU.ID = P.OWNER_ID(+)
+                                 AND CC.PINCODE = {code}
                         ORDER BY CU.ID";
 
             try

@@ -57,7 +57,7 @@
             this.accordionControlSeparator2 = new DevExpress.XtraBars.Navigation.AccordionControlSeparator();
             this.ordersAccordionControlElement = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlSeparator1 = new DevExpress.XtraBars.Navigation.AccordionControlSeparator();
-            this.accordionControlElement1 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.confirmationAccordionControlElement = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlSeparator3 = new DevExpress.XtraBars.Navigation.AccordionControlSeparator();
             this.accordionControlElement2 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlSeparator4 = new DevExpress.XtraBars.Navigation.AccordionControlSeparator();
@@ -291,7 +291,7 @@
             this.accordionControlSeparator2,
             this.ordersAccordionControlElement,
             this.accordionControlSeparator1,
-            this.accordionControlElement1,
+            this.confirmationAccordionControlElement,
             this.accordionControlSeparator3,
             this.accordionControlElement2,
             this.accordionControlSeparator4,
@@ -329,11 +329,11 @@
             // 
             this.accordionControlSeparator1.Name = "accordionControlSeparator1";
             // 
-            // accordionControlElement1
+            // confirmationAccordionControlElement
             // 
-            this.accordionControlElement1.Name = "accordionControlElement1";
-            this.accordionControlElement1.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.accordionControlElement1.Text = "Təsdiq gözləyənlər";
+            this.confirmationAccordionControlElement.Name = "confirmationAccordionControlElement";
+            this.confirmationAccordionControlElement.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.confirmationAccordionControlElement.Text = "Təsdiq gözləyənlər";
             // 
             // accordionControlSeparator3
             // 
@@ -469,7 +469,7 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
         private DevExpress.XtraBars.Navigation.AccordionControlSeparator accordionControlSeparator2;
         private DevExpress.XtraBars.Navigation.AccordionControlSeparator accordionControlSeparator1;
-        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement1;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement confirmationAccordionControlElement;
         private DevExpress.XtraBars.Navigation.AccordionControlSeparator accordionControlSeparator3;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement2;
         private DevExpress.XtraBars.Navigation.AccordionControlSeparator accordionControlSeparator4;

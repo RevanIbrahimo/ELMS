@@ -36,8 +36,6 @@
             this.EditBarButton = new DevExpress.XtraBars.BarButtonItem();
             this.DeleteBarButton = new DevExpress.XtraBars.BarButtonItem();
             this.RefreshBarButton = new DevExpress.XtraBars.BarButtonItem();
-            this.ScheduleBarButton = new DevExpress.XtraBars.BarButtonItem();
-            this.HistroryBarButton = new DevExpress.XtraBars.BarButtonItem();
             this.PrintBarButton = new DevExpress.XtraBars.BarButtonItem();
             this.ExportBarButton = new DevExpress.XtraBars.BarSubItem();
             this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
@@ -52,6 +50,8 @@
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
+            this.ScheduleBarButton = new DevExpress.XtraBars.BarButtonItem();
+            this.HistroryBarButton = new DevExpress.XtraBars.BarButtonItem();
             this.CustomerGridControl = new DevExpress.XtraGrid.GridControl();
             this.CustomerGridView = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.Customer_SS = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -163,28 +163,6 @@
             this.RefreshBarButton.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
             this.RefreshBarButton.ShowItemShortcut = DevExpress.Utils.DefaultBoolean.True;
             this.RefreshBarButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.RefreshBarButton_ItemClick);
-            // 
-            // ScheduleBarButton
-            // 
-            this.ScheduleBarButton.Caption = "Qəbula yaz";
-            this.ScheduleBarButton.Id = 12;
-            this.ScheduleBarButton.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ScheduleBarButton.ImageOptions.Image")));
-            this.ScheduleBarButton.ItemShortcut = new DevExpress.XtraBars.BarShortcut((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Q));
-            this.ScheduleBarButton.Name = "ScheduleBarButton";
-            this.ScheduleBarButton.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            this.ScheduleBarButton.ShowItemShortcut = DevExpress.Utils.DefaultBoolean.True;
-            this.ScheduleBarButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ScheduleBarButton_ItemClick);
-            // 
-            // HistroryBarButton
-            // 
-            this.HistroryBarButton.Caption = "Müalicə tarixçəsi";
-            this.HistroryBarButton.Id = 13;
-            this.HistroryBarButton.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("HistroryBarButton.ImageOptions.Image")));
-            this.HistroryBarButton.ItemShortcut = new DevExpress.XtraBars.BarShortcut((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.H));
-            this.HistroryBarButton.Name = "HistroryBarButton";
-            this.HistroryBarButton.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            this.HistroryBarButton.ShowItemShortcut = DevExpress.Utils.DefaultBoolean.True;
-            this.HistroryBarButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.HistroryBarButton_ItemClick);
             // 
             // PrintBarButton
             // 
@@ -309,6 +287,28 @@
             this.barDockControlRight.Manager = this.BarManager;
             this.barDockControlRight.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.barDockControlRight.Size = new System.Drawing.Size(0, 566);
+            // 
+            // ScheduleBarButton
+            // 
+            this.ScheduleBarButton.Caption = "Qəbula yaz";
+            this.ScheduleBarButton.Id = 12;
+            this.ScheduleBarButton.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ScheduleBarButton.ImageOptions.Image")));
+            this.ScheduleBarButton.ItemShortcut = new DevExpress.XtraBars.BarShortcut((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Q));
+            this.ScheduleBarButton.Name = "ScheduleBarButton";
+            this.ScheduleBarButton.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.ScheduleBarButton.ShowItemShortcut = DevExpress.Utils.DefaultBoolean.True;
+            this.ScheduleBarButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ScheduleBarButton_ItemClick);
+            // 
+            // HistroryBarButton
+            // 
+            this.HistroryBarButton.Caption = "Müalicə tarixçəsi";
+            this.HistroryBarButton.Id = 13;
+            this.HistroryBarButton.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("HistroryBarButton.ImageOptions.Image")));
+            this.HistroryBarButton.ItemShortcut = new DevExpress.XtraBars.BarShortcut((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.H));
+            this.HistroryBarButton.Name = "HistroryBarButton";
+            this.HistroryBarButton.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.HistroryBarButton.ShowItemShortcut = DevExpress.Utils.DefaultBoolean.True;
+            this.HistroryBarButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.HistroryBarButton_ItemClick);
             // 
             // CustomerGridControl
             // 

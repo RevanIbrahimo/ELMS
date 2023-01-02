@@ -162,3 +162,7 @@ C:\Users\user\Documents\Github\ELMS\ELMS\obj\Debug\ELMS.WaitForms.FWait.resource
 C:\Users\user\Documents\Github\ELMS\ELMS\obj\Debug\ELMS.Forms.General.ProjectSplashScreen.resources
 C:\Users\user\Documents\Github\ELMS\ELMS\obj\Debug\ELMS.Forms.Mail.FMailAddEdit.resources
 C:\Users\user\Documents\Github\ELMS\ELMS\obj\Debug\ELMS.Forms.Customer.FWorkAddEdit.resources
+C:\Users\user\Documents\Github\ELMS\ELMS\obj\Debug\ELMS.UserControls.OrderUserControl.resources
+C:\Users\user\Documents\Github\ELMS\ELMS\obj\Debug\ELMS.Forms.Order.FOrderAddEdit.resources
+C:\Users\user\Documents\Github\ELMS\ELMS\obj\Debug\ELMS.Forms.Order.FProductCardAddEdit.resources
+C:\Users\user\Documents\Github\ELMS\ELMS\obj\Debug\ELMS.Forms.Order.FConfirmAddEdit.resources

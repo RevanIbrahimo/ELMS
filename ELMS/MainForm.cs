@@ -19,6 +19,7 @@ namespace ELMS
     {
         XtraUserControl orderUserControl;
         XtraUserControl customerUserControl;
+        XtraUserControl confirmationUserControl;
         XtraUserControl userControl = null;
 
         int a = 0;
@@ -26,13 +27,15 @@ namespace ELMS
         private static class NavigationNameClass
         {
             public static readonly string Customer = "Müştərilər";
-            public static readonly string Order = "Sifarişlər";            
+            public static readonly string Order = "Müraciətlər";
+            public static readonly string Confirm = "Təsdiq gözləyənlər";
         }
 
         public MainForm()
         {
             InitializeComponent();
             orderUserControl = CreateUserControl(NavigationNameClass.Order);
+            confirmationUserControl = CreateUserControl(NavigationNameClass.Confirm);
             customerUserControl = CreateUserControl(NavigationNameClass.Customer);
             accordionControl.SelectedElement = customerAccordionControlElement;
         }
@@ -49,7 +52,12 @@ namespace ELMS
             {
                 result = new UserControls.OrderUserControl();
                 result.Text = NavigationNameClass.Order;
-            }            
+            } 
+            else if (navigationText == NavigationNameClass.Confirm)
+            {
+                result = new UserControls.ConfirmationUserControl();
+                result.Text = NavigationNameClass.Confirm;
+            }
 
             return result;
         }
@@ -59,7 +67,9 @@ namespace ELMS
             if (elementName == NavigationNameClass.Order)
                 userControl = orderUserControl;
             else if (elementName == NavigationNameClass.Customer)
-                userControl = customerUserControl;            
+                userControl = customerUserControl;
+            else if (elementName == NavigationNameClass.Confirm)
+                userControl = confirmationUserControl;
 
             tabbedView.AddDocument(userControl);
             tabbedView.ActivateDocument(userControl);
@@ -87,8 +97,10 @@ namespace ELMS
                     {
                         if (document.Caption == NavigationNameClass.Order)
                             accordionControl.SelectedElement = ordersAccordionControlElement;
-                        if (document.Caption == NavigationNameClass.Customer)
-                            accordionControl.SelectedElement = customerAccordionControlElement;                        
+                       if (document.Caption == NavigationNameClass.Customer)
+                            accordionControl.SelectedElement = customerAccordionControlElement;
+                        if (document.Caption == NavigationNameClass.Confirm)
+                            accordionControl.SelectedElement = confirmationAccordionControlElement;
                     }
                 }
             }
@@ -120,7 +132,9 @@ namespace ELMS
             if (e.Document.Caption == NavigationNameClass.Customer)
                 customerUserControl = CreateUserControl(NavigationNameClass.Customer);
             else if (e.Document.Caption == NavigationNameClass.Order)
-                orderUserControl = CreateUserControl(NavigationNameClass.Order);            
+                orderUserControl = CreateUserControl(NavigationNameClass.Order);
+            else if (e.Document.Caption == NavigationNameClass.Confirm)
+                confirmationUserControl = CreateUserControl(NavigationNameClass.Confirm);
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -238,6 +252,8 @@ namespace ELMS
                 accordionControl.SelectedElement = customerAccordionControlElement;
             else if (e.Document.Caption == NavigationNameClass.Order)
                 accordionControl.SelectedElement = ordersAccordionControlElement;
+            else if (e.Document.Caption == NavigationNameClass.Confirm)
+                accordionControl.SelectedElement = confirmationAccordionControlElement;
         }
 
         private void DictionaryBarButton_ItemClick(object sender, ItemClickEventArgs e)

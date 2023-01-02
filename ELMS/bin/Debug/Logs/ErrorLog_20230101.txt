@@ -1,0 +1,10 @@
+
+Log Entry : 7:27:17 PM Sunday, January 1, 2023
+  
+   UserName =  SuperAdmin
+   FormName =  GlobalFunctions
+   ProcedureName =  RunInOneTransaction
+  
+   ShowMessage: Müştərinin məlumatları bazaya daxil edilmədi.
+   Exception Message: Unable to cast object of type 'DevExpress.XtraEditors.CalcEdit' to type 'System.IConvertible'.
+-------------------------------------------------

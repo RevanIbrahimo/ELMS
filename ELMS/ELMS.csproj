@@ -89,17 +89,22 @@
     <Compile Include="Class\DataAccess\CustomerWorkDAL.cs" />
     <Compile Include="Class\DataAccess\DocumentGroupDAL.cs" />
     <Compile Include="Class\DataAccess\DocumentTypeDAL.cs" />
+    <Compile Include="Class\DataAccess\FundsSourcesDAL.cs" />
     <Compile Include="Class\DataAccess\KindShipDAL.cs" />
     <Compile Include="Class\DataAccess\MailDAL.cs" />
+    <Compile Include="Class\DataAccess\OrderDAL.cs" />
+    <Compile Include="Class\DataAccess\OrderImageDAL.cs" />
     <Compile Include="Class\DataAccess\PermissionDAL.cs" />
     <Compile Include="Class\DataAccess\PersonTypeDAL.cs" />
     <Compile Include="Class\DataAccess\PhoneDAL.cs" />
     <Compile Include="Class\DataAccess\PhoneDescriptionDAL.cs" />
     <Compile Include="Class\DataAccess\PhonePrefixDAL.cs" />
+    <Compile Include="Class\DataAccess\ProductCardDAL.cs" />
     <Compile Include="Class\DataAccess\ProductDAL.cs" />
     <Compile Include="Class\DataAccess\ProfessionDAL.cs" />
     <Compile Include="Class\DataAccess\RelativeCardDAL.cs" />
     <Compile Include="Class\DataAccess\SexDAL.cs" />
+    <Compile Include="Class\DataAccess\TimesDAL.cs" />
     <Compile Include="Class\DataAccess\UserDAL.cs" />
     <Compile Include="Class\DataAccess\UserListDAL.cs" />
     <Compile Include="Class\DataAccess\UsersGroupDAL.cs" />
@@ -120,16 +125,21 @@
     <Compile Include="Class\Tables\CustomerWork.cs" />
     <Compile Include="Class\Tables\DocumentGroup.cs" />
     <Compile Include="Class\Tables\DocumentType.cs" />
+    <Compile Include="Class\Tables\FundsSources.cs" />
     <Compile Include="Class\Tables\KindShip.cs" />
     <Compile Include="Class\Tables\Mail.cs" />
+    <Compile Include="Class\Tables\Order.cs" />
+    <Compile Include="Class\Tables\OrderImage.cs" />
     <Compile Include="Class\Tables\Permission.cs" />
     <Compile Include="Class\Tables\PersonType.cs" />
     <Compile Include="Class\Tables\Phone.cs" />
     <Compile Include="Class\Tables\PhoneDescription.cs" />
     <Compile Include="Class\Tables\PhonePrefix.cs" />
     <Compile Include="Class\Tables\Product.cs" />
+    <Compile Include="Class\Tables\ProductCard.cs" />
     <Compile Include="Class\Tables\Profession.cs" />
     <Compile Include="Class\Tables\Sex.cs" />
+    <Compile Include="Class\Tables\Times.cs" />
     <Compile Include="Class\Tables\UserList.cs" />
     <Compile Include="Class\Tables\Users.cs" />
     <Compile Include="Class\Tables\UsersGroup.cs" />
@@ -265,6 +275,24 @@
     <Compile Include="Forms\Option\FUsersGroups.Designer.cs">
       <DependentUpon>FUsersGroups.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Order\FConfirmAddEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Order\FConfirmAddEdit.Designer.cs">
+      <DependentUpon>FConfirmAddEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Order\FOrderAddEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Order\FOrderAddEdit.Designer.cs">
+      <DependentUpon>FOrderAddEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Order\FProductCardAddEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Order\FProductCardAddEdit.Designer.cs">
+      <DependentUpon>FProductCardAddEdit.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Phone\FPhoneAddEdit.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -393,6 +421,15 @@
     <EmbeddedResource Include="Forms\Option\FUsersGroups.resx">
       <DependentUpon>FUsersGroups.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Order\FConfirmAddEdit.resx">
+      <DependentUpon>FConfirmAddEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Order\FOrderAddEdit.resx">
+      <DependentUpon>FOrderAddEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Order\FProductCardAddEdit.resx">
+      <DependentUpon>FProductCardAddEdit.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Phone\FPhoneAddEdit.resx">
       <DependentUpon>FPhoneAddEdit.cs</DependentUpon>
     </EmbeddedResource>
@@ -424,6 +461,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\CustomerUserControl.resx">
       <DependentUpon>CustomerUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\OrderUserControl.resx">
+      <DependentUpon>OrderUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\RegressionUserControl.resx">
       <DependentUpon>RegressionUserControl.cs</DependentUpon>
