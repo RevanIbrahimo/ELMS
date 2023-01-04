@@ -37,7 +37,9 @@ namespace ELMS.Forms.Dictionaries
             cardIssuingID,
             productID,
             branchID,
+            timesID,
             professionID,
+            sourceID,
             orderid,
             kindShipID;
         bool FormStatus = false;
@@ -78,6 +80,12 @@ namespace ELMS.Forms.Dictionaries
                     break;
                 case 7:
                     LoadProfession();
+                    break;
+                case 8:
+                    LoadTimes();
+                    break;
+                case 9:
+                    LoadSource();
                     break;
             }
         }
@@ -1009,8 +1017,6 @@ namespace ELMS.Forms.Dictionaries
                     UpdateProfession();            
         }
 
-       
-
         void UpdateProfession()
         {
             LoadFProfessionAddEdit(TransactionTypeEnum.Update, professionID);
@@ -1098,5 +1104,251 @@ namespace ELMS.Forms.Dictionaries
         //.//////////////////////////////////
         //./////////////////////////////////
         //.////////////////////////////////
+        //"Times" burdan baslayir
+
+
+
+        private void LoadTimes()
+        {
+            TimesGridControl.DataSource = TimesDAL.SelectTimesByID(null).ToList<Times>();
+        }
+
+
+        private void NewTimesBarButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            LoadFTimesAddEdit(TransactionTypeEnum.Insert, null);
+
+        }
+
+        private void LoadFTimesAddEdit(TransactionTypeEnum transactionType, int? id)
+        {
+            topindex = TimesGridView.TopRowIndex;
+            old_row_id = TimesGridView.FocusedRowHandle;
+            FTimesAddEdit fd = new FTimesAddEdit()
+            {
+                TransactionType = transactionType,
+                TimesID = id
+            };
+            fd.RefreshDataGridView += new FTimesAddEdit.DoEvent(LoadTimes);
+            fd.ShowDialog();
+            TimesGridView.TopRowIndex = topindex;
+            TimesGridView.FocusedRowHandle = old_row_id;
+        }
+
+        private void EditTimesBarButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            UpdateTimes();
+        }
+
+        private void TimesGridView_DoubleClick(object sender, EventArgs e)
+        {
+            if (EditTimesBarButton.Enabled)
+                UpdateTimes();
+        }
+
+        void UpdateTimes()
+        {
+            LoadFTimesAddEdit(TransactionTypeEnum.Update, timesID);
+
+        }
+
+        private void DeleteTimesBarButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            DeleteTimes();
+            LoadTimes();
+        }
+
+        void DeleteTimes()
+        {
+            int UsedUserID = Convert.ToInt16(GlobalFunctions.GetGridRowCellValue(TimesGridView, "USED_USER_ID"));
+            if (UsedUserID < 0)
+            {
+
+                if (GlobalFunctions.CallDialogResult("Seçilmiş Müddəti silmək istəyirsiniz?", "Müddətin silinməsi") == DialogResult.Yes)
+                    TimesDAL.DeleteTimes(timesID);
+            }
+            else
+            {
+                string used_user_name = GlobalVariables.lstUsers.Find(u => u.ID == UsedUserID).FULL_NAME;
+                GlobalProcedures.ShowWarningMessage($@"Seçilmiş məlumat hal-hazırda {used_user_name} tərəfindən istifadə ediliyi üçün silinə bilməz.");
+            }
+        }
+
+        private void RefreshTimesBarButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            LoadTimes();
+        }
+
+        private void UpTimesBarButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            GlobalProcedures.ChangeOrderID("TIMES", timesID, "up", out orderid);
+            LoadTimes();
+            TimesGridView.FocusedRowHandle = orderid - 1;
+        }
+
+        private void DownTimesBarButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            GlobalProcedures.ChangeOrderID("TIMES", timesID, "down", out orderid);
+            LoadTimes();
+            TimesGridView.FocusedRowHandle = orderid - 1;
+        }
+
+        private void TimesGridView_CustomUnboundColumnData(object sender, DevExpress.XtraGrid.Views.Base.CustomColumnDataEventArgs e)
+        {
+            GlobalProcedures.GenerateAutoRowNumber(sender, Times_SS, e);
+
+        }
+
+        private void TimesGridView_FocusedRowObjectChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowObjectChangedEventArgs e)
+        {
+            timesID = Convert.ToInt32(GlobalFunctions.GetGridRowCellValue((sender as GridView), "ID"));
+            //UpTimesBarButton.Enabled = !((sender as GridView).FocusedRowHandle == 0);
+            //DawnTimesBarButton.Enabled = !((sender as GridView).FocusedRowHandle == (sender as GridView).RowCount - 1);
+
+        }
+
+        private void TimesGridView_MouseUp(object sender, MouseEventArgs e)
+        {
+            GlobalProcedures.GridMouseUpForPopupMenu(TimesGridView, TimesPopupMenu, e);
+
+        }
+
+
+        private void TimesGridView_RowCellStyle(object sender, RowCellStyleEventArgs e)
+        {
+            GlobalProcedures.GridRowCellStyleForBlock((sender as GridView), e);
+
+        }
+        
+
+        //"Times" -a aid olan kod hissəsi burda bitir
+        //.////////////////////////////////////////////
+        //.///////////////////////////////////////////
+        //.//////////////////////////////////////////
+        //./////////////////////////////////////////
+        //.////////////////////////////////////////
+        //.///////////////////////////////////////
+        //.//////////////////////////////////////
+        //./////////////////////////////////////
+        //.////////////////////////////////////
+        //.///////////////////////////////////
+        //.//////////////////////////////////
+        //./////////////////////////////////
+        //.////////////////////////////////
+        //"Source" burdan baslayir
+
+
+
+        private void LoadSource()
+        {
+            SourceGridControl.DataSource = SourceDAL.SelectSourceByID(null).ToList<Source>();
+        }
+
+
+        private void NewSourceBarButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            LoadFSourceAddEdit(TransactionTypeEnum.Insert, null);
+
+        }
+
+        private void LoadFSourceAddEdit(TransactionTypeEnum transactionType, int? id)
+        {
+            topindex = SourceGridView.TopRowIndex;
+            old_row_id = SourceGridView.FocusedRowHandle;
+            FSourceAddEdit fd = new FSourceAddEdit()
+            {
+                TransactionType = transactionType,
+                SourceID = id
+            };
+            fd.RefreshDataGridView += new FSourceAddEdit.DoEvent(LoadSource);
+            fd.ShowDialog();
+            SourceGridView.TopRowIndex = topindex;
+            SourceGridView.FocusedRowHandle = old_row_id;
+        }
+
+        private void EditSourceBarButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            UpdateSource();
+        }
+
+        private void SourceGridView_DoubleClick(object sender, EventArgs e)
+        {
+            if (EditSourceBarButton.Enabled)
+                UpdateSource();
+        }
+
+        void UpdateSource()
+        {
+            LoadFSourceAddEdit(TransactionTypeEnum.Update, sourceID);
+
+        }
+
+        private void DeleteSourceBarButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            DeleteSource();
+            LoadSource();
+        }
+
+        void DeleteSource()
+        {
+            int UsedUserID = Convert.ToInt16(GlobalFunctions.GetGridRowCellValue(SourceGridView, "USED_USER_ID"));
+            if (UsedUserID < 0)
+            {
+
+                if (GlobalFunctions.CallDialogResult("Seçilmiş Mənbəni silmək istəyirsiniz?", "Mənbənin silinməsi") == DialogResult.Yes)
+                    SourceDAL.DeleteSource(sourceID);
+            }
+            else
+            {
+                string used_user_name = GlobalVariables.lstUsers.Find(u => u.ID == UsedUserID).FULL_NAME;
+                GlobalProcedures.ShowWarningMessage($@"Seçilmiş məlumat hal-hazırda {used_user_name} tərəfindən istifadə ediliyi üçün silinə bilməz.");
+            }
+        }
+
+        private void RefreshSourceBarButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            LoadSource();
+        }
+
+        private void UpSourceBarButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            GlobalProcedures.ChangeOrderID("SOURCE", sourceID, "up", out orderid);
+            LoadSource();
+            SourceGridView.FocusedRowHandle = orderid - 1;
+        }
+
+        private void DownSourceBarButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            GlobalProcedures.ChangeOrderID("SOURCE", sourceID, "down", out orderid);
+            LoadSource();
+            SourceGridView.FocusedRowHandle = orderid - 1;
+        }
+
+        private void SourceGridView_CustomUnboundColumnData(object sender, DevExpress.XtraGrid.Views.Base.CustomColumnDataEventArgs e)
+        {
+            GlobalProcedures.GenerateAutoRowNumber(sender, Source_SS, e);
+        }
+
+        private void SourceGridView_FocusedRowObjectChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowObjectChangedEventArgs e)
+        {
+            sourceID = Convert.ToInt32(GlobalFunctions.GetGridRowCellValue((sender as GridView), "ID"));
+            //UpSourceBarButton.Enabled = !((sender as GridView).FocusedRowHandle == 0);
+            //DawnSourceBarButton.Enabled = !((sender as GridView).FocusedRowHandle == (sender as GridView).RowCount - 1);
+
+        }
+
+        private void SourceGridView_MouseUp(object sender, MouseEventArgs e)
+        {
+            GlobalProcedures.GridMouseUpForPopupMenu(SourceGridView, SourcePopupMenu, e);
+
+        }
+        
+        private void SourceGridView_RowCellStyle(object sender, RowCellStyleEventArgs e)
+        {
+            GlobalProcedures.GridRowCellStyleForBlock((sender as GridView), e);
+
+        }
+        
+
     }
 }

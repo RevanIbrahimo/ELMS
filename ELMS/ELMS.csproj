@@ -104,6 +104,7 @@
     <Compile Include="Class\DataAccess\ProfessionDAL.cs" />
     <Compile Include="Class\DataAccess\RelativeCardDAL.cs" />
     <Compile Include="Class\DataAccess\SexDAL.cs" />
+    <Compile Include="Class\DataAccess\SourceDAL.cs" />
     <Compile Include="Class\DataAccess\TimesDAL.cs" />
     <Compile Include="Class\DataAccess\UserDAL.cs" />
     <Compile Include="Class\DataAccess\UserListDAL.cs" />
@@ -140,6 +141,7 @@
     <Compile Include="Class\Tables\ProductCard.cs" />
     <Compile Include="Class\Tables\Profession.cs" />
     <Compile Include="Class\Tables\Sex.cs" />
+    <Compile Include="Class\Tables\Source.cs" />
     <Compile Include="Class\Tables\Times.cs" />
     <Compile Include="Class\Tables\UserList.cs" />
     <Compile Include="Class\Tables\Users.cs" />
@@ -227,6 +229,18 @@
     </Compile>
     <Compile Include="Forms\Dictionaries\FProfessionAddEdit.Designer.cs">
       <DependentUpon>FProfessionAddEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Dictionaries\FSourceAddEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Dictionaries\FSourceAddEdit.Designer.cs">
+      <DependentUpon>FSourceAddEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Dictionaries\FTimesAddEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Dictionaries\FTimesAddEdit.Designer.cs">
+      <DependentUpon>FTimesAddEdit.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\General\ProjectSplashScreen.cs">
       <SubType>Form</SubType>
@@ -403,6 +417,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Dictionaries\FProfessionAddEdit.resx">
       <DependentUpon>FProfessionAddEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Dictionaries\FSourceAddEdit.resx">
+      <DependentUpon>FSourceAddEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Dictionaries\FTimesAddEdit.resx">
+      <DependentUpon>FTimesAddEdit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\General\ProjectSplashScreen.resx">
       <DependentUpon>ProjectSplashScreen.cs</DependentUpon>

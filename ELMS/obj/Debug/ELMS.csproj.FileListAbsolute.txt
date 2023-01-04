@@ -167,3 +167,5 @@ C:\Users\user\Documents\Github\ELMS\ELMS\obj\Debug\ELMS.Forms.Order.FOrderAddEdi
 C:\Users\user\Documents\Github\ELMS\ELMS\obj\Debug\ELMS.Forms.Order.FProductCardAddEdit.resources
 C:\Users\user\Documents\Github\ELMS\ELMS\obj\Debug\ELMS.Forms.Order.FConfirmAddEdit.resources
 C:\Users\user\Documents\Github\ELMS\ELMS\obj\Debug\ELMS.Forms.Customer.FRelativeAddEdit.resources
+C:\Users\user\Documents\Github\ELMS\ELMS\obj\Debug\ELMS.Forms.Dictionaries.FSourceAddEdit.resources
+C:\Users\user\Documents\Github\ELMS\ELMS\obj\Debug\ELMS.Forms.Dictionaries.FTimesAddEdit.resources
