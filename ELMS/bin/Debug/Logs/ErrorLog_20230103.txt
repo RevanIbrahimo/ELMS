@@ -1,0 +1,139 @@
+
+Log Entry : 4:42:20 PM Tuesday, January 3, 2023
+  
+   UserName =  SuperAdmin
+   FormName =  RelativeDAL
+   ProcedureName =  SelectRelativeByOwnerID
+  
+   ShowMessage: Telefon açılmadı.
+   Exception Message: ORA-00942: table or view does not exist
+   SQL Text      :  SELECT CRT.ID,
+                                   CRT.CUSTOMER_ID,
+                                   KR.NAME KIND_NAME,
+                                   PN.NAME PROFESSION_NAME,
+                                   CRT.PHONE_DESCRIPTION_ID,
+                                   PD.NAME DESCRIPTION_NAME,
+                                   P.PHONE_PREFIX_ID,
+                                   P.PHONE_NUMBER,
+                                   CRT.NAME,
+                                   CRT.SALARY,
+                                   CRT.NOTE
+                              FROM ELMS_USER_TEMP.CUSTOMER_RELATIVE_TEMP CRT,
+                                   ELMS_USER.PHONE P,
+                                   ELMS_USER.PHONE_DESCRIPTION PD,
+                                   ELMS_USER.KINDSHIP_RATE KR,
+                                   ELMS_USER.PROFESSION PN
+                             WHERE CRT.PHONE_ID = P.ID 
+                               AND P.PHONE_DESCRIPTION_ID = PD.ID
+                               AND CRT.KINDSHIP_RATE_ID = KR.ID
+                               AND CRT.PROFESSION_ID = PN.ID
+                               AND P.OWNER_TYPE = 2 
+                               AND CRT.IS_CHANGE != 2    
+                               AND CRT.CUSTOMER_ID = 1
+-------------------------------------------------
+
+Log Entry : 4:44:51 PM Tuesday, January 3, 2023
+  
+   UserName =  SuperAdmin
+   FormName =  RelativeDAL
+   ProcedureName =  SelectRelativeByOwnerID
+  
+   ShowMessage: Telefon açılmadı.
+   Exception Message: ORA-00942: table or view does not exist
+   SQL Text      :  SELECT CRT.ID,
+                                   CRT.CUSTOMER_ID,
+                                   KR.NAME KIND_NAME,
+                                   PN.NAME PROFESSION_NAME,
+                                   PD.NAME DESCRIPTION_NAME,
+                                   P.PHONE_PREFIX_ID,
+                                   P.PHONE_NUMBER,
+                                   CRT.NAME,
+                                   CRT.SALARY,
+                                   CRT.NOTE
+                              FROM ELMS_USER_TEMP.CUSTOMER_RELATIVE_TEMP CRT,
+                                   ELMS_USER.PHONE P,
+                                   ELMS_USER.PHONE_DESCRIPTION PD,
+                                   ELMS_USER.KINDSHIP_RATE KR,
+                                   ELMS_USER.PROFESSION PN
+                             WHERE CRT.PHONE_ID = P.ID 
+                               AND P.PHONE_DESCRIPTION_ID = PD.ID
+                               AND CRT.KINDSHIP_RATE_ID = KR.ID
+                               AND CRT.PROFESSION_ID = PN.ID
+                               AND P.OWNER_TYPE = 2 
+                               AND CRT.IS_CHANGE != 2    
+                               AND CRT.CUSTOMER_ID = 1
+-------------------------------------------------
+
+Log Entry : 4:48:38 PM Tuesday, January 3, 2023
+  
+   UserName =  SuperAdmin
+   FormName =  RelativeDAL
+   ProcedureName =  SelectRelativeByOwnerID
+  
+   ShowMessage: Telefon açılmadı.
+   Exception Message: ORA-00942: table or view does not exist
+   SQL Text      :  SELECT CRT.ID,
+                                   CRT.CUSTOMER_ID,
+                                   KR.NAME KIND_NAME,
+                                   PN.NAME PROFESSION_NAME,
+                                   PD.NAME DESCRIPTION_NAME,
+                                   P.PHONE_PREFIX_ID,
+                                   P.PHONE_NUMBER,
+                                   CRT.NAME,
+                                   CRT.SALARY,
+                                   CRT.NOTE
+                              FROM ELMS_USER_TEMP.CUSTOMER_RELATIVE_TEMP CRT,
+                                   ELMS_USER.PHONE P,
+                                   ELMS_USER.PHONE_DESCRIPTION PD,
+                                   ELMS_USER.KINDSHIP_RATE KR,
+                                   ELMS_USER.PROFESSION PN
+                             WHERE CRT.PHONE_ID = P.ID 
+                               AND P.PHONE_DESCRIPTION_ID = PD.ID
+                               AND CRT.KINDSHIP_RATE_ID = KR.ID
+                               AND CRT.PROFESSION_ID = PN.ID
+                               AND P.OWNER_TYPE = 2 
+                               AND CRT.IS_CHANGE != 2    
+                               AND CRT.CUSTOMER_ID = 1
+-------------------------------------------------
+
+Log Entry : 4:54:54 PM Tuesday, January 3, 2023
+  
+   UserName =  SuperAdmin
+   FormName =  RelativeDAL
+   ProcedureName =  SelectRelativeByOwnerID
+  
+   ShowMessage: Telefon açılmadı.
+   Exception Message: ORA-00942: table or view does not exist
+   SQL Text      :  SELECT CRT.ID,
+                                   CRT.CUSTOMER_ID,
+                                   KR.NAME KIND_NAME,
+                                   PN.NAME PROFESSION_NAME,
+                                   PD.NAME DESCRIPTION_NAME,
+                                   P.PHONE_PREFIX_ID,
+                                   P.PHONE_NUMBER,
+                                   CRT.NAME,
+                                   CRT.SALARY,
+                                   CRT.NOTE
+                              FROM ELMS_USER_TEMP.CUSTOMER_RELATIVE_TEMP CRT,
+                                   ELMS_USER_TEMP.PHONE_TEMP P,
+                                   ELMS_USER.PHONE_DESCRIPTION PD,
+                                   ELMS_USER.KINDSHIP_RATE KR,
+                                   ELMS_USER.PROFESSION PN
+                             WHERE CRT.PHONE_ID = P.ID 
+                               AND P.PHONE_DESCRIPTION_ID = PD.ID
+                               AND CRT.KINDSHIP_RATE_ID = KR.ID
+                               AND CRT.PROFESSION_ID = PN.ID
+                               AND P.OWNER_TYPE = 2 
+                               AND CRT.IS_CHANGE != 2    
+                               AND CRT.CUSTOMER_ID = 1
+-------------------------------------------------
+
+Log Entry : 9:16:35 PM Tuesday, January 3, 2023
+  
+   UserName =  SuperAdmin
+   FormName =  GlobalFunctions
+   ProcedureName =  RunInOneTransaction
+  
+   ShowMessage: Müştərinin məlumatları bazada dəyişdirilmədi.
+   Exception Message: ORA-00904: "ISCHANGE": invalid identifier
+-------------------------------------------------

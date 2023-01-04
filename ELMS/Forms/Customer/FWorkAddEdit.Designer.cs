@@ -30,8 +30,6 @@
         {
             ManiXButton.Office2010Blue office2010Blue1 = new ManiXButton.Office2010Blue();
             ManiXButton.Office2010Red office2010Red1 = new ManiXButton.Office2010Red();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             DevExpress.Utils.SuperToolTip superToolTip1 = new DevExpress.Utils.SuperToolTip();
             DevExpress.Utils.ToolTipTitleItem toolTipTitleItem1 = new DevExpress.Utils.ToolTipTitleItem();
             DevExpress.Utils.ToolTipItem toolTipItem1 = new DevExpress.Utils.ToolTipItem();
@@ -39,35 +37,29 @@
             DevExpress.Utils.SuperToolTip superToolTip2 = new DevExpress.Utils.SuperToolTip();
             DevExpress.Utils.ToolTipTitleItem toolTipTitleItem2 = new DevExpress.Utils.ToolTipTitleItem();
             DevExpress.Utils.ToolTipItem toolTipItem2 = new DevExpress.Utils.ToolTipItem();
-            DevExpress.Utils.SuperToolTip superToolTip3 = new DevExpress.Utils.SuperToolTip();
-            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem3 = new DevExpress.Utils.ToolTipTitleItem();
-            DevExpress.Utils.ToolTipItem toolTipItem3 = new DevExpress.Utils.ToolTipItem();
             this.PanelOption = new DevExpress.XtraEditors.PanelControl();
             this.labelControl15 = new DevExpress.XtraEditors.LabelControl();
             this.BOK = new ManiXButton.XButton();
             this.BCancel = new ManiXButton.XButton();
-            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.EndDate = new DevExpress.XtraEditors.DateEdit();
-            this.StartDate = new DevExpress.XtraEditors.DateEdit();
             this.NoteLabel = new DevExpress.XtraEditors.LabelControl();
-            this.DateLabel = new DevExpress.XtraEditors.LabelControl();
             this.PositionLabel = new DevExpress.XtraEditors.LabelControl();
             this.OfficeLabe = new DevExpress.XtraEditors.LabelControl();
             this.NoteText = new DevExpress.XtraEditors.TextEdit();
-            this.PositionText = new DevExpress.XtraEditors.TextEdit();
             this.OfficeText = new DevExpress.XtraEditors.TextEdit();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
+            this.SalaryValue = new DevExpress.XtraEditors.CalcEdit();
+            this.NoAvailableRadioGroup = new DevExpress.XtraEditors.RadioGroup();
+            this.PositionLookUp = new DevExpress.XtraEditors.LookUpEdit();
             ((System.ComponentModel.ISupportInitialize)(this.PanelOption)).BeginInit();
             this.PanelOption.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.EndDate.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.EndDate.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.StartDate.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.StartDate.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NoteText.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PositionText.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.OfficeText.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SalaryValue.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NoAvailableRadioGroup.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PositionLookUp.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // PanelOption
@@ -76,10 +68,9 @@
             this.PanelOption.Controls.Add(this.BOK);
             this.PanelOption.Controls.Add(this.BCancel);
             this.PanelOption.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.PanelOption.Location = new System.Drawing.Point(0, 150);
-            this.PanelOption.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.PanelOption.Location = new System.Drawing.Point(0, 162);
             this.PanelOption.Name = "PanelOption";
-            this.PanelOption.Size = new System.Drawing.Size(817, 62);
+            this.PanelOption.Size = new System.Drawing.Size(817, 50);
             this.PanelOption.TabIndex = 49;
             // 
             // labelControl15
@@ -87,10 +78,9 @@
             this.labelControl15.AllowHtmlString = true;
             this.labelControl15.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Italic);
             this.labelControl15.Appearance.Options.UseFont = true;
-            this.labelControl15.Location = new System.Drawing.Point(10, 23);
-            this.labelControl15.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.labelControl15.Location = new System.Drawing.Point(9, 19);
             this.labelControl15.Name = "labelControl15";
-            this.labelControl15.Size = new System.Drawing.Size(222, 17);
+            this.labelControl15.Size = new System.Drawing.Size(172, 13);
             this.labelControl15.TabIndex = 136;
             this.labelControl15.Text = "<color=104,0,0>*</color> - lu xanalar mütləq doldurulmalıdır";
             // 
@@ -116,10 +106,9 @@
             office2010Blue1.TextColor = System.Drawing.Color.White;
             this.BOK.ColorTable = office2010Blue1;
             this.BOK.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BOK.Location = new System.Drawing.Point(618, 16);
-            this.BOK.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.BOK.Location = new System.Drawing.Point(647, 13);
             this.BOK.Name = "BOK";
-            this.BOK.Size = new System.Drawing.Size(87, 31);
+            this.BOK.Size = new System.Drawing.Size(75, 25);
             this.BOK.TabIndex = 4;
             this.BOK.Text = "Yadda saxla";
             this.BOK.Theme = ManiXButton.Theme.MSOffice2010_BLUE;
@@ -149,109 +138,46 @@
             this.BCancel.ColorTable = office2010Red1;
             this.BCancel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.BCancel.Location = new System.Drawing.Point(713, 16);
-            this.BCancel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.BCancel.Location = new System.Drawing.Point(728, 13);
             this.BCancel.Name = "BCancel";
-            this.BCancel.Size = new System.Drawing.Size(87, 31);
+            this.BCancel.Size = new System.Drawing.Size(75, 25);
             this.BCancel.TabIndex = 5;
             this.BCancel.Text = "İmtina et";
             this.BCancel.Theme = ManiXButton.Theme.MSOffice2010_RED;
             this.BCancel.UseVisualStyleBackColor = true;
             this.BCancel.Click += new System.EventHandler(this.BCancel_Click);
             // 
-            // labelControl2
-            // 
-            this.labelControl2.Location = new System.Drawing.Point(258, 82);
-            this.labelControl2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(5, 16);
-            this.labelControl2.TabIndex = 59;
-            this.labelControl2.Text = "-";
-            // 
-            // EndDate
-            // 
-            this.EndDate.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.EndDate.EditValue = null;
-            this.EndDate.Location = new System.Drawing.Point(269, 79);
-            this.EndDate.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.EndDate.Name = "EndDate";
-            this.EndDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Ellipsis, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), "Kalendarı aç")});
-            this.EndDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.EndDate.Properties.DisplayFormat.FormatString = "dd.MM.yyyy";
-            this.EndDate.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            this.EndDate.Properties.EditFormat.FormatString = "dd.MM.yyyy";
-            this.EndDate.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            this.EndDate.Properties.NullValuePrompt = "dd.mm.yyyy";
-            this.EndDate.Properties.NullValuePromptShowForEmptyValue = true;
-            this.EndDate.Size = new System.Drawing.Size(98, 22);
-            this.EndDate.TabIndex = 3;
-            // 
-            // StartDate
-            // 
-            this.StartDate.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.StartDate.EditValue = null;
-            this.StartDate.Location = new System.Drawing.Point(153, 79);
-            this.StartDate.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.StartDate.Name = "StartDate";
-            this.StartDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Ellipsis, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), "Kalendarı aç")});
-            this.StartDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.StartDate.Properties.DisplayFormat.FormatString = "dd.MM.yyyy";
-            this.StartDate.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            this.StartDate.Properties.EditFormat.FormatString = "dd.MM.yyyy";
-            this.StartDate.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            this.StartDate.Properties.NullValuePrompt = "dd.mm.yyyy";
-            this.StartDate.Properties.NullValuePromptShowForEmptyValue = true;
-            this.StartDate.Size = new System.Drawing.Size(98, 22);
-            this.StartDate.TabIndex = 2;
-            // 
             // NoteLabel
             // 
-            this.NoteLabel.Location = new System.Drawing.Point(10, 114);
-            this.NoteLabel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.NoteLabel.Location = new System.Drawing.Point(9, 93);
             this.NoteLabel.Name = "NoteLabel";
-            this.NoteLabel.Size = new System.Drawing.Size(29, 16);
+            this.NoteLabel.Size = new System.Drawing.Size(26, 13);
             this.NoteLabel.TabIndex = 58;
             this.NoteLabel.Text = "Qeyd";
             // 
-            // DateLabel
-            // 
-            this.DateLabel.Location = new System.Drawing.Point(10, 82);
-            this.DateLabel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.DateLabel.Name = "DateLabel";
-            this.DateLabel.Size = new System.Drawing.Size(78, 16);
-            this.DateLabel.TabIndex = 57;
-            this.DateLabel.Text = "Tarix intervalı";
-            // 
             // PositionLabel
             // 
-            this.PositionLabel.Location = new System.Drawing.Point(10, 50);
-            this.PositionLabel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.PositionLabel.Location = new System.Drawing.Point(9, 41);
             this.PositionLabel.Name = "PositionLabel";
-            this.PositionLabel.Size = new System.Drawing.Size(44, 16);
+            this.PositionLabel.Size = new System.Drawing.Size(23, 13);
             this.PositionLabel.TabIndex = 56;
-            this.PositionLabel.Text = "Vəzifəsi";
+            this.PositionLabel.Text = "Peşə";
             // 
             // OfficeLabe
             // 
-            this.OfficeLabe.Location = new System.Drawing.Point(10, 18);
-            this.OfficeLabe.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.OfficeLabe.Location = new System.Drawing.Point(9, 15);
             this.OfficeLabe.Name = "OfficeLabe";
-            this.OfficeLabe.Size = new System.Drawing.Size(35, 16);
+            this.OfficeLabe.Size = new System.Drawing.Size(30, 13);
             this.OfficeLabe.TabIndex = 55;
             this.OfficeLabe.Text = "İş yeri";
             // 
             // NoteText
             // 
-            this.NoteText.Location = new System.Drawing.Point(153, 111);
-            this.NoteText.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.NoteText.Location = new System.Drawing.Point(131, 90);
             this.NoteText.Name = "NoteText";
             this.NoteText.Properties.NullValuePrompt = "Qeydi daxil edin";
             this.NoteText.Properties.NullValuePromptShowForEmptyValue = true;
-            this.NoteText.Size = new System.Drawing.Size(647, 22);
+            this.NoteText.Size = new System.Drawing.Size(674, 20);
             superToolTip1.AllowHtmlText = DevExpress.Utils.DefaultBoolean.True;
             toolTipTitleItem1.Text = "<color=255,0,0>Qeyd<color>";
             toolTipItem1.Appearance.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
@@ -265,16 +191,15 @@
             this.NoteText.SuperTip = superToolTip1;
             this.NoteText.TabIndex = 4;
             // 
-            // PositionText
+            // OfficeText
             // 
-            this.PositionText.Location = new System.Drawing.Point(153, 47);
-            this.PositionText.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.PositionText.Name = "PositionText";
-            this.PositionText.Properties.NullValuePrompt = "Vəzifəni daxil edin";
-            this.PositionText.Properties.NullValuePromptShowForEmptyValue = true;
-            this.PositionText.Size = new System.Drawing.Size(647, 22);
+            this.OfficeText.Location = new System.Drawing.Point(131, 12);
+            this.OfficeText.Name = "OfficeText";
+            this.OfficeText.Properties.NullValuePrompt = "İş yerinin adını daxil edin";
+            this.OfficeText.Properties.NullValuePromptShowForEmptyValue = true;
+            this.OfficeText.Size = new System.Drawing.Size(674, 20);
             superToolTip2.AllowHtmlText = DevExpress.Utils.DefaultBoolean.True;
-            toolTipTitleItem2.Text = "<color=255,0,0>Vəzifəsi</color>";
+            toolTipTitleItem2.Text = "<color=255,0,0>İş yerinin adı</color>";
             toolTipItem2.Appearance.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
             toolTipItem2.Appearance.Options.UseImage = true;
             toolTipItem2.Image = ((System.Drawing.Image)(resources.GetObject("toolTipItem2.Image")));
@@ -283,38 +208,16 @@
     "haqqında olan məlumatlar <b><color=104,6,6>bazada saxlanılmayacaq</b></color>.";
             superToolTip2.Items.Add(toolTipTitleItem2);
             superToolTip2.Items.Add(toolTipItem2);
-            this.PositionText.SuperTip = superToolTip2;
-            this.PositionText.TabIndex = 1;
-            // 
-            // OfficeText
-            // 
-            this.OfficeText.Location = new System.Drawing.Point(153, 15);
-            this.OfficeText.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.OfficeText.Name = "OfficeText";
-            this.OfficeText.Properties.NullValuePrompt = "İş yerinin adını daxil edin";
-            this.OfficeText.Properties.NullValuePromptShowForEmptyValue = true;
-            this.OfficeText.Size = new System.Drawing.Size(647, 22);
-            superToolTip3.AllowHtmlText = DevExpress.Utils.DefaultBoolean.True;
-            toolTipTitleItem3.Text = "<color=255,0,0>İş yerinin adı</color>";
-            toolTipItem3.Appearance.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
-            toolTipItem3.Appearance.Options.UseImage = true;
-            toolTipItem3.Image = ((System.Drawing.Image)(resources.GetObject("toolTipItem3.Image")));
-            toolTipItem3.LeftIndent = 6;
-            toolTipItem3.Text = "Bu xanaya dırnaq işarəsi daxil etmək olmaz. Əgər daxil etsəz, müştərinin iş yeri " +
-    "haqqında olan məlumatlar <b><color=104,6,6>bazada saxlanılmayacaq</b></color>.";
-            superToolTip3.Items.Add(toolTipTitleItem3);
-            superToolTip3.Items.Add(toolTipItem3);
-            this.OfficeText.SuperTip = superToolTip3;
+            this.OfficeText.SuperTip = superToolTip2;
             this.OfficeText.TabIndex = 0;
             // 
             // labelControl3
             // 
             this.labelControl3.Appearance.ForeColor = System.Drawing.Color.Maroon;
             this.labelControl3.Appearance.Options.UseForeColor = true;
-            this.labelControl3.Location = new System.Drawing.Point(139, 18);
-            this.labelControl3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.labelControl3.Location = new System.Drawing.Point(119, 15);
             this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(8, 16);
+            this.labelControl3.Size = new System.Drawing.Size(6, 13);
             this.labelControl3.TabIndex = 182;
             this.labelControl3.Text = "*";
             // 
@@ -322,10 +225,9 @@
             // 
             this.labelControl1.Appearance.ForeColor = System.Drawing.Color.Maroon;
             this.labelControl1.Appearance.Options.UseForeColor = true;
-            this.labelControl1.Location = new System.Drawing.Point(139, 50);
-            this.labelControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.labelControl1.Location = new System.Drawing.Point(119, 41);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(8, 16);
+            this.labelControl1.Size = new System.Drawing.Size(6, 13);
             this.labelControl1.TabIndex = 183;
             this.labelControl1.Text = "*";
             // 
@@ -333,40 +235,92 @@
             // 
             this.labelControl4.Appearance.ForeColor = System.Drawing.Color.Maroon;
             this.labelControl4.Appearance.Options.UseForeColor = true;
-            this.labelControl4.Location = new System.Drawing.Point(139, 82);
-            this.labelControl4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.labelControl4.Location = new System.Drawing.Point(119, 67);
             this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(8, 16);
+            this.labelControl4.Size = new System.Drawing.Size(6, 13);
             this.labelControl4.TabIndex = 184;
             this.labelControl4.Text = "*";
+            // 
+            // labelControl5
+            // 
+            this.labelControl5.Location = new System.Drawing.Point(9, 67);
+            this.labelControl5.Name = "labelControl5";
+            this.labelControl5.Size = new System.Drawing.Size(56, 13);
+            this.labelControl5.TabIndex = 185;
+            this.labelControl5.Text = "Əmək haqqı";
+            // 
+            // SalaryValue
+            // 
+            this.SalaryValue.Location = new System.Drawing.Point(131, 64);
+            this.SalaryValue.Name = "SalaryValue";
+            this.SalaryValue.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton()});
+            this.SalaryValue.Size = new System.Drawing.Size(130, 20);
+            this.SalaryValue.TabIndex = 3;
+            // 
+            // NoAvailableRadioGroup
+            // 
+            this.NoAvailableRadioGroup.EditValue = ((short)(0));
+            this.NoAvailableRadioGroup.Location = new System.Drawing.Point(131, 116);
+            this.NoAvailableRadioGroup.Name = "NoAvailableRadioGroup";
+            this.NoAvailableRadioGroup.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.NoAvailableRadioGroup.Properties.Appearance.Options.UseBackColor = true;
+            this.NoAvailableRadioGroup.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.NoAvailableRadioGroup.Properties.Columns = 2;
+            this.NoAvailableRadioGroup.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
+            new DevExpress.XtraEditors.Controls.RadioGroupItem(((short)(0)), "İşləyir"),
+            new DevExpress.XtraEditors.Controls.RadioGroupItem(((short)(1)), "İşləmir")});
+            this.NoAvailableRadioGroup.Size = new System.Drawing.Size(245, 23);
+            this.NoAvailableRadioGroup.TabIndex = 5;
+            // 
+            // PositionLookUp
+            // 
+            this.PositionLookUp.Location = new System.Drawing.Point(131, 38);
+            this.PositionLookUp.Name = "PositionLookUp";
+            this.PositionLookUp.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.PositionLookUp.Properties.ButtonsStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.PositionLookUp.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("ID", "ID", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("NAME", 10, "Name")});
+            this.PositionLookUp.Properties.DisplayMember = "NAME";
+            this.PositionLookUp.Properties.NullText = "";
+            this.PositionLookUp.Properties.NullValuePrompt = "Peşəni seçin";
+            this.PositionLookUp.Properties.NullValuePromptShowForEmptyValue = true;
+            this.PositionLookUp.Properties.PopupFilterMode = DevExpress.XtraEditors.PopupFilterMode.Contains;
+            this.PositionLookUp.Properties.ShowHeader = false;
+            this.PositionLookUp.Properties.ThrowExceptionOnInvalidLookUpEditValueType = true;
+            this.PositionLookUp.Properties.ValidateOnEnterKey = true;
+            this.PositionLookUp.Properties.ValueMember = "ID";
+            this.PositionLookUp.Size = new System.Drawing.Size(130, 20);
+            this.PositionLookUp.TabIndex = 186;
+            this.PositionLookUp.EditValueChanged += new System.EventHandler(this.PositionLookUp_EditValueChanged);
             // 
             // FWorkAddEdit
             // 
             this.AcceptButton = this.BOK;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.BCancel;
             this.ClientSize = new System.Drawing.Size(817, 212);
+            this.Controls.Add(this.PositionLookUp);
+            this.Controls.Add(this.NoAvailableRadioGroup);
+            this.Controls.Add(this.SalaryValue);
+            this.Controls.Add(this.labelControl5);
             this.Controls.Add(this.labelControl4);
             this.Controls.Add(this.labelControl1);
             this.Controls.Add(this.labelControl3);
-            this.Controls.Add(this.labelControl2);
-            this.Controls.Add(this.EndDate);
-            this.Controls.Add(this.StartDate);
             this.Controls.Add(this.NoteLabel);
-            this.Controls.Add(this.DateLabel);
             this.Controls.Add(this.PositionLabel);
             this.Controls.Add(this.OfficeLabe);
             this.Controls.Add(this.NoteText);
-            this.Controls.Add(this.PositionText);
             this.Controls.Add(this.OfficeText);
             this.Controls.Add(this.PanelOption);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(718, 219);
+            this.MaximumSize = new System.Drawing.Size(833, 251);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(718, 219);
+            this.MinimumSize = new System.Drawing.Size(833, 251);
             this.Name = "FWorkAddEdit";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
@@ -377,13 +331,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.PanelOption)).EndInit();
             this.PanelOption.ResumeLayout(false);
             this.PanelOption.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.EndDate.Properties.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.EndDate.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.StartDate.Properties.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.StartDate.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.NoteText.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PositionText.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.OfficeText.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SalaryValue.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NoAvailableRadioGroup.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PositionLookUp.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -394,19 +346,18 @@
         private DevExpress.XtraEditors.PanelControl PanelOption;
         private ManiXButton.XButton BOK;
         private ManiXButton.XButton BCancel;
-        private DevExpress.XtraEditors.LabelControl labelControl2;
-        private DevExpress.XtraEditors.DateEdit EndDate;
-        private DevExpress.XtraEditors.DateEdit StartDate;
         private DevExpress.XtraEditors.LabelControl NoteLabel;
-        private DevExpress.XtraEditors.LabelControl DateLabel;
         private DevExpress.XtraEditors.LabelControl PositionLabel;
         private DevExpress.XtraEditors.LabelControl OfficeLabe;
         private DevExpress.XtraEditors.TextEdit NoteText;
-        private DevExpress.XtraEditors.TextEdit PositionText;
         private DevExpress.XtraEditors.TextEdit OfficeText;
         private DevExpress.XtraEditors.LabelControl labelControl15;
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.LabelControl labelControl4;
+        private DevExpress.XtraEditors.LabelControl labelControl5;
+        private DevExpress.XtraEditors.CalcEdit SalaryValue;
+        private DevExpress.XtraEditors.RadioGroup NoAvailableRadioGroup;
+        private DevExpress.XtraEditors.LookUpEdit PositionLookUp;
     }
 }

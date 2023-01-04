@@ -59,7 +59,7 @@ namespace ELMS.Class
         public enum PhoneOwnerEnum
         {
             User = 1,
-            Doctor = 2,
+            Relative = 2,
             Technician = 3,
             Customer = 4
         }

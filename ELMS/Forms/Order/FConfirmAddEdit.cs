@@ -64,6 +64,12 @@ namespace ELMS.Forms.Order
         private void LoadProduct()
         {
             ProductGridControl.DataSource = ProductCardDAL.SelectViewData(null);
+            DataTable dt = ProductCardDAL.SelectTotal(null);
+
+            if (dt.Rows.Count > 0)
+            {
+                OrderAmountValue.EditValue = Convert.ToDecimal(dt.Rows[0]["ORDER_AMOUNT"].ToString());
+            }
         }
 
         
@@ -112,7 +118,7 @@ namespace ELMS.Forms.Order
             if (!OrderID.HasValue)
                 OrderID = 0;
 
-            RelativeGridControl.DataSource = RelativeCardDAL.SelectRelativeByOwnerID(OrderID.Value);
+            RelativeGridControl.DataSource = RelativeCardDAL.SelectRelativeByOwnerID(OrderID.Value, PhoneOwnerEnum.Relative);
 
             EditPhoneBarButton.Enabled = DeletePhoneBarButton.Enabled = RelativeGridView.RowCount > 0;
         }
@@ -165,10 +171,11 @@ namespace ELMS.Forms.Order
 
         private void LoadOrderDetails()
         {
-            DataTable dt =OrderDAL.SelectViewData(OrderID);
+            DataTable dt = OrderDAL.SelectViewData(OrderID);
 
             if (dt.Rows.Count > 0)
             {
+                pinCode = dt.Rows[0]["PINCODE"].ToString();
                 RegisterCodeText.EditValue = dt.Rows[0]["ID"];
                 NoteText.EditValue = dt.Rows[0]["NOTE"];
                 OrderDate.EditValue = dt.Rows[0]["ORDER_DATE"];
@@ -176,8 +183,8 @@ namespace ELMS.Forms.Order
                     OrderDate.EditValue = null;
                 GlobalProcedures.LookUpEditValue(BranchLookUp, dt.Rows[0]["BRANCH_NAME"].ToString());
                 GlobalProcedures.LookUpEditValue(SourceLookUp, dt.Rows[0]["ORDER_SOURCE"].ToString());
-                FirstPaymentValue.Value = Convert.ToDecimal(dt.Rows[0]["FIRST_PAYMENT"]);
-                OrderAmountValue.Value = Convert.ToDecimal(dt.Rows[0]["ORDER_AMOUNT"]);
+                FirstPaymentValue.EditValue = Convert.ToDecimal(dt.Rows[0]["FIRST_PAYMENT"].ToString());
+                OrderAmountValue.EditValue = Convert.ToDecimal(dt.Rows[0]["ORDER_AMOUNT"].ToString());
                 GlobalProcedures.LookUpEditValue(TimeLookUp, dt.Rows[0]["TIME"].ToString());
                 UsedUserID = Convert.ToInt16(dt.Rows[0]["USED_USER_ID"]);
             }
@@ -186,6 +193,7 @@ namespace ELMS.Forms.Order
         {
             if (TransactionType == TransactionTypeEnum.Insert)
                 return;
+            GlobalProcedures.ExecuteProcedureWithUser("ELMS_USER_TEMP.PROC_INSERT_PRODUCT_CARDS_TEMP", "P_ORDER_TAB_ID", OrderID, "Müştərinin məlumatları temp cədvələ daxil edilmədi.");
             GlobalProcedures.ExecuteProcedureWithUser("ELMS_USER_TEMP.PROC_INSERT_CUSTOMER_TEMP", "P_CUSTOMER_ID", OrderID, "Müştərinin məlumatları temp cədvələ daxil edilmədi.");
             GlobalProcedures.ExecuteProcedureWithUser("ELMS_USER_TEMP.PROC_INSERT_WORKPLACE_TEMP", "P_CUSTOMER_ID", OrderID, "Müştərinin məlumatları temp cədvələ daxil edilmədi.");
 
@@ -203,7 +211,7 @@ namespace ELMS.Forms.Order
                 BOK.Visible = !status;
         }
 
-        private void DocumentGridView_FocusedRowObjectChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowObjectChangedEventArgs e)
+        private void ProductGridView_FocusedRowObjectChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowObjectChangedEventArgs e)
         {
             DataRow row = ProductGridView.GetFocusedDataRow();
             if (row != null)
@@ -219,8 +227,8 @@ namespace ELMS.Forms.Order
                 ORDER_DATE = OrderDate.DateTime,
                 SOURCE_ID = sourceID,
                 TIME_ID = timeID,
-                FIRST_PAYMENT = Convert.ToDecimal(FirstPaymentValue),
-                ORDER_AMOUNT = Convert.ToDecimal(OrderAmountValue),
+                FIRST_PAYMENT = FirstPaymentValue.Value,
+                ORDER_AMOUNT = OrderAmountValue.Value,
                 NOTE = NoteText.Text.Trim()
             };
 
@@ -237,8 +245,8 @@ namespace ELMS.Forms.Order
                 ORDER_DATE = OrderDate.DateTime,
                 SOURCE_ID = sourceID,
                 TIME_ID = timeID,
-                FIRST_PAYMENT = Convert.ToDecimal(FirstPaymentValue),
-                ORDER_AMOUNT = Convert.ToDecimal(OrderAmountValue),
+                FIRST_PAYMENT = FirstPaymentValue.Value,
+                ORDER_AMOUNT = OrderAmountValue.Value,
                 NOTE = NoteText.Text.Trim(),
                 USED_USER_ID = -1,
                 ID = OrderID.Value
@@ -262,9 +270,11 @@ namespace ELMS.Forms.Order
                 {
                     UpdateOrder(tran);
                 }
-                //GlobalProcedures.ExecuteProcedureWithParametr(tran, "ELMS_USER.PROC_INSERT_CUSTOMER_CARD", "P_CUSTOMER_ID", OrderID.Value);
-                //GlobalProcedures.ExecuteProcedureWithParametr(tran, "ELMS_USER.PROC_INSERT_WORKPLACE_TEMP", "P_CUSTOMER_ID", OrderID.Value);
-                //GlobalProcedures.ExecuteProcedureWithTwoParametrAndUser(tran, "ELMS_USER.PROC_INSERT_PHONE", "P_OWNER_ID", OrderID.Value, "P_OWNER_TYPE", (int)PhoneOwnerEnum.Customer);
+                GlobalProcedures.ExecuteProcedureWithParametr(tran, "ELMS_USER.PROC_INSERT_PRODUCT_CARDS", "P_CUSTOMER_ID", OrderID.Value);
+
+                GlobalProcedures.ExecuteProcedureWithParametr(tran, "ELMS_USER.PROC_INSERT_CUSTOMER_CARD", "P_CUSTOMER_ID", OrderID.Value);
+                GlobalProcedures.ExecuteProcedureWithParametr(tran, "ELMS_USER.PROC_INSERT_WORKPLACE_TEMP", "P_CUSTOMER_ID", OrderID.Value);
+                GlobalProcedures.ExecuteProcedureWithTwoParametrAndUser(tran, "ELMS_USER.PROC_INSERT_PHONE", "P_OWNER_ID", OrderID.Value, "P_OWNER_TYPE", (int)PhoneOwnerEnum.Customer);
 
 
                 return 1;
@@ -346,7 +356,7 @@ namespace ELMS.Forms.Order
                 }
         }
 
-        private void DeleteDocumentBarButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void DeleteProductBarButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             DeleteDocument();
             LoadProduct();
@@ -398,13 +408,13 @@ namespace ELMS.Forms.Order
             GlobalProcedures.GenerateAutoRowNumber(sender, CustomerWork_SS, e);
         }
 
-        private void DocumentGridView_CustomUnboundColumnData(object sender, DevExpress.XtraGrid.Views.Base.CustomColumnDataEventArgs e)
+        private void ProductGridView_CustomUnboundColumnData(object sender, DevExpress.XtraGrid.Views.Base.CustomColumnDataEventArgs e)
         {
             GlobalProcedures.GenerateAutoRowNumber(sender, Document_SS, e);
         }
         private void LoadWork()
         {
-            WorkGridControl.DataSource = CustomerWorkDAL.SelectViewData(null);
+            WorkGridControl.DataSource = CustomerWorkDAL.SelectViewDataAll(null);
         }
         private void LoadFWorkAddEdit(TransactionTypeEnum transactionType, int? id)
         {
@@ -474,6 +484,7 @@ namespace ELMS.Forms.Order
         private void NewCustomerButton_Click(object sender, EventArgs e)
         {
             LoadFCustomerAddEdit(TransactionTypeEnum.Insert, null);
+            CustomerID = 0;
         }
 
         private void LoadFCustomerAddEdit(TransactionTypeEnum transaction, int? id)
@@ -513,24 +524,37 @@ namespace ELMS.Forms.Order
 
         private void LoadCustomerDetails()
         {
+
             DataTable dt = CustomerDAL.SelectCustomerData(pinCode);
             if (FinCodeSearch.Text.Length != 7)
             {
-                    NameText.Text =
-                    ActualAddressText.Text =
-                    PhoneAllText.Text  = null;
-                
+                NameText.Text =
+                ActualAddressText.Text =
+                PhoneAllText.Text = null;
+
                 CustomerID = 0;
 
                 PictureEdit.Image = null;
             }
-                if (dt.Rows.Count > 0)
+            if (dt.Rows.Count > 0)
             {
                 NameText.EditValue = dt.Rows[0]["FULL_NAME"];
                 ActualAddressText.EditValue = dt.Rows[0]["ADDRESS"];
                 PhoneAllText.EditValue = dt.Rows[0]["PHONE"];
                 UsedUserID = Convert.ToInt16(dt.Rows[0]["USED_USER_ID"]);
                 CustomerID = Convert.ToInt32(dt.Rows[0]["ID"]);
+                string str = dt.Rows[0]["PINCODE"].ToString();
+                char[] result;
+                string fin = "";
+                // copies str to result
+                result = str.ToCharArray();
+
+                // prints result
+                for (int i = 1; i < result.Length; i++)
+                {
+                    fin = fin + (result[i] + "").ToString();
+                }
+                FinCodeSearch.EditValue = fin;
                 EditCustomerLabel.Visible = true;
 
                 LoadImage();
@@ -559,6 +583,7 @@ namespace ELMS.Forms.Order
                 this.Text = "Müraciətin düzəliş edilməsi";
                 GlobalProcedures.Lock_or_UnLock_UserID("ELMS_USER.ORDER_TAB", GlobalVariables.V_UserID, "WHERE ID = " + OrderID + " AND USED_USER_ID = -1");
                 LoadOrderDetails();
+                LoadCustomerDetails();
                 //LoadImage();
                 Used = (UsedUserID > 0);
 
@@ -581,22 +606,22 @@ namespace ELMS.Forms.Order
                 this.Text = "Müraciətin əlavə edilməsi";
             InsertTemps();
             LoadProduct();
-            //LoadPhone();
         }
 
         private void FOrderAddEdit_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (!isClickBOK && TransactionType == TransactionTypeEnum.Update)
                 GlobalProcedures.Lock_or_UnLock_UserID("ELMS_USER.ORDER_TAB", -1, "WHERE ID = " + OrderID + " AND USED_USER_ID = " + GlobalVariables.V_UserID);
-            //OrderDAL.DeleteOrder(OrderID.Value);
-            //OrderDAL.DeleteWorkPlaceTemp(OrderID.Value);
-            //GlobalFunctions.RunInOneTransaction<int>(tran =>
-            //{
-            //    PhoneDAL.DeletePhoneTemp(tran, PhoneOwnerEnum.Customer);
+            OrderDAL.DeleteOrder(OrderID.Value);
+            CustomerDAL.DeleteCustomer(CustomerID.Value);
+            CustomerDAL.DeleteWorkPlaceTemp(CustomerID.Value);
+            GlobalFunctions.RunInOneTransaction<int>(tran =>
+            {
+                PhoneDAL.DeletePhoneTemp(tran, PhoneOwnerEnum.Customer);
 
-            //    return 1;
-            //}, "Müştərinin məlumatları temp cədvəllərdən silinmədi.");
-            //this.RefreshDataGridView();
+                return 1;
+            }, "Müştərinin məlumatları temp cədvəllərdən silinmədi.");
+            this.RefreshDataGridView();
         }
 
         void DeleteWork()

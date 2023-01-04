@@ -39,21 +39,26 @@
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
-            this.PinCodeStarLabel = new DevExpress.XtraEditors.LabelControl();
             this.ProductLookUp = new DevExpress.XtraEditors.LookUpEdit();
-            this.IMEIText = new DevExpress.XtraEditors.TextEdit();
-            this.CountCalcEdit = new DevExpress.XtraEditors.CalcEdit();
-            this.PriceCalcEdit = new DevExpress.XtraEditors.CalcEdit();
+            this.NoteText = new DevExpress.XtraEditors.TextEdit();
+            this.PriceValue = new DevExpress.XtraEditors.CalcEdit();
+            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl18 = new DevExpress.XtraEditors.LabelControl();
+            this.LiquidLabel = new DevExpress.XtraEditors.LabelControl();
+            this.TotalPriceValue = new DevExpress.XtraEditors.CalcEdit();
+            this.CountValue = new DevExpress.XtraEditors.SpinEdit();
             ((System.ComponentModel.ISupportInitialize)(this.PanelOption)).BeginInit();
             this.PanelOption.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ProductLookUp.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.IMEIText.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CountCalcEdit.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PriceCalcEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NoteText.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PriceValue.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TotalPriceValue.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CountValue.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // PanelOption
@@ -160,27 +165,18 @@
             // 
             // labelControl4
             // 
-            this.labelControl4.Location = new System.Drawing.Point(12, 70);
+            this.labelControl4.Location = new System.Drawing.Point(12, 69);
             this.labelControl4.Margin = new System.Windows.Forms.Padding(4);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(34, 13);
             this.labelControl4.TabIndex = 3;
             this.labelControl4.Text = "Qiymət";
             // 
-            // labelControl5
-            // 
-            this.labelControl5.Location = new System.Drawing.Point(12, 98);
-            this.labelControl5.Margin = new System.Windows.Forms.Padding(4);
-            this.labelControl5.Name = "labelControl5";
-            this.labelControl5.Size = new System.Drawing.Size(22, 13);
-            this.labelControl5.TabIndex = 4;
-            this.labelControl5.Text = "IMEI";
-            // 
             // labelControl9
             // 
             this.labelControl9.Appearance.ForeColor = System.Drawing.Color.Red;
             this.labelControl9.Appearance.Options.UseForeColor = true;
-            this.labelControl9.Location = new System.Drawing.Point(155, 14);
+            this.labelControl9.Location = new System.Drawing.Point(79, 14);
             this.labelControl9.Margin = new System.Windows.Forms.Padding(4);
             this.labelControl9.Name = "labelControl9";
             this.labelControl9.Size = new System.Drawing.Size(6, 13);
@@ -191,7 +187,7 @@
             // 
             this.labelControl10.Appearance.ForeColor = System.Drawing.Color.Red;
             this.labelControl10.Appearance.Options.UseForeColor = true;
-            this.labelControl10.Location = new System.Drawing.Point(155, 41);
+            this.labelControl10.Location = new System.Drawing.Point(79, 42);
             this.labelControl10.Margin = new System.Windows.Forms.Padding(4);
             this.labelControl10.Name = "labelControl10";
             this.labelControl10.Size = new System.Drawing.Size(6, 13);
@@ -202,28 +198,17 @@
             // 
             this.labelControl11.Appearance.ForeColor = System.Drawing.Color.Red;
             this.labelControl11.Appearance.Options.UseForeColor = true;
-            this.labelControl11.Location = new System.Drawing.Point(155, 70);
+            this.labelControl11.Location = new System.Drawing.Point(79, 69);
             this.labelControl11.Margin = new System.Windows.Forms.Padding(4);
             this.labelControl11.Name = "labelControl11";
             this.labelControl11.Size = new System.Drawing.Size(6, 13);
             this.labelControl11.TabIndex = 11;
             this.labelControl11.Text = "*";
             // 
-            // PinCodeStarLabel
-            // 
-            this.PinCodeStarLabel.Appearance.ForeColor = System.Drawing.Color.Red;
-            this.PinCodeStarLabel.Appearance.Options.UseForeColor = true;
-            this.PinCodeStarLabel.Location = new System.Drawing.Point(155, 98);
-            this.PinCodeStarLabel.Margin = new System.Windows.Forms.Padding(4);
-            this.PinCodeStarLabel.Name = "PinCodeStarLabel";
-            this.PinCodeStarLabel.Size = new System.Drawing.Size(6, 13);
-            this.PinCodeStarLabel.TabIndex = 12;
-            this.PinCodeStarLabel.Text = "*";
-            // 
             // ProductLookUp
             // 
             this.ProductLookUp.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ProductLookUp.Location = new System.Drawing.Point(167, 11);
+            this.ProductLookUp.Location = new System.Drawing.Point(93, 11);
             this.ProductLookUp.Margin = new System.Windows.Forms.Padding(4);
             this.ProductLookUp.Name = "ProductLookUp";
             this.ProductLookUp.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -234,43 +219,131 @@
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("NAME", "Name")});
             this.ProductLookUp.Properties.DisplayMember = "NAME";
             this.ProductLookUp.Properties.NullText = "";
-            this.ProductLookUp.Properties.NullValuePrompt = "Sənədin növünü seçin";
+            this.ProductLookUp.Properties.NullValuePrompt = "Malı seçin";
             this.ProductLookUp.Properties.NullValuePromptShowForEmptyValue = true;
             this.ProductLookUp.Properties.PopupFilterMode = DevExpress.XtraEditors.PopupFilterMode.Contains;
             this.ProductLookUp.Properties.ShowHeader = false;
             this.ProductLookUp.Properties.ThrowExceptionOnInvalidLookUpEditValueType = true;
             this.ProductLookUp.Properties.ValidateOnEnterKey = true;
             this.ProductLookUp.Properties.ValueMember = "ID";
-            this.ProductLookUp.Size = new System.Drawing.Size(470, 20);
-            this.ProductLookUp.TabIndex = 1;
+            this.ProductLookUp.Size = new System.Drawing.Size(544, 20);
+            this.ProductLookUp.TabIndex = 0;
             this.ProductLookUp.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.ProductLookUp_ButtonClick);
             this.ProductLookUp.EditValueChanged += new System.EventHandler(this.ProductLookUp_EditValueChanged);
             // 
-            // IMEIText
+            // NoteText
             // 
-            this.IMEIText.Location = new System.Drawing.Point(167, 95);
-            this.IMEIText.Margin = new System.Windows.Forms.Padding(4);
-            this.IMEIText.Name = "IMEIText";
-            this.IMEIText.Size = new System.Drawing.Size(470, 20);
-            this.IMEIText.TabIndex = 3;
+            this.NoteText.Location = new System.Drawing.Point(93, 93);
+            this.NoteText.Margin = new System.Windows.Forms.Padding(4);
+            this.NoteText.Name = "NoteText";
+            this.NoteText.Properties.NullValuePrompt = "Qeydi daxil edin";
+            this.NoteText.Properties.NullValuePromptShowForEmptyValue = true;
+            this.NoteText.Size = new System.Drawing.Size(544, 20);
+            this.NoteText.TabIndex = 3;
             // 
-            // CountCalcEdit
+            // PriceValue
             // 
-            this.CountCalcEdit.Location = new System.Drawing.Point(167, 39);
-            this.CountCalcEdit.Name = "CountCalcEdit";
-            this.CountCalcEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.PriceValue.Location = new System.Drawing.Point(93, 66);
+            this.PriceValue.Name = "PriceValue";
+            this.PriceValue.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.CountCalcEdit.Size = new System.Drawing.Size(147, 20);
-            this.CountCalcEdit.TabIndex = 22;
+            this.PriceValue.Properties.Precision = 2;
+            this.PriceValue.Size = new System.Drawing.Size(116, 20);
+            this.PriceValue.TabIndex = 2;
+            this.PriceValue.EditValueChanged += new System.EventHandler(this.CountValue_EditValueChanged);
             // 
-            // PriceCalcEdit
+            // labelControl5
             // 
-            this.PriceCalcEdit.Location = new System.Drawing.Point(167, 67);
-            this.PriceCalcEdit.Name = "PriceCalcEdit";
-            this.PriceCalcEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.labelControl5.Location = new System.Drawing.Point(12, 96);
+            this.labelControl5.Margin = new System.Windows.Forms.Padding(4);
+            this.labelControl5.Name = "labelControl5";
+            this.labelControl5.Size = new System.Drawing.Size(26, 13);
+            this.labelControl5.TabIndex = 4;
+            this.labelControl5.Text = "Qeyd";
+            // 
+            // labelControl7
+            // 
+            this.labelControl7.Appearance.ForeColor = System.Drawing.Color.Maroon;
+            this.labelControl7.Appearance.Options.UseForeColor = true;
+            this.labelControl7.Location = new System.Drawing.Point(215, 42);
+            this.labelControl7.Name = "labelControl7";
+            this.labelControl7.Size = new System.Drawing.Size(24, 13);
+            this.labelControl7.TabIndex = 194;
+            this.labelControl7.Text = "ədəd";
+            // 
+            // labelControl6
+            // 
+            this.labelControl6.Appearance.ForeColor = System.Drawing.Color.Maroon;
+            this.labelControl6.Appearance.Options.UseForeColor = true;
+            this.labelControl6.Location = new System.Drawing.Point(215, 69);
+            this.labelControl6.Name = "labelControl6";
+            this.labelControl6.Size = new System.Drawing.Size(20, 13);
+            this.labelControl6.TabIndex = 195;
+            this.labelControl6.Text = "AZN";
+            // 
+            // labelControl18
+            // 
+            this.labelControl18.Appearance.ForeColor = System.Drawing.Color.Maroon;
+            this.labelControl18.Appearance.Options.UseForeColor = true;
+            this.labelControl18.Location = new System.Drawing.Point(617, 67);
+            this.labelControl18.Name = "labelControl18";
+            this.labelControl18.Size = new System.Drawing.Size(20, 13);
+            this.labelControl18.TabIndex = 198;
+            this.labelControl18.Text = "AZN";
+            // 
+            // LiquidLabel
+            // 
+            this.LiquidLabel.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.LiquidLabel.Appearance.Options.UseFont = true;
+            this.LiquidLabel.Location = new System.Drawing.Point(412, 67);
+            this.LiquidLabel.Name = "LiquidLabel";
+            this.LiquidLabel.Size = new System.Drawing.Size(78, 13);
+            this.LiquidLabel.TabIndex = 197;
+            this.LiquidLabel.Text = "Yekun qiymət";
+            // 
+            // TotalPriceValue
+            // 
+            this.TotalPriceValue.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.TotalPriceValue.Location = new System.Drawing.Point(497, 64);
+            this.TotalPriceValue.Margin = new System.Windows.Forms.Padding(4);
+            this.TotalPriceValue.Name = "TotalPriceValue";
+            this.TotalPriceValue.Properties.DisplayFormat.FormatString = "n2";
+            this.TotalPriceValue.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.TotalPriceValue.Properties.EditFormat.FormatString = "n2";
+            this.TotalPriceValue.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.TotalPriceValue.Properties.Mask.EditMask = "n2";
+            this.TotalPriceValue.Properties.NullValuePrompt = "0.00";
+            this.TotalPriceValue.Properties.NullValuePromptShowForEmptyValue = true;
+            this.TotalPriceValue.Properties.Precision = 2;
+            this.TotalPriceValue.Properties.ReadOnly = true;
+            this.TotalPriceValue.Size = new System.Drawing.Size(113, 20);
+            this.TotalPriceValue.TabIndex = 196;
+            // 
+            // CountValue
+            // 
+            this.CountValue.EditValue = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.CountValue.Location = new System.Drawing.Point(93, 39);
+            this.CountValue.Margin = new System.Windows.Forms.Padding(4);
+            this.CountValue.Name = "CountValue";
+            this.CountValue.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.PriceCalcEdit.Size = new System.Drawing.Size(147, 20);
-            this.PriceCalcEdit.TabIndex = 23;
+            this.CountValue.Properties.MaxValue = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.CountValue.Properties.MinValue = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.CountValue.Size = new System.Drawing.Size(115, 20);
+            this.CountValue.TabIndex = 1;
+            this.CountValue.EditValueChanged += new System.EventHandler(this.CountValue_EditValueChanged);
             // 
             // FProductCardAddEdit
             // 
@@ -279,11 +352,15 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.BCancel;
             this.ClientSize = new System.Drawing.Size(651, 173);
-            this.Controls.Add(this.PriceCalcEdit);
-            this.Controls.Add(this.CountCalcEdit);
-            this.Controls.Add(this.IMEIText);
+            this.Controls.Add(this.CountValue);
+            this.Controls.Add(this.labelControl18);
+            this.Controls.Add(this.LiquidLabel);
+            this.Controls.Add(this.TotalPriceValue);
+            this.Controls.Add(this.labelControl6);
+            this.Controls.Add(this.labelControl7);
+            this.Controls.Add(this.PriceValue);
+            this.Controls.Add(this.NoteText);
             this.Controls.Add(this.ProductLookUp);
-            this.Controls.Add(this.PinCodeStarLabel);
             this.Controls.Add(this.labelControl11);
             this.Controls.Add(this.labelControl10);
             this.Controls.Add(this.labelControl9);
@@ -307,9 +384,10 @@
             this.PanelOption.ResumeLayout(false);
             this.PanelOption.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ProductLookUp.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.IMEIText.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CountCalcEdit.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PriceCalcEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NoteText.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PriceValue.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TotalPriceValue.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CountValue.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -324,14 +402,18 @@
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.LabelControl labelControl4;
-        private DevExpress.XtraEditors.LabelControl labelControl5;
         private DevExpress.XtraEditors.LabelControl labelControl9;
         private DevExpress.XtraEditors.LabelControl labelControl10;
         private DevExpress.XtraEditors.LabelControl labelControl11;
-        private DevExpress.XtraEditors.LabelControl PinCodeStarLabel;
         private DevExpress.XtraEditors.LookUpEdit ProductLookUp;
-        private DevExpress.XtraEditors.TextEdit IMEIText;
-        private DevExpress.XtraEditors.CalcEdit CountCalcEdit;
-        private DevExpress.XtraEditors.CalcEdit PriceCalcEdit;
+        private DevExpress.XtraEditors.TextEdit NoteText;
+        private DevExpress.XtraEditors.CalcEdit PriceValue;
+        private DevExpress.XtraEditors.LabelControl labelControl5;
+        private DevExpress.XtraEditors.LabelControl labelControl7;
+        private DevExpress.XtraEditors.LabelControl labelControl6;
+        private DevExpress.XtraEditors.LabelControl labelControl18;
+        private DevExpress.XtraEditors.LabelControl LiquidLabel;
+        private DevExpress.XtraEditors.CalcEdit TotalPriceValue;
+        private DevExpress.XtraEditors.SpinEdit CountValue;
     }
 }

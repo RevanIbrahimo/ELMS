@@ -241,6 +241,11 @@ namespace ELMS.Class.DataAccess
             command.Dispose();
         }
 
+        public static void DeleteCustomerData(int customerID)
+        {
+            GlobalProcedures.ExecuteProcedureWithUser("ELMS_USER_TEMP.PROC_DELETE_CUSTOMER_DATA", "P_CUSTOMER_ID", customerID, "Müştəri bazadan silinmədi.");
+        }
+
         public static void DeleteCustomer(int doctorID)
         {
             GlobalProcedures.ExecuteProcedureWithParametr("ELMS_USER_TEMP.PROC_DELETE_CUSTOMER_CARDS", "P_CUSTOMER_ID", doctorID, "Müştəri bazadan silinmədi.");
@@ -249,6 +254,11 @@ namespace ELMS.Class.DataAccess
         public static void DeleteWorkPlaceTemp(int workID)
         {
             GlobalProcedures.ExecuteProcedureWithParametr("ELMS_USER_TEMP.PROC_DELETE_WORKPLACE_TEMP", "P_CUSTOMER_ID", workID, "Müştəri bazadan silinmədi.");
+        }
+
+        public static void DeleteRelativeTemp(int relativeID)
+        {
+            GlobalProcedures.ExecuteProcedureWithParametr("ELMS_USER_TEMP.PROC_DELETE_CUSTOMER_RELATIVE", "P_CUSTOMER_ID", relativeID, "Müştəri bazadan silinmədi.");
         }
     }
 }

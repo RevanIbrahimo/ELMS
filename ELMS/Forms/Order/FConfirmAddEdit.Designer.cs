@@ -84,6 +84,18 @@
             this.barDockControl2 = new DevExpress.XtraBars.BarDockControl();
             this.barDockControl3 = new DevExpress.XtraBars.BarDockControl();
             this.barDockControl4 = new DevExpress.XtraBars.BarDockControl();
+            this.DocumentStandaloneBarDockControl = new DevExpress.XtraBars.StandaloneBarDockControl();
+            this.standaloneBarDockControl2 = new DevExpress.XtraBars.StandaloneBarDockControl();
+            this.DocumentBarManager = new DevExpress.XtraBars.BarManager(this.components);
+            this.bar5 = new DevExpress.XtraBars.Bar();
+            this.NewDocumentCardBarButton = new DevExpress.XtraBars.BarButtonItem();
+            this.EditDocumentCardBarButton = new DevExpress.XtraBars.BarButtonItem();
+            this.DeleteDocumentCardBarButton = new DevExpress.XtraBars.BarButtonItem();
+            this.RefreshDocumentCardBarButton = new DevExpress.XtraBars.BarButtonItem();
+            this.barDockControl23 = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControl24 = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControl25 = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControl27 = new DevExpress.XtraBars.BarDockControl();
             this.DeleteWorkBarButton = new DevExpress.XtraBars.BarButtonItem();
             this.RefreshWorkBarButton = new DevExpress.XtraBars.BarButtonItem();
             this.ActualAddressText = new DevExpress.XtraEditors.TextEdit();
@@ -147,6 +159,18 @@
             this.RelativeCard_Description = new DevExpress.XtraGrid.Columns.GridColumn();
             this.RelativeCard_Profession = new DevExpress.XtraGrid.Columns.GridColumn();
             this.RelativeCard_Salary = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.IDCardTab = new DevExpress.XtraTab.XtraTabPage();
+            this.DocumentGridControl = new DevExpress.XtraGrid.GridControl();
+            this.DocumentGridView = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Document_IssueDate = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Document_ReliableDate = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.PanelOption = new DevExpress.XtraEditors.PanelControl();
             this.BCancel = new ManiXButton.XButton();
             this.BOK = new ManiXButton.XButton();
@@ -198,42 +222,19 @@
             this.labelControl18 = new DevExpress.XtraEditors.LabelControl();
             this.NoteLabel = new DevExpress.XtraEditors.LabelControl();
             this.NoteText = new DevExpress.XtraEditors.TextEdit();
-            this.IDCardTab = new DevExpress.XtraTab.XtraTabPage();
-            this.DocumentGridControl = new DevExpress.XtraGrid.GridControl();
-            this.DocumentGridView = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Document_IssueDate = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Document_ReliableDate = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.DocumentStandaloneBarDockControl = new DevExpress.XtraBars.StandaloneBarDockControl();
             this.bar1 = new DevExpress.XtraBars.Bar();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
-            this.standaloneBarDockControl2 = new DevExpress.XtraBars.StandaloneBarDockControl();
             this.barDockControl26 = new DevExpress.XtraBars.BarDockControl();
-            this.DocumentBarManager = new DevExpress.XtraBars.BarManager(this.components);
-            this.bar5 = new DevExpress.XtraBars.Bar();
-            this.NewDocumentCardBarButton = new DevExpress.XtraBars.BarButtonItem();
-            this.EditDocumentCardBarButton = new DevExpress.XtraBars.BarButtonItem();
-            this.DeleteDocumentCardBarButton = new DevExpress.XtraBars.BarButtonItem();
-            this.RefreshDocumentCardBarButton = new DevExpress.XtraBars.BarButtonItem();
-            this.barDockControl23 = new DevExpress.XtraBars.BarDockControl();
-            this.barDockControl24 = new DevExpress.XtraBars.BarDockControl();
-            this.barDockControl25 = new DevExpress.XtraBars.BarDockControl();
-            this.barDockControl27 = new DevExpress.XtraBars.BarDockControl();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PersonalDetailsGroupBox)).BeginInit();
             this.PersonalDetailsGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.FinCodeSearch.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PhoneBarManager)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.OrderBarManager)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DocumentBarManager)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ActualAddressText.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.separatorControl1)).BeginInit();
@@ -260,6 +261,9 @@
             this.RelativeTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.RelativeGridControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.RelativeGridView)).BeginInit();
+            this.IDCardTab.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DocumentGridControl)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DocumentGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PanelOption)).BeginInit();
             this.PanelOption.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PhonePopupMenu)).BeginInit();
@@ -273,10 +277,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.OrderAmountValue.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TimeLookUp.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NoteText.Properties)).BeginInit();
-            this.IDCardTab.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DocumentGridControl)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DocumentGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DocumentBarManager)).BeginInit();
             this.SuspendLayout();
             // 
             // PersonalDetailsGroupBox
@@ -348,14 +348,14 @@
             this.FinCodeSearch.Properties.NullValuePromptShowForEmptyValue = false;
             this.FinCodeSearch.Size = new System.Drawing.Size(110, 20);
             superToolTip2.AllowHtmlText = DevExpress.Utils.DefaultBoolean.True;
-            toolTipTitleItem2.Text = "<color=255,0,0>Müştərinin qeydiyyat nömrəsi</color>";
+            toolTipTitleItem2.Text = "<color=255,0,0>Müştərinin fin kodu</color>";
             toolTipItem2.Appearance.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
             toolTipItem2.Appearance.Options.UseImage = true;
             toolTipItem2.Image = ((System.Drawing.Image)(resources.GetObject("toolTipItem2.Image")));
             toolTipItem2.LeftIndent = 6;
-            toolTipItem2.Text = "Müştərinin qeydiyyat nömrəsi ilə axtarmaq üçün nəzərdə tutulub.";
+            toolTipItem2.Text = "Müştərinin fin kodu ilə axtarmaq üçün nəzərdə tutulub.";
             toolTipTitleItem3.LeftIndent = 6;
-            toolTipTitleItem3.Text = "Qeyd: <i>Müştərinin qeydiyyat nömrəsi 4 rəqəm olmalıdır</i>";
+            toolTipTitleItem3.Text = "Qeyd: <i>Müştərinin fin kodu 7 rəqəm olmalıdır</i>";
             superToolTip2.Items.Add(toolTipTitleItem2);
             superToolTip2.Items.Add(toolTipItem2);
             superToolTip2.Items.Add(toolTipSeparatorItem1);
@@ -517,7 +517,7 @@
             this.DeleteDocumentBarButton.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("DeleteDocumentBarButton.ImageOptions.LargeImage")));
             this.DeleteDocumentBarButton.Name = "DeleteDocumentBarButton";
             this.DeleteDocumentBarButton.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            this.DeleteDocumentBarButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.DeleteDocumentBarButton_ItemClick);
+            this.DeleteDocumentBarButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.DeleteProductBarButton_ItemClick);
             // 
             // RefreshDocumentBarButton
             // 
@@ -622,6 +622,128 @@
             this.barDockControl4.Location = new System.Drawing.Point(885, 0);
             this.barDockControl4.Manager = this.PhoneBarManager;
             this.barDockControl4.Size = new System.Drawing.Size(0, 666);
+            // 
+            // DocumentStandaloneBarDockControl
+            // 
+            this.DocumentStandaloneBarDockControl.CausesValidation = false;
+            this.DocumentStandaloneBarDockControl.Dock = System.Windows.Forms.DockStyle.Top;
+            this.DocumentStandaloneBarDockControl.Location = new System.Drawing.Point(0, 0);
+            this.DocumentStandaloneBarDockControl.Manager = this.PhoneBarManager;
+            this.DocumentStandaloneBarDockControl.Name = "DocumentStandaloneBarDockControl";
+            this.DocumentStandaloneBarDockControl.Size = new System.Drawing.Size(849, 29);
+            this.DocumentStandaloneBarDockControl.Text = "standaloneBarDockControl1";
+            // 
+            // standaloneBarDockControl2
+            // 
+            this.standaloneBarDockControl2.CausesValidation = false;
+            this.standaloneBarDockControl2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.standaloneBarDockControl2.Location = new System.Drawing.Point(0, 87);
+            this.standaloneBarDockControl2.Manager = this.PhoneBarManager;
+            this.standaloneBarDockControl2.Name = "standaloneBarDockControl2";
+            this.standaloneBarDockControl2.Size = new System.Drawing.Size(885, 29);
+            this.standaloneBarDockControl2.Text = "standaloneBarDockControl1";
+            // 
+            // DocumentBarManager
+            // 
+            this.DocumentBarManager.Bars.AddRange(new DevExpress.XtraBars.Bar[] {
+            this.bar5});
+            this.DocumentBarManager.DockControls.Add(this.barDockControl23);
+            this.DocumentBarManager.DockControls.Add(this.barDockControl24);
+            this.DocumentBarManager.DockControls.Add(this.barDockControl25);
+            this.DocumentBarManager.DockControls.Add(this.barDockControl27);
+            this.DocumentBarManager.DockControls.Add(this.standaloneBarDockControl2);
+            this.DocumentBarManager.Form = this;
+            this.DocumentBarManager.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
+            this.NewDocumentCardBarButton,
+            this.EditDocumentCardBarButton,
+            this.DeleteDocumentCardBarButton,
+            this.RefreshDocumentCardBarButton});
+            this.DocumentBarManager.MainMenu = this.bar5;
+            this.DocumentBarManager.MaxItemId = 4;
+            // 
+            // bar5
+            // 
+            this.bar5.BarName = "Main menu";
+            this.bar5.DockCol = 0;
+            this.bar5.DockRow = 0;
+            this.bar5.DockStyle = DevExpress.XtraBars.BarDockStyle.Standalone;
+            this.bar5.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.NewDocumentCardBarButton),
+            new DevExpress.XtraBars.LinkPersistInfo(this.EditDocumentCardBarButton),
+            new DevExpress.XtraBars.LinkPersistInfo(this.DeleteDocumentCardBarButton),
+            new DevExpress.XtraBars.LinkPersistInfo(this.RefreshDocumentCardBarButton)});
+            this.bar5.OptionsBar.DrawBorder = false;
+            this.bar5.OptionsBar.DrawDragBorder = false;
+            this.bar5.OptionsBar.MultiLine = true;
+            this.bar5.OptionsBar.UseWholeRow = true;
+            this.bar5.StandaloneBarDockControl = this.DocumentStandaloneBarDockControl;
+            this.bar5.Text = "Main menu";
+            // 
+            // NewDocumentCardBarButton
+            // 
+            this.NewDocumentCardBarButton.Caption = "Yeni";
+            this.NewDocumentCardBarButton.Id = 0;
+            this.NewDocumentCardBarButton.ImageOptions.Image = global::ELMS.Properties.Resources.plus_16;
+            this.NewDocumentCardBarButton.Name = "NewDocumentCardBarButton";
+            this.NewDocumentCardBarButton.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            // 
+            // EditDocumentCardBarButton
+            // 
+            this.EditDocumentCardBarButton.Caption = "Dəyiş";
+            this.EditDocumentCardBarButton.Id = 1;
+            this.EditDocumentCardBarButton.ImageOptions.Image = global::ELMS.Properties.Resources.edit_16;
+            this.EditDocumentCardBarButton.Name = "EditDocumentCardBarButton";
+            this.EditDocumentCardBarButton.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            // 
+            // DeleteDocumentCardBarButton
+            // 
+            this.DeleteDocumentCardBarButton.Caption = "Sil";
+            this.DeleteDocumentCardBarButton.Id = 2;
+            this.DeleteDocumentCardBarButton.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("DeleteDocumentCardBarButton.ImageOptions.Image")));
+            this.DeleteDocumentCardBarButton.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("DeleteDocumentCardBarButton.ImageOptions.LargeImage")));
+            this.DeleteDocumentCardBarButton.Name = "DeleteDocumentCardBarButton";
+            this.DeleteDocumentCardBarButton.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            // 
+            // RefreshDocumentCardBarButton
+            // 
+            this.RefreshDocumentCardBarButton.Caption = "Təzələ";
+            this.RefreshDocumentCardBarButton.Id = 3;
+            this.RefreshDocumentCardBarButton.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("RefreshDocumentCardBarButton.ImageOptions.Image")));
+            this.RefreshDocumentCardBarButton.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("RefreshDocumentCardBarButton.ImageOptions.LargeImage")));
+            this.RefreshDocumentCardBarButton.Name = "RefreshDocumentCardBarButton";
+            this.RefreshDocumentCardBarButton.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            // 
+            // barDockControl23
+            // 
+            this.barDockControl23.CausesValidation = false;
+            this.barDockControl23.Dock = System.Windows.Forms.DockStyle.Top;
+            this.barDockControl23.Location = new System.Drawing.Point(0, 0);
+            this.barDockControl23.Manager = this.DocumentBarManager;
+            this.barDockControl23.Size = new System.Drawing.Size(885, 0);
+            // 
+            // barDockControl24
+            // 
+            this.barDockControl24.CausesValidation = false;
+            this.barDockControl24.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.barDockControl24.Location = new System.Drawing.Point(0, 666);
+            this.barDockControl24.Manager = this.DocumentBarManager;
+            this.barDockControl24.Size = new System.Drawing.Size(885, 0);
+            // 
+            // barDockControl25
+            // 
+            this.barDockControl25.CausesValidation = false;
+            this.barDockControl25.Dock = System.Windows.Forms.DockStyle.Left;
+            this.barDockControl25.Location = new System.Drawing.Point(0, 0);
+            this.barDockControl25.Manager = this.DocumentBarManager;
+            this.barDockControl25.Size = new System.Drawing.Size(0, 666);
+            // 
+            // barDockControl27
+            // 
+            this.barDockControl27.CausesValidation = false;
+            this.barDockControl27.Dock = System.Windows.Forms.DockStyle.Right;
+            this.barDockControl27.Location = new System.Drawing.Point(885, 0);
+            this.barDockControl27.Manager = this.DocumentBarManager;
+            this.barDockControl27.Size = new System.Drawing.Size(0, 666);
             // 
             // DeleteWorkBarButton
             // 
@@ -899,8 +1021,8 @@
             this.ProductGridView.OptionsView.ShowFooter = true;
             this.ProductGridView.OptionsView.ShowGroupPanel = false;
             this.ProductGridView.OptionsView.ShowIndicator = false;
-            this.ProductGridView.FocusedRowObjectChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowObjectChangedEventHandler(this.DocumentGridView_FocusedRowObjectChanged);
-            this.ProductGridView.CustomUnboundColumnData += new DevExpress.XtraGrid.Views.Base.CustomColumnDataEventHandler(this.DocumentGridView_CustomUnboundColumnData);
+            this.ProductGridView.FocusedRowObjectChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowObjectChangedEventHandler(this.ProductGridView_FocusedRowObjectChanged);
+            this.ProductGridView.CustomUnboundColumnData += new DevExpress.XtraGrid.Views.Base.CustomColumnDataEventHandler(this.ProductGridView_CustomUnboundColumnData);
             this.ProductGridView.DoubleClick += new System.EventHandler(this.DocumentGridView_DoubleClick);
             // 
             // Document_SS
@@ -1398,6 +1520,149 @@
             this.RelativeCard_Salary.VisibleIndex = 6;
             this.RelativeCard_Salary.Width = 97;
             // 
+            // IDCardTab
+            // 
+            this.IDCardTab.Controls.Add(this.DocumentStandaloneBarDockControl);
+            this.IDCardTab.Controls.Add(this.DocumentGridControl);
+            this.IDCardTab.Name = "IDCardTab";
+            this.IDCardTab.Size = new System.Drawing.Size(849, 264);
+            this.IDCardTab.Text = "Səxsiyyəti təsdiq edən sənədlər";
+            // 
+            // DocumentGridControl
+            // 
+            this.DocumentGridControl.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.DocumentGridControl.Location = new System.Drawing.Point(0, 29);
+            this.DocumentGridControl.MainView = this.DocumentGridView;
+            this.DocumentGridControl.Name = "DocumentGridControl";
+            this.DocumentGridControl.Size = new System.Drawing.Size(849, 235);
+            this.DocumentGridControl.TabIndex = 19;
+            this.DocumentGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.DocumentGridView});
+            // 
+            // DocumentGridView
+            // 
+            this.DocumentGridView.Appearance.FooterPanel.Options.UseTextOptions = true;
+            this.DocumentGridView.Appearance.FooterPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.DocumentGridView.Appearance.FooterPanel.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.DocumentGridView.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn1,
+            this.gridColumn2,
+            this.gridColumn3,
+            this.gridColumn4,
+            this.gridColumn5,
+            this.gridColumn6,
+            this.Document_IssueDate,
+            this.Document_ReliableDate,
+            this.gridColumn7});
+            this.DocumentGridView.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFullFocus;
+            this.DocumentGridView.GridControl = this.DocumentGridControl;
+            this.DocumentGridView.Name = "DocumentGridView";
+            this.DocumentGridView.OptionsBehavior.AutoExpandAllGroups = true;
+            this.DocumentGridView.OptionsBehavior.AutoSelectAllInEditor = false;
+            this.DocumentGridView.OptionsBehavior.Editable = false;
+            this.DocumentGridView.OptionsFilter.UseNewCustomFilterDialog = true;
+            this.DocumentGridView.OptionsFind.FindDelay = 100;
+            this.DocumentGridView.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.DocumentGridView.OptionsView.ColumnAutoWidth = false;
+            this.DocumentGridView.OptionsView.EnableAppearanceEvenRow = true;
+            this.DocumentGridView.OptionsView.GroupFooterShowMode = DevExpress.XtraGrid.Views.Grid.GroupFooterShowMode.VisibleAlways;
+            this.DocumentGridView.OptionsView.ShowFooter = true;
+            this.DocumentGridView.OptionsView.ShowGroupPanel = false;
+            this.DocumentGridView.OptionsView.ShowIndicator = false;
+            // 
+            // gridColumn1
+            // 
+            this.gridColumn1.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn1.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn1.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.gridColumn1.Caption = "S/s";
+            this.gridColumn1.FieldName = "Document_SS";
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.OptionsColumn.FixedWidth = true;
+            this.gridColumn1.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 0;
+            this.gridColumn1.Width = 50;
+            // 
+            // gridColumn2
+            // 
+            this.gridColumn2.Caption = "Sənədin qrupu";
+            this.gridColumn2.FieldName = "DOCUMENT_GROUP";
+            this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.OptionsColumn.FixedWidth = true;
+            this.gridColumn2.Visible = true;
+            this.gridColumn2.VisibleIndex = 1;
+            this.gridColumn2.Width = 140;
+            // 
+            // gridColumn3
+            // 
+            this.gridColumn3.Caption = "Sənədin növü";
+            this.gridColumn3.FieldName = "DOCUMENT_TYPE";
+            this.gridColumn3.Name = "gridColumn3";
+            this.gridColumn3.OptionsColumn.FixedWidth = true;
+            this.gridColumn3.Visible = true;
+            this.gridColumn3.VisibleIndex = 2;
+            this.gridColumn3.Width = 140;
+            // 
+            // gridColumn4
+            // 
+            this.gridColumn4.Caption = "Sənədin nömrəsi";
+            this.gridColumn4.FieldName = "CARD_NUMBER";
+            this.gridColumn4.Name = "gridColumn4";
+            this.gridColumn4.OptionsColumn.FixedWidth = true;
+            this.gridColumn4.Visible = true;
+            this.gridColumn4.VisibleIndex = 3;
+            this.gridColumn4.Width = 100;
+            // 
+            // gridColumn5
+            // 
+            this.gridColumn5.Caption = "Fin kodu";
+            this.gridColumn5.FieldName = "PINCODE";
+            this.gridColumn5.Name = "gridColumn5";
+            this.gridColumn5.OptionsColumn.FixedWidth = true;
+            this.gridColumn5.Visible = true;
+            this.gridColumn5.VisibleIndex = 4;
+            this.gridColumn5.Width = 85;
+            // 
+            // gridColumn6
+            // 
+            this.gridColumn6.Caption = "Sənəd verən orqan";
+            this.gridColumn6.FieldName = "ISSUE_NAME";
+            this.gridColumn6.Name = "gridColumn6";
+            this.gridColumn6.Visible = true;
+            this.gridColumn6.VisibleIndex = 5;
+            this.gridColumn6.Width = 250;
+            // 
+            // Document_IssueDate
+            // 
+            this.Document_IssueDate.Caption = "Verilmə tarixi";
+            this.Document_IssueDate.DisplayFormat.FormatString = "dd.MM.yyyy";
+            this.Document_IssueDate.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.Document_IssueDate.FieldName = "ISSUE_DATE";
+            this.Document_IssueDate.Name = "Document_IssueDate";
+            this.Document_IssueDate.OptionsColumn.FixedWidth = true;
+            this.Document_IssueDate.Visible = true;
+            this.Document_IssueDate.VisibleIndex = 6;
+            this.Document_IssueDate.Width = 90;
+            // 
+            // Document_ReliableDate
+            // 
+            this.Document_ReliableDate.Caption = "Bitmə tarixi";
+            this.Document_ReliableDate.DisplayFormat.FormatString = "dd.MM.yyyy";
+            this.Document_ReliableDate.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.Document_ReliableDate.FieldName = "RELIABLE_DATE";
+            this.Document_ReliableDate.Name = "Document_ReliableDate";
+            this.Document_ReliableDate.OptionsColumn.FixedWidth = true;
+            this.Document_ReliableDate.Visible = true;
+            this.Document_ReliableDate.VisibleIndex = 7;
+            this.Document_ReliableDate.Width = 90;
+            // 
+            // gridColumn7
+            // 
+            this.gridColumn7.Caption = "Document_ID";
+            this.gridColumn7.FieldName = "ID";
+            this.gridColumn7.Name = "gridColumn7";
+            // 
             // PanelOption
             // 
             this.PanelOption.Controls.Add(this.BCancel);
@@ -1767,6 +2032,7 @@
             this.RegisterCodeText.Location = new System.Drawing.Point(135, 32);
             this.RegisterCodeText.MenuManager = this.OrderBarManager;
             this.RegisterCodeText.Name = "RegisterCodeText";
+            this.RegisterCodeText.Properties.ReadOnly = true;
             this.RegisterCodeText.Size = new System.Drawing.Size(60, 20);
             this.RegisterCodeText.TabIndex = 2;
             // 
@@ -1897,6 +2163,7 @@
             this.OrderAmountValue.Properties.NullValuePrompt = "0.00";
             this.OrderAmountValue.Properties.NullValuePromptShowForEmptyValue = true;
             this.OrderAmountValue.Properties.Precision = 2;
+            this.OrderAmountValue.Properties.ReadOnly = true;
             this.OrderAmountValue.Size = new System.Drawing.Size(127, 20);
             this.OrderAmountValue.TabIndex = 178;
             // 
@@ -1967,159 +2234,6 @@
             this.NoteText.Size = new System.Drawing.Size(331, 20);
             this.NoteText.TabIndex = 186;
             // 
-            // IDCardTab
-            // 
-            this.IDCardTab.Controls.Add(this.DocumentStandaloneBarDockControl);
-            this.IDCardTab.Controls.Add(this.DocumentGridControl);
-            this.IDCardTab.Name = "IDCardTab";
-            this.IDCardTab.Size = new System.Drawing.Size(849, 264);
-            this.IDCardTab.Text = "Səxsiyyəti təsdiq edən sənədlər";
-            // 
-            // DocumentGridControl
-            // 
-            this.DocumentGridControl.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.DocumentGridControl.Location = new System.Drawing.Point(0, 29);
-            this.DocumentGridControl.MainView = this.DocumentGridView;
-            this.DocumentGridControl.Name = "DocumentGridControl";
-            this.DocumentGridControl.Size = new System.Drawing.Size(849, 235);
-            this.DocumentGridControl.TabIndex = 19;
-            this.DocumentGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.DocumentGridView});
-            // 
-            // DocumentGridView
-            // 
-            this.DocumentGridView.Appearance.FooterPanel.Options.UseTextOptions = true;
-            this.DocumentGridView.Appearance.FooterPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.DocumentGridView.Appearance.FooterPanel.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.DocumentGridView.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.gridColumn1,
-            this.gridColumn2,
-            this.gridColumn3,
-            this.gridColumn4,
-            this.gridColumn5,
-            this.gridColumn6,
-            this.Document_IssueDate,
-            this.Document_ReliableDate,
-            this.gridColumn7});
-            this.DocumentGridView.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFullFocus;
-            this.DocumentGridView.GridControl = this.DocumentGridControl;
-            this.DocumentGridView.Name = "DocumentGridView";
-            this.DocumentGridView.OptionsBehavior.AutoExpandAllGroups = true;
-            this.DocumentGridView.OptionsBehavior.AutoSelectAllInEditor = false;
-            this.DocumentGridView.OptionsBehavior.Editable = false;
-            this.DocumentGridView.OptionsFilter.UseNewCustomFilterDialog = true;
-            this.DocumentGridView.OptionsFind.FindDelay = 100;
-            this.DocumentGridView.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.DocumentGridView.OptionsView.ColumnAutoWidth = false;
-            this.DocumentGridView.OptionsView.EnableAppearanceEvenRow = true;
-            this.DocumentGridView.OptionsView.GroupFooterShowMode = DevExpress.XtraGrid.Views.Grid.GroupFooterShowMode.VisibleAlways;
-            this.DocumentGridView.OptionsView.ShowFooter = true;
-            this.DocumentGridView.OptionsView.ShowGroupPanel = false;
-            this.DocumentGridView.OptionsView.ShowIndicator = false;
-            // 
-            // gridColumn1
-            // 
-            this.gridColumn1.AppearanceCell.Options.UseTextOptions = true;
-            this.gridColumn1.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn1.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.gridColumn1.Caption = "S/s";
-            this.gridColumn1.FieldName = "Document_SS";
-            this.gridColumn1.Name = "gridColumn1";
-            this.gridColumn1.OptionsColumn.FixedWidth = true;
-            this.gridColumn1.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
-            this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 0;
-            this.gridColumn1.Width = 50;
-            // 
-            // gridColumn2
-            // 
-            this.gridColumn2.Caption = "Sənədin qrupu";
-            this.gridColumn2.FieldName = "DOCUMENT_GROUP";
-            this.gridColumn2.Name = "gridColumn2";
-            this.gridColumn2.OptionsColumn.FixedWidth = true;
-            this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 1;
-            this.gridColumn2.Width = 140;
-            // 
-            // gridColumn3
-            // 
-            this.gridColumn3.Caption = "Sənədin növü";
-            this.gridColumn3.FieldName = "DOCUMENT_TYPE";
-            this.gridColumn3.Name = "gridColumn3";
-            this.gridColumn3.OptionsColumn.FixedWidth = true;
-            this.gridColumn3.Visible = true;
-            this.gridColumn3.VisibleIndex = 2;
-            this.gridColumn3.Width = 140;
-            // 
-            // gridColumn4
-            // 
-            this.gridColumn4.Caption = "Sənədin nömrəsi";
-            this.gridColumn4.FieldName = "CARD_NUMBER";
-            this.gridColumn4.Name = "gridColumn4";
-            this.gridColumn4.OptionsColumn.FixedWidth = true;
-            this.gridColumn4.Visible = true;
-            this.gridColumn4.VisibleIndex = 3;
-            this.gridColumn4.Width = 100;
-            // 
-            // gridColumn5
-            // 
-            this.gridColumn5.Caption = "Fin kodu";
-            this.gridColumn5.FieldName = "PINCODE";
-            this.gridColumn5.Name = "gridColumn5";
-            this.gridColumn5.OptionsColumn.FixedWidth = true;
-            this.gridColumn5.Visible = true;
-            this.gridColumn5.VisibleIndex = 4;
-            this.gridColumn5.Width = 85;
-            // 
-            // gridColumn6
-            // 
-            this.gridColumn6.Caption = "Sənəd verən orqan";
-            this.gridColumn6.FieldName = "ISSUE_NAME";
-            this.gridColumn6.Name = "gridColumn6";
-            this.gridColumn6.Visible = true;
-            this.gridColumn6.VisibleIndex = 5;
-            this.gridColumn6.Width = 250;
-            // 
-            // Document_IssueDate
-            // 
-            this.Document_IssueDate.Caption = "Verilmə tarixi";
-            this.Document_IssueDate.DisplayFormat.FormatString = "dd.MM.yyyy";
-            this.Document_IssueDate.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            this.Document_IssueDate.FieldName = "ISSUE_DATE";
-            this.Document_IssueDate.Name = "Document_IssueDate";
-            this.Document_IssueDate.OptionsColumn.FixedWidth = true;
-            this.Document_IssueDate.Visible = true;
-            this.Document_IssueDate.VisibleIndex = 6;
-            this.Document_IssueDate.Width = 90;
-            // 
-            // Document_ReliableDate
-            // 
-            this.Document_ReliableDate.Caption = "Bitmə tarixi";
-            this.Document_ReliableDate.DisplayFormat.FormatString = "dd.MM.yyyy";
-            this.Document_ReliableDate.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            this.Document_ReliableDate.FieldName = "RELIABLE_DATE";
-            this.Document_ReliableDate.Name = "Document_ReliableDate";
-            this.Document_ReliableDate.OptionsColumn.FixedWidth = true;
-            this.Document_ReliableDate.Visible = true;
-            this.Document_ReliableDate.VisibleIndex = 7;
-            this.Document_ReliableDate.Width = 90;
-            // 
-            // gridColumn7
-            // 
-            this.gridColumn7.Caption = "Document_ID";
-            this.gridColumn7.FieldName = "ID";
-            this.gridColumn7.Name = "gridColumn7";
-            // 
-            // DocumentStandaloneBarDockControl
-            // 
-            this.DocumentStandaloneBarDockControl.CausesValidation = false;
-            this.DocumentStandaloneBarDockControl.Dock = System.Windows.Forms.DockStyle.Top;
-            this.DocumentStandaloneBarDockControl.Location = new System.Drawing.Point(0, 0);
-            this.DocumentStandaloneBarDockControl.Manager = this.PhoneBarManager;
-            this.DocumentStandaloneBarDockControl.Name = "DocumentStandaloneBarDockControl";
-            this.DocumentStandaloneBarDockControl.Size = new System.Drawing.Size(849, 29);
-            this.DocumentStandaloneBarDockControl.Text = "standaloneBarDockControl1";
-            // 
             // bar1
             // 
             this.bar1.BarName = "Main menu";
@@ -2172,124 +2286,13 @@
             this.barButtonItem4.Name = "barButtonItem4";
             this.barButtonItem4.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
             // 
-            // standaloneBarDockControl2
-            // 
-            this.standaloneBarDockControl2.CausesValidation = false;
-            this.standaloneBarDockControl2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.standaloneBarDockControl2.Location = new System.Drawing.Point(0, 87);
-            this.standaloneBarDockControl2.Manager = this.DocumentBarManager;
-            this.standaloneBarDockControl2.Name = "standaloneBarDockControl2";
-            this.standaloneBarDockControl2.Size = new System.Drawing.Size(885, 29);
-            this.standaloneBarDockControl2.Text = "standaloneBarDockControl1";
-            // 
             // barDockControl26
             // 
             this.barDockControl26.CausesValidation = false;
             this.barDockControl26.Dock = System.Windows.Forms.DockStyle.Right;
             this.barDockControl26.Location = new System.Drawing.Point(885, 0);
+            this.barDockControl26.Manager = null;
             this.barDockControl26.Size = new System.Drawing.Size(0, 666);
-            // 
-            // DocumentBarManager
-            // 
-            this.DocumentBarManager.Bars.AddRange(new DevExpress.XtraBars.Bar[] {
-            this.bar5});
-            this.DocumentBarManager.DockControls.Add(this.barDockControl23);
-            this.DocumentBarManager.DockControls.Add(this.barDockControl24);
-            this.DocumentBarManager.DockControls.Add(this.barDockControl25);
-            this.DocumentBarManager.DockControls.Add(this.barDockControl27);
-            this.DocumentBarManager.DockControls.Add(this.standaloneBarDockControl2);
-            this.DocumentBarManager.Form = this;
-            this.DocumentBarManager.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
-            this.NewDocumentCardBarButton,
-            this.EditDocumentCardBarButton,
-            this.DeleteDocumentCardBarButton,
-            this.RefreshDocumentCardBarButton});
-            this.DocumentBarManager.MainMenu = this.bar5;
-            this.DocumentBarManager.MaxItemId = 4;
-            // 
-            // bar5
-            // 
-            this.bar5.BarName = "Main menu";
-            this.bar5.DockCol = 0;
-            this.bar5.DockRow = 0;
-            this.bar5.DockStyle = DevExpress.XtraBars.BarDockStyle.Standalone;
-            this.bar5.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.NewDocumentCardBarButton),
-            new DevExpress.XtraBars.LinkPersistInfo(this.EditDocumentCardBarButton),
-            new DevExpress.XtraBars.LinkPersistInfo(this.DeleteDocumentCardBarButton),
-            new DevExpress.XtraBars.LinkPersistInfo(this.RefreshDocumentCardBarButton)});
-            this.bar5.OptionsBar.DrawBorder = false;
-            this.bar5.OptionsBar.DrawDragBorder = false;
-            this.bar5.OptionsBar.MultiLine = true;
-            this.bar5.OptionsBar.UseWholeRow = true;
-            this.bar5.StandaloneBarDockControl = this.DocumentStandaloneBarDockControl;
-            this.bar5.Text = "Main menu";
-            // 
-            // NewDocumentCardBarButton
-            // 
-            this.NewDocumentCardBarButton.Caption = "Yeni";
-            this.NewDocumentCardBarButton.Id = 0;
-            this.NewDocumentCardBarButton.ImageOptions.Image = global::ELMS.Properties.Resources.plus_16;
-            this.NewDocumentCardBarButton.Name = "NewDocumentCardBarButton";
-            this.NewDocumentCardBarButton.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            // 
-            // EditDocumentCardBarButton
-            // 
-            this.EditDocumentCardBarButton.Caption = "Dəyiş";
-            this.EditDocumentCardBarButton.Id = 1;
-            this.EditDocumentCardBarButton.ImageOptions.Image = global::ELMS.Properties.Resources.edit_16;
-            this.EditDocumentCardBarButton.Name = "EditDocumentCardBarButton";
-            this.EditDocumentCardBarButton.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            // 
-            // DeleteDocumentCardBarButton
-            // 
-            this.DeleteDocumentCardBarButton.Caption = "Sil";
-            this.DeleteDocumentCardBarButton.Id = 2;
-            this.DeleteDocumentCardBarButton.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem7.ImageOptions.Image")));
-            this.DeleteDocumentCardBarButton.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem7.ImageOptions.LargeImage")));
-            this.DeleteDocumentCardBarButton.Name = "DeleteDocumentCardBarButton";
-            this.DeleteDocumentCardBarButton.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            // 
-            // RefreshDocumentCardBarButton
-            // 
-            this.RefreshDocumentCardBarButton.Caption = "Təzələ";
-            this.RefreshDocumentCardBarButton.Id = 3;
-            this.RefreshDocumentCardBarButton.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem8.ImageOptions.Image")));
-            this.RefreshDocumentCardBarButton.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem8.ImageOptions.LargeImage")));
-            this.RefreshDocumentCardBarButton.Name = "RefreshDocumentCardBarButton";
-            this.RefreshDocumentCardBarButton.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            // 
-            // barDockControl23
-            // 
-            this.barDockControl23.CausesValidation = false;
-            this.barDockControl23.Dock = System.Windows.Forms.DockStyle.Top;
-            this.barDockControl23.Location = new System.Drawing.Point(0, 0);
-            this.barDockControl23.Manager = this.DocumentBarManager;
-            this.barDockControl23.Size = new System.Drawing.Size(885, 0);
-            // 
-            // barDockControl24
-            // 
-            this.barDockControl24.CausesValidation = false;
-            this.barDockControl24.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControl24.Location = new System.Drawing.Point(0, 616);
-            this.barDockControl24.Manager = this.DocumentBarManager;
-            this.barDockControl24.Size = new System.Drawing.Size(885, 0);
-            // 
-            // barDockControl25
-            // 
-            this.barDockControl25.CausesValidation = false;
-            this.barDockControl25.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControl25.Location = new System.Drawing.Point(0, 0);
-            this.barDockControl25.Manager = this.DocumentBarManager;
-            this.barDockControl25.Size = new System.Drawing.Size(0, 616);
-            // 
-            // barDockControl27
-            // 
-            this.barDockControl27.CausesValidation = false;
-            this.barDockControl27.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControl27.Location = new System.Drawing.Point(885, 0);
-            this.barDockControl27.Manager = this.DocumentBarManager;
-            this.barDockControl27.Size = new System.Drawing.Size(0, 616);
             // 
             // FConfirmAddEdit
             // 
@@ -2298,10 +2301,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.BCancel;
             this.ClientSize = new System.Drawing.Size(885, 666);
-            this.Controls.Add(this.barDockControl25);
-            this.Controls.Add(this.barDockControl27);
-            this.Controls.Add(this.barDockControl24);
-            this.Controls.Add(this.barDockControl23);
             this.Controls.Add(this.NoteText);
             this.Controls.Add(this.NoteLabel);
             this.Controls.Add(this.labelControl18);
@@ -2323,14 +2322,18 @@
             this.Controls.Add(this.PersonalDetailsGroupBox);
             this.Controls.Add(this.SourceLookUp);
             this.Controls.Add(this.barDockControl26);
-            this.Controls.Add(this.barDockControlLeft);
-            this.Controls.Add(this.barDockControlRight);
-            this.Controls.Add(this.barDockControlBottom);
-            this.Controls.Add(this.barDockControlTop);
             this.Controls.Add(this.barDockControl3);
             this.Controls.Add(this.barDockControl4);
             this.Controls.Add(this.barDockControl2);
             this.Controls.Add(this.barDockControl1);
+            this.Controls.Add(this.barDockControlLeft);
+            this.Controls.Add(this.barDockControlRight);
+            this.Controls.Add(this.barDockControlBottom);
+            this.Controls.Add(this.barDockControlTop);
+            this.Controls.Add(this.barDockControl25);
+            this.Controls.Add(this.barDockControl27);
+            this.Controls.Add(this.barDockControl24);
+            this.Controls.Add(this.barDockControl23);
             this.Controls.Add(this.barDockControl17);
             this.Controls.Add(this.barDockControl18);
             this.Controls.Add(this.barDockControl16);
@@ -2355,6 +2358,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.FinCodeSearch.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PhoneBarManager)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.OrderBarManager)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DocumentBarManager)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ActualAddressText.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.separatorControl1)).EndInit();
@@ -2381,6 +2385,9 @@
             this.RelativeTab.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.RelativeGridControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.RelativeGridView)).EndInit();
+            this.IDCardTab.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.DocumentGridControl)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DocumentGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PanelOption)).EndInit();
             this.PanelOption.ResumeLayout(false);
             this.PanelOption.PerformLayout();
@@ -2396,10 +2403,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.OrderAmountValue.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TimeLookUp.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.NoteText.Properties)).EndInit();
-            this.IDCardTab.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.DocumentGridControl)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DocumentGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DocumentBarManager)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

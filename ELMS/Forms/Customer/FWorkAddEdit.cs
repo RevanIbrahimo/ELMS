@@ -28,14 +28,16 @@ namespace ELMS.Forms.Customer
         public event DoEvent RefreshDataGridView;
 
         bool CurrentStatus = false, Used = false, isClickBOK = false;
-        int UsedUserID = -1;
+        int UsedUserID = -1, positionID;
 
         private void FWorkAddEdit_Load(object sender, EventArgs e)
         {
+            GlobalProcedures.FillLookUpEdit(PositionLookUp, ProfessionDAL.SelectProfession(null).Tables[0]);
+
             if (TransactionType == TransactionTypeEnum.Update)
             {
                 this.Text = "Sənədlərin düzəliş edilməsi";
-                GlobalProcedures.Lock_or_UnLock_UserID("ELMS_USER.CUSTOMER_WORKPLACE", GlobalVariables.V_UserID, "WHERE ID = " + WorkID + " AND USED_USER_ID = -1");
+                GlobalProcedures.Lock_or_UnLock_UserID("ELMS_USER_TEMP.CUSTOMER_WORKPLACE_TEMP", GlobalVariables.V_UserID, "WHERE ID = " + WorkID + " AND USED_USER_ID = -1");
                 LoadDetails();
                 Used = (UsedUserID > 0);
 
@@ -60,61 +62,37 @@ namespace ELMS.Forms.Customer
 
         private void LoadDetails()
         {
-
-            DataTable dt = CustomerWorkDAL.SelectViewData(CustomerID);
+            DataTable dt = CustomerWorkDAL.SelectViewDataByID(WorkID);
 
             if (dt.Rows.Count > 0)
             {
                 OfficeText.EditValue = dt.Rows[0]["PLACE_NAME"];
-                PositionText.EditValue = dt.Rows[0]["POSITION"];
-                StartDate.EditValue = dt.Rows[0]["START_DATE"];
-                if (StartDate.DateTime == DateTime.MinValue)
-                    StartDate.EditValue = null;
-                EndDate.EditValue = dt.Rows[0]["END_DATE"];
-                if (EndDate.DateTime == DateTime.MinValue)
-                    EndDate.EditValue = null;
+                NoteText.EditValue = dt.Rows[0]["NOTE"];
+                NoAvailableRadioGroup.SelectedIndex = Convert.ToInt16(dt.Rows[0]["NOAVAILABLE"]);
+                GlobalProcedures.LookUpEditValue(PositionLookUp, dt.Rows[0]["POSITION"].ToString());
+                SalaryValue.EditValue = Convert.ToDecimal(dt.Rows[0]["SALARY"].ToString());
                 UsedUserID = Convert.ToInt16(dt.Rows[0]["USED_USER_ID"]);
             }
         }
-
+       
         private void ComponentEnabled(bool status)
         {
             OfficeText.Enabled =
-                PositionText.Enabled =
                 BOK.Visible = !status;
         }
 
 
-        private void LoadWorkDetails()
-        {
-            string s = "SELECT PLACE_NAME,POSITION,START_DATE,END_DATE,NOTE FROM COMS_USER_TEMP.CUSTOMER_WORKPLACE_TEMP WHERE ID = " + WorkID;
-            try
-            {
-                DataTable dt = Class.GlobalFunctions.GenerateDataTable(s);
-
-                foreach (DataRow dr in dt.Rows)
-                {
-                    OfficeText.Text = dr[0].ToString();
-                    PositionText.Text = dr[1].ToString();
-                    StartDate.EditValue = DateTime.Parse(dr[2].ToString());
-                    EndDate.EditValue = DateTime.Parse(dr[3].ToString());
-                    NoteText.Text = dr[4].ToString();
-                }  
-            }
-            catch (Exception exx)
-            {
-                Class.GlobalProcedures.LogWrite("İş yerinin detalları tapılmadı.", s, Class.GlobalVariables.V_UserName, this.Name, this.GetType().FullName + "." + System.Reflection.MethodBase.GetCurrentMethod().Name, exx);                
-            }
-        }
+        
 
         private void InsertDetail()
         {
            CustomerWork customerWork = new CustomerWork
            {
                 PLACE_NAME = OfficeText.Text.Trim(),
-                POSITION = PositionText.Text.Trim(),
-                START_DATE = StartDate.DateTime,
-                END_DATE = EndDate.DateTime,
+                PROFESSION_ID = positionID,
+                SALARY = SalaryValue.Value,
+                NOAVAILABLE = NoAvailableRadioGroup.SelectedIndex,
+                NOTE = NoteText.Text.Trim(),
                 CUSTOMER_ID = CustomerID.Value
             };
             CustomerWorkDAL.InsertCustomerWork(customerWork);
@@ -127,11 +105,12 @@ namespace ELMS.Forms.Customer
             CustomerWork customerWork = new CustomerWork
             {
                 PLACE_NAME = OfficeText.Text.Trim(),
-                POSITION = PositionText.Text.Trim(),
-                START_DATE = StartDate.DateTime,
-                END_DATE = EndDate.DateTime,
-                ID = WorkID.Value,
+                PROFESSION_ID = positionID,
+                SALARY = SalaryValue.Value,
+                NOAVAILABLE = NoAvailableRadioGroup.SelectedIndex,
+                NOTE = NoteText.Text.Trim(),
                 CUSTOMER_ID = CustomerID.Value,
+                ID = WorkID.Value,
                 USED_USER_ID = -1,
                 IS_CHANGE = (int)ChangeTypeEnum.Change
             };
@@ -146,7 +125,7 @@ namespace ELMS.Forms.Customer
             if (OfficeText.Text.Length == 0)
             {
                 OfficeText.BackColor = Color.Red;
-                Class.GlobalProcedures.ShowErrorMessage("İş yerinin adı daxil edilməyib.");               
+                GlobalProcedures.ShowErrorMessage("İş yerinin adı daxil edilməyib.");               
                 OfficeText.Focus();
                 OfficeText.BackColor = Class.GlobalFunctions.ElementColor();
                 return false;
@@ -154,58 +133,28 @@ namespace ELMS.Forms.Customer
             else
                 b = true;
 
-            if (PositionText.Text.Length == 0)
+            if (positionID == 0)
             {
-                PositionText.BackColor = Color.Red;
-                Class.GlobalProcedures.ShowErrorMessage("Vəzifə daxil edilməyib.");                
-                PositionText.Focus();
-                PositionText.BackColor = Class.GlobalFunctions.ElementColor();
+                PositionLookUp.BackColor = Color.Red;
+                GlobalProcedures.ShowErrorMessage("Peşə seçilməyib.");
+                PositionLookUp.Focus();
+                PositionLookUp.BackColor = GlobalFunctions.ElementColor();
                 return false;
             }
             else
                 b = true;
-
-            if (StartDate.Text.Length == 0)
-            {
-                StartDate.BackColor = Color.Red;
-                Class.GlobalProcedures.ShowErrorMessage("Tarix daxil edilməyib.");                
-                StartDate.Focus();
-                StartDate.BackColor = Class.GlobalFunctions.ElementColor();
-                return false;
-            }
-            else
-                b = true;
-
-            if (EndDate.Text.Length == 0)
-            {
-                EndDate.BackColor = Color.Red;
-                Class.GlobalProcedures.ShowErrorMessage("Tarix daxil edilməyib.");                
-                EndDate.Focus();
-                EndDate.BackColor = Class.GlobalFunctions.ElementColor();
-                return false;
-            }
-            else
-                b = true;
-
-            if (Class.GlobalFunctions.ChangeStringToDate(StartDate.Text, "ddmmyyyy") == Class.GlobalFunctions.ChangeStringToDate(EndDate.Text, "ddmmyyyy"))
-            {
-                StartDate.BackColor = Color.Red;
-                EndDate.BackColor = Color.Red;
-                Class.GlobalProcedures.ShowErrorMessage("Başlanğıc tarixi ilə son tarix eyni ola bilməz.");                
-                StartDate.Focus();
-                StartDate.BackColor = Class.GlobalFunctions.ElementColor();
-                EndDate.BackColor = Class.GlobalFunctions.ElementColor();
-                return false;
-            }
-            else
-                b = true;
-
+            
             return b;
         }
 
         private void BCancel_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void PositionLookUp_EditValueChanged(object sender, EventArgs e)
+        {
+            positionID = GlobalFunctions.GetLookUpID(sender);
         }
 
         private void FWorkAddEdit_FormClosing(object sender, FormClosingEventArgs e)

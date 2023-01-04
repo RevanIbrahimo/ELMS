@@ -71,7 +71,7 @@ namespace ELMS.Class.DataAccess
             }
         }
 
-        public static DataTable SelectViewData(int? ID)
+        public static DataTable SelectViewDataAll(int? ID)
         {
             string s = $@"SELECT CC.ID,
                                    DG.NAME DOCUMENT_GROUP,
@@ -90,6 +90,43 @@ namespace ELMS.Class.DataAccess
                                    AND CC.CARD_ISSUING_ID = CI.ID
                                    AND CC.DOCUMENT_GROUP_ID = DG.ID
                                    AND CC.IS_CHANGE <> {(int)ChangeTypeEnum.Delete} {(ID.HasValue ? $@" AND CC.CUSTOMER_ID = {ID}" : null)}
+                        ORDER BY CC.ID";
+
+            try
+            {
+                using (OracleDataAdapter da = new OracleDataAdapter(s, GlobalFunctions.GetConnectionString()))
+                {
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+                    return dt;
+                }
+            }
+            catch (Exception exx)
+            {
+                GlobalProcedures.LogWrite("Musterinin məlumatları açılmadı.", s, GlobalVariables.V_UserName, "CustomerCardDAL", "SelectViewData", exx);
+                return null;
+            }
+        }
+
+        public static DataTable SelectViewDataByID(int? ID)
+        {
+            string s = $@"SELECT CC.ID,
+                                   DG.NAME DOCUMENT_GROUP,
+                                   DT.NAME DOCUMENT_TYPE,
+                                   CC.CARD_NUMBER,
+                                   CC.ISSUE_DATE,
+                                   CI.NAME ISSUE_NAME,
+                                   CC.RELIABLE_DATE,
+                                   CC.PINCODE,
+                                   CC.USED_USER_ID
+                              FROM ELMS_USER_TEMP.CUSTOMER_CARDS_TEMP CC,
+                                   ELMS_USER.DOCUMENT_TYPE DT,
+                                   ELMS_USER.DOCUMENT_GROUP DG,
+                                   ELMS_USER.CARD_ISSUING CI
+                             WHERE CC.DOCUMENT_TYPE_ID = DT.ID
+                                   AND CC.CARD_ISSUING_ID = CI.ID
+                                   AND CC.DOCUMENT_GROUP_ID = DG.ID
+                                   AND CC.IS_CHANGE <> {(int)ChangeTypeEnum.Delete} {(ID.HasValue ? $@" AND CC.ID = {ID}" : null)}
                         ORDER BY CC.ID";
 
             try

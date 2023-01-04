@@ -166,3 +166,4 @@ C:\Users\user\Documents\Github\ELMS\ELMS\obj\Debug\ELMS.UserControls.OrderUserCo
 C:\Users\user\Documents\Github\ELMS\ELMS\obj\Debug\ELMS.Forms.Order.FOrderAddEdit.resources
 C:\Users\user\Documents\Github\ELMS\ELMS\obj\Debug\ELMS.Forms.Order.FProductCardAddEdit.resources
 C:\Users\user\Documents\Github\ELMS\ELMS\obj\Debug\ELMS.Forms.Order.FConfirmAddEdit.resources
+C:\Users\user\Documents\Github\ELMS\ELMS\obj\Debug\ELMS.Forms.Customer.FRelativeAddEdit.resources

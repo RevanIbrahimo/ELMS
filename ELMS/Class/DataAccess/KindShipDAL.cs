@@ -47,6 +47,36 @@ namespace ELMS.Class.DataAccess
             }
         }
 
+        public static DataSet SelectKindShip(int? typeID)
+        {
+            string sql = null;
+            if (typeID == null)
+                sql = $@"SELECT C.ID,
+                                 C.NAME
+                            FROM ELMS_USER.KINDSHIP_RATE C
+                            ORDER BY C.ORDER_ID";
+            else
+                sql = $@"SELECT C.ID,
+                                 C.NAME
+                            FROM ELMS_USER.KINDSHIP_RATE C 
+                           WHERE C.ID = {typeID}";
+
+            try
+            {
+                using (OracleDataAdapter adapter = new OracleDataAdapter(sql, GlobalFunctions.GetConnectionString()))
+                {
+                    DataSet dsAdapter = new DataSet();
+                    adapter.Fill(dsAdapter);
+                    return dsAdapter;
+                }
+            }
+            catch (Exception exx)
+            {
+                GlobalProcedures.LogWrite("Qohumluq dərəcəsi açılmadı.", sql, GlobalVariables.V_UserName, "KindShipDAL", "SelectKindShipByID", exx);
+                return null;
+            }
+        }
+
 
         public static void InsertKindShip(KindShip kindShip)
         {

@@ -78,7 +78,7 @@ namespace ELMS.Forms.Customer
         private void LoadDetails()
         {
 
-            DataTable dt = CustomerCardDAL.SelectViewData(CustomerID);
+            DataTable dt = CustomerCardDAL.SelectViewDataByID(CardID);
 
             if (dt.Rows.Count > 0)
             {

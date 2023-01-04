@@ -273,5 +273,77 @@ namespace ELMS.Class.DataAccess
             command.ExecuteNonQuery();
             command.Dispose();
         }
+
+       
+        public static Int32 InsertRelativePhone(OracleTransaction tran, Phone phone)
+        {
+            Int32 id = 0;
+            OracleCommand command = tran.Connection.CreateCommand();
+            command.CommandText = $@"INSERT INTO ELMS_USER_TEMP.PHONE_TEMP(OWNER_TYPE,
+                                                                                           OWNER_ID,
+                                                                                           PHONE_DESCRIPTION_ID,
+                                                                                           PHONE_PREFIX_ID,
+                                                                                           PHONE_NUMBER,
+                                                                                           IS_SEND_SMS,
+                                                                                           IS_CHANGE,
+                                                                                           USED_USER_ID)
+                                                     VALUES(:inOWNERTYPE,
+                                                            :inOWNERID,
+                                                            :inPHONEDESCRIPTIONID,
+                                                            :inPHONEPREFIXID,
+                                                            :inPHONENUMBER,
+                                                            :inISSENDSMS,
+                                                            :inISCHANGE,
+                                                            :inUSEDUSERID) RETURNING ID INTO :outID";
+            command.Parameters.Add(new OracleParameter("inOWNERTYPE", phone.OWNER_TYPE));
+            command.Parameters.Add(new OracleParameter("inOWNERID", phone.OWNER_ID));
+            command.Parameters.Add(new OracleParameter("inPHONEDESCRIPTIONID", phone.PHONE_DESCRIPTION_ID));
+            command.Parameters.Add(new OracleParameter("inPHONEPREFIXID", phone.PHONE_PREFIX_ID));
+            command.Parameters.Add(new OracleParameter("inPHONENUMBER", phone.PHONE_NUMBER));
+            command.Parameters.Add(new OracleParameter("inISSENDSMS", phone.IS_SEND_SMS));
+            command.Parameters.Add(new OracleParameter("inISCHANGE", phone.IS_CHANGE));
+            command.Parameters.Add(new OracleParameter("inUSEDUSERID", GlobalVariables.V_UserID));
+            command.Parameters.Add(new OracleParameter("outID", OracleDbType.Int32, ParameterDirection.Output));
+
+            if (tran != null)
+                command.Transaction = tran;
+
+            command.ExecuteNonQuery();
+            id = Convert.ToInt32(command.Parameters["outID"].Value.ToString());
+
+            command.Dispose();
+
+            return id;
+        }
+
+
+        public static void UpdateRelativePhone(OracleTransaction tran, Phone phone)
+        {
+            OracleCommand command = tran.Connection.CreateCommand();
+            command.CommandText = $@"UPDATE ELMS_USER_TEMP.PHONE_TEMP SET OWNER_TYPE = :inOWNERTYPE,
+                                                                                           OWNER_ID = :inOWNERID,
+                                                                                           PHONE_DESCRIPTION_ID = :inPHONEDESCRIPTIONID,
+                                                                                           PHONE_PREFIX_ID = :inPHONEPREFIXID,
+                                                                                           PHONE_NUMBER = :inPHONENUMBER,
+                                                                                           IS_SEND_SMS = :inISSENDSMS,
+                                                                                           IS_CHANGE = :inISCHANGE,
+                                                                                           USED_USER_ID = :inUSEDUSERID
+                                                            WHERE ID = :inID";
+            command.Parameters.Add(new OracleParameter("inOWNERTYPE", phone.OWNER_TYPE));
+            command.Parameters.Add(new OracleParameter("inOWNERID", phone.OWNER_ID));
+            command.Parameters.Add(new OracleParameter("inPHONEDESCRIPTIONID", phone.PHONE_DESCRIPTION_ID));
+            command.Parameters.Add(new OracleParameter("inPHONEPREFIXID", phone.PHONE_PREFIX_ID));
+            command.Parameters.Add(new OracleParameter("inPHONENUMBER", phone.PHONE_NUMBER));
+            command.Parameters.Add(new OracleParameter("inISSENDSMS", phone.IS_SEND_SMS));
+            command.Parameters.Add(new OracleParameter("inISCHANGE", phone.IS_CHANGE));
+            command.Parameters.Add(new OracleParameter("inUSEDUSERID", GlobalVariables.V_UserID));
+            command.Parameters.Add(new OracleParameter("inID", phone.ID));
+
+            if (tran != null)
+                command.Transaction = tran;
+
+            command.ExecuteNonQuery();
+            command.Dispose();
+        }
     }
 }

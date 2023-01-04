@@ -30,37 +30,16 @@ namespace ELMS.Forms.Order
         public event DoEvent RefreshDataGridView;
 
         int productID = 0;
-        decimal countID = 1, priceID = 1;
         bool CurrentStatus = false, Used = false, isClickBOK = false;
         int UsedUserID = -1;
-
-        
 
         private void FCardAddEdit_Load(object sender, EventArgs e)
         {
             GlobalProcedures.FillLookUpEdit(ProductLookUp, ProductDAL.SelectProductByID(null).Tables[0]);
             if (TransactionType == TransactionTypeEnum.Update)
             {
-                this.Text = "Sifarişlərin düzəliş edilməsi";
-                GlobalProcedures.Lock_or_UnLock_UserID("ELMS_USER.PRODUCT_CARDS", GlobalVariables.V_UserID, "WHERE ID = " + CardID + " AND USED_USER_ID = -1");
-               
-                LoadDetails();
-                Used = (UsedUserID > 0);
-
-                if (Used)
-                {
-                    if (GlobalVariables.V_UserID != UsedUserID)
-                    {
-                        string used_user_name = GlobalVariables.lstUsers.Find(u => u.ID == UsedUserID).FULL_NAME;
-                        GlobalProcedures.ShowWarningMessage("Seçilmiş sifarişlərə hal-hazırda " + used_user_name + " tərəfindən düzəliş edilir. Onun məlumatları dəyişdirilə bilməz. Siz yalnız məlumatlara baxa bilərsiniz.");
-                        CurrentStatus = true;
-                    }
-                    else
-                        CurrentStatus = false;
-                }
-                else
-                    CurrentStatus = false;
-                ComponentEnabled(CurrentStatus);
+                this.Text = "Sifarişlərin düzəliş edilməsi";                
+                LoadDetails();                
             }
             else
                 this.Text = "Sifarişin əlavə edilməsi";
@@ -68,14 +47,13 @@ namespace ELMS.Forms.Order
 
         private void LoadDetails()
         {
-
             DataTable dt = ProductCardDAL.SelectViewData(OrderID);
 
             if (dt.Rows.Count > 0)
             {
-                IMEIText.EditValue = dt.Rows[0]["IMEI"];
-                PriceCalcEdit.EditValue = Convert.ToDecimal(dt.Rows[0]["PRICE"].ToString());
-                CountCalcEdit.EditValue = Convert.ToDecimal(dt.Rows[0]["PRODUCT_COUNT"].ToString());
+                NoteText.EditValue = dt.Rows[0]["IMEI"];
+                PriceValue.EditValue = Convert.ToDecimal(dt.Rows[0]["PRICE"].ToString());
+                CountValue.EditValue = Convert.ToDecimal(dt.Rows[0]["PRODUCT_COUNT"].ToString());
                 GlobalProcedures.LookUpEditValue(ProductLookUp, dt.Rows[0]["PRODUCT_NAME"].ToString());
                 UsedUserID = Convert.ToInt16(dt.Rows[0]["USED_USER_ID"]);
             }
@@ -83,18 +61,18 @@ namespace ELMS.Forms.Order
 
         private void ComponentEnabled(bool status)
         {
-                IMEIText.Enabled =
-                BOK.Visible = !status;
+            NoteText.Enabled =
+            BOK.Visible = !status;
         }
 
         private void InsertDetail()
         {
             ProductCard productCard = new ProductCard
             {
-                PRICE = PriceCalcEdit.Value,
-                PRODUCT_COUNT = CountCalcEdit.Value,
-                TOTAL = PriceCalcEdit.Value * CountCalcEdit.Value,
-                IMEI = IMEIText.Text.Trim(),
+                PRICE = PriceValue.Value,
+                PRODUCT_COUNT = CountValue.Value,
+                TOTAL = TotalPriceValue.Value,
+                IMEI = NoteText.Text.Trim(),
                 ORDER_TAB_ID = OrderID.Value,
                 PRODUCT_ID = productID
             };
@@ -107,10 +85,10 @@ namespace ELMS.Forms.Order
 
             ProductCard productCard = new ProductCard
             {
-                PRICE = PriceCalcEdit.Value,
-                PRODUCT_COUNT = CountCalcEdit.Value,
-                TOTAL = PriceCalcEdit.Value * CountCalcEdit.Value,
-                IMEI = IMEIText.Text.Trim(),
+                PRICE = PriceValue.Value,
+                PRODUCT_COUNT = CountValue.Value,
+                TOTAL = PriceValue.Value * CountValue.Value,
+                IMEI = NoteText.Text.Trim(),
                 ORDER_TAB_ID = OrderID.Value,
                 PRODUCT_ID = productID,
                 ID = CardID.Value,
@@ -120,7 +98,7 @@ namespace ELMS.Forms.Order
 
             ProductCardDAL.UpdateProductCard(productCard);
         }
-        
+
         private void FCardAddEdit_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (!isClickBOK && TransactionType == TransactionTypeEnum.Update)
@@ -149,19 +127,28 @@ namespace ELMS.Forms.Order
 
         private void ProductLookUp_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
-                if (e.Button.Index == 1)
-                    LoadDictionaries(TransactionTypeEnum.Update, 0);
-            
+            if (e.Button.Index == 1)
+                LoadDictionaries(TransactionTypeEnum.Update, 0);
+
+        }
+
+        void CalcTotalPrice()
+        {
+            TotalPriceValue.EditValue = CountValue.Value * PriceValue.Value;
+        }
+
+        private void CountValue_EditValueChanged(object sender, EventArgs e)
+        {
+            CalcTotalPrice();
         }
 
         private void ProductLookUp_EditValueChanged(object sender, EventArgs e)
         {
-                productID = GlobalFunctions.GetLookUpID(sender);
+            productID = GlobalFunctions.GetLookUpID(sender);
         }
-        
+
         private bool ControlCardDetails()
         {
-
             bool b = false;
 
             if (productID == 0)
@@ -170,6 +157,28 @@ namespace ELMS.Forms.Order
                 GlobalProcedures.ShowErrorMessage("Sifariş edilən məhsul seçilməyib.");
                 ProductLookUp.Focus();
                 ProductLookUp.BackColor = GlobalFunctions.ElementColor();
+                return false;
+            }
+            else
+                b = true;
+
+            if (CountValue.Value <= 0)
+            {
+                CountValue.BackColor = Color.Red;
+                GlobalProcedures.ShowErrorMessage("Say daxil edilməyib.");
+                CountValue.Focus();
+                CountValue.BackColor = GlobalFunctions.ElementColor();
+                return false;
+            }
+            else
+                b = true;
+
+            if (PriceValue.Value <= 0)
+            {
+                PriceValue.BackColor = Color.Red;
+                GlobalProcedures.ShowErrorMessage("Qiymət daxil edilməyib.");
+                PriceValue.Focus();
+                PriceValue.BackColor = GlobalFunctions.ElementColor();
                 return false;
             }
             else
@@ -189,6 +198,5 @@ namespace ELMS.Forms.Order
                 this.Close();
             }
         }
-        
     }
 }

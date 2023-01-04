@@ -14,6 +14,8 @@ using ELMS.Class;
 using ELMS.Class.Tables;
 using DevExpress.XtraGrid.Views.Grid;
 using Oracle.ManagedDataAccess.Client;
+using DevExpress.Data;
+using DevExpress.XtraGrid;
 
 namespace ELMS.Forms.Order
 {
@@ -31,13 +33,11 @@ namespace ELMS.Forms.Order
 
         int UsedUserID = -1, orderID,
             documentID, topindex,
-            old_row_id, customerID,
-            phoneID, 
-            workID,
-            countryID = 0,
+            old_row_id, customerID,            
             branchID = 0,
             sourceID = 0,
             timeID = 0;
+        decimal calcTotalPrice = 0;
         string OrderImage, pinCode;
         string UserImagePath = GlobalVariables.V_ExecutingFolder + "\\TEMP\\Images";
 
@@ -49,30 +49,31 @@ namespace ELMS.Forms.Order
 
         private void RefreshDocumentBarButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            LoadDocument();
+            LoadProduct();
         }
 
         private void NewDocumentBarButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             LoadFDocumentAddEdit(TransactionTypeEnum.Insert, null);
         }
-        
+
         private void EditDocumentBarButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             UpdateDocument();
         }
 
-        private void LoadDocument()
+        private void LoadProduct()
         {
             ProductGridControl.DataSource = ProductCardDAL.SelectViewData(null);
             DataTable dt = ProductCardDAL.SelectTotal(null);
 
-            if (dt.Rows.Count > 0)
-            {
-                OrderAmountValue.EditValue = Convert.ToDecimal(dt.Rows[0]["ORDER_AMOUNT"].ToString());
-            }
+            OrderAmountValue.EditValue = calcTotalPrice;
+            //if (dt.Rows.Count > 0)
+            //{
+            //    OrderAmountValue.EditValue = Convert.ToDecimal(dt.Rows[0]["ORDER_AMOUNT"].ToString());
+            //}
         }
-        
+
         private void LoadFDocumentAddEdit(TransactionTypeEnum transactionType, int? id)
         {
             topindex = ProductGridView.TopRowIndex;
@@ -80,14 +81,14 @@ namespace ELMS.Forms.Order
             FProductCardAddEdit fd = new FProductCardAddEdit()
             {
                 TransactionType = transactionType,
-                OrderID = OrderID, 
+                OrderID = OrderID,
                 CardID = id
             };
-            fd.RefreshDataGridView += new FProductCardAddEdit.DoEvent(LoadDocument);
+            fd.RefreshDataGridView += new FProductCardAddEdit.DoEvent(LoadProduct);
             fd.ShowDialog();
             ProductGridView.TopRowIndex = topindex;
             ProductGridView.FocusedRowHandle = old_row_id;
-        }        
+        }
 
         private void DocumentGridView_DoubleClick(object sender, EventArgs e)
         {
@@ -99,7 +100,7 @@ namespace ELMS.Forms.Order
         {
             LoadFDocumentAddEdit(TransactionTypeEnum.Update, documentID);
         }
-        
+
         private void LoadImage()
         {
             if (CustomerID.HasValue)
@@ -115,7 +116,7 @@ namespace ELMS.Forms.Order
 
         private void LoadOrderDetails()
         {
-            DataTable dt =OrderDAL.SelectViewData(OrderID);
+            DataTable dt = OrderDAL.SelectViewData(OrderID);
 
             if (dt.Rows.Count > 0)
             {
@@ -138,7 +139,7 @@ namespace ELMS.Forms.Order
             if (TransactionType == TransactionTypeEnum.Insert)
                 return;
             GlobalProcedures.ExecuteProcedureWithUser("ELMS_USER_TEMP.PROC_INSERT_PRODUCT_CARDS_TEMP", "P_ORDER_TAB_ID", OrderID, "Müştərinin məlumatları temp cədvələ daxil edilmədi.");
-            
+
         }
         private void ComponentEnabled(bool status)
         {
@@ -147,7 +148,7 @@ namespace ELMS.Forms.Order
                 BOK.Visible = !status;
         }
 
-        private void DocumentGridView_FocusedRowObjectChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowObjectChangedEventArgs e)
+        private void ProductGridView_FocusedRowObjectChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowObjectChangedEventArgs e)
         {
             DataRow row = ProductGridView.GetFocusedDataRow();
             if (row != null)
@@ -170,7 +171,7 @@ namespace ELMS.Forms.Order
 
             OrderID = OrderDAL.InsertOrder(tran, order);
         }
-        
+
         private void UpdateOrder(OracleTransaction tran)
         {
             isClickBOK = true;
@@ -195,23 +196,23 @@ namespace ELMS.Forms.Order
         {
             if (ControlCardDetails())
             {
-            GlobalFunctions.RunInOneTransaction<int>(tran =>
-            {
-            
-                if (TransactionType == TransactionTypeEnum.Insert)
+                GlobalFunctions.RunInOneTransaction<int>(tran =>
                 {
-                    InsertOrder(tran);
-                }
-                else
-                {
-                    UpdateOrder(tran);
-                }
-                GlobalProcedures.ExecuteProcedureWithParametr(tran, "ELMS_USER.PROC_INSERT_PRODUCT_CARDS", "P_CUSTOMER_ID", OrderID.Value);
-                
 
-                return 1;
-            }, TransactionType == TransactionTypeEnum.Insert ? "Müştərinin məlumatları bazaya daxil edilmədi." : "Müştərinin məlumatları bazada dəyişdirilmədi.");
-            this.Close();
+                    if (TransactionType == TransactionTypeEnum.Insert)
+                    {
+                        InsertOrder(tran);
+                    }
+                    else
+                    {
+                        UpdateOrder(tran);
+                    }
+                    GlobalProcedures.ExecuteProcedureWithParametr(tran, "ELMS_USER.PROC_INSERT_PRODUCT_CARDS", "P_CUSTOMER_ID", OrderID.Value);
+
+
+                    return 1;
+                }, TransactionType == TransactionTypeEnum.Insert ? "Müştərinin məlumatları bazaya daxil edilmədi." : "Müştərinin məlumatları bazada dəyişdirilmədi.");
+                this.Close();
             }
         }
 
@@ -253,6 +254,24 @@ namespace ELMS.Forms.Order
             fc.ShowDialog();
         }
 
+        private void FinCodeSearch_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            if (e.Button.Index == 1)
+                LoadFCustomerAddEdit(TransactionTypeEnum.Insert, null);
+            else if (e.Button.Index == 2)
+                LoadFCustomerAddEdit(TransactionTypeEnum.Update, CustomerID);
+        }
+
+        void CalcTotalAmount()
+        {
+            TotalOrderAmountValue.EditValue = OrderAmountValue.Value - FirstPaymentValue.Value;
+        }
+
+        private void FirstPaymentValue_EditValueChanged(object sender, EventArgs e)
+        {
+            CalcTotalAmount();
+        }
+
         void DeleteDocument()
         {
             var rows = GlobalFunctions.GridviewSelectedRow(ProductGridView);
@@ -267,37 +286,60 @@ namespace ELMS.Forms.Order
                 for (int i = 0; i < rows.Count; i++)
                 {
                     DataRow row = rows[i] as DataRow;
-                   ProductCardDAL.DeleteProductCard(Convert.ToInt32(row["ID"]), OrderID.Value);
+                    ProductCardDAL.DeleteProductCard(Convert.ToInt32(row["ID"]), OrderID.Value);
                 }
         }
 
-        private void DeleteDocumentBarButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void DeleteProductBarButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             DeleteDocument();
-            LoadDocument();
+            LoadProduct();
         }
 
-        
-        private void DocumentGridView_CustomUnboundColumnData(object sender, DevExpress.XtraGrid.Views.Base.CustomColumnDataEventArgs e)
+
+        private void ProductGridView_CustomUnboundColumnData(object sender, DevExpress.XtraGrid.Views.Base.CustomColumnDataEventArgs e)
         {
-            GlobalProcedures.GenerateAutoRowNumber(sender, Document_SS, e);
+            GlobalProcedures.GenerateAutoRowNumber(sender, Product_SS, e);
         }
-       
 
+        private void ProductGridView_CustomSummaryCalculate(object sender, DevExpress.Data.CustomSummaryEventArgs e)
+        {
+            GridView currentView = sender as GridView;
+            if (currentView.RowCount == 0)
+                return;
+
+            if (e.SummaryProcess == CustomSummaryProcess.Start)
+            {                
+                if (((GridSummaryItem)e.Item).FieldName.CompareTo("Product_TotalPrice") == 0) //qaliq
+                    calcTotalPrice = 0;
+            }
+
+            if (e.SummaryProcess == CustomSummaryProcess.Calculate)
+            {
+                if (((GridSummaryItem)e.Item).FieldName.CompareTo("Product_TotalPrice") == 0)
+                    calcTotalPrice += Convert.ToDecimal(e.FieldValue);
+            }
+
+            if (e.SummaryProcess == CustomSummaryProcess.Finalize)
+            {
+                if (((GridSummaryItem)e.Item).FieldName.CompareTo("Product_TotalPrice") == 0) //verilen              
+                    e.TotalValue = calcTotalPrice;
+            }
+        }
 
         private void BranchLookUp_EditValueChanged(object sender, EventArgs e)
         {
-           branchID = GlobalFunctions.GetLookUpID(sender);
+            branchID = GlobalFunctions.GetLookUpID(sender);
         }
 
         private void NewCustomerButton_Click(object sender, EventArgs e)
         {
-            LoadFCustomerAddEdit(TransactionTypeEnum.Insert, null);
+
         }
 
         private void LoadFCustomerAddEdit(TransactionTypeEnum transaction, int? id)
         {
-            
+
             Customer.FCustomerAddEdit fc = new Customer.FCustomerAddEdit()
             {
                 TransactionType = transaction,
@@ -309,7 +351,7 @@ namespace ELMS.Forms.Order
 
         private void EditCustomerLabel_Click(object sender, EventArgs e)
         {
-            LoadFCustomerAddEdit(TransactionTypeEnum.Update, CustomerID);
+
         }
 
         private void FinCodeSearch_Click(object sender, EventArgs e)
@@ -322,11 +364,10 @@ namespace ELMS.Forms.Order
             if (e.Button.Index == 1)
                 LoadDictionaries(TransactionTypeEnum.Update, 1);
         }
-        
+
         private void FinCodeSearch_EditValueChanged(object sender, EventArgs e)
         {
-            pinCode = ("0"+FinCodeSearch.Text.Trim());
-            EditCustomerLabel.Visible = false;
+            pinCode = ("0" + FinCodeSearch.Text.Trim());
             LoadCustomerDetails();
         }
 
@@ -335,15 +376,14 @@ namespace ELMS.Forms.Order
             DataTable dt = CustomerDAL.SelectCustomerData(pinCode);
             if (FinCodeSearch.Text.Length != 7)
             {
-                    NameText.Text =
+                NameText.Text =
                     ActualAddressText.Text =
-                    PhoneAllText.Text  = null;
-                
+                    PhoneAllText.Text = null;
                 CustomerID = 0;
-
                 PictureEdit.Image = null;
             }
-                if (dt.Rows.Count > 0)
+
+            if (dt.Rows.Count > 0)
             {
                 NameText.EditValue = dt.Rows[0]["FULL_NAME"];
                 ActualAddressText.EditValue = dt.Rows[0]["ADDRESS"];
@@ -359,16 +399,15 @@ namespace ELMS.Forms.Order
                 // prints result
                 for (int i = 1; i < result.Length; i++)
                 {
-                   fin = fin + (result[i] + "").ToString();
+                    fin = fin + (result[i] + "").ToString();
                 }
                 FinCodeSearch.EditValue = fin;
-                EditCustomerLabel.Visible = true;
 
                 LoadImage();
             }
         }
 
-            private void TimeLookUp_EditValueChanged(object sender, EventArgs e)
+        private void TimeLookUp_EditValueChanged(object sender, EventArgs e)
         {
             timeID = GlobalFunctions.GetLookUpID(sender);
         }
@@ -410,9 +449,12 @@ namespace ELMS.Forms.Order
                 ComponentEnabled(CurrentStatus);
             }
             else
+            {
                 this.Text = "Müraciətin əlavə edilməsi";
+                OrderDate.DateTime = DateTime.Today;
+            }
             InsertTemps();
-            LoadDocument();
+            LoadProduct();
             //LoadPhone();
         }
 

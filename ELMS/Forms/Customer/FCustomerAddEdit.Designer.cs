@@ -129,8 +129,8 @@
             this.CustomerWork_ID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.CustomerWork_PlaceName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.CustomerWork_Position = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.CustomerWork_StartDate = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.CustomerWork_EndDate = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.CustomerWork_Salary = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.CustomerWork_Note = new DevExpress.XtraGrid.Columns.GridColumn();
             this.WorkBarManager = new DevExpress.XtraBars.BarManager(this.components);
             this.bar3 = new DevExpress.XtraBars.Bar();
             this.NewWorkBarButton = new DevExpress.XtraBars.BarButtonItem();
@@ -642,6 +642,9 @@
             this.DocumentGridView.Appearance.FooterPanel.Options.UseTextOptions = true;
             this.DocumentGridView.Appearance.FooterPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.DocumentGridView.Appearance.FooterPanel.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.DocumentGridView.Appearance.HeaderPanel.Options.UseTextOptions = true;
+            this.DocumentGridView.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.DocumentGridView.Appearance.HeaderPanel.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.DocumentGridView.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.Document_SS,
             this.Document_DocumentGroup,
@@ -680,6 +683,8 @@
             this.Document_SS.FieldName = "Document_SS";
             this.Document_SS.Name = "Document_SS";
             this.Document_SS.OptionsColumn.FixedWidth = true;
+            this.Document_SS.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Count, "Document_SS", "{0}")});
             this.Document_SS.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
             this.Document_SS.Visible = true;
             this.Document_SS.VisibleIndex = 0;
@@ -935,6 +940,12 @@
             // 
             // PhoneGridView
             // 
+            this.PhoneGridView.Appearance.FooterPanel.Options.UseTextOptions = true;
+            this.PhoneGridView.Appearance.FooterPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.PhoneGridView.Appearance.FooterPanel.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.PhoneGridView.Appearance.HeaderPanel.Options.UseTextOptions = true;
+            this.PhoneGridView.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.PhoneGridView.Appearance.HeaderPanel.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.PhoneGridView.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.CustomerPhone_SS,
             this.CustomerPhone_ID,
@@ -957,6 +968,7 @@
             this.PhoneGridView.OptionsSelection.ShowCheckBoxSelectorInColumnHeader = DevExpress.Utils.DefaultBoolean.True;
             this.PhoneGridView.OptionsSelection.ShowCheckBoxSelectorInGroupRow = DevExpress.Utils.DefaultBoolean.True;
             this.PhoneGridView.OptionsView.EnableAppearanceEvenRow = true;
+            this.PhoneGridView.OptionsView.ShowFooter = true;
             this.PhoneGridView.OptionsView.ShowGroupPanel = false;
             this.PhoneGridView.OptionsView.ShowIndicator = false;
             this.PhoneGridView.PaintStyleName = "Skin";
@@ -975,6 +987,8 @@
             this.CustomerPhone_SS.FieldName = "CustomerPhone_SS";
             this.CustomerPhone_SS.Name = "CustomerPhone_SS";
             this.CustomerPhone_SS.OptionsColumn.FixedWidth = true;
+            this.CustomerPhone_SS.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Count, "CustomerPhone_SS", "{0}")});
             this.CustomerPhone_SS.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
             this.CustomerPhone_SS.Visible = true;
             this.CustomerPhone_SS.VisibleIndex = 1;
@@ -1162,7 +1176,6 @@
             this.WorkGridControl.TabIndex = 6;
             this.WorkGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.WorkGridView});
-            this.WorkGridControl.Click += new System.EventHandler(this.WorkGridControl_Click);
             // 
             // WorkGridView
             // 
@@ -1174,8 +1187,8 @@
             this.CustomerWork_ID,
             this.CustomerWork_PlaceName,
             this.CustomerWork_Position,
-            this.CustomerWork_StartDate,
-            this.CustomerWork_EndDate});
+            this.CustomerWork_Salary,
+            this.CustomerWork_Note});
             this.WorkGridView.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFullFocus;
             this.WorkGridView.GridControl = this.WorkGridControl;
             this.WorkGridView.Name = "WorkGridView";
@@ -1228,29 +1241,29 @@
             this.CustomerWork_Position.Visible = true;
             this.CustomerWork_Position.VisibleIndex = 2;
             // 
-            // CustomerWork_StartDate
+            // CustomerWork_Salary
             // 
-            this.CustomerWork_StartDate.AppearanceCell.Options.UseTextOptions = true;
-            this.CustomerWork_StartDate.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.CustomerWork_StartDate.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.CustomerWork_StartDate.Caption = "Başlama tarixi";
-            this.CustomerWork_StartDate.FieldName = "START_DATE";
-            this.CustomerWork_StartDate.Name = "CustomerWork_StartDate";
-            this.CustomerWork_StartDate.OptionsColumn.FixedWidth = true;
-            this.CustomerWork_StartDate.Visible = true;
-            this.CustomerWork_StartDate.VisibleIndex = 3;
+            this.CustomerWork_Salary.AppearanceCell.Options.UseTextOptions = true;
+            this.CustomerWork_Salary.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.CustomerWork_Salary.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.CustomerWork_Salary.Caption = "Əmək haqqı";
+            this.CustomerWork_Salary.FieldName = "SALARY";
+            this.CustomerWork_Salary.Name = "CustomerWork_Salary";
+            this.CustomerWork_Salary.OptionsColumn.FixedWidth = true;
+            this.CustomerWork_Salary.Visible = true;
+            this.CustomerWork_Salary.VisibleIndex = 3;
             // 
-            // CustomerWork_EndDate
+            // CustomerWork_Note
             // 
-            this.CustomerWork_EndDate.AppearanceCell.Options.UseTextOptions = true;
-            this.CustomerWork_EndDate.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.CustomerWork_EndDate.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.CustomerWork_EndDate.Caption = "Bitmə tarixi";
-            this.CustomerWork_EndDate.FieldName = "END_DATE";
-            this.CustomerWork_EndDate.Name = "CustomerWork_EndDate";
-            this.CustomerWork_EndDate.OptionsColumn.FixedWidth = true;
-            this.CustomerWork_EndDate.Visible = true;
-            this.CustomerWork_EndDate.VisibleIndex = 4;
+            this.CustomerWork_Note.AppearanceCell.Options.UseTextOptions = true;
+            this.CustomerWork_Note.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.CustomerWork_Note.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.CustomerWork_Note.Caption = "Qeyd";
+            this.CustomerWork_Note.FieldName = "NOTE";
+            this.CustomerWork_Note.Name = "CustomerWork_Note";
+            this.CustomerWork_Note.OptionsColumn.FixedWidth = true;
+            this.CustomerWork_Note.Visible = true;
+            this.CustomerWork_Note.VisibleIndex = 4;
             // 
             // WorkBarManager
             // 
@@ -1388,6 +1401,7 @@
             this.RelativeGridView.OptionsView.ShowGroupPanel = false;
             this.RelativeGridView.OptionsView.ShowIndicator = false;
             this.RelativeGridView.PaintStyleName = "Skin";
+            this.RelativeGridView.FocusedRowObjectChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowObjectChangedEventHandler(this.RelativeGridView_FocusedRowObjectChanged);
             this.RelativeGridView.CustomUnboundColumnData += new DevExpress.XtraGrid.Views.Base.CustomColumnDataEventHandler(this.RelativeGridView_CustomUnboundColumnData);
             // 
             // RelativeCard_SS
@@ -1692,6 +1706,7 @@
             this.NewRelativeBarButton.ImageOptions.Image = global::ELMS.Properties.Resources.plus_16;
             this.NewRelativeBarButton.Name = "NewRelativeBarButton";
             this.NewRelativeBarButton.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.NewRelativeBarButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.NewRelativeBarButton_ItemClick);
             // 
             // EditRelativeBarButton
             // 
@@ -1700,6 +1715,7 @@
             this.EditRelativeBarButton.ImageOptions.Image = global::ELMS.Properties.Resources.edit_16;
             this.EditRelativeBarButton.Name = "EditRelativeBarButton";
             this.EditRelativeBarButton.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.EditRelativeBarButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.EditRelativeBarButton_ItemClick);
             // 
             // DeleteRelativeBarButton
             // 
@@ -1709,6 +1725,7 @@
             this.DeleteRelativeBarButton.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("DeleteRelativeBarButton.ImageOptions.LargeImage")));
             this.DeleteRelativeBarButton.Name = "DeleteRelativeBarButton";
             this.DeleteRelativeBarButton.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.DeleteRelativeBarButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.DeleteRelativeBarButton_ItemClick);
             // 
             // RefreshRelativeBarButton
             // 
@@ -1718,6 +1735,7 @@
             this.RefreshRelativeBarButton.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("RefreshRelativeBarButton.ImageOptions.LargeImage")));
             this.RefreshRelativeBarButton.Name = "RefreshRelativeBarButton";
             this.RefreshRelativeBarButton.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.RefreshRelativeBarButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.RefreshRelativeBarButton_ItemClick);
             // 
             // barDockControl19
             // 
@@ -1940,8 +1958,8 @@
         private DevExpress.XtraGrid.Columns.GridColumn CustomerWork_ID;
         private DevExpress.XtraGrid.Columns.GridColumn CustomerWork_PlaceName;
         private DevExpress.XtraGrid.Columns.GridColumn CustomerWork_Position;
-        private DevExpress.XtraGrid.Columns.GridColumn CustomerWork_StartDate;
-        private DevExpress.XtraGrid.Columns.GridColumn CustomerWork_EndDate;
+        private DevExpress.XtraGrid.Columns.GridColumn CustomerWork_Salary;
+        private DevExpress.XtraGrid.Columns.GridColumn CustomerWork_Note;
         private DevExpress.XtraBars.BarDockControl barDockControl9;
         private DevExpress.XtraBars.BarDockControl barDockControl8;
         private DevExpress.XtraBars.BarDockControl barDockControl10;

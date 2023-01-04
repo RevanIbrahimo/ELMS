@@ -48,6 +48,37 @@ namespace ELMS.Class.DataAccess
         }
 
 
+        public static DataSet SelectProfession(int? issuingID)
+        {
+            string sql = null;
+            if (issuingID == null)
+                sql = $@"SELECT C.ID,
+                                 C.NAME
+                            FROM ELMS_USER.PROFESSION C
+                            ORDER BY C.ORDER_ID";
+            else
+                sql = $@"SELECT C.ID,
+                                 C.NAME
+                            FROM ELMS_USER.PROFESSION C 
+                           WHERE C.ID = {issuingID}";
+
+            try
+            {
+                using (OracleDataAdapter adapter = new OracleDataAdapter(sql, GlobalFunctions.GetConnectionString()))
+                {
+                    DataSet dsAdapter = new DataSet();
+                    adapter.Fill(dsAdapter);
+                    return dsAdapter;
+                }
+            }
+            catch (Exception exx)
+            {
+                GlobalProcedures.LogWrite("Orqanlar açılmadı.", sql, GlobalVariables.V_UserName, "ProfessionDAL", "SelectProfessionByID", exx);
+                return null;
+            }
+        }
+
+
         public static void InsertProfession(Profession profession)
         {
             string commandSql = null;
