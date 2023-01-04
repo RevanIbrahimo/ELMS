@@ -3,8 +3,8 @@
     "",
     "\\ELMS",
     "\\ELMS\\Forms",
-    "\\ELMS\\Forms\\Order"
+    "\\ELMS\\Forms\\Customer"
   ],
-  "SelectedNode": "\\ELMS\\Forms\\Order",
+  "SelectedNode": "\\ELMS\\Forms\\Customer",
   "PreviewInSolutionExplorer": false
 }

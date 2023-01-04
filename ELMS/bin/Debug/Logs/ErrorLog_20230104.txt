@@ -1,0 +1,27 @@
+
+Log Entry : 12:24:32 PM Wednesday, January 4, 2023
+  
+   UserName =  SuperAdmin
+   FormName =  GlobalProcedures
+   ProcedureName =  ExecuteProcedureWithUser/ELMS_USER_TEMP.PROC_INSERT_PRODUCT_CARDS_TEMP
+  
+   ShowMessage: Müştərinin məlumatları temp cədvələ daxil edilmədi.
+   Exception Message: ORA-06550: line 1, column 22:
+PLS-00905: object ELMS_USER_TEMP.PROC_INSERT_PRODUCT_CARDS_TEMP is invalid
+ORA-06550: line 1, column 7:
+PL/SQL: Statement ignored
+   SQL Text      :  ELMS_USER_TEMP.PROC_INSERT_PRODUCT_CARDS_TEMP
+-------------------------------------------------
+
+Log Entry : 12:30:41 PM Wednesday, January 4, 2023
+  
+   UserName =  SuperAdmin
+   FormName =  GlobalProcedures
+   ProcedureName =  ExecuteProcedureWithUser/ELMS_USER_TEMP.PROC_INSERT_PRODUCT_CARDS_TEMP
+  
+   ShowMessage: Müştərinin məlumatları temp cədvələ daxil edilmədi.
+   Exception Message: ORA-01400: cannot insert NULL into ("ELMS_USER_TEMP"."PRODUCT_CARDS_TEMP"."IMEI")
+ORA-06512: at "ELMS_USER_TEMP.PROC_INSERT_PRODUCT_CARDS_TEMP", line 15
+ORA-06512: at line 1
+   SQL Text      :  ELMS_USER_TEMP.PROC_INSERT_PRODUCT_CARDS_TEMP
+-------------------------------------------------

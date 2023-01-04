@@ -67,7 +67,7 @@ namespace ELMS.Forms.Order
             ProductGridControl.DataSource = ProductCardDAL.SelectViewData(null);
             DataTable dt = ProductCardDAL.SelectTotal(null);
 
-            OrderAmountValue.EditValue = calcTotalPrice;
+            //OrderAmountValue.EditValue = calcTotalPrice;
             //if (dt.Rows.Count > 0)
             //{
             //    OrderAmountValue.EditValue = Convert.ToDecimal(dt.Rows[0]["ORDER_AMOUNT"].ToString());
@@ -387,6 +387,7 @@ namespace ELMS.Forms.Order
             {
                 NameText.EditValue = dt.Rows[0]["FULL_NAME"];
                 ActualAddressText.EditValue = dt.Rows[0]["ADDRESS"];
+                RegisterAddressText.EditValue = dt.Rows[0]["REGISTERED_ADDRESS"];
                 PhoneAllText.EditValue = dt.Rows[0]["PHONE"];
                 UsedUserID = Convert.ToInt16(dt.Rows[0]["USED_USER_ID"]);
                 CustomerID = Convert.ToInt32(dt.Rows[0]["ID"]);

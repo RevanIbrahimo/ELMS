@@ -228,6 +228,38 @@
             this.BranchPopupMenu = new DevExpress.XtraBars.PopupMenu(this.components);
             this.ProductPopupMenu = new DevExpress.XtraBars.PopupMenu(this.components);
             this.ProfessionPopupMenu = new DevExpress.XtraBars.PopupMenu(this.components);
+            this.backstageViewClientControl9 = new DevExpress.XtraBars.Ribbon.BackstageViewClientControl();
+            this.TimesBackStageViewTab = new DevExpress.XtraBars.Ribbon.BackstageViewTabItem();
+            this.backstageViewClientControl10 = new DevExpress.XtraBars.Ribbon.BackstageViewClientControl();
+            this.SourceBackStageViewTab = new DevExpress.XtraBars.Ribbon.BackstageViewTabItem();
+            this.TimesStandaloneBarDockControl = new DevExpress.XtraBars.StandaloneBarDockControl();
+            this.TimesBarManager = new DevExpress.XtraBars.BarManager(this.components);
+            this.barDockControl29 = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControl30 = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControl31 = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControl32 = new DevExpress.XtraBars.BarDockControl();
+            this.bar5 = new DevExpress.XtraBars.Bar();
+            this.NewTimesBarButton = new DevExpress.XtraBars.BarButtonItem();
+            this.TimesPopupMenu = new DevExpress.XtraBars.PopupMenu(this.components);
+            this.EditTimesBarButton = new DevExpress.XtraBars.BarButtonItem();
+            this.DeleteTimesBarButton = new DevExpress.XtraBars.BarButtonItem();
+            this.RefreshTimesBarButton = new DevExpress.XtraBars.BarButtonItem();
+            this.UpTimesBarButton = new DevExpress.XtraBars.BarButtonItem();
+            this.DownTimesBarButton = new DevExpress.XtraBars.BarButtonItem();
+            this.SourceStandaloneBarDockControl = new DevExpress.XtraBars.StandaloneBarDockControl();
+            this.SourceBarManager = new DevExpress.XtraBars.BarManager(this.components);
+            this.barDockControl33 = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControl34 = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControl35 = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControl36 = new DevExpress.XtraBars.BarDockControl();
+            this.bar6 = new DevExpress.XtraBars.Bar();
+            this.SourcePopupMenu = new DevExpress.XtraBars.PopupMenu(this.components);
+            this.NewSourceBarButton = new DevExpress.XtraBars.BarButtonItem();
+            this.EditSourceBarButton = new DevExpress.XtraBars.BarButtonItem();
+            this.DeleteSourceBarButton = new DevExpress.XtraBars.BarButtonItem();
+            this.RefreshSourceBarButton = new DevExpress.XtraBars.BarButtonItem();
+            this.UpSourceBarButton = new DevExpress.XtraBars.BarButtonItem();
+            this.DownSourceBarButton = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.BackstageViewControl)).BeginInit();
             this.BackstageViewControl.SuspendLayout();
             this.backstageViewClientControl1.SuspendLayout();
@@ -270,6 +302,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.BranchPopupMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ProductPopupMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ProfessionPopupMenu)).BeginInit();
+            this.backstageViewClientControl9.SuspendLayout();
+            this.backstageViewClientControl10.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.TimesBarManager)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TimesPopupMenu)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SourceBarManager)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SourcePopupMenu)).BeginInit();
             this.SuspendLayout();
             // 
             // BackstageViewControl
@@ -282,6 +320,8 @@
             this.BackstageViewControl.Controls.Add(this.backstageViewClientControl6);
             this.BackstageViewControl.Controls.Add(this.backstageViewClientControl7);
             this.BackstageViewControl.Controls.Add(this.backstageViewClientControl8);
+            this.BackstageViewControl.Controls.Add(this.backstageViewClientControl9);
+            this.BackstageViewControl.Controls.Add(this.backstageViewClientControl10);
             this.BackstageViewControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.BackstageViewControl.Items.Add(this.DocumentTypeBackstageViewTab);
             this.BackstageViewControl.Items.Add(this.CountriesBackstageViewTab);
@@ -291,11 +331,13 @@
             this.BackstageViewControl.Items.Add(this.ProductBackStageViewTab);
             this.BackstageViewControl.Items.Add(this.BranchBackStageViewTab);
             this.BackstageViewControl.Items.Add(this.ProfessionBackStageViewTab);
+            this.BackstageViewControl.Items.Add(this.TimesBackStageViewTab);
+            this.BackstageViewControl.Items.Add(this.SourceBackStageViewTab);
             this.BackstageViewControl.Location = new System.Drawing.Point(0, 0);
             this.BackstageViewControl.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BackstageViewControl.Name = "BackstageViewControl";
-            this.BackstageViewControl.SelectedTab = this.DocumentTypeBackstageViewTab;
-            this.BackstageViewControl.SelectedTabIndex = 0;
+            this.BackstageViewControl.SelectedTab = this.SourceBackStageViewTab;
+            this.BackstageViewControl.SelectedTabIndex = 9;
             this.BackstageViewControl.Size = new System.Drawing.Size(1119, 585);
             this.BackstageViewControl.TabIndex = 0;
             this.BackstageViewControl.Text = "backstageViewControl1";
@@ -305,9 +347,9 @@
             // 
             this.backstageViewClientControl1.Controls.Add(this.DocumentTypeGridControl);
             this.backstageViewClientControl1.Controls.Add(this.DocumentTypeStandaloneBarDockControl);
-            this.backstageViewClientControl1.Location = new System.Drawing.Point(166, 0);
+            this.backstageViewClientControl1.Location = new System.Drawing.Point(188, 0);
             this.backstageViewClientControl1.Name = "backstageViewClientControl1";
-            this.backstageViewClientControl1.Size = new System.Drawing.Size(953, 585);
+            this.backstageViewClientControl1.Size = new System.Drawing.Size(931, 585);
             this.backstageViewClientControl1.TabIndex = 1;
             // 
             // DocumentTypeGridControl
@@ -317,7 +359,7 @@
             this.DocumentTypeGridControl.MainView = this.DocumentTypeGridView;
             this.DocumentTypeGridControl.MenuManager = this.DocumentTypeBarManager;
             this.DocumentTypeGridControl.Name = "DocumentTypeGridControl";
-            this.DocumentTypeGridControl.Size = new System.Drawing.Size(953, 556);
+            this.DocumentTypeGridControl.Size = new System.Drawing.Size(931, 556);
             this.DocumentTypeGridControl.TabIndex = 1;
             this.DocumentTypeGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.DocumentTypeGridView});
@@ -452,6 +494,8 @@
             this.DocumentTypeBarManager.DockControls.Add(this.ProductStandaloneBarDockControl);
             this.DocumentTypeBarManager.DockControls.Add(this.BranchStandaloneBarDockControl);
             this.DocumentTypeBarManager.DockControls.Add(this.ProfessionStandaloneBarDockControl);
+            this.DocumentTypeBarManager.DockControls.Add(this.TimesStandaloneBarDockControl);
+            this.DocumentTypeBarManager.DockControls.Add(this.SourceStandaloneBarDockControl);
             this.DocumentTypeBarManager.Form = this;
             this.DocumentTypeBarManager.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.NewDocumentTypeBarButton,
@@ -498,9 +542,11 @@
             this.DeleteBranchBarButton,
             this.RefreshBranchBarButton,
             this.UpBranchBarButton,
-            this.DownBranchBarButton});
+            this.DownBranchBarButton,
+            this.UpTimesBarButton,
+            this.DownTimesBarButton});
             this.DocumentTypeBarManager.MainMenu = this.DocumentTypeToolBar;
-            this.DocumentTypeBarManager.MaxItemId = 54;
+            this.DocumentTypeBarManager.MaxItemId = 56;
             // 
             // DocumentTypeToolBar
             // 
@@ -580,7 +626,7 @@
             this.DocumentTypeStandaloneBarDockControl.Manager = this.DocumentTypeBarManager;
             this.DocumentTypeStandaloneBarDockControl.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.DocumentTypeStandaloneBarDockControl.Name = "DocumentTypeStandaloneBarDockControl";
-            this.DocumentTypeStandaloneBarDockControl.Size = new System.Drawing.Size(953, 29);
+            this.DocumentTypeStandaloneBarDockControl.Size = new System.Drawing.Size(931, 29);
             this.DocumentTypeStandaloneBarDockControl.Text = "standaloneBarDockControl1";
             // 
             // barDockControlTop
@@ -2351,7 +2397,6 @@
             this.DocumentTypeBackstageViewTab.Caption = "Sənədin növləri";
             this.DocumentTypeBackstageViewTab.ContentControl = this.backstageViewClientControl1;
             this.DocumentTypeBackstageViewTab.Name = "DocumentTypeBackstageViewTab";
-            this.DocumentTypeBackstageViewTab.Selected = true;
             // 
             // CountriesBackstageViewTab
             // 
@@ -2512,6 +2557,311 @@
             this.ProfessionPopupMenu.Manager = this.DocumentTypeBarManager;
             this.ProfessionPopupMenu.Name = "ProfessionPopupMenu";
             // 
+            // backstageViewClientControl9
+            // 
+            this.backstageViewClientControl9.Controls.Add(this.TimesStandaloneBarDockControl);
+            this.backstageViewClientControl9.Location = new System.Drawing.Point(166, 0);
+            this.backstageViewClientControl9.Name = "backstageViewClientControl9";
+            this.backstageViewClientControl9.Size = new System.Drawing.Size(953, 585);
+            this.backstageViewClientControl9.TabIndex = 9;
+            // 
+            // TimesBackStageViewTab
+            // 
+            this.TimesBackStageViewTab.Caption = "Müddətlər";
+            this.TimesBackStageViewTab.ContentControl = this.backstageViewClientControl9;
+            this.TimesBackStageViewTab.Name = "TimesBackStageViewTab";
+            // 
+            // backstageViewClientControl10
+            // 
+            this.backstageViewClientControl10.Controls.Add(this.SourceStandaloneBarDockControl);
+            this.backstageViewClientControl10.Location = new System.Drawing.Point(166, 0);
+            this.backstageViewClientControl10.Name = "backstageViewClientControl10";
+            this.backstageViewClientControl10.Size = new System.Drawing.Size(953, 585);
+            this.backstageViewClientControl10.TabIndex = 10;
+            // 
+            // SourceBackStageViewTab
+            // 
+            this.SourceBackStageViewTab.Caption = "Sifarişin mənbələri";
+            this.SourceBackStageViewTab.ContentControl = this.backstageViewClientControl10;
+            this.SourceBackStageViewTab.Name = "SourceBackStageViewTab";
+            this.SourceBackStageViewTab.Selected = true;
+            // 
+            // TimesStandaloneBarDockControl
+            // 
+            this.TimesStandaloneBarDockControl.CausesValidation = false;
+            this.TimesStandaloneBarDockControl.Dock = System.Windows.Forms.DockStyle.Top;
+            this.TimesStandaloneBarDockControl.Location = new System.Drawing.Point(0, 0);
+            this.TimesStandaloneBarDockControl.Manager = this.DocumentTypeBarManager;
+            this.TimesStandaloneBarDockControl.Name = "TimesStandaloneBarDockControl";
+            this.TimesStandaloneBarDockControl.Size = new System.Drawing.Size(953, 29);
+            this.TimesStandaloneBarDockControl.Text = "standaloneBarDockControl1";
+            // 
+            // TimesBarManager
+            // 
+            this.TimesBarManager.Bars.AddRange(new DevExpress.XtraBars.Bar[] {
+            this.bar5});
+            this.TimesBarManager.DockControls.Add(this.barDockControl29);
+            this.TimesBarManager.DockControls.Add(this.barDockControl30);
+            this.TimesBarManager.DockControls.Add(this.barDockControl31);
+            this.TimesBarManager.DockControls.Add(this.barDockControl32);
+            this.TimesBarManager.Form = this;
+            this.TimesBarManager.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
+            this.NewTimesBarButton,
+            this.EditTimesBarButton,
+            this.DeleteTimesBarButton,
+            this.RefreshTimesBarButton});
+            this.TimesBarManager.MainMenu = this.bar5;
+            this.TimesBarManager.MaxItemId = 4;
+            // 
+            // barDockControl29
+            // 
+            this.barDockControl29.CausesValidation = false;
+            this.barDockControl29.Dock = System.Windows.Forms.DockStyle.Top;
+            this.barDockControl29.Location = new System.Drawing.Point(0, 0);
+            this.barDockControl29.Manager = this.TimesBarManager;
+            this.barDockControl29.Size = new System.Drawing.Size(1119, 0);
+            // 
+            // barDockControl30
+            // 
+            this.barDockControl30.CausesValidation = false;
+            this.barDockControl30.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.barDockControl30.Location = new System.Drawing.Point(0, 585);
+            this.barDockControl30.Manager = this.TimesBarManager;
+            this.barDockControl30.Size = new System.Drawing.Size(1119, 0);
+            // 
+            // barDockControl31
+            // 
+            this.barDockControl31.CausesValidation = false;
+            this.barDockControl31.Dock = System.Windows.Forms.DockStyle.Left;
+            this.barDockControl31.Location = new System.Drawing.Point(0, 0);
+            this.barDockControl31.Manager = this.TimesBarManager;
+            this.barDockControl31.Size = new System.Drawing.Size(0, 585);
+            // 
+            // barDockControl32
+            // 
+            this.barDockControl32.CausesValidation = false;
+            this.barDockControl32.Dock = System.Windows.Forms.DockStyle.Right;
+            this.barDockControl32.Location = new System.Drawing.Point(1119, 0);
+            this.barDockControl32.Manager = this.TimesBarManager;
+            this.barDockControl32.Size = new System.Drawing.Size(0, 585);
+            // 
+            // bar5
+            // 
+            this.bar5.BarName = "Main menu";
+            this.bar5.DockCol = 0;
+            this.bar5.DockRow = 0;
+            this.bar5.DockStyle = DevExpress.XtraBars.BarDockStyle.Standalone;
+            this.bar5.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.NewTimesBarButton),
+            new DevExpress.XtraBars.LinkPersistInfo(this.EditTimesBarButton),
+            new DevExpress.XtraBars.LinkPersistInfo(this.DeleteTimesBarButton),
+            new DevExpress.XtraBars.LinkPersistInfo(this.RefreshTimesBarButton),
+            new DevExpress.XtraBars.LinkPersistInfo(this.UpTimesBarButton),
+            new DevExpress.XtraBars.LinkPersistInfo(this.DownTimesBarButton)});
+            this.bar5.OptionsBar.DrawBorder = false;
+            this.bar5.OptionsBar.DrawDragBorder = false;
+            this.bar5.OptionsBar.MultiLine = true;
+            this.bar5.OptionsBar.UseWholeRow = true;
+            this.bar5.StandaloneBarDockControl = this.TimesStandaloneBarDockControl;
+            this.bar5.Text = "Main menu";
+            // 
+            // NewTimesBarButton
+            // 
+            this.NewTimesBarButton.Caption = "Yeni";
+            this.NewTimesBarButton.Id = 0;
+            this.NewTimesBarButton.ImageOptions.Image = global::ELMS.Properties.Resources.plus_16;
+            this.NewTimesBarButton.Name = "NewTimesBarButton";
+            // 
+            // TimesPopupMenu
+            // 
+            this.TimesPopupMenu.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.NewTimesBarButton),
+            new DevExpress.XtraBars.LinkPersistInfo(this.EditTimesBarButton),
+            new DevExpress.XtraBars.LinkPersistInfo(this.DeleteTimesBarButton),
+            new DevExpress.XtraBars.LinkPersistInfo(this.RefreshTimesBarButton),
+            new DevExpress.XtraBars.LinkPersistInfo(this.UpTimesBarButton),
+            new DevExpress.XtraBars.LinkPersistInfo(this.DownTimesBarButton)});
+            this.TimesPopupMenu.Manager = this.TimesBarManager;
+            this.TimesPopupMenu.Name = "TimesPopupMenu";
+            // 
+            // EditTimesBarButton
+            // 
+            this.EditTimesBarButton.Caption = "Dəyiş";
+            this.EditTimesBarButton.Id = 1;
+            this.EditTimesBarButton.ImageOptions.Image = global::ELMS.Properties.Resources.edit_16;
+            this.EditTimesBarButton.Name = "EditTimesBarButton";
+            // 
+            // DeleteTimesBarButton
+            // 
+            this.DeleteTimesBarButton.Caption = "Sil";
+            this.DeleteTimesBarButton.Id = 2;
+            this.DeleteTimesBarButton.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("DeleteTimesBarButton.ImageOptions.Image")));
+            this.DeleteTimesBarButton.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("DeleteTimesBarButton.ImageOptions.LargeImage")));
+            this.DeleteTimesBarButton.Name = "DeleteTimesBarButton";
+            // 
+            // RefreshTimesBarButton
+            // 
+            this.RefreshTimesBarButton.Caption = "Təzələ";
+            this.RefreshTimesBarButton.Id = 3;
+            this.RefreshTimesBarButton.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("RefreshTimesBarButton.ImageOptions.Image")));
+            this.RefreshTimesBarButton.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("RefreshTimesBarButton.ImageOptions.LargeImage")));
+            this.RefreshTimesBarButton.Name = "RefreshTimesBarButton";
+            // 
+            // UpTimesBarButton
+            // 
+            this.UpTimesBarButton.Caption = "YeriniYuxarıDəyiş";
+            this.UpTimesBarButton.Id = 54;
+            this.UpTimesBarButton.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("UpTimesBarButton.ImageOptions.Image")));
+            this.UpTimesBarButton.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("UpTimesBarButton.ImageOptions.LargeImage")));
+            this.UpTimesBarButton.Name = "UpTimesBarButton";
+            // 
+            // DownTimesBarButton
+            // 
+            this.DownTimesBarButton.Caption = "YeriniAşağıDəyiş";
+            this.DownTimesBarButton.Id = 55;
+            this.DownTimesBarButton.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("DownTimesBarButton.ImageOptions.Image")));
+            this.DownTimesBarButton.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("DownTimesBarButton.ImageOptions.LargeImage")));
+            this.DownTimesBarButton.Name = "DownTimesBarButton";
+            // 
+            // SourceStandaloneBarDockControl
+            // 
+            this.SourceStandaloneBarDockControl.CausesValidation = false;
+            this.SourceStandaloneBarDockControl.Dock = System.Windows.Forms.DockStyle.Top;
+            this.SourceStandaloneBarDockControl.Location = new System.Drawing.Point(0, 0);
+            this.SourceStandaloneBarDockControl.Manager = this.DocumentTypeBarManager;
+            this.SourceStandaloneBarDockControl.Name = "SourceStandaloneBarDockControl";
+            this.SourceStandaloneBarDockControl.Size = new System.Drawing.Size(953, 29);
+            this.SourceStandaloneBarDockControl.Text = "standaloneBarDockControl1";
+            // 
+            // SourceBarManager
+            // 
+            this.SourceBarManager.Bars.AddRange(new DevExpress.XtraBars.Bar[] {
+            this.bar6});
+            this.SourceBarManager.DockControls.Add(this.barDockControl33);
+            this.SourceBarManager.DockControls.Add(this.barDockControl34);
+            this.SourceBarManager.DockControls.Add(this.barDockControl35);
+            this.SourceBarManager.DockControls.Add(this.barDockControl36);
+            this.SourceBarManager.Form = this;
+            this.SourceBarManager.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
+            this.NewSourceBarButton,
+            this.EditSourceBarButton,
+            this.DeleteSourceBarButton,
+            this.RefreshSourceBarButton,
+            this.UpSourceBarButton,
+            this.DownSourceBarButton});
+            this.SourceBarManager.MainMenu = this.bar6;
+            this.SourceBarManager.MaxItemId = 6;
+            // 
+            // barDockControl33
+            // 
+            this.barDockControl33.CausesValidation = false;
+            this.barDockControl33.Dock = System.Windows.Forms.DockStyle.Top;
+            this.barDockControl33.Location = new System.Drawing.Point(0, 0);
+            this.barDockControl33.Manager = this.SourceBarManager;
+            this.barDockControl33.Size = new System.Drawing.Size(1119, 0);
+            // 
+            // barDockControl34
+            // 
+            this.barDockControl34.CausesValidation = false;
+            this.barDockControl34.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.barDockControl34.Location = new System.Drawing.Point(0, 585);
+            this.barDockControl34.Manager = this.SourceBarManager;
+            this.barDockControl34.Size = new System.Drawing.Size(1119, 0);
+            // 
+            // barDockControl35
+            // 
+            this.barDockControl35.CausesValidation = false;
+            this.barDockControl35.Dock = System.Windows.Forms.DockStyle.Left;
+            this.barDockControl35.Location = new System.Drawing.Point(0, 0);
+            this.barDockControl35.Manager = this.SourceBarManager;
+            this.barDockControl35.Size = new System.Drawing.Size(0, 585);
+            // 
+            // barDockControl36
+            // 
+            this.barDockControl36.CausesValidation = false;
+            this.barDockControl36.Dock = System.Windows.Forms.DockStyle.Right;
+            this.barDockControl36.Location = new System.Drawing.Point(1119, 0);
+            this.barDockControl36.Manager = this.SourceBarManager;
+            this.barDockControl36.Size = new System.Drawing.Size(0, 585);
+            // 
+            // bar6
+            // 
+            this.bar6.BarName = "Main menu";
+            this.bar6.DockCol = 0;
+            this.bar6.DockRow = 0;
+            this.bar6.DockStyle = DevExpress.XtraBars.BarDockStyle.Standalone;
+            this.bar6.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.NewSourceBarButton),
+            new DevExpress.XtraBars.LinkPersistInfo(this.EditSourceBarButton),
+            new DevExpress.XtraBars.LinkPersistInfo(this.DeleteSourceBarButton),
+            new DevExpress.XtraBars.LinkPersistInfo(this.RefreshSourceBarButton),
+            new DevExpress.XtraBars.LinkPersistInfo(this.UpSourceBarButton),
+            new DevExpress.XtraBars.LinkPersistInfo(this.DownSourceBarButton)});
+            this.bar6.OptionsBar.DrawBorder = false;
+            this.bar6.OptionsBar.DrawDragBorder = false;
+            this.bar6.OptionsBar.MultiLine = true;
+            this.bar6.OptionsBar.UseWholeRow = true;
+            this.bar6.StandaloneBarDockControl = this.SourceStandaloneBarDockControl;
+            this.bar6.Text = "Main menu";
+            // 
+            // SourcePopupMenu
+            // 
+            this.SourcePopupMenu.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.NewSourceBarButton),
+            new DevExpress.XtraBars.LinkPersistInfo(this.EditSourceBarButton),
+            new DevExpress.XtraBars.LinkPersistInfo(this.DeleteSourceBarButton),
+            new DevExpress.XtraBars.LinkPersistInfo(this.RefreshSourceBarButton),
+            new DevExpress.XtraBars.LinkPersistInfo(this.UpSourceBarButton),
+            new DevExpress.XtraBars.LinkPersistInfo(this.DownSourceBarButton)});
+            this.SourcePopupMenu.Manager = this.SourceBarManager;
+            this.SourcePopupMenu.Name = "SourcePopupMenu";
+            // 
+            // NewSourceBarButton
+            // 
+            this.NewSourceBarButton.Caption = "Yeni";
+            this.NewSourceBarButton.Id = 0;
+            this.NewSourceBarButton.ImageOptions.Image = global::ELMS.Properties.Resources.plus_16;
+            this.NewSourceBarButton.Name = "NewSourceBarButton";
+            // 
+            // EditSourceBarButton
+            // 
+            this.EditSourceBarButton.Caption = "Dəyiş";
+            this.EditSourceBarButton.Id = 1;
+            this.EditSourceBarButton.ImageOptions.Image = global::ELMS.Properties.Resources.edit_16;
+            this.EditSourceBarButton.Name = "EditSourceBarButton";
+            // 
+            // DeleteSourceBarButton
+            // 
+            this.DeleteSourceBarButton.Caption = "Sil";
+            this.DeleteSourceBarButton.Id = 2;
+            this.DeleteSourceBarButton.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("DeleteSourceBarButton.ImageOptions.Image")));
+            this.DeleteSourceBarButton.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("DeleteSourceBarButton.ImageOptions.LargeImage")));
+            this.DeleteSourceBarButton.Name = "DeleteSourceBarButton";
+            // 
+            // RefreshSourceBarButton
+            // 
+            this.RefreshSourceBarButton.Caption = "Təzələ";
+            this.RefreshSourceBarButton.Id = 3;
+            this.RefreshSourceBarButton.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("RefreshSourceBarButton.ImageOptions.Image")));
+            this.RefreshSourceBarButton.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("RefreshSourceBarButton.ImageOptions.LargeImage")));
+            this.RefreshSourceBarButton.Name = "RefreshSourceBarButton";
+            // 
+            // UpSourceBarButton
+            // 
+            this.UpSourceBarButton.Caption = "YeriniYuxarıDəyiş";
+            this.UpSourceBarButton.Id = 4;
+            this.UpSourceBarButton.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("UpSourceBarButton.ImageOptions.Image")));
+            this.UpSourceBarButton.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("UpSourceBarButton.ImageOptions.LargeImage")));
+            this.UpSourceBarButton.Name = "UpSourceBarButton";
+            // 
+            // DownSourceBarButton
+            // 
+            this.DownSourceBarButton.Caption = "YeriniAşağıDəyiş";
+            this.DownSourceBarButton.Id = 5;
+            this.DownSourceBarButton.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("DownSourceBarButton.ImageOptions.Image")));
+            this.DownSourceBarButton.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("DownSourceBarButton.ImageOptions.LargeImage")));
+            this.DownSourceBarButton.Name = "DownSourceBarButton";
+            // 
             // FDictionaries
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2550,6 +2900,14 @@
             this.Controls.Add(this.barDockControl28);
             this.Controls.Add(this.barDockControl26);
             this.Controls.Add(this.barDockControl25);
+            this.Controls.Add(this.barDockControl31);
+            this.Controls.Add(this.barDockControl32);
+            this.Controls.Add(this.barDockControl30);
+            this.Controls.Add(this.barDockControl29);
+            this.Controls.Add(this.barDockControl35);
+            this.Controls.Add(this.barDockControl36);
+            this.Controls.Add(this.barDockControl34);
+            this.Controls.Add(this.barDockControl33);
             this.MinimizeBox = false;
             this.Name = "FDictionaries";
             this.ShowIcon = false;
@@ -2599,6 +2957,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.BranchPopupMenu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ProductPopupMenu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ProfessionPopupMenu)).EndInit();
+            this.backstageViewClientControl9.ResumeLayout(false);
+            this.backstageViewClientControl10.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.TimesBarManager)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TimesPopupMenu)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SourceBarManager)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SourcePopupMenu)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2803,5 +3167,37 @@
         private DevExpress.XtraBars.BarButtonItem DownBranchBarButton;
         private DevExpress.XtraBars.PopupMenu ProductPopupMenu;
         private DevExpress.XtraBars.PopupMenu ProfessionPopupMenu;
+        private DevExpress.XtraBars.StandaloneBarDockControl TimesStandaloneBarDockControl;
+        private DevExpress.XtraBars.BarDockControl barDockControl31;
+        private DevExpress.XtraBars.BarManager TimesBarManager;
+        private DevExpress.XtraBars.Bar bar5;
+        private DevExpress.XtraBars.BarDockControl barDockControl29;
+        private DevExpress.XtraBars.BarDockControl barDockControl30;
+        private DevExpress.XtraBars.BarDockControl barDockControl32;
+        private DevExpress.XtraBars.Ribbon.BackstageViewClientControl backstageViewClientControl9;
+        private DevExpress.XtraBars.Ribbon.BackstageViewClientControl backstageViewClientControl10;
+        private DevExpress.XtraBars.Ribbon.BackstageViewTabItem TimesBackStageViewTab;
+        private DevExpress.XtraBars.Ribbon.BackstageViewTabItem SourceBackStageViewTab;
+        private DevExpress.XtraBars.BarButtonItem NewTimesBarButton;
+        private DevExpress.XtraBars.PopupMenu TimesPopupMenu;
+        private DevExpress.XtraBars.BarButtonItem EditTimesBarButton;
+        private DevExpress.XtraBars.BarButtonItem DeleteTimesBarButton;
+        private DevExpress.XtraBars.BarButtonItem RefreshTimesBarButton;
+        private DevExpress.XtraBars.BarButtonItem UpTimesBarButton;
+        private DevExpress.XtraBars.BarButtonItem DownTimesBarButton;
+        private DevExpress.XtraBars.StandaloneBarDockControl SourceStandaloneBarDockControl;
+        private DevExpress.XtraBars.BarDockControl barDockControl35;
+        private DevExpress.XtraBars.BarManager SourceBarManager;
+        private DevExpress.XtraBars.Bar bar6;
+        private DevExpress.XtraBars.BarDockControl barDockControl33;
+        private DevExpress.XtraBars.BarDockControl barDockControl34;
+        private DevExpress.XtraBars.BarDockControl barDockControl36;
+        private DevExpress.XtraBars.PopupMenu SourcePopupMenu;
+        private DevExpress.XtraBars.BarButtonItem NewSourceBarButton;
+        private DevExpress.XtraBars.BarButtonItem EditSourceBarButton;
+        private DevExpress.XtraBars.BarButtonItem DeleteSourceBarButton;
+        private DevExpress.XtraBars.BarButtonItem RefreshSourceBarButton;
+        private DevExpress.XtraBars.BarButtonItem UpSourceBarButton;
+        private DevExpress.XtraBars.BarButtonItem DownSourceBarButton;
     }
 }

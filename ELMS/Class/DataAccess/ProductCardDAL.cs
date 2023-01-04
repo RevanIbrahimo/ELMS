@@ -66,7 +66,7 @@ namespace ELMS.Class.DataAccess
                                    CC.TOTAL,
                                    CC.PRICE,
                                    CC.PRODUCT_COUNT,
-                                   CC.IMEI,
+                                   CC.NOTE,
                                    CC.USED_USER_ID
                               FROM ELMS_USER_TEMP.PRODUCT_CARDS_TEMP CC,
                                    ELMS_USER.PRODUCT P
