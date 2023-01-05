@@ -71,13 +71,13 @@
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.NameText = new DevExpress.XtraEditors.TextEdit();
             this.NameLabel = new DevExpress.XtraEditors.LabelControl();
-            this.DocumentBarManager = new DevExpress.XtraBars.BarManager(this.components);
+            this.ProductBarManager = new DevExpress.XtraBars.BarManager(this.components);
             this.bar2 = new DevExpress.XtraBars.Bar();
-            this.NewDocumentBarButton = new DevExpress.XtraBars.BarButtonItem();
-            this.EditDocumentBarButton = new DevExpress.XtraBars.BarButtonItem();
-            this.DeleteDocumentBarButton = new DevExpress.XtraBars.BarButtonItem();
-            this.RefreshDocumentBarButton = new DevExpress.XtraBars.BarButtonItem();
-            this.DocumentStandaloneBarDockControl = new DevExpress.XtraBars.StandaloneBarDockControl();
+            this.NewProductBarButton = new DevExpress.XtraBars.BarButtonItem();
+            this.EditProductBarButton = new DevExpress.XtraBars.BarButtonItem();
+            this.DeleteProductBarButton = new DevExpress.XtraBars.BarButtonItem();
+            this.RefreshProductBarButton = new DevExpress.XtraBars.BarButtonItem();
+            this.ProductStandaloneBarDockControl = new DevExpress.XtraBars.StandaloneBarDockControl();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
@@ -136,6 +136,7 @@
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
             this.TotalOrderAmountValue = new DevExpress.XtraEditors.CalcEdit();
+            this.bar4 = new DevExpress.XtraBars.Bar();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PersonalDetailsGroupBox)).BeginInit();
             this.PersonalDetailsGroupBox.SuspendLayout();
@@ -146,7 +147,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.separatorControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PhoneAllText.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NameText.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DocumentBarManager)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ProductBarManager)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SourceLookUp.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.OrderDate.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.OrderDate.Properties)).BeginInit();
@@ -356,23 +357,23 @@
             this.NameLabel.TabIndex = 0;
             this.NameLabel.Text = "Tam adı";
             // 
-            // DocumentBarManager
+            // ProductBarManager
             // 
-            this.DocumentBarManager.Bars.AddRange(new DevExpress.XtraBars.Bar[] {
+            this.ProductBarManager.Bars.AddRange(new DevExpress.XtraBars.Bar[] {
             this.bar2});
-            this.DocumentBarManager.DockControls.Add(this.barDockControlTop);
-            this.DocumentBarManager.DockControls.Add(this.barDockControlBottom);
-            this.DocumentBarManager.DockControls.Add(this.barDockControlLeft);
-            this.DocumentBarManager.DockControls.Add(this.barDockControlRight);
-            this.DocumentBarManager.DockControls.Add(this.DocumentStandaloneBarDockControl);
-            this.DocumentBarManager.Form = this;
-            this.DocumentBarManager.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
-            this.NewDocumentBarButton,
-            this.EditDocumentBarButton,
-            this.DeleteDocumentBarButton,
-            this.RefreshDocumentBarButton});
-            this.DocumentBarManager.MainMenu = this.bar2;
-            this.DocumentBarManager.MaxItemId = 4;
+            this.ProductBarManager.DockControls.Add(this.barDockControlTop);
+            this.ProductBarManager.DockControls.Add(this.barDockControlBottom);
+            this.ProductBarManager.DockControls.Add(this.barDockControlLeft);
+            this.ProductBarManager.DockControls.Add(this.barDockControlRight);
+            this.ProductBarManager.DockControls.Add(this.ProductStandaloneBarDockControl);
+            this.ProductBarManager.Form = this;
+            this.ProductBarManager.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
+            this.NewProductBarButton,
+            this.EditProductBarButton,
+            this.DeleteProductBarButton,
+            this.RefreshProductBarButton});
+            this.ProductBarManager.MainMenu = this.bar2;
+            this.ProductBarManager.MaxItemId = 4;
             // 
             // bar2
             // 
@@ -381,71 +382,67 @@
             this.bar2.DockRow = 0;
             this.bar2.DockStyle = DevExpress.XtraBars.BarDockStyle.Standalone;
             this.bar2.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.NewDocumentBarButton),
-            new DevExpress.XtraBars.LinkPersistInfo(this.EditDocumentBarButton),
-            new DevExpress.XtraBars.LinkPersistInfo(this.DeleteDocumentBarButton),
-            new DevExpress.XtraBars.LinkPersistInfo(this.RefreshDocumentBarButton)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.NewProductBarButton),
+            new DevExpress.XtraBars.LinkPersistInfo(this.EditProductBarButton),
+            new DevExpress.XtraBars.LinkPersistInfo(this.DeleteProductBarButton),
+            new DevExpress.XtraBars.LinkPersistInfo(this.RefreshProductBarButton)});
             this.bar2.OptionsBar.DrawBorder = false;
             this.bar2.OptionsBar.DrawDragBorder = false;
             this.bar2.OptionsBar.MultiLine = true;
             this.bar2.OptionsBar.UseWholeRow = true;
-            this.bar2.StandaloneBarDockControl = this.DocumentStandaloneBarDockControl;
+            this.bar2.StandaloneBarDockControl = this.ProductStandaloneBarDockControl;
             this.bar2.Text = "Main menu";
             // 
-            // NewDocumentBarButton
+            // NewProductBarButton
             // 
-            this.NewDocumentBarButton.Caption = "Yeni";
-            this.NewDocumentBarButton.Id = 0;
-            this.NewDocumentBarButton.ImageOptions.Image = global::ELMS.Properties.Resources.plus_16;
-            this.NewDocumentBarButton.Name = "NewDocumentBarButton";
-            this.NewDocumentBarButton.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            this.NewDocumentBarButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.NewDocumentBarButton_ItemClick);
+            this.NewProductBarButton.Caption = "Yeni";
+            this.NewProductBarButton.Id = 0;
+            this.NewProductBarButton.ImageOptions.Image = global::ELMS.Properties.Resources.plus_16;
+            this.NewProductBarButton.Name = "NewProductBarButton";
+            this.NewProductBarButton.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.NewProductBarButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.NewProductBarButton_ItemClick);
             // 
-            // EditDocumentBarButton
+            // EditProductBarButton
             // 
-            this.EditDocumentBarButton.Caption = "Dəyiş";
-            this.EditDocumentBarButton.Id = 1;
-            this.EditDocumentBarButton.ImageOptions.Image = global::ELMS.Properties.Resources.edit_16;
-            this.EditDocumentBarButton.Name = "EditDocumentBarButton";
-            this.EditDocumentBarButton.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            this.EditDocumentBarButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.EditDocumentBarButton_ItemClick);
+            this.EditProductBarButton.Caption = "Dəyiş";
+            this.EditProductBarButton.Id = 1;
+            this.EditProductBarButton.ImageOptions.Image = global::ELMS.Properties.Resources.edit_16;
+            this.EditProductBarButton.Name = "EditProductBarButton";
+            this.EditProductBarButton.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.EditProductBarButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.EditProductBarButton_ItemClick);
             // 
-            // DeleteDocumentBarButton
+            // DeleteProductBarButton
             // 
-            this.DeleteDocumentBarButton.Caption = "Sil";
-            this.DeleteDocumentBarButton.Id = 2;
-            this.DeleteDocumentBarButton.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("DeleteDocumentBarButton.ImageOptions.Image")));
-            this.DeleteDocumentBarButton.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("DeleteDocumentBarButton.ImageOptions.LargeImage")));
-            this.DeleteDocumentBarButton.Name = "DeleteDocumentBarButton";
-            this.DeleteDocumentBarButton.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            this.DeleteDocumentBarButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.DeleteProductBarButton_ItemClick);
+            this.DeleteProductBarButton.Caption = "Sil";
+            this.DeleteProductBarButton.Id = 2;
+            this.DeleteProductBarButton.Name = "DeleteProductBarButton";
+            this.DeleteProductBarButton.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.DeleteProductBarButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.DeleteProductBarButton_ItemClick);
             // 
-            // RefreshDocumentBarButton
+            // RefreshProductBarButton
             // 
-            this.RefreshDocumentBarButton.Caption = "Təzələ";
-            this.RefreshDocumentBarButton.Id = 3;
-            this.RefreshDocumentBarButton.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("RefreshDocumentBarButton.ImageOptions.Image")));
-            this.RefreshDocumentBarButton.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("RefreshDocumentBarButton.ImageOptions.LargeImage")));
-            this.RefreshDocumentBarButton.Name = "RefreshDocumentBarButton";
-            this.RefreshDocumentBarButton.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            this.RefreshDocumentBarButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.RefreshDocumentBarButton_ItemClick);
+            this.RefreshProductBarButton.Caption = "Təzələ";
+            this.RefreshProductBarButton.Id = 3;
+            this.RefreshProductBarButton.Name = "RefreshProductBarButton";
+            this.RefreshProductBarButton.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.RefreshProductBarButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.RefreshProductBarButton_ItemClick);
             // 
-            // DocumentStandaloneBarDockControl
+            // ProductStandaloneBarDockControl
             // 
-            this.DocumentStandaloneBarDockControl.CausesValidation = false;
-            this.DocumentStandaloneBarDockControl.Dock = System.Windows.Forms.DockStyle.Top;
-            this.DocumentStandaloneBarDockControl.Location = new System.Drawing.Point(2, 20);
-            this.DocumentStandaloneBarDockControl.Manager = this.DocumentBarManager;
-            this.DocumentStandaloneBarDockControl.Name = "DocumentStandaloneBarDockControl";
-            this.DocumentStandaloneBarDockControl.Size = new System.Drawing.Size(855, 29);
-            this.DocumentStandaloneBarDockControl.Text = "standaloneBarDockControl1";
+            this.ProductStandaloneBarDockControl.CausesValidation = false;
+            this.ProductStandaloneBarDockControl.Dock = System.Windows.Forms.DockStyle.Top;
+            this.ProductStandaloneBarDockControl.Location = new System.Drawing.Point(2, 20);
+            this.ProductStandaloneBarDockControl.Manager = this.ProductBarManager;
+            this.ProductStandaloneBarDockControl.Name = "ProductStandaloneBarDockControl";
+            this.ProductStandaloneBarDockControl.Size = new System.Drawing.Size(855, 29);
+            this.ProductStandaloneBarDockControl.Text = "standaloneBarDockControl1";
             // 
             // barDockControlTop
             // 
             this.barDockControlTop.CausesValidation = false;
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
-            this.barDockControlTop.Manager = this.DocumentBarManager;
+            this.barDockControlTop.Manager = this.ProductBarManager;
             this.barDockControlTop.Size = new System.Drawing.Size(885, 0);
             // 
             // barDockControlBottom
@@ -453,7 +450,7 @@
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.barDockControlBottom.Location = new System.Drawing.Point(0, 666);
-            this.barDockControlBottom.Manager = this.DocumentBarManager;
+            this.barDockControlBottom.Manager = this.ProductBarManager;
             this.barDockControlBottom.Size = new System.Drawing.Size(885, 0);
             // 
             // barDockControlLeft
@@ -461,7 +458,7 @@
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
-            this.barDockControlLeft.Manager = this.DocumentBarManager;
+            this.barDockControlLeft.Manager = this.ProductBarManager;
             this.barDockControlLeft.Size = new System.Drawing.Size(0, 666);
             // 
             // barDockControlRight
@@ -469,7 +466,7 @@
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
             this.barDockControlRight.Location = new System.Drawing.Point(885, 0);
-            this.barDockControlRight.Manager = this.DocumentBarManager;
+            this.barDockControlRight.Manager = this.ProductBarManager;
             this.barDockControlRight.Size = new System.Drawing.Size(0, 666);
             // 
             // SourceLookUp
@@ -563,7 +560,7 @@
             this.OtherGroupControl.AppearanceCaption.Options.UseFont = true;
             this.OtherGroupControl.AppearanceCaption.Options.UseForeColor = true;
             this.OtherGroupControl.Controls.Add(this.ProductGridControl);
-            this.OtherGroupControl.Controls.Add(this.DocumentStandaloneBarDockControl);
+            this.OtherGroupControl.Controls.Add(this.ProductStandaloneBarDockControl);
             this.OtherGroupControl.Location = new System.Drawing.Point(12, 311);
             this.OtherGroupControl.Name = "OtherGroupControl";
             this.OtherGroupControl.Size = new System.Drawing.Size(859, 215);
@@ -575,7 +572,7 @@
             this.ProductGridControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ProductGridControl.Location = new System.Drawing.Point(2, 49);
             this.ProductGridControl.MainView = this.ProductGridView;
-            this.ProductGridControl.MenuManager = this.DocumentBarManager;
+            this.ProductGridControl.MenuManager = this.ProductBarManager;
             this.ProductGridControl.Name = "ProductGridControl";
             this.ProductGridControl.Size = new System.Drawing.Size(855, 164);
             this.ProductGridControl.TabIndex = 18;
@@ -618,7 +615,7 @@
             this.ProductGridView.CustomSummaryCalculate += new DevExpress.Data.CustomSummaryEventHandler(this.ProductGridView_CustomSummaryCalculate);
             this.ProductGridView.FocusedRowObjectChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowObjectChangedEventHandler(this.ProductGridView_FocusedRowObjectChanged);
             this.ProductGridView.CustomUnboundColumnData += new DevExpress.XtraGrid.Views.Base.CustomColumnDataEventHandler(this.ProductGridView_CustomUnboundColumnData);
-            this.ProductGridView.DoubleClick += new System.EventHandler(this.DocumentGridView_DoubleClick);
+            this.ProductGridView.DoubleClick += new System.EventHandler(this.ProductGridView_DoubleClick);
             // 
             // Product_SS
             // 
@@ -696,7 +693,7 @@
             // 
             // Product_ID
             // 
-            this.Product_ID.Caption = "Document_ID";
+            this.Product_ID.Caption = "Product_ID";
             this.Product_ID.FieldName = "ID";
             this.Product_ID.Name = "Product_ID";
             // 
@@ -936,7 +933,7 @@
             // RegisterCodeText
             // 
             this.RegisterCodeText.Location = new System.Drawing.Point(135, 32);
-            this.RegisterCodeText.MenuManager = this.DocumentBarManager;
+            this.RegisterCodeText.MenuManager = this.ProductBarManager;
             this.RegisterCodeText.Name = "RegisterCodeText";
             this.RegisterCodeText.Properties.ReadOnly = true;
             this.RegisterCodeText.Size = new System.Drawing.Size(90, 20);
@@ -1088,7 +1085,7 @@
             this.TimeLookUp.Cursor = System.Windows.Forms.Cursors.Hand;
             this.TimeLookUp.Location = new System.Drawing.Point(432, 533);
             this.TimeLookUp.Margin = new System.Windows.Forms.Padding(4);
-            this.TimeLookUp.MenuManager = this.DocumentBarManager;
+            this.TimeLookUp.MenuManager = this.ProductBarManager;
             this.TimeLookUp.Name = "TimeLookUp";
             this.TimeLookUp.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo, "", -1, true, true, false, editorButtonImageOptions3, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), "Siyahını aç"),
@@ -1130,7 +1127,7 @@
             // 
             this.NoteText.Location = new System.Drawing.Point(147, 589);
             this.NoteText.Margin = new System.Windows.Forms.Padding(4);
-            this.NoteText.MenuManager = this.DocumentBarManager;
+            this.NoteText.MenuManager = this.ProductBarManager;
             this.NoteText.Name = "NoteText";
             this.NoteText.Size = new System.Drawing.Size(724, 20);
             this.NoteText.TabIndex = 186;
@@ -1172,6 +1169,18 @@
             this.TotalOrderAmountValue.Properties.ReadOnly = true;
             this.TotalOrderAmountValue.Size = new System.Drawing.Size(127, 20);
             this.TotalOrderAmountValue.TabIndex = 191;
+            // 
+            // bar4
+            // 
+            this.bar4.BarName = "Main menu";
+            this.bar4.DockCol = 0;
+            this.bar4.DockRow = 0;
+            this.bar4.DockStyle = DevExpress.XtraBars.BarDockStyle.Standalone;
+            this.bar4.OptionsBar.DrawBorder = false;
+            this.bar4.OptionsBar.DrawDragBorder = false;
+            this.bar4.OptionsBar.MultiLine = true;
+            this.bar4.OptionsBar.UseWholeRow = true;
+            this.bar4.Text = "Main menu";
             // 
             // FOrderAddEdit
             // 
@@ -1226,7 +1235,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.separatorControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PhoneAllText.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.NameText.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DocumentBarManager)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ProductBarManager)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SourceLookUp.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.OrderDate.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.OrderDate.Properties)).EndInit();
@@ -1274,13 +1283,13 @@
         private DevExpress.XtraEditors.LabelControl labelControl12;
         private ManiXButton.XButton BCancel;
         private ManiXButton.XButton BOK;
-        private DevExpress.XtraBars.StandaloneBarDockControl DocumentStandaloneBarDockControl;
-        private DevExpress.XtraBars.BarManager DocumentBarManager;
+        private DevExpress.XtraBars.StandaloneBarDockControl ProductStandaloneBarDockControl;
+        private DevExpress.XtraBars.BarManager ProductBarManager;
         private DevExpress.XtraBars.Bar bar2;
-        private DevExpress.XtraBars.BarButtonItem NewDocumentBarButton;
-        private DevExpress.XtraBars.BarButtonItem EditDocumentBarButton;
-        private DevExpress.XtraBars.BarButtonItem DeleteDocumentBarButton;
-        private DevExpress.XtraBars.BarButtonItem RefreshDocumentBarButton;
+        private DevExpress.XtraBars.BarButtonItem NewProductBarButton;
+        private DevExpress.XtraBars.BarButtonItem EditProductBarButton;
+        private DevExpress.XtraBars.BarButtonItem DeleteProductBarButton;
+        private DevExpress.XtraBars.BarButtonItem RefreshProductBarButton;
         private DevExpress.XtraBars.BarDockControl barDockControlTop;
         private DevExpress.XtraBars.BarDockControl barDockControlBottom;
         private DevExpress.XtraBars.BarDockControl barDockControlLeft;
@@ -1335,5 +1344,6 @@
         private DevExpress.XtraEditors.LabelControl labelControl8;
         private DevExpress.XtraEditors.CalcEdit TotalOrderAmountValue;
         private DevExpress.XtraGrid.Columns.GridColumn Product_Note;
+        private DevExpress.XtraBars.Bar bar4;
     }
 }

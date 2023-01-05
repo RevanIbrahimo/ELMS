@@ -714,6 +714,8 @@
     <Content Include="bin\Debug\ru\DevExpress.XtraTreeList.v17.1.resources.dll" />
     <Content Include="bin\Debug\Tulpep.NotificationWindow.dll" />
     <Content Include="management.ico" />
+    <Content Include="Resources\download.png" />
+    <Content Include="Resources\user-group-32.png" />
     <None Include="Resources\webcamera-16.png" />
     <None Include="Resources\user-group-edit-32.png" />
     <None Include="Resources\user-group-delete-32.png" />

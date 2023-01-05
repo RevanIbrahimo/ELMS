@@ -137,7 +137,6 @@ C:\Users\user\Documents\Github\ELMS\ELMS\obj\Debug\ELMS.Forms.Dictionaries.FProd
 C:\Users\user\Documents\Github\ELMS\ELMS\obj\Debug\ELMS.Forms.Dictionaries.FProfessionAddEdit.resources
 C:\Users\user\Documents\Github\ELMS\ELMS\obj\Debug\ELMS.Forms.Option.FUsers.resources
 C:\Users\user\Documents\Github\ELMS\ELMS\obj\Debug\ELMS.Forms.Phone.FPhoneAddEdit.resources
-C:\Users\user\Documents\Github\ELMS\ELMS\obj\Debug\ELMS.FLoginSystem.resources
 C:\Users\user\Documents\Github\ELMS\ELMS\obj\Debug\ELMS.FPrintableCheck.resources
 C:\Users\user\Documents\Github\ELMS\ELMS\obj\Debug\ELMS.MainForm.resources
 C:\Users\user\Documents\Github\ELMS\ELMS\obj\Debug\ELMS.Properties.Resources.resources
@@ -169,3 +168,4 @@ C:\Users\user\Documents\Github\ELMS\ELMS\obj\Debug\ELMS.Forms.Order.FConfirmAddE
 C:\Users\user\Documents\Github\ELMS\ELMS\obj\Debug\ELMS.Forms.Customer.FRelativeAddEdit.resources
 C:\Users\user\Documents\Github\ELMS\ELMS\obj\Debug\ELMS.Forms.Dictionaries.FSourceAddEdit.resources
 C:\Users\user\Documents\Github\ELMS\ELMS\obj\Debug\ELMS.Forms.Dictionaries.FTimesAddEdit.resources
+C:\Users\user\Documents\Github\ELMS\ELMS\obj\Debug\ELMS.Forms.General.FLoginSystem.resources

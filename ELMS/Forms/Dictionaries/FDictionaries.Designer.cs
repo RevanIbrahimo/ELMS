@@ -2719,6 +2719,7 @@
             this.SourceGridView.PaintStyleName = "Skin";
             this.SourceGridView.ScrollStyle = DevExpress.XtraGrid.Views.Grid.ScrollStyleFlags.LiveVertScroll;
             this.SourceGridView.ViewCaption = "Sifarişin mənbələri";
+            this.SourceGridView.RowCellStyle += new DevExpress.XtraGrid.Views.Grid.RowCellStyleEventHandler(this.SourceGridView_RowCellStyle);
             this.SourceGridView.FocusedRowObjectChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowObjectChangedEventHandler(this.SourceGridView_FocusedRowObjectChanged);
             this.SourceGridView.CustomUnboundColumnData += new DevExpress.XtraGrid.Views.Base.CustomColumnDataEventHandler(this.SourceGridView_CustomUnboundColumnData);
             this.SourceGridView.MouseUp += new System.Windows.Forms.MouseEventHandler(this.SourceGridView_MouseUp);

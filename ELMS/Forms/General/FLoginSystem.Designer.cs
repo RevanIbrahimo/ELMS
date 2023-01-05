@@ -1,4 +1,4 @@
-﻿namespace ELMS
+﻿namespace ELMS.Forms.General
 {
     partial class FLoginSystem
     {

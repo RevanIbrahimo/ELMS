@@ -19,7 +19,7 @@ namespace ELMS.Forms.General
         {
             InitializeComponent();
         }
-
+        bool is_connected = false;
         #region Overrides
 
         public override void ProcessCommand(System.Enum cmd, object arg)
@@ -83,6 +83,9 @@ namespace ELMS.Forms.General
             {
                 DescriptionLabel.Text = "Qovluqlar mövcuddur";
             });
+
+            is_connected = true;
+
         }
 
         private void BackgroundWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
@@ -104,7 +107,11 @@ namespace ELMS.Forms.General
 
             //FConnect fc = new FConnect();
             //fc.ShowDialog();
+            //if (!is_connected)
+            //    return;
 
+            //FLoginSystem fc = new FLoginSystem();
+            //fc.ShowDialog();
             MainForm fm = new MainForm();
             fm.ShowDialog();
         }

@@ -6,7 +6,7 @@ using System.Drawing;
 using System.Reflection;
 using System.Windows.Forms;
 
-namespace ELMS
+namespace ELMS.Forms.General
 {
     public partial class FLoginSystem : Form
     {
@@ -23,7 +23,7 @@ namespace ELMS
         }
 
         private void BOK_Click(object sender, EventArgs e)
-        {            
+        {
             if (ControlLoginParametr())
             {
                 if (SaveCheck.Checked)
@@ -48,16 +48,16 @@ namespace ELMS
 
         private void GenerateUserPermisions() // istifadecinin huquqlarinin teyin edilmesi
         {
-            string s = $@"SELECT RD.ROLE_ID, RD.NAME
-                              FROM MCMS.ALL_USER_ROLE_DETAILS URD, MCMS.ALL_ROLE_DETAILS RD
-                             WHERE URD.ROLE_DETAIL_ID = RD.ID AND URD.USER_ID = {GlobalVariables.V_UserID}";
+            //string s = $@"SELECT RD.ROLE_ID, RD.NAME
+            //                  FROM MCMS.ALL_USER_ROLE_DETAILS URD, MCMS.ALL_ROLE_DETAILS RD
+            //                 WHERE URD.ROLE_DETAIL_ID = RD.ID AND URD.USER_ID = {GlobalVariables.V_UserID}";
 
-            
+
         }
 
         private bool ControlLoginParametr()
         {
-            bool b = false;            
+            bool b = false;
 
             if (UserNameText.Text.Length == 0)
             {
@@ -125,7 +125,7 @@ namespace ELMS
             int saved = Convert.ToInt32(GlobalFunctions.ReadSetting("SaveLogin"));
             GlobalVariables.V_DefaultMenu = int.Parse(GlobalFunctions.ReadSetting("DefaultMenu"));
             SaveCheck.Visible = !(saved == 1);
-            
+
             if (saved == 1)
             {
                 GlobalVariables.V_Connect_User = GlobalFunctions.ReadSetting("SavedLoginName");
@@ -134,7 +134,7 @@ namespace ELMS
                 SaveCheck.Checked = true;
             }
             FormStatus = true;
-            
+
             GlobalVariables.V_BlockColor1 = -1048576;
             GlobalVariables.V_BlockColor2 = 0;
             GlobalVariables.V_ConnectColor1 = -16711936;
@@ -145,9 +145,9 @@ namespace ELMS
 
         private void UpdateUserConnected()
         {
-            GlobalProcedures.ExecuteQuery($@"UPDATE MCMS.MCMS_USERS SET SESSION_ID = SYS_CONTEXT ('userenv', 'sessionid') WHERE ID = {GlobalVariables.V_UserID}",
-                             "İstifadəçinin sistemə qoşulması istifadəçilər cədvəlində qeyd olunmadı.",
-                                this.Name + "/UpdateUserConnected");
+            //GlobalProcedures.ExecuteQuery($@"UPDATE MCMS.MCMS_USERS SET SESSION_ID = 1 WHERE ID = {GlobalVariables.V_UserID}",
+            //                 "İstifadəçinin sistemə qoşulması istifadəçilər cədvəlində qeyd olunmadı.",
+            //                    this.Name + "/UpdateUserConnected");
         }
 
         private void UserNameText_TextChanged(object sender, EventArgs e)

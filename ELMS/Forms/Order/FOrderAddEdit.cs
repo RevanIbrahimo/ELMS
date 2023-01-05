@@ -31,14 +31,14 @@ namespace ELMS.Forms.Order
 
         bool CurrentStatus = false, Used = false, isClickBOK = false;
 
-        int UsedUserID = -1, orderID,
+        int UsedUserID = -1,
             documentID, topindex,
-            old_row_id, customerID,            
+            old_row_id,            
             branchID = 0,
             sourceID = 0,
             timeID = 0;
         decimal calcTotalPrice = 0;
-        string OrderImage, pinCode;
+        string  pinCode;
         string UserImagePath = GlobalVariables.V_ExecutingFolder + "\\TEMP\\Images";
 
         public delegate void DoEvent();
@@ -47,19 +47,19 @@ namespace ELMS.Forms.Order
 
         List<CustomerImage> lstImage = new List<CustomerImage>();
 
-        private void RefreshDocumentBarButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void RefreshProductBarButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             LoadProduct();
         }
 
-        private void NewDocumentBarButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void NewProductBarButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            LoadFDocumentAddEdit(TransactionTypeEnum.Insert, null);
+            LoadFProductAddEdit(TransactionTypeEnum.Insert, null);
         }
 
-        private void EditDocumentBarButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void EditProductBarButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            UpdateDocument();
+            UpdateProduct();
         }
 
         private void LoadProduct()
@@ -74,7 +74,7 @@ namespace ELMS.Forms.Order
             //}
         }
 
-        private void LoadFDocumentAddEdit(TransactionTypeEnum transactionType, int? id)
+        private void LoadFProductAddEdit(TransactionTypeEnum transactionType, int? id)
         {
             topindex = ProductGridView.TopRowIndex;
             old_row_id = ProductGridView.FocusedRowHandle;
@@ -90,15 +90,15 @@ namespace ELMS.Forms.Order
             ProductGridView.FocusedRowHandle = old_row_id;
         }
 
-        private void DocumentGridView_DoubleClick(object sender, EventArgs e)
+        private void ProductGridView_DoubleClick(object sender, EventArgs e)
         {
-            if (EditDocumentBarButton.Enabled)
-                UpdateDocument();
+            if (EditProductBarButton.Enabled)
+                UpdateProduct();
         }
 
-        void UpdateDocument()
+        void UpdateProduct()
         {
-            LoadFDocumentAddEdit(TransactionTypeEnum.Update, documentID);
+            LoadFProductAddEdit(TransactionTypeEnum.Update, documentID);
         }
 
         private void LoadImage()
@@ -272,7 +272,7 @@ namespace ELMS.Forms.Order
             CalcTotalAmount();
         }
 
-        void DeleteDocument()
+        void DeleteProduct()
         {
             var rows = GlobalFunctions.GridviewSelectedRow(ProductGridView);
 
@@ -292,7 +292,7 @@ namespace ELMS.Forms.Order
 
         private void DeleteProductBarButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            DeleteDocument();
+            DeleteProduct();
             LoadProduct();
         }
 

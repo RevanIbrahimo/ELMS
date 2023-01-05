@@ -3,8 +3,11 @@
     "",
     "\\ELMS",
     "\\ELMS\\Forms",
-    "\\ELMS\\Forms\\Customer"
+    "\\ELMS\\Forms\\Customer",
+    "\\ELMS\\Forms\\Dictionaries",
+    "\\ELMS\\Forms\\General",
+    "\\ELMS\\Forms\\Order"
   ],
-  "SelectedNode": "\\ELMS\\Forms\\Customer",
+  "SelectedNode": "\\ELMS\\Forms\\Order\\FProductCardAddEdit.cs",
   "PreviewInSolutionExplorer": false
 }
