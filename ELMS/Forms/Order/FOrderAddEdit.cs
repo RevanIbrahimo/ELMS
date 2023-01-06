@@ -163,7 +163,7 @@ namespace ELMS.Forms.Order
                 ORDER_ID = OrderID.Value
             };
 
-            orderOperationID = OrderDAL.InsertOrderOperation(tran, order);
+            orderOperationID = OperationDAL.InsertOrderOperation(tran, order);
         }
 
         private void InsertOrder(OracleTransaction tran)

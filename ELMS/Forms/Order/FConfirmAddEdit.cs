@@ -28,7 +28,7 @@ namespace ELMS.Forms.Order
         }
 
         public TransactionTypeEnum TransactionType;
-        public int? OrderID, CustomerID = 1;
+        public int? OrderID, CustomerID = 1, OperationID;
 
         bool CurrentStatus = false, Used = false, isClickBOK = false;
 
@@ -97,33 +97,56 @@ namespace ELMS.Forms.Order
         {
             NameText.Enabled =
                 PhoneAllText.Enabled =
-                BOK.Visible = !status;
+                BClose.Visible = !status;
         }
         
         private void BOK_Click(object sender, EventArgs e)
         {
             if (ControlCardDetails())
             {
-                GlobalFunctions.RunInOneTransaction<int>(tran =>
-                {
-
-                    if (TransactionType == TransactionTypeEnum.Insert)
+                    if (TransactionType == TransactionTypeEnum.Update)
                     {
-                       // InsertOrder(tran);
+                        OrderOperation order = new OrderOperation
+                        {
+                            ORDER_ID = OrderID.Value,
+                            ID = OperationID.Value,
+                            OPERATION_ID = (int)OperationTypeEnum.Tesdiq_edildi
+                        };
+                        
+                        OperationDAL.UpdateOrderOperation(order);
                     }
-                    else
-                    {
-                       // UpdateOrder(tran);
-                    }
-                    GlobalProcedures.ExecuteProcedureWithParametr(tran, "ELMS_USER.PROC_INSERT_PRODUCT_CARDS", "P_CUSTOMER_ID", OrderID.Value);
-
-
-                    return 1;
-                }, TransactionType == TransactionTypeEnum.Insert ? "Müştərinin məlumatları bazaya daxil edilmədi." : "Müştərinin məlumatları bazada dəyişdirilmədi.");
+                    GlobalProcedures.ExecuteProcedureWithParametr("ELMS_USER.PROC_INSERT_PRODUCT_CARDS", "P_CUSTOMER_ID", OrderID.Value, "Müraciət məlumatları təsdiq edilmədi.");
+                    
                 this.Close();
             }
         }
 
+        private void BCancel_Click(object sender, EventArgs e)
+        {
+            if (ControlCardDetails())
+            {
+                if (TransactionType == TransactionTypeEnum.Update)
+                {
+                    OrderOperation order = new OrderOperation
+                    {
+                        ORDER_ID = OrderID.Value,
+                        ID = OperationID.Value,
+                        OPERATION_ID = (int)OperationTypeEnum.Tesdiq_edilmedi
+                    };
+
+                    OperationDAL.UpdateOrderOperation(order);
+                }
+                GlobalProcedures.ExecuteProcedureWithParametr("ELMS_USER.PROC_INSERT_PRODUCT_CARDS", "P_CUSTOMER_ID", OrderID.Value, "Müraciət məlumatları təsdiq edilmədi.");
+
+                this.Close();
+            }
+        }
+
+        private void BClose_Click(object sender, EventArgs e)
+        {
+
+        }
+        
         private bool ControlCardDetails()
         {
 
@@ -273,7 +296,6 @@ namespace ELMS.Forms.Order
 
             this.RefreshDataGridView();
         }
-
 
         private void OtherInfoTabControl_SelectedPageChanged(object sender, DevExpress.XtraTab.TabPageChangedEventArgs e)
         {

@@ -24,7 +24,7 @@ namespace ELMS.UserControls
         {
             InitializeComponent();
         }
-        int topindex, old_row_id, orderID;
+        int topindex, old_row_id, orderID,operationID;
         string orderName;
 
         private void OrderUserControl_Load(object sender, EventArgs e)
@@ -39,7 +39,7 @@ namespace ELMS.UserControls
 
         private void LoadCustomerData()
         {
-            OrderGridControl.DataSource = OrderDAL.SelectViewData(null);
+            OrderGridControl.DataSource = OrderDAL.SelectConfirmData(null);
 
             //EnabledButton();
         }
@@ -74,6 +74,7 @@ namespace ELMS.UserControls
             {
                 TransactionType = transaction,
                 OrderID = id,
+                OperationID = operationID
             };
             fc.RefreshDataGridView += new FConfirmAddEdit.DoEvent(RefreshCustomer);
             fc.ShowDialog();
@@ -165,6 +166,7 @@ namespace ELMS.UserControls
         private void OrderGridView_FocusedRowObjectChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowObjectChangedEventArgs e)
         {
             orderID = Convert.ToInt32(GlobalFunctions.GetGridRowCellValue((sender as GridView), "ID"));
+            operationID = Convert.ToInt32(GlobalFunctions.GetGridRowCellValue((sender as GridView), "OPERATION_ID"));
         }
 
         private void HistroryBarButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

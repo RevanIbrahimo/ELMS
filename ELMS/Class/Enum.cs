@@ -12,7 +12,7 @@ namespace ELMS.Class
         public enum OperationTypeEnum
         {
             Yeni_muraciet = 1,
-            Tesdiq_edilidi = 2,
+            Tesdiq_edildi = 2,
             Tesdiq_edilmedi = 3,
             Zaminlikle_qayitdi = 4
         }

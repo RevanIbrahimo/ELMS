@@ -1,0 +1,80 @@
+
+Log Entry : 12:18:10 AM Saturday, January 7, 2023
+  
+   UserName =  SuperAdmin
+   FormName =  OrderDAL
+   ProcedureName =  SelectViewData
+  
+   ShowMessage: Musterinin məlumatları açılmadı.
+   Exception Message: ORA-00933: SQL command not properly ended
+   SQL Text      :  SELECT CU.ID,
+                               OT.NAME OPERATION_NAME,
+                               CC.PINCODE,
+                               CU.REGISTER_NUMBER,                               
+                               B.NAME BRANCH_NAME,
+                               S.NAME ORDER_SOURCE,
+                               T.NAME TIME,                           
+                               CU.ORDER_DATE,                              
+                               CU.ADDRESS,
+                               CU.FIRST_PAYMENT,
+                               CU.ORDER_AMOUNT,
+                               CU.NOTE,
+                               CU.INSERT_DATE,
+                               CU.USED_USER_ID
+                          FROM ELMS_USER.ORDER_TAB CU,
+                               ELMS_USER.BRANCH B,
+                               ELMS_USER.TIMES T,
+                               ELMS_USER.FUNDS_SOURCES S,
+                               ELMS_USER.CUSTOMER C,
+                               ELMS_USER.CUSTOMER_CARDS CC,
+                               ELMS_USER.ORDER_OPERATION OR,
+                               ELMS_USER.OPERATION_TYPE OT
+                          WHERE     CU.SOURCE_ID = S.ID
+                               AND CU.TIME_ID = T.ID
+                               AND CU.CUSTOMER_ID = C.ID
+                               AND C.ID = CC.CUSTOMER_ID
+                               AND OR.ORDER_ID = CU.ID
+                               AND OR.OPERATION_TYPE_ID = OT.ID
+                               AND CU.BRANCH_ID = B.ID 
+                        ORDER BY CU.ID
+-------------------------------------------------
+
+Log Entry : 12:22:12 AM Saturday, January 7, 2023
+  
+   UserName =  SuperAdmin
+   FormName =  OrderDAL
+   ProcedureName =  SelectViewData
+  
+   ShowMessage: Musterinin məlumatları açılmadı.
+   Exception Message: ORA-00933: SQL command not properly ended
+   SQL Text      :  SELECT CU.ID,
+                               OT.NAME OPERATION_NAME,
+                               CC.PINCODE,
+                               CU.REGISTER_NUMBER,                               
+                               B.NAME BRANCH_NAME,
+                               S.NAME ORDER_SOURCE,
+                               T.NAME TIME,                           
+                               CU.ORDER_DATE,                              
+                               CU.ADDRESS,
+                               CU.FIRST_PAYMENT,
+                               CU.ORDER_AMOUNT,
+                               CU.NOTE,
+                               CU.INSERT_DATE,
+                               CU.USED_USER_ID
+                          FROM ELMS_USER.ORDER_TAB CU,
+                               ELMS_USER.BRANCH B,
+                               ELMS_USER.TIMES T,
+                               ELMS_USER.FUNDS_SOURCES S,
+                               ELMS_USER.CUSTOMER C,
+                               ELMS_USER.CUSTOMER_CARDS CC,
+                               ELMS_USER.ORDER_OPERATION OR,
+                               ELMS_USER.OPERATION_TYPE OT
+                          WHERE     CU.SOURCE_ID = S.ID
+                               AND CU.TIME_ID = T.ID
+                               AND CU.CUSTOMER_ID = C.ID
+                               AND C.ID = CC.CUSTOMER_ID
+                               AND CU.ID = OR.ORDER_ID 
+                               AND OR.OPERATION_TYPE_ID = OT.ID
+                               AND CU.BRANCH_ID = B.ID 
+                        ORDER BY CU.ID
+-------------------------------------------------

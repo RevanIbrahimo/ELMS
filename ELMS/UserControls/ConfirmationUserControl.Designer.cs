@@ -32,9 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ConfirmationUserControl));
             this.BarManager = new DevExpress.XtraBars.BarManager(this.components);
             this.ToolBar = new DevExpress.XtraBars.Bar();
-            this.NewBarButton = new DevExpress.XtraBars.BarButtonItem();
             this.EditBarButton = new DevExpress.XtraBars.BarButtonItem();
-            this.DeleteBarButton = new DevExpress.XtraBars.BarButtonItem();
             this.RefreshBarButton = new DevExpress.XtraBars.BarButtonItem();
             this.PrintBarButton = new DevExpress.XtraBars.BarButtonItem();
             this.ExportBarButton = new DevExpress.XtraBars.BarSubItem();
@@ -50,6 +48,8 @@
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
+            this.NewBarButton = new DevExpress.XtraBars.BarButtonItem();
+            this.DeleteBarButton = new DevExpress.XtraBars.BarButtonItem();
             this.ScheduleBarButton = new DevExpress.XtraBars.BarButtonItem();
             this.HistroryBarButton = new DevExpress.XtraBars.BarButtonItem();
             this.OrderGridControl = new DevExpress.XtraGrid.GridControl();
@@ -65,6 +65,7 @@
             this.Customer_UsedUserID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.FinCode = new DevExpress.XtraGrid.Columns.GridColumn();
             this.OrderPopupMenu = new DevExpress.XtraBars.PopupMenu(this.components);
+            this.Order_OperationName = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.BarManager)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.OrderGridControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.OrderGridView)).BeginInit();
@@ -116,17 +117,6 @@
             this.ToolBar.OptionsBar.UseWholeRow = true;
             this.ToolBar.Text = "Tools";
             // 
-            // NewBarButton
-            // 
-            this.NewBarButton.Caption = "Yeni";
-            this.NewBarButton.Id = 0;
-            this.NewBarButton.ImageOptions.Image = global::ELMS.Properties.Resources.plus_32;
-            this.NewBarButton.ItemShortcut = new DevExpress.XtraBars.BarShortcut((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N));
-            this.NewBarButton.Name = "NewBarButton";
-            this.NewBarButton.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            this.NewBarButton.ShowItemShortcut = DevExpress.Utils.DefaultBoolean.True;
-            this.NewBarButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.NewBarButton_ItemClick);
-            // 
             // EditBarButton
             // 
             this.EditBarButton.Caption = "Müraciətə bax";
@@ -137,17 +127,6 @@
             this.EditBarButton.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
             this.EditBarButton.ShowItemShortcut = DevExpress.Utils.DefaultBoolean.True;
             this.EditBarButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.EditBarButton_ItemClick);
-            // 
-            // DeleteBarButton
-            // 
-            this.DeleteBarButton.Caption = "Sil";
-            this.DeleteBarButton.Id = 2;
-            this.DeleteBarButton.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("DeleteBarButton.ImageOptions.Image")));
-            this.DeleteBarButton.ItemShortcut = new DevExpress.XtraBars.BarShortcut((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Delete));
-            this.DeleteBarButton.Name = "DeleteBarButton";
-            this.DeleteBarButton.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            this.DeleteBarButton.ShowItemShortcut = DevExpress.Utils.DefaultBoolean.True;
-            this.DeleteBarButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.DeleteBarButton_ItemClick);
             // 
             // RefreshBarButton
             // 
@@ -284,6 +263,28 @@
             this.barDockControlRight.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.barDockControlRight.Size = new System.Drawing.Size(0, 566);
             // 
+            // NewBarButton
+            // 
+            this.NewBarButton.Caption = "Yeni";
+            this.NewBarButton.Id = 0;
+            this.NewBarButton.ImageOptions.Image = global::ELMS.Properties.Resources.plus_32;
+            this.NewBarButton.ItemShortcut = new DevExpress.XtraBars.BarShortcut((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N));
+            this.NewBarButton.Name = "NewBarButton";
+            this.NewBarButton.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.NewBarButton.ShowItemShortcut = DevExpress.Utils.DefaultBoolean.True;
+            this.NewBarButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.NewBarButton_ItemClick);
+            // 
+            // DeleteBarButton
+            // 
+            this.DeleteBarButton.Caption = "Sil";
+            this.DeleteBarButton.Id = 2;
+            this.DeleteBarButton.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("DeleteBarButton.ImageOptions.Image")));
+            this.DeleteBarButton.ItemShortcut = new DevExpress.XtraBars.BarShortcut((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Delete));
+            this.DeleteBarButton.Name = "DeleteBarButton";
+            this.DeleteBarButton.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.DeleteBarButton.ShowItemShortcut = DevExpress.Utils.DefaultBoolean.True;
+            this.DeleteBarButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.DeleteBarButton_ItemClick);
+            // 
             // ScheduleBarButton
             // 
             this.ScheduleBarButton.Caption = "Qəbula yaz";
@@ -334,6 +335,7 @@
             this.OrderGridView.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.Customer_SS,
             this.Customer_ID,
+            this.Order_OperationName,
             this.Customer_RegisteredAddress,
             this.Customer_FullName,
             this.Customer_SexName,
@@ -379,7 +381,7 @@
             this.Customer_SS.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
             this.Customer_SS.Visible = true;
             this.Customer_SS.VisibleIndex = 0;
-            this.Customer_SS.Width = 45;
+            this.Customer_SS.Width = 50;
             // 
             // Customer_ID
             // 
@@ -387,6 +389,7 @@
             this.Customer_ID.FieldName = "ID";
             this.Customer_ID.Name = "Customer_ID";
             this.Customer_ID.OptionsColumn.AllowShowHide = false;
+            this.Customer_ID.OptionsColumn.FixedWidth = true;
             // 
             // Customer_RegisteredAddress
             // 
@@ -395,8 +398,8 @@
             this.Customer_RegisteredAddress.Name = "Customer_RegisteredAddress";
             this.Customer_RegisteredAddress.OptionsColumn.FixedWidth = true;
             this.Customer_RegisteredAddress.Visible = true;
-            this.Customer_RegisteredAddress.VisibleIndex = 1;
-            this.Customer_RegisteredAddress.Width = 150;
+            this.Customer_RegisteredAddress.VisibleIndex = 2;
+            this.Customer_RegisteredAddress.Width = 120;
             // 
             // Customer_FullName
             // 
@@ -405,8 +408,8 @@
             this.Customer_FullName.Name = "Customer_FullName";
             this.Customer_FullName.OptionsColumn.FixedWidth = true;
             this.Customer_FullName.Visible = true;
-            this.Customer_FullName.VisibleIndex = 2;
-            this.Customer_FullName.Width = 300;
+            this.Customer_FullName.VisibleIndex = 3;
+            this.Customer_FullName.Width = 150;
             // 
             // Customer_SexName
             // 
@@ -418,8 +421,8 @@
             this.Customer_SexName.Name = "Customer_SexName";
             this.Customer_SexName.OptionsColumn.FixedWidth = true;
             this.Customer_SexName.Visible = true;
-            this.Customer_SexName.VisibleIndex = 3;
-            this.Customer_SexName.Width = 50;
+            this.Customer_SexName.VisibleIndex = 4;
+            this.Customer_SexName.Width = 70;
             // 
             // Customer_BirthPlace
             // 
@@ -431,7 +434,7 @@
             this.Customer_BirthPlace.Name = "Customer_BirthPlace";
             this.Customer_BirthPlace.OptionsColumn.FixedWidth = true;
             this.Customer_BirthPlace.Visible = true;
-            this.Customer_BirthPlace.VisibleIndex = 4;
+            this.Customer_BirthPlace.VisibleIndex = 5;
             this.Customer_BirthPlace.Width = 130;
             // 
             // Customer_Address
@@ -439,18 +442,20 @@
             this.Customer_Address.Caption = "İlkin ödəniş";
             this.Customer_Address.FieldName = "FIRST_PAYMENT";
             this.Customer_Address.Name = "Customer_Address";
+            this.Customer_Address.OptionsColumn.FixedWidth = true;
             this.Customer_Address.Visible = true;
-            this.Customer_Address.VisibleIndex = 5;
-            this.Customer_Address.Width = 437;
+            this.Customer_Address.VisibleIndex = 6;
+            this.Customer_Address.Width = 150;
             // 
             // Customer_Note
             // 
             this.Customer_Note.Caption = "Məbləğ";
             this.Customer_Note.FieldName = "ORDER_AMOUNT";
             this.Customer_Note.Name = "Customer_Note";
+            this.Customer_Note.OptionsColumn.FixedWidth = true;
             this.Customer_Note.Visible = true;
-            this.Customer_Note.VisibleIndex = 6;
-            this.Customer_Note.Width = 241;
+            this.Customer_Note.VisibleIndex = 7;
+            this.Customer_Note.Width = 150;
             // 
             // Customer_UsedUserID
             // 
@@ -464,8 +469,10 @@
             this.FinCode.Caption = "Fin kodu";
             this.FinCode.FieldName = "PINCODE";
             this.FinCode.Name = "FinCode";
+            this.FinCode.OptionsColumn.FixedWidth = true;
             this.FinCode.Visible = true;
-            this.FinCode.VisibleIndex = 7;
+            this.FinCode.VisibleIndex = 8;
+            this.FinCode.Width = 70;
             // 
             // OrderPopupMenu
             // 
@@ -480,6 +487,24 @@
             new DevExpress.XtraBars.LinkPersistInfo(this.ExportBarButton)});
             this.OrderPopupMenu.Manager = this.BarManager;
             this.OrderPopupMenu.Name = "OrderPopupMenu";
+            // 
+            // Order_OperationName
+            // 
+            this.Order_OperationName.AppearanceCell.FontStyleDelta = System.Drawing.FontStyle.Bold;
+            this.Order_OperationName.AppearanceCell.ForeColor = System.Drawing.Color.Red;
+            this.Order_OperationName.AppearanceCell.Options.UseFont = true;
+            this.Order_OperationName.AppearanceCell.Options.UseForeColor = true;
+            this.Order_OperationName.AppearanceHeader.FontStyleDelta = System.Drawing.FontStyle.Bold;
+            this.Order_OperationName.AppearanceHeader.ForeColor = System.Drawing.Color.Red;
+            this.Order_OperationName.AppearanceHeader.Options.UseFont = true;
+            this.Order_OperationName.AppearanceHeader.Options.UseForeColor = true;
+            this.Order_OperationName.Caption = "Müraciətin vəziyyəti";
+            this.Order_OperationName.FieldName = "OPERATION_NAME";
+            this.Order_OperationName.Name = "Order_OperationName";
+            this.Order_OperationName.OptionsColumn.FixedWidth = true;
+            this.Order_OperationName.Visible = true;
+            this.Order_OperationName.VisibleIndex = 1;
+            this.Order_OperationName.Width = 120;
             // 
             // ConfirmationUserControl
             // 
@@ -541,5 +566,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn Customer_ID;
         private DevExpress.XtraGrid.Columns.GridColumn Customer_RegisteredAddress;
         private DevExpress.XtraGrid.Columns.GridColumn FinCode;
+        private DevExpress.XtraGrid.Columns.GridColumn Order_OperationName;
     }
 }

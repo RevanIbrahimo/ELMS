@@ -92,6 +92,7 @@
     <Compile Include="Class\DataAccess\FundsSourcesDAL.cs" />
     <Compile Include="Class\DataAccess\KindShipDAL.cs" />
     <Compile Include="Class\DataAccess\MailDAL.cs" />
+    <Compile Include="Class\DataAccess\OperationDAL.cs" />
     <Compile Include="Class\DataAccess\OrderDAL.cs" />
     <Compile Include="Class\DataAccess\OrderImageDAL.cs" />
     <Compile Include="Class\DataAccess\PermissionDAL.cs" />
