@@ -16,6 +16,7 @@ using DevExpress.XtraGrid.Views.Grid;
 using Oracle.ManagedDataAccess.Client;
 using DevExpress.Data;
 using DevExpress.XtraGrid;
+using ELMS.Forms.Customer;
 
 namespace ELMS.Forms.Order
 {
@@ -33,7 +34,7 @@ namespace ELMS.Forms.Order
 
         int UsedUserID = -1, orderID,
             documentID, topindex,
-            old_row_id, customerID,
+            old_row_id, customerID, relativeID,
             branchID = 0,
             sourceID = 0,
             timeID = 0;
@@ -46,61 +47,13 @@ namespace ELMS.Forms.Order
 
 
         List<CustomerImage> lstImage = new List<CustomerImage>();
-
-        private void RefreshProductBarButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            LoadProduct();
-        }
-
-        private void NewProductBarButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            LoadFProductAddEdit(TransactionTypeEnum.Insert, null);
-        }
-
-        private void EditProductBarButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            UpdateProduct();
-        }
-
+        
         private void LoadProduct()
         {
             ProductGridControl.DataSource = ProductCardDAL.SelectViewData(null);
             DataTable dt = ProductCardDAL.SelectTotal(null);
-
-            //OrderAmountValue.EditValue = calcTotalPrice;
-            //if (dt.Rows.Count > 0)
-            //{
-            //    OrderAmountValue.EditValue = Convert.ToDecimal(dt.Rows[0]["ORDER_AMOUNT"].ToString());
-            //}
         }
-
-        private void LoadFProductAddEdit(TransactionTypeEnum transactionType, int? id)
-        {
-            topindex = ProductGridView.TopRowIndex;
-            old_row_id = ProductGridView.FocusedRowHandle;
-            FProductCardAddEdit fd = new FProductCardAddEdit()
-            {
-                TransactionType = transactionType,
-                OrderID = OrderID,
-                CardID = id
-            };
-            fd.RefreshDataGridView += new FProductCardAddEdit.DoEvent(LoadProduct);
-            fd.ShowDialog();
-            ProductGridView.TopRowIndex = topindex;
-            ProductGridView.FocusedRowHandle = old_row_id;
-        }
-
-        private void ProductGridView_DoubleClick(object sender, EventArgs e)
-        {
-            if (EditProductBarButton.Enabled)
-                UpdateProduct();
-        }
-
-        void UpdateProduct()
-        {
-            LoadFProductAddEdit(TransactionTypeEnum.Update, documentID);
-        }
-
+        
         private void LoadImage()
         {
             if (CustomerID.HasValue)
@@ -146,51 +99,7 @@ namespace ELMS.Forms.Order
                 PhoneAllText.Enabled =
                 BOK.Visible = !status;
         }
-
-        private void ProductGridView_FocusedRowObjectChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowObjectChangedEventArgs e)
-        {
-            DataRow row = ProductGridView.GetFocusedDataRow();
-            if (row != null)
-                documentID = Convert.ToInt32(row["ID"].ToString());
-        }
-
-        //private void InsertOrder(OracleTransaction tran)
-        //{
-        //    Class.Tables.Order order = new Class.Tables.Order
-        //    {
-        //        CUSTOMER_ID = CustomerID.Value,
-        //        BRANCH_ID = branchID,
-        //        //ORDER_DATE = OrderDate.DateTime,
-        //        SOURCE_ID = sourceID,
-        //        TIME_ID = timeID,
-        //        FIRST_PAYMENT = FirstPaymentValue.Value,
-        //        ORDER_AMOUNT = OrderAmountValue.Value,
-        //        NOTE = NoteText.Text.Trim()
-        //    };
-
-        //    OrderID = OrderDAL.InsertOrder(tran, order);
-        //}
-
-        //private void UpdateOrder(OracleTransaction tran)
-        //{
-        //    isClickBOK = true;
-        //    Class.Tables.Order order = new Class.Tables.Order
-        //    {
-        //        CUSTOMER_ID = CustomerID.Value,
-        //        BRANCH_ID = branchID,
-        //        //ORDER_DATE = OrderDate.DateTime,
-        //        SOURCE_ID = sourceID,
-        //        TIME_ID = timeID,
-        //        FIRST_PAYMENT = FirstPaymentValue.Value,
-        //        ORDER_AMOUNT = OrderAmountValue.Value,
-        //        NOTE = NoteText.Text.Trim(),
-        //        USED_USER_ID = -1,
-        //        ID = OrderID.Value
-        //    };
-
-        //    OrderDAL.UpdateOrder(tran, order);
-        //}
-
+        
         private void BOK_Click(object sender, EventArgs e)
         {
             if (ControlCardDetails())
@@ -234,33 +143,6 @@ namespace ELMS.Forms.Order
             return b;
         }
 
-        //void RefreshDictionaries(int index)
-        //{
-        //    switch (index)
-        //    {
-        //        case 1:
-        //            GlobalProcedures.FillLookUpEdit(SourceLookUp, FundsSourcesDAL.SelectFundsSourcesByID(null).Tables[0]);
-        //            break;
-        //    }
-        //}
-
-        //private void LoadDictionaries(TransactionTypeEnum transaction, int index)
-        //{
-        //    Dictionaries.FDictionaries fc = new Dictionaries.FDictionaries();
-        //    fc.TransactionType = transaction;
-        //    fc.ViewSelectedTabIndex = index;
-        //    fc.RefreshList += new Dictionaries.FDictionaries.DoEvent(RefreshDictionaries);
-        //    fc.ShowDialog();
-        //}
-
-        private void FinCodeSearch_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
-        {
-            if (e.Button.Index == 1)
-                LoadFCustomerAddEdit(TransactionTypeEnum.Insert, null);
-            else if (e.Button.Index == 2)
-                LoadFCustomerAddEdit(TransactionTypeEnum.Update, CustomerID);
-        }
-
         void CalcTotalAmount()
         {
             TotalOrderAmountValue.EditValue = OrderAmountValue.Value - FirstPaymentValue.Value;
@@ -270,32 +152,7 @@ namespace ELMS.Forms.Order
         {
             CalcTotalAmount();
         }
-
-        void DeleteProduct()
-        {
-            var rows = GlobalFunctions.GridviewSelectedRow(ProductGridView);
-
-            if (rows.Count == 0)
-            {
-                GlobalProcedures.ShowWarningMessage("Silmək istədiyiniz məhsulu seçin.");
-                return;
-            }
-
-            if (GlobalFunctions.CallDialogResult("Seçilmiş məhsulları silmək istəyirsiniz?", "Məhsulların silinməsi") == DialogResult.Yes)
-                for (int i = 0; i < rows.Count; i++)
-                {
-                    DataRow row = rows[i] as DataRow;
-                    ProductCardDAL.DeleteProductCard(Convert.ToInt32(row["ID"]), OrderID.Value);
-                }
-        }
-
-        private void DeleteProductBarButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            DeleteProduct();
-            LoadProduct();
-        }
-
-
+        
         private void ProductGridView_CustomUnboundColumnData(object sender, DevExpress.XtraGrid.Views.Base.CustomColumnDataEventArgs e)
         {
             GlobalProcedures.GenerateAutoRowNumber(sender, CustomerProduct_SS, e);
@@ -325,37 +182,7 @@ namespace ELMS.Forms.Order
                     e.TotalValue = calcTotalPrice;
             }
         }
-
-
-        private void BranchLookUp_EditValueChanged(object sender, EventArgs e)
-        {
-            branchID = GlobalFunctions.GetLookUpID(sender);
-        }
-
-        private void LoadFCustomerAddEdit(TransactionTypeEnum transaction, int? id)
-        {
-
-            Customer.FCustomerAddEdit fc = new Customer.FCustomerAddEdit()
-            {
-                TransactionType = transaction,
-                CustomerID = id
-            };
-            fc.RefreshDataGridView += new Customer.FCustomerAddEdit.DoEvent(LoadCustomerDetails);
-            fc.ShowDialog();
-        }
-
-        //private void SourceLookUp_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
-        //{
-        //    if (e.Button.Index == 1)
-        //        LoadDictionaries(TransactionTypeEnum.Update, 1);
-        //}
-
-        private void FinCodeSearch_EditValueChanged(object sender, EventArgs e)
-        {
-            pinCode = ("0" + FinCodeSearch.Text.Trim());
-            LoadCustomerDetails();
-        }
-
+        
         private void LoadCustomerDetails()
         {
             DataTable dt = CustomerDAL.SelectCustomerData(pinCode);
@@ -397,23 +224,9 @@ namespace ELMS.Forms.Order
                 LoadImage();
             }
         }
-
-        private void TimeLookUp_EditValueChanged(object sender, EventArgs e)
-        {
-            timeID = GlobalFunctions.GetLookUpID(sender);
-        }
-
-        private void SourceLookUp_EditValueChanged(object sender, EventArgs e)
-        {
-            sourceID = GlobalFunctions.GetLookUpID(sender);
-        }
-
+        
         private void FOrderAddEdit_Load(object sender, EventArgs e)
         {
-            //GlobalProcedures.FillLookUpEdit(BranchLookUp, BranchDAL.SelectBranchByID(null).Tables[0]);
-            //GlobalProcedures.FillLookUpEdit(SourceLookUp, FundsSourcesDAL.SelectFundsSourcesByID(null).Tables[0]);
-            //GlobalProcedures.FillLookUpEdit(TimeLookUp, TimesDAL.SelectTimesByID(null).Tables[0]);
-            //RefreshDictionaries(1);
 
             if (TransactionType == TransactionTypeEnum.Update)
             {
@@ -462,14 +275,6 @@ namespace ELMS.Forms.Order
         }
 
 
-
-
-
-
-
-
-
-
         private void OtherInfoTabControl_SelectedPageChanged(object sender, DevExpress.XtraTab.TabPageChangedEventArgs e)
         {
             switch (OtherInfoTabControl.SelectedTabPageIndex)
@@ -482,20 +287,8 @@ namespace ELMS.Forms.Order
                 case 1:
                     {
                         LoadDocument();
-                    }
-                    break;
-                case 2:
-                    {
                         LoadPhone();
-                    }
-                    break;
-                case 3:
-                    {
                         LoadWork();
-                    }
-                    break;
-                case 4:
-                    {
                         LoadRelative();
                     }
                     break;
@@ -515,80 +308,7 @@ namespace ELMS.Forms.Order
         {
             DocumentGridControl.DataSource = CustomerCardDAL.SelectViewDataAll(CustomerID);
         }
-
-        //private void RefreshDocumentBarButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        //{
-        //    LoadDocument();
-        //}
-
-        //private void NewDocumentBarButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        //{
-        //    LoadFDocumentAddEdit(TransactionTypeEnum.Insert, null);
-        //}
-
-        //private void EditDocumentBarButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        //{
-        //    UpdateDocument();
-        //}
-
-        //void UpdateDocument()
-        //{
-        //    LoadFDocumentAddEdit(TransactionTypeEnum.Update, documentID);
-        //}
-
-        //private void DeleteDocumentBarButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        //{
-        //    DeleteDocument();
-        //    LoadDocument();
-        //}
-
-        //void DeleteDocument()
-        //{
-        //    var rows = GlobalFunctions.GridviewSelectedRow(DocumentGridView);
-
-        //    if (rows.Count == 0)
-        //    {
-        //        GlobalProcedures.ShowWarningMessage("Silmək istədiyiniz sənədi seçin.");
-        //        return;
-        //    }
-
-        //    if (GlobalFunctions.CallDialogResult("Seçilmiş sənədləri silmək istəyirsiniz?", "Sənədlərin silinməsi") == DialogResult.Yes)
-        //        for (int i = 0; i < rows.Count; i++)
-        //        {
-        //            DataRow row = rows[i] as DataRow;
-        //            CustomerCardDAL.DeleteCustomerCard(Convert.ToInt32(row["ID"]), CustomerID.Value);
-        //        }
-        //}
-
-        //private void LoadFDocumentAddEdit(TransactionTypeEnum transactionType, int? id)
-        //{
-        //    topindex = DocumentGridView.TopRowIndex;
-        //    old_row_id = DocumentGridView.FocusedRowHandle;
-        //    FCardAddEdit fd = new FCardAddEdit()
-        //    {
-        //        TransactionType = transactionType,
-        //        CustomerID = CustomerID,
-        //        CardID = id
-        //    };
-        //    fd.RefreshDataGridView += new FCardAddEdit.DoEvent(LoadDocument);
-        //    fd.ShowDialog();
-        //    DocumentGridView.TopRowIndex = topindex;
-        //    DocumentGridView.FocusedRowHandle = old_row_id;
-        //}
-
-        //private void DocumentGridView_DoubleClick(object sender, EventArgs e)
-        //{
-        //    if (EditDocumentBarButton.Enabled)
-        //        UpdateDocument();
-        //}
-
-        //private void DocumentGridView_FocusedRowObjectChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowObjectChangedEventArgs e)
-        //{
-        //    DataRow row = DocumentGridView.GetFocusedDataRow();
-        //    if (row != null)
-        //        documentID = Convert.ToInt32(row["ID"].ToString());
-        //}
-
+        
         private void DocumentGridView_CustomUnboundColumnData(object sender, DevExpress.XtraGrid.Views.Base.CustomColumnDataEventArgs e)
         {
             GlobalProcedures.GenerateAutoRowNumber(sender, CustomerDocument_SS, e);
@@ -608,86 +328,8 @@ namespace ELMS.Forms.Order
                 CustomerID = 0;
 
             PhoneGridControl.DataSource = PhoneDAL.SelectPhoneByOwnerID(CustomerID.Value, PhoneOwnerEnum.Customer);
-
-           // EditPhoneBarButton.Enabled = DeletePhoneBarButton.Enabled = PhoneGridView.RowCount > 0;
+            
         }
-
-        //private void RefreshPhoneBarButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        //{
-        //    LoadPhone();
-        //}
-
-        //private void NewPhoneBarButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        //{
-        //    LoadFPhoneAddEdit(TransactionTypeEnum.Insert, null);
-        //}
-
-        //private void EditPhoneBarButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        //{
-        //    UpdatePhone();
-        //}
-
-        //void UpdatePhone()
-        //{
-        //    LoadFPhoneAddEdit(TransactionTypeEnum.Update, phoneID);
-        //}
-
-        //private void LoadFPhoneAddEdit(TransactionTypeEnum transaction, int? id)
-        //{
-        //    topindex = PhoneGridView.TopRowIndex;
-        //    old_row_id = PhoneGridView.FocusedRowHandle;
-        //    Phone.FPhoneAddEdit fp = new Phone.FPhoneAddEdit()
-        //    {
-        //        TransactionType = transaction,
-        //        PhoneID = id,
-        //        PhoneOwner = PhoneOwnerEnum.Customer,
-        //        OwnerID = CustomerID.Value
-        //    };
-        //    fp.RefreshDataGridView += new Phone.FPhoneAddEdit.DoEvent(LoadPhone);
-        //    fp.ShowDialog();
-        //    PhoneGridView.TopRowIndex = topindex;
-        //    PhoneGridView.FocusedRowHandle = old_row_id;
-        //}
-
-        //private void DeletePhoneBarButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        //{
-        //    DeletePhone();
-        //    LoadPhone();
-        //}
-
-        //void DeletePhone()
-        //{
-        //    var rows = GlobalFunctions.GridviewSelectedRow(PhoneGridView);
-
-        //    if (rows.Count == 0)
-        //    {
-        //        GlobalProcedures.ShowWarningMessage("Silmək istədiyiniz telefonu seçin.");
-        //        return;
-        //    }
-
-        //    if (GlobalFunctions.CallDialogResult("Seçilmiş telefonları silmək istəyirsiniz?", "Telefonların silinməsi") == DialogResult.Yes)
-        //        for (int i = 0; i < rows.Count; i++)
-        //        {
-        //            DataRow row = rows[i] as DataRow;
-        //            PhoneDAL.DeletePhone(Convert.ToInt32(row["ID"]), CustomerID.Value, PhoneOwnerEnum.Customer);
-        //        }
-        //}
-
-        //private void PhoneGridView_DoubleClick(object sender, EventArgs e)
-        //{
-        //    if (EditPhoneBarButton.Enabled)
-        //        UpdatePhone();
-        //}
-
-        //private void PhoneGridView_MouseUp(object sender, MouseEventArgs e)
-        //{
-        //    GlobalProcedures.GridMouseUpForPopupMenu(PhoneGridView, PhonePopupMenu, e);
-        //}
-
-        //private void PhoneGridView_FocusedRowObjectChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowObjectChangedEventArgs e)
-        //{
-        //    phoneID = Convert.ToInt32(GlobalFunctions.GetGridRowCellValue((sender as GridView), "ID"));
-        //}
 
         private void PhoneGridView_CustomUnboundColumnData(object sender, DevExpress.XtraGrid.Views.Base.CustomColumnDataEventArgs e)
         {
@@ -707,74 +349,6 @@ namespace ELMS.Forms.Order
         {
             WorkGridControl.DataSource = CustomerWorkDAL.SelectViewDataAll(CustomerID);
         }
-
-        //private void RefreshWorkBarButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        //{
-        //    LoadWork();
-        //}
-
-        //private void NewWorkBarButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        //{
-        //    LoadFWorkAddEdit(TransactionTypeEnum.Insert, null);
-        //}
-
-        //private void EditWorkBarButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        //{
-        //    UpdateWork();
-
-        //}
-
-        //void UpdateWork()
-        //{
-        //    LoadFWorkAddEdit(TransactionTypeEnum.Update, workID);
-        //}
-
-        //private void LoadFWorkAddEdit(TransactionTypeEnum transactionType, int? id)
-        //{
-        //    topindex = WorkGridView.TopRowIndex;
-        //    old_row_id = WorkGridView.FocusedRowHandle;
-        //    FWorkAddEdit fd = new FWorkAddEdit()
-        //    {
-        //        TransactionType = transactionType,
-        //        CustomerID = CustomerID.Value,
-        //        WorkID = id
-        //    };
-        //    fd.RefreshDataGridView += new FWorkAddEdit.DoEvent(LoadWork);
-        //    fd.ShowDialog();
-        //    WorkGridView.TopRowIndex = topindex;
-        //    WorkGridView.FocusedRowHandle = old_row_id;
-        //}
-
-        //private void DeleteWorkBarButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        //{
-        //    DeleteWork();
-        //    LoadWork();
-        //}
-
-        //void DeleteWork()
-        //{
-        //    var rows = GlobalFunctions.GridviewSelectedRow(WorkGridView);
-
-        //    if (rows.Count == 0)
-        //    {
-        //        GlobalProcedures.ShowWarningMessage("Silmək istədiyiniz iş yerini seçin.");
-        //        return;
-        //    }
-
-        //    if (GlobalFunctions.CallDialogResult("Seçilmiş iş yerlərini silmək istəyirsiniz?", "İş yerlərinin silinməsi") == DialogResult.Yes)
-        //        for (int i = 0; i < rows.Count; i++)
-        //        {
-        //            DataRow row = rows[i] as DataRow;
-        //            CustomerWorkDAL.DeleteCustomerWork(Convert.ToInt32(row["ID"]), CustomerID.Value);
-        //        }
-        //}
-
-        //private void WorkGridView_FocusedRowObjectChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowObjectChangedEventArgs e)
-        //{
-        //    DataRow row = WorkGridView.GetFocusedDataRow();
-        //    if (row != null)
-        //        workID = Convert.ToInt32(row["ID"].ToString());
-        //}
 
         private void WorkGridView_CustomUnboundColumnData(object sender, DevExpress.XtraGrid.Views.Base.CustomColumnDataEventArgs e)
         {
@@ -796,73 +370,44 @@ namespace ELMS.Forms.Order
 
             RelativeGridControl.DataSource = RelativeCardDAL.SelectRelativeByOwnerID(CustomerID.Value, PhoneOwnerEnum.Relative);
 
-            EditRelativeBarButton.Enabled = DeleteRelativeBarButton.Enabled = RelativeGridView.RowCount > 0;
+            EditRelativeBarButton.Enabled = RelativeGridView.RowCount > 0;
         }
 
-        //private void RefreshRelativeBarButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        //{
-        //    LoadRelative();
-        //}
+        private void RefreshRelativeBarButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            LoadRelative();
+        }
 
-        //private void NewRelativeBarButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        //{
-        //    LoadFRelativeAddEdit(TransactionTypeEnum.Insert, null);
-        //}
+        private void EditRelativeBarButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            LoadFRelativeAddEdit(TransactionTypeEnum.Update, relativeID);
+        }
 
-        //private void EditRelativeBarButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        //{
-        //    LoadFRelativeAddEdit(TransactionTypeEnum.Update, relativeID);
-        //}
+        private void LoadFRelativeAddEdit(TransactionTypeEnum transactionType, int? id)
+        {
+            topindex = RelativeGridView.TopRowIndex;
+            old_row_id = RelativeGridView.FocusedRowHandle;
+            FRelativeAddEdit fd = new FRelativeAddEdit()
+            {
+                TransactionType = transactionType,
+                Customer_ID = CustomerID.Value,
+                RelativeID = id,
+                PhoneOwner = PhoneOwnerEnum.Relative,
+            };
+            fd.RefreshDataGridView += new FRelativeAddEdit.DoEvent(LoadRelative);
+            fd.ShowDialog();
+            RelativeGridView.TopRowIndex = topindex;
+            RelativeGridView.FocusedRowHandle = old_row_id;
+        }
 
-        //private void LoadFRelativeAddEdit(TransactionTypeEnum transactionType, int? id)
-        //{
-        //    topindex = RelativeGridView.TopRowIndex;
-        //    old_row_id = RelativeGridView.FocusedRowHandle;
-        //    FRelativeAddEdit fd = new FRelativeAddEdit()
-        //    {
-        //        TransactionType = transactionType,
-        //        Customer_ID = CustomerID.Value,
-        //        RelativeID = id,
-        //        PhoneOwner = PhoneOwnerEnum.Relative,
-        //    };
-        //    fd.RefreshDataGridView += new FRelativeAddEdit.DoEvent(LoadRelative);
-        //    fd.ShowDialog();
-        //    RelativeGridView.TopRowIndex = topindex;
-        //    RelativeGridView.FocusedRowHandle = old_row_id;
-        //}
+        private void RelativeGridView_FocusedRowObjectChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowObjectChangedEventArgs e)
+        {
 
-        //private void DeleteRelativeBarButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        //{
-        //    DeleteRelative();
-        //    LoadRelative();
-        //}
+            DataRow row = RelativeGridView.GetFocusedDataRow();
+            if (row != null)
+                relativeID = Convert.ToInt32(row["ID"].ToString());
+        }
 
-        //void DeleteRelative()
-        //{
-        //    var rows = GlobalFunctions.GridviewSelectedRow(RelativeGridView);
-
-        //    if (rows.Count == 0)
-        //    {
-        //        GlobalProcedures.ShowWarningMessage("Silmək istədiyiniz qohumu seçin.");
-        //        return;
-        //    }
-
-        //    if (GlobalFunctions.CallDialogResult("Seçilmiş qohumları silmək istəyirsiniz?", "Qohumların silinməsi") == DialogResult.Yes)
-        //        for (int i = 0; i < rows.Count; i++)
-        //        {
-        //            DataRow row = rows[i] as DataRow;
-        //            RelativeCardDAL.DeleteCustomerRelative(Convert.ToInt32(row["ID"]), CustomerID.Value);
-        //            RelativeCardDAL.DeleteRelativePhone(Convert.ToInt32(row["PHONE_ID"]), CustomerID.Value, PhoneOwnerEnum.Relative);
-        //        }
-        //}
-        //
-        //private void RelativeGridView_FocusedRowObjectChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowObjectChangedEventArgs e)
-        //{
-
-        //    DataRow row = RelativeGridView.GetFocusedDataRow();
-        //    if (row != null)
-        //        relativeID = Convert.ToInt32(row["ID"].ToString());
-        //}
         private void RelativeGridView_CustomUnboundColumnData(object sender, DevExpress.XtraGrid.Views.Base.CustomColumnDataEventArgs e)
         {
             GlobalProcedures.GenerateAutoRowNumber(sender, Relative_SS, e);

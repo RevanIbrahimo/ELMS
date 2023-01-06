@@ -63,8 +63,8 @@
             this.Customer_Address = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Customer_Note = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Customer_UsedUserID = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.OrderPopupMenu = new DevExpress.XtraBars.PopupMenu(this.components);
             this.FinCode = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.OrderPopupMenu = new DevExpress.XtraBars.PopupMenu(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.BarManager)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.OrderGridControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.OrderGridView)).BeginInit();
@@ -107,9 +107,7 @@
             this.ToolBar.DockRow = 0;
             this.ToolBar.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
             this.ToolBar.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.NewBarButton),
             new DevExpress.XtraBars.LinkPersistInfo(this.EditBarButton),
-            new DevExpress.XtraBars.LinkPersistInfo(this.DeleteBarButton),
             new DevExpress.XtraBars.LinkPersistInfo(this.RefreshBarButton),
             new DevExpress.XtraBars.LinkPersistInfo(this.PrintBarButton, true),
             new DevExpress.XtraBars.LinkPersistInfo(this.ExportBarButton)});
@@ -131,7 +129,7 @@
             // 
             // EditBarButton
             // 
-            this.EditBarButton.Caption = "Dəyiş";
+            this.EditBarButton.Caption = "Müraciətə bax";
             this.EditBarButton.Id = 1;
             this.EditBarButton.ImageOptions.Image = global::ELMS.Properties.Resources.pencil_32;
             this.EditBarButton.ItemShortcut = new DevExpress.XtraBars.BarShortcut((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.E));
@@ -461,6 +459,14 @@
             this.Customer_UsedUserID.Name = "Customer_UsedUserID";
             this.Customer_UsedUserID.OptionsColumn.AllowShowHide = false;
             // 
+            // FinCode
+            // 
+            this.FinCode.Caption = "Fin kodu";
+            this.FinCode.FieldName = "PINCODE";
+            this.FinCode.Name = "FinCode";
+            this.FinCode.Visible = true;
+            this.FinCode.VisibleIndex = 7;
+            // 
             // OrderPopupMenu
             // 
             this.OrderPopupMenu.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
@@ -474,14 +480,6 @@
             new DevExpress.XtraBars.LinkPersistInfo(this.ExportBarButton)});
             this.OrderPopupMenu.Manager = this.BarManager;
             this.OrderPopupMenu.Name = "OrderPopupMenu";
-            // 
-            // FinCode
-            // 
-            this.FinCode.Caption = "Fin kodu";
-            this.FinCode.FieldName = "PINCODE";
-            this.FinCode.Name = "FinCode";
-            this.FinCode.Visible = true;
-            this.FinCode.VisibleIndex = 7;
             // 
             // ConfirmationUserControl
             // 

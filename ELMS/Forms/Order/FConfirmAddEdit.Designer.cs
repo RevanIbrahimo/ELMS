@@ -30,48 +30,23 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FConfirmAddEdit));
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions3 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions4 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SuperToolTip superToolTip7 = new DevExpress.Utils.SuperToolTip();
-            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem11 = new DevExpress.Utils.ToolTipTitleItem();
-            DevExpress.Utils.ToolTipItem toolTipItem7 = new DevExpress.Utils.ToolTipItem();
-            DevExpress.Utils.ToolTipSeparatorItem toolTipSeparatorItem3 = new DevExpress.Utils.ToolTipSeparatorItem();
-            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem12 = new DevExpress.Utils.ToolTipTitleItem();
+            DevExpress.Utils.SuperToolTip superToolTip3 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem4 = new DevExpress.Utils.ToolTipTitleItem();
+            DevExpress.Utils.ToolTipItem toolTipItem3 = new DevExpress.Utils.ToolTipItem();
+            DevExpress.Utils.ToolTipSeparatorItem toolTipSeparatorItem1 = new DevExpress.Utils.ToolTipSeparatorItem();
+            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem5 = new DevExpress.Utils.ToolTipTitleItem();
             DevExpress.Utils.SuperToolTip superToolTip4 = new DevExpress.Utils.SuperToolTip();
             DevExpress.Utils.ToolTipTitleItem toolTipTitleItem6 = new DevExpress.Utils.ToolTipTitleItem();
             DevExpress.Utils.ToolTipItem toolTipItem4 = new DevExpress.Utils.ToolTipItem();
             DevExpress.Utils.ToolTipTitleItem toolTipTitleItem7 = new DevExpress.Utils.ToolTipTitleItem();
-            DevExpress.Utils.SuperToolTip superToolTip5 = new DevExpress.Utils.SuperToolTip();
-            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem8 = new DevExpress.Utils.ToolTipTitleItem();
-            DevExpress.Utils.ToolTipItem toolTipItem5 = new DevExpress.Utils.ToolTipItem();
-            DevExpress.Utils.SuperToolTip superToolTip6 = new DevExpress.Utils.SuperToolTip();
-            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem9 = new DevExpress.Utils.ToolTipTitleItem();
-            DevExpress.Utils.ToolTipItem toolTipItem6 = new DevExpress.Utils.ToolTipItem();
-            DevExpress.Utils.ToolTipSeparatorItem toolTipSeparatorItem2 = new DevExpress.Utils.ToolTipSeparatorItem();
-            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem10 = new DevExpress.Utils.ToolTipTitleItem();
             DevExpress.Utils.SuperToolTip superToolTip1 = new DevExpress.Utils.SuperToolTip();
             DevExpress.Utils.ToolTipTitleItem toolTipTitleItem1 = new DevExpress.Utils.ToolTipTitleItem();
             DevExpress.Utils.ToolTipItem toolTipItem1 = new DevExpress.Utils.ToolTipItem();
-            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem2 = new DevExpress.Utils.ToolTipTitleItem();
-            DevExpress.Utils.SuperToolTip superToolTip2 = new DevExpress.Utils.SuperToolTip();
-            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem3 = new DevExpress.Utils.ToolTipTitleItem();
-            DevExpress.Utils.ToolTipItem toolTipItem2 = new DevExpress.Utils.ToolTipItem();
-            ManiXButton.Office2010Green office2010Green2 = new ManiXButton.Office2010Green();
-            ManiXButton.Office2010Red office2010Red2 = new ManiXButton.Office2010Red();
-            ManiXButton.Office2010White office2010White2 = new ManiXButton.Office2010White();
+            ManiXButton.Office2010Green office2010Green3 = new ManiXButton.Office2010Green();
+            ManiXButton.Office2010Red office2010Red3 = new ManiXButton.Office2010Red();
+            ManiXButton.Office2010White office2010White3 = new ManiXButton.Office2010White();
             this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
             this.behaviorManager1 = new DevExpress.Utils.Behaviors.BehaviorManager(this.components);
-            this.PersonalDetailsGroupBox = new DevExpress.XtraEditors.GroupControl();
-            this.groupControl5 = new DevExpress.XtraEditors.GroupControl();
-            this.ProductGridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.ProductGridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.Product_SS = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Product_Name = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Product_Count = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Product_Price = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Product_TotalPrice = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Product_Note = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Product_ID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.ProductBarManager = new DevExpress.XtraBars.BarManager(this.components);
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
@@ -79,7 +54,6 @@
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.ProductStandaloneBarDockControl = new DevExpress.XtraBars.StandaloneBarDockControl();
             this.RelativeStandaloneBarDockControl = new DevExpress.XtraBars.StandaloneBarDockControl();
-            this.WorkStandaloneBarDockControl = new DevExpress.XtraBars.StandaloneBarDockControl();
             this.NewProductBarButton = new DevExpress.XtraBars.BarButtonItem();
             this.EditProductBarButton = new DevExpress.XtraBars.BarButtonItem();
             this.DeleteProductBarButton = new DevExpress.XtraBars.BarButtonItem();
@@ -89,18 +63,6 @@
             this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
-            this.OtherGroupControl = new DevExpress.XtraEditors.GroupControl();
-            this.DocumentGridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.DocumentGridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.Document_SS = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Document_DocumentGroup = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Document_DocumentType = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Document_DocumentNumber = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Document_FinCode = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Document_IssueName = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Document_IssueDate = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Document_ReliableDate = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Document_ID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.DocumentBarManager = new DevExpress.XtraBars.BarManager(this.components);
             this.barDockControl52 = new DevExpress.XtraBars.BarDockControl();
             this.barDockControl84 = new DevExpress.XtraBars.BarDockControl();
@@ -110,56 +72,7 @@
             this.EditDocumentBarButton = new DevExpress.XtraBars.BarButtonItem();
             this.DeleteDocumentBarButton = new DevExpress.XtraBars.BarButtonItem();
             this.RefreshDocumentBarButton = new DevExpress.XtraBars.BarButtonItem();
-            this.labelControl23 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl22 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl21 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl20 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl19 = new DevExpress.XtraEditors.LabelControl();
-            this.RegisterAddressText1 = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.RegistrationLabel = new DevExpress.XtraEditors.LabelControl();
-            this.FinCodeSearch1 = new DevExpress.XtraEditors.SearchControl();
-            this.ActualAddressText1 = new DevExpress.XtraEditors.TextEdit();
-            this.Address2Label = new DevExpress.XtraEditors.LabelControl();
-            this.PictureEdit2 = new DevExpress.XtraEditors.PictureEdit();
-            this.separatorControl1 = new DevExpress.XtraEditors.SeparatorControl();
-            this.PhoneAllText1 = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
-            this.NameText1 = new DevExpress.XtraEditors.TextEdit();
-            this.NameLabel = new DevExpress.XtraEditors.LabelControl();
             this.OtherInfoTabControl = new DevExpress.XtraTab.XtraTabControl();
-            this.OrderCardTab = new DevExpress.XtraTab.XtraTabPage();
-            this.xtraScrollableControl1 = new DevExpress.XtraEditors.XtraScrollableControl();
-            this.groupControl4 = new DevExpress.XtraEditors.GroupControl();
-            this.RelativeGridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.RelativeGridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.RelativeCard_SS = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.RelativeCard_ID = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.RelativeCard_Name = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.RelativeCard_KindShip = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.RelativeCard_Phone = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.RelativeCard_Description = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.RelativeCard_Profession = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.RelativeCard_Salary = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
-            this.WorkGridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.WorkGridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.CustomerWork_SS = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.CustomerWork_ID = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.CustomerWork_PlaceName = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.CustomerWork_Position = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.CustomerWork_Salary = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.CustomerWork_Note = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
-            this.PhoneGridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.PhoneGridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.CustomerPhone_SS = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.CustomerPhone_ID = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.CustomerPhone_Description = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.CustomerPhone_Number = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.CustomerPhone_Note = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.CustomerPhone_IsSendSMS = new DevExpress.XtraGrid.Columns.GridColumn();
             this.IDCardTab = new DevExpress.XtraTab.XtraTabPage();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.ProductGridControl = new DevExpress.XtraGrid.GridControl();
@@ -259,29 +172,6 @@
             this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.WorkTab = new DevExpress.XtraTab.XtraTabPage();
-            this.RelativeTab = new DevExpress.XtraTab.XtraTabPage();
-            this.barDockControl19 = new DevExpress.XtraBars.BarDockControl();
-            this.barDockControl32 = new DevExpress.XtraBars.BarDockControl();
-            this.barDockControl33 = new DevExpress.XtraBars.BarDockControl();
-            this.barDockControl34 = new DevExpress.XtraBars.BarDockControl();
-            this.barDockControl35 = new DevExpress.XtraBars.BarDockControl();
-            this.barDockControl36 = new DevExpress.XtraBars.BarDockControl();
-            this.barDockControl37 = new DevExpress.XtraBars.BarDockControl();
-            this.barDockControl38 = new DevExpress.XtraBars.BarDockControl();
-            this.barDockControl39 = new DevExpress.XtraBars.BarDockControl();
-            this.barDockControl40 = new DevExpress.XtraBars.BarDockControl();
-            this.barDockControl41 = new DevExpress.XtraBars.BarDockControl();
-            this.barDockControl42 = new DevExpress.XtraBars.BarDockControl();
-            this.barDockControl43 = new DevExpress.XtraBars.BarDockControl();
-            this.barDockControl44 = new DevExpress.XtraBars.BarDockControl();
-            this.barDockControl45 = new DevExpress.XtraBars.BarDockControl();
-            this.barDockControl46 = new DevExpress.XtraBars.BarDockControl();
-            this.barDockControl47 = new DevExpress.XtraBars.BarDockControl();
-            this.barDockControl48 = new DevExpress.XtraBars.BarDockControl();
-            this.barDockControl49 = new DevExpress.XtraBars.BarDockControl();
-            this.barDockControl50 = new DevExpress.XtraBars.BarDockControl();
-            this.barDockControl51 = new DevExpress.XtraBars.BarDockControl();
             this.PanelOption = new DevExpress.XtraEditors.PanelControl();
             this.xButton1 = new ManiXButton.XButton();
             this.BCancel = new ManiXButton.XButton();
@@ -352,9 +242,7 @@
             this.DocumentPopupMenu = new DevExpress.XtraBars.PopupMenu(this.components);
             this.RelativeBarManager = new DevExpress.XtraBars.BarManager(this.components);
             this.RelativeBar = new DevExpress.XtraBars.Bar();
-            this.NewRelativeBarButton = new DevExpress.XtraBars.BarButtonItem();
             this.EditRelativeBarButton = new DevExpress.XtraBars.BarButtonItem();
-            this.DeleteRelativeBarButton = new DevExpress.XtraBars.BarButtonItem();
             this.RefreshRelativeBarButton = new DevExpress.XtraBars.BarButtonItem();
             this.barDockControl95 = new DevExpress.XtraBars.BarDockControl();
             this.barDockControl96 = new DevExpress.XtraBars.BarDockControl();
@@ -362,41 +250,10 @@
             this.barDockControl98 = new DevExpress.XtraBars.BarDockControl();
             this.RelativePopupMenu = new DevExpress.XtraBars.PopupMenu(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PersonalDetailsGroupBox)).BeginInit();
-            this.PersonalDetailsGroupBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl5)).BeginInit();
-            this.groupControl5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ProductGridControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ProductGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ProductBarManager)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.OtherGroupControl)).BeginInit();
-            this.OtherGroupControl.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DocumentGridControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DocumentGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DocumentBarManager)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.RegisterAddressText1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.FinCodeSearch1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ActualAddressText1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PictureEdit2.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PhoneAllText1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.NameText1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.OtherInfoTabControl)).BeginInit();
             this.OtherInfoTabControl.SuspendLayout();
-            this.OrderCardTab.SuspendLayout();
-            this.xtraScrollableControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl4)).BeginInit();
-            this.groupControl4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.RelativeGridControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.RelativeGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
-            this.groupControl3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.WorkGridControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.WorkGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
-            this.groupControl2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PhoneGridControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PhoneGridView1)).BeginInit();
             this.IDCardTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
@@ -443,188 +300,12 @@
             this.groupControl7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DocumentGridControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DocumentGridView)).BeginInit();
-            this.WorkTab.SuspendLayout();
-            this.RelativeTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PanelOption)).BeginInit();
             this.PanelOption.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DocumentPopupMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.RelativeBarManager)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.RelativePopupMenu)).BeginInit();
             this.SuspendLayout();
-            // 
-            // PersonalDetailsGroupBox
-            // 
-            this.PersonalDetailsGroupBox.AppearanceCaption.FontStyleDelta = System.Drawing.FontStyle.Bold;
-            this.PersonalDetailsGroupBox.AppearanceCaption.ForeColor = System.Drawing.Color.Maroon;
-            this.PersonalDetailsGroupBox.AppearanceCaption.Options.UseFont = true;
-            this.PersonalDetailsGroupBox.AppearanceCaption.Options.UseForeColor = true;
-            this.PersonalDetailsGroupBox.Controls.Add(this.groupControl5);
-            this.PersonalDetailsGroupBox.Controls.Add(this.OtherGroupControl);
-            this.PersonalDetailsGroupBox.Controls.Add(this.labelControl23);
-            this.PersonalDetailsGroupBox.Controls.Add(this.labelControl22);
-            this.PersonalDetailsGroupBox.Controls.Add(this.labelControl21);
-            this.PersonalDetailsGroupBox.Controls.Add(this.labelControl20);
-            this.PersonalDetailsGroupBox.Controls.Add(this.labelControl19);
-            this.PersonalDetailsGroupBox.Controls.Add(this.RegisterAddressText1);
-            this.PersonalDetailsGroupBox.Controls.Add(this.labelControl6);
-            this.PersonalDetailsGroupBox.Controls.Add(this.labelControl1);
-            this.PersonalDetailsGroupBox.Controls.Add(this.RegistrationLabel);
-            this.PersonalDetailsGroupBox.Controls.Add(this.FinCodeSearch1);
-            this.PersonalDetailsGroupBox.Controls.Add(this.ActualAddressText1);
-            this.PersonalDetailsGroupBox.Controls.Add(this.Address2Label);
-            this.PersonalDetailsGroupBox.Controls.Add(this.PictureEdit2);
-            this.PersonalDetailsGroupBox.Controls.Add(this.separatorControl1);
-            this.PersonalDetailsGroupBox.Controls.Add(this.PhoneAllText1);
-            this.PersonalDetailsGroupBox.Controls.Add(this.labelControl5);
-            this.PersonalDetailsGroupBox.Controls.Add(this.NameText1);
-            this.PersonalDetailsGroupBox.Controls.Add(this.NameLabel);
-            this.PersonalDetailsGroupBox.Location = new System.Drawing.Point(12, 3);
-            this.PersonalDetailsGroupBox.Name = "PersonalDetailsGroupBox";
-            this.PersonalDetailsGroupBox.Size = new System.Drawing.Size(837, 289);
-            this.PersonalDetailsGroupBox.TabIndex = 1;
-            this.PersonalDetailsGroupBox.Text = "Şəxsi məlumatlar";
-            // 
-            // groupControl5
-            // 
-            this.groupControl5.AppearanceCaption.FontStyleDelta = System.Drawing.FontStyle.Bold;
-            this.groupControl5.AppearanceCaption.ForeColor = System.Drawing.Color.Navy;
-            this.groupControl5.AppearanceCaption.Options.UseFont = true;
-            this.groupControl5.AppearanceCaption.Options.UseForeColor = true;
-            this.groupControl5.Controls.Add(this.ProductGridControl1);
-            this.groupControl5.Location = new System.Drawing.Point(5, 107);
-            this.groupControl5.Name = "groupControl5";
-            this.groupControl5.Size = new System.Drawing.Size(849, 119);
-            this.groupControl5.TabIndex = 194;
-            this.groupControl5.Text = "Sifarişlər";
-            // 
-            // ProductGridControl1
-            // 
-            this.ProductGridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ProductGridControl1.Location = new System.Drawing.Point(2, 20);
-            this.ProductGridControl1.MainView = this.ProductGridView1;
-            this.ProductGridControl1.MenuManager = this.ProductBarManager;
-            this.ProductGridControl1.Name = "ProductGridControl1";
-            this.ProductGridControl1.Size = new System.Drawing.Size(845, 97);
-            this.ProductGridControl1.TabIndex = 18;
-            this.ProductGridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.ProductGridView1});
-            // 
-            // ProductGridView1
-            // 
-            this.ProductGridView1.Appearance.FooterPanel.Options.UseTextOptions = true;
-            this.ProductGridView1.Appearance.FooterPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.ProductGridView1.Appearance.FooterPanel.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.ProductGridView1.Appearance.HeaderPanel.Options.UseTextOptions = true;
-            this.ProductGridView1.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.ProductGridView1.Appearance.HeaderPanel.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.ProductGridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.Product_SS,
-            this.Product_Name,
-            this.Product_Count,
-            this.Product_Price,
-            this.Product_TotalPrice,
-            this.Product_Note,
-            this.Product_ID});
-            this.ProductGridView1.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFullFocus;
-            this.ProductGridView1.GridControl = this.ProductGridControl1;
-            this.ProductGridView1.Name = "ProductGridView1";
-            this.ProductGridView1.OptionsBehavior.AutoExpandAllGroups = true;
-            this.ProductGridView1.OptionsBehavior.AutoSelectAllInEditor = false;
-            this.ProductGridView1.OptionsBehavior.Editable = false;
-            this.ProductGridView1.OptionsFilter.UseNewCustomFilterDialog = true;
-            this.ProductGridView1.OptionsFind.FindDelay = 100;
-            this.ProductGridView1.OptionsSelection.CheckBoxSelectorColumnWidth = 40;
-            this.ProductGridView1.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.ProductGridView1.OptionsSelection.MultiSelect = true;
-            this.ProductGridView1.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.CheckBoxRowSelect;
-            this.ProductGridView1.OptionsView.EnableAppearanceEvenRow = true;
-            this.ProductGridView1.OptionsView.GroupFooterShowMode = DevExpress.XtraGrid.Views.Grid.GroupFooterShowMode.VisibleAlways;
-            this.ProductGridView1.OptionsView.ShowGroupPanel = false;
-            this.ProductGridView1.OptionsView.ShowIndicator = false;
-            this.ProductGridView1.CustomSummaryCalculate += new DevExpress.Data.CustomSummaryEventHandler(this.ProductGridView_CustomSummaryCalculate);
-            this.ProductGridView1.FocusedRowObjectChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowObjectChangedEventHandler(this.ProductGridView_FocusedRowObjectChanged);
-            this.ProductGridView1.CustomUnboundColumnData += new DevExpress.XtraGrid.Views.Base.CustomColumnDataEventHandler(this.ProductGridView_CustomUnboundColumnData);
-            this.ProductGridView1.DoubleClick += new System.EventHandler(this.ProductGridView_DoubleClick);
-            // 
-            // Product_SS
-            // 
-            this.Product_SS.AppearanceCell.Options.UseTextOptions = true;
-            this.Product_SS.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.Product_SS.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.Product_SS.Caption = "S/s";
-            this.Product_SS.FieldName = "Product_SS";
-            this.Product_SS.Name = "Product_SS";
-            this.Product_SS.OptionsColumn.FixedWidth = true;
-            this.Product_SS.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Count, "Product_SS", "{0}")});
-            this.Product_SS.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
-            this.Product_SS.Visible = true;
-            this.Product_SS.VisibleIndex = 1;
-            this.Product_SS.Width = 50;
-            // 
-            // Product_Name
-            // 
-            this.Product_Name.Caption = "Mal";
-            this.Product_Name.FieldName = "PRODUCT_NAME";
-            this.Product_Name.Name = "Product_Name";
-            this.Product_Name.OptionsColumn.FixedWidth = true;
-            this.Product_Name.Visible = true;
-            this.Product_Name.VisibleIndex = 2;
-            this.Product_Name.Width = 250;
-            // 
-            // Product_Count
-            // 
-            this.Product_Count.Caption = "Say";
-            this.Product_Count.DisplayFormat.FormatString = "n0";
-            this.Product_Count.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.Product_Count.FieldName = "PRODUCT_COUNT";
-            this.Product_Count.Name = "Product_Count";
-            this.Product_Count.OptionsColumn.FixedWidth = true;
-            this.Product_Count.Visible = true;
-            this.Product_Count.VisibleIndex = 3;
-            this.Product_Count.Width = 70;
-            // 
-            // Product_Price
-            // 
-            this.Product_Price.Caption = "Qiymət";
-            this.Product_Price.DisplayFormat.FormatString = "n2";
-            this.Product_Price.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.Product_Price.FieldName = "PRICE";
-            this.Product_Price.Name = "Product_Price";
-            this.Product_Price.OptionsColumn.FixedWidth = true;
-            this.Product_Price.Visible = true;
-            this.Product_Price.VisibleIndex = 4;
-            this.Product_Price.Width = 100;
-            // 
-            // Product_TotalPrice
-            // 
-            this.Product_TotalPrice.Caption = "Yekun";
-            this.Product_TotalPrice.DisplayFormat.FormatString = "n2";
-            this.Product_TotalPrice.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.Product_TotalPrice.FieldName = "Product_TotalPrice";
-            this.Product_TotalPrice.Name = "Product_TotalPrice";
-            this.Product_TotalPrice.OptionsColumn.FixedWidth = true;
-            this.Product_TotalPrice.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Custom, "TOTAL", "{0:n2}")});
-            this.Product_TotalPrice.UnboundExpression = "[PRICE] * [PRODUCT_COUNT]";
-            this.Product_TotalPrice.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
-            this.Product_TotalPrice.Visible = true;
-            this.Product_TotalPrice.VisibleIndex = 5;
-            this.Product_TotalPrice.Width = 100;
-            // 
-            // Product_Note
-            // 
-            this.Product_Note.Caption = "Qeyd";
-            this.Product_Note.FieldName = "NOTE";
-            this.Product_Note.Name = "Product_Note";
-            this.Product_Note.Visible = true;
-            this.Product_Note.VisibleIndex = 6;
-            // 
-            // Product_ID
-            // 
-            this.Product_ID.Caption = "Product_ID";
-            this.Product_ID.FieldName = "ID";
-            this.Product_ID.Name = "Product_ID";
             // 
             // ProductBarManager
             // 
@@ -634,7 +315,6 @@
             this.ProductBarManager.DockControls.Add(this.barDockControlRight);
             this.ProductBarManager.DockControls.Add(this.ProductStandaloneBarDockControl);
             this.ProductBarManager.DockControls.Add(this.RelativeStandaloneBarDockControl);
-            this.ProductBarManager.DockControls.Add(this.WorkStandaloneBarDockControl);
             this.ProductBarManager.Form = this;
             this.ProductBarManager.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.NewProductBarButton,
@@ -646,7 +326,7 @@
             this.barButtonItem3,
             this.barButtonItem5,
             this.barButtonItem6});
-            this.ProductBarManager.MaxItemId = 9;
+            this.ProductBarManager.MaxItemId = 18;
             // 
             // barDockControlTop
             // 
@@ -699,236 +379,50 @@
             this.RelativeStandaloneBarDockControl.Size = new System.Drawing.Size(833, 29);
             this.RelativeStandaloneBarDockControl.Text = "standaloneBarDockControl1";
             // 
-            // WorkStandaloneBarDockControl
-            // 
-            this.WorkStandaloneBarDockControl.CausesValidation = false;
-            this.WorkStandaloneBarDockControl.Dock = System.Windows.Forms.DockStyle.Top;
-            this.WorkStandaloneBarDockControl.Location = new System.Drawing.Point(0, 0);
-            this.WorkStandaloneBarDockControl.Manager = this.ProductBarManager;
-            this.WorkStandaloneBarDockControl.Name = "WorkStandaloneBarDockControl";
-            this.WorkStandaloneBarDockControl.Size = new System.Drawing.Size(860, 29);
-            this.WorkStandaloneBarDockControl.Text = "standaloneBarDockControl2";
-            // 
             // NewProductBarButton
             // 
-            this.NewProductBarButton.Caption = "Yeni";
-            this.NewProductBarButton.Id = 0;
-            this.NewProductBarButton.ImageOptions.Image = global::ELMS.Properties.Resources.plus_16;
+            this.NewProductBarButton.Id = 9;
             this.NewProductBarButton.Name = "NewProductBarButton";
-            this.NewProductBarButton.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            this.NewProductBarButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.NewProductBarButton_ItemClick);
             // 
             // EditProductBarButton
             // 
-            this.EditProductBarButton.Caption = "Dəyiş";
-            this.EditProductBarButton.Id = 1;
-            this.EditProductBarButton.ImageOptions.Image = global::ELMS.Properties.Resources.edit_16;
+            this.EditProductBarButton.Id = 10;
             this.EditProductBarButton.Name = "EditProductBarButton";
-            this.EditProductBarButton.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            this.EditProductBarButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.EditProductBarButton_ItemClick);
             // 
             // DeleteProductBarButton
             // 
-            this.DeleteProductBarButton.Caption = "Sil";
-            this.DeleteProductBarButton.Id = 2;
-            this.DeleteProductBarButton.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("DeleteProductBarButton.ImageOptions.Image")));
-            this.DeleteProductBarButton.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("DeleteProductBarButton.ImageOptions.LargeImage")));
+            this.DeleteProductBarButton.Id = 11;
             this.DeleteProductBarButton.Name = "DeleteProductBarButton";
-            this.DeleteProductBarButton.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            this.DeleteProductBarButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.DeleteProductBarButton_ItemClick);
             // 
             // RefreshProductBarButton
             // 
-            this.RefreshProductBarButton.Caption = "Təzələ";
-            this.RefreshProductBarButton.Id = 3;
-            this.RefreshProductBarButton.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("RefreshProductBarButton.ImageOptions.Image")));
-            this.RefreshProductBarButton.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("RefreshProductBarButton.ImageOptions.LargeImage")));
+            this.RefreshProductBarButton.Id = 12;
             this.RefreshProductBarButton.Name = "RefreshProductBarButton";
-            this.RefreshProductBarButton.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            this.RefreshProductBarButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.RefreshProductBarButton_ItemClick);
             // 
             // barButtonItem1
             // 
-            this.barButtonItem1.Caption = "Yeni";
-            this.barButtonItem1.Id = 4;
+            this.barButtonItem1.Id = 13;
             this.barButtonItem1.Name = "barButtonItem1";
             // 
             // barButtonItem2
             // 
-            this.barButtonItem2.Caption = "Dəyiş";
-            this.barButtonItem2.Id = 5;
+            this.barButtonItem2.Id = 14;
             this.barButtonItem2.Name = "barButtonItem2";
             // 
             // barButtonItem3
             // 
-            this.barButtonItem3.Caption = "Yeni";
-            this.barButtonItem3.Id = 6;
+            this.barButtonItem3.Id = 15;
             this.barButtonItem3.Name = "barButtonItem3";
             // 
             // barButtonItem5
             // 
-            this.barButtonItem5.Caption = "Dəyiş";
-            this.barButtonItem5.Id = 7;
+            this.barButtonItem5.Id = 16;
             this.barButtonItem5.Name = "barButtonItem5";
             // 
             // barButtonItem6
             // 
-            this.barButtonItem6.Caption = "Dəyiş";
-            this.barButtonItem6.Id = 8;
+            this.barButtonItem6.Id = 17;
             this.barButtonItem6.Name = "barButtonItem6";
-            // 
-            // OtherGroupControl
-            // 
-            this.OtherGroupControl.AppearanceCaption.FontStyleDelta = System.Drawing.FontStyle.Bold;
-            this.OtherGroupControl.AppearanceCaption.ForeColor = System.Drawing.Color.Navy;
-            this.OtherGroupControl.AppearanceCaption.Options.UseFont = true;
-            this.OtherGroupControl.AppearanceCaption.Options.UseForeColor = true;
-            this.OtherGroupControl.Controls.Add(this.DocumentGridControl1);
-            this.OtherGroupControl.Location = new System.Drawing.Point(0, 238);
-            this.OtherGroupControl.Name = "OtherGroupControl";
-            this.OtherGroupControl.Size = new System.Drawing.Size(849, 88);
-            this.OtherGroupControl.TabIndex = 2;
-            this.OtherGroupControl.Text = "Səxsiyyəti təsdiq edən sənədlər";
-            // 
-            // DocumentGridControl1
-            // 
-            this.DocumentGridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.DocumentGridControl1.Location = new System.Drawing.Point(2, 20);
-            this.DocumentGridControl1.MainView = this.DocumentGridView1;
-            this.DocumentGridControl1.MenuManager = this.DocumentBarManager;
-            this.DocumentGridControl1.Name = "DocumentGridControl1";
-            this.DocumentGridControl1.Size = new System.Drawing.Size(845, 66);
-            this.DocumentGridControl1.TabIndex = 19;
-            this.DocumentGridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.DocumentGridView1});
-            // 
-            // DocumentGridView1
-            // 
-            this.DocumentGridView1.Appearance.FooterPanel.Options.UseTextOptions = true;
-            this.DocumentGridView1.Appearance.FooterPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.DocumentGridView1.Appearance.FooterPanel.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.DocumentGridView1.Appearance.HeaderPanel.Options.UseTextOptions = true;
-            this.DocumentGridView1.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.DocumentGridView1.Appearance.HeaderPanel.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.DocumentGridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.Document_SS,
-            this.Document_DocumentGroup,
-            this.Document_DocumentType,
-            this.Document_DocumentNumber,
-            this.Document_FinCode,
-            this.Document_IssueName,
-            this.Document_IssueDate,
-            this.Document_ReliableDate,
-            this.Document_ID});
-            this.DocumentGridView1.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFullFocus;
-            this.DocumentGridView1.GridControl = this.DocumentGridControl1;
-            this.DocumentGridView1.Name = "DocumentGridView1";
-            this.DocumentGridView1.OptionsBehavior.AutoExpandAllGroups = true;
-            this.DocumentGridView1.OptionsBehavior.AutoSelectAllInEditor = false;
-            this.DocumentGridView1.OptionsBehavior.Editable = false;
-            this.DocumentGridView1.OptionsFilter.UseNewCustomFilterDialog = true;
-            this.DocumentGridView1.OptionsFind.FindDelay = 100;
-            this.DocumentGridView1.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.DocumentGridView1.OptionsView.EnableAppearanceEvenRow = true;
-            this.DocumentGridView1.OptionsView.GroupFooterShowMode = DevExpress.XtraGrid.Views.Grid.GroupFooterShowMode.VisibleAlways;
-            this.DocumentGridView1.OptionsView.ShowGroupPanel = false;
-            this.DocumentGridView1.OptionsView.ShowIndicator = false;
-            this.DocumentGridView1.CustomUnboundColumnData += new DevExpress.XtraGrid.Views.Base.CustomColumnDataEventHandler(this.DocumentGridView_CustomUnboundColumnData);
-            // 
-            // Document_SS
-            // 
-            this.Document_SS.AppearanceCell.Options.UseTextOptions = true;
-            this.Document_SS.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.Document_SS.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.Document_SS.Caption = "S/s";
-            this.Document_SS.FieldName = "Document_SS";
-            this.Document_SS.Name = "Document_SS";
-            this.Document_SS.OptionsColumn.FixedWidth = true;
-            this.Document_SS.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Count, "Document_SS", "{0}")});
-            this.Document_SS.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
-            this.Document_SS.Visible = true;
-            this.Document_SS.VisibleIndex = 0;
-            this.Document_SS.Width = 50;
-            // 
-            // Document_DocumentGroup
-            // 
-            this.Document_DocumentGroup.Caption = "Sənədin qrupu";
-            this.Document_DocumentGroup.FieldName = "DOCUMENT_GROUP";
-            this.Document_DocumentGroup.Name = "Document_DocumentGroup";
-            this.Document_DocumentGroup.OptionsColumn.FixedWidth = true;
-            this.Document_DocumentGroup.Visible = true;
-            this.Document_DocumentGroup.VisibleIndex = 1;
-            this.Document_DocumentGroup.Width = 140;
-            // 
-            // Document_DocumentType
-            // 
-            this.Document_DocumentType.Caption = "Sənədin növü";
-            this.Document_DocumentType.FieldName = "DOCUMENT_TYPE";
-            this.Document_DocumentType.Name = "Document_DocumentType";
-            this.Document_DocumentType.OptionsColumn.FixedWidth = true;
-            this.Document_DocumentType.Visible = true;
-            this.Document_DocumentType.VisibleIndex = 2;
-            this.Document_DocumentType.Width = 140;
-            // 
-            // Document_DocumentNumber
-            // 
-            this.Document_DocumentNumber.Caption = "Sənədin nömrəsi";
-            this.Document_DocumentNumber.FieldName = "CARD_NUMBER";
-            this.Document_DocumentNumber.Name = "Document_DocumentNumber";
-            this.Document_DocumentNumber.OptionsColumn.FixedWidth = true;
-            this.Document_DocumentNumber.Visible = true;
-            this.Document_DocumentNumber.VisibleIndex = 3;
-            this.Document_DocumentNumber.Width = 100;
-            // 
-            // Document_FinCode
-            // 
-            this.Document_FinCode.Caption = "Fin kodu";
-            this.Document_FinCode.FieldName = "PINCODE";
-            this.Document_FinCode.Name = "Document_FinCode";
-            this.Document_FinCode.OptionsColumn.FixedWidth = true;
-            this.Document_FinCode.Visible = true;
-            this.Document_FinCode.VisibleIndex = 4;
-            this.Document_FinCode.Width = 85;
-            // 
-            // Document_IssueName
-            // 
-            this.Document_IssueName.Caption = "Sənəd verən orqan";
-            this.Document_IssueName.FieldName = "ISSUE_NAME";
-            this.Document_IssueName.Name = "Document_IssueName";
-            this.Document_IssueName.Visible = true;
-            this.Document_IssueName.VisibleIndex = 5;
-            this.Document_IssueName.Width = 250;
-            // 
-            // Document_IssueDate
-            // 
-            this.Document_IssueDate.Caption = "Verilmə tarixi";
-            this.Document_IssueDate.DisplayFormat.FormatString = "dd.MM.yyyy";
-            this.Document_IssueDate.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            this.Document_IssueDate.FieldName = "ISSUE_DATE";
-            this.Document_IssueDate.Name = "Document_IssueDate";
-            this.Document_IssueDate.OptionsColumn.FixedWidth = true;
-            this.Document_IssueDate.Visible = true;
-            this.Document_IssueDate.VisibleIndex = 6;
-            this.Document_IssueDate.Width = 90;
-            // 
-            // Document_ReliableDate
-            // 
-            this.Document_ReliableDate.Caption = "Bitmə tarixi";
-            this.Document_ReliableDate.DisplayFormat.FormatString = "dd.MM.yyyy";
-            this.Document_ReliableDate.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            this.Document_ReliableDate.FieldName = "RELIABLE_DATE";
-            this.Document_ReliableDate.Name = "Document_ReliableDate";
-            this.Document_ReliableDate.OptionsColumn.FixedWidth = true;
-            this.Document_ReliableDate.Visible = true;
-            this.Document_ReliableDate.VisibleIndex = 7;
-            this.Document_ReliableDate.Width = 90;
-            // 
-            // Document_ID
-            // 
-            this.Document_ID.Caption = "Document_ID";
-            this.Document_ID.FieldName = "ID";
-            this.Document_ID.Name = "Document_ID";
             // 
             // DocumentBarManager
             // 
@@ -1010,209 +504,6 @@
             this.RefreshDocumentBarButton.Name = "RefreshDocumentBarButton";
             this.RefreshDocumentBarButton.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
             // 
-            // labelControl23
-            // 
-            this.labelControl23.Location = new System.Drawing.Point(13, 288);
-            this.labelControl23.Name = "labelControl23";
-            this.labelControl23.Size = new System.Drawing.Size(60, 13);
-            this.labelControl23.TabIndex = 37;
-            this.labelControl23.Text = "Doğum tarixi";
-            // 
-            // labelControl22
-            // 
-            this.labelControl22.Location = new System.Drawing.Point(13, 259);
-            this.labelControl22.Name = "labelControl22";
-            this.labelControl22.Size = new System.Drawing.Size(70, 13);
-            this.labelControl22.TabIndex = 36;
-            this.labelControl22.Text = "Doğulduğu yer";
-            // 
-            // labelControl21
-            // 
-            this.labelControl21.Location = new System.Drawing.Point(13, 204);
-            this.labelControl21.Name = "labelControl21";
-            this.labelControl21.Size = new System.Drawing.Size(20, 13);
-            this.labelControl21.TabIndex = 35;
-            this.labelControl21.Text = "Cins";
-            // 
-            // labelControl20
-            // 
-            this.labelControl20.Location = new System.Drawing.Point(13, 232);
-            this.labelControl20.Name = "labelControl20";
-            this.labelControl20.Size = new System.Drawing.Size(20, 13);
-            this.labelControl20.TabIndex = 34;
-            this.labelControl20.Text = "Filial";
-            // 
-            // labelControl19
-            // 
-            this.labelControl19.Location = new System.Drawing.Point(13, 176);
-            this.labelControl19.Name = "labelControl19";
-            this.labelControl19.Size = new System.Drawing.Size(21, 13);
-            this.labelControl19.TabIndex = 33;
-            this.labelControl19.Text = "Ölkə";
-            // 
-            // RegisterAddressText1
-            // 
-            this.RegisterAddressText1.Location = new System.Drawing.Point(106, 116);
-            this.RegisterAddressText1.Margin = new System.Windows.Forms.Padding(4);
-            this.RegisterAddressText1.Name = "RegisterAddressText1";
-            this.RegisterAddressText1.Properties.ReadOnly = true;
-            this.RegisterAddressText1.Size = new System.Drawing.Size(528, 20);
-            this.RegisterAddressText1.TabIndex = 32;
-            // 
-            // labelControl6
-            // 
-            this.labelControl6.Location = new System.Drawing.Point(13, 121);
-            this.labelControl6.Margin = new System.Windows.Forms.Padding(4);
-            this.labelControl6.Name = "labelControl6";
-            this.labelControl6.Size = new System.Drawing.Size(85, 13);
-            this.labelControl6.TabIndex = 31;
-            this.labelControl6.Text = "Qeydiyyat ünvanı";
-            // 
-            // labelControl1
-            // 
-            this.labelControl1.Appearance.ForeColor = System.Drawing.Color.Red;
-            this.labelControl1.Appearance.Options.UseForeColor = true;
-            this.labelControl1.Location = new System.Drawing.Point(94, 35);
-            this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(6, 13);
-            this.labelControl1.TabIndex = 30;
-            this.labelControl1.Text = "*";
-            // 
-            // RegistrationLabel
-            // 
-            this.RegistrationLabel.Location = new System.Drawing.Point(13, 35);
-            this.RegistrationLabel.Name = "RegistrationLabel";
-            this.RegistrationLabel.Size = new System.Drawing.Size(34, 13);
-            this.RegistrationLabel.TabIndex = 27;
-            this.RegistrationLabel.Text = "Fin kod";
-            // 
-            // FinCodeSearch1
-            // 
-            this.FinCodeSearch1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.FinCodeSearch1.Location = new System.Drawing.Point(106, 32);
-            this.FinCodeSearch1.Margin = new System.Windows.Forms.Padding(4);
-            this.FinCodeSearch1.Name = "FinCodeSearch1";
-            this.FinCodeSearch1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Repository.ClearButton(),
-            new DevExpress.XtraEditors.Repository.SearchButton(),
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Plus, "Yeni müştəri əlavə et", -1, true, true, false, editorButtonImageOptions3),
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.OK, "Müştərinin məlumatlarını dəyiş", -1, true, true, false, editorButtonImageOptions4)});
-            this.FinCodeSearch1.Properties.NullValuePrompt = "00001";
-            this.FinCodeSearch1.Properties.NullValuePromptShowForEmptyValue = false;
-            this.FinCodeSearch1.Size = new System.Drawing.Size(142, 20);
-            superToolTip7.AllowHtmlText = DevExpress.Utils.DefaultBoolean.True;
-            toolTipTitleItem11.Text = "<color=255,0,0>Müştərinin qeydiyyat nömrəsi</color>";
-            toolTipItem7.Appearance.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
-            toolTipItem7.Appearance.Options.UseImage = true;
-            toolTipItem7.Image = ((System.Drawing.Image)(resources.GetObject("toolTipItem7.Image")));
-            toolTipItem7.LeftIndent = 6;
-            toolTipItem7.Text = "Müştərinin qeydiyyat nömrəsi ilə axtarmaq üçün nəzərdə tutulub.";
-            toolTipTitleItem12.LeftIndent = 6;
-            toolTipTitleItem12.Text = "Qeyd: <i>Müştərinin qeydiyyat nömrəsi 4 rəqəm olmalıdır</i>";
-            superToolTip7.Items.Add(toolTipTitleItem11);
-            superToolTip7.Items.Add(toolTipItem7);
-            superToolTip7.Items.Add(toolTipSeparatorItem3);
-            superToolTip7.Items.Add(toolTipTitleItem12);
-            this.FinCodeSearch1.SuperTip = superToolTip7;
-            this.FinCodeSearch1.TabIndex = 26;
-            this.FinCodeSearch1.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.FinCodeSearch_ButtonClick);
-            this.FinCodeSearch1.EditValueChanged += new System.EventHandler(this.FinCodeSearch_EditValueChanged);
-            // 
-            // ActualAddressText1
-            // 
-            this.ActualAddressText1.Location = new System.Drawing.Point(106, 88);
-            this.ActualAddressText1.Margin = new System.Windows.Forms.Padding(4);
-            this.ActualAddressText1.Name = "ActualAddressText1";
-            this.ActualAddressText1.Properties.ReadOnly = true;
-            this.ActualAddressText1.Size = new System.Drawing.Size(528, 20);
-            this.ActualAddressText1.TabIndex = 25;
-            // 
-            // Address2Label
-            // 
-            this.Address2Label.Location = new System.Drawing.Point(13, 93);
-            this.Address2Label.Margin = new System.Windows.Forms.Padding(4);
-            this.Address2Label.Name = "Address2Label";
-            this.Address2Label.Size = new System.Drawing.Size(65, 13);
-            this.Address2Label.TabIndex = 23;
-            this.Address2Label.Text = "Faktiki ünvanı";
-            // 
-            // PictureEdit2
-            // 
-            this.PictureEdit2.Cursor = System.Windows.Forms.Cursors.Default;
-            this.PictureEdit2.Location = new System.Drawing.Point(672, 31);
-            this.PictureEdit2.Name = "PictureEdit2";
-            this.PictureEdit2.Properties.NullText = "Müştərinin şəkli";
-            this.PictureEdit2.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            this.PictureEdit2.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
-            this.PictureEdit2.Properties.ZoomAccelerationFactor = 1D;
-            this.PictureEdit2.Size = new System.Drawing.Size(135, 158);
-            superToolTip4.AllowHtmlText = DevExpress.Utils.DefaultBoolean.True;
-            toolTipTitleItem6.Text = "<color=255,0,0>Müştərinin şəkili</color>";
-            toolTipItem4.LeftIndent = 6;
-            toolTipItem4.Text = "Müştərinin şəkilini göstərmək üçün nəzərdə tutulub.";
-            toolTipTitleItem7.LeftIndent = 6;
-            superToolTip4.Items.Add(toolTipTitleItem6);
-            superToolTip4.Items.Add(toolTipItem4);
-            superToolTip4.Items.Add(toolTipTitleItem7);
-            this.PictureEdit2.SuperTip = superToolTip4;
-            this.PictureEdit2.TabIndex = 18;
-            // 
-            // separatorControl1
-            // 
-            this.separatorControl1.LineOrientation = System.Windows.Forms.Orientation.Vertical;
-            this.separatorControl1.Location = new System.Drawing.Point(641, 22);
-            this.separatorControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.separatorControl1.Name = "separatorControl1";
-            this.separatorControl1.Padding = new System.Windows.Forms.Padding(8, 7, 8, 7);
-            this.separatorControl1.Size = new System.Drawing.Size(25, 154);
-            this.separatorControl1.TabIndex = 17;
-            // 
-            // PhoneAllText1
-            // 
-            this.PhoneAllText1.Location = new System.Drawing.Point(106, 143);
-            this.PhoneAllText1.Margin = new System.Windows.Forms.Padding(4);
-            this.PhoneAllText1.Name = "PhoneAllText1";
-            this.PhoneAllText1.Properties.ReadOnly = true;
-            this.PhoneAllText1.Size = new System.Drawing.Size(528, 20);
-            this.PhoneAllText1.TabIndex = 14;
-            // 
-            // labelControl5
-            // 
-            this.labelControl5.Location = new System.Drawing.Point(13, 148);
-            this.labelControl5.Margin = new System.Windows.Forms.Padding(4);
-            this.labelControl5.Name = "labelControl5";
-            this.labelControl5.Size = new System.Drawing.Size(36, 13);
-            this.labelControl5.TabIndex = 11;
-            this.labelControl5.Text = "Telefon";
-            // 
-            // NameText1
-            // 
-            this.NameText1.Location = new System.Drawing.Point(106, 60);
-            this.NameText1.Margin = new System.Windows.Forms.Padding(4);
-            this.NameText1.Name = "NameText1";
-            this.NameText1.Properties.NullValuePrompt = "Soyadı, adı və atasının adını daxil edin";
-            this.NameText1.Properties.NullValuePromptShowForEmptyValue = true;
-            this.NameText1.Properties.ReadOnly = true;
-            this.NameText1.Size = new System.Drawing.Size(528, 20);
-            toolTipTitleItem8.Text = "<color=255,0,0>Müştərinin tam adı</color>";
-            toolTipItem5.LeftIndent = 6;
-            toolTipItem5.Text = "Bu xanaya dırnaq işarəsi daxil etmək olmaz. Əgər daxil etsəz, müştərinin məlumatl" +
-    "arı <b><color=104,6,6>bazada saxlanılmayacaq</b></color>.\r\n";
-            superToolTip5.Items.Add(toolTipTitleItem8);
-            superToolTip5.Items.Add(toolTipItem5);
-            this.NameText1.SuperTip = superToolTip5;
-            this.NameText1.TabIndex = 0;
-            this.NameText1.ToolTip = "Yalnız hərf yazmağınız tövsiyə olunur.";
-            // 
-            // NameLabel
-            // 
-            this.NameLabel.Location = new System.Drawing.Point(13, 65);
-            this.NameLabel.Margin = new System.Windows.Forms.Padding(4);
-            this.NameLabel.Name = "NameLabel";
-            this.NameLabel.Size = new System.Drawing.Size(37, 13);
-            this.NameLabel.TabIndex = 0;
-            this.NameLabel.Text = "Tam adı";
-            // 
             // OtherInfoTabControl
             // 
             this.OtherInfoTabControl.AppearancePage.HeaderActive.FontStyleDelta = System.Drawing.FontStyle.Bold;
@@ -1222,414 +513,14 @@
             this.OtherInfoTabControl.Margin = new System.Windows.Forms.Padding(4);
             this.OtherInfoTabControl.MultiLine = DevExpress.Utils.DefaultBoolean.True;
             this.OtherInfoTabControl.Name = "OtherInfoTabControl";
-            this.OtherInfoTabControl.SelectedTabPage = this.OrderCardTab;
+            this.OtherInfoTabControl.SelectedTabPage = this.IDCardTab;
             this.OtherInfoTabControl.Size = new System.Drawing.Size(866, 597);
             this.OtherInfoTabControl.TabIndex = 0;
             this.OtherInfoTabControl.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.IDCardTab,
-            this.CustomerTab,
-            this.OrderCardTab,
-            this.WorkTab,
-            this.RelativeTab});
+            this.CustomerTab});
             this.OtherInfoTabControl.TabStop = false;
             this.OtherInfoTabControl.SelectedPageChanged += new DevExpress.XtraTab.TabPageChangedEventHandler(this.OtherInfoTabControl_SelectedPageChanged);
-            // 
-            // OrderCardTab
-            // 
-            this.OrderCardTab.Controls.Add(this.xtraScrollableControl1);
-            this.OrderCardTab.Controls.Add(this.groupControl4);
-            this.OrderCardTab.Controls.Add(this.groupControl3);
-            this.OrderCardTab.Controls.Add(this.groupControl2);
-            this.OrderCardTab.Name = "OrderCardTab";
-            this.OrderCardTab.Size = new System.Drawing.Size(860, 569);
-            this.OrderCardTab.Text = "Müştəri";
-            // 
-            // xtraScrollableControl1
-            // 
-            this.xtraScrollableControl1.Controls.Add(this.PersonalDetailsGroupBox);
-            this.xtraScrollableControl1.Location = new System.Drawing.Point(3, 3);
-            this.xtraScrollableControl1.Name = "xtraScrollableControl1";
-            this.xtraScrollableControl1.Size = new System.Drawing.Size(849, 272);
-            this.xtraScrollableControl1.TabIndex = 6;
-            // 
-            // groupControl4
-            // 
-            this.groupControl4.AppearanceCaption.FontStyleDelta = System.Drawing.FontStyle.Bold;
-            this.groupControl4.AppearanceCaption.ForeColor = System.Drawing.Color.Navy;
-            this.groupControl4.AppearanceCaption.Options.UseFont = true;
-            this.groupControl4.AppearanceCaption.Options.UseForeColor = true;
-            this.groupControl4.Controls.Add(this.RelativeGridControl1);
-            this.groupControl4.Location = new System.Drawing.Point(3, 469);
-            this.groupControl4.Name = "groupControl4";
-            this.groupControl4.Size = new System.Drawing.Size(849, 90);
-            this.groupControl4.TabIndex = 5;
-            this.groupControl4.Text = "Qohumlar";
-            // 
-            // RelativeGridControl1
-            // 
-            this.RelativeGridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.RelativeGridControl1.Location = new System.Drawing.Point(2, 20);
-            this.RelativeGridControl1.MainView = this.RelativeGridView1;
-            this.RelativeGridControl1.MenuManager = this.DocumentBarManager;
-            this.RelativeGridControl1.Name = "RelativeGridControl1";
-            this.RelativeGridControl1.Size = new System.Drawing.Size(845, 68);
-            this.RelativeGridControl1.TabIndex = 24;
-            this.RelativeGridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.RelativeGridView1});
-            // 
-            // RelativeGridView1
-            // 
-            this.RelativeGridView1.Appearance.FooterPanel.Options.UseTextOptions = true;
-            this.RelativeGridView1.Appearance.FooterPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.RelativeGridView1.Appearance.FooterPanel.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.RelativeGridView1.Appearance.HeaderPanel.Options.UseTextOptions = true;
-            this.RelativeGridView1.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.RelativeGridView1.Appearance.HeaderPanel.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.RelativeGridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.RelativeCard_SS,
-            this.RelativeCard_ID,
-            this.RelativeCard_Name,
-            this.RelativeCard_KindShip,
-            this.RelativeCard_Phone,
-            this.RelativeCard_Description,
-            this.RelativeCard_Profession,
-            this.RelativeCard_Salary});
-            this.RelativeGridView1.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFullFocus;
-            this.RelativeGridView1.GridControl = this.RelativeGridControl1;
-            this.RelativeGridView1.Name = "RelativeGridView1";
-            this.RelativeGridView1.OptionsBehavior.AutoExpandAllGroups = true;
-            this.RelativeGridView1.OptionsBehavior.AutoSelectAllInEditor = false;
-            this.RelativeGridView1.OptionsBehavior.Editable = false;
-            this.RelativeGridView1.OptionsFilter.UseNewCustomFilterDialog = true;
-            this.RelativeGridView1.OptionsFind.FindDelay = 100;
-            this.RelativeGridView1.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.RelativeGridView1.OptionsView.EnableAppearanceEvenRow = true;
-            this.RelativeGridView1.OptionsView.GroupFooterShowMode = DevExpress.XtraGrid.Views.Grid.GroupFooterShowMode.VisibleAlways;
-            this.RelativeGridView1.OptionsView.ShowGroupPanel = false;
-            this.RelativeGridView1.OptionsView.ShowIndicator = false;
-            this.RelativeGridView1.PaintStyleName = "Skin";
-            this.RelativeGridView1.ScrollStyle = DevExpress.XtraGrid.Views.Grid.ScrollStyleFlags.LiveVertScroll;
-            this.RelativeGridView1.CustomUnboundColumnData += new DevExpress.XtraGrid.Views.Base.CustomColumnDataEventHandler(this.RelativeGridView_CustomUnboundColumnData);
-            // 
-            // RelativeCard_SS
-            // 
-            this.RelativeCard_SS.AppearanceCell.Options.UseTextOptions = true;
-            this.RelativeCard_SS.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.RelativeCard_SS.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.RelativeCard_SS.Caption = "S/s";
-            this.RelativeCard_SS.FieldName = "RelativeCard_SS";
-            this.RelativeCard_SS.Name = "RelativeCard_SS";
-            this.RelativeCard_SS.OptionsColumn.FixedWidth = true;
-            this.RelativeCard_SS.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Count, "RelativeCard_SS", "{0}")});
-            this.RelativeCard_SS.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
-            this.RelativeCard_SS.Visible = true;
-            this.RelativeCard_SS.VisibleIndex = 0;
-            this.RelativeCard_SS.Width = 50;
-            // 
-            // RelativeCard_ID
-            // 
-            this.RelativeCard_ID.Caption = "ID";
-            this.RelativeCard_ID.FieldName = "ID";
-            this.RelativeCard_ID.Name = "RelativeCard_ID";
-            this.RelativeCard_ID.OptionsColumn.AllowShowHide = false;
-            // 
-            // RelativeCard_Name
-            // 
-            this.RelativeCard_Name.Caption = "Adı";
-            this.RelativeCard_Name.FieldName = "NAME";
-            this.RelativeCard_Name.Name = "RelativeCard_Name";
-            this.RelativeCard_Name.OptionsColumn.FixedWidth = true;
-            this.RelativeCard_Name.Visible = true;
-            this.RelativeCard_Name.VisibleIndex = 1;
-            this.RelativeCard_Name.Width = 130;
-            // 
-            // RelativeCard_KindShip
-            // 
-            this.RelativeCard_KindShip.Caption = "Qohumluq dərəcəsi";
-            this.RelativeCard_KindShip.FieldName = "KIND_NAME";
-            this.RelativeCard_KindShip.Name = "RelativeCard_KindShip";
-            this.RelativeCard_KindShip.OptionsColumn.FixedWidth = true;
-            this.RelativeCard_KindShip.Visible = true;
-            this.RelativeCard_KindShip.VisibleIndex = 2;
-            this.RelativeCard_KindShip.Width = 140;
-            // 
-            // RelativeCard_Phone
-            // 
-            this.RelativeCard_Phone.Caption = "Telefon";
-            this.RelativeCard_Phone.FieldName = "PHONE_NUMBER";
-            this.RelativeCard_Phone.Name = "RelativeCard_Phone";
-            this.RelativeCard_Phone.OptionsColumn.FixedWidth = true;
-            this.RelativeCard_Phone.Visible = true;
-            this.RelativeCard_Phone.VisibleIndex = 3;
-            this.RelativeCard_Phone.Width = 140;
-            // 
-            // RelativeCard_Description
-            // 
-            this.RelativeCard_Description.Caption = "Təsviri";
-            this.RelativeCard_Description.FieldName = "DESCRIPTION_NAME";
-            this.RelativeCard_Description.Name = "RelativeCard_Description";
-            this.RelativeCard_Description.OptionsColumn.FixedWidth = true;
-            this.RelativeCard_Description.Visible = true;
-            this.RelativeCard_Description.VisibleIndex = 4;
-            this.RelativeCard_Description.Width = 140;
-            // 
-            // RelativeCard_Profession
-            // 
-            this.RelativeCard_Profession.Caption = "Peşəsi";
-            this.RelativeCard_Profession.FieldName = "PROFESSION_NAME";
-            this.RelativeCard_Profession.Name = "RelativeCard_Profession";
-            this.RelativeCard_Profession.OptionsColumn.FixedWidth = true;
-            this.RelativeCard_Profession.Visible = true;
-            this.RelativeCard_Profession.VisibleIndex = 5;
-            this.RelativeCard_Profession.Width = 140;
-            // 
-            // RelativeCard_Salary
-            // 
-            this.RelativeCard_Salary.Caption = "Əmək haqqı";
-            this.RelativeCard_Salary.FieldName = "SALARY";
-            this.RelativeCard_Salary.Name = "RelativeCard_Salary";
-            this.RelativeCard_Salary.OptionsColumn.FixedWidth = true;
-            this.RelativeCard_Salary.Visible = true;
-            this.RelativeCard_Salary.VisibleIndex = 6;
-            this.RelativeCard_Salary.Width = 120;
-            // 
-            // groupControl3
-            // 
-            this.groupControl3.AppearanceCaption.FontStyleDelta = System.Drawing.FontStyle.Bold;
-            this.groupControl3.AppearanceCaption.ForeColor = System.Drawing.Color.Navy;
-            this.groupControl3.AppearanceCaption.Options.UseFont = true;
-            this.groupControl3.AppearanceCaption.Options.UseForeColor = true;
-            this.groupControl3.Controls.Add(this.WorkGridControl1);
-            this.groupControl3.Location = new System.Drawing.Point(3, 375);
-            this.groupControl3.Name = "groupControl3";
-            this.groupControl3.Size = new System.Drawing.Size(849, 88);
-            this.groupControl3.TabIndex = 4;
-            this.groupControl3.Text = "İş yeri";
-            // 
-            // WorkGridControl1
-            // 
-            this.WorkGridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.WorkGridControl1.Location = new System.Drawing.Point(2, 20);
-            this.WorkGridControl1.MainView = this.WorkGridView1;
-            this.WorkGridControl1.Name = "WorkGridControl1";
-            this.WorkGridControl1.Size = new System.Drawing.Size(845, 66);
-            this.WorkGridControl1.TabIndex = 10;
-            this.WorkGridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.WorkGridView1});
-            // 
-            // WorkGridView1
-            // 
-            this.WorkGridView1.Appearance.FooterPanel.FontStyleDelta = System.Drawing.FontStyle.Bold;
-            this.WorkGridView1.Appearance.FooterPanel.Options.UseFont = true;
-            this.WorkGridView1.Appearance.FooterPanel.Options.UseTextOptions = true;
-            this.WorkGridView1.Appearance.FooterPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.WorkGridView1.Appearance.FooterPanel.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.WorkGridView1.Appearance.HeaderPanel.Options.UseTextOptions = true;
-            this.WorkGridView1.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.WorkGridView1.Appearance.HeaderPanel.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.WorkGridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.CustomerWork_SS,
-            this.CustomerWork_ID,
-            this.CustomerWork_PlaceName,
-            this.CustomerWork_Position,
-            this.CustomerWork_Salary,
-            this.CustomerWork_Note});
-            this.WorkGridView1.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFullFocus;
-            this.WorkGridView1.GridControl = this.WorkGridControl1;
-            this.WorkGridView1.Name = "WorkGridView1";
-            this.WorkGridView1.OptionsBehavior.AutoExpandAllGroups = true;
-            this.WorkGridView1.OptionsBehavior.AutoSelectAllInEditor = false;
-            this.WorkGridView1.OptionsBehavior.Editable = false;
-            this.WorkGridView1.OptionsFilter.UseNewCustomFilterDialog = true;
-            this.WorkGridView1.OptionsFind.FindDelay = 100;
-            this.WorkGridView1.OptionsSelection.CheckBoxSelectorColumnWidth = 30;
-            this.WorkGridView1.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.WorkGridView1.OptionsSelection.MultiSelect = true;
-            this.WorkGridView1.OptionsSelection.ShowCheckBoxSelectorInColumnHeader = DevExpress.Utils.DefaultBoolean.True;
-            this.WorkGridView1.OptionsSelection.ShowCheckBoxSelectorInGroupRow = DevExpress.Utils.DefaultBoolean.True;
-            this.WorkGridView1.OptionsView.EnableAppearanceEvenRow = true;
-            this.WorkGridView1.OptionsView.ShowGroupPanel = false;
-            this.WorkGridView1.OptionsView.ShowIndicator = false;
-            this.WorkGridView1.PaintStyleName = "Skin";
-            this.WorkGridView1.ScrollStyle = DevExpress.XtraGrid.Views.Grid.ScrollStyleFlags.LiveVertScroll;
-            this.WorkGridView1.CustomUnboundColumnData += new DevExpress.XtraGrid.Views.Base.CustomColumnDataEventHandler(this.WorkGridView_CustomUnboundColumnData);
-            // 
-            // CustomerWork_SS
-            // 
-            this.CustomerWork_SS.AppearanceCell.Options.UseTextOptions = true;
-            this.CustomerWork_SS.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.CustomerWork_SS.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.CustomerWork_SS.Caption = "S/s";
-            this.CustomerWork_SS.FieldName = "CustomerWork_SS";
-            this.CustomerWork_SS.Name = "CustomerWork_SS";
-            this.CustomerWork_SS.OptionsColumn.FixedWidth = true;
-            this.CustomerWork_SS.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
-            this.CustomerWork_SS.Visible = true;
-            this.CustomerWork_SS.VisibleIndex = 0;
-            this.CustomerWork_SS.Width = 50;
-            // 
-            // CustomerWork_ID
-            // 
-            this.CustomerWork_ID.Caption = "ID";
-            this.CustomerWork_ID.FieldName = "ID";
-            this.CustomerWork_ID.Name = "CustomerWork_ID";
-            // 
-            // CustomerWork_PlaceName
-            // 
-            this.CustomerWork_PlaceName.Caption = "İş yerinin adı";
-            this.CustomerWork_PlaceName.FieldName = "PLACE_NAME";
-            this.CustomerWork_PlaceName.Name = "CustomerWork_PlaceName";
-            this.CustomerWork_PlaceName.Visible = true;
-            this.CustomerWork_PlaceName.VisibleIndex = 1;
-            // 
-            // CustomerWork_Position
-            // 
-            this.CustomerWork_Position.Caption = "Vəzifəsi";
-            this.CustomerWork_Position.FieldName = "POSITION";
-            this.CustomerWork_Position.Name = "CustomerWork_Position";
-            this.CustomerWork_Position.Visible = true;
-            this.CustomerWork_Position.VisibleIndex = 2;
-            // 
-            // CustomerWork_Salary
-            // 
-            this.CustomerWork_Salary.AppearanceCell.Options.UseTextOptions = true;
-            this.CustomerWork_Salary.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.CustomerWork_Salary.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.CustomerWork_Salary.Caption = "Əmək haqqı";
-            this.CustomerWork_Salary.FieldName = "SALARY";
-            this.CustomerWork_Salary.Name = "CustomerWork_Salary";
-            this.CustomerWork_Salary.OptionsColumn.FixedWidth = true;
-            this.CustomerWork_Salary.Visible = true;
-            this.CustomerWork_Salary.VisibleIndex = 3;
-            // 
-            // CustomerWork_Note
-            // 
-            this.CustomerWork_Note.AppearanceCell.Options.UseTextOptions = true;
-            this.CustomerWork_Note.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.CustomerWork_Note.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.CustomerWork_Note.Caption = "Qeyd";
-            this.CustomerWork_Note.FieldName = "NOTE";
-            this.CustomerWork_Note.Name = "CustomerWork_Note";
-            this.CustomerWork_Note.OptionsColumn.FixedWidth = true;
-            this.CustomerWork_Note.Visible = true;
-            this.CustomerWork_Note.VisibleIndex = 4;
-            // 
-            // groupControl2
-            // 
-            this.groupControl2.AppearanceCaption.FontStyleDelta = System.Drawing.FontStyle.Bold;
-            this.groupControl2.AppearanceCaption.ForeColor = System.Drawing.Color.Navy;
-            this.groupControl2.AppearanceCaption.Options.UseFont = true;
-            this.groupControl2.AppearanceCaption.Options.UseForeColor = true;
-            this.groupControl2.Controls.Add(this.PhoneGridControl1);
-            this.groupControl2.Location = new System.Drawing.Point(3, 281);
-            this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(849, 63);
-            this.groupControl2.TabIndex = 3;
-            this.groupControl2.Text = "Telefonlar";
-            // 
-            // PhoneGridControl1
-            // 
-            this.PhoneGridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PhoneGridControl1.Location = new System.Drawing.Point(2, 20);
-            this.PhoneGridControl1.MainView = this.PhoneGridView1;
-            this.PhoneGridControl1.Name = "PhoneGridControl1";
-            this.PhoneGridControl1.Size = new System.Drawing.Size(845, 41);
-            this.PhoneGridControl1.TabIndex = 3;
-            this.PhoneGridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.PhoneGridView1});
-            // 
-            // PhoneGridView1
-            // 
-            this.PhoneGridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.CustomerPhone_SS,
-            this.CustomerPhone_ID,
-            this.CustomerPhone_Description,
-            this.CustomerPhone_Number,
-            this.CustomerPhone_Note,
-            this.CustomerPhone_IsSendSMS});
-            this.PhoneGridView1.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFullFocus;
-            this.PhoneGridView1.GridControl = this.PhoneGridControl1;
-            this.PhoneGridView1.Name = "PhoneGridView1";
-            this.PhoneGridView1.OptionsBehavior.AutoExpandAllGroups = true;
-            this.PhoneGridView1.OptionsBehavior.AutoSelectAllInEditor = false;
-            this.PhoneGridView1.OptionsBehavior.Editable = false;
-            this.PhoneGridView1.OptionsFilter.UseNewCustomFilterDialog = true;
-            this.PhoneGridView1.OptionsFind.FindDelay = 100;
-            this.PhoneGridView1.OptionsSelection.CheckBoxSelectorColumnWidth = 30;
-            this.PhoneGridView1.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.PhoneGridView1.OptionsSelection.MultiSelect = true;
-            this.PhoneGridView1.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.CheckBoxRowSelect;
-            this.PhoneGridView1.OptionsSelection.ShowCheckBoxSelectorInColumnHeader = DevExpress.Utils.DefaultBoolean.True;
-            this.PhoneGridView1.OptionsSelection.ShowCheckBoxSelectorInGroupRow = DevExpress.Utils.DefaultBoolean.True;
-            this.PhoneGridView1.OptionsView.EnableAppearanceEvenRow = true;
-            this.PhoneGridView1.OptionsView.ShowGroupPanel = false;
-            this.PhoneGridView1.OptionsView.ShowIndicator = false;
-            this.PhoneGridView1.PaintStyleName = "Skin";
-            this.PhoneGridView1.ScrollStyle = DevExpress.XtraGrid.Views.Grid.ScrollStyleFlags.LiveVertScroll;
-            this.PhoneGridView1.CustomUnboundColumnData += new DevExpress.XtraGrid.Views.Base.CustomColumnDataEventHandler(this.PhoneGridView_CustomUnboundColumnData);
-            // 
-            // CustomerPhone_SS
-            // 
-            this.CustomerPhone_SS.AppearanceCell.Options.UseTextOptions = true;
-            this.CustomerPhone_SS.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.CustomerPhone_SS.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.CustomerPhone_SS.AppearanceHeader.Options.UseTextOptions = true;
-            this.CustomerPhone_SS.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.CustomerPhone_SS.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.CustomerPhone_SS.Caption = "S/s";
-            this.CustomerPhone_SS.FieldName = "CustomerPhone_SS";
-            this.CustomerPhone_SS.Name = "CustomerPhone_SS";
-            this.CustomerPhone_SS.OptionsColumn.FixedWidth = true;
-            this.CustomerPhone_SS.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
-            this.CustomerPhone_SS.Visible = true;
-            this.CustomerPhone_SS.VisibleIndex = 1;
-            this.CustomerPhone_SS.Width = 40;
-            // 
-            // CustomerPhone_ID
-            // 
-            this.CustomerPhone_ID.Caption = "ID";
-            this.CustomerPhone_ID.FieldName = "ID";
-            this.CustomerPhone_ID.Name = "CustomerPhone_ID";
-            // 
-            // CustomerPhone_Description
-            // 
-            this.CustomerPhone_Description.AppearanceHeader.Options.UseTextOptions = true;
-            this.CustomerPhone_Description.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.CustomerPhone_Description.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.CustomerPhone_Description.Caption = "Təsvir";
-            this.CustomerPhone_Description.FieldName = "DESCRIPTION_NAME";
-            this.CustomerPhone_Description.Name = "CustomerPhone_Description";
-            this.CustomerPhone_Description.Visible = true;
-            this.CustomerPhone_Description.VisibleIndex = 2;
-            // 
-            // CustomerPhone_Number
-            // 
-            this.CustomerPhone_Number.AppearanceHeader.Options.UseTextOptions = true;
-            this.CustomerPhone_Number.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.CustomerPhone_Number.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.CustomerPhone_Number.Caption = "Nömrə";
-            this.CustomerPhone_Number.FieldName = "PHONE_NUMBER";
-            this.CustomerPhone_Number.Name = "CustomerPhone_Number";
-            this.CustomerPhone_Number.Visible = true;
-            this.CustomerPhone_Number.VisibleIndex = 3;
-            // 
-            // CustomerPhone_Note
-            // 
-            this.CustomerPhone_Note.AppearanceHeader.Options.UseTextOptions = true;
-            this.CustomerPhone_Note.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.CustomerPhone_Note.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.CustomerPhone_Note.Caption = "Qeyd";
-            this.CustomerPhone_Note.FieldName = "NOTE";
-            this.CustomerPhone_Note.Name = "CustomerPhone_Note";
-            this.CustomerPhone_Note.Visible = true;
-            this.CustomerPhone_Note.VisibleIndex = 4;
-            // 
-            // CustomerPhone_IsSendSMS
-            // 
-            this.CustomerPhone_IsSendSMS.Caption = "SMS";
-            this.CustomerPhone_IsSendSMS.FieldName = "IS_SEND_SMS";
-            this.CustomerPhone_IsSendSMS.Name = "CustomerPhone_IsSendSMS";
             // 
             // IDCardTab
             // 
@@ -2026,7 +917,7 @@
             this.CustomerTab.Controls.Add(this.ProductStandaloneBarDockControl);
             this.CustomerTab.Name = "CustomerTab";
             this.CustomerTab.Size = new System.Drawing.Size(860, 569);
-            this.CustomerTab.Text = "Tab3";
+            this.CustomerTab.Text = "Müştəri";
             // 
             // xtraScrollableControl2
             // 
@@ -2099,6 +990,7 @@
             this.RelativeGridView.OptionsView.ShowIndicator = false;
             this.RelativeGridView.PaintStyleName = "Skin";
             this.RelativeGridView.ScrollStyle = DevExpress.XtraGrid.Views.Grid.ScrollStyleFlags.LiveVertScroll;
+            this.RelativeGridView.FocusedRowObjectChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowObjectChangedEventHandler(this.RelativeGridView_FocusedRowObjectChanged);
             this.RelativeGridView.CustomUnboundColumnData += new DevExpress.XtraGrid.Views.Base.CustomColumnDataEventHandler(this.RelativeGridView_CustomUnboundColumnData);
             // 
             // Relative_SS
@@ -2583,23 +1475,24 @@
             this.FinCodeSearch.Name = "FinCodeSearch";
             this.FinCodeSearch.Properties.NullValuePrompt = "00001";
             this.FinCodeSearch.Properties.NullValuePromptShowForEmptyValue = false;
+            this.FinCodeSearch.Properties.ReadOnly = true;
             this.FinCodeSearch.Properties.ShowClearButton = false;
             this.FinCodeSearch.Properties.ShowSearchButton = false;
             this.FinCodeSearch.Size = new System.Drawing.Size(84, 20);
-            superToolTip6.AllowHtmlText = DevExpress.Utils.DefaultBoolean.True;
-            toolTipTitleItem9.Text = "<color=255,0,0>Müştərinin qeydiyyat nömrəsi</color>";
-            toolTipItem6.Appearance.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
-            toolTipItem6.Appearance.Options.UseImage = true;
-            toolTipItem6.Image = ((System.Drawing.Image)(resources.GetObject("toolTipItem6.Image")));
-            toolTipItem6.LeftIndent = 6;
-            toolTipItem6.Text = "Müştərinin qeydiyyat nömrəsi ilə axtarmaq üçün nəzərdə tutulub.";
-            toolTipTitleItem10.LeftIndent = 6;
-            toolTipTitleItem10.Text = "Qeyd: <i>Müştərinin qeydiyyat nömrəsi 4 rəqəm olmalıdır</i>";
-            superToolTip6.Items.Add(toolTipTitleItem9);
-            superToolTip6.Items.Add(toolTipItem6);
-            superToolTip6.Items.Add(toolTipSeparatorItem2);
-            superToolTip6.Items.Add(toolTipTitleItem10);
-            this.FinCodeSearch.SuperTip = superToolTip6;
+            superToolTip3.AllowHtmlText = DevExpress.Utils.DefaultBoolean.True;
+            toolTipTitleItem4.Text = "<color=255,0,0>Müştərinin qeydiyyat nömrəsi</color>";
+            toolTipItem3.Appearance.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
+            toolTipItem3.Appearance.Options.UseImage = true;
+            toolTipItem3.Image = ((System.Drawing.Image)(resources.GetObject("toolTipItem3.Image")));
+            toolTipItem3.LeftIndent = 6;
+            toolTipItem3.Text = "Müştərinin qeydiyyat nömrəsi ilə axtarmaq üçün nəzərdə tutulub.";
+            toolTipTitleItem5.LeftIndent = 6;
+            toolTipTitleItem5.Text = "Qeyd: <i>Müştərinin qeydiyyat nömrəsi 4 rəqəm olmalıdır</i>";
+            superToolTip3.Items.Add(toolTipTitleItem4);
+            superToolTip3.Items.Add(toolTipItem3);
+            superToolTip3.Items.Add(toolTipSeparatorItem1);
+            superToolTip3.Items.Add(toolTipTitleItem5);
+            this.FinCodeSearch.SuperTip = superToolTip3;
             this.FinCodeSearch.TabIndex = 26;
             // 
             // ActualAddressText
@@ -2630,15 +1523,15 @@
             this.PictureEdit.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
             this.PictureEdit.Properties.ZoomAccelerationFactor = 1D;
             this.PictureEdit.Size = new System.Drawing.Size(135, 158);
-            superToolTip1.AllowHtmlText = DevExpress.Utils.DefaultBoolean.True;
-            toolTipTitleItem1.Text = "<color=255,0,0>Müştərinin şəkili</color>";
-            toolTipItem1.LeftIndent = 6;
-            toolTipItem1.Text = "Müştərinin şəkilini göstərmək üçün nəzərdə tutulub.";
-            toolTipTitleItem2.LeftIndent = 6;
-            superToolTip1.Items.Add(toolTipTitleItem1);
-            superToolTip1.Items.Add(toolTipItem1);
-            superToolTip1.Items.Add(toolTipTitleItem2);
-            this.PictureEdit.SuperTip = superToolTip1;
+            superToolTip4.AllowHtmlText = DevExpress.Utils.DefaultBoolean.True;
+            toolTipTitleItem6.Text = "<color=255,0,0>Müştərinin şəkili</color>";
+            toolTipItem4.LeftIndent = 6;
+            toolTipItem4.Text = "Müştərinin şəkilini göstərmək üçün nəzərdə tutulub.";
+            toolTipTitleItem7.LeftIndent = 6;
+            superToolTip4.Items.Add(toolTipTitleItem6);
+            superToolTip4.Items.Add(toolTipItem4);
+            superToolTip4.Items.Add(toolTipTitleItem7);
+            this.PictureEdit.SuperTip = superToolTip4;
             this.PictureEdit.TabIndex = 18;
             // 
             // separatorControl2
@@ -2678,13 +1571,13 @@
             this.NameText.Properties.NullValuePromptShowForEmptyValue = true;
             this.NameText.Properties.ReadOnly = true;
             this.NameText.Size = new System.Drawing.Size(528, 20);
-            toolTipTitleItem3.Text = "<color=255,0,0>Müştərinin tam adı</color>";
-            toolTipItem2.LeftIndent = 6;
-            toolTipItem2.Text = "Bu xanaya dırnaq işarəsi daxil etmək olmaz. Əgər daxil etsəz, müştərinin məlumatl" +
+            toolTipTitleItem1.Text = "<color=255,0,0>Müştərinin tam adı</color>";
+            toolTipItem1.LeftIndent = 6;
+            toolTipItem1.Text = "Bu xanaya dırnaq işarəsi daxil etmək olmaz. Əgər daxil etsəz, müştərinin məlumatl" +
     "arı <b><color=104,6,6>bazada saxlanılmayacaq</b></color>.\r\n";
-            superToolTip2.Items.Add(toolTipTitleItem3);
-            superToolTip2.Items.Add(toolTipItem2);
-            this.NameText.SuperTip = superToolTip2;
+            superToolTip1.Items.Add(toolTipTitleItem1);
+            superToolTip1.Items.Add(toolTipItem1);
+            this.NameText.SuperTip = superToolTip1;
             this.NameText.TabIndex = 0;
             this.NameText.ToolTip = "Yalnız hərf yazmağınız tövsiyə olunur.";
             // 
@@ -2850,208 +1743,6 @@
             this.gridColumn9.FieldName = "ID";
             this.gridColumn9.Name = "gridColumn9";
             // 
-            // WorkTab
-            // 
-            this.WorkTab.Controls.Add(this.WorkStandaloneBarDockControl);
-            this.WorkTab.Name = "WorkTab";
-            this.WorkTab.Size = new System.Drawing.Size(860, 569);
-            this.WorkTab.Text = "Tab4";
-            // 
-            // RelativeTab
-            // 
-            this.RelativeTab.Controls.Add(this.barDockControl19);
-            this.RelativeTab.Controls.Add(this.barDockControl32);
-            this.RelativeTab.Controls.Add(this.barDockControl33);
-            this.RelativeTab.Controls.Add(this.barDockControl34);
-            this.RelativeTab.Controls.Add(this.barDockControl35);
-            this.RelativeTab.Controls.Add(this.barDockControl36);
-            this.RelativeTab.Controls.Add(this.barDockControl37);
-            this.RelativeTab.Controls.Add(this.barDockControl38);
-            this.RelativeTab.Controls.Add(this.barDockControl39);
-            this.RelativeTab.Controls.Add(this.barDockControl40);
-            this.RelativeTab.Controls.Add(this.barDockControl41);
-            this.RelativeTab.Controls.Add(this.barDockControl42);
-            this.RelativeTab.Controls.Add(this.barDockControl43);
-            this.RelativeTab.Controls.Add(this.barDockControl44);
-            this.RelativeTab.Controls.Add(this.barDockControl45);
-            this.RelativeTab.Controls.Add(this.barDockControl46);
-            this.RelativeTab.Controls.Add(this.barDockControl47);
-            this.RelativeTab.Controls.Add(this.barDockControl48);
-            this.RelativeTab.Controls.Add(this.barDockControl49);
-            this.RelativeTab.Controls.Add(this.barDockControl50);
-            this.RelativeTab.Controls.Add(this.barDockControl51);
-            this.RelativeTab.Name = "RelativeTab";
-            this.RelativeTab.Size = new System.Drawing.Size(860, 569);
-            this.RelativeTab.Text = "Tab5";
-            // 
-            // barDockControl19
-            // 
-            this.barDockControl19.CausesValidation = false;
-            this.barDockControl19.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControl19.Location = new System.Drawing.Point(860, 0);
-            this.barDockControl19.Manager = null;
-            this.barDockControl19.Size = new System.Drawing.Size(0, 569);
-            // 
-            // barDockControl32
-            // 
-            this.barDockControl32.CausesValidation = false;
-            this.barDockControl32.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControl32.Location = new System.Drawing.Point(0, 0);
-            this.barDockControl32.Manager = null;
-            this.barDockControl32.Size = new System.Drawing.Size(0, 569);
-            // 
-            // barDockControl33
-            // 
-            this.barDockControl33.CausesValidation = false;
-            this.barDockControl33.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControl33.Location = new System.Drawing.Point(860, 0);
-            this.barDockControl33.Manager = null;
-            this.barDockControl33.Size = new System.Drawing.Size(0, 569);
-            // 
-            // barDockControl34
-            // 
-            this.barDockControl34.CausesValidation = false;
-            this.barDockControl34.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControl34.Location = new System.Drawing.Point(0, 569);
-            this.barDockControl34.Manager = null;
-            this.barDockControl34.Size = new System.Drawing.Size(860, 0);
-            // 
-            // barDockControl35
-            // 
-            this.barDockControl35.CausesValidation = false;
-            this.barDockControl35.Dock = System.Windows.Forms.DockStyle.Top;
-            this.barDockControl35.Location = new System.Drawing.Point(0, 0);
-            this.barDockControl35.Manager = null;
-            this.barDockControl35.Size = new System.Drawing.Size(860, 0);
-            // 
-            // barDockControl36
-            // 
-            this.barDockControl36.CausesValidation = false;
-            this.barDockControl36.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControl36.Location = new System.Drawing.Point(0, 0);
-            this.barDockControl36.Manager = null;
-            this.barDockControl36.Size = new System.Drawing.Size(0, 569);
-            // 
-            // barDockControl37
-            // 
-            this.barDockControl37.CausesValidation = false;
-            this.barDockControl37.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControl37.Location = new System.Drawing.Point(860, 0);
-            this.barDockControl37.Manager = null;
-            this.barDockControl37.Size = new System.Drawing.Size(0, 569);
-            // 
-            // barDockControl38
-            // 
-            this.barDockControl38.CausesValidation = false;
-            this.barDockControl38.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControl38.Location = new System.Drawing.Point(0, 569);
-            this.barDockControl38.Manager = null;
-            this.barDockControl38.Size = new System.Drawing.Size(860, 0);
-            // 
-            // barDockControl39
-            // 
-            this.barDockControl39.CausesValidation = false;
-            this.barDockControl39.Dock = System.Windows.Forms.DockStyle.Top;
-            this.barDockControl39.Location = new System.Drawing.Point(0, 0);
-            this.barDockControl39.Manager = null;
-            this.barDockControl39.Size = new System.Drawing.Size(860, 0);
-            // 
-            // barDockControl40
-            // 
-            this.barDockControl40.CausesValidation = false;
-            this.barDockControl40.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControl40.Location = new System.Drawing.Point(0, 0);
-            this.barDockControl40.Manager = null;
-            this.barDockControl40.Size = new System.Drawing.Size(0, 569);
-            // 
-            // barDockControl41
-            // 
-            this.barDockControl41.CausesValidation = false;
-            this.barDockControl41.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControl41.Location = new System.Drawing.Point(860, 0);
-            this.barDockControl41.Manager = null;
-            this.barDockControl41.Size = new System.Drawing.Size(0, 569);
-            // 
-            // barDockControl42
-            // 
-            this.barDockControl42.CausesValidation = false;
-            this.barDockControl42.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControl42.Location = new System.Drawing.Point(0, 569);
-            this.barDockControl42.Manager = null;
-            this.barDockControl42.Size = new System.Drawing.Size(860, 0);
-            // 
-            // barDockControl43
-            // 
-            this.barDockControl43.CausesValidation = false;
-            this.barDockControl43.Dock = System.Windows.Forms.DockStyle.Top;
-            this.barDockControl43.Location = new System.Drawing.Point(0, 0);
-            this.barDockControl43.Manager = null;
-            this.barDockControl43.Size = new System.Drawing.Size(860, 0);
-            // 
-            // barDockControl44
-            // 
-            this.barDockControl44.CausesValidation = false;
-            this.barDockControl44.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControl44.Location = new System.Drawing.Point(0, 0);
-            this.barDockControl44.Manager = null;
-            this.barDockControl44.Size = new System.Drawing.Size(0, 569);
-            // 
-            // barDockControl45
-            // 
-            this.barDockControl45.CausesValidation = false;
-            this.barDockControl45.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControl45.Location = new System.Drawing.Point(860, 0);
-            this.barDockControl45.Manager = null;
-            this.barDockControl45.Size = new System.Drawing.Size(0, 569);
-            // 
-            // barDockControl46
-            // 
-            this.barDockControl46.CausesValidation = false;
-            this.barDockControl46.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControl46.Location = new System.Drawing.Point(0, 569);
-            this.barDockControl46.Manager = null;
-            this.barDockControl46.Size = new System.Drawing.Size(860, 0);
-            // 
-            // barDockControl47
-            // 
-            this.barDockControl47.CausesValidation = false;
-            this.barDockControl47.Dock = System.Windows.Forms.DockStyle.Top;
-            this.barDockControl47.Location = new System.Drawing.Point(0, 0);
-            this.barDockControl47.Manager = null;
-            this.barDockControl47.Size = new System.Drawing.Size(860, 0);
-            // 
-            // barDockControl48
-            // 
-            this.barDockControl48.CausesValidation = false;
-            this.barDockControl48.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControl48.Location = new System.Drawing.Point(0, 0);
-            this.barDockControl48.Manager = null;
-            this.barDockControl48.Size = new System.Drawing.Size(0, 569);
-            // 
-            // barDockControl49
-            // 
-            this.barDockControl49.CausesValidation = false;
-            this.barDockControl49.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControl49.Location = new System.Drawing.Point(860, 0);
-            this.barDockControl49.Manager = null;
-            this.barDockControl49.Size = new System.Drawing.Size(0, 569);
-            // 
-            // barDockControl50
-            // 
-            this.barDockControl50.CausesValidation = false;
-            this.barDockControl50.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControl50.Location = new System.Drawing.Point(0, 569);
-            this.barDockControl50.Manager = null;
-            this.barDockControl50.Size = new System.Drawing.Size(860, 0);
-            // 
-            // barDockControl51
-            // 
-            this.barDockControl51.CausesValidation = false;
-            this.barDockControl51.Dock = System.Windows.Forms.DockStyle.Top;
-            this.barDockControl51.Location = new System.Drawing.Point(0, 0);
-            this.barDockControl51.Manager = null;
-            this.barDockControl51.Size = new System.Drawing.Size(860, 0);
-            // 
             // PanelOption
             // 
             this.PanelOption.Controls.Add(this.xButton1);
@@ -3066,24 +1757,24 @@
             // xButton1
             // 
             this.xButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            office2010Green2.BorderColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(72)))), ((int)(((byte)(161)))));
-            office2010Green2.BorderColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(135)))), ((int)(((byte)(228)))));
-            office2010Green2.ButtonMouseOverColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(199)))), ((int)(((byte)(87)))));
-            office2010Green2.ButtonMouseOverColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(243)))), ((int)(((byte)(215)))));
-            office2010Green2.ButtonMouseOverColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(225)))), ((int)(((byte)(137)))));
-            office2010Green2.ButtonMouseOverColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(249)))), ((int)(((byte)(224)))));
-            office2010Green2.ButtonNormalColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(126)))), ((int)(((byte)(43)))));
-            office2010Green2.ButtonNormalColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(184)))), ((int)(((byte)(67)))));
-            office2010Green2.ButtonNormalColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(126)))), ((int)(((byte)(43)))));
-            office2010Green2.ButtonNormalColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(184)))), ((int)(((byte)(67)))));
-            office2010Green2.ButtonSelectedColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(199)))), ((int)(((byte)(87)))));
-            office2010Green2.ButtonSelectedColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(243)))), ((int)(((byte)(215)))));
-            office2010Green2.ButtonSelectedColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(229)))), ((int)(((byte)(117)))));
-            office2010Green2.ButtonSelectedColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(216)))), ((int)(((byte)(107)))));
-            office2010Green2.HoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
-            office2010Green2.SelectedTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
-            office2010Green2.TextColor = System.Drawing.Color.White;
-            this.xButton1.ColorTable = office2010Green2;
+            office2010Green3.BorderColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(72)))), ((int)(((byte)(161)))));
+            office2010Green3.BorderColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(135)))), ((int)(((byte)(228)))));
+            office2010Green3.ButtonMouseOverColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(199)))), ((int)(((byte)(87)))));
+            office2010Green3.ButtonMouseOverColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(243)))), ((int)(((byte)(215)))));
+            office2010Green3.ButtonMouseOverColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(225)))), ((int)(((byte)(137)))));
+            office2010Green3.ButtonMouseOverColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(249)))), ((int)(((byte)(224)))));
+            office2010Green3.ButtonNormalColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(126)))), ((int)(((byte)(43)))));
+            office2010Green3.ButtonNormalColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(184)))), ((int)(((byte)(67)))));
+            office2010Green3.ButtonNormalColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(126)))), ((int)(((byte)(43)))));
+            office2010Green3.ButtonNormalColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(184)))), ((int)(((byte)(67)))));
+            office2010Green3.ButtonSelectedColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(199)))), ((int)(((byte)(87)))));
+            office2010Green3.ButtonSelectedColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(243)))), ((int)(((byte)(215)))));
+            office2010Green3.ButtonSelectedColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(229)))), ((int)(((byte)(117)))));
+            office2010Green3.ButtonSelectedColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(216)))), ((int)(((byte)(107)))));
+            office2010Green3.HoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
+            office2010Green3.SelectedTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
+            office2010Green3.TextColor = System.Drawing.Color.White;
+            this.xButton1.ColorTable = office2010Green3;
             this.xButton1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.xButton1.Location = new System.Drawing.Point(639, 13);
             this.xButton1.Name = "xButton1";
@@ -3097,24 +1788,24 @@
             // BCancel
             // 
             this.BCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            office2010Red2.BorderColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(72)))), ((int)(((byte)(161)))));
-            office2010Red2.BorderColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(135)))), ((int)(((byte)(228)))));
-            office2010Red2.ButtonMouseOverColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(199)))), ((int)(((byte)(87)))));
-            office2010Red2.ButtonMouseOverColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(243)))), ((int)(((byte)(215)))));
-            office2010Red2.ButtonMouseOverColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(225)))), ((int)(((byte)(137)))));
-            office2010Red2.ButtonMouseOverColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(249)))), ((int)(((byte)(224)))));
-            office2010Red2.ButtonNormalColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(77)))), ((int)(((byte)(45)))));
-            office2010Red2.ButtonNormalColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(148)))), ((int)(((byte)(64)))));
-            office2010Red2.ButtonNormalColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(77)))), ((int)(((byte)(45)))));
-            office2010Red2.ButtonNormalColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(148)))), ((int)(((byte)(64)))));
-            office2010Red2.ButtonSelectedColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(199)))), ((int)(((byte)(87)))));
-            office2010Red2.ButtonSelectedColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(243)))), ((int)(((byte)(215)))));
-            office2010Red2.ButtonSelectedColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(229)))), ((int)(((byte)(117)))));
-            office2010Red2.ButtonSelectedColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(216)))), ((int)(((byte)(107)))));
-            office2010Red2.HoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
-            office2010Red2.SelectedTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
-            office2010Red2.TextColor = System.Drawing.Color.White;
-            this.BCancel.ColorTable = office2010Red2;
+            office2010Red3.BorderColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(72)))), ((int)(((byte)(161)))));
+            office2010Red3.BorderColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(135)))), ((int)(((byte)(228)))));
+            office2010Red3.ButtonMouseOverColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(199)))), ((int)(((byte)(87)))));
+            office2010Red3.ButtonMouseOverColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(243)))), ((int)(((byte)(215)))));
+            office2010Red3.ButtonMouseOverColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(225)))), ((int)(((byte)(137)))));
+            office2010Red3.ButtonMouseOverColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(249)))), ((int)(((byte)(224)))));
+            office2010Red3.ButtonNormalColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(77)))), ((int)(((byte)(45)))));
+            office2010Red3.ButtonNormalColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(148)))), ((int)(((byte)(64)))));
+            office2010Red3.ButtonNormalColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(77)))), ((int)(((byte)(45)))));
+            office2010Red3.ButtonNormalColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(148)))), ((int)(((byte)(64)))));
+            office2010Red3.ButtonSelectedColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(199)))), ((int)(((byte)(87)))));
+            office2010Red3.ButtonSelectedColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(243)))), ((int)(((byte)(215)))));
+            office2010Red3.ButtonSelectedColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(229)))), ((int)(((byte)(117)))));
+            office2010Red3.ButtonSelectedColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(216)))), ((int)(((byte)(107)))));
+            office2010Red3.HoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
+            office2010Red3.SelectedTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
+            office2010Red3.TextColor = System.Drawing.Color.White;
+            this.BCancel.ColorTable = office2010Red3;
             this.BCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.BCancel.Location = new System.Drawing.Point(720, 13);
             this.BCancel.Name = "BCancel";
@@ -3127,24 +1818,24 @@
             // BOK
             // 
             this.BOK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            office2010White2.BorderColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(72)))), ((int)(((byte)(161)))));
-            office2010White2.BorderColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(135)))), ((int)(((byte)(228)))));
-            office2010White2.ButtonMouseOverColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(199)))), ((int)(((byte)(87)))));
-            office2010White2.ButtonMouseOverColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(243)))), ((int)(((byte)(215)))));
-            office2010White2.ButtonMouseOverColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(225)))), ((int)(((byte)(137)))));
-            office2010White2.ButtonMouseOverColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(249)))), ((int)(((byte)(224)))));
-            office2010White2.ButtonNormalColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(154)))), ((int)(((byte)(154)))));
-            office2010White2.ButtonNormalColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            office2010White2.ButtonNormalColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            office2010White2.ButtonNormalColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            office2010White2.ButtonSelectedColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(199)))), ((int)(((byte)(87)))));
-            office2010White2.ButtonSelectedColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(243)))), ((int)(((byte)(215)))));
-            office2010White2.ButtonSelectedColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(229)))), ((int)(((byte)(117)))));
-            office2010White2.ButtonSelectedColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(216)))), ((int)(((byte)(107)))));
-            office2010White2.HoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
-            office2010White2.SelectedTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
-            office2010White2.TextColor = System.Drawing.Color.Black;
-            this.BOK.ColorTable = office2010White2;
+            office2010White3.BorderColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(72)))), ((int)(((byte)(161)))));
+            office2010White3.BorderColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(135)))), ((int)(((byte)(228)))));
+            office2010White3.ButtonMouseOverColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(199)))), ((int)(((byte)(87)))));
+            office2010White3.ButtonMouseOverColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(243)))), ((int)(((byte)(215)))));
+            office2010White3.ButtonMouseOverColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(225)))), ((int)(((byte)(137)))));
+            office2010White3.ButtonMouseOverColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(249)))), ((int)(((byte)(224)))));
+            office2010White3.ButtonNormalColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(154)))), ((int)(((byte)(154)))));
+            office2010White3.ButtonNormalColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            office2010White3.ButtonNormalColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            office2010White3.ButtonNormalColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            office2010White3.ButtonSelectedColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(199)))), ((int)(((byte)(87)))));
+            office2010White3.ButtonSelectedColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(243)))), ((int)(((byte)(215)))));
+            office2010White3.ButtonSelectedColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(229)))), ((int)(((byte)(117)))));
+            office2010White3.ButtonSelectedColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(216)))), ((int)(((byte)(107)))));
+            office2010White3.HoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
+            office2010White3.SelectedTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
+            office2010White3.TextColor = System.Drawing.Color.Black;
+            this.BOK.ColorTable = office2010White3;
             this.BOK.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BOK.Location = new System.Drawing.Point(801, 13);
             this.BOK.Name = "BOK";
@@ -3680,9 +2371,7 @@
             this.RelativeBarManager.DockControls.Add(this.barDockControl98);
             this.RelativeBarManager.Form = this;
             this.RelativeBarManager.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
-            this.NewRelativeBarButton,
             this.EditRelativeBarButton,
-            this.DeleteRelativeBarButton,
             this.RefreshRelativeBarButton});
             this.RelativeBarManager.MainMenu = this.RelativeBar;
             this.RelativeBarManager.MaxItemId = 4;
@@ -3694,9 +2383,7 @@
             this.RelativeBar.DockRow = 0;
             this.RelativeBar.DockStyle = DevExpress.XtraBars.BarDockStyle.Standalone;
             this.RelativeBar.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.NewRelativeBarButton),
             new DevExpress.XtraBars.LinkPersistInfo(this.EditRelativeBarButton),
-            new DevExpress.XtraBars.LinkPersistInfo(this.DeleteRelativeBarButton),
             new DevExpress.XtraBars.LinkPersistInfo(this.RefreshRelativeBarButton)});
             this.RelativeBar.OptionsBar.DrawBorder = false;
             this.RelativeBar.OptionsBar.DrawDragBorder = false;
@@ -3705,14 +2392,6 @@
             this.RelativeBar.StandaloneBarDockControl = this.RelativeStandaloneBarDockControl;
             this.RelativeBar.Text = "Main menu";
             // 
-            // NewRelativeBarButton
-            // 
-            this.NewRelativeBarButton.Caption = "Yeni";
-            this.NewRelativeBarButton.Id = 0;
-            this.NewRelativeBarButton.ImageOptions.Image = global::ELMS.Properties.Resources.plus_16;
-            this.NewRelativeBarButton.Name = "NewRelativeBarButton";
-            this.NewRelativeBarButton.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            // 
             // EditRelativeBarButton
             // 
             this.EditRelativeBarButton.Caption = "Dəyiş";
@@ -3720,24 +2399,17 @@
             this.EditRelativeBarButton.ImageOptions.Image = global::ELMS.Properties.Resources.edit_16;
             this.EditRelativeBarButton.Name = "EditRelativeBarButton";
             this.EditRelativeBarButton.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            // 
-            // DeleteRelativeBarButton
-            // 
-            this.DeleteRelativeBarButton.Caption = "Sil";
-            this.DeleteRelativeBarButton.Id = 2;
-            this.DeleteRelativeBarButton.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("DeleteRelativeBarButton.ImageOptions.Image")));
-            this.DeleteRelativeBarButton.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("DeleteRelativeBarButton.ImageOptions.LargeImage")));
-            this.DeleteRelativeBarButton.Name = "DeleteRelativeBarButton";
-            this.DeleteRelativeBarButton.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.EditRelativeBarButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.EditRelativeBarButton_ItemClick);
             // 
             // RefreshRelativeBarButton
             // 
-            this.RefreshRelativeBarButton.Caption = "Təzələ";
+            this.RefreshRelativeBarButton.Caption = "Yenilə";
             this.RefreshRelativeBarButton.Id = 3;
             this.RefreshRelativeBarButton.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("RefreshRelativeBarButton.ImageOptions.Image")));
             this.RefreshRelativeBarButton.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("RefreshRelativeBarButton.ImageOptions.LargeImage")));
             this.RefreshRelativeBarButton.Name = "RefreshRelativeBarButton";
             this.RefreshRelativeBarButton.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.RefreshRelativeBarButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.RefreshRelativeBarButton_ItemClick);
             // 
             // barDockControl95
             // 
@@ -3774,9 +2446,7 @@
             // RelativePopupMenu
             // 
             this.RelativePopupMenu.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.NewRelativeBarButton),
             new DevExpress.XtraBars.LinkPersistInfo(this.EditRelativeBarButton),
-            new DevExpress.XtraBars.LinkPersistInfo(this.DeleteRelativeBarButton),
             new DevExpress.XtraBars.LinkPersistInfo(this.RefreshRelativeBarButton)});
             this.RelativePopupMenu.Manager = this.RelativeBarManager;
             this.RelativePopupMenu.Name = "RelativePopupMenu";
@@ -3812,42 +2482,10 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FOrderAddEdit_FormClosing);
             this.Load += new System.EventHandler(this.FOrderAddEdit_Load);
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PersonalDetailsGroupBox)).EndInit();
-            this.PersonalDetailsGroupBox.ResumeLayout(false);
-            this.PersonalDetailsGroupBox.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl5)).EndInit();
-            this.groupControl5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.ProductGridControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ProductGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ProductBarManager)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.OtherGroupControl)).EndInit();
-            this.OtherGroupControl.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.DocumentGridControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DocumentGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DocumentBarManager)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.RegisterAddressText1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.FinCodeSearch1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ActualAddressText1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PictureEdit2.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PhoneAllText1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.NameText1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.OtherInfoTabControl)).EndInit();
             this.OtherInfoTabControl.ResumeLayout(false);
-            this.OrderCardTab.ResumeLayout(false);
-            this.xtraScrollableControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl4)).EndInit();
-            this.groupControl4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.RelativeGridControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.RelativeGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).EndInit();
-            this.groupControl3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.WorkGridControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.WorkGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
-            this.groupControl2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.PhoneGridControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PhoneGridView1)).EndInit();
             this.IDCardTab.ResumeLayout(false);
             this.IDCardTab.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
@@ -3896,9 +2534,6 @@
             this.groupControl7.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DocumentGridControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DocumentGridView)).EndInit();
-            this.WorkTab.ResumeLayout(false);
-            this.RelativeTab.ResumeLayout(false);
-            this.RelativeTab.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PanelOption)).EndInit();
             this.PanelOption.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DocumentPopupMenu)).EndInit();
@@ -3913,16 +2548,6 @@
 
         private DevExpress.LookAndFeel.DefaultLookAndFeel defaultLookAndFeel1;
         private DevExpress.Utils.Behaviors.BehaviorManager behaviorManager1;
-        private DevExpress.XtraEditors.GroupControl PersonalDetailsGroupBox;
-        private DevExpress.XtraEditors.PictureEdit PictureEdit2;
-        private DevExpress.XtraEditors.SeparatorControl separatorControl1;
-        private DevExpress.XtraEditors.TextEdit PhoneAllText1;
-        private DevExpress.XtraEditors.LabelControl labelControl5;
-        private DevExpress.XtraEditors.TextEdit NameText1;
-        private DevExpress.XtraEditors.LabelControl NameLabel;
-        private DevExpress.XtraEditors.TextEdit ActualAddressText1;
-        private DevExpress.XtraEditors.LabelControl Address2Label;
-        private DevExpress.XtraEditors.GroupControl OtherGroupControl;
         private DevExpress.XtraEditors.PanelControl PanelOption;
         private ManiXButton.XButton BCancel;
         private ManiXButton.XButton BOK;
@@ -3936,14 +2561,6 @@
         private DevExpress.XtraBars.BarDockControl barDockControlBottom;
         private DevExpress.XtraBars.BarDockControl barDockControlLeft;
         private DevExpress.XtraBars.BarDockControl barDockControlRight;
-        private DevExpress.XtraGrid.GridControl ProductGridControl1;
-        private DevExpress.XtraGrid.Views.Grid.GridView ProductGridView1;
-        private DevExpress.XtraGrid.Columns.GridColumn Product_SS;
-        private DevExpress.XtraGrid.Columns.GridColumn Product_Name;
-        private DevExpress.XtraGrid.Columns.GridColumn Product_Count;
-        private DevExpress.XtraGrid.Columns.GridColumn Product_Price;
-        private DevExpress.XtraGrid.Columns.GridColumn Product_TotalPrice;
-        private DevExpress.XtraGrid.Columns.GridColumn Product_ID;
         private DevExpress.XtraBars.BarDockControl barDockControl9;
         private DevExpress.XtraBars.BarDockControl barDockControl8;
         private DevExpress.XtraBars.BarDockControl barDockControl10;
@@ -3958,8 +2575,6 @@
         private DevExpress.XtraEditors.LabelControl labelControl13;
         private DevExpress.XtraEditors.LabelControl labelControl17;
         private DevExpress.XtraEditors.LabelControl labelControl15;
-        private DevExpress.XtraEditors.LabelControl RegistrationLabel;
-        private DevExpress.XtraEditors.SearchControl FinCodeSearch1;
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private Oracle.ManagedDataAccess.Client.OracleCommand oracleCommand1;
         private DevExpress.XtraEditors.LabelControl labelControl18;
@@ -3970,40 +2585,12 @@
         private DevExpress.XtraEditors.LabelControl InitialPaymentLabel;
         private DevExpress.XtraEditors.TextEdit NoteText;
         private DevExpress.XtraEditors.LabelControl NoteLabel;
-        private DevExpress.XtraEditors.LabelControl labelControl1;
-        private DevExpress.XtraEditors.TextEdit RegisterAddressText1;
-        private DevExpress.XtraEditors.LabelControl labelControl6;
         private DevExpress.XtraEditors.LabelControl labelControl7;
         private DevExpress.XtraEditors.LabelControl labelControl8;
         private DevExpress.XtraEditors.CalcEdit TotalOrderAmountValue;
-        private DevExpress.XtraGrid.Columns.GridColumn Product_Note;
         private DevExpress.XtraTab.XtraTabControl OtherInfoTabControl;
-        private DevExpress.XtraTab.XtraTabPage OrderCardTab;
         private DevExpress.XtraTab.XtraTabPage IDCardTab;
         private DevExpress.XtraTab.XtraTabPage CustomerTab;
-        private DevExpress.XtraTab.XtraTabPage WorkTab;
-        private DevExpress.XtraTab.XtraTabPage RelativeTab;
-        private DevExpress.XtraBars.BarDockControl barDockControl19;
-        private DevExpress.XtraBars.BarDockControl barDockControl32;
-        private DevExpress.XtraBars.BarDockControl barDockControl33;
-        private DevExpress.XtraBars.BarDockControl barDockControl34;
-        private DevExpress.XtraBars.BarDockControl barDockControl35;
-        private DevExpress.XtraBars.BarDockControl barDockControl36;
-        private DevExpress.XtraBars.BarDockControl barDockControl37;
-        private DevExpress.XtraBars.BarDockControl barDockControl38;
-        private DevExpress.XtraBars.BarDockControl barDockControl39;
-        private DevExpress.XtraBars.BarDockControl barDockControl40;
-        private DevExpress.XtraBars.BarDockControl barDockControl41;
-        private DevExpress.XtraBars.BarDockControl barDockControl42;
-        private DevExpress.XtraBars.BarDockControl barDockControl43;
-        private DevExpress.XtraBars.BarDockControl barDockControl44;
-        private DevExpress.XtraBars.BarDockControl barDockControl45;
-        private DevExpress.XtraBars.BarDockControl barDockControl46;
-        private DevExpress.XtraBars.BarDockControl barDockControl47;
-        private DevExpress.XtraBars.BarDockControl barDockControl48;
-        private DevExpress.XtraBars.BarDockControl barDockControl49;
-        private DevExpress.XtraBars.BarDockControl barDockControl50;
-        private DevExpress.XtraBars.BarDockControl barDockControl51;
         private DevExpress.XtraBars.BarDockControl barDockControl1;
         private DevExpress.XtraBars.BarDockControl barDockControl2;
         private DevExpress.XtraBars.BarDockControl barDockControl3;
@@ -4074,63 +2661,13 @@
         private DevExpress.XtraBars.BarDockControl barDockControl97;
         private DevExpress.XtraBars.BarManager RelativeBarManager;
         private DevExpress.XtraBars.Bar RelativeBar;
-        private DevExpress.XtraBars.BarButtonItem NewRelativeBarButton;
         private DevExpress.XtraBars.BarButtonItem EditRelativeBarButton;
-        private DevExpress.XtraBars.BarButtonItem DeleteRelativeBarButton;
         private DevExpress.XtraBars.BarButtonItem RefreshRelativeBarButton;
         private DevExpress.XtraBars.BarDockControl barDockControl95;
         private DevExpress.XtraBars.BarDockControl barDockControl96;
         private DevExpress.XtraBars.BarDockControl barDockControl98;
         private DevExpress.XtraBars.BarButtonItem barButtonItem5;
         private DevExpress.XtraBars.PopupMenu RelativePopupMenu;
-        private DevExpress.XtraBars.StandaloneBarDockControl WorkStandaloneBarDockControl;
-        private DevExpress.XtraGrid.GridControl PhoneGridControl1;
-        private DevExpress.XtraGrid.Views.Grid.GridView PhoneGridView1;
-        private DevExpress.XtraGrid.Columns.GridColumn CustomerPhone_SS;
-        private DevExpress.XtraGrid.Columns.GridColumn CustomerPhone_ID;
-        private DevExpress.XtraGrid.Columns.GridColumn CustomerPhone_Description;
-        private DevExpress.XtraGrid.Columns.GridColumn CustomerPhone_Number;
-        private DevExpress.XtraGrid.Columns.GridColumn CustomerPhone_Note;
-        private DevExpress.XtraGrid.Columns.GridColumn CustomerPhone_IsSendSMS;
-        private DevExpress.XtraGrid.GridControl WorkGridControl1;
-        private DevExpress.XtraGrid.Views.Grid.GridView WorkGridView1;
-        private DevExpress.XtraGrid.Columns.GridColumn CustomerWork_SS;
-        private DevExpress.XtraGrid.Columns.GridColumn CustomerWork_ID;
-        private DevExpress.XtraGrid.Columns.GridColumn CustomerWork_PlaceName;
-        private DevExpress.XtraGrid.Columns.GridColumn CustomerWork_Position;
-        private DevExpress.XtraGrid.Columns.GridColumn CustomerWork_Salary;
-        private DevExpress.XtraGrid.Columns.GridColumn CustomerWork_Note;
-        private DevExpress.XtraGrid.GridControl RelativeGridControl1;
-        private DevExpress.XtraGrid.Views.Grid.GridView RelativeGridView1;
-        private DevExpress.XtraGrid.Columns.GridColumn RelativeCard_SS;
-        private DevExpress.XtraGrid.Columns.GridColumn RelativeCard_ID;
-        private DevExpress.XtraGrid.Columns.GridColumn RelativeCard_Name;
-        private DevExpress.XtraGrid.Columns.GridColumn RelativeCard_KindShip;
-        private DevExpress.XtraGrid.Columns.GridColumn RelativeCard_Phone;
-        private DevExpress.XtraGrid.Columns.GridColumn RelativeCard_Description;
-        private DevExpress.XtraGrid.Columns.GridColumn RelativeCard_Profession;
-        private DevExpress.XtraGrid.Columns.GridColumn RelativeCard_Salary;
-        private DevExpress.XtraGrid.GridControl DocumentGridControl1;
-        private DevExpress.XtraGrid.Views.Grid.GridView DocumentGridView1;
-        private DevExpress.XtraGrid.Columns.GridColumn Document_SS;
-        private DevExpress.XtraGrid.Columns.GridColumn Document_DocumentGroup;
-        private DevExpress.XtraGrid.Columns.GridColumn Document_DocumentType;
-        private DevExpress.XtraGrid.Columns.GridColumn Document_DocumentNumber;
-        private DevExpress.XtraGrid.Columns.GridColumn Document_FinCode;
-        private DevExpress.XtraGrid.Columns.GridColumn Document_IssueName;
-        private DevExpress.XtraGrid.Columns.GridColumn Document_IssueDate;
-        private DevExpress.XtraGrid.Columns.GridColumn Document_ReliableDate;
-        private DevExpress.XtraGrid.Columns.GridColumn Document_ID;
-        private DevExpress.XtraEditors.LabelControl labelControl23;
-        private DevExpress.XtraEditors.LabelControl labelControl22;
-        private DevExpress.XtraEditors.LabelControl labelControl21;
-        private DevExpress.XtraEditors.LabelControl labelControl20;
-        private DevExpress.XtraEditors.LabelControl labelControl19;
-        private DevExpress.XtraEditors.XtraScrollableControl xtraScrollableControl1;
-        private DevExpress.XtraEditors.GroupControl groupControl4;
-        private DevExpress.XtraEditors.GroupControl groupControl3;
-        private DevExpress.XtraEditors.GroupControl groupControl2;
-        private DevExpress.XtraEditors.GroupControl groupControl5;
         private DevExpress.XtraEditors.XtraScrollableControl xtraScrollableControl2;
         private DevExpress.XtraEditors.GroupControl groupControl6;
         private DevExpress.XtraEditors.LabelControl labelControl24;
