@@ -9,7 +9,9 @@ namespace ELMS.Class.Tables
     class Times
     {
         public int ID { get; set; }
+        public string PERIOD { get; set; }
         public string NAME { get; set; }
+        public string PERCENT { get; set; }
         public string NOTE { get; set; }
         public int ORDER_ID { get; set; }
         public int USED_USER_ID { get; set; }

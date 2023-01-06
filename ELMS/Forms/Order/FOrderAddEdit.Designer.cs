@@ -1092,8 +1092,9 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Ellipsis, "Düzəliş etmək üçün müddətlərin siyahısını açın", -1, true, true, false, editorButtonImageOptions4)});
             this.TimeLookUp.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("ID", "ID", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("NAME", "Name")});
-            this.TimeLookUp.Properties.DisplayMember = "NAME";
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("PERIOD", "Period"),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("PERCENT", "Percent")});
+            this.TimeLookUp.Properties.DisplayMember = "PERIOD";
             this.TimeLookUp.Properties.NullText = "";
             this.TimeLookUp.Properties.NullValuePrompt = "Müddəti seçin";
             this.TimeLookUp.Properties.NullValuePromptShowForEmptyValue = true;

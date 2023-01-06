@@ -221,6 +221,7 @@
             this.Times_ID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Times_Note = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Times_UsedUserId = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Times_Percent = new DevExpress.XtraGrid.Columns.GridColumn();
             this.TimesBarManager = new DevExpress.XtraBars.BarManager(this.components);
             this.bar5 = new DevExpress.XtraBars.Bar();
             this.NewTimesBarButton = new DevExpress.XtraBars.BarButtonItem();
@@ -1108,6 +1109,7 @@
             this.UpTimesBarButton.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("UpTimesBarButton.ImageOptions.Image")));
             this.UpTimesBarButton.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("UpTimesBarButton.ImageOptions.LargeImage")));
             this.UpTimesBarButton.Name = "UpTimesBarButton";
+            this.UpTimesBarButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.UpTimesBarButton_ItemClick);
             // 
             // DownTimesBarButton
             // 
@@ -1116,6 +1118,7 @@
             this.DownTimesBarButton.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("DownTimesBarButton.ImageOptions.Image")));
             this.DownTimesBarButton.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("DownTimesBarButton.ImageOptions.LargeImage")));
             this.DownTimesBarButton.Name = "DownTimesBarButton";
+            this.DownTimesBarButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.DownTimesBarButton_ItemClick);
             // 
             // backstageViewClientControl2
             // 
@@ -2490,7 +2493,8 @@
             this.Times_Period,
             this.Times_ID,
             this.Times_Note,
-            this.Times_UsedUserId});
+            this.Times_UsedUserId,
+            this.Times_Percent});
             this.TimesGridView.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFullFocus;
             this.TimesGridView.GridControl = this.TimesGridControl;
             this.TimesGridView.Name = "TimesGridView";
@@ -2533,7 +2537,7 @@
             // Times_Period
             // 
             this.Times_Period.Caption = "Müddət";
-            this.Times_Period.FieldName = "NAME";
+            this.Times_Period.FieldName = "PERIOD";
             this.Times_Period.Name = "Times_Period";
             this.Times_Period.Visible = true;
             this.Times_Period.VisibleIndex = 1;
@@ -2550,13 +2554,21 @@
             this.Times_Note.FieldName = "NOTE";
             this.Times_Note.Name = "Times_Note";
             this.Times_Note.Visible = true;
-            this.Times_Note.VisibleIndex = 2;
+            this.Times_Note.VisibleIndex = 3;
             // 
             // Times_UsedUserId
             // 
             this.Times_UsedUserId.Caption = "Times_UsedUserId";
             this.Times_UsedUserId.FieldName = "USED_USER_ID";
             this.Times_UsedUserId.Name = "Times_UsedUserId";
+            // 
+            // Times_Percent
+            // 
+            this.Times_Percent.Caption = "Faiz";
+            this.Times_Percent.FieldName = "PERCENT";
+            this.Times_Percent.Name = "Times_Percent";
+            this.Times_Percent.Visible = true;
+            this.Times_Percent.VisibleIndex = 2;
             // 
             // TimesBarManager
             // 
@@ -2618,6 +2630,7 @@
             this.DeleteTimesBarButton.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("DeleteTimesBarButton.ImageOptions.Image")));
             this.DeleteTimesBarButton.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("DeleteTimesBarButton.ImageOptions.LargeImage")));
             this.DeleteTimesBarButton.Name = "DeleteTimesBarButton";
+            this.DeleteTimesBarButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.DeleteTimesBarButton_ItemClick);
             // 
             // RefreshTimesBarButton
             // 
@@ -2626,6 +2639,7 @@
             this.RefreshTimesBarButton.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("RefreshTimesBarButton.ImageOptions.Image")));
             this.RefreshTimesBarButton.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("RefreshTimesBarButton.ImageOptions.LargeImage")));
             this.RefreshTimesBarButton.Name = "RefreshTimesBarButton";
+            this.RefreshTimesBarButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.RefreshTimesBarButton_ItemClick);
             // 
             // barDockControl29
             // 
@@ -3008,6 +3022,7 @@
             this.NewSourceBarButton.Id = 0;
             this.NewSourceBarButton.ImageOptions.Image = global::ELMS.Properties.Resources.plus_16;
             this.NewSourceBarButton.Name = "NewSourceBarButton";
+            this.NewSourceBarButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.NewSourceBarButton_ItemClick);
             // 
             // EditSourceBarButton
             // 
@@ -3015,6 +3030,7 @@
             this.EditSourceBarButton.Id = 1;
             this.EditSourceBarButton.ImageOptions.Image = global::ELMS.Properties.Resources.edit_16;
             this.EditSourceBarButton.Name = "EditSourceBarButton";
+            this.EditSourceBarButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.EditSourceBarButton_ItemClick);
             // 
             // DeleteSourceBarButton
             // 
@@ -3023,6 +3039,7 @@
             this.DeleteSourceBarButton.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("DeleteSourceBarButton.ImageOptions.Image")));
             this.DeleteSourceBarButton.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("DeleteSourceBarButton.ImageOptions.LargeImage")));
             this.DeleteSourceBarButton.Name = "DeleteSourceBarButton";
+            this.DeleteSourceBarButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.DeleteSourceBarButton_ItemClick);
             // 
             // RefreshSourceBarButton
             // 
@@ -3031,6 +3048,7 @@
             this.RefreshSourceBarButton.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("RefreshSourceBarButton.ImageOptions.Image")));
             this.RefreshSourceBarButton.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("RefreshSourceBarButton.ImageOptions.LargeImage")));
             this.RefreshSourceBarButton.Name = "RefreshSourceBarButton";
+            this.RefreshSourceBarButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.RefreshSourceBarButton_ItemClick);
             // 
             // UpSourceBarButton
             // 
@@ -3039,6 +3057,7 @@
             this.UpSourceBarButton.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("UpSourceBarButton.ImageOptions.Image")));
             this.UpSourceBarButton.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("UpSourceBarButton.ImageOptions.LargeImage")));
             this.UpSourceBarButton.Name = "UpSourceBarButton";
+            this.UpSourceBarButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.UpSourceBarButton_ItemClick);
             // 
             // DownSourceBarButton
             // 
@@ -3047,6 +3066,7 @@
             this.DownSourceBarButton.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("DownSourceBarButton.ImageOptions.Image")));
             this.DownSourceBarButton.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("DownSourceBarButton.ImageOptions.LargeImage")));
             this.DownSourceBarButton.Name = "DownSourceBarButton";
+            this.DownSourceBarButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.DownSourceBarButton_ItemClick);
             // 
             // barDockControl33
             // 
@@ -3447,5 +3467,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn Source_ID;
         private DevExpress.XtraGrid.Columns.GridColumn Source_UsedUserId;
         private DevExpress.XtraGrid.Columns.GridColumn Times_UsedUserId;
+        private DevExpress.XtraGrid.Columns.GridColumn Times_Percent;
     }
 }

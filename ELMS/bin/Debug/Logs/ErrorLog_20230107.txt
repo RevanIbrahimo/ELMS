@@ -78,3 +78,54 @@ Log Entry : 12:22:12 AM Saturday, January 7, 2023
                                AND CU.BRANCH_ID = B.ID 
                         ORDER BY CU.ID
 -------------------------------------------------
+
+Log Entry : 1:35:22 AM Saturday, January 7, 2023
+  
+   UserName =  SuperAdmin
+   FormName =  TimesDAL
+   ProcedureName =  InsertTimes
+  
+   ShowMessage: Mənbə bazaya daxil edilmədi.
+   Exception Message: ORA-00001: unique constraint (ELMS_USER.SYS_C008744) violated
+   SQL Text      :  INSERT INTO ELMS_USER.TIMES(NAME,
+                                                                                    NOTE,
+                                                                                    INSERT_USER)
+                                                    VALUES(:inNAME,
+                                                           :inNOTE,
+                                                           :inINSERT_USER)
+-------------------------------------------------
+
+Log Entry : 2:50:19 AM Saturday, January 7, 2023
+  
+   UserName =  SuperAdmin
+   FormName =  OrderDAL
+   ProcedureName =  SelectViewData
+  
+   ShowMessage: Musterinin məlumatları açılmadı.
+   Exception Message: ORA-00904: "T"."NAME": invalid identifier
+   SQL Text      :  SELECT CU.ID,
+                               CC.PINCODE,
+                               CU.REGISTER_NUMBER,                               
+                               B.NAME BRANCH_NAME,
+                               S.NAME ORDER_SOURCE,
+                               T.NAME TIME,                           
+                               CU.ORDER_DATE,                              
+                               CU.ADDRESS,
+                               CU.FIRST_PAYMENT,
+                               CU.ORDER_AMOUNT,
+                               CU.NOTE,
+                               CU.INSERT_DATE,
+                               CU.USED_USER_ID
+                          FROM ELMS_USER.ORDER_TAB CU,
+                               ELMS_USER.BRANCH B,
+                               ELMS_USER.TIMES T,
+                               ELMS_USER.FUNDS_SOURCES S,
+                               ELMS_USER.CUSTOMER C,
+                               ELMS_USER.CUSTOMER_CARDS CC
+                          WHERE     CU.SOURCE_ID = S.ID
+                               AND CU.TIME_ID = T.ID
+                               AND CU.CUSTOMER_ID = C.ID
+                               AND C.ID = CC.CUSTOMER_ID
+                               AND CU.BRANCH_ID = B.ID 
+                        ORDER BY CU.ID
+-------------------------------------------------

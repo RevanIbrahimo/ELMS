@@ -56,6 +56,7 @@
             this.OrderGridView = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.Customer_SS = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Customer_ID = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Order_OperationName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Customer_RegisteredAddress = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Customer_FullName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Customer_SexName = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -64,8 +65,8 @@
             this.Customer_Note = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Customer_UsedUserID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.FinCode = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Order_OperationNote = new DevExpress.XtraGrid.Columns.GridColumn();
             this.OrderPopupMenu = new DevExpress.XtraBars.PopupMenu(this.components);
-            this.Order_OperationName = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.BarManager)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.OrderGridControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.OrderGridView)).BeginInit();
@@ -343,7 +344,8 @@
             this.Customer_Address,
             this.Customer_Note,
             this.Customer_UsedUserID,
-            this.FinCode});
+            this.FinCode,
+            this.Order_OperationNote});
             this.OrderGridView.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFullFocus;
             this.OrderGridView.GridControl = this.OrderGridControl;
             this.OrderGridView.Name = "OrderGridView";
@@ -391,6 +393,24 @@
             this.Customer_ID.OptionsColumn.AllowShowHide = false;
             this.Customer_ID.OptionsColumn.FixedWidth = true;
             // 
+            // Order_OperationName
+            // 
+            this.Order_OperationName.AppearanceCell.FontStyleDelta = System.Drawing.FontStyle.Bold;
+            this.Order_OperationName.AppearanceCell.ForeColor = System.Drawing.Color.Red;
+            this.Order_OperationName.AppearanceCell.Options.UseFont = true;
+            this.Order_OperationName.AppearanceCell.Options.UseForeColor = true;
+            this.Order_OperationName.AppearanceHeader.FontStyleDelta = System.Drawing.FontStyle.Bold;
+            this.Order_OperationName.AppearanceHeader.ForeColor = System.Drawing.Color.Red;
+            this.Order_OperationName.AppearanceHeader.Options.UseFont = true;
+            this.Order_OperationName.AppearanceHeader.Options.UseForeColor = true;
+            this.Order_OperationName.Caption = "Müraciətin vəziyyəti";
+            this.Order_OperationName.FieldName = "OPERATION_NAME";
+            this.Order_OperationName.Name = "Order_OperationName";
+            this.Order_OperationName.OptionsColumn.FixedWidth = true;
+            this.Order_OperationName.Visible = true;
+            this.Order_OperationName.VisibleIndex = 1;
+            this.Order_OperationName.Width = 130;
+            // 
             // Customer_RegisteredAddress
             // 
             this.Customer_RegisteredAddress.Caption = "Qeydiyyat nömrəsi";
@@ -399,7 +419,7 @@
             this.Customer_RegisteredAddress.OptionsColumn.FixedWidth = true;
             this.Customer_RegisteredAddress.Visible = true;
             this.Customer_RegisteredAddress.VisibleIndex = 2;
-            this.Customer_RegisteredAddress.Width = 120;
+            this.Customer_RegisteredAddress.Width = 80;
             // 
             // Customer_FullName
             // 
@@ -474,6 +494,16 @@
             this.FinCode.VisibleIndex = 8;
             this.FinCode.Width = 70;
             // 
+            // Order_OperationNote
+            // 
+            this.Order_OperationNote.Caption = "Qeyd";
+            this.Order_OperationNote.FieldName = "OPERATION_NOTE";
+            this.Order_OperationNote.Name = "Order_OperationNote";
+            this.Order_OperationNote.OptionsColumn.FixedWidth = true;
+            this.Order_OperationNote.Visible = true;
+            this.Order_OperationNote.VisibleIndex = 9;
+            this.Order_OperationNote.Width = 230;
+            // 
             // OrderPopupMenu
             // 
             this.OrderPopupMenu.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
@@ -487,24 +517,6 @@
             new DevExpress.XtraBars.LinkPersistInfo(this.ExportBarButton)});
             this.OrderPopupMenu.Manager = this.BarManager;
             this.OrderPopupMenu.Name = "OrderPopupMenu";
-            // 
-            // Order_OperationName
-            // 
-            this.Order_OperationName.AppearanceCell.FontStyleDelta = System.Drawing.FontStyle.Bold;
-            this.Order_OperationName.AppearanceCell.ForeColor = System.Drawing.Color.Red;
-            this.Order_OperationName.AppearanceCell.Options.UseFont = true;
-            this.Order_OperationName.AppearanceCell.Options.UseForeColor = true;
-            this.Order_OperationName.AppearanceHeader.FontStyleDelta = System.Drawing.FontStyle.Bold;
-            this.Order_OperationName.AppearanceHeader.ForeColor = System.Drawing.Color.Red;
-            this.Order_OperationName.AppearanceHeader.Options.UseFont = true;
-            this.Order_OperationName.AppearanceHeader.Options.UseForeColor = true;
-            this.Order_OperationName.Caption = "Müraciətin vəziyyəti";
-            this.Order_OperationName.FieldName = "OPERATION_NAME";
-            this.Order_OperationName.Name = "Order_OperationName";
-            this.Order_OperationName.OptionsColumn.FixedWidth = true;
-            this.Order_OperationName.Visible = true;
-            this.Order_OperationName.VisibleIndex = 1;
-            this.Order_OperationName.Width = 120;
             // 
             // ConfirmationUserControl
             // 
@@ -567,5 +579,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn Customer_RegisteredAddress;
         private DevExpress.XtraGrid.Columns.GridColumn FinCode;
         private DevExpress.XtraGrid.Columns.GridColumn Order_OperationName;
+        private DevExpress.XtraGrid.Columns.GridColumn Order_OperationNote;
     }
 }

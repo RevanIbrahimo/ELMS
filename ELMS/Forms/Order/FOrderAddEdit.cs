@@ -427,7 +427,7 @@ namespace ELMS.Forms.Order
             {
                
                 case 2:
-                    GlobalProcedures.FillLookUpEdit(SourceLookUp, FundsSourcesDAL.SelectFundsSourcesByID(null).Tables[0]);
+                    GlobalProcedures.FillLookUpEdit(SourceLookUp, SourceDAL.SelectSourceByID(null).Tables[0]);
                     break;
                 case 1:
                     GlobalProcedures.FillLookUpEdit(TimeLookUp, TimesDAL.SelectTimesByID(null).Tables[0]);
@@ -477,7 +477,7 @@ namespace ELMS.Forms.Order
         private void FOrderAddEdit_Load(object sender, EventArgs e)
         {
             GlobalProcedures.FillLookUpEdit(BranchLookUp, BranchDAL.SelectBranchByID(null).Tables[0]);
-            GlobalProcedures.FillLookUpEdit(SourceLookUp, FundsSourcesDAL.SelectFundsSourcesByID(null).Tables[0]);
+            GlobalProcedures.FillLookUpEdit(SourceLookUp, SourceDAL.SelectSourceByID(null).Tables[0]);
             GlobalProcedures.FillLookUpEdit(TimeLookUp, TimesDAL.SelectTimesByID(null).Tables[0]);
             RefreshDictionaries(1);
 

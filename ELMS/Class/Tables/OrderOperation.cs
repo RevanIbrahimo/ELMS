@@ -11,5 +11,6 @@ namespace ELMS.Class.Tables
         public int ID { get; set; }
         public int ORDER_ID { get; set; }
         public int OPERATION_ID { get; set; }
+        public string NOTE { get; set; }
     }
 }

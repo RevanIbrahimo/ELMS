@@ -99,10 +99,12 @@ namespace ELMS.Class.DataAccess
                         transaction = connection.BeginTransaction();
                         command.Transaction = transaction;
                         command.CommandText = $@"UPDATE ELMS_USER.ORDER_OPERATION SET ORDER_ID = :inORDER_ID,
-                                                                                           OPERATION_TYPE_ID = :inOPERATION_TYPE_ID
+                                                                                           OPERATION_TYPE_ID = :inOPERATION_TYPE_ID,
+                                                                                           NOTE = :inNOTE
                                                             WHERE ID = :inID";
                         command.Parameters.Add(new OracleParameter("inORDER_ID", order.ORDER_ID));
                         command.Parameters.Add(new OracleParameter("inOPERATION_TYPE_ID", order.OPERATION_ID));
+                        command.Parameters.Add(new OracleParameter("inNOTE", order.NOTE));
                         command.Parameters.Add(new OracleParameter("inID", order.ID));
                         commandSql = command.CommandText;
                         command.ExecuteNonQuery();

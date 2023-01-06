@@ -17,7 +17,8 @@ namespace ELMS.Class.DataAccess
             string sql = null;
             if (typeID == null)
                 sql = $@"SELECT C.ID,
-                                 C.NAME,
+                                 C.PERIOD,
+                                 C.PERCENT,
                                  C.NOTE,
                                  C.USED_USER_ID,
                                  C.ORDER_ID
@@ -25,7 +26,8 @@ namespace ELMS.Class.DataAccess
                             ORDER BY C.ID";
             else
                 sql = $@"SELECT C.ID,
-                                 C.NAME,
+                                 C.PERIOD,
+                                 C.PERCENT,
                                  C.NOTE,
                                  C.USED_USER_ID,
                                  C.ORDER_ID
@@ -54,12 +56,14 @@ namespace ELMS.Class.DataAccess
             string sql = null;
             if (timesID == null)
                 sql = $@"SELECT C.ID,
-                                 C.NAME
+                                 C.PERIOD,
+                                 C.PERCENT
                             FROM ELMS_USER.TIMES C
                             ORDER BY C.ORDER_ID";
             else
                 sql = $@"SELECT C.ID,
-                                 C.NAME
+                                 C.PERIOD,
+                                 C.PERCENT
                             FROM ELMS_USER.TIMES C 
                            WHERE C.ID = {timesID}";
 
@@ -98,13 +102,16 @@ namespace ELMS.Class.DataAccess
                     {
                         transaction = connection.BeginTransaction();
                         command.Transaction = transaction;
-                        command.CommandText = $@"INSERT INTO ELMS_USER.TIMES(NAME,
+                        command.CommandText = $@"INSERT INTO ELMS_USER.TIMES(PERIOD,
+                                                                                    PERCENT,
                                                                                     NOTE,
                                                                                     INSERT_USER)
-                                                    VALUES(:inNAME,
+                                                    VALUES(:inPERIOD,
+                                                           :inPERCENT,
                                                            :inNOTE,
                                                            :inINSERT_USER)";
-                        command.Parameters.Add(new OracleParameter("inNAME", times.NAME));
+                        command.Parameters.Add(new OracleParameter("inPERIOD", times.PERIOD));
+                        command.Parameters.Add(new OracleParameter("inPERCENT", times.PERCENT));
                         command.Parameters.Add(new OracleParameter("inNOTE", times.NOTE));
                         command.Parameters.Add(new OracleParameter("inINSERT_USER", GlobalVariables.V_UserID));
                         commandSql = command.CommandText;
@@ -145,14 +152,16 @@ namespace ELMS.Class.DataAccess
                     {
                         transaction = connection.BeginTransaction();
                         command.Transaction = transaction;
-                        command.CommandText = $@"UPDATE ELMS_USER.TIMES SET NAME = :inNAME,
+                        command.CommandText = $@"UPDATE ELMS_USER.TIMES SET PERIOD = :inPERIOD,
+                                                                                  PERCENT = :inPERCENT,
                                                                                   NOTE = :inNOTE,
                                                                                   USED_USER_ID = :inUSEDUSERID,
                                                                                   ORDER_ID = :inORDERID,
                                                                                   UPDATE_USER = :inUPDATEUSER,
                                                                                   UPDATE_DATE = SYSDATE
                                                                     WHERE ID = :inID";
-                        command.Parameters.Add(new OracleParameter("inNAME", times.NAME));
+                        command.Parameters.Add(new OracleParameter("inPERIOD", times.PERIOD));
+                        command.Parameters.Add(new OracleParameter("inPERCENT", times.PERCENT));
                         command.Parameters.Add(new OracleParameter("inNOTE", times.NOTE));
                         command.Parameters.Add(new OracleParameter("inUSEDUSERID", times.USED_USER_ID));
                         command.Parameters.Add(new OracleParameter("inORDERID", times.ORDER_ID));
@@ -180,7 +189,8 @@ namespace ELMS.Class.DataAccess
         public static DataTable SelectViewData(int? ID)
         {
             string s = $@"SELECT C.ID,
-                                 C.NAME,
+                                 C.PERIOD,
+                                 C.PERCENT,
                                  C.NOTE,
                                  C.USED_USER_ID,
                                  C.ORDER_ID

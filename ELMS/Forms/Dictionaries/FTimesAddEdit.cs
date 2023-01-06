@@ -80,7 +80,8 @@ namespace ELMS.Forms.Dictionaries
             if (lstTimes.Count > 0)
             {
                 var times = lstTimes.LastOrDefault();
-                NameText.EditValue = times.NAME;
+                NameText.EditValue = times.PERIOD;
+                PercentText.EditValue = times.PERCENT;
                 NoteText.EditValue = times.NOTE;
                 UsedUserID = times.USED_USER_ID;
                 orderID = times.ORDER_ID;
@@ -110,7 +111,8 @@ namespace ELMS.Forms.Dictionaries
         {
             Times times = new Times
             {
-                NAME = NameText.Text.Trim(),
+                PERIOD = NameText.Text.Trim(),
+                PERCENT = PercentText.Text.Trim(),
                 NOTE = NoteText.Text.Trim()
             };
             TimesDAL.InsertTimes(times);            
@@ -122,7 +124,8 @@ namespace ELMS.Forms.Dictionaries
 
             Times times = new Times
             {
-                NAME = NameText.Text.Trim(),
+                PERIOD = NameText.Text.Trim(),
+                PERCENT = PercentText.Text.Trim(),
                 NOTE = NoteText.Text.Trim(),
                 ID = TimesID.Value,
                 ORDER_ID = orderID,

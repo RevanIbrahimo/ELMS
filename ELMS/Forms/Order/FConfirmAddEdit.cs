@@ -110,6 +110,7 @@ namespace ELMS.Forms.Order
                         {
                             ORDER_ID = OrderID.Value,
                             ID = OperationID.Value,
+                            NOTE = OperationNoteText.Text.Trim(),
                             OPERATION_ID = (int)OperationTypeEnum.Tesdiq_edildi
                         };
                         
@@ -131,6 +132,7 @@ namespace ELMS.Forms.Order
                     {
                         ORDER_ID = OrderID.Value,
                         ID = OperationID.Value,
+                        NOTE = OperationNoteText.Text.Trim(),
                         OPERATION_ID = (int)OperationTypeEnum.Tesdiq_edilmedi
                     };
 
