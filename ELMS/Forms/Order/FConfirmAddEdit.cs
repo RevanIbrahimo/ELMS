@@ -33,7 +33,7 @@ namespace ELMS.Forms.Order
 
         int UsedUserID = -1, orderID,
             documentID, topindex,
-            old_row_id, customerID,            
+            old_row_id, customerID,
             branchID = 0,
             sourceID = 0,
             timeID = 0;
@@ -123,14 +123,12 @@ namespace ELMS.Forms.Order
                 pinCode = dt.Rows[0]["PINCODE"].ToString();
                 RegisterCodeText.EditValue = dt.Rows[0]["ID"];
                 NoteText.EditValue = dt.Rows[0]["NOTE"];
-                OrderDate.EditValue = dt.Rows[0]["ORDER_DATE"];
-                if (OrderDate.DateTime == DateTime.MinValue)
-                    OrderDate.EditValue = null;
-                GlobalProcedures.LookUpEditValue(BranchLookUp, dt.Rows[0]["BRANCH_NAME"].ToString());
-                GlobalProcedures.LookUpEditValue(SourceLookUp, dt.Rows[0]["ORDER_SOURCE"].ToString());
+                OrderDateText.EditValue = dt.Rows[0]["ORDER_DATE"];
+                SourceText.EditValue = dt.Rows[0]["ORDER_SOURCE"];
+                BranchText.EditValue = dt.Rows[0]["BRANCH_NAME"];
+                TimeText.EditValue = dt.Rows[0]["TIME"];
                 FirstPaymentValue.EditValue = Convert.ToDecimal(dt.Rows[0]["FIRST_PAYMENT"].ToString());
                 OrderAmountValue.EditValue = Convert.ToDecimal(dt.Rows[0]["ORDER_AMOUNT"].ToString());
-                GlobalProcedures.LookUpEditValue(TimeLookUp, dt.Rows[0]["TIME"].ToString());
                 UsedUserID = Convert.ToInt16(dt.Rows[0]["USED_USER_ID"]);
             }
         }
@@ -156,42 +154,42 @@ namespace ELMS.Forms.Order
                 documentID = Convert.ToInt32(row["ID"].ToString());
         }
 
-        private void InsertOrder(OracleTransaction tran)
-        {
-            Class.Tables.Order order = new Class.Tables.Order
-            {
-                CUSTOMER_ID = CustomerID.Value,
-                BRANCH_ID = branchID,
-                ORDER_DATE = OrderDate.DateTime,
-                SOURCE_ID = sourceID,
-                TIME_ID = timeID,
-                FIRST_PAYMENT = FirstPaymentValue.Value,
-                ORDER_AMOUNT = OrderAmountValue.Value,
-                NOTE = NoteText.Text.Trim()
-            };
+        //private void InsertOrder(OracleTransaction tran)
+        //{
+        //    Class.Tables.Order order = new Class.Tables.Order
+        //    {
+        //        CUSTOMER_ID = CustomerID.Value,
+        //        BRANCH_ID = branchID,
+        //        //ORDER_DATE = OrderDate.DateTime,
+        //        SOURCE_ID = sourceID,
+        //        TIME_ID = timeID,
+        //        FIRST_PAYMENT = FirstPaymentValue.Value,
+        //        ORDER_AMOUNT = OrderAmountValue.Value,
+        //        NOTE = NoteText.Text.Trim()
+        //    };
 
-            OrderID = OrderDAL.InsertOrder(tran, order);
-        }
+        //    OrderID = OrderDAL.InsertOrder(tran, order);
+        //}
 
-        private void UpdateOrder(OracleTransaction tran)
-        {
-            isClickBOK = true;
-            Class.Tables.Order order = new Class.Tables.Order
-            {
-                CUSTOMER_ID = CustomerID.Value,
-                BRANCH_ID = branchID,
-                ORDER_DATE = OrderDate.DateTime,
-                SOURCE_ID = sourceID,
-                TIME_ID = timeID,
-                FIRST_PAYMENT = FirstPaymentValue.Value,
-                ORDER_AMOUNT = OrderAmountValue.Value,
-                NOTE = NoteText.Text.Trim(),
-                USED_USER_ID = -1,
-                ID = OrderID.Value
-            };
+        //private void UpdateOrder(OracleTransaction tran)
+        //{
+        //    isClickBOK = true;
+        //    Class.Tables.Order order = new Class.Tables.Order
+        //    {
+        //        CUSTOMER_ID = CustomerID.Value,
+        //        BRANCH_ID = branchID,
+        //        //ORDER_DATE = OrderDate.DateTime,
+        //        SOURCE_ID = sourceID,
+        //        TIME_ID = timeID,
+        //        FIRST_PAYMENT = FirstPaymentValue.Value,
+        //        ORDER_AMOUNT = OrderAmountValue.Value,
+        //        NOTE = NoteText.Text.Trim(),
+        //        USED_USER_ID = -1,
+        //        ID = OrderID.Value
+        //    };
 
-            OrderDAL.UpdateOrder(tran, order);
-        }
+        //    OrderDAL.UpdateOrder(tran, order);
+        //}
 
         private void BOK_Click(object sender, EventArgs e)
         {
@@ -202,11 +200,11 @@ namespace ELMS.Forms.Order
 
                     if (TransactionType == TransactionTypeEnum.Insert)
                     {
-                        InsertOrder(tran);
+                       // InsertOrder(tran);
                     }
                     else
                     {
-                        UpdateOrder(tran);
+                       // UpdateOrder(tran);
                     }
                     GlobalProcedures.ExecuteProcedureWithParametr(tran, "ELMS_USER.PROC_INSERT_PRODUCT_CARDS", "P_CUSTOMER_ID", OrderID.Value);
 
@@ -236,24 +234,24 @@ namespace ELMS.Forms.Order
             return b;
         }
 
-        void RefreshDictionaries(int index)
-        {
-            switch (index)
-            {
-                case 1:
-                    GlobalProcedures.FillLookUpEdit(SourceLookUp, FundsSourcesDAL.SelectFundsSourcesByID(null).Tables[0]);
-                    break;
-            }
-        }
+        //void RefreshDictionaries(int index)
+        //{
+        //    switch (index)
+        //    {
+        //        case 1:
+        //            GlobalProcedures.FillLookUpEdit(SourceLookUp, FundsSourcesDAL.SelectFundsSourcesByID(null).Tables[0]);
+        //            break;
+        //    }
+        //}
 
-        private void LoadDictionaries(TransactionTypeEnum transaction, int index)
-        {
-            Dictionaries.FDictionaries fc = new Dictionaries.FDictionaries();
-            fc.TransactionType = transaction;
-            fc.ViewSelectedTabIndex = index;
-            fc.RefreshList += new Dictionaries.FDictionaries.DoEvent(RefreshDictionaries);
-            fc.ShowDialog();
-        }
+        //private void LoadDictionaries(TransactionTypeEnum transaction, int index)
+        //{
+        //    Dictionaries.FDictionaries fc = new Dictionaries.FDictionaries();
+        //    fc.TransactionType = transaction;
+        //    fc.ViewSelectedTabIndex = index;
+        //    fc.RefreshList += new Dictionaries.FDictionaries.DoEvent(RefreshDictionaries);
+        //    fc.ShowDialog();
+        //}
 
         private void FinCodeSearch_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
@@ -300,7 +298,7 @@ namespace ELMS.Forms.Order
 
         private void ProductGridView_CustomUnboundColumnData(object sender, DevExpress.XtraGrid.Views.Base.CustomColumnDataEventArgs e)
         {
-            GlobalProcedures.GenerateAutoRowNumber(sender, Product_SS, e);
+            GlobalProcedures.GenerateAutoRowNumber(sender, CustomerProduct_SS, e);
         }
 
         private void ProductGridView_CustomSummaryCalculate(object sender, DevExpress.Data.CustomSummaryEventArgs e)
@@ -310,7 +308,7 @@ namespace ELMS.Forms.Order
                 return;
 
             if (e.SummaryProcess == CustomSummaryProcess.Start)
-            {                
+            {
                 if (((GridSummaryItem)e.Item).FieldName.CompareTo("Product_TotalPrice") == 0) //qaliq
                     calcTotalPrice = 0;
             }
@@ -327,7 +325,7 @@ namespace ELMS.Forms.Order
                     e.TotalValue = calcTotalPrice;
             }
         }
-        
+
 
         private void BranchLookUp_EditValueChanged(object sender, EventArgs e)
         {
@@ -346,11 +344,11 @@ namespace ELMS.Forms.Order
             fc.ShowDialog();
         }
 
-        private void SourceLookUp_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
-        {
-            if (e.Button.Index == 1)
-                LoadDictionaries(TransactionTypeEnum.Update, 1);
-        }
+        //private void SourceLookUp_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        //{
+        //    if (e.Button.Index == 1)
+        //        LoadDictionaries(TransactionTypeEnum.Update, 1);
+        //}
 
         private void FinCodeSearch_EditValueChanged(object sender, EventArgs e)
         {
@@ -376,6 +374,11 @@ namespace ELMS.Forms.Order
                 ActualAddressText.EditValue = dt.Rows[0]["ADDRESS"];
                 RegisterAddressText.EditValue = dt.Rows[0]["REGISTERED_ADDRESS"];
                 PhoneAllText.EditValue = dt.Rows[0]["PHONE"];
+                BranchCustomerText.EditValue = dt.Rows[0]["BRANCH_NAME"];
+                CountryText.EditValue = dt.Rows[0]["COUNTRY_NAME"];
+                SexText.EditValue = dt.Rows[0]["SEX_NAME"];
+                BirthdayText.EditValue = dt.Rows[0]["BIRTHDAY"];
+                BirthPlaceText.EditValue = dt.Rows[0]["BIRTH_PLACE"];
                 UsedUserID = Convert.ToInt16(dt.Rows[0]["USED_USER_ID"]);
                 CustomerID = Convert.ToInt32(dt.Rows[0]["ID"]);
                 string str = dt.Rows[0]["PINCODE"].ToString();
@@ -407,10 +410,10 @@ namespace ELMS.Forms.Order
 
         private void FOrderAddEdit_Load(object sender, EventArgs e)
         {
-            GlobalProcedures.FillLookUpEdit(BranchLookUp, BranchDAL.SelectBranchByID(null).Tables[0]);
-            GlobalProcedures.FillLookUpEdit(SourceLookUp, FundsSourcesDAL.SelectFundsSourcesByID(null).Tables[0]);
-            GlobalProcedures.FillLookUpEdit(TimeLookUp, TimesDAL.SelectTimesByID(null).Tables[0]);
-            RefreshDictionaries(1);
+            //GlobalProcedures.FillLookUpEdit(BranchLookUp, BranchDAL.SelectBranchByID(null).Tables[0]);
+            //GlobalProcedures.FillLookUpEdit(SourceLookUp, FundsSourcesDAL.SelectFundsSourcesByID(null).Tables[0]);
+            //GlobalProcedures.FillLookUpEdit(TimeLookUp, TimesDAL.SelectTimesByID(null).Tables[0]);
+            //RefreshDictionaries(1);
 
             if (TransactionType == TransactionTypeEnum.Update)
             {
@@ -439,12 +442,14 @@ namespace ELMS.Forms.Order
             else
             {
                 this.Text = "Müraciətin əlavə edilməsi";
-                OrderDate.DateTime = DateTime.Today;
+                //OrderDate.DateTime = DateTime.Today;
             }
             InsertTemps();
             LoadProduct();
             LoadDocument();
-            //LoadPhone();
+            LoadPhone();
+            LoadWork();
+            LoadRelative();
         }
 
         private void FOrderAddEdit_FormClosing(object sender, FormClosingEventArgs e)
@@ -586,7 +591,7 @@ namespace ELMS.Forms.Order
 
         private void DocumentGridView_CustomUnboundColumnData(object sender, DevExpress.XtraGrid.Views.Base.CustomColumnDataEventArgs e)
         {
-            GlobalProcedures.GenerateAutoRowNumber(sender, Document_SS, e);
+            GlobalProcedures.GenerateAutoRowNumber(sender, CustomerDocument_SS, e);
         }
 
 
@@ -604,7 +609,7 @@ namespace ELMS.Forms.Order
 
             PhoneGridControl.DataSource = PhoneDAL.SelectPhoneByOwnerID(CustomerID.Value, PhoneOwnerEnum.Customer);
 
-            EditPhoneBarButton.Enabled = DeletePhoneBarButton.Enabled = PhoneGridView.RowCount > 0;
+           // EditPhoneBarButton.Enabled = DeletePhoneBarButton.Enabled = PhoneGridView.RowCount > 0;
         }
 
         //private void RefreshPhoneBarButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -686,7 +691,7 @@ namespace ELMS.Forms.Order
 
         private void PhoneGridView_CustomUnboundColumnData(object sender, DevExpress.XtraGrid.Views.Base.CustomColumnDataEventArgs e)
         {
-            GlobalProcedures.GenerateAutoRowNumber(sender, CustomerPhone_SS, e);
+            GlobalProcedures.GenerateAutoRowNumber(sender, Phone_SS, e);
         }
 
 
@@ -773,7 +778,7 @@ namespace ELMS.Forms.Order
 
         private void WorkGridView_CustomUnboundColumnData(object sender, DevExpress.XtraGrid.Views.Base.CustomColumnDataEventArgs e)
         {
-            GlobalProcedures.GenerateAutoRowNumber(sender, CustomerWork_SS, e);
+            GlobalProcedures.GenerateAutoRowNumber(sender, Work_SS, e);
         }
 
 
@@ -791,7 +796,7 @@ namespace ELMS.Forms.Order
 
             RelativeGridControl.DataSource = RelativeCardDAL.SelectRelativeByOwnerID(CustomerID.Value, PhoneOwnerEnum.Relative);
 
-            EditPhoneBarButton.Enabled = DeletePhoneBarButton.Enabled = RelativeGridView.RowCount > 0;
+            EditRelativeBarButton.Enabled = DeleteRelativeBarButton.Enabled = RelativeGridView.RowCount > 0;
         }
 
         //private void RefreshRelativeBarButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -859,9 +864,9 @@ namespace ELMS.Forms.Order
         //        relativeID = Convert.ToInt32(row["ID"].ToString());
         //}
         private void RelativeGridView_CustomUnboundColumnData(object sender, DevExpress.XtraGrid.Views.Base.CustomColumnDataEventArgs e)
-                {
-                    GlobalProcedures.GenerateAutoRowNumber(sender, RelativeCard_SS, e);
-                }
+        {
+            GlobalProcedures.GenerateAutoRowNumber(sender, Relative_SS, e);
+        }
 
 
 

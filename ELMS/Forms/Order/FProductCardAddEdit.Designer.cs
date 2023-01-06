@@ -332,7 +332,7 @@
             this.CountValue.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.CountValue.Properties.MaxValue = new decimal(new int[] {
-            1,
+            9,
             0,
             0,
             0});

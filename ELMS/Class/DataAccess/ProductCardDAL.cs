@@ -132,19 +132,19 @@ namespace ELMS.Class.DataAccess
                                                                                                 TOTAL,
                                                                                                 PRICE,
                                                                                                 PRODUCT_COUNT,
-                                                                                                IMEI,
+                                                                                                NOTE,
                                                                                                 ORDER_TAB_ID)
                                                     VALUES(:inPRODUCT_ID,
                                                            :inTOTAL,
                                                            :inPRICE,
                                                            :inPRODUCT_COUNT,
-                                                           :inIMEI,
+                                                           :inNOTE,
                                                            :inORDER_TAB_ID)";
                         command.Parameters.Add(new OracleParameter("inPRODUCT_ID", product.PRODUCT_ID));
                         command.Parameters.Add(new OracleParameter("inTOTAL", product.TOTAL));
                         command.Parameters.Add(new OracleParameter("inPRICE", product.PRICE));
                         command.Parameters.Add(new OracleParameter("inPRODUCT_COUNT", product.PRODUCT_COUNT));
-                        command.Parameters.Add(new OracleParameter("inIMEI", product.IMEI));
+                        command.Parameters.Add(new OracleParameter("inNOTE", product.NOTE));
                         command.Parameters.Add(new OracleParameter("inORDER_TAB_ID", product.ORDER_TAB_ID));
                         commandSql = command.CommandText;
                         command.ExecuteNonQuery();
@@ -187,7 +187,7 @@ namespace ELMS.Class.DataAccess
                                                                                                 TOTAL = :inTOTAL,
                                                                                                 PRICE = :inPRICE,
                                                                                                 PRODUCT_COUNT = :inPRODUCT_COUNT,
-                                                                                                IMEI = :inIMEI,
+                                                                                                NOTE = :inNOTE,
                                                                                                 USED_USER_ID = :inUSEDUSERID,
                                                                                                 IS_CHANGE = :inISCHANGE
                                                             WHERE ORDER_TAB_ID = :inORDER_TAB_ID AND ID = :inID";
@@ -195,7 +195,7 @@ namespace ELMS.Class.DataAccess
                         command.Parameters.Add(new OracleParameter("inTOTAL", product.TOTAL));
                         command.Parameters.Add(new OracleParameter("inPRICE", product.PRICE));
                         command.Parameters.Add(new OracleParameter("inPRODUCT_COUNT", product.PRODUCT_COUNT));
-                        command.Parameters.Add(new OracleParameter("inIMEI", product.IMEI));
+                        command.Parameters.Add(new OracleParameter("inNOTE", product.NOTE));
                         command.Parameters.Add(new OracleParameter("inUSEDUSERID", GlobalVariables.V_UserID));
                         command.Parameters.Add(new OracleParameter("inISCHANGE", product.IS_CHANGE));
                         command.Parameters.Add(new OracleParameter("inORDER_TAB_ID", product.ORDER_TAB_ID));

@@ -11,7 +11,7 @@ namespace ELMS.Class.Tables
         public int ID { get; set; }
         public int ORDER_TAB_ID { get; set; }
         public string PRODUCT_NAME { get; set; }
-        public string IMEI { get; set; }
+        public string NOTE { get; set; }
         public decimal PRICE { get; set; }
         public decimal PRODUCT_COUNT { get; set; }
         public decimal TOTAL { get; set; }

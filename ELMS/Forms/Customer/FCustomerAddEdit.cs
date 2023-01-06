@@ -567,6 +567,8 @@ namespace ELMS.Forms.Customer
             sexID = GlobalFunctions.GetLookUpID(sender);
         }
 
+        
+
         private void CountryLookUp_EditValueChanged(object sender, EventArgs e)
         {
             countryID = GlobalFunctions.GetLookUpID(sender);
@@ -681,7 +683,9 @@ namespace ELMS.Forms.Customer
 
         private void BOK_Click(object sender, EventArgs e)
         {
-            GlobalFunctions.RunInOneTransaction<int>(tran =>
+            if (ControlCardDetails())
+            {
+                GlobalFunctions.RunInOneTransaction<int>(tran =>
             {
                 if (TransactionType == TransactionTypeEnum.Insert)
                 {
@@ -694,9 +698,79 @@ namespace ELMS.Forms.Customer
                     UpdateImageDetail(tran);
                 }
                 GlobalProcedures.ExecuteProcedureWithUser(tran, "ELMS_USER.PROC_INSERT_CUSTOMER_DATA", "P_CUSTOMER_ID", CustomerID.Value);
+                //GlobalProcedures.ExecuteProcedureWithTwoParametrAndUser(tran,"ELMS_USER.PROC_INSERT_PHONE","P_OWNER_ID", CustomerID,"P_OWNER_TYPE",PhoneOwnerEnum.Customer);
                 return 1;
             }, TransactionType == TransactionTypeEnum.Insert ? "Müştərinin məlumatları bazaya daxil edilmədi." : "Müştərinin məlumatları bazada dəyişdirilmədi.");
-            this.Close();
+                this.Close();
+            }
+        }
+
+        private bool ControlCardDetails()
+        {
+
+            bool b = false;
+
+            if (NameText.Text.Length == 0)
+            {
+                NameText.BackColor = Color.Red;
+                GlobalProcedures.ShowErrorMessage("Müştərinin adı daxil edilməyib.");
+                NameText.Focus();
+                NameText.BackColor = GlobalFunctions.ElementColor();
+                return false;
+            }
+            else
+                b = true;
+
+            if (sexID == 0)
+            {
+                SexLookUp.BackColor = Color.Red;
+                GlobalProcedures.ShowErrorMessage("Cins seçilməyib.");
+                SexLookUp.Focus();
+                SexLookUp.BackColor = GlobalFunctions.ElementColor();
+                return false;
+            }
+            else
+                b = true;
+
+            if (countryID == 0)
+            {
+                CountryLookUp.BackColor = Color.Red;
+                GlobalProcedures.ShowErrorMessage("Ölkə seçilməyib.");
+                CountryLookUp.Focus();
+                CountryLookUp.BackColor = GlobalFunctions.ElementColor();
+                return false;
+            }
+            else
+                b = true;
+
+            if (PictureEdit == null)
+            {
+                PictureEdit.BackColor = Color.Red;
+                GlobalProcedures.ShowErrorMessage("Şəkil yeri boşdu.");
+                PictureEdit.Focus();
+                PictureEdit.BackColor = GlobalFunctions.ElementColor();
+                return false;
+            }
+            else
+                b = true;
+
+            if (PhoneGridView.RowCount == 0)
+            {
+                GlobalProcedures.ShowErrorMessage("Ən azı bir telefon nömrəsi daxil edilməlidir.");
+                return false;
+            }
+            else
+                b = true;
+
+            if (DocumentGridView.RowCount == 0)
+            {
+                GlobalProcedures.ShowErrorMessage("Ən azı bir sənəd daxil edilməlidir.");
+                return false;
+            }
+            else
+                b = true;
+
+            return b;
         }
 
         private void FCustomerAddEdit_FormClosing(object sender, FormClosingEventArgs e)
@@ -704,7 +778,10 @@ namespace ELMS.Forms.Customer
 
             if (!isClickBOK && TransactionType == TransactionTypeEnum.Update)
                 GlobalProcedures.Lock_or_UnLock_UserID("ELMS_USER.CUSTOMER", -1, "WHERE ID = " + CustomerID + " AND USED_USER_ID = " + GlobalVariables.V_UserID);
+            CustomerDAL.DeleteCustomerData(CustomerID.Value);
 
+            if (TransactionType == TransactionTypeEnum.Insert)
+                CustomerID = 0;
             CustomerDAL.DeleteCustomerData(CustomerID.Value);
 
             this.RefreshDataGridView();

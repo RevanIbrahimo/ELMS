@@ -88,10 +88,10 @@ namespace ELMS.Class.DataAccess
                                CU.FULL_NAME,                               
                                B.NAME BRANCH_NAME,
                                C.NAME COUNTRY_NAME,
+                               SE.NAME SEX_NAME,
                                CU.BIRTH_PLACE,
                                CU.REGISTERED_ADDRESS,                            
-                               CU.BIRTHDAY,
-                               SE.NAME SEX_NAME,                               
+                               CU.BIRTHDAY,                               
                                CU.ADDRESS,                               
                                CU.CLOSED_DATE,
                                CU.NOTE,
@@ -101,12 +101,12 @@ namespace ELMS.Class.DataAccess
                           FROM ELMS_USER.CUSTOMER CU,
                                ELMS_USER.SEX SE,
                                ELMS_USER.COUNTRY C,
-                               ELMS_USER.CUSTOMER_IMAGE CI,
-                               ELMS_USER.BRANCH B
+                               ELMS_USER.BRANCH B,
+                               ELMS_USER.CUSTOMER_IMAGE CI
                           WHERE     CU.COUNTRY_ID = C.ID
                                AND CU.SEX_ID = SE.ID
-                               AND CU.ID = CI.CUSTOMER_ID
-                               AND CU.BRANCH_ID = B.ID {(ID.HasValue ? $@" AND CU.ID = {ID}" : null)}
+                               AND CU.BRANCH_ID = B.ID
+                               AND CU.ID = CI.CUSTOMER_ID {(ID.HasValue ? $@" AND CU.ID = {ID}" : null)}
                         ORDER BY CU.ID";
 
             try
@@ -130,8 +130,13 @@ namespace ELMS.Class.DataAccess
         {
             string s = $@"SELECT CU.ID,
                                P.PHONE,
-                               CC.PINCODE,
-                               CU.FULL_NAME,                          
+                               CC.PINCODE,                               
+                               B.NAME BRANCH_NAME,
+                               C.NAME COUNTRY_NAME,
+                               SE.NAME SEX_NAME,
+                               CU.FULL_NAME,                            
+                               CU.BIRTHDAY,
+                               CU.BIRTH_PLACE,                          
                                CU.ADDRESS,
                                CU.REGISTERED_ADDRESS,                                
                                CU.CLOSED_DATE,
@@ -139,11 +144,57 @@ namespace ELMS.Class.DataAccess
                                CU.INSERT_DATE,
                                CU.USED_USER_ID
                           FROM ELMS_USER.CUSTOMER CU,
+                               ELMS_USER.SEX SE,
+                               ELMS_USER.COUNTRY C,
+                               ELMS_USER.BRANCH B,
                                ELMS_USER.CUSTOMER_CARDS CC,
                                (SELECT * FROM ELMS_USER.V_PHONE WHERE OWNER_TYPE = {(int)PhoneOwnerEnum.Customer}) P
                           WHERE  CU.ID = CC.CUSTOMER_ID
+                                 AND CU.COUNTRY_ID = C.ID
+                                 AND CU.SEX_ID = SE.ID
+                                 AND CU.BRANCH_ID = B.ID
                                  AND CU.ID = P.OWNER_ID(+)
                                  AND CC.PINCODE = {code}
+                        ORDER BY CU.ID";
+
+            try
+            {
+                using (OracleDataAdapter da = new OracleDataAdapter(s, GlobalFunctions.GetConnectionString()))
+                {
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+                    return dt;
+                }
+            }
+            catch (Exception exx)
+            {
+                GlobalProcedures.LogWrite("Musterinin məlumatları açılmadı.", s, GlobalVariables.V_UserName, "CustomerDAL", "SelectViewData", exx);
+                return null;
+            }
+        }
+
+        public static DataTable SelectViewCustomer(int? ID)
+        {
+            string s = $@"SELECT CU.ID,
+                               CU.FULL_NAME,                               
+                               B.NAME BRANCH_NAME,
+                               C.NAME COUNTRY_NAME,
+                               CU.BIRTH_PLACE,
+                               CU.REGISTERED_ADDRESS,                            
+                               CU.BIRTHDAY,
+                               SE.NAME SEX_NAME,                               
+                               CU.ADDRESS,                               
+                               CU.CLOSED_DATE,
+                               CU.NOTE,
+                               CU.INSERT_DATE,
+                               CU.USED_USER_ID
+                          FROM ELMS_USER.CUSTOMER CU,
+                               ELMS_USER.SEX SE,
+                               ELMS_USER.COUNTRY C,
+                               ELMS_USER.BRANCH B
+                          WHERE     CU.COUNTRY_ID = C.ID
+                               AND CU.SEX_ID = SE.ID
+                               AND CU.BRANCH_ID = B.ID {(ID.HasValue ? $@" AND CU.ID = {ID}" : null)}
                         ORDER BY CU.ID";
 
             try
@@ -242,6 +293,47 @@ namespace ELMS.Class.DataAccess
             command.Dispose();
         }
 
+
+
+        public static void DeleteCustomerByID(int customerID)
+        {
+            string commandSql = null;
+            using (OracleConnection connection = new OracleConnection())
+            {
+                OracleTransaction transaction = null;
+                try
+                {
+                    if (connection.State == ConnectionState.Closed || connection.State == ConnectionState.Broken)
+                    {
+                        connection.ConnectionString = GlobalFunctions.GetConnectionString();
+                        connection.Open();
+                    }
+
+                    using (OracleCommand command = connection.CreateCommand())
+                    {
+                        transaction = connection.BeginTransaction();
+                        command.Transaction = transaction;
+                        command.CommandText = $@"DELETE FROM ELMS_USER.CUSTOMER WHERE ID = :inID";
+                        command.Parameters.Add(new OracleParameter("inID", customerID));
+                        commandSql = command.CommandText;
+                        command.ExecuteNonQuery();
+                        transaction.Commit();
+                        command.Connection.Close();
+                    }
+                }
+                catch (Exception exx)
+                {
+                    transaction.Rollback();
+                    GlobalProcedures.LogWrite("Müştəri bazadan silinmədi.", commandSql, GlobalVariables.V_UserName, "CustomerDAL", "DeleteCustomerByID", exx);
+                }
+                finally
+                {
+                    transaction.Dispose();
+                    connection.Dispose();
+                }
+            }
+        }
+
         public static void DeleteCustomerData(int customerID)
         {
             GlobalProcedures.ExecuteProcedureWithUser("ELMS_USER_TEMP.PROC_DELETE_CUSTOMER_DATA", "P_CUSTOMER_ID", customerID, "Müştəri bazadan silinmədi.");
@@ -261,5 +353,9 @@ namespace ELMS.Class.DataAccess
         {
             GlobalProcedures.ExecuteProcedureWithParametr("ELMS_USER_TEMP.PROC_DELETE_CUSTOMER_RELATIVE", "P_CUSTOMER_ID", relativeID, "Müştəri bazadan silinmədi.");
         }
+
+
+
+
     }
 }

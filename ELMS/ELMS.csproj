@@ -132,6 +132,7 @@
     <Compile Include="Class\Tables\Mail.cs" />
     <Compile Include="Class\Tables\Order.cs" />
     <Compile Include="Class\Tables\OrderImage.cs" />
+    <Compile Include="Class\Tables\OrderOperation.cs" />
     <Compile Include="Class\Tables\Permission.cs" />
     <Compile Include="Class\Tables\PersonType.cs" />
     <Compile Include="Class\Tables\Phone.cs" />

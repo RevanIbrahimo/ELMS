@@ -1,0 +1,37 @@
+
+Log Entry : 6:52:03 PM Thursday, January 5, 2023
+  
+   UserName =  SuperAdmin
+   FormName =  CustomerDAL
+   ProcedureName =  SelectViewData
+  
+   ShowMessage: Musterinin məlumatları açılmadı.
+   Exception Message: ORA-00933: SQL command not properly ended
+   SQL Text      :  SELECT CU.ID,
+                               P.PHONE,
+                               CC.PINCODE,
+                               CU.FULL_NAME,                          
+                               CU.ADDRESS,
+                               CU.REGISTERED_ADDRESS,                                
+                               CU.CLOSED_DATE,
+                               CU.NOTE,
+                               CU.INSERT_DATE,
+                               CU.USED_USER_ID
+                          FROM ELMS_USER.CUSTOMER CU,
+                               ELMS_USER.CUSTOMER_CARDS CC,
+                               (SELECT * FROM ELMS_USER.V_PHONE WHERE OWNER_TYPE = 4) P
+                          WHERE  CU.ID = CC.CUSTOMER_ID
+                                 AND CU.ID = P.OWNER_ID(+)
+                                 AND CC.PINCODE = 0S
+                        ORDER BY CU.ID
+-------------------------------------------------
+
+Log Entry : 9:28:34 PM Thursday, January 5, 2023
+  
+   UserName =  SuperAdmin
+   FormName =  GlobalFunctions
+   ProcedureName =  RunInOneTransaction
+  
+   ShowMessage: Müştərinin məlumatları bazaya daxil edilmədi.
+   Exception Message: ORA-01400: cannot insert NULL into ("ELMS_USER"."CUSTOMER"."FULL_NAME")
+-------------------------------------------------

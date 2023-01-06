@@ -38,7 +38,7 @@ namespace ELMS.UserControls
 
         private void LoadCustomerData()
         {
-            CustomerGridControl.DataSource = CustomerDAL.SelectViewData(null);
+            CustomerGridControl.DataSource = CustomerDAL.SelectViewCustomer(null);
 
             //EnabledButton();
         }
@@ -128,13 +128,16 @@ namespace ELMS.UserControls
         {
             GlobalProcedures.ShowGridPreview(CustomerGridControl);
         }
+        
 
         void DeleteCustomer()
         {
             int UsedUserID = Convert.ToInt16(GlobalFunctions.GetGridRowCellValue(CustomerGridView, "USED_USER_ID"));
             if (UsedUserID < 0)
             {
-                
+
+                if (GlobalFunctions.CallDialogResult("Seçilmiş müştərini silmək istəyirsiniz?", "Müştərinin silinməsi") == DialogResult.Yes)
+                    CustomerDAL.DeleteCustomerByID(customerID);
             }
             else
             {

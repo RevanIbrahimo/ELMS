@@ -23,12 +23,13 @@ namespace ELMS.Forms.Order
         }
 
         public TransactionTypeEnum TransactionType;
-        public int? OrderID;
+        public int? OrderID = 1;
         public int? CardID;
 
         public delegate void DoEvent();
         public event DoEvent RefreshDataGridView;
 
+        decimal countValue = 2;
         int productID = 0;
         bool CurrentStatus = false, Used = false, isClickBOK = false;
         int UsedUserID = -1;
@@ -51,7 +52,7 @@ namespace ELMS.Forms.Order
 
             if (dt.Rows.Count > 0)
             {
-                NoteText.EditValue = dt.Rows[0]["IMEI"];
+                NoteText.EditValue = dt.Rows[0]["NOTE"];
                 PriceValue.EditValue = Convert.ToDecimal(dt.Rows[0]["PRICE"].ToString());
                 CountValue.EditValue = Convert.ToDecimal(dt.Rows[0]["PRODUCT_COUNT"].ToString());
                 GlobalProcedures.LookUpEditValue(ProductLookUp, dt.Rows[0]["PRODUCT_NAME"].ToString());
@@ -72,9 +73,9 @@ namespace ELMS.Forms.Order
                 PRICE = PriceValue.Value,
                 PRODUCT_COUNT = CountValue.Value,
                 TOTAL = TotalPriceValue.Value,
-                IMEI = NoteText.Text.Trim(),
-                ORDER_TAB_ID = OrderID.Value,
-                PRODUCT_ID = productID
+                PRODUCT_ID = productID,
+                ORDER_TAB_ID = 0,
+                NOTE = NoteText.Text.Trim()
             };
             ProductCardDAL.InsertProductCard(productCard);
         }
@@ -87,8 +88,8 @@ namespace ELMS.Forms.Order
             {
                 PRICE = PriceValue.Value,
                 PRODUCT_COUNT = CountValue.Value,
-                TOTAL = PriceValue.Value * CountValue.Value,
-                IMEI = NoteText.Text.Trim(),
+                TOTAL = TotalPriceValue.Value,
+                NOTE = NoteText.Text.Trim(),
                 ORDER_TAB_ID = OrderID.Value,
                 PRODUCT_ID = productID,
                 ID = CardID.Value,
@@ -134,6 +135,7 @@ namespace ELMS.Forms.Order
 
         void CalcTotalPrice()
         {
+            
             TotalPriceValue.EditValue = CountValue.Value * PriceValue.Value;
         }
 

@@ -31,7 +31,7 @@ namespace ELMS.Forms.Order
 
         bool CurrentStatus = false, Used = false, isClickBOK = false;
 
-        int UsedUserID = -1,
+        int UsedUserID = -1, orderOperationID,
             documentID, topindex,
             old_row_id,            
             branchID = 0,
@@ -154,6 +154,17 @@ namespace ELMS.Forms.Order
             if (row != null)
                 documentID = Convert.ToInt32(row["ID"].ToString());
         }
+        private void InsertOrderOperation(OracleTransaction tran)
+        {
+            OrderOperation order = new OrderOperation
+            {
+                
+                OPERATION_ID = (int)OperationTypeEnum.Yeni_muraciet,
+                ORDER_ID = OrderID.Value
+            };
+
+            orderOperationID = OrderDAL.InsertOrderOperation(tran, order);
+        }
 
         private void InsertOrder(OracleTransaction tran)
         {
@@ -202,16 +213,17 @@ namespace ELMS.Forms.Order
                     if (TransactionType == TransactionTypeEnum.Insert)
                     {
                         InsertOrder(tran);
+                        InsertOrderOperation(tran);
                     }
                     else
                     {
                         UpdateOrder(tran);
                     }
-                    GlobalProcedures.ExecuteProcedureWithParametr(tran, "ELMS_USER.PROC_INSERT_PRODUCT_CARDS", "P_CUSTOMER_ID", OrderID.Value);
+                    GlobalProcedures.ExecuteProcedureWithParametr(tran, "ELMS_USER.PROC_INSERT_PRODUCT_CARDS", "P_ORDER_TAB_ID", OrderID.Value);
 
 
                     return 1;
-                }, TransactionType == TransactionTypeEnum.Insert ? "Müştərinin məlumatları bazaya daxil edilmədi." : "Müştərinin məlumatları bazada dəyişdirilmədi.");
+                }, TransactionType == TransactionTypeEnum.Insert ? "Müraciət məlumatları bazaya daxil edilmədi." : "Müraciət məlumatları bazada dəyişdirilmədi.");
                 this.Close();
             }
         }
@@ -223,10 +235,10 @@ namespace ELMS.Forms.Order
 
             if (CustomerID.Value == 0)
             {
-                FinCodeSearch.BackColor = Color.Red;
-                GlobalProcedures.ShowErrorMessage("Müştəri seçilməyib.");
-                FinCodeSearch.Focus();
-                FinCodeSearch.BackColor = GlobalFunctions.ElementColor();
+                NameText.BackColor = Color.Red;
+                GlobalProcedures.ShowErrorMessage("Müştərinin adı daxil edilməyib.");
+                NameText.Focus();
+                NameText.BackColor = GlobalFunctions.ElementColor();
                 return false;
             }
             else
@@ -235,24 +247,7 @@ namespace ELMS.Forms.Order
             return b;
         }
 
-        void RefreshDictionaries(int index)
-        {
-            switch (index)
-            {
-                case 1:
-                    GlobalProcedures.FillLookUpEdit(SourceLookUp, FundsSourcesDAL.SelectFundsSourcesByID(null).Tables[0]);
-                    break;
-            }
-        }
-
-        private void LoadDictionaries(TransactionTypeEnum transaction, int index)
-        {
-            Dictionaries.FDictionaries fc = new Dictionaries.FDictionaries();
-            fc.TransactionType = transaction;
-            fc.ViewSelectedTabIndex = index;
-            fc.RefreshList += new Dictionaries.FDictionaries.DoEvent(RefreshDictionaries);
-            fc.ShowDialog();
-        }
+       
 
         private void FinCodeSearch_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
@@ -359,55 +354,108 @@ namespace ELMS.Forms.Order
 
         }
 
-        private void SourceLookUp_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
-        {
-            if (e.Button.Index == 1)
-                LoadDictionaries(TransactionTypeEnum.Update, 1);
-        }
-
-        private void FinCodeSearch_EditValueChanged(object sender, EventArgs e)
-        {
-            pinCode = ("0" + FinCodeSearch.Text.Trim());
-            LoadCustomerDetails();
-        }
+       
 
         private void LoadCustomerDetails()
         {
-            DataTable dt = CustomerDAL.SelectCustomerData(pinCode);
-            if (FinCodeSearch.Text.Length != 7)
+            if (pinCode.Length < 1)
             {
                 NameText.Text =
-                    ActualAddressText.Text =
-                    PhoneAllText.Text = null;
+                    RegisterAddressText.Text =
+                        ActualAddressText.Text =
+                        PhoneAllText.Text = null;
                 CustomerID = 0;
                 PictureEdit.Image = null;
             }
-
-            if (dt.Rows.Count > 0)
+            else
             {
-                NameText.EditValue = dt.Rows[0]["FULL_NAME"];
-                ActualAddressText.EditValue = dt.Rows[0]["ADDRESS"];
-                RegisterAddressText.EditValue = dt.Rows[0]["REGISTERED_ADDRESS"];
-                PhoneAllText.EditValue = dt.Rows[0]["PHONE"];
-                UsedUserID = Convert.ToInt16(dt.Rows[0]["USED_USER_ID"]);
-                CustomerID = Convert.ToInt32(dt.Rows[0]["ID"]);
-                string str = dt.Rows[0]["PINCODE"].ToString();
-                char[] result;
-                string fin = "";
-                // copies str to result
-                result = str.ToCharArray();
-
-                // prints result
-                for (int i = 1; i < result.Length; i++)
+             DataTable dt = CustomerDAL.SelectCustomerData(pinCode);
+                if (FinCodeSearch.Text.Length != 7)
                 {
-                    fin = fin + (result[i] + "").ToString();
+                    NameText.Text =
+                      RegisterAddressText.Text =
+                        ActualAddressText.Text =
+                        PhoneAllText.Text = null;
+                    CustomerID = 0;
+                    PictureEdit.Image = null;
                 }
-                FinCodeSearch.EditValue = fin;
 
-                LoadImage();
+                if (dt.Rows.Count > 0)
+                {
+                    NameText.EditValue = dt.Rows[0]["FULL_NAME"];
+                    ActualAddressText.EditValue = dt.Rows[0]["ADDRESS"];
+                    RegisterAddressText.EditValue = dt.Rows[0]["REGISTERED_ADDRESS"];
+                    PhoneAllText.EditValue = dt.Rows[0]["PHONE"];
+                    UsedUserID = Convert.ToInt16(dt.Rows[0]["USED_USER_ID"]);
+                    CustomerID = Convert.ToInt32(dt.Rows[0]["ID"]);
+                    string str = dt.Rows[0]["PINCODE"].ToString();
+                    //char[] result;
+                    //string fin = "";
+                    //// copies str to result
+                    //result = str.ToCharArray();
+
+                    //// prints result
+                    //for (int i = 1; i < result.Length; i++)
+                    //{
+                    //    fin = fin + (result[i] + "").ToString();
+                    //}
+                    FinCodeSearch.EditValue = str;
+
+                    LoadImage();
+                }
+           
             }
         }
 
+        // DICTIONARIES -e aid olan hisse
+        /// /////////
+        /// /////////
+        /// /////////
+
+        private void LoadDictionaries(TransactionTypeEnum transaction, int index)
+        {
+            Dictionaries.FDictionaries fc = new Dictionaries.FDictionaries();
+            fc.TransactionType = transaction;
+            fc.ViewSelectedTabIndex = index;
+            fc.RefreshList += new Dictionaries.FDictionaries.DoEvent(RefreshDictionaries);
+            fc.ShowDialog();
+        }
+
+        void RefreshDictionaries(int index)
+        {
+            switch (index)
+            {
+               
+                case 2:
+                    GlobalProcedures.FillLookUpEdit(SourceLookUp, FundsSourcesDAL.SelectFundsSourcesByID(null).Tables[0]);
+                    break;
+                case 1:
+                    GlobalProcedures.FillLookUpEdit(TimeLookUp, TimesDAL.SelectTimesByID(null).Tables[0]);
+                    break;
+            }
+        }
+        
+
+
+
+
+        // LOOKUP -a aid olan hisse
+        /// /////////
+        /// /////////
+        /// /////////
+        
+        private void SourceLookUp_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            if (e.Button.Index == 1)
+                LoadDictionaries(TransactionTypeEnum.Update, 9);
+        }
+        
+        private void TimeLookUp_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            if (e.Button.Index == 1)
+                LoadDictionaries(TransactionTypeEnum.Update, 8);
+        }
+        
         private void TimeLookUp_EditValueChanged(object sender, EventArgs e)
         {
             timeID = GlobalFunctions.GetLookUpID(sender);
@@ -417,6 +465,14 @@ namespace ELMS.Forms.Order
         {
             sourceID = GlobalFunctions.GetLookUpID(sender);
         }
+
+        private void FinCodeSearch_EditValueChanged(object sender, EventArgs e)
+        {
+            pinCode = FinCodeSearch.Text.Trim();
+            LoadCustomerDetails();
+        }
+
+
 
         private void FOrderAddEdit_Load(object sender, EventArgs e)
         {
@@ -456,13 +512,16 @@ namespace ELMS.Forms.Order
             }
             InsertTemps();
             LoadProduct();
-            //LoadPhone();
         }
 
         private void FOrderAddEdit_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (!isClickBOK && TransactionType == TransactionTypeEnum.Update)
                 GlobalProcedures.Lock_or_UnLock_UserID("ELMS_USER.ORDER_TAB", -1, "WHERE ID = " + OrderID + " AND USED_USER_ID = " + GlobalVariables.V_UserID);
+            OrderDAL.DeleteOrder(OrderID.Value);
+
+            if (TransactionType == TransactionTypeEnum.Insert)
+                OrderID = 0;
             OrderDAL.DeleteOrder(OrderID.Value);
 
             this.RefreshDataGridView();

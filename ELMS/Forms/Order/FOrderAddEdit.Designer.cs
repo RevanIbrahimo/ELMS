@@ -1101,6 +1101,7 @@
             this.TimeLookUp.Properties.ValueMember = "ID";
             this.TimeLookUp.Size = new System.Drawing.Size(127, 20);
             this.TimeLookUp.TabIndex = 183;
+            this.TimeLookUp.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.TimeLookUp_ButtonClick);
             this.TimeLookUp.EditValueChanged += new System.EventHandler(this.TimeLookUp_EditValueChanged);
             // 
             // labelControl18

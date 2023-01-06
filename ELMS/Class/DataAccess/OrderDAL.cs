@@ -209,5 +209,29 @@ namespace ELMS.Class.DataAccess
         {
             GlobalProcedures.ExecuteProcedureWithParametr("ELMS_USER_TEMP.PROC_DELETE_WORKPLACE_TEMP", "P_ORDER_TAB_ID", workID, "Müştəri bazadan silinmədi.");
         }
+
+
+        public static Int32 InsertOrderOperation(OracleTransaction tran, OrderOperation order)
+        {
+            Int32 id = 0;
+            OracleCommand command = tran.Connection.CreateCommand();
+            command.CommandText = $@"INSERT INTO ELMS_USER.ORDER_OPERATION(ORDER_ID,                               
+                                                            OPERATION_TYPE_ID)
+                                                    VALUES(:inORDER_ID,
+                                                           :inOPERATION_TYPE_ID) RETURNING ID INTO :outID";
+            command.Parameters.Add(new OracleParameter("inORDER_ID", order.ORDER_ID));
+            command.Parameters.Add(new OracleParameter("inOPERATION_TYPE_ID", order.OPERATION_ID));
+            command.Parameters.Add(new OracleParameter("outID", OracleDbType.Int32, ParameterDirection.Output));
+
+            if (tran != null)
+                command.Transaction = tran;
+
+            command.ExecuteNonQuery();
+            id = Convert.ToInt32(command.Parameters["outID"].Value.ToString());
+
+            command.Dispose();
+
+            return id;
+        }
     }
 }

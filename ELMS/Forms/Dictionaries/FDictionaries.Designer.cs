@@ -354,8 +354,8 @@
             this.BackstageViewControl.Location = new System.Drawing.Point(0, 0);
             this.BackstageViewControl.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BackstageViewControl.Name = "BackstageViewControl";
-            this.BackstageViewControl.SelectedTab = this.SourceBackStageViewTab;
-            this.BackstageViewControl.SelectedTabIndex = 9;
+            this.BackstageViewControl.SelectedTab = this.TimesBackStageViewTab;
+            this.BackstageViewControl.SelectedTabIndex = 8;
             this.BackstageViewControl.Size = new System.Drawing.Size(1119, 585);
             this.BackstageViewControl.TabIndex = 0;
             this.BackstageViewControl.Text = "backstageViewControl1";
@@ -2601,6 +2601,7 @@
             this.NewTimesBarButton.Id = 0;
             this.NewTimesBarButton.ImageOptions.Image = global::ELMS.Properties.Resources.plus_16;
             this.NewTimesBarButton.Name = "NewTimesBarButton";
+            this.NewTimesBarButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.NewTimesBarButton_ItemClick);
             // 
             // EditTimesBarButton
             // 
@@ -2608,6 +2609,7 @@
             this.EditTimesBarButton.Id = 1;
             this.EditTimesBarButton.ImageOptions.Image = global::ELMS.Properties.Resources.edit_16;
             this.EditTimesBarButton.Name = "EditTimesBarButton";
+            this.EditTimesBarButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.EditTimesBarButton_ItemClick);
             // 
             // DeleteTimesBarButton
             // 
@@ -2824,13 +2826,13 @@
             this.TimesBackStageViewTab.Caption = "Müddətlər";
             this.TimesBackStageViewTab.ContentControl = this.backstageViewClientControl9;
             this.TimesBackStageViewTab.Name = "TimesBackStageViewTab";
+            this.TimesBackStageViewTab.Selected = true;
             // 
             // SourceBackStageViewTab
             // 
             this.SourceBackStageViewTab.Caption = "Sifarişin mənbələri";
             this.SourceBackStageViewTab.ContentControl = this.backstageViewClientControl10;
             this.SourceBackStageViewTab.Name = "SourceBackStageViewTab";
-            this.SourceBackStageViewTab.Selected = true;
             // 
             // bar3
             // 
