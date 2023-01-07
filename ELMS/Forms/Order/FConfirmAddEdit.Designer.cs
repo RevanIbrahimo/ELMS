@@ -1102,7 +1102,7 @@
             this.gridColumn29.OptionsColumn.FixedWidth = true;
             this.gridColumn29.Visible = true;
             this.gridColumn29.VisibleIndex = 6;
-            this.gridColumn29.Width = 120;
+            this.gridColumn29.Width = 130;
             // 
             // groupControl9
             // 

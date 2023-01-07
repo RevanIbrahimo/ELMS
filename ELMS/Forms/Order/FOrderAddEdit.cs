@@ -27,12 +27,12 @@ namespace ELMS.Forms.Order
         }
 
         public TransactionTypeEnum TransactionType;
-        public int? OrderID, CustomerID = 1;
+        public int? OrderID, CustomerID;
 
         bool CurrentStatus = false, Used = false, isClickBOK = false;
 
         int UsedUserID = -1, orderOperationID,
-            documentID, topindex,
+            productID, topindex,
             old_row_id,            
             branchID = 0,
             sourceID = 0,
@@ -64,10 +64,18 @@ namespace ELMS.Forms.Order
 
         private void LoadProduct()
         {
-            ProductGridControl.DataSource = ProductCardDAL.SelectViewData(null);
-            DataTable dt = ProductCardDAL.SelectTotal(null);
+            if (!OrderID.HasValue)
+                OrderID = 0;
+
+            ProductGridControl.DataSource = ProductCardDAL.SelectViewData(OrderID.Value);
+
+            EditProductBarButton.Enabled = DeleteProductBarButton.Enabled = ProductGridView.RowCount > 0;
 
             OrderAmountValue.EditValue = calcTotalPrice;
+
+
+            //DataTable dt = ProductCardDAL.SelectTotal(null);
+
             //if (dt.Rows.Count > 0)
             //{
             //    OrderAmountValue.EditValue = Convert.ToDecimal(dt.Rows[0]["ORDER_AMOUNT"].ToString());
@@ -81,7 +89,7 @@ namespace ELMS.Forms.Order
             FProductCardAddEdit fd = new FProductCardAddEdit()
             {
                 TransactionType = transactionType,
-                OrderID = OrderID,
+                OrderID = OrderID.Value,
                 CardID = id
             };
             fd.RefreshDataGridView += new FProductCardAddEdit.DoEvent(LoadProduct);
@@ -98,7 +106,7 @@ namespace ELMS.Forms.Order
 
         void UpdateProduct()
         {
-            LoadFProductAddEdit(TransactionTypeEnum.Update, documentID);
+            LoadFProductAddEdit(TransactionTypeEnum.Update, productID);
         }
 
         private void LoadImage()
@@ -150,9 +158,12 @@ namespace ELMS.Forms.Order
 
         private void ProductGridView_FocusedRowObjectChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowObjectChangedEventArgs e)
         {
-            DataRow row = ProductGridView.GetFocusedDataRow();
-            if (row != null)
-                documentID = Convert.ToInt32(row["ID"].ToString());
+            productID = Convert.ToInt32(GlobalFunctions.GetGridRowCellValue((sender as GridView), "ID"));
+
+            //DataRow row = ProductGridView.GetFocusedDataRow();
+            //if (row != null)
+            //   productID = Convert.ToInt32(row["ID"].ToString());
+
         }
         private void InsertOrderOperation(OracleTransaction tran)
         {
@@ -476,6 +487,16 @@ namespace ELMS.Forms.Order
             }
         }
 
+        private void ProductGridView_RowCellStyle(object sender, RowCellStyleEventArgs e)
+        {
+
+        }
+
+        private void ProductGridView_MouseUp(object sender, MouseEventArgs e)
+        {
+
+        }
+
         // DICTIONARIES -e aid olan hisse
         /// /////////
         /// /////////
@@ -578,6 +599,10 @@ namespace ELMS.Forms.Order
             {
                 this.Text = "Müraciətin əlavə edilməsi";
                 OrderDate.DateTime = DateTime.Today;
+              
+                OrderID = GlobalFunctions.GetOracleSequenceValue("ORDER_TAB_SEQUENCE");
+                RegisterCodeText.EditValue = OrderID;
+                
             }
             InsertTemps();
             LoadProduct();

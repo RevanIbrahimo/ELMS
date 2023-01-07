@@ -145,7 +145,7 @@ namespace ELMS.Forms.Option
         {
             try
             {
-                GlobalProcedures.ExecuteQuery($@"UPDATE MCMS.MCMS_USERS SET IS_ACTIVE = 1, SESSION_ID = 0 WHERE ID = {userID}",
+                GlobalProcedures.ExecuteQuery($@"UPDATE ELMS_USERS.SYSTEM_USER SET IS_ACTIVE = 1, SESSION_ID = 0 WHERE ID = {userID}",
                                                     "İstifadəçi blokdan çıxmadı.");
                 XtraMessageBox.Show("Seçilmiş istifadəçi blokdan çıxdı.");
             }
@@ -156,7 +156,7 @@ namespace ELMS.Forms.Option
         {
             try
             {
-                GlobalProcedures.ExecuteQuery($@"UPDATE MCMS.MCMS_USERS SET IS_ACTIVE = 0, SESSION_ID = 0 WHERE ID = {userID}",
+                GlobalProcedures.ExecuteQuery($@"UPDATE ELMS_USERS.SYSTEM_USER SET IS_ACTIVE = 0, SESSION_ID = 0 WHERE ID = {userID}",
                                                     "İstifadəçi bloklanmadı.");
                 XtraMessageBox.Show("Seçilmiş istifadəçi bloklandı.");
             }

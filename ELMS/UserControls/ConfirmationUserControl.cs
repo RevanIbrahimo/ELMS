@@ -159,6 +159,42 @@ namespace ELMS.UserControls
             typeID = Convert.ToInt32(GlobalFunctions.GetGridRowCellValue((sender as GridView), "TYPE_ID"));
         }
 
+
+        private void ExcelBarButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            GlobalProcedures.GridExportToFile(OrderGridControl, "xls");
+        }
+
+        private void PdfBarButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            GlobalProcedures.GridExportToFile(OrderGridControl, "pdf");
+        }
+
+        private void RtfBarButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            GlobalProcedures.GridExportToFile(OrderGridControl, "rtf");
+        }
+
+        private void HtmlBarButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            GlobalProcedures.GridExportToFile(OrderGridControl, "html");
+        }
+
+        private void TxtBarButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            GlobalProcedures.GridExportToFile(OrderGridControl, "txt");
+        }
+
+        private void CsvBarButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            GlobalProcedures.GridExportToFile(OrderGridControl, "csv");
+        }
+
+        private void MhtBarButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            GlobalProcedures.GridExportToFile(OrderGridControl, "mht");
+        }
+
         private void HistroryBarButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             

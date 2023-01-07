@@ -38,12 +38,12 @@
             this.RefreshBarButton = new DevExpress.XtraBars.BarButtonItem();
             this.PrintBarButton = new DevExpress.XtraBars.BarButtonItem();
             this.ExportBarButton = new DevExpress.XtraBars.BarSubItem();
-            this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem7 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem8 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem9 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem10 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem11 = new DevExpress.XtraBars.BarButtonItem();
+            this.ExcelBarButton = new DevExpress.XtraBars.BarButtonItem();
+            this.PdfBarButton = new DevExpress.XtraBars.BarButtonItem();
+            this.TxtBarButton = new DevExpress.XtraBars.BarButtonItem();
+            this.HtmlBarButton = new DevExpress.XtraBars.BarButtonItem();
+            this.CsvBarButton = new DevExpress.XtraBars.BarButtonItem();
+            this.MhtBarButton = new DevExpress.XtraBars.BarButtonItem();
             this.RtfBarButton = new DevExpress.XtraBars.BarButtonItem();
             this.bar3 = new DevExpress.XtraBars.Bar();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
@@ -90,12 +90,12 @@
             this.RefreshBarButton,
             this.PrintBarButton,
             this.ExportBarButton,
-            this.barButtonItem6,
-            this.barButtonItem7,
-            this.barButtonItem8,
-            this.barButtonItem9,
-            this.barButtonItem10,
-            this.barButtonItem11,
+            this.ExcelBarButton,
+            this.PdfBarButton,
+            this.TxtBarButton,
+            this.HtmlBarButton,
+            this.CsvBarButton,
+            this.MhtBarButton,
             this.ScheduleBarButton,
             this.HistroryBarButton,
             this.RtfBarButton});
@@ -181,57 +181,63 @@
             this.ExportBarButton.Id = 5;
             this.ExportBarButton.ImageOptions.Image = global::ELMS.Properties.Resources.table_export_32;
             this.ExportBarButton.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem6),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem7),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem8),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem9),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem10),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem11),
+            new DevExpress.XtraBars.LinkPersistInfo(this.ExcelBarButton),
+            new DevExpress.XtraBars.LinkPersistInfo(this.PdfBarButton),
+            new DevExpress.XtraBars.LinkPersistInfo(this.TxtBarButton),
+            new DevExpress.XtraBars.LinkPersistInfo(this.HtmlBarButton),
+            new DevExpress.XtraBars.LinkPersistInfo(this.CsvBarButton),
+            new DevExpress.XtraBars.LinkPersistInfo(this.MhtBarButton),
             new DevExpress.XtraBars.LinkPersistInfo(this.RtfBarButton)});
             this.ExportBarButton.Name = "ExportBarButton";
             this.ExportBarButton.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
             // 
-            // barButtonItem6
+            // ExcelBarButton
             // 
-            this.barButtonItem6.Caption = "Excel";
-            this.barButtonItem6.Id = 6;
-            this.barButtonItem6.ImageOptions.Image = global::ELMS.Properties.Resources.excel_32;
-            this.barButtonItem6.Name = "barButtonItem6";
+            this.ExcelBarButton.Caption = "Excel";
+            this.ExcelBarButton.Id = 6;
+            this.ExcelBarButton.ImageOptions.Image = global::ELMS.Properties.Resources.excel_32;
+            this.ExcelBarButton.Name = "ExcelBarButton";
+            this.ExcelBarButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ExcelBarButton_ItemClick);
             // 
-            // barButtonItem7
+            // PdfBarButton
             // 
-            this.barButtonItem7.Caption = "Pdf";
-            this.barButtonItem7.Id = 7;
-            this.barButtonItem7.ImageOptions.Image = global::ELMS.Properties.Resources.pdf_32;
-            this.barButtonItem7.Name = "barButtonItem7";
+            this.PdfBarButton.Caption = "Pdf";
+            this.PdfBarButton.Id = 7;
+            this.PdfBarButton.ImageOptions.Image = global::ELMS.Properties.Resources.pdf_32;
+            this.PdfBarButton.Name = "PdfBarButton";
+            this.PdfBarButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.PdfBarButton_ItemClick);
             // 
-            // barButtonItem8
+            // TxtBarButton
             // 
-            this.barButtonItem8.Caption = "Txt";
-            this.barButtonItem8.Id = 8;
-            this.barButtonItem8.ImageOptions.Image = global::ELMS.Properties.Resources.txt_32;
-            this.barButtonItem8.Name = "barButtonItem8";
+            this.TxtBarButton.Caption = "Txt";
+            this.TxtBarButton.Id = 8;
+            this.TxtBarButton.ImageOptions.Image = global::ELMS.Properties.Resources.txt_32;
+            this.TxtBarButton.Name = "TxtBarButton";
+            this.TxtBarButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.TxtBarButton_ItemClick);
             // 
-            // barButtonItem9
+            // HtmlBarButton
             // 
-            this.barButtonItem9.Caption = "Html";
-            this.barButtonItem9.Id = 9;
-            this.barButtonItem9.ImageOptions.Image = global::ELMS.Properties.Resources.html_32;
-            this.barButtonItem9.Name = "barButtonItem9";
+            this.HtmlBarButton.Caption = "Html";
+            this.HtmlBarButton.Id = 9;
+            this.HtmlBarButton.ImageOptions.Image = global::ELMS.Properties.Resources.html_32;
+            this.HtmlBarButton.Name = "HtmlBarButton";
+            this.HtmlBarButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.HtmlBarButton_ItemClick);
             // 
-            // barButtonItem10
+            // CsvBarButton
             // 
-            this.barButtonItem10.Caption = "Csv";
-            this.barButtonItem10.Id = 10;
-            this.barButtonItem10.ImageOptions.Image = global::ELMS.Properties.Resources.csv_32;
-            this.barButtonItem10.Name = "barButtonItem10";
+            this.CsvBarButton.Caption = "Csv";
+            this.CsvBarButton.Id = 10;
+            this.CsvBarButton.ImageOptions.Image = global::ELMS.Properties.Resources.csv_32;
+            this.CsvBarButton.Name = "CsvBarButton";
+            this.CsvBarButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.CsvBarButton_ItemClick);
             // 
-            // barButtonItem11
+            // MhtBarButton
             // 
-            this.barButtonItem11.Caption = "Mht";
-            this.barButtonItem11.Id = 11;
-            this.barButtonItem11.ImageOptions.Image = global::ELMS.Properties.Resources.explorer_32;
-            this.barButtonItem11.Name = "barButtonItem11";
+            this.MhtBarButton.Caption = "Mht";
+            this.MhtBarButton.Id = 11;
+            this.MhtBarButton.ImageOptions.Image = global::ELMS.Properties.Resources.explorer_32;
+            this.MhtBarButton.Name = "MhtBarButton";
+            this.MhtBarButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.MhtBarButton_ItemClick);
             // 
             // RtfBarButton
             // 
@@ -239,6 +245,7 @@
             this.RtfBarButton.Id = 14;
             this.RtfBarButton.ImageOptions.Image = global::ELMS.Properties.Resources.rtf_32;
             this.RtfBarButton.Name = "RtfBarButton";
+            this.RtfBarButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.RtfBarButton_ItemClick);
             // 
             // bar3
             // 
@@ -363,7 +370,7 @@
             this.CustomerGridView.OptionsView.ShowIndicator = false;
             this.CustomerGridView.PaintStyleName = "Skin";
             this.CustomerGridView.ScrollStyle = DevExpress.XtraGrid.Views.Grid.ScrollStyleFlags.LiveVertScroll;
-            this.CustomerGridView.ViewCaption = "Xəstələrin siyahısı";
+            this.CustomerGridView.ViewCaption = "Müştərilərin siyahısı";
             this.CustomerGridView.RowCellStyle += new DevExpress.XtraGrid.Views.Grid.RowCellStyleEventHandler(this.CustomerGridView_RowCellStyle);
             this.CustomerGridView.FocusedRowObjectChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowObjectChangedEventHandler(this.CustomerGridView_FocusedRowObjectChanged);
             this.CustomerGridView.ColumnFilterChanged += new System.EventHandler(this.CustomerGridView_ColumnFilterChanged);
@@ -536,12 +543,12 @@
         private DevExpress.XtraBars.BarButtonItem RefreshBarButton;
         private DevExpress.XtraBars.BarButtonItem PrintBarButton;
         private DevExpress.XtraBars.BarSubItem ExportBarButton;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem6;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem7;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem8;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem9;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem10;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem11;
+        private DevExpress.XtraBars.BarButtonItem ExcelBarButton;
+        private DevExpress.XtraBars.BarButtonItem PdfBarButton;
+        private DevExpress.XtraBars.BarButtonItem TxtBarButton;
+        private DevExpress.XtraBars.BarButtonItem HtmlBarButton;
+        private DevExpress.XtraBars.BarButtonItem CsvBarButton;
+        private DevExpress.XtraBars.BarButtonItem MhtBarButton;
         private DevExpress.XtraBars.BarButtonItem ScheduleBarButton;
         private DevExpress.XtraBars.BarButtonItem HistroryBarButton;
         private DevExpress.XtraGrid.GridControl CustomerGridControl;

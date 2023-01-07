@@ -170,6 +170,41 @@ namespace ELMS.UserControls
         {
             LoadFScheduleAddEdit();
         }
+        
+        private void ExcelBarButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            GlobalProcedures.GridExportToFile(OrderGridControl, "xls");
+        }
+
+        private void PdfBarButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            GlobalProcedures.GridExportToFile(OrderGridControl, "pdf");
+        }
+
+        private void RtfBarButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            GlobalProcedures.GridExportToFile(OrderGridControl, "rtf");
+        }
+
+        private void HtmlBarButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            GlobalProcedures.GridExportToFile(OrderGridControl, "html");
+        }
+
+        private void TxtBarButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            GlobalProcedures.GridExportToFile(OrderGridControl, "txt");
+        }
+
+        private void CsvBarButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            GlobalProcedures.GridExportToFile(OrderGridControl, "csv");
+        }
+
+        private void MhtBarButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            GlobalProcedures.GridExportToFile(OrderGridControl, "mht");
+        }
 
         private void OrderGridView_FocusedRowObjectChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowObjectChangedEventArgs e)
         {

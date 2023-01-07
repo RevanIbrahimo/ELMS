@@ -96,17 +96,14 @@ namespace ELMS.Class.DataAccess
                                CU.CLOSED_DATE,
                                CU.NOTE,
                                CU.INSERT_DATE,
-                               CI.IMAGE,
                                CU.USED_USER_ID
                           FROM ELMS_USER.CUSTOMER CU,
                                ELMS_USER.SEX SE,
                                ELMS_USER.COUNTRY C,
-                               ELMS_USER.BRANCH B,
-                               ELMS_USER.CUSTOMER_IMAGE CI
+                               ELMS_USER.BRANCH B
                           WHERE     CU.COUNTRY_ID = C.ID
                                AND CU.SEX_ID = SE.ID
-                               AND CU.BRANCH_ID = B.ID
-                               AND CU.ID = CI.CUSTOMER_ID {(ID.HasValue ? $@" AND CU.ID = {ID}" : null)}
+                               AND CU.BRANCH_ID = B.ID {(ID.HasValue ? $@" AND CU.ID = {ID}" : null)}
                         ORDER BY CU.ID";
 
             try

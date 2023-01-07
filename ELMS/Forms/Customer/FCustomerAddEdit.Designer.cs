@@ -63,7 +63,7 @@
             this.CountryLookUp = new DevExpress.XtraEditors.LookUpEdit();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
+            this.AgeLabel = new DevExpress.XtraEditors.LabelControl();
             this.BirthdayDate = new DevExpress.XtraEditors.DateEdit();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.BirthdayLabel = new DevExpress.XtraEditors.LabelControl();
@@ -242,7 +242,7 @@
             this.PersonalDetailsGroupBox.Controls.Add(this.CountryLookUp);
             this.PersonalDetailsGroupBox.Controls.Add(this.labelControl6);
             this.PersonalDetailsGroupBox.Controls.Add(this.labelControl5);
-            this.PersonalDetailsGroupBox.Controls.Add(this.labelControl4);
+            this.PersonalDetailsGroupBox.Controls.Add(this.AgeLabel);
             this.PersonalDetailsGroupBox.Controls.Add(this.BirthdayDate);
             this.PersonalDetailsGroupBox.Controls.Add(this.labelControl3);
             this.PersonalDetailsGroupBox.Controls.Add(this.BirthdayLabel);
@@ -456,17 +456,17 @@
             this.labelControl5.TabIndex = 11;
             this.labelControl5.Text = "Doğulduğu yer";
             // 
-            // labelControl4
+            // AgeLabel
             // 
-            this.labelControl4.Appearance.FontStyleDelta = System.Drawing.FontStyle.Bold;
-            this.labelControl4.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.labelControl4.Appearance.Options.UseFont = true;
-            this.labelControl4.Appearance.Options.UseForeColor = true;
-            this.labelControl4.Location = new System.Drawing.Point(259, 91);
-            this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(30, 13);
-            this.labelControl4.TabIndex = 10;
-            this.labelControl4.Text = "0 yaş";
+            this.AgeLabel.Appearance.FontStyleDelta = System.Drawing.FontStyle.Bold;
+            this.AgeLabel.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.AgeLabel.Appearance.Options.UseFont = true;
+            this.AgeLabel.Appearance.Options.UseForeColor = true;
+            this.AgeLabel.Location = new System.Drawing.Point(259, 91);
+            this.AgeLabel.Name = "AgeLabel";
+            this.AgeLabel.Size = new System.Drawing.Size(30, 13);
+            this.AgeLabel.TabIndex = 10;
+            this.AgeLabel.Text = "0 yaş";
             // 
             // BirthdayDate
             // 
@@ -480,6 +480,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.BirthdayDate.Size = new System.Drawing.Size(91, 20);
             this.BirthdayDate.TabIndex = 9;
+            this.BirthdayDate.EditValueChanged += new System.EventHandler(this.BirthdayDate_EditValueChanged);
             // 
             // labelControl3
             // 
@@ -1875,7 +1876,7 @@
         private DevExpress.XtraEditors.LookUpEdit CountryLookUp;
         private DevExpress.XtraEditors.LabelControl labelControl6;
         private DevExpress.XtraEditors.LabelControl labelControl5;
-        private DevExpress.XtraEditors.LabelControl labelControl4;
+        private DevExpress.XtraEditors.LabelControl AgeLabel;
         private DevExpress.XtraEditors.DateEdit BirthdayDate;
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.LabelControl BirthdayLabel;

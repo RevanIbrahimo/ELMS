@@ -36,12 +36,12 @@
             this.RefreshBarButton = new DevExpress.XtraBars.BarButtonItem();
             this.PrintBarButton = new DevExpress.XtraBars.BarButtonItem();
             this.ExportBarButton = new DevExpress.XtraBars.BarSubItem();
-            this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem7 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem8 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem9 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem10 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem11 = new DevExpress.XtraBars.BarButtonItem();
+            this.ExcelBarButton = new DevExpress.XtraBars.BarButtonItem();
+            this.PdfBarButton = new DevExpress.XtraBars.BarButtonItem();
+            this.TxtBarButton = new DevExpress.XtraBars.BarButtonItem();
+            this.HtmlBarButton = new DevExpress.XtraBars.BarButtonItem();
+            this.CsvBarButton = new DevExpress.XtraBars.BarButtonItem();
+            this.MhtBarButton = new DevExpress.XtraBars.BarButtonItem();
             this.RtfBarButton = new DevExpress.XtraBars.BarButtonItem();
             this.bar3 = new DevExpress.XtraBars.Bar();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
@@ -60,14 +60,15 @@
             this.Customer_RegisteredAddress = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Customer_FullName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Customer_SexName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Order_Percent = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Customer_BirthPlace = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Customer_Address = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Customer_Note = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Customer_UsedUserID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.FinCode = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Order_OperationNote = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.OrderPopupMenu = new DevExpress.XtraBars.PopupMenu(this.components);
             this.Order_TypeID = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.OrderPopupMenu = new DevExpress.XtraBars.PopupMenu(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.BarManager)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.OrderGridControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.OrderGridView)).BeginInit();
@@ -91,12 +92,12 @@
             this.RefreshBarButton,
             this.PrintBarButton,
             this.ExportBarButton,
-            this.barButtonItem6,
-            this.barButtonItem7,
-            this.barButtonItem8,
-            this.barButtonItem9,
-            this.barButtonItem10,
-            this.barButtonItem11,
+            this.ExcelBarButton,
+            this.PdfBarButton,
+            this.TxtBarButton,
+            this.HtmlBarButton,
+            this.CsvBarButton,
+            this.MhtBarButton,
             this.ScheduleBarButton,
             this.HistroryBarButton,
             this.RtfBarButton});
@@ -158,57 +159,63 @@
             this.ExportBarButton.Id = 5;
             this.ExportBarButton.ImageOptions.Image = global::ELMS.Properties.Resources.table_export_32;
             this.ExportBarButton.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem6),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem7),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem8),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem9),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem10),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem11),
+            new DevExpress.XtraBars.LinkPersistInfo(this.ExcelBarButton),
+            new DevExpress.XtraBars.LinkPersistInfo(this.PdfBarButton),
+            new DevExpress.XtraBars.LinkPersistInfo(this.TxtBarButton),
+            new DevExpress.XtraBars.LinkPersistInfo(this.HtmlBarButton),
+            new DevExpress.XtraBars.LinkPersistInfo(this.CsvBarButton),
+            new DevExpress.XtraBars.LinkPersistInfo(this.MhtBarButton),
             new DevExpress.XtraBars.LinkPersistInfo(this.RtfBarButton)});
             this.ExportBarButton.Name = "ExportBarButton";
             this.ExportBarButton.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
             // 
-            // barButtonItem6
+            // ExcelBarButton
             // 
-            this.barButtonItem6.Caption = "Excel";
-            this.barButtonItem6.Id = 6;
-            this.barButtonItem6.ImageOptions.Image = global::ELMS.Properties.Resources.excel_32;
-            this.barButtonItem6.Name = "barButtonItem6";
+            this.ExcelBarButton.Caption = "Excel";
+            this.ExcelBarButton.Id = 6;
+            this.ExcelBarButton.ImageOptions.Image = global::ELMS.Properties.Resources.excel_32;
+            this.ExcelBarButton.Name = "ExcelBarButton";
+            this.ExcelBarButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ExcelBarButton_ItemClick);
             // 
-            // barButtonItem7
+            // PdfBarButton
             // 
-            this.barButtonItem7.Caption = "Pdf";
-            this.barButtonItem7.Id = 7;
-            this.barButtonItem7.ImageOptions.Image = global::ELMS.Properties.Resources.pdf_32;
-            this.barButtonItem7.Name = "barButtonItem7";
+            this.PdfBarButton.Caption = "Pdf";
+            this.PdfBarButton.Id = 7;
+            this.PdfBarButton.ImageOptions.Image = global::ELMS.Properties.Resources.pdf_32;
+            this.PdfBarButton.Name = "PdfBarButton";
+            this.PdfBarButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.PdfBarButton_ItemClick);
             // 
-            // barButtonItem8
+            // TxtBarButton
             // 
-            this.barButtonItem8.Caption = "Txt";
-            this.barButtonItem8.Id = 8;
-            this.barButtonItem8.ImageOptions.Image = global::ELMS.Properties.Resources.txt_32;
-            this.barButtonItem8.Name = "barButtonItem8";
+            this.TxtBarButton.Caption = "Txt";
+            this.TxtBarButton.Id = 8;
+            this.TxtBarButton.ImageOptions.Image = global::ELMS.Properties.Resources.txt_32;
+            this.TxtBarButton.Name = "TxtBarButton";
+            this.TxtBarButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.TxtBarButton_ItemClick);
             // 
-            // barButtonItem9
+            // HtmlBarButton
             // 
-            this.barButtonItem9.Caption = "Html";
-            this.barButtonItem9.Id = 9;
-            this.barButtonItem9.ImageOptions.Image = global::ELMS.Properties.Resources.html_32;
-            this.barButtonItem9.Name = "barButtonItem9";
+            this.HtmlBarButton.Caption = "Html";
+            this.HtmlBarButton.Id = 9;
+            this.HtmlBarButton.ImageOptions.Image = global::ELMS.Properties.Resources.html_32;
+            this.HtmlBarButton.Name = "HtmlBarButton";
+            this.HtmlBarButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.HtmlBarButton_ItemClick);
             // 
-            // barButtonItem10
+            // CsvBarButton
             // 
-            this.barButtonItem10.Caption = "Csv";
-            this.barButtonItem10.Id = 10;
-            this.barButtonItem10.ImageOptions.Image = global::ELMS.Properties.Resources.csv_32;
-            this.barButtonItem10.Name = "barButtonItem10";
+            this.CsvBarButton.Caption = "Csv";
+            this.CsvBarButton.Id = 10;
+            this.CsvBarButton.ImageOptions.Image = global::ELMS.Properties.Resources.csv_32;
+            this.CsvBarButton.Name = "CsvBarButton";
+            this.CsvBarButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.CsvBarButton_ItemClick);
             // 
-            // barButtonItem11
+            // MhtBarButton
             // 
-            this.barButtonItem11.Caption = "Mht";
-            this.barButtonItem11.Id = 11;
-            this.barButtonItem11.ImageOptions.Image = global::ELMS.Properties.Resources.explorer_32;
-            this.barButtonItem11.Name = "barButtonItem11";
+            this.MhtBarButton.Caption = "Mht";
+            this.MhtBarButton.Id = 11;
+            this.MhtBarButton.ImageOptions.Image = global::ELMS.Properties.Resources.explorer_32;
+            this.MhtBarButton.Name = "MhtBarButton";
+            this.MhtBarButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.MhtBarButton_ItemClick);
             // 
             // RtfBarButton
             // 
@@ -216,6 +223,7 @@
             this.RtfBarButton.Id = 14;
             this.RtfBarButton.ImageOptions.Image = global::ELMS.Properties.Resources.rtf_32;
             this.RtfBarButton.Name = "RtfBarButton";
+            this.RtfBarButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.RtfBarButton_ItemClick);
             // 
             // bar3
             // 
@@ -335,6 +343,7 @@
             this.Customer_RegisteredAddress,
             this.Customer_FullName,
             this.Customer_SexName,
+            this.Order_Percent,
             this.Customer_BirthPlace,
             this.Customer_Address,
             this.Customer_Note,
@@ -357,7 +366,7 @@
             this.OrderGridView.OptionsView.ShowIndicator = false;
             this.OrderGridView.PaintStyleName = "Skin";
             this.OrderGridView.ScrollStyle = DevExpress.XtraGrid.Views.Grid.ScrollStyleFlags.LiveVertScroll;
-            this.OrderGridView.ViewCaption = "Xəstələrin siyahısı";
+            this.OrderGridView.ViewCaption = "Müraciətlərin Siyahısı";
             this.OrderGridView.RowCellStyle += new DevExpress.XtraGrid.Views.Grid.RowCellStyleEventHandler(this.OrderGridView_RowCellStyle);
             this.OrderGridView.FocusedRowObjectChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowObjectChangedEventHandler(this.OrderGridView_FocusedRowObjectChanged);
             this.OrderGridView.ColumnFilterChanged += new System.EventHandler(this.OrderGridView_ColumnFilterChanged);
@@ -379,7 +388,7 @@
             this.Customer_SS.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
             this.Customer_SS.Visible = true;
             this.Customer_SS.VisibleIndex = 0;
-            this.Customer_SS.Width = 50;
+            this.Customer_SS.Width = 80;
             // 
             // Customer_ID
             // 
@@ -397,7 +406,7 @@
             this.Order_OperationName.OptionsColumn.FixedWidth = true;
             this.Order_OperationName.Visible = true;
             this.Order_OperationName.VisibleIndex = 1;
-            this.Order_OperationName.Width = 130;
+            this.Order_OperationName.Width = 250;
             // 
             // Customer_RegisteredAddress
             // 
@@ -407,7 +416,7 @@
             this.Customer_RegisteredAddress.OptionsColumn.FixedWidth = true;
             this.Customer_RegisteredAddress.Visible = true;
             this.Customer_RegisteredAddress.VisibleIndex = 2;
-            this.Customer_RegisteredAddress.Width = 80;
+            this.Customer_RegisteredAddress.Width = 250;
             // 
             // Customer_FullName
             // 
@@ -430,7 +439,17 @@
             this.Customer_SexName.OptionsColumn.FixedWidth = true;
             this.Customer_SexName.Visible = true;
             this.Customer_SexName.VisibleIndex = 4;
-            this.Customer_SexName.Width = 70;
+            this.Customer_SexName.Width = 80;
+            // 
+            // Order_Percent
+            // 
+            this.Order_Percent.Caption = "Faiz";
+            this.Order_Percent.FieldName = "PERCENT";
+            this.Order_Percent.Name = "Order_Percent";
+            this.Order_Percent.OptionsColumn.FixedWidth = true;
+            this.Order_Percent.Visible = true;
+            this.Order_Percent.VisibleIndex = 5;
+            this.Order_Percent.Width = 80;
             // 
             // Customer_BirthPlace
             // 
@@ -442,8 +461,8 @@
             this.Customer_BirthPlace.Name = "Customer_BirthPlace";
             this.Customer_BirthPlace.OptionsColumn.FixedWidth = true;
             this.Customer_BirthPlace.Visible = true;
-            this.Customer_BirthPlace.VisibleIndex = 5;
-            this.Customer_BirthPlace.Width = 130;
+            this.Customer_BirthPlace.VisibleIndex = 6;
+            this.Customer_BirthPlace.Width = 200;
             // 
             // Customer_Address
             // 
@@ -452,8 +471,8 @@
             this.Customer_Address.Name = "Customer_Address";
             this.Customer_Address.OptionsColumn.FixedWidth = true;
             this.Customer_Address.Visible = true;
-            this.Customer_Address.VisibleIndex = 6;
-            this.Customer_Address.Width = 150;
+            this.Customer_Address.VisibleIndex = 7;
+            this.Customer_Address.Width = 100;
             // 
             // Customer_Note
             // 
@@ -462,8 +481,8 @@
             this.Customer_Note.Name = "Customer_Note";
             this.Customer_Note.OptionsColumn.FixedWidth = true;
             this.Customer_Note.Visible = true;
-            this.Customer_Note.VisibleIndex = 7;
-            this.Customer_Note.Width = 150;
+            this.Customer_Note.VisibleIndex = 8;
+            this.Customer_Note.Width = 100;
             // 
             // Customer_UsedUserID
             // 
@@ -479,8 +498,8 @@
             this.FinCode.Name = "FinCode";
             this.FinCode.OptionsColumn.FixedWidth = true;
             this.FinCode.Visible = true;
-            this.FinCode.VisibleIndex = 8;
-            this.FinCode.Width = 70;
+            this.FinCode.VisibleIndex = 9;
+            this.FinCode.Width = 100;
             // 
             // Order_OperationNote
             // 
@@ -489,8 +508,14 @@
             this.Order_OperationNote.Name = "Order_OperationNote";
             this.Order_OperationNote.OptionsColumn.FixedWidth = true;
             this.Order_OperationNote.Visible = true;
-            this.Order_OperationNote.VisibleIndex = 9;
-            this.Order_OperationNote.Width = 230;
+            this.Order_OperationNote.VisibleIndex = 10;
+            this.Order_OperationNote.Width = 250;
+            // 
+            // Order_TypeID
+            // 
+            this.Order_TypeID.Caption = "Order_TypeID";
+            this.Order_TypeID.FieldName = "TYPE_ID";
+            this.Order_TypeID.Name = "Order_TypeID";
             // 
             // OrderPopupMenu
             // 
@@ -505,12 +530,6 @@
             new DevExpress.XtraBars.LinkPersistInfo(this.ExportBarButton)});
             this.OrderPopupMenu.Manager = this.BarManager;
             this.OrderPopupMenu.Name = "OrderPopupMenu";
-            // 
-            // Order_TypeID
-            // 
-            this.Order_TypeID.Caption = "Order_TypeID";
-            this.Order_TypeID.FieldName = "TYPE_ID";
-            this.Order_TypeID.Name = "Order_TypeID";
             // 
             // ConfirmationUserControl
             // 
@@ -550,12 +569,12 @@
         private DevExpress.XtraBars.BarButtonItem RefreshBarButton;
         private DevExpress.XtraBars.BarButtonItem PrintBarButton;
         private DevExpress.XtraBars.BarSubItem ExportBarButton;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem6;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem7;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem8;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem9;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem10;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem11;
+        private DevExpress.XtraBars.BarButtonItem ExcelBarButton;
+        private DevExpress.XtraBars.BarButtonItem PdfBarButton;
+        private DevExpress.XtraBars.BarButtonItem TxtBarButton;
+        private DevExpress.XtraBars.BarButtonItem HtmlBarButton;
+        private DevExpress.XtraBars.BarButtonItem CsvBarButton;
+        private DevExpress.XtraBars.BarButtonItem MhtBarButton;
         private DevExpress.XtraBars.BarButtonItem ScheduleBarButton;
         private DevExpress.XtraBars.BarButtonItem HistroryBarButton;
         private DevExpress.XtraGrid.GridControl OrderGridControl;
@@ -575,5 +594,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn Order_OperationName;
         private DevExpress.XtraGrid.Columns.GridColumn Order_OperationNote;
         private DevExpress.XtraGrid.Columns.GridColumn Order_TypeID;
+        private DevExpress.XtraGrid.Columns.GridColumn Order_Percent;
     }
 }

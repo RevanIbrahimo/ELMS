@@ -76,7 +76,7 @@ namespace ELMS.Forms.Customer
                 this.Text = "Müştərinin əlavə edilməsi";
             InsertTemps();
             LoadDocument();
-            LoadPhone();
+            //LoadPhone();
         }
 
         private void ComponentEnabled(bool status)
@@ -164,7 +164,13 @@ namespace ELMS.Forms.Customer
 
         private void LoadDocument()
         {
-            DocumentGridControl.DataSource = CustomerCardDAL.SelectViewDataAll(CustomerID);
+           // DocumentGridControl.DataSource = CustomerCardDAL.SelectViewDataAll(CustomerID);
+            if (!CustomerID.HasValue)
+                CustomerID = 0;
+
+            DocumentGridControl.DataSource = CustomerCardDAL.SelectViewDataAll(CustomerID.Value);
+
+            EditDocumentBarButton.Enabled = DeleteDocumentBarButton.Enabled = DocumentGridView.RowCount > 0;
         }
         
         private void RefreshDocumentBarButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -218,7 +224,7 @@ namespace ELMS.Forms.Customer
             FCardAddEdit fd = new FCardAddEdit()
             {
                 TransactionType = transactionType,
-                CustomerID = CustomerID, 
+                CustomerID = CustomerID.Value,
                 CardID = id
             };
             fd.RefreshDataGridView += new FCardAddEdit.DoEvent(LoadDocument);
@@ -567,7 +573,12 @@ namespace ELMS.Forms.Customer
             sexID = GlobalFunctions.GetLookUpID(sender);
         }
 
-        
+        private void BirthdayDate_EditValueChanged(object sender, EventArgs e)
+        {
+
+            AgeLabel.Text = GlobalFunctions.CalculationAgeWithYear(BirthdayDate.DateTime, DateTime.Today);
+
+        }
 
         private void CountryLookUp_EditValueChanged(object sender, EventArgs e)
         {

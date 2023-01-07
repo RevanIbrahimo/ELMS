@@ -415,6 +415,8 @@
             // 
             this.DeleteProductBarButton.Caption = "Sil";
             this.DeleteProductBarButton.Id = 2;
+            this.DeleteProductBarButton.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("DeleteProductBarButton.ImageOptions.Image")));
+            this.DeleteProductBarButton.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("DeleteProductBarButton.ImageOptions.LargeImage")));
             this.DeleteProductBarButton.Name = "DeleteProductBarButton";
             this.DeleteProductBarButton.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
             this.DeleteProductBarButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.DeleteProductBarButton_ItemClick);
@@ -423,6 +425,8 @@
             // 
             this.RefreshProductBarButton.Caption = "Təzələ";
             this.RefreshProductBarButton.Id = 3;
+            this.RefreshProductBarButton.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("RefreshProductBarButton.ImageOptions.Image")));
+            this.RefreshProductBarButton.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("RefreshProductBarButton.ImageOptions.LargeImage")));
             this.RefreshProductBarButton.Name = "RefreshProductBarButton";
             this.RefreshProductBarButton.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
             this.RefreshProductBarButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.RefreshProductBarButton_ItemClick);
@@ -607,14 +611,19 @@
             this.ProductGridView.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.ProductGridView.OptionsSelection.MultiSelect = true;
             this.ProductGridView.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.CheckBoxRowSelect;
+            this.ProductGridView.OptionsSelection.ShowCheckBoxSelectorInColumnHeader = DevExpress.Utils.DefaultBoolean.True;
+            this.ProductGridView.OptionsSelection.ShowCheckBoxSelectorInGroupRow = DevExpress.Utils.DefaultBoolean.True;
             this.ProductGridView.OptionsView.EnableAppearanceEvenRow = true;
-            this.ProductGridView.OptionsView.GroupFooterShowMode = DevExpress.XtraGrid.Views.Grid.GroupFooterShowMode.VisibleAlways;
             this.ProductGridView.OptionsView.ShowFooter = true;
             this.ProductGridView.OptionsView.ShowGroupPanel = false;
             this.ProductGridView.OptionsView.ShowIndicator = false;
+            this.ProductGridView.PaintStyleName = "Skin";
+            this.ProductGridView.ScrollStyle = DevExpress.XtraGrid.Views.Grid.ScrollStyleFlags.LiveVertScroll;
+            this.ProductGridView.RowCellStyle += new DevExpress.XtraGrid.Views.Grid.RowCellStyleEventHandler(this.ProductGridView_RowCellStyle);
             this.ProductGridView.CustomSummaryCalculate += new DevExpress.Data.CustomSummaryEventHandler(this.ProductGridView_CustomSummaryCalculate);
             this.ProductGridView.FocusedRowObjectChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowObjectChangedEventHandler(this.ProductGridView_FocusedRowObjectChanged);
             this.ProductGridView.CustomUnboundColumnData += new DevExpress.XtraGrid.Views.Base.CustomColumnDataEventHandler(this.ProductGridView_CustomUnboundColumnData);
+            this.ProductGridView.MouseUp += new System.Windows.Forms.MouseEventHandler(this.ProductGridView_MouseUp);
             this.ProductGridView.DoubleClick += new System.EventHandler(this.ProductGridView_DoubleClick);
             // 
             // Product_SS
@@ -693,7 +702,7 @@
             // 
             // Product_ID
             // 
-            this.Product_ID.Caption = "Product_ID";
+            this.Product_ID.Caption = "ID";
             this.Product_ID.FieldName = "ID";
             this.Product_ID.Name = "Product_ID";
             // 

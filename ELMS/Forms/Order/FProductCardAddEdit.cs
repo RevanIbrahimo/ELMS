@@ -23,7 +23,7 @@ namespace ELMS.Forms.Order
         }
 
         public TransactionTypeEnum TransactionType;
-        public int? OrderID = 1;
+        public int? OrderID;
         public int? CardID;
 
         public delegate void DoEvent();
@@ -39,8 +39,25 @@ namespace ELMS.Forms.Order
             GlobalProcedures.FillLookUpEdit(ProductLookUp, ProductDAL.SelectProductByID(null).Tables[0]);
             if (TransactionType == TransactionTypeEnum.Update)
             {
-                this.Text = "Sifarişlərin düzəliş edilməsi";                
-                LoadDetails();                
+                this.Text = "Sifarişlərin düzəliş edilməsi";
+                GlobalProcedures.Lock_or_UnLock_UserID("ELMS_USER.PRODUCT_CARDS", GlobalVariables.V_UserID, "WHERE ID = " + CardID + " AND USED_USER_ID = -1");
+                LoadDetails();
+                Used = (UsedUserID > 0);
+
+                if (Used)
+                {
+                    if (GlobalVariables.V_UserID != UsedUserID)
+                    {
+                        string used_user_name = GlobalVariables.lstUsers.Find(u => u.ID == UsedUserID).FULL_NAME;
+                        GlobalProcedures.ShowWarningMessage("Seçilmiş sənədlərə hal-hazırda " + used_user_name + " tərəfindən düzəliş edilir. Onun məlumatları dəyişdirilə bilməz. Siz yalnız məlumatlara baxa bilərsiniz.");
+                        CurrentStatus = true;
+                    }
+                    else
+                        CurrentStatus = false;
+                }
+                else
+                    CurrentStatus = false;
+                ComponentEnabled(CurrentStatus);
             }
             else
                 this.Text = "Sifarişin əlavə edilməsi";
@@ -74,7 +91,7 @@ namespace ELMS.Forms.Order
                 PRODUCT_COUNT = CountValue.Value,
                 TOTAL = TotalPriceValue.Value,
                 PRODUCT_ID = productID,
-                ORDER_TAB_ID = 0,
+                ORDER_TAB_ID = OrderID.Value,
                 NOTE = NoteText.Text.Trim()
             };
             ProductCardDAL.InsertProductCard(productCard);
@@ -111,8 +128,8 @@ namespace ELMS.Forms.Order
         {
             switch (index)
             {
-                case 0:
-                    GlobalProcedures.FillLookUpEdit(ProductLookUp, DocumentTypeDAL.SelectDocumentTypeByID(null).Tables[0]);
+                case 5:
+                    GlobalProcedures.FillLookUpEdit(ProductLookUp, ProductDAL.SelectProductByID(null).Tables[0]);
                     break;
             }
         }
@@ -129,7 +146,7 @@ namespace ELMS.Forms.Order
         private void ProductLookUp_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
             if (e.Button.Index == 1)
-                LoadDictionaries(TransactionTypeEnum.Update, 0);
+                LoadDictionaries(TransactionTypeEnum.Update, 5);
 
         }
 

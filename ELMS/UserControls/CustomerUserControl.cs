@@ -178,6 +178,43 @@ namespace ELMS.UserControls
             LoadFScheduleAddEdit();
         }
 
+        private void ExcelBarButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            GlobalProcedures.GridExportToFile(CustomerGridControl, "xls");
+        }
+
+        private void PdfBarButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            GlobalProcedures.GridExportToFile(CustomerGridControl, "pdf");
+        }
+
+        private void RtfBarButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            GlobalProcedures.GridExportToFile(CustomerGridControl, "rtf");
+        }
+
+        private void HtmlBarButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            GlobalProcedures.GridExportToFile(CustomerGridControl, "html");
+        }
+
+        private void TxtBarButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            GlobalProcedures.GridExportToFile(CustomerGridControl, "txt");
+        }
+
+        private void CsvBarButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            GlobalProcedures.GridExportToFile(CustomerGridControl, "csv");
+        }
+
+        private void MhtBarButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            GlobalProcedures.GridExportToFile(CustomerGridControl, "mht");
+        }
+
+
+
         private void CustomerGridView_FocusedRowObjectChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowObjectChangedEventArgs e)
         {
             customerID = Convert.ToInt32(GlobalFunctions.GetGridRowCellValue((sender as GridView), "ID"));

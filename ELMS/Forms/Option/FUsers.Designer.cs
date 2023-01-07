@@ -43,6 +43,7 @@
             this.UsersGridControl = new DevExpress.XtraGrid.GridControl();
             this.UsersGridView = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.User_SS = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.User_ID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.User_CustomerFullName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.User_Note = new DevExpress.XtraGrid.Columns.GridColumn();
             this.User_IsActive = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -50,7 +51,6 @@
             this.User_SessionID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.RepositoryItemPictureEdit = new DevExpress.XtraEditors.Repository.RepositoryItemPictureEdit();
             this.PopupMenu = new DevExpress.XtraBars.PopupMenu(this.components);
-            this.User_ID = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.UsersRibbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.UsersGridControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.UsersGridView)).BeginInit();
@@ -243,6 +243,12 @@
             this.User_SS.VisibleIndex = 0;
             this.User_SS.Width = 45;
             // 
+            // User_ID
+            // 
+            this.User_ID.Caption = "User_ID";
+            this.User_ID.FieldName = "ID";
+            this.User_ID.Name = "User_ID";
+            // 
             // User_CustomerFullName
             // 
             this.User_CustomerFullName.Caption = "İstifadəçinin tam adı";
@@ -295,14 +301,6 @@
             this.PopupMenu.ItemLinks.Add(this.LockBarButton);
             this.PopupMenu.Name = "PopupMenu";
             this.PopupMenu.Ribbon = this.UsersRibbon;
-            // 
-            // User_ID
-            // 
-            this.User_ID.Caption = "User_ID";
-            this.User_ID.FieldName = "ID";
-            this.User_ID.Name = "User_ID";
-            this.User_ID.Visible = true;
-            this.User_ID.VisibleIndex = 3;
             // 
             // FUsers
             // 
