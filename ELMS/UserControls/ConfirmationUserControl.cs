@@ -24,7 +24,7 @@ namespace ELMS.UserControls
         {
             InitializeComponent();
         }
-        int topindex, old_row_id, orderID,operationID;
+        int topindex, old_row_id, orderID,operationID,typeID;
         string orderName;
 
         private void OrderUserControl_Load(object sender, EventArgs e)
@@ -123,30 +123,19 @@ namespace ELMS.UserControls
         {
             GlobalProcedures.ShowGridPreview(OrderGridControl);
         }
-
-        void DeleteCustomer()
-        {
-            int UsedUserID = Convert.ToInt16(GlobalFunctions.GetGridRowCellValue(OrderGridView, "USED_USER_ID"));
-            if (UsedUserID < 0)
-            {
-                
-            }
-            else
-            {
-                string used_user_name = GlobalVariables.lstUsers.Find(u => u.ID == UsedUserID).FULL_NAME;
-                GlobalProcedures.ShowWarningMessage($@"Seçilmiş məlumat hal-hazırda {used_user_name} tərəfindən istifadə ediliyi üçün silinə bilməz.");
-            }
-        }
-
-        private void DeleteBarButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            DeleteCustomer();
-            LoadCustomerData();
-        }
-
+        
         private void OrderGridView_RowCellStyle(object sender, RowCellStyleEventArgs e)
         {
-            GlobalProcedures.GridRowCellStyleForBlock((sender as GridView), e);
+            if ((e.RowHandle >= 0) && (int.Parse(OrderGridView.GetRowCellDisplayText(e.RowHandle, OrderGridView.Columns["TYPE_ID"])) == 1))
+            {
+                e.Appearance.BackColor = Color.Yellow;
+            }
+            else if ((e.RowHandle >= 0) && (int.Parse(OrderGridView.GetRowCellDisplayText(e.RowHandle, OrderGridView.Columns["TYPE_ID"])) == 3))
+            {
+                e.Appearance.BackColor = Color.Gray;
+            }
+
+                GlobalProcedures.GridRowCellStyleForBlock((sender as GridView), e);
         }
 
         private void LoadFScheduleAddEdit()
@@ -167,6 +156,7 @@ namespace ELMS.UserControls
         {
             orderID = Convert.ToInt32(GlobalFunctions.GetGridRowCellValue((sender as GridView), "ID"));
             operationID = Convert.ToInt32(GlobalFunctions.GetGridRowCellValue((sender as GridView), "OPERATION_ID"));
+            typeID = Convert.ToInt32(GlobalFunctions.GetGridRowCellValue((sender as GridView), "TYPE_ID"));
         }
 
         private void HistroryBarButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

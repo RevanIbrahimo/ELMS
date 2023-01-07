@@ -130,6 +130,7 @@ namespace ELMS.Class.DataAccess
         {
             string s = $@"SELECT CU.ID,
                                OO.ID OPERATION_ID,
+                               OO.OPERATION_TYPE_ID TYPE_ID,
                                OO.NOTE OPERATION_NOTE,
                                OT.NAME OPERATION_NAME,
                                CC.PINCODE,
@@ -137,6 +138,7 @@ namespace ELMS.Class.DataAccess
                                B.NAME BRANCH_NAME,
                                S.NAME ORDER_SOURCE,
                                T.PERIOD TIME,                           
+                               T.PERCENT,                           
                                CU.ORDER_DATE,                              
                                CU.ADDRESS,
                                CU.FIRST_PAYMENT,

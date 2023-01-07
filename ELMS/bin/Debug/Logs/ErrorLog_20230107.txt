@@ -129,3 +129,61 @@ Log Entry : 2:50:19 AM Saturday, January 7, 2023
                                AND CU.BRANCH_ID = B.ID 
                         ORDER BY CU.ID
 -------------------------------------------------
+
+Log Entry : 5:02:40 AM Saturday, January 7, 2023
+  
+   UserName =  SuperAdmin
+   FormName =  GlobalFunctions
+   ProcedureName =  GenerateDataTable : FListOfAutomaticAdd/LoadListDataGridView
+  
+   ShowMessage: DataTable yaradılmadı.
+   Exception Message: ORA-00904: "NAME": invalid identifier
+   SQL Text      :  SELECT 1 SS,ID,SURNAME||' '||NAME||' '||PASSWORD||' '||DECODE(SEX_ID,1,'oğlu','qızı') FULL_NAME FROM ELMS_USER.SYSTEM_USER WHERE IS_ACTIVE = 1 AND SESSION_ID = 0 AND USED_USER_ID = -1 AND GROUP_ID <> 1
+-------------------------------------------------
+
+Log Entry : 5:02:43 AM Saturday, January 7, 2023
+  
+   UserName =  SuperAdmin
+   FormName =  FListOfAutomaticAdd
+   ProcedureName =  ELMS.Forms.FListOfAutomaticAdd/LoadListDataGridView
+  
+   ShowMessage: Verilmiş hüquqlar cədvələ yüklənmədi.
+   Exception Message: Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+   SQL Text      :  SELECT 1 SS,ID,SURNAME||' '||NAME||' '||PASSWORD||' '||DECODE(SEX_ID,1,'oğlu','qızı') FULL_NAME FROM ELMS_USER.SYSTEM_USER WHERE IS_ACTIVE = 1 AND SESSION_ID = 0 AND USED_USER_ID = -1 AND GROUP_ID <> 1
+-------------------------------------------------
+
+Log Entry : 5:04:21 AM Saturday, January 7, 2023
+  
+   UserName =  SuperAdmin
+   FormName =  GlobalFunctions
+   ProcedureName =  GenerateDataTable : FListOfAutomaticAdd/LoadListDataGridView
+  
+   ShowMessage: DataTable yaradılmadı.
+   Exception Message: ORA-00904: "NAME": invalid identifier
+   SQL Text      :  SELECT 1 SS,ID,SURNAME||' '||NAME||' '||PASSWORD||' '||DECODE(SEX_ID,1,'oğlu','qızı') FULL_NAME FROM ELMS_USER.SYSTEM_USER WHERE IS_ACTIVE = 1 AND SESSION_ID = 0 AND USED_USER_ID = -1 AND GROUP_ID <> 1
+-------------------------------------------------
+
+Log Entry : 5:04:23 AM Saturday, January 7, 2023
+  
+   UserName =  SuperAdmin
+   FormName =  FListOfAutomaticAdd
+   ProcedureName =  ELMS.Forms.FListOfAutomaticAdd/LoadListDataGridView
+  
+   ShowMessage: Verilmiş hüquqlar cədvələ yüklənmədi.
+   Exception Message: Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+   SQL Text      :  SELECT 1 SS,ID,SURNAME||' '||NAME||' '||PASSWORD||' '||DECODE(SEX_ID,1,'oğlu','qızı') FULL_NAME FROM ELMS_USER.SYSTEM_USER WHERE IS_ACTIVE = 1 AND SESSION_ID = 0 AND USED_USER_ID = -1 AND GROUP_ID <> 1
+-------------------------------------------------
+
+Log Entry : 3:32:50 PM Saturday, January 7, 2023
+  
+   UserName =  SuperAdmin
+   FormName =  GlobalFunctions
+   ProcedureName =  RunInOneTransaction
+  
+   ShowMessage: Müştərinin məlumatları bazaya daxil edilmədi.
+   Exception Message: ORA-00001: unique constraint (ELMS_USER.PHONE_PK) violated
+ORA-06512: at "ELMS_USER.PROC_INSERT_CUSTOMER_DATA", line 9
+ORA-06512: at line 1
+-------------------------------------------------

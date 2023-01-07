@@ -44,7 +44,7 @@ namespace ELMS.Forms.Order
         public delegate void DoEvent();
         public event DoEvent RefreshDataGridView;
 
-
+        
         List<CustomerImage> lstImage = new List<CustomerImage>();
 
         private void RefreshProductBarButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -67,7 +67,7 @@ namespace ELMS.Forms.Order
             ProductGridControl.DataSource = ProductCardDAL.SelectViewData(null);
             DataTable dt = ProductCardDAL.SelectTotal(null);
 
-            //OrderAmountValue.EditValue = calcTotalPrice;
+            OrderAmountValue.EditValue = calcTotalPrice;
             //if (dt.Rows.Count > 0)
             //{
             //    OrderAmountValue.EditValue = Convert.ToDecimal(dt.Rows[0]["ORDER_AMOUNT"].ToString());
@@ -233,16 +233,82 @@ namespace ELMS.Forms.Order
 
             bool b = false;
 
-            if (CustomerID.Value == 0)
+            if (String.IsNullOrEmpty(OrderDate.Text))
             {
-                NameText.BackColor = Color.Red;
-                GlobalProcedures.ShowErrorMessage("Müştərinin adı daxil edilməyib.");
-                NameText.Focus();
-                NameText.BackColor = GlobalFunctions.ElementColor();
+                OrderDate.BackColor = Color.Red;
+                GlobalProcedures.ShowErrorMessage("Tarix daxil edilməyib.");
+                OrderDate.Focus();
+                OrderDate.BackColor = GlobalFunctions.ElementColor();
                 return false;
             }
             else
                 b = true;
+
+            if (branchID == 0)
+            {
+                BranchLookUp.BackColor = Color.Red;
+                GlobalProcedures.ShowErrorMessage("Filial seçilməyib.");
+                BranchLookUp.Focus();
+                BranchLookUp.BackColor = GlobalFunctions.ElementColor();
+                return false;
+            }
+            else
+                b = true;
+
+            if (FinCodeSearch.Text.Length == 0)
+            {
+                FinCodeSearch.BackColor = Color.Red;
+                GlobalProcedures.ShowErrorMessage("Müştərinin fin kodu daxil edilməyib.");
+                FinCodeSearch.Focus();
+                FinCodeSearch.BackColor = GlobalFunctions.ElementColor();
+                return false;
+            }
+            else
+                b = true;
+
+            if (ProductGridView.RowCount == 0)
+            {
+                ProductGridControl.BackColor = Color.Red;
+                GlobalProcedures.ShowErrorMessage("Sifarişlər daxil edilməyib.");
+                ProductGridControl.BackColor = GlobalFunctions.ElementColor();
+                return false;
+            }
+            else
+                b = true;
+
+            if (sourceID == 0)
+            {
+                SourceLookUp.BackColor = Color.Red;
+                GlobalProcedures.ShowErrorMessage("Sifarişin mənbəyi seçilməyib.");
+                SourceLookUp.Focus();
+                SourceLookUp.BackColor = GlobalFunctions.ElementColor();
+                return false;
+            }
+            else
+                b = true;
+
+            if (timeID == 0)
+            {
+                TimeLookUp.BackColor = Color.Red;
+                GlobalProcedures.ShowErrorMessage("Müddət seçilməyib.");
+                TimeLookUp.Focus();
+                TimeLookUp.BackColor = GlobalFunctions.ElementColor();
+                return false;
+            }
+            else
+                b = true;
+
+            if (FirstPaymentValue.Value <= 0)
+            {
+                FirstPaymentValue.BackColor = Color.Red;
+                GlobalProcedures.ShowErrorMessage("İlkin ödəniş sıfırdan böyük olmalıdır.");
+                FirstPaymentValue.Focus();
+                FirstPaymentValue.BackColor = GlobalFunctions.ElementColor();
+                return false;
+            }
+            else
+                b = true;
+
 
             return b;
         }
@@ -311,7 +377,7 @@ namespace ELMS.Forms.Order
 
             if (e.SummaryProcess == CustomSummaryProcess.Calculate)
             {
-                if (((GridSummaryItem)e.Item).FieldName.CompareTo("Product_TotalPrice") == 0)
+                if (((GridSummaryItem)e.Item).FieldName.CompareTo("Product_TotalPrice") > 0)
                     calcTotalPrice += Convert.ToDecimal(e.FieldValue);
             }
 
@@ -354,7 +420,10 @@ namespace ELMS.Forms.Order
 
         }
 
-       
+        private void BCancel_Click(object sender, EventArgs e)
+        {
+            OrderID = 0;
+        }
 
         private void LoadCustomerDetails()
         {
@@ -426,11 +495,11 @@ namespace ELMS.Forms.Order
             switch (index)
             {
                
-                case 2:
-                    GlobalProcedures.FillLookUpEdit(SourceLookUp, SourceDAL.SelectSourceByID(null).Tables[0]);
-                    break;
-                case 1:
+                case 8:
                     GlobalProcedures.FillLookUpEdit(TimeLookUp, TimesDAL.SelectTimesByID(null).Tables[0]);
+                    break;
+                case 9:
+                    GlobalProcedures.FillLookUpEdit(SourceLookUp, SourceDAL.SelectSourceByID(null).Tables[0]);
                     break;
             }
         }
@@ -518,13 +587,18 @@ namespace ELMS.Forms.Order
         {
             if (!isClickBOK && TransactionType == TransactionTypeEnum.Update)
                 GlobalProcedures.Lock_or_UnLock_UserID("ELMS_USER.ORDER_TAB", -1, "WHERE ID = " + OrderID + " AND USED_USER_ID = " + GlobalVariables.V_UserID);
-            OrderDAL.DeleteOrder(OrderID.Value);
+            DeleteAllTemp();
 
             if (TransactionType == TransactionTypeEnum.Insert)
                 OrderID = 0;
             OrderDAL.DeleteOrder(OrderID.Value);
 
             this.RefreshDataGridView();
+        }
+
+        private void DeleteAllTemp()
+        {
+            GlobalProcedures.ExecuteProcedureWithParametr("ELMS_USER_TEMP.PROC_DELETE_ORDER_TEMP", "P_USED_USER_ID", GlobalVariables.V_UserID, "İstifadəçinin məlumatları temp cədvəldən silinmədi.");
         }
     }
 }

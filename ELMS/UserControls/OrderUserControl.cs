@@ -24,7 +24,7 @@ namespace ELMS.UserControls
         {
             InitializeComponent();
         }
-        int topindex, old_row_id, orderID;
+        int topindex, old_row_id, orderID, typeID;
         string orderName;
 
         private void OrderUserControl_Load(object sender, EventArgs e)
@@ -39,7 +39,7 @@ namespace ELMS.UserControls
 
         private void LoadCustomerData()
         {
-            OrderGridControl.DataSource = OrderDAL.SelectViewData(null);
+            OrderGridControl.DataSource = OrderDAL.SelectConfirmData(null);
 
             //EnabledButton();
         }
@@ -145,6 +145,15 @@ namespace ELMS.UserControls
 
         private void OrderGridView_RowCellStyle(object sender, RowCellStyleEventArgs e)
         {
+            if ((e.RowHandle >= 0) && (int.Parse(OrderGridView.GetRowCellDisplayText(e.RowHandle, OrderGridView.Columns["TYPE_ID"])) == 1))
+            {
+                e.Appearance.BackColor = Color.Yellow;
+            }
+            else if ((e.RowHandle >= 0) && (int.Parse(OrderGridView.GetRowCellDisplayText(e.RowHandle, OrderGridView.Columns["TYPE_ID"])) == 3))
+            {
+                e.Appearance.BackColor = Color.Gray;
+            }
+            
             GlobalProcedures.GridRowCellStyleForBlock((sender as GridView), e);
         }
 

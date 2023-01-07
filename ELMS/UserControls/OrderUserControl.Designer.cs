@@ -63,8 +63,10 @@
             this.Customer_Address = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Customer_Note = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Customer_UsedUserID = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.OrderPopupMenu = new DevExpress.XtraBars.PopupMenu(this.components);
             this.FinCode = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.OrderPopupMenu = new DevExpress.XtraBars.PopupMenu(this.components);
+            this.Order_TypeID = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Order_Percent = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.BarManager)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.OrderGridControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.OrderGridView)).BeginInit();
@@ -343,7 +345,9 @@
             this.Customer_Address,
             this.Customer_Note,
             this.Customer_UsedUserID,
-            this.FinCode});
+            this.FinCode,
+            this.Order_TypeID,
+            this.Order_Percent});
             this.OrderGridView.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFullFocus;
             this.OrderGridView.GridControl = this.OrderGridControl;
             this.OrderGridView.Name = "OrderGridView";
@@ -433,7 +437,7 @@
             this.Customer_BirthPlace.Name = "Customer_BirthPlace";
             this.Customer_BirthPlace.OptionsColumn.FixedWidth = true;
             this.Customer_BirthPlace.Visible = true;
-            this.Customer_BirthPlace.VisibleIndex = 4;
+            this.Customer_BirthPlace.VisibleIndex = 5;
             this.Customer_BirthPlace.Width = 130;
             // 
             // Customer_Address
@@ -442,8 +446,8 @@
             this.Customer_Address.FieldName = "FIRST_PAYMENT";
             this.Customer_Address.Name = "Customer_Address";
             this.Customer_Address.Visible = true;
-            this.Customer_Address.VisibleIndex = 5;
-            this.Customer_Address.Width = 437;
+            this.Customer_Address.VisibleIndex = 6;
+            this.Customer_Address.Width = 397;
             // 
             // Customer_Note
             // 
@@ -451,8 +455,8 @@
             this.Customer_Note.FieldName = "ORDER_AMOUNT";
             this.Customer_Note.Name = "Customer_Note";
             this.Customer_Note.Visible = true;
-            this.Customer_Note.VisibleIndex = 6;
-            this.Customer_Note.Width = 241;
+            this.Customer_Note.VisibleIndex = 7;
+            this.Customer_Note.Width = 219;
             // 
             // Customer_UsedUserID
             // 
@@ -460,6 +464,15 @@
             this.Customer_UsedUserID.FieldName = "USED_USER_ID";
             this.Customer_UsedUserID.Name = "Customer_UsedUserID";
             this.Customer_UsedUserID.OptionsColumn.AllowShowHide = false;
+            // 
+            // FinCode
+            // 
+            this.FinCode.Caption = "Fin kodu";
+            this.FinCode.FieldName = "PINCODE";
+            this.FinCode.Name = "FinCode";
+            this.FinCode.Visible = true;
+            this.FinCode.VisibleIndex = 8;
+            this.FinCode.Width = 100;
             // 
             // OrderPopupMenu
             // 
@@ -475,13 +488,20 @@
             this.OrderPopupMenu.Manager = this.BarManager;
             this.OrderPopupMenu.Name = "OrderPopupMenu";
             // 
-            // FinCode
+            // Order_TypeID
             // 
-            this.FinCode.Caption = "Fin kodu";
-            this.FinCode.FieldName = "PINCODE";
-            this.FinCode.Name = "FinCode";
-            this.FinCode.Visible = true;
-            this.FinCode.VisibleIndex = 7;
+            this.Order_TypeID.Caption = "Order_TypeID";
+            this.Order_TypeID.FieldName = "TYPE_ID";
+            this.Order_TypeID.Name = "Order_TypeID";
+            // 
+            // Order_Percent
+            // 
+            this.Order_Percent.Caption = "Faiz";
+            this.Order_Percent.FieldName = "PERCENT";
+            this.Order_Percent.Name = "Order_Percent";
+            this.Order_Percent.Visible = true;
+            this.Order_Percent.VisibleIndex = 4;
+            this.Order_Percent.Width = 68;
             // 
             // OrderUserControl
             // 
@@ -543,5 +563,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn Customer_ID;
         private DevExpress.XtraGrid.Columns.GridColumn Customer_RegisteredAddress;
         private DevExpress.XtraGrid.Columns.GridColumn FinCode;
+        private DevExpress.XtraGrid.Columns.GridColumn Order_TypeID;
+        private DevExpress.XtraGrid.Columns.GridColumn Order_Percent;
     }
 }

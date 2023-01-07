@@ -731,6 +731,28 @@ namespace ELMS.Forms.Customer
             }
             else
                 b = true;
+            
+            if (String.IsNullOrEmpty(BirthdayDate.Text))
+            {
+                BirthdayDate.BackColor = Color.Red;
+                GlobalProcedures.ShowErrorMessage("Doğum tarixi daxil edilməyib.");
+                BirthdayDate.Focus();
+                BirthdayDate.BackColor = GlobalFunctions.ElementColor();
+                return false;
+            }
+            else
+                b = true;
+
+            if (BirthPlaceText.Text.Length == 0)
+            {
+                BirthPlaceText.BackColor = Color.Red;
+                GlobalProcedures.ShowErrorMessage("Doğulduğu yer daxil edilməyib.");
+                BirthPlaceText.Focus();
+                BirthPlaceText.BackColor = GlobalFunctions.ElementColor();
+                return false;
+            }
+            else
+                b = true;
 
             if (countryID == 0)
             {
@@ -738,6 +760,28 @@ namespace ELMS.Forms.Customer
                 GlobalProcedures.ShowErrorMessage("Ölkə seçilməyib.");
                 CountryLookUp.Focus();
                 CountryLookUp.BackColor = GlobalFunctions.ElementColor();
+                return false;
+            }
+            else
+                b = true;
+
+            if (RegisteredAddressText.Text.Length == 0)
+            {
+                RegisteredAddressText.BackColor = Color.Red;
+                GlobalProcedures.ShowErrorMessage("Qeydiyyatda olduğu ünvanı daxil edilməyib.");
+                RegisteredAddressText.Focus();
+                RegisteredAddressText.BackColor = GlobalFunctions.ElementColor();
+                return false;
+            }
+            else
+                b = true;
+            
+            if (ActualAddressText.Text.Length == 0)
+            {
+                ActualAddressText.BackColor = Color.Red;
+                GlobalProcedures.ShowErrorMessage("Faktiki yaşadığı ünvanı daxil edilməyib.");
+                ActualAddressText.Focus();
+                ActualAddressText.BackColor = GlobalFunctions.ElementColor();
                 return false;
             }
             else

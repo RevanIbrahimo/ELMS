@@ -26,8 +26,7 @@ namespace ELMS.Forms.Dictionaries
         public TransactionTypeEnum TransactionType;
         public int ViewSelectedTabIndex = 0;
 
-        public delegate void DoEvent(int index);
-        public event DoEvent RefreshList;
+        
 
         int topindex,
             old_row_id,
@@ -42,7 +41,11 @@ namespace ELMS.Forms.Dictionaries
             sourceID,
             orderid,
             kindShipID;
+
         bool FormStatus = false;
+
+        public delegate void DoEvent(int index);
+        public event DoEvent RefreshList;
 
         private void FDictionaries_Load(object sender, EventArgs e)
         {
@@ -1264,6 +1267,14 @@ namespace ELMS.Forms.Dictionaries
             fd.ShowDialog();
             SourceGridView.TopRowIndex = topindex;
             SourceGridView.FocusedRowHandle = old_row_id;
+        }
+
+        private void FDictionaries_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (TransactionType == TransactionTypeEnum.Update)
+            {
+                this.RefreshList(BackstageViewControl.SelectedTabIndex);
+            }
         }
 
         private void EditSourceBarButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

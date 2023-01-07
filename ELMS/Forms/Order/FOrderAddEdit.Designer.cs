@@ -737,6 +737,7 @@
             this.BCancel.Text = "İmtina et";
             this.BCancel.Theme = ManiXButton.Theme.MSOffice2010_RED;
             this.BCancel.UseVisualStyleBackColor = true;
+            this.BCancel.Click += new System.EventHandler(this.BCancel_Click);
             // 
             // BOK
             // 

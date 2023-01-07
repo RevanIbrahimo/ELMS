@@ -67,6 +67,7 @@
             this.FinCode = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Order_OperationNote = new DevExpress.XtraGrid.Columns.GridColumn();
             this.OrderPopupMenu = new DevExpress.XtraBars.PopupMenu(this.components);
+            this.Order_TypeID = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.BarManager)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.OrderGridControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.OrderGridView)).BeginInit();
@@ -99,7 +100,7 @@
             this.ScheduleBarButton,
             this.HistroryBarButton,
             this.RtfBarButton});
-            this.BarManager.MaxItemId = 15;
+            this.BarManager.MaxItemId = 16;
             this.BarManager.StatusBar = this.bar3;
             // 
             // ToolBar
@@ -277,14 +278,8 @@
             // 
             // DeleteBarButton
             // 
-            this.DeleteBarButton.Caption = "Sil";
-            this.DeleteBarButton.Id = 2;
-            this.DeleteBarButton.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("DeleteBarButton.ImageOptions.Image")));
-            this.DeleteBarButton.ItemShortcut = new DevExpress.XtraBars.BarShortcut((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Delete));
+            this.DeleteBarButton.Id = 15;
             this.DeleteBarButton.Name = "DeleteBarButton";
-            this.DeleteBarButton.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            this.DeleteBarButton.ShowItemShortcut = DevExpress.Utils.DefaultBoolean.True;
-            this.DeleteBarButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.DeleteBarButton_ItemClick);
             // 
             // ScheduleBarButton
             // 
@@ -345,7 +340,8 @@
             this.Customer_Note,
             this.Customer_UsedUserID,
             this.FinCode,
-            this.Order_OperationNote});
+            this.Order_OperationNote,
+            this.Order_TypeID});
             this.OrderGridView.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFullFocus;
             this.OrderGridView.GridControl = this.OrderGridControl;
             this.OrderGridView.Name = "OrderGridView";
@@ -395,14 +391,6 @@
             // 
             // Order_OperationName
             // 
-            this.Order_OperationName.AppearanceCell.FontStyleDelta = System.Drawing.FontStyle.Bold;
-            this.Order_OperationName.AppearanceCell.ForeColor = System.Drawing.Color.Red;
-            this.Order_OperationName.AppearanceCell.Options.UseFont = true;
-            this.Order_OperationName.AppearanceCell.Options.UseForeColor = true;
-            this.Order_OperationName.AppearanceHeader.FontStyleDelta = System.Drawing.FontStyle.Bold;
-            this.Order_OperationName.AppearanceHeader.ForeColor = System.Drawing.Color.Red;
-            this.Order_OperationName.AppearanceHeader.Options.UseFont = true;
-            this.Order_OperationName.AppearanceHeader.Options.UseForeColor = true;
             this.Order_OperationName.Caption = "Müraciətin vəziyyəti";
             this.Order_OperationName.FieldName = "OPERATION_NAME";
             this.Order_OperationName.Name = "Order_OperationName";
@@ -518,6 +506,12 @@
             this.OrderPopupMenu.Manager = this.BarManager;
             this.OrderPopupMenu.Name = "OrderPopupMenu";
             // 
+            // Order_TypeID
+            // 
+            this.Order_TypeID.Caption = "Order_TypeID";
+            this.Order_TypeID.FieldName = "TYPE_ID";
+            this.Order_TypeID.Name = "Order_TypeID";
+            // 
             // ConfirmationUserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -580,5 +574,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn FinCode;
         private DevExpress.XtraGrid.Columns.GridColumn Order_OperationName;
         private DevExpress.XtraGrid.Columns.GridColumn Order_OperationNote;
+        private DevExpress.XtraGrid.Columns.GridColumn Order_TypeID;
     }
 }

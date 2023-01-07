@@ -146,7 +146,7 @@ namespace ELMS.Forms.Order
 
         private void BClose_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
         
         private bool ControlCardDetails()
@@ -295,7 +295,7 @@ namespace ELMS.Forms.Order
             if (!isClickBOK && TransactionType == TransactionTypeEnum.Update)
                 GlobalProcedures.Lock_or_UnLock_UserID("ELMS_USER.ORDER_TAB", -1, "WHERE ID = " + OrderID + " AND USED_USER_ID = " + GlobalVariables.V_UserID);
             OrderDAL.DeleteOrder(OrderID.Value);
-
+            CustomerDAL.DeleteCustomerData(CustomerID.Value);
             this.RefreshDataGridView();
         }
 
