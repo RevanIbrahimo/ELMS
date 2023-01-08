@@ -93,6 +93,7 @@ namespace ELMS.Class.DataAccess
                                CU.ADDRESS,
                                CU.FIRST_PAYMENT,
                                CU.ORDER_AMOUNT,
+                               CU.CREDIT_AMOUNT,
                                CU.NOTE,
                                CU.INSERT_DATE,
                                CU.USED_USER_ID
@@ -143,6 +144,7 @@ namespace ELMS.Class.DataAccess
                                CU.ADDRESS,
                                CU.FIRST_PAYMENT,
                                CU.ORDER_AMOUNT,
+                               CU.CREDIT_AMOUNT,
                                CU.NOTE,
                                CU.INSERT_DATE,
                                CU.USED_USER_ID
@@ -191,6 +193,7 @@ namespace ELMS.Class.DataAccess
                                                             ORDER_DATE,
                                                             FIRST_PAYMENT,
                                                             ORDER_AMOUNT,
+                                                            CREDIT_AMOUNT,
                                                             NOTE)
                                                     VALUES(:inCUSTOMER_ID,
                                                            :inBRANCH_ID,
@@ -199,6 +202,7 @@ namespace ELMS.Class.DataAccess
                                                            :inORDER_DATE,
                                                            :inFIRST_PAYMENT,                                                           
                                                            :inORDER_AMOUNT,                                                        
+                                                           :inCREDIT_AMOUNT,                                                        
                                                            :inNOTE) RETURNING ID INTO :outID";
             command.Parameters.Add(new OracleParameter("inCUSTOMER_ID", order.CUSTOMER_ID));
             command.Parameters.Add(new OracleParameter("inBRANCH_ID", order.BRANCH_ID));
@@ -207,6 +211,7 @@ namespace ELMS.Class.DataAccess
             command.Parameters.Add(new OracleParameter("inORDER_DATE", order.ORDER_DATE));
             command.Parameters.Add(new OracleParameter("inFIRST_PAYMENT", order.FIRST_PAYMENT));
             command.Parameters.Add(new OracleParameter("inORDER_AMOUNT", order.ORDER_AMOUNT));
+            command.Parameters.Add(new OracleParameter("inCREDIT_AMOUNT", order.CREDIT_AMOUNT));
             command.Parameters.Add(new OracleParameter("inNOTE", order.NOTE));
             command.Parameters.Add(new OracleParameter("outID", OracleDbType.Int32, ParameterDirection.Output));
 
@@ -231,6 +236,7 @@ namespace ELMS.Class.DataAccess
                                                                         ORDER_DATE = :inORDER_DATE,
                                                                         FIRST_PAYMENT = :inFIRST_PAYMENT,                                                                   
                                                                         ORDER_AMOUNT = :inORDER_AMOUNT,
+                                                                        CREDIT_AMOUNT = :inCREDIT_AMOUNT,
                                                                         NOTE = :inNOTE,
                                                                         USED_USER_ID = :inUSEDUSERID,
                                                                         UPDATE_USER = :inUPDATEUSER,
@@ -243,6 +249,7 @@ namespace ELMS.Class.DataAccess
             command.Parameters.Add(new OracleParameter("inORDER_DATE", order.ORDER_DATE));
             command.Parameters.Add(new OracleParameter("inFIRST_PAYMENT", order.FIRST_PAYMENT));
             command.Parameters.Add(new OracleParameter("inORDER_AMOUNT", order.ORDER_AMOUNT));
+            command.Parameters.Add(new OracleParameter("inCREDIT_AMOUNT", order.CREDIT_AMOUNT));
             command.Parameters.Add(new OracleParameter("inNOTE", order.NOTE));
             command.Parameters.Add(new OracleParameter("inUSEDUSERID", order.USED_USER_ID));
             command.Parameters.Add(new OracleParameter("inUPDATEUSER", GlobalVariables.V_UserID));

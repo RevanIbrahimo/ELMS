@@ -20,6 +20,7 @@ namespace ELMS.Class.Tables
         public string ORDER_SOURCE { get; set; }
         public decimal FIRST_PAYMENT { get; set; }
         public decimal ORDER_AMOUNT { get; set; }
+        public decimal CREDIT_AMOUNT { get; set; }
         public int IS_ACTIVE { get; set; }
         public DateTime CLOSED_DATE { get; set; }
         public int USED_USER_ID { get; set; }

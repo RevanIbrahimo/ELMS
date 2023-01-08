@@ -82,6 +82,7 @@ namespace ELMS.Forms.Order
                 TimeText.EditValue = dt.Rows[0]["TIME"];
                 FirstPaymentValue.EditValue = Convert.ToDecimal(dt.Rows[0]["FIRST_PAYMENT"].ToString());
                 OrderAmountValue.EditValue = Convert.ToDecimal(dt.Rows[0]["ORDER_AMOUNT"].ToString());
+                TotalOrderAmountValue.EditValue = Convert.ToDecimal(dt.Rows[0]["CREDIT_AMOUNT"].ToString());
                 UsedUserID = Convert.ToInt16(dt.Rows[0]["USED_USER_ID"]);
             }
         }
@@ -288,6 +289,11 @@ namespace ELMS.Forms.Order
             LoadPhone();
             LoadWork();
             LoadRelative();
+        }
+
+        private void OperationsGridView_CustomUnboundColumnData(object sender, DevExpress.XtraGrid.Views.Base.CustomColumnDataEventArgs e)
+        {
+            GlobalProcedures.GenerateAutoRowNumber(sender, Operation_SS, e);
         }
 
         private void FOrderAddEdit_FormClosing(object sender, FormClosingEventArgs e)

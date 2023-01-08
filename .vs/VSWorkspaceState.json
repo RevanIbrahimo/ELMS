@@ -2,12 +2,11 @@
   "ExpandedNodes": [
     "",
     "\\ELMS",
-    "\\ELMS\\Forms",
     "\\ELMS\\Forms\\Customer",
     "\\ELMS\\Forms\\Dictionaries",
     "\\ELMS\\Forms\\General",
     "\\ELMS\\Forms\\Order"
   ],
-  "SelectedNode": "\\ELMS\\Forms\\General\\FPrintableCheck.cs",
+  "SelectedNode": "\\ELMS\\Class",
   "PreviewInSolutionExplorer": false
 }

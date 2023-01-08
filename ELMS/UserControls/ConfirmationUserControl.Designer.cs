@@ -65,7 +65,7 @@
             this.Customer_Address = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Customer_Note = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Customer_UsedUserID = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.FinCode = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Order_CreditAmount = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Order_OperationNote = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Order_TypeID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.OrderPopupMenu = new DevExpress.XtraBars.PopupMenu(this.components);
@@ -348,7 +348,7 @@
             this.Customer_Address,
             this.Customer_Note,
             this.Customer_UsedUserID,
-            this.FinCode,
+            this.Order_CreditAmount,
             this.Order_OperationNote,
             this.Order_TypeID});
             this.OrderGridView.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFullFocus;
@@ -471,7 +471,7 @@
             this.Customer_Address.Name = "Customer_Address";
             this.Customer_Address.OptionsColumn.FixedWidth = true;
             this.Customer_Address.Visible = true;
-            this.Customer_Address.VisibleIndex = 7;
+            this.Customer_Address.VisibleIndex = 8;
             this.Customer_Address.Width = 100;
             // 
             // Customer_Note
@@ -481,7 +481,7 @@
             this.Customer_Note.Name = "Customer_Note";
             this.Customer_Note.OptionsColumn.FixedWidth = true;
             this.Customer_Note.Visible = true;
-            this.Customer_Note.VisibleIndex = 8;
+            this.Customer_Note.VisibleIndex = 7;
             this.Customer_Note.Width = 100;
             // 
             // Customer_UsedUserID
@@ -491,15 +491,15 @@
             this.Customer_UsedUserID.Name = "Customer_UsedUserID";
             this.Customer_UsedUserID.OptionsColumn.AllowShowHide = false;
             // 
-            // FinCode
+            // Order_CreditAmount
             // 
-            this.FinCode.Caption = "Fin kodu";
-            this.FinCode.FieldName = "PINCODE";
-            this.FinCode.Name = "FinCode";
-            this.FinCode.OptionsColumn.FixedWidth = true;
-            this.FinCode.Visible = true;
-            this.FinCode.VisibleIndex = 9;
-            this.FinCode.Width = 100;
+            this.Order_CreditAmount.Caption = "Nisyə məbləği";
+            this.Order_CreditAmount.FieldName = "CREDIT_AMOUNT";
+            this.Order_CreditAmount.Name = "Order_CreditAmount";
+            this.Order_CreditAmount.OptionsColumn.FixedWidth = true;
+            this.Order_CreditAmount.Visible = true;
+            this.Order_CreditAmount.VisibleIndex = 9;
+            this.Order_CreditAmount.Width = 100;
             // 
             // Order_OperationNote
             // 
@@ -590,7 +590,7 @@
         private DevExpress.XtraBars.PopupMenu OrderPopupMenu;
         private DevExpress.XtraGrid.Columns.GridColumn Customer_ID;
         private DevExpress.XtraGrid.Columns.GridColumn Customer_RegisteredAddress;
-        private DevExpress.XtraGrid.Columns.GridColumn FinCode;
+        private DevExpress.XtraGrid.Columns.GridColumn Order_CreditAmount;
         private DevExpress.XtraGrid.Columns.GridColumn Order_OperationName;
         private DevExpress.XtraGrid.Columns.GridColumn Order_OperationNote;
         private DevExpress.XtraGrid.Columns.GridColumn Order_TypeID;

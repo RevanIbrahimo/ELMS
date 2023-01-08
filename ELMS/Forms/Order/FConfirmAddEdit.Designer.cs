@@ -174,6 +174,9 @@
             this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.NoteTab = new DevExpress.XtraTab.XtraTabPage();
+            this.NoteMemo = new DevExpress.XtraEditors.MemoEdit();
+            this.OperationTab = new DevExpress.XtraTab.XtraTabPage();
             this.PanelOption = new DevExpress.XtraEditors.PanelControl();
             this.BOK = new ManiXButton.XButton();
             this.BCancel = new ManiXButton.XButton();
@@ -251,6 +254,23 @@
             this.barDockControl97 = new DevExpress.XtraBars.BarDockControl();
             this.barDockControl98 = new DevExpress.XtraBars.BarDockControl();
             this.RelativePopupMenu = new DevExpress.XtraBars.PopupMenu(this.components);
+            this.OperationStandaloneBarDockControl = new DevExpress.XtraBars.StandaloneBarDockControl();
+            this.OperationsGridControl = new DevExpress.XtraGrid.GridControl();
+            this.OperationsGridView = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.Operation_SS = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Operation_Name = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Operation_UserName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Operation_Date = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.OperationBarManager = new DevExpress.XtraBars.BarManager(this.components);
+            this.barDockControl19 = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControl32 = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControl33 = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControl34 = new DevExpress.XtraBars.BarDockControl();
+            this.OperationBar = new DevExpress.XtraBars.Bar();
+            this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
+            this.OperationPopupMenu = new DevExpress.XtraBars.PopupMenu(this.components);
+            this.barButtonItem7 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem8 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ProductBarManager)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DocumentBarManager)).BeginInit();
@@ -303,11 +323,18 @@
             this.groupControl7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DocumentGridControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DocumentGridView)).BeginInit();
+            this.NoteTab.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.NoteMemo.Properties)).BeginInit();
+            this.OperationTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PanelOption)).BeginInit();
             this.PanelOption.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DocumentPopupMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.RelativeBarManager)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.RelativePopupMenu)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.OperationsGridControl)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.OperationsGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.OperationBarManager)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.OperationPopupMenu)).BeginInit();
             this.SuspendLayout();
             // 
             // ProductBarManager
@@ -318,6 +345,7 @@
             this.ProductBarManager.DockControls.Add(this.barDockControlRight);
             this.ProductBarManager.DockControls.Add(this.ProductStandaloneBarDockControl);
             this.ProductBarManager.DockControls.Add(this.RelativeStandaloneBarDockControl);
+            this.ProductBarManager.DockControls.Add(this.OperationStandaloneBarDockControl);
             this.ProductBarManager.Form = this;
             this.ProductBarManager.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.NewProductBarButton,
@@ -521,7 +549,9 @@
             this.OtherInfoTabControl.TabIndex = 0;
             this.OtherInfoTabControl.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.IDCardTab,
-            this.CustomerTab});
+            this.CustomerTab,
+            this.NoteTab,
+            this.OperationTab});
             this.OtherInfoTabControl.TabStop = false;
             this.OtherInfoTabControl.SelectedPageChanged += new DevExpress.XtraTab.TabPageChangedEventHandler(this.OtherInfoTabControl_SelectedPageChanged);
             // 
@@ -1775,6 +1805,30 @@
             this.gridColumn9.FieldName = "ID";
             this.gridColumn9.Name = "gridColumn9";
             // 
+            // NoteTab
+            // 
+            this.NoteTab.Controls.Add(this.NoteMemo);
+            this.NoteTab.Name = "NoteTab";
+            this.NoteTab.Size = new System.Drawing.Size(860, 569);
+            this.NoteTab.Text = "Qeyd bölməsi";
+            // 
+            // NoteMemo
+            // 
+            this.NoteMemo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.NoteMemo.Location = new System.Drawing.Point(0, 0);
+            this.NoteMemo.MenuManager = this.ProductBarManager;
+            this.NoteMemo.Name = "NoteMemo";
+            this.NoteMemo.Size = new System.Drawing.Size(860, 569);
+            this.NoteMemo.TabIndex = 0;
+            // 
+            // OperationTab
+            // 
+            this.OperationTab.Controls.Add(this.OperationsGridControl);
+            this.OperationTab.Controls.Add(this.OperationStandaloneBarDockControl);
+            this.OperationTab.Name = "OperationTab";
+            this.OperationTab.Size = new System.Drawing.Size(860, 569);
+            this.OperationTab.Text = "Əməliyyatlar";
+            // 
             // PanelOption
             // 
             this.PanelOption.Controls.Add(this.BOK);
@@ -2485,6 +2539,199 @@
             this.RelativePopupMenu.Manager = this.RelativeBarManager;
             this.RelativePopupMenu.Name = "RelativePopupMenu";
             // 
+            // OperationStandaloneBarDockControl
+            // 
+            this.OperationStandaloneBarDockControl.CausesValidation = false;
+            this.OperationStandaloneBarDockControl.Dock = System.Windows.Forms.DockStyle.Top;
+            this.OperationStandaloneBarDockControl.Location = new System.Drawing.Point(0, 0);
+            this.OperationStandaloneBarDockControl.Manager = this.ProductBarManager;
+            this.OperationStandaloneBarDockControl.Name = "OperationStandaloneBarDockControl";
+            this.OperationStandaloneBarDockControl.Size = new System.Drawing.Size(860, 29);
+            this.OperationStandaloneBarDockControl.Text = "standaloneBarDockControl1";
+            // 
+            // OperationsGridControl
+            // 
+            this.OperationsGridControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.OperationsGridControl.Location = new System.Drawing.Point(0, 29);
+            this.OperationsGridControl.MainView = this.OperationsGridView;
+            this.OperationsGridControl.MenuManager = this.ProductBarManager;
+            this.OperationsGridControl.Name = "OperationsGridControl";
+            this.OperationsGridControl.Size = new System.Drawing.Size(860, 540);
+            this.OperationsGridControl.TabIndex = 2;
+            this.OperationsGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.OperationsGridView});
+            // 
+            // OperationsGridView
+            // 
+            this.OperationsGridView.Appearance.FooterPanel.FontStyleDelta = System.Drawing.FontStyle.Bold;
+            this.OperationsGridView.Appearance.FooterPanel.Options.UseFont = true;
+            this.OperationsGridView.Appearance.FooterPanel.Options.UseTextOptions = true;
+            this.OperationsGridView.Appearance.FooterPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.OperationsGridView.Appearance.FooterPanel.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.OperationsGridView.Appearance.HeaderPanel.Options.UseTextOptions = true;
+            this.OperationsGridView.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.OperationsGridView.Appearance.HeaderPanel.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.OperationsGridView.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.Operation_SS,
+            this.Operation_Name,
+            this.Operation_UserName,
+            this.Operation_Date});
+            this.OperationsGridView.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFullFocus;
+            this.OperationsGridView.GridControl = this.OperationsGridControl;
+            this.OperationsGridView.Name = "OperationsGridView";
+            this.OperationsGridView.OptionsBehavior.AutoExpandAllGroups = true;
+            this.OperationsGridView.OptionsBehavior.AutoSelectAllInEditor = false;
+            this.OperationsGridView.OptionsBehavior.Editable = false;
+            this.OperationsGridView.OptionsFilter.UseNewCustomFilterDialog = true;
+            this.OperationsGridView.OptionsFind.FindDelay = 100;
+            this.OperationsGridView.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.OperationsGridView.OptionsView.EnableAppearanceEvenRow = true;
+            this.OperationsGridView.OptionsView.ShowFooter = true;
+            this.OperationsGridView.OptionsView.ShowGroupPanel = false;
+            this.OperationsGridView.OptionsView.ShowIndicator = false;
+            this.OperationsGridView.PaintStyleName = "Skin";
+            this.OperationsGridView.ScrollStyle = DevExpress.XtraGrid.Views.Grid.ScrollStyleFlags.LiveVertScroll;
+            // 
+            // Operation_SS
+            // 
+            this.Operation_SS.AppearanceHeader.Options.UseTextOptions = true;
+            this.Operation_SS.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.Operation_SS.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.Operation_SS.Caption = "S/s";
+            this.Operation_SS.FieldName = "Operation_SS";
+            this.Operation_SS.Name = "Operation_SS";
+            this.Operation_SS.OptionsColumn.FixedWidth = true;
+            this.Operation_SS.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Count, "Operation_SS", "{0}")});
+            this.Operation_SS.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
+            this.Operation_SS.Visible = true;
+            this.Operation_SS.VisibleIndex = 0;
+            this.Operation_SS.Width = 50;
+            // 
+            // Operation_Name
+            // 
+            this.Operation_Name.Caption = "Müraciətin vəziyyəti";
+            this.Operation_Name.FieldName = "OPERATION_NAME";
+            this.Operation_Name.Name = "Operation_Name";
+            this.Operation_Name.OptionsColumn.FixedWidth = true;
+            this.Operation_Name.Visible = true;
+            this.Operation_Name.VisibleIndex = 1;
+            this.Operation_Name.Width = 150;
+            // 
+            // Operation_UserName
+            // 
+            this.Operation_UserName.Caption = "İstifadəçi adı";
+            this.Operation_UserName.FieldName = "USER_NAME";
+            this.Operation_UserName.Name = "Operation_UserName";
+            this.Operation_UserName.OptionsColumn.FixedWidth = true;
+            this.Operation_UserName.Visible = true;
+            this.Operation_UserName.VisibleIndex = 2;
+            this.Operation_UserName.Width = 150;
+            // 
+            // Operation_Date
+            // 
+            this.Operation_Date.Caption = "Tarix";
+            this.Operation_Date.FieldName = "INSERT_DATE";
+            this.Operation_Date.Name = "Operation_Date";
+            this.Operation_Date.OptionsColumn.FixedWidth = true;
+            this.Operation_Date.Visible = true;
+            this.Operation_Date.VisibleIndex = 3;
+            this.Operation_Date.Width = 150;
+            // 
+            // OperationBarManager
+            // 
+            this.OperationBarManager.Bars.AddRange(new DevExpress.XtraBars.Bar[] {
+            this.OperationBar});
+            this.OperationBarManager.DockControls.Add(this.barDockControl19);
+            this.OperationBarManager.DockControls.Add(this.barDockControl32);
+            this.OperationBarManager.DockControls.Add(this.barDockControl33);
+            this.OperationBarManager.DockControls.Add(this.barDockControl34);
+            this.OperationBarManager.Form = this;
+            this.OperationBarManager.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
+            this.barButtonItem4,
+            this.barButtonItem7,
+            this.barButtonItem8});
+            this.OperationBarManager.MainMenu = this.OperationBar;
+            this.OperationBarManager.MaxItemId = 3;
+            // 
+            // barDockControl19
+            // 
+            this.barDockControl19.CausesValidation = false;
+            this.barDockControl19.Dock = System.Windows.Forms.DockStyle.Top;
+            this.barDockControl19.Location = new System.Drawing.Point(0, 0);
+            this.barDockControl19.Manager = this.OperationBarManager;
+            this.barDockControl19.Size = new System.Drawing.Size(890, 0);
+            // 
+            // barDockControl32
+            // 
+            this.barDockControl32.CausesValidation = false;
+            this.barDockControl32.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.barDockControl32.Location = new System.Drawing.Point(0, 659);
+            this.barDockControl32.Manager = this.OperationBarManager;
+            this.barDockControl32.Size = new System.Drawing.Size(890, 0);
+            // 
+            // barDockControl33
+            // 
+            this.barDockControl33.CausesValidation = false;
+            this.barDockControl33.Dock = System.Windows.Forms.DockStyle.Left;
+            this.barDockControl33.Location = new System.Drawing.Point(0, 0);
+            this.barDockControl33.Manager = this.OperationBarManager;
+            this.barDockControl33.Size = new System.Drawing.Size(0, 659);
+            // 
+            // barDockControl34
+            // 
+            this.barDockControl34.CausesValidation = false;
+            this.barDockControl34.Dock = System.Windows.Forms.DockStyle.Right;
+            this.barDockControl34.Location = new System.Drawing.Point(890, 0);
+            this.barDockControl34.Manager = this.OperationBarManager;
+            this.barDockControl34.Size = new System.Drawing.Size(0, 659);
+            // 
+            // OperationBar
+            // 
+            this.OperationBar.BarName = "Main menu";
+            this.OperationBar.DockCol = 0;
+            this.OperationBar.DockRow = 0;
+            this.OperationBar.DockStyle = DevExpress.XtraBars.BarDockStyle.Standalone;
+            this.OperationBar.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem4),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem7),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem8)});
+            this.OperationBar.OptionsBar.DrawBorder = false;
+            this.OperationBar.OptionsBar.DrawDragBorder = false;
+            this.OperationBar.OptionsBar.MultiLine = true;
+            this.OperationBar.OptionsBar.UseWholeRow = true;
+            this.OperationBar.StandaloneBarDockControl = this.OperationStandaloneBarDockControl;
+            this.OperationBar.Text = "Main menu";
+            // 
+            // barButtonItem4
+            // 
+            this.barButtonItem4.Caption = "Yenilə";
+            this.barButtonItem4.Id = 0;
+            this.barButtonItem4.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.ImageOptions.Image")));
+            this.barButtonItem4.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.ImageOptions.LargeImage")));
+            this.barButtonItem4.Name = "barButtonItem4";
+            // 
+            // OperationPopupMenu
+            // 
+            this.OperationPopupMenu.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem4),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem7),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem8)});
+            this.OperationPopupMenu.Manager = this.OperationBarManager;
+            this.OperationPopupMenu.Name = "OperationPopupMenu";
+            // 
+            // barButtonItem7
+            // 
+            this.barButtonItem7.Caption = "Çap et";
+            this.barButtonItem7.Id = 1;
+            this.barButtonItem7.Name = "barButtonItem7";
+            // 
+            // barButtonItem8
+            // 
+            this.barButtonItem8.Caption = "İxrac et";
+            this.barButtonItem8.Id = 2;
+            this.barButtonItem8.Name = "barButtonItem8";
+            // 
             // FConfirmAddEdit
             // 
             this.AcceptButton = this.BClose;
@@ -2506,6 +2753,10 @@
             this.Controls.Add(this.barDockControl98);
             this.Controls.Add(this.barDockControl96);
             this.Controls.Add(this.barDockControl95);
+            this.Controls.Add(this.barDockControl33);
+            this.Controls.Add(this.barDockControl34);
+            this.Controls.Add(this.barDockControl32);
+            this.Controls.Add(this.barDockControl19);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -2569,11 +2820,18 @@
             this.groupControl7.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DocumentGridControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DocumentGridView)).EndInit();
+            this.NoteTab.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.NoteMemo.Properties)).EndInit();
+            this.OperationTab.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.PanelOption)).EndInit();
             this.PanelOption.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DocumentPopupMenu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.RelativeBarManager)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.RelativePopupMenu)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.OperationsGridControl)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.OperationsGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.OperationBarManager)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.OperationPopupMenu)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2787,5 +3045,25 @@
         private ManiXButton.XButton BOK;
         private DevExpress.XtraEditors.TextEdit OperationNoteText;
         private DevExpress.XtraEditors.LabelControl labelControl1;
+        private DevExpress.XtraTab.XtraTabPage NoteTab;
+        private DevExpress.XtraEditors.MemoEdit NoteMemo;
+        private DevExpress.XtraTab.XtraTabPage OperationTab;
+        private DevExpress.XtraBars.StandaloneBarDockControl OperationStandaloneBarDockControl;
+        private DevExpress.XtraGrid.GridControl OperationsGridControl;
+        private DevExpress.XtraGrid.Views.Grid.GridView OperationsGridView;
+        private DevExpress.XtraGrid.Columns.GridColumn Operation_SS;
+        private DevExpress.XtraGrid.Columns.GridColumn Operation_Name;
+        private DevExpress.XtraGrid.Columns.GridColumn Operation_UserName;
+        private DevExpress.XtraGrid.Columns.GridColumn Operation_Date;
+        private DevExpress.XtraBars.BarDockControl barDockControl33;
+        private DevExpress.XtraBars.BarManager OperationBarManager;
+        private DevExpress.XtraBars.Bar OperationBar;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem4;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem7;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem8;
+        private DevExpress.XtraBars.BarDockControl barDockControl19;
+        private DevExpress.XtraBars.BarDockControl barDockControl32;
+        private DevExpress.XtraBars.BarDockControl barDockControl34;
+        private DevExpress.XtraBars.PopupMenu OperationPopupMenu;
     }
 }

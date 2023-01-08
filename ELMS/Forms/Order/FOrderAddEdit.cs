@@ -138,6 +138,7 @@ namespace ELMS.Forms.Order
                 GlobalProcedures.LookUpEditValue(SourceLookUp, dt.Rows[0]["ORDER_SOURCE"].ToString());
                 FirstPaymentValue.EditValue = Convert.ToDecimal(dt.Rows[0]["FIRST_PAYMENT"].ToString());
                 OrderAmountValue.EditValue = Convert.ToDecimal(dt.Rows[0]["ORDER_AMOUNT"].ToString());
+                TotalOrderAmountValue.EditValue = Convert.ToDecimal(dt.Rows[0]["CREDIT_AMOUNT"].ToString());
                 GlobalProcedures.LookUpEditValue(TimeLookUp, dt.Rows[0]["TIME"].ToString());
                 UsedUserID = Convert.ToInt16(dt.Rows[0]["USED_USER_ID"]);
             }
@@ -188,6 +189,7 @@ namespace ELMS.Forms.Order
                 TIME_ID = timeID,
                 FIRST_PAYMENT = FirstPaymentValue.Value,
                 ORDER_AMOUNT = OrderAmountValue.Value,
+                CREDIT_AMOUNT = TotalOrderAmountValue.Value,
                 NOTE = NoteText.Text.Trim()
             };
 
@@ -206,6 +208,7 @@ namespace ELMS.Forms.Order
                 TIME_ID = timeID,
                 FIRST_PAYMENT = FirstPaymentValue.Value,
                 ORDER_AMOUNT = OrderAmountValue.Value,
+                CREDIT_AMOUNT = TotalOrderAmountValue.Value,
                 NOTE = NoteText.Text.Trim(),
                 USED_USER_ID = -1,
                 ID = OrderID.Value
