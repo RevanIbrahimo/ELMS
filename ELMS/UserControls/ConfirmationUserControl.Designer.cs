@@ -48,10 +48,6 @@
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
-            this.NewBarButton = new DevExpress.XtraBars.BarButtonItem();
-            this.DeleteBarButton = new DevExpress.XtraBars.BarButtonItem();
-            this.ScheduleBarButton = new DevExpress.XtraBars.BarButtonItem();
-            this.HistroryBarButton = new DevExpress.XtraBars.BarButtonItem();
             this.OrderGridControl = new DevExpress.XtraGrid.GridControl();
             this.OrderGridView = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.Customer_SS = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -86,9 +82,7 @@
             this.BarManager.DockControls.Add(this.barDockControlRight);
             this.BarManager.Form = this;
             this.BarManager.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
-            this.NewBarButton,
             this.EditBarButton,
-            this.DeleteBarButton,
             this.RefreshBarButton,
             this.PrintBarButton,
             this.ExportBarButton,
@@ -98,8 +92,6 @@
             this.HtmlBarButton,
             this.CsvBarButton,
             this.MhtBarButton,
-            this.ScheduleBarButton,
-            this.HistroryBarButton,
             this.RtfBarButton});
             this.BarManager.MaxItemId = 16;
             this.BarManager.StatusBar = this.bar3;
@@ -272,44 +264,6 @@
             this.barDockControlRight.Manager = this.BarManager;
             this.barDockControlRight.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.barDockControlRight.Size = new System.Drawing.Size(0, 566);
-            // 
-            // NewBarButton
-            // 
-            this.NewBarButton.Caption = "Yeni";
-            this.NewBarButton.Id = 0;
-            this.NewBarButton.ImageOptions.Image = global::ELMS.Properties.Resources.plus_32;
-            this.NewBarButton.ItemShortcut = new DevExpress.XtraBars.BarShortcut((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N));
-            this.NewBarButton.Name = "NewBarButton";
-            this.NewBarButton.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            this.NewBarButton.ShowItemShortcut = DevExpress.Utils.DefaultBoolean.True;
-            this.NewBarButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.NewBarButton_ItemClick);
-            // 
-            // DeleteBarButton
-            // 
-            this.DeleteBarButton.Id = 15;
-            this.DeleteBarButton.Name = "DeleteBarButton";
-            // 
-            // ScheduleBarButton
-            // 
-            this.ScheduleBarButton.Caption = "Qəbula yaz";
-            this.ScheduleBarButton.Id = 12;
-            this.ScheduleBarButton.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ScheduleBarButton.ImageOptions.Image")));
-            this.ScheduleBarButton.ItemShortcut = new DevExpress.XtraBars.BarShortcut((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Q));
-            this.ScheduleBarButton.Name = "ScheduleBarButton";
-            this.ScheduleBarButton.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            this.ScheduleBarButton.ShowItemShortcut = DevExpress.Utils.DefaultBoolean.True;
-            this.ScheduleBarButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ScheduleBarButton_ItemClick);
-            // 
-            // HistroryBarButton
-            // 
-            this.HistroryBarButton.Caption = "Müalicə tarixçəsi";
-            this.HistroryBarButton.Id = 13;
-            this.HistroryBarButton.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("HistroryBarButton.ImageOptions.Image")));
-            this.HistroryBarButton.ItemShortcut = new DevExpress.XtraBars.BarShortcut((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.H));
-            this.HistroryBarButton.Name = "HistroryBarButton";
-            this.HistroryBarButton.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            this.HistroryBarButton.ShowItemShortcut = DevExpress.Utils.DefaultBoolean.True;
-            this.HistroryBarButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.HistroryBarButton_ItemClick);
             // 
             // OrderGridControl
             // 
@@ -520,12 +474,8 @@
             // OrderPopupMenu
             // 
             this.OrderPopupMenu.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.NewBarButton),
             new DevExpress.XtraBars.LinkPersistInfo(this.EditBarButton),
-            new DevExpress.XtraBars.LinkPersistInfo(this.DeleteBarButton),
             new DevExpress.XtraBars.LinkPersistInfo(this.RefreshBarButton),
-            new DevExpress.XtraBars.LinkPersistInfo(this.ScheduleBarButton, true),
-            new DevExpress.XtraBars.LinkPersistInfo(this.HistroryBarButton, true),
             new DevExpress.XtraBars.LinkPersistInfo(this.PrintBarButton, true),
             new DevExpress.XtraBars.LinkPersistInfo(this.ExportBarButton)});
             this.OrderPopupMenu.Manager = this.BarManager;
@@ -563,9 +513,7 @@
         private DevExpress.XtraBars.BarDockControl barDockControlBottom;
         private DevExpress.XtraBars.BarDockControl barDockControlLeft;
         private DevExpress.XtraBars.BarDockControl barDockControlRight;
-        private DevExpress.XtraBars.BarButtonItem NewBarButton;
         private DevExpress.XtraBars.BarButtonItem EditBarButton;
-        private DevExpress.XtraBars.BarButtonItem DeleteBarButton;
         private DevExpress.XtraBars.BarButtonItem RefreshBarButton;
         private DevExpress.XtraBars.BarButtonItem PrintBarButton;
         private DevExpress.XtraBars.BarSubItem ExportBarButton;
@@ -575,8 +523,6 @@
         private DevExpress.XtraBars.BarButtonItem HtmlBarButton;
         private DevExpress.XtraBars.BarButtonItem CsvBarButton;
         private DevExpress.XtraBars.BarButtonItem MhtBarButton;
-        private DevExpress.XtraBars.BarButtonItem ScheduleBarButton;
-        private DevExpress.XtraBars.BarButtonItem HistroryBarButton;
         private DevExpress.XtraGrid.GridControl OrderGridControl;
         private DevExpress.XtraGrid.Views.Grid.GridView OrderGridView;
         private DevExpress.XtraGrid.Columns.GridColumn Customer_SS;

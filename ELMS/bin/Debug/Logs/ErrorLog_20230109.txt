@@ -1,0 +1,42 @@
+
+Log Entry : 3:59:58 PM Monday, January 9, 2023
+  
+   UserName =  SuperAdmin
+   FormName =  GlobalFunctions
+   ProcedureName =  GenerateDataTable : GetMax
+  
+   ShowMessage: DataTable yaradılmadı.
+   Exception Message: ORA-00942: table or view does not exist
+   SQL Text      :  SELECT NVL(MAX(LTRIM(CODE,'0')),0) + 1 MAXCODE FROM CRS_USER.CONTRACT_DOCUMENTS WHERE CONTRACT_DOCUMENT_TYPE_ID = 1 AND CONTRACT_ID = 0
+-------------------------------------------------
+
+Log Entry : 4:00:01 PM Monday, January 9, 2023
+  
+   UserName =  SuperAdmin
+   FormName =  GlobalFunctions
+   ProcedureName =  GetMax
+  
+   ShowMessage: Ən böyük ədəd tapılmadı.
+   Exception Message: Object reference not set to an instance of an object.
+   SQL Text      :  SELECT NVL(MAX(LTRIM(CODE,'0')),0) + 1 MAXCODE FROM CRS_USER.CONTRACT_DOCUMENTS WHERE CONTRACT_DOCUMENT_TYPE_ID = 1 AND CONTRACT_ID = 0
+-------------------------------------------------
+
+Log Entry : 4:07:49 PM Monday, January 9, 2023
+  
+   UserName =  SuperAdmin
+   FormName =  GlobalFunctions
+   ProcedureName =  ExecuteQueryWithBlob
+  
+   ShowMessage: Müqavilən hazır çap faylı bazaya daxil edilmədi.
+   Exception Message: Could not find file 'C:\Users\user\Documents\Github\ELMS\ELMS\bin\Debug\TEMP\Documents\1_Müqavilə.docx'.
+   SQL Text      :  sql_text = INSERT INTO ELMS_USER.CONTRACT_DOCUMENTS(CONTRACT_ID,
+                                                                 CONTRACT_DOCUMENT_TYPE_ID,
+                                                                 DOCUMENT_FILE,
+                                                                 CODE,
+                                                                 FILE_NAME) 
+                                        VALUES(0,
+                                                1,
+                                                :BlobFile,
+                                                '01',
+                                                '1_Müqavilə.docx')
+-------------------------------------------------

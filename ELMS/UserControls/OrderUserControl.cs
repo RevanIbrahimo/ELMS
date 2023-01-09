@@ -50,10 +50,9 @@ namespace ELMS.UserControls
             {
                 EditBarButton.Enabled = true;
                 DeleteBarButton.Enabled = true;
-                HistroryBarButton.Enabled = true;
             }
             else
-                EditBarButton.Enabled = DeleteBarButton.Enabled = HistroryBarButton.Enabled = false;
+                EditBarButton.Enabled = DeleteBarButton.Enabled = false;
         }
 
         //void RefreshCustomer(string customerName)

@@ -137,6 +137,7 @@
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
             this.TotalOrderAmountValue = new DevExpress.XtraEditors.CalcEdit();
             this.bar4 = new DevExpress.XtraBars.Bar();
+            this.BContract = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PersonalDetailsGroupBox)).BeginInit();
             this.PersonalDetailsGroupBox.SuspendLayout();
@@ -708,6 +709,7 @@
             // 
             // PanelOption
             // 
+            this.PanelOption.Controls.Add(this.BContract);
             this.PanelOption.Controls.Add(this.BCancel);
             this.PanelOption.Controls.Add(this.BOK);
             this.PanelOption.Controls.Add(this.labelControl12);
@@ -1194,6 +1196,15 @@
             this.bar4.OptionsBar.UseWholeRow = true;
             this.bar4.Text = "Main menu";
             // 
+            // BContract
+            // 
+            this.BContract.Location = new System.Drawing.Point(632, 13);
+            this.BContract.Name = "BContract";
+            this.BContract.Size = new System.Drawing.Size(75, 25);
+            this.BContract.TabIndex = 3;
+            this.BContract.Text = "Müqavilə";
+            this.BContract.Click += new System.EventHandler(this.BContract_Click);
+            // 
             // FOrderAddEdit
             // 
             this.AcceptButton = this.BOK;
@@ -1357,5 +1368,6 @@
         private DevExpress.XtraEditors.CalcEdit TotalOrderAmountValue;
         private DevExpress.XtraGrid.Columns.GridColumn Product_Note;
         private DevExpress.XtraBars.Bar bar4;
+        private DevExpress.XtraEditors.SimpleButton BContract;
     }
 }

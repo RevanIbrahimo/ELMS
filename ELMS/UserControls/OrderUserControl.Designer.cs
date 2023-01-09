@@ -49,9 +49,7 @@
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
-            this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
-            this.ScheduleBarButton = new DevExpress.XtraBars.BarButtonItem();
-            this.HistroryBarButton = new DevExpress.XtraBars.BarButtonItem();
+            this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();            
             this.OrderGridControl = new DevExpress.XtraGrid.GridControl();
             this.OrderGridView = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.Customer_SS = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -67,6 +65,9 @@
             this.Order_CreditAmount = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Order_TypeID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.OrderPopupMenu = new DevExpress.XtraBars.PopupMenu(this.components);
+            this.DocumentsBarSubItem = new DevExpress.XtraBars.BarSubItem();
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.BarManager)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.OrderGridControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.OrderGridView)).BeginInit();
@@ -96,10 +97,11 @@
             this.HtmlBarButton,
             this.CsvBarButton,
             this.MhtBarButton,
-            this.ScheduleBarButton,
-            this.HistroryBarButton,
-            this.RtfBarButton});
-            this.BarManager.MaxItemId = 15;
+            this.RtfBarButton,
+            this.DocumentsBarSubItem,
+            this.barButtonItem1,
+            this.barButtonItem2});
+            this.BarManager.MaxItemId = 18;
             this.BarManager.StatusBar = this.bar3;
             // 
             // ToolBar
@@ -114,7 +116,8 @@
             new DevExpress.XtraBars.LinkPersistInfo(this.DeleteBarButton),
             new DevExpress.XtraBars.LinkPersistInfo(this.RefreshBarButton),
             new DevExpress.XtraBars.LinkPersistInfo(this.PrintBarButton, true),
-            new DevExpress.XtraBars.LinkPersistInfo(this.ExportBarButton)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.ExportBarButton),
+            new DevExpress.XtraBars.LinkPersistInfo(this.DocumentsBarSubItem, true)});
             this.ToolBar.OptionsBar.DrawBorder = false;
             this.ToolBar.OptionsBar.DrawDragBorder = false;
             this.ToolBar.OptionsBar.UseWholeRow = true;
@@ -293,29 +296,7 @@
             this.barDockControlRight.Location = new System.Drawing.Point(1430, 47);
             this.barDockControlRight.Manager = this.BarManager;
             this.barDockControlRight.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 566);
-            // 
-            // ScheduleBarButton
-            // 
-            this.ScheduleBarButton.Caption = "Qəbula yaz";
-            this.ScheduleBarButton.Id = 12;
-            this.ScheduleBarButton.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ScheduleBarButton.ImageOptions.Image")));
-            this.ScheduleBarButton.ItemShortcut = new DevExpress.XtraBars.BarShortcut((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Q));
-            this.ScheduleBarButton.Name = "ScheduleBarButton";
-            this.ScheduleBarButton.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            this.ScheduleBarButton.ShowItemShortcut = DevExpress.Utils.DefaultBoolean.True;
-            this.ScheduleBarButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ScheduleBarButton_ItemClick);
-            // 
-            // HistroryBarButton
-            // 
-            this.HistroryBarButton.Caption = "Müalicə tarixçəsi";
-            this.HistroryBarButton.Id = 13;
-            this.HistroryBarButton.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("HistroryBarButton.ImageOptions.Image")));
-            this.HistroryBarButton.ItemShortcut = new DevExpress.XtraBars.BarShortcut((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.H));
-            this.HistroryBarButton.Name = "HistroryBarButton";
-            this.HistroryBarButton.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            this.HistroryBarButton.ShowItemShortcut = DevExpress.Utils.DefaultBoolean.True;
-            this.HistroryBarButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.HistroryBarButton_ItemClick);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 566);            
             // 
             // OrderGridControl
             // 
@@ -507,12 +488,34 @@
             new DevExpress.XtraBars.LinkPersistInfo(this.EditBarButton),
             new DevExpress.XtraBars.LinkPersistInfo(this.DeleteBarButton),
             new DevExpress.XtraBars.LinkPersistInfo(this.RefreshBarButton),
-            new DevExpress.XtraBars.LinkPersistInfo(this.ScheduleBarButton, true),
-            new DevExpress.XtraBars.LinkPersistInfo(this.HistroryBarButton, true),
             new DevExpress.XtraBars.LinkPersistInfo(this.PrintBarButton, true),
-            new DevExpress.XtraBars.LinkPersistInfo(this.ExportBarButton)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.ExportBarButton),
+            new DevExpress.XtraBars.LinkPersistInfo(this.DocumentsBarSubItem, true)});
             this.OrderPopupMenu.Manager = this.BarManager;
             this.OrderPopupMenu.Name = "OrderPopupMenu";
+            // 
+            // DocumentsBarSubItem
+            // 
+            this.DocumentsBarSubItem.Caption = "Sənədlər";
+            this.DocumentsBarSubItem.Id = 15;
+            this.DocumentsBarSubItem.ImageOptions.Image = global::ELMS.Properties.Resources.pdf_32;
+            this.DocumentsBarSubItem.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem1),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem2)});
+            this.DocumentsBarSubItem.Name = "DocumentsBarSubItem";
+            this.DocumentsBarSubItem.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            // 
+            // barButtonItem1
+            // 
+            this.barButtonItem1.Caption = "Müqavilə";
+            this.barButtonItem1.Id = 16;
+            this.barButtonItem1.Name = "barButtonItem1";
+            // 
+            // barButtonItem2
+            // 
+            this.barButtonItem2.Caption = "AKB üçün razılıq ərizəsi";
+            this.barButtonItem2.Id = 17;
+            this.barButtonItem2.Name = "barButtonItem2";
             // 
             // OrderUserControl
             // 
@@ -558,8 +561,6 @@
         private DevExpress.XtraBars.BarButtonItem HtmlBarButton;
         private DevExpress.XtraBars.BarButtonItem CsvBarButton;
         private DevExpress.XtraBars.BarButtonItem MhtBarButton;
-        private DevExpress.XtraBars.BarButtonItem ScheduleBarButton;
-        private DevExpress.XtraBars.BarButtonItem HistroryBarButton;
         private DevExpress.XtraGrid.GridControl OrderGridControl;
         private DevExpress.XtraGrid.Views.Grid.GridView OrderGridView;
         private DevExpress.XtraGrid.Columns.GridColumn Customer_SS;
@@ -576,5 +577,8 @@
         private DevExpress.XtraGrid.Columns.GridColumn Order_CreditAmount;
         private DevExpress.XtraGrid.Columns.GridColumn Order_TypeID;
         private DevExpress.XtraGrid.Columns.GridColumn Order_Percent;
+        private DevExpress.XtraBars.BarSubItem DocumentsBarSubItem;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem2;
     }
 }

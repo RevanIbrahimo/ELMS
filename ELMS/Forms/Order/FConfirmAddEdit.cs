@@ -47,13 +47,13 @@ namespace ELMS.Forms.Order
 
 
         List<CustomerImage> lstImage = new List<CustomerImage>();
-        
+
         private void LoadProduct()
         {
             ProductGridControl.DataSource = ProductCardDAL.SelectViewData(null);
             DataTable dt = ProductCardDAL.SelectTotal(null);
         }
-        
+
         private void LoadImage()
         {
             if (CustomerID.HasValue)
@@ -100,73 +100,47 @@ namespace ELMS.Forms.Order
                 PhoneAllText.Enabled =
                 BClose.Visible = !status;
         }
-        
+
         private void BOK_Click(object sender, EventArgs e)
         {
-            if (ControlCardDetails())
+            if (TransactionType == TransactionTypeEnum.Update)
             {
-                    if (TransactionType == TransactionTypeEnum.Update)
-                    {
-                        OrderOperation order = new OrderOperation
-                        {
-                            ORDER_ID = OrderID.Value,
-                            ID = OperationID.Value,
-                            NOTE = OperationNoteText.Text.Trim(),
-                            OPERATION_ID = (int)OperationTypeEnum.Tesdiq_edildi
-                        };
-                        
-                        OperationDAL.UpdateOrderOperation(order);
-                    }
-                    GlobalProcedures.ExecuteProcedureWithParametr("ELMS_USER.PROC_INSERT_PRODUCT_CARDS", "P_CUSTOMER_ID", OrderID.Value, "Müraciət məlumatları təsdiq edilmədi.");
-                    
-                this.Close();
+                OrderOperation order = new OrderOperation
+                {
+                    ORDER_ID = OrderID.Value,
+                    ID = OperationID.Value,
+                    NOTE = OperationNoteText.Text.Trim(),
+                    OPERATION_ID = (int)OperationTypeEnum.Tesdiq_edildi
+                };
+
+                OperationDAL.UpdateOrderOperation(order);
             }
+
+            this.Close();
+
         }
 
         private void BCancel_Click(object sender, EventArgs e)
         {
-            if (ControlCardDetails())
+            if (TransactionType == TransactionTypeEnum.Update)
             {
-                if (TransactionType == TransactionTypeEnum.Update)
+                OrderOperation order = new OrderOperation
                 {
-                    OrderOperation order = new OrderOperation
-                    {
-                        ORDER_ID = OrderID.Value,
-                        ID = OperationID.Value,
-                        NOTE = OperationNoteText.Text.Trim(),
-                        OPERATION_ID = (int)OperationTypeEnum.Tesdiq_edilmedi
-                    };
+                    ORDER_ID = OrderID.Value,
+                    ID = OperationID.Value,
+                    NOTE = OperationNoteText.Text.Trim(),
+                    OPERATION_ID = (int)OperationTypeEnum.Tesdiq_edilmedi
+                };
 
-                    OperationDAL.UpdateOrderOperation(order);
-                }
-                GlobalProcedures.ExecuteProcedureWithParametr("ELMS_USER.PROC_INSERT_PRODUCT_CARDS", "P_CUSTOMER_ID", OrderID.Value, "Müraciət məlumatları təsdiq edilmədi.");
-
-                this.Close();
+                OperationDAL.UpdateOrderOperation(order);
             }
+
+            this.Close();
         }
 
         private void BClose_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-        
-        private bool ControlCardDetails()
-        {
-
-            bool b = false;
-
-            if (CustomerID.Value == 0)
-            {
-                FinCodeSearch.BackColor = Color.Red;
-                GlobalProcedures.ShowErrorMessage("Müştəri seçilməyib.");
-                FinCodeSearch.Focus();
-                FinCodeSearch.BackColor = GlobalFunctions.ElementColor();
-                return false;
-            }
-            else
-                b = true;
-
-            return b;
         }
 
         void CalcTotalAmount()
@@ -178,10 +152,10 @@ namespace ELMS.Forms.Order
         {
             CalcTotalAmount();
         }
-        
+
         private void ProductGridView_CustomUnboundColumnData(object sender, DevExpress.XtraGrid.Views.Base.CustomColumnDataEventArgs e)
         {
-            GlobalProcedures.GenerateAutoRowNumber(sender, CustomerProduct_SS, e);
+            GlobalProcedures.GenerateAutoRowNumber(sender, Product_SS, e);
         }
 
         private void ProductGridView_CustomSummaryCalculate(object sender, DevExpress.Data.CustomSummaryEventArgs e)
@@ -208,7 +182,7 @@ namespace ELMS.Forms.Order
                     e.TotalValue = calcTotalPrice;
             }
         }
-        
+
         private void LoadCustomerDetails()
         {
             DataTable dt = CustomerDAL.SelectCustomerData(pinCode);
@@ -250,7 +224,7 @@ namespace ELMS.Forms.Order
                 LoadImage();
             }
         }
-        
+
         private void FOrderAddEdit_Load(object sender, EventArgs e)
         {
 
@@ -305,14 +279,17 @@ namespace ELMS.Forms.Order
             this.RefreshDataGridView();
         }
 
+        private void ProductGridView_CustomDrawFooterCell(object sender, FooterCellCustomDrawEventArgs e)
+        {
+            GlobalProcedures.GridCustomDrawFooterCell(Product_TotalPrice, "Far", e);
+        }
+
         private void OtherInfoTabControl_SelectedPageChanged(object sender, DevExpress.XtraTab.TabPageChangedEventArgs e)
         {
             switch (OtherInfoTabControl.SelectedTabPageIndex)
             {
                 case 0:
-                    {
-                        LoadProduct();
-                    }
+                    LoadProduct();
                     break;
                 case 1:
                     {
@@ -321,6 +298,12 @@ namespace ELMS.Forms.Order
                         LoadWork();
                         LoadRelative();
                     }
+                    break;
+                case 2:
+                    //LoadNoteMemo();
+                    break;
+                case 3:
+                    LoadOperation();
                     break;
             }
         }
@@ -338,7 +321,7 @@ namespace ELMS.Forms.Order
         {
             DocumentGridControl.DataSource = CustomerCardDAL.SelectViewDataAll(CustomerID);
         }
-        
+
         private void DocumentGridView_CustomUnboundColumnData(object sender, DevExpress.XtraGrid.Views.Base.CustomColumnDataEventArgs e)
         {
             GlobalProcedures.GenerateAutoRowNumber(sender, CustomerDocument_SS, e);
@@ -358,7 +341,7 @@ namespace ELMS.Forms.Order
                 CustomerID = 0;
 
             PhoneGridControl.DataSource = PhoneDAL.SelectPhoneByOwnerID(CustomerID.Value, PhoneOwnerEnum.Customer);
-            
+
         }
 
         private void PhoneGridView_CustomUnboundColumnData(object sender, DevExpress.XtraGrid.Views.Base.CustomColumnDataEventArgs e)
@@ -443,7 +426,18 @@ namespace ELMS.Forms.Order
             GlobalProcedures.GenerateAutoRowNumber(sender, Relative_SS, e);
         }
 
+        // NOTEMEMO -e aid olan hisse
+        /// /////////
+        /// /////////
+        /// /////////
 
+        private void LoadOperation()
+        {
+            if (!OrderID.HasValue)
+                OrderID = 0;
+
+            OperationsGridControl.DataSource = OperationDAL.SelectOperationData(null);
+        }
 
     }
 }

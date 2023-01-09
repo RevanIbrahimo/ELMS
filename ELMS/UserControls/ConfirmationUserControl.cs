@@ -24,8 +24,7 @@ namespace ELMS.UserControls
         {
             InitializeComponent();
         }
-        int topindex, old_row_id, orderID,operationID,typeID;
-        string orderName;
+        int topindex, old_row_id, orderID, operationID, typeID;
 
         private void OrderUserControl_Load(object sender, EventArgs e)
         {
@@ -46,14 +45,7 @@ namespace ELMS.UserControls
 
         void EnabledButton()
         {
-            if (OrderGridView.RowCount > 0)
-            {
-                EditBarButton.Enabled = true;
-                DeleteBarButton.Enabled = true;
-                HistroryBarButton.Enabled = true;
-            }
-            else
-                EditBarButton.Enabled = DeleteBarButton.Enabled = HistroryBarButton.Enabled = false;
+            EditBarButton.Enabled = OrderGridView.RowCount > 0;
         }
 
         //void RefreshCustomer(string customerName)
@@ -61,7 +53,7 @@ namespace ELMS.UserControls
         //    LoadCustomerData();
         //}
 
-         void RefreshCustomer()
+        void RefreshCustomer()
         {
             LoadCustomerData();
         }
@@ -92,7 +84,7 @@ namespace ELMS.UserControls
             EnabledButton();
         }
 
-        void UpdateCustomer()
+        void UpdateConfirm()
         {
             LoadFConfirmAddEdit(TransactionTypeEnum.Update, orderID);
         }
@@ -100,7 +92,7 @@ namespace ELMS.UserControls
         private void EditBarButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             if (EditBarButton.Enabled)
-                UpdateCustomer();
+                UpdateConfirm();
         }
 
         private void OrderGridView_MouseUp(object sender, MouseEventArgs e)
@@ -116,14 +108,14 @@ namespace ELMS.UserControls
         private void OrderGridView_DoubleClick(object sender, EventArgs e)
         {
             if (EditBarButton.Enabled)
-                UpdateCustomer();
+                UpdateConfirm();
         }
 
         private void PrintBarButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             GlobalProcedures.ShowGridPreview(OrderGridControl);
         }
-        
+
         private void OrderGridView_RowCellStyle(object sender, RowCellStyleEventArgs e)
         {
             if ((e.RowHandle >= 0) && (int.Parse(OrderGridView.GetRowCellDisplayText(e.RowHandle, OrderGridView.Columns["TYPE_ID"])) == 1))
@@ -135,14 +127,14 @@ namespace ELMS.UserControls
                 e.Appearance.BackColor = Color.Gray;
             }
 
-                GlobalProcedures.GridRowCellStyleForBlock((sender as GridView), e);
+            GlobalProcedures.GridRowCellStyleForBlock((sender as GridView), e);
         }
 
         private void LoadFScheduleAddEdit()
         {
             topindex = OrderGridView.TopRowIndex;
             old_row_id = OrderGridView.FocusedRowHandle;
-            
+
             OrderGridView.TopRowIndex = topindex;
             OrderGridView.FocusedRowHandle = old_row_id;
         }
@@ -193,18 +185,6 @@ namespace ELMS.UserControls
         private void MhtBarButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             GlobalProcedures.GridExportToFile(OrderGridControl, "mht");
-        }
-
-        private void HistroryBarButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            
-        }
-
-        
-
-        private void NewBarButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            LoadFConfirmAddEdit(TransactionTypeEnum.Insert, null);
         }
     }
 }

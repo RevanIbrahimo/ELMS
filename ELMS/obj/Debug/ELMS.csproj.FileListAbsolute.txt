@@ -145,7 +145,6 @@ C:\Users\user\Documents\Github\ELMS\ELMS\obj\Debug\ELMS.UserControls.ContractUse
 C:\Users\user\Documents\Github\ELMS\ELMS\obj\Debug\ELMS.UserControls.CustomerUserControl.resources
 C:\Users\user\Documents\Github\ELMS\ELMS\obj\Debug\ELMS.UserControls.RegressionUserControl.resources
 C:\Users\user\Documents\Github\ELMS\ELMS\obj\Debug\ELMS.csproj.GenerateResource.cache
-C:\Users\user\Documents\Github\ELMS\ELMS\obj\Debug\Elloni Management System.exe.licenses
 C:\Users\user\Documents\Github\ELMS\ELMS\obj\Debug\ELMS.csproj.CoreCompileInputs.cache
 C:\Users\user\Documents\Github\ELMS\ELMS\obj\Debug\ELMS.csproj.CopyComplete
 C:\Users\user\Documents\Github\ELMS\ELMS\obj\Debug\Elloni Management System.exe
@@ -169,3 +168,4 @@ C:\Users\user\Documents\Github\ELMS\ELMS\obj\Debug\ELMS.Forms.Customer.FRelative
 C:\Users\user\Documents\Github\ELMS\ELMS\obj\Debug\ELMS.Forms.Dictionaries.FSourceAddEdit.resources
 C:\Users\user\Documents\Github\ELMS\ELMS\obj\Debug\ELMS.Forms.Dictionaries.FTimesAddEdit.resources
 C:\Users\user\Documents\Github\ELMS\ELMS\obj\Debug\ELMS.Forms.General.FLoginSystem.resources
+C:\Users\user\Documents\Github\ELMS\ELMS\obj\Debug\ELMS.WaitForms.FPrintDocumentWait.resources

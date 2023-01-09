@@ -14,6 +14,21 @@
     <FileAlignment>512</FileAlignment>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -50,6 +65,10 @@
     <Reference Include="DevExpress.XtraGrid.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraPivotGrid.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraTreeList.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Office.Interop.Word, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Office.Interop.Word.15.0.4797.1004\lib\net20\Microsoft.Office.Interop.Word.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
     <Reference Include="Oracle.ManagedDataAccess, Version=4.122.19.1, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL">
       <HintPath>..\packages\Oracle.ManagedDataAccess.19.16.0\lib\net40\Oracle.ManagedDataAccess.dll</HintPath>
     </Reference>
@@ -372,6 +391,12 @@
     <Compile Include="UserControls\RegressionUserControl.Designer.cs">
       <DependentUpon>RegressionUserControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="WaitForms\FPrintDocumentWait.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WaitForms\FPrintDocumentWait.Designer.cs">
+      <DependentUpon>FPrintDocumentWait.cs</DependentUpon>
+    </Compile>
     <Compile Include="WaitForms\FWait.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -474,7 +499,6 @@
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -500,6 +524,9 @@
     <EmbeddedResource Include="UserControls\RegressionUserControl.resx">
       <DependentUpon>RegressionUserControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="WaitForms\FPrintDocumentWait.resx">
+      <DependentUpon>FPrintDocumentWait.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="WaitForms\FWait.resx">
       <DependentUpon>FWait.cs</DependentUpon>
     </EmbeddedResource>
@@ -507,6 +534,7 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="bin\Debug\Elloni Management System.exe.config" />
+    <None Include="bin\Debug\TEMP\Documents\Müqavilə.docx" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -717,6 +745,8 @@
     <Content Include="bin\Debug\Tulpep.NotificationWindow.dll" />
     <Content Include="management.ico" />
     <Content Include="Resources\download.png" />
+    <Content Include="Resources\excel-16.png" />
+    <Content Include="Resources\print_16x16.png" />
     <Content Include="Resources\user-group-32.png" />
     <None Include="Resources\webcamera-16.png" />
     <None Include="Resources\user-group-edit-32.png" />
@@ -746,9 +776,24 @@
     <None Include="Resources\dictionary-32.png" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="bin\Debug\Documents\user\" />
+    <Folder Include="bin\Debug\TEMP\Images\" />
+    <Folder Include="bin\Debug\TEMP\XmlFile\" />
     <Folder Include="bin\Release\" />
     <Folder Include="obj\Debug\" />
     <Folder Include="obj\Release\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

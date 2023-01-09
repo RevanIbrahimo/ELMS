@@ -16,6 +16,8 @@ using DevExpress.XtraGrid.Views.Grid;
 using Oracle.ManagedDataAccess.Client;
 using DevExpress.Data;
 using DevExpress.XtraGrid;
+using System.IO;
+using System.Diagnostics;
 
 namespace ELMS.Forms.Order
 {
@@ -29,22 +31,27 @@ namespace ELMS.Forms.Order
         public TransactionTypeEnum TransactionType;
         public int? OrderID, CustomerID;
 
-        bool CurrentStatus = false, Used = false, isClickBOK = false;
+        bool CurrentStatus = false, Used = false, isClickBOK = false,
+            contract_click = false;
 
         int UsedUserID = -1, orderOperationID,
             productID, topindex,
-            old_row_id,            
+            old_row_id,
             branchID = 0,
             sourceID = 0,
-            timeID = 0;
+            timeID = 0,
+            ContractID,
+            credit_currency_id = 0,
+            customer_type_id = 1;
         decimal calcTotalPrice = 0;
-        string  pinCode;
+        string pinCode,
+            credit_currency_name = "null";
         string UserImagePath = GlobalVariables.V_ExecutingFolder + "\\TEMP\\Images";
 
         public delegate void DoEvent();
         public event DoEvent RefreshDataGridView;
 
-        
+
         List<CustomerImage> lstImage = new List<CustomerImage>();
 
         private void RefreshProductBarButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -130,6 +137,7 @@ namespace ELMS.Forms.Order
             {
                 pinCode = dt.Rows[0]["PINCODE"].ToString();
                 RegisterCodeText.EditValue = dt.Rows[0]["ID"];
+                ContractID = Convert.ToInt16(dt.Rows[0]["ID"]);
                 NoteText.EditValue = dt.Rows[0]["NOTE"];
                 OrderDate.EditValue = dt.Rows[0]["ORDER_DATE"];
                 if (OrderDate.DateTime == DateTime.MinValue)
@@ -170,7 +178,7 @@ namespace ELMS.Forms.Order
         {
             OrderOperation order = new OrderOperation
             {
-                
+
                 OPERATION_ID = (int)OperationTypeEnum.Yeni_muraciet,
                 ORDER_ID = OrderID.Value
             };
@@ -238,8 +246,55 @@ namespace ELMS.Forms.Order
 
                     return 1;
                 }, TransactionType == TransactionTypeEnum.Insert ? "Müraciət məlumatları bazaya daxil edilmədi." : "Müraciət məlumatları bazada dəyişdirilmədi.");
+
+                InsertContractDocument();
                 this.Close();
             }
+        }
+        private void InsertContractDocument()
+        {
+            string file_name = null, code = "01", sql = null, filePath = null;
+            if (GlobalVariables.WordDocumentUsed)
+            {
+                GlobalProcedures.SplashScreenClose();
+                XtraMessageBox.Show("Açıq olan bütün word fayllar avtomatik olaraq bağlanılacaq.", "Məlumat", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                GlobalProcedures.KillWord();
+                GlobalVariables.WordDocumentUsed = false;
+            }
+
+            //ProgressPanel.Description = "Hazırlanmış fayllar bazaya yüklənir...";
+
+            //#region muqavile
+            filePath = GlobalVariables.V_ExecutingFolder + "\\TEMP\\Documents\\" + RegisterCodeText.Text.Replace("/", "") + "_Müqavilə.docx";
+            //if (contract_click && File.Exists(filePath))
+            //{
+
+                file_name = Path.GetFileName(filePath);
+                code = DocumentCode(1);
+                sql = $@"INSERT INTO ELMS_USER.CONTRACT_DOCUMENTS(CONTRACT_ID,
+                                                                 CONTRACT_DOCUMENT_TYPE_ID,
+                                                                 DOCUMENT_FILE,
+                                                                 CODE,
+                                                                 FILE_NAME) 
+                                        VALUES({ContractID},
+                                                1,
+                                                :BlobFile,
+                                                '{code}',
+                                                '{file_name}')";
+
+                GlobalFunctions.ExecuteQueryWithBlob(sql, filePath,
+                                                        "Müqavilən hazır çap faylı bazaya daxil edilmədi.");
+
+            //}
+            //#endregion
+        }
+
+        private string DocumentCode(int type_id)
+        {
+            string s = "01";
+            int max_code = GlobalFunctions.GetMax($@"SELECT NVL(MAX(LTRIM(CODE,'0')),0) + 1 MAXCODE FROM ELMS_USER.CONTRACT_DOCUMENTS WHERE CONTRACT_DOCUMENT_TYPE_ID = {type_id} AND CONTRACT_ID = {ContractID}");
+            s = max_code.ToString().PadLeft(2, '0');
+            return s;
         }
 
         private bool ControlCardDetails()
@@ -495,6 +550,142 @@ namespace ELMS.Forms.Order
 
         }
 
+        private void BContract_Click(object sender, EventArgs e)
+        {
+            GlobalProcedures.SplashScreenShow(this, typeof(WaitForms.FPrintDocumentWait));
+            object fileName = Path.Combine(GlobalVariables.V_ExecutingFolder + "\\Documents\\Müqavilə.docx");
+            if (!File.Exists(fileName.ToString()))
+            {
+                contract_click = false;
+                GlobalVariables.WordDocumentUsed = false;
+                XtraMessageBox.Show("Müqavilənin faylı tapılmadı.");
+                GlobalProcedures.SplashScreenClose();
+                return;
+            }
+
+            string qep = null,
+                amount_with_word,
+                com_with_word,
+                fifd_with_word,
+                phone = null,
+                period = null,
+                date = GlobalFunctions.DateWithDayMonthYear(OrderDate.DateTime),
+                filePath = GlobalVariables.V_ExecutingFolder + "\\TEMP\\Documents\\" + RegisterCodeText.Text.Replace("/", "") + "_Müqavilə.docx";
+
+            object missing = System.Reflection.Missing.Value;
+            Microsoft.Office.Interop.Word.Application wordApp = new Microsoft.Office.Interop.Word.Application();
+            Microsoft.Office.Interop.Word.Document aDoc = null;
+            object saveAs = Path.Combine(filePath);
+            object readOnly = false;
+            object isVisible = false;
+            wordApp.Visible = false;
+
+            aDoc = wordApp.Documents.Open(ref fileName, ref missing, ref readOnly, ref missing, ref missing, ref missing, ref missing, ref missing, ref missing, ref missing, missing, ref isVisible, ref missing, ref missing, ref missing, ref missing);
+
+            aDoc.Activate();
+            double d = 0, div = 0;
+            int mod = 0;
+            d = (double)OrderAmountValue.Value * 100;
+
+            div = (int)(d / 100);
+            mod = (int)(d % 100);
+            if (mod > 0)
+            {
+                if (credit_currency_id == 1)
+                    qep = " " + mod.ToString() + " qəpik";
+                else
+                    qep = " " + mod.ToString();
+            }
+
+            amount_with_word = "(" + GlobalFunctions.IntegerToWritten(div) + ") " + credit_currency_name + qep;
+
+            //Komissiya
+            d = (double)OrderAmountValue.Value * 100;
+
+            div = (int)(d / 100);
+            mod = (int)(d % 100);
+            if (mod > 0)
+            {
+                if (credit_currency_id == 1)
+                    qep = " " + mod.ToString() + " qəpik";
+                else
+                    qep = " " + mod.ToString();
+            }
+
+            com_with_word = "(" + GlobalFunctions.IntegerToWritten(div) + ") " + credit_currency_name + qep;
+
+            //FIFD
+            decimal fifd = Math.Round(OrderAmountValue.Value, 2);
+            d = (double)fifd * 100;
+
+            div = (int)(d / 100);
+            mod = (int)(d % 100);
+            if (mod > 0)
+                qep = " tam yüzdə " + GlobalFunctions.IntegerToWritten(mod);
+
+            fifd_with_word = "(" + GlobalFunctions.IntegerToWritten(div) + qep + ")";
+            
+            try
+            {
+                GlobalProcedures.FindAndReplace(wordApp, "[$contractcode]", RegisterCodeText.Text);
+                GlobalProcedures.FindAndReplace(wordApp, "[$contractdate]", date);
+                //if (customer_type_id == 1)
+                //{
+                //    GlobalProcedures.FindAndReplace(wordApp, "[$customer]", NameText.Text + " (" + CardDescriptionText.Text + ", " + OrderDateText.Text + " tarixində " + IssuingText.Text + " tərəfindən verilib)");
+                //    GlobalProcedures.FindAndReplace(wordApp, "[$carddate]", IssuingDateText.Text + " tarixində " + IssuingText.Text + " tərəfindən verilib");
+                //}
+                //else
+                //{
+                //    GlobalProcedures.FindAndReplace(wordApp, "[$customer]", CustomerFullNameText.Text + " (" + CardDescriptionText.Text + ")");
+                //    GlobalProcedures.FindAndReplace(wordApp, "[$carddate]", null);
+                //}
+                //GlobalProcedures.FindAndReplace(wordApp, "[$companyname]", GlobalVariables.V_CompanyName);
+                //GlobalProcedures.FindAndReplace(wordApp, "[$companyvoen]", GlobalVariables.V_CompanyVoen);
+                //GlobalProcedures.FindAndReplace(wordApp, "[$companyphone]", GlobalVariables.V_CompanyPhone);
+                //GlobalProcedures.FindAndReplace(wordApp, "[$companyaddress]", GlobalVariables.V_CompanyAddress);
+                //GlobalProcedures.FindAndReplace(wordApp, "[$companydirector]", GlobalVariables.V_CompanyDirector);
+                //GlobalProcedures.FindAndReplace(wordApp, "[$card]", CardDescriptionText.Text);
+                //GlobalProcedures.FindAndReplace(wordApp, "[$cur]", credit_currency_name);
+                //GlobalProcedures.FindAndReplace(wordApp, "[$creditpurpose]", "biznes tələblərinin ödənilməsi");
+                //GlobalProcedures.FindAndReplace(wordApp, "[$percent]", InterestValue.Value);
+                //GlobalProcedures.FindAndReplace(wordApp, "[$percentwrite]", "(" + GlobalFunctions.IntegerToWritten((double)InterestValue.Value) + ")");
+                //GlobalProcedures.FindAndReplace(wordApp, "[$amount]", CreditAmountValue.Value.ToString("N2"));
+                //GlobalProcedures.FindAndReplace(wordApp, "[$amountwrite]", amount_with_word);
+                //GlobalProcedures.FindAndReplace(wordApp, "[$grace]", GracePeriodValue.Text);
+                //GlobalProcedures.FindAndReplace(wordApp, "[$gracewrite]", "(" + GlobalFunctions.IntegerToWritten((int)GracePeriodValue.Value) + ")");
+                //GlobalProcedures.FindAndReplace(wordApp, "[$period]", PeriodValue.Value);
+                //GlobalProcedures.FindAndReplace(wordApp, "[$periodwrite]", "(" + GlobalFunctions.IntegerToWritten((double)PeriodValue.Value) + ")");
+                //GlobalProcedures.FindAndReplace(wordApp, "[$com]", CommissionValue.Value);
+                //GlobalProcedures.FindAndReplace(wordApp, "[$comwrite]", com_with_word);
+                //GlobalProcedures.FindAndReplace(wordApp, "[$fifd]", fifd);
+                //GlobalProcedures.FindAndReplace(wordApp, "[$fifdwrite]", fifd_with_word);
+                //GlobalProcedures.FindAndReplace(wordApp, "[$contractenddate]", GlobalFunctions.DateWithDayMonthYear(ContractEndDate.DateTime));
+                //GlobalProcedures.FindAndReplace(wordApp, "[$customername]", CustomerFullNameText.Text);
+                //GlobalProcedures.FindAndReplace(wordApp, "[$address]", RegistrationAddressText.Text);
+                //GlobalProcedures.FindAndReplace(wordApp, "[$phones]", phone);
+
+                if (File.Exists(filePath))
+                    File.Delete(filePath);
+
+                aDoc.SaveAs2(ref saveAs, ref missing, ref missing, ref missing, ref missing, ref missing, ref missing, ref missing, ref missing, ref missing, ref missing, ref missing, ref missing, ref missing, ref missing, ref missing, ref missing);
+                aDoc.Close(ref missing, ref missing, ref missing);
+
+                GlobalVariables.WordDocumentUsed = true;
+                contract_click = true;
+
+                Process.Start(filePath);
+            }
+            catch
+            {
+                GlobalProcedures.SplashScreenClose();
+                GlobalProcedures.ShowErrorMessage(RegisterCodeText.Text + "_Müqavilə.docx faylı açıq olduğu üçün bu faylı yenidən yaratmaq olmaz.");
+            }
+            finally
+            {
+                GlobalProcedures.SplashScreenClose();
+            }
+        }
+
         private void ProductGridView_MouseUp(object sender, MouseEventArgs e)
         {
 
@@ -605,7 +796,7 @@ namespace ELMS.Forms.Order
               
                 OrderID = GlobalFunctions.GetOracleSequenceValue("ORDER_TAB_SEQUENCE");
                 RegisterCodeText.EditValue = OrderID;
-                
+                ContractID = Convert.ToInt32(RegisterCodeText.Text.Trim());
             }
             InsertTemps();
             LoadProduct();

@@ -54,6 +54,7 @@
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.ProductStandaloneBarDockControl = new DevExpress.XtraBars.StandaloneBarDockControl();
             this.RelativeStandaloneBarDockControl = new DevExpress.XtraBars.StandaloneBarDockControl();
+            this.OperationStandaloneBarDockControl = new DevExpress.XtraBars.StandaloneBarDockControl();
             this.NewProductBarButton = new DevExpress.XtraBars.BarButtonItem();
             this.EditProductBarButton = new DevExpress.XtraBars.BarButtonItem();
             this.DeleteProductBarButton = new DevExpress.XtraBars.BarButtonItem();
@@ -74,18 +75,16 @@
             this.RefreshDocumentBarButton = new DevExpress.XtraBars.BarButtonItem();
             this.OtherInfoTabControl = new DevExpress.XtraTab.XtraTabControl();
             this.IDCardTab = new DevExpress.XtraTab.XtraTabPage();
-            this.OperationNoteText = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.ProductGridControl = new DevExpress.XtraGrid.GridControl();
             this.ProductGridView = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.CustomerProduct_SS = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn31 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn32 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn33 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn34 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn35 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn36 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Product_SS = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Product_Name = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Product_Count = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Product_Price = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Product_TotalPrice = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Product_Note = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Product_ID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.FirstPaymentValue = new DevExpress.XtraEditors.CalcEdit();
             this.TimeText = new DevExpress.XtraEditors.TextEdit();
             this.SourceText = new DevExpress.XtraEditors.TextEdit();
@@ -175,8 +174,14 @@
             this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.NoteTab = new DevExpress.XtraTab.XtraTabPage();
-            this.NoteMemo = new DevExpress.XtraEditors.MemoEdit();
+            this.OperationNoteText = new DevExpress.XtraEditors.MemoEdit();
             this.OperationTab = new DevExpress.XtraTab.XtraTabPage();
+            this.OperationsGridControl = new DevExpress.XtraGrid.GridControl();
+            this.OperationsGridView = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.Operation_SS = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Operation_Name = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Operation_UserName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Operation_Date = new DevExpress.XtraGrid.Columns.GridColumn();
             this.PanelOption = new DevExpress.XtraEditors.PanelControl();
             this.BOK = new ManiXButton.XButton();
             this.BCancel = new ManiXButton.XButton();
@@ -254,30 +259,22 @@
             this.barDockControl97 = new DevExpress.XtraBars.BarDockControl();
             this.barDockControl98 = new DevExpress.XtraBars.BarDockControl();
             this.RelativePopupMenu = new DevExpress.XtraBars.PopupMenu(this.components);
-            this.OperationStandaloneBarDockControl = new DevExpress.XtraBars.StandaloneBarDockControl();
-            this.OperationsGridControl = new DevExpress.XtraGrid.GridControl();
-            this.OperationsGridView = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.Operation_SS = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Operation_Name = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Operation_UserName = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Operation_Date = new DevExpress.XtraGrid.Columns.GridColumn();
             this.OperationBarManager = new DevExpress.XtraBars.BarManager(this.components);
+            this.OperationBar = new DevExpress.XtraBars.Bar();
+            this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem7 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem8 = new DevExpress.XtraBars.BarButtonItem();
             this.barDockControl19 = new DevExpress.XtraBars.BarDockControl();
             this.barDockControl32 = new DevExpress.XtraBars.BarDockControl();
             this.barDockControl33 = new DevExpress.XtraBars.BarDockControl();
             this.barDockControl34 = new DevExpress.XtraBars.BarDockControl();
-            this.OperationBar = new DevExpress.XtraBars.Bar();
-            this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
             this.OperationPopupMenu = new DevExpress.XtraBars.PopupMenu(this.components);
-            this.barButtonItem7 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem8 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ProductBarManager)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DocumentBarManager)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.OtherInfoTabControl)).BeginInit();
             this.OtherInfoTabControl.SuspendLayout();
             this.IDCardTab.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.OperationNoteText.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ProductGridControl)).BeginInit();
@@ -324,15 +321,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.DocumentGridControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DocumentGridView)).BeginInit();
             this.NoteTab.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.NoteMemo.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.OperationNoteText.Properties)).BeginInit();
             this.OperationTab.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.OperationsGridControl)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.OperationsGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PanelOption)).BeginInit();
             this.PanelOption.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DocumentPopupMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.RelativeBarManager)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.RelativePopupMenu)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.OperationsGridControl)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.OperationsGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.OperationBarManager)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.OperationPopupMenu)).BeginInit();
             this.SuspendLayout();
@@ -409,6 +406,16 @@
             this.RelativeStandaloneBarDockControl.Name = "RelativeStandaloneBarDockControl";
             this.RelativeStandaloneBarDockControl.Size = new System.Drawing.Size(833, 29);
             this.RelativeStandaloneBarDockControl.Text = "standaloneBarDockControl1";
+            // 
+            // OperationStandaloneBarDockControl
+            // 
+            this.OperationStandaloneBarDockControl.CausesValidation = false;
+            this.OperationStandaloneBarDockControl.Dock = System.Windows.Forms.DockStyle.Top;
+            this.OperationStandaloneBarDockControl.Location = new System.Drawing.Point(0, 0);
+            this.OperationStandaloneBarDockControl.Manager = this.ProductBarManager;
+            this.OperationStandaloneBarDockControl.Name = "OperationStandaloneBarDockControl";
+            this.OperationStandaloneBarDockControl.Size = new System.Drawing.Size(860, 29);
+            this.OperationStandaloneBarDockControl.Text = "standaloneBarDockControl1";
             // 
             // NewProductBarButton
             // 
@@ -557,8 +564,6 @@
             // 
             // IDCardTab
             // 
-            this.IDCardTab.Controls.Add(this.OperationNoteText);
-            this.IDCardTab.Controls.Add(this.labelControl1);
             this.IDCardTab.Controls.Add(this.groupControl1);
             this.IDCardTab.Controls.Add(this.FirstPaymentValue);
             this.IDCardTab.Controls.Add(this.TimeText);
@@ -585,24 +590,6 @@
             this.IDCardTab.Size = new System.Drawing.Size(860, 569);
             this.IDCardTab.Text = "Müraciət";
             // 
-            // OperationNoteText
-            // 
-            this.OperationNoteText.Location = new System.Drawing.Point(72, 523);
-            this.OperationNoteText.MenuManager = this.ProductBarManager;
-            this.OperationNoteText.Name = "OperationNoteText";
-            this.OperationNoteText.Size = new System.Drawing.Size(770, 20);
-            this.OperationNoteText.TabIndex = 201;
-            // 
-            // labelControl1
-            // 
-            this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Location = new System.Drawing.Point(21, 526);
-            this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(29, 13);
-            this.labelControl1.TabIndex = 200;
-            this.labelControl1.Text = "Qeyd";
-            // 
             // groupControl1
             // 
             this.groupControl1.AppearanceCaption.FontStyleDelta = System.Drawing.FontStyle.Bold;
@@ -612,7 +599,7 @@
             this.groupControl1.Controls.Add(this.ProductGridControl);
             this.groupControl1.Location = new System.Drawing.Point(21, 212);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(821, 296);
+            this.groupControl1.Size = new System.Drawing.Size(821, 332);
             this.groupControl1.TabIndex = 199;
             this.groupControl1.Text = "Sifarişlər";
             // 
@@ -623,7 +610,7 @@
             this.ProductGridControl.MainView = this.ProductGridView;
             this.ProductGridControl.MenuManager = this.ProductBarManager;
             this.ProductGridControl.Name = "ProductGridControl";
-            this.ProductGridControl.Size = new System.Drawing.Size(817, 274);
+            this.ProductGridControl.Size = new System.Drawing.Size(817, 310);
             this.ProductGridControl.TabIndex = 18;
             this.ProductGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.ProductGridView});
@@ -637,13 +624,13 @@
             this.ProductGridView.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.ProductGridView.Appearance.HeaderPanel.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.ProductGridView.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.CustomerProduct_SS,
-            this.gridColumn31,
-            this.gridColumn32,
-            this.gridColumn33,
-            this.gridColumn34,
-            this.gridColumn35,
-            this.gridColumn36});
+            this.Product_SS,
+            this.Product_Name,
+            this.Product_Count,
+            this.Product_Price,
+            this.Product_TotalPrice,
+            this.Product_Note,
+            this.Product_ID});
             this.ProductGridView.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFullFocus;
             this.ProductGridView.GridControl = this.ProductGridControl;
             this.ProductGridView.Name = "ProductGridView";
@@ -659,87 +646,88 @@
             this.ProductGridView.OptionsView.ShowFooter = true;
             this.ProductGridView.OptionsView.ShowGroupPanel = false;
             this.ProductGridView.OptionsView.ShowIndicator = false;
+            this.ProductGridView.CustomDrawFooterCell += new DevExpress.XtraGrid.Views.Grid.FooterCellCustomDrawEventHandler(this.ProductGridView_CustomDrawFooterCell);
             this.ProductGridView.CustomUnboundColumnData += new DevExpress.XtraGrid.Views.Base.CustomColumnDataEventHandler(this.ProductGridView_CustomUnboundColumnData);
             // 
-            // CustomerProduct_SS
+            // Product_SS
             // 
-            this.CustomerProduct_SS.AppearanceCell.Options.UseTextOptions = true;
-            this.CustomerProduct_SS.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.CustomerProduct_SS.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.CustomerProduct_SS.Caption = "S/s";
-            this.CustomerProduct_SS.FieldName = "Product_SS";
-            this.CustomerProduct_SS.Name = "CustomerProduct_SS";
-            this.CustomerProduct_SS.OptionsColumn.FixedWidth = true;
-            this.CustomerProduct_SS.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            this.Product_SS.AppearanceCell.Options.UseTextOptions = true;
+            this.Product_SS.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.Product_SS.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.Product_SS.Caption = "S/s";
+            this.Product_SS.FieldName = "Product_SS";
+            this.Product_SS.Name = "Product_SS";
+            this.Product_SS.OptionsColumn.FixedWidth = true;
+            this.Product_SS.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Count, "Product_SS", "{0}")});
-            this.CustomerProduct_SS.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
-            this.CustomerProduct_SS.Visible = true;
-            this.CustomerProduct_SS.VisibleIndex = 0;
-            this.CustomerProduct_SS.Width = 50;
+            this.Product_SS.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
+            this.Product_SS.Visible = true;
+            this.Product_SS.VisibleIndex = 0;
+            this.Product_SS.Width = 50;
             // 
-            // gridColumn31
+            // Product_Name
             // 
-            this.gridColumn31.Caption = "Mal";
-            this.gridColumn31.FieldName = "PRODUCT_NAME";
-            this.gridColumn31.Name = "gridColumn31";
-            this.gridColumn31.OptionsColumn.FixedWidth = true;
-            this.gridColumn31.Visible = true;
-            this.gridColumn31.VisibleIndex = 1;
-            this.gridColumn31.Width = 250;
+            this.Product_Name.Caption = "Mal";
+            this.Product_Name.FieldName = "PRODUCT_NAME";
+            this.Product_Name.Name = "Product_Name";
+            this.Product_Name.OptionsColumn.FixedWidth = true;
+            this.Product_Name.Visible = true;
+            this.Product_Name.VisibleIndex = 1;
+            this.Product_Name.Width = 250;
             // 
-            // gridColumn32
+            // Product_Count
             // 
-            this.gridColumn32.Caption = "Say";
-            this.gridColumn32.DisplayFormat.FormatString = "n0";
-            this.gridColumn32.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.gridColumn32.FieldName = "PRODUCT_COUNT";
-            this.gridColumn32.Name = "gridColumn32";
-            this.gridColumn32.OptionsColumn.FixedWidth = true;
-            this.gridColumn32.Visible = true;
-            this.gridColumn32.VisibleIndex = 2;
-            this.gridColumn32.Width = 70;
+            this.Product_Count.Caption = "Say";
+            this.Product_Count.DisplayFormat.FormatString = "n0";
+            this.Product_Count.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.Product_Count.FieldName = "PRODUCT_COUNT";
+            this.Product_Count.Name = "Product_Count";
+            this.Product_Count.OptionsColumn.FixedWidth = true;
+            this.Product_Count.Visible = true;
+            this.Product_Count.VisibleIndex = 2;
+            this.Product_Count.Width = 70;
             // 
-            // gridColumn33
+            // Product_Price
             // 
-            this.gridColumn33.Caption = "Qiymət";
-            this.gridColumn33.DisplayFormat.FormatString = "n2";
-            this.gridColumn33.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.gridColumn33.FieldName = "PRICE";
-            this.gridColumn33.Name = "gridColumn33";
-            this.gridColumn33.OptionsColumn.FixedWidth = true;
-            this.gridColumn33.Visible = true;
-            this.gridColumn33.VisibleIndex = 3;
-            this.gridColumn33.Width = 100;
+            this.Product_Price.Caption = "Qiymət";
+            this.Product_Price.DisplayFormat.FormatString = "n2";
+            this.Product_Price.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.Product_Price.FieldName = "PRICE";
+            this.Product_Price.Name = "Product_Price";
+            this.Product_Price.OptionsColumn.FixedWidth = true;
+            this.Product_Price.Visible = true;
+            this.Product_Price.VisibleIndex = 3;
+            this.Product_Price.Width = 100;
             // 
-            // gridColumn34
+            // Product_TotalPrice
             // 
-            this.gridColumn34.Caption = "Yekun";
-            this.gridColumn34.DisplayFormat.FormatString = "n2";
-            this.gridColumn34.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.gridColumn34.FieldName = "Product_TotalPrice";
-            this.gridColumn34.Name = "gridColumn34";
-            this.gridColumn34.OptionsColumn.FixedWidth = true;
-            this.gridColumn34.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Custom, "TOTAL", "{0:n2}")});
-            this.gridColumn34.UnboundExpression = "[PRICE] * [PRODUCT_COUNT]";
-            this.gridColumn34.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
-            this.gridColumn34.Visible = true;
-            this.gridColumn34.VisibleIndex = 4;
-            this.gridColumn34.Width = 100;
+            this.Product_TotalPrice.Caption = "Yekun";
+            this.Product_TotalPrice.DisplayFormat.FormatString = "n2";
+            this.Product_TotalPrice.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.Product_TotalPrice.FieldName = "Product_TotalPrice";
+            this.Product_TotalPrice.Name = "Product_TotalPrice";
+            this.Product_TotalPrice.OptionsColumn.FixedWidth = true;
+            this.Product_TotalPrice.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Product_TotalPrice", "{0:n2}")});
+            this.Product_TotalPrice.UnboundExpression = "[PRICE] * [PRODUCT_COUNT]";
+            this.Product_TotalPrice.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
+            this.Product_TotalPrice.Visible = true;
+            this.Product_TotalPrice.VisibleIndex = 4;
+            this.Product_TotalPrice.Width = 100;
             // 
-            // gridColumn35
+            // Product_Note
             // 
-            this.gridColumn35.Caption = "Qeyd";
-            this.gridColumn35.FieldName = "NOTE";
-            this.gridColumn35.Name = "gridColumn35";
-            this.gridColumn35.Visible = true;
-            this.gridColumn35.VisibleIndex = 5;
+            this.Product_Note.Caption = "Qeyd";
+            this.Product_Note.FieldName = "NOTE";
+            this.Product_Note.Name = "Product_Note";
+            this.Product_Note.Visible = true;
+            this.Product_Note.VisibleIndex = 5;
             // 
-            // gridColumn36
+            // Product_ID
             // 
-            this.gridColumn36.Caption = "Product_ID";
-            this.gridColumn36.FieldName = "ID";
-            this.gridColumn36.Name = "gridColumn36";
+            this.Product_ID.Caption = "Product_ID";
+            this.Product_ID.FieldName = "ID";
+            this.Product_ID.Name = "Product_ID";
             // 
             // FirstPaymentValue
             // 
@@ -758,6 +746,7 @@
             this.FirstPaymentValue.Properties.ReadOnly = true;
             this.FirstPaymentValue.Size = new System.Drawing.Size(127, 20);
             this.FirstPaymentValue.TabIndex = 198;
+            this.FirstPaymentValue.TabStop = false;
             // 
             // TimeText
             // 
@@ -767,6 +756,7 @@
             this.TimeText.Properties.ReadOnly = true;
             this.TimeText.Size = new System.Drawing.Size(90, 20);
             this.TimeText.TabIndex = 197;
+            this.TimeText.TabStop = false;
             // 
             // SourceText
             // 
@@ -776,6 +766,7 @@
             this.SourceText.Properties.ReadOnly = true;
             this.SourceText.Size = new System.Drawing.Size(704, 20);
             this.SourceText.TabIndex = 196;
+            this.SourceText.TabStop = false;
             // 
             // OrderDateText
             // 
@@ -789,6 +780,7 @@
             this.OrderDateText.Properties.ReadOnly = true;
             this.OrderDateText.Size = new System.Drawing.Size(90, 20);
             this.OrderDateText.TabIndex = 195;
+            this.OrderDateText.TabStop = false;
             // 
             // BranchText
             // 
@@ -798,6 +790,7 @@
             this.BranchText.Properties.ReadOnly = true;
             this.BranchText.Size = new System.Drawing.Size(704, 20);
             this.BranchText.TabIndex = 194;
+            this.BranchText.TabStop = false;
             // 
             // labelControl15
             // 
@@ -833,6 +826,7 @@
             this.RegisterCodeText.Properties.ReadOnly = true;
             this.RegisterCodeText.Size = new System.Drawing.Size(90, 20);
             this.RegisterCodeText.TabIndex = 2;
+            this.RegisterCodeText.TabStop = false;
             // 
             // labelControl8
             // 
@@ -869,6 +863,7 @@
             this.TotalOrderAmountValue.Properties.ReadOnly = true;
             this.TotalOrderAmountValue.Size = new System.Drawing.Size(124, 20);
             this.TotalOrderAmountValue.TabIndex = 191;
+            this.TotalOrderAmountValue.TabStop = false;
             // 
             // NoteText
             // 
@@ -879,6 +874,7 @@
             this.NoteText.Properties.ReadOnly = true;
             this.NoteText.Size = new System.Drawing.Size(704, 20);
             this.NoteText.TabIndex = 186;
+            this.NoteText.TabStop = false;
             // 
             // labelControl2
             // 
@@ -967,6 +963,7 @@
             this.OrderAmountValue.Properties.ReadOnly = true;
             this.OrderAmountValue.Size = new System.Drawing.Size(127, 20);
             this.OrderAmountValue.TabIndex = 178;
+            this.OrderAmountValue.TabStop = false;
             this.OrderAmountValue.EditValueChanged += new System.EventHandler(this.FirstPaymentValue_EditValueChanged);
             // 
             // CustomerTab
@@ -1807,19 +1804,19 @@
             // 
             // NoteTab
             // 
-            this.NoteTab.Controls.Add(this.NoteMemo);
+            this.NoteTab.Controls.Add(this.OperationNoteText);
             this.NoteTab.Name = "NoteTab";
             this.NoteTab.Size = new System.Drawing.Size(860, 569);
-            this.NoteTab.Text = "Qeyd bölməsi";
+            this.NoteTab.Text = "Qeydlər";
             // 
-            // NoteMemo
+            // OperationNoteText
             // 
-            this.NoteMemo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.NoteMemo.Location = new System.Drawing.Point(0, 0);
-            this.NoteMemo.MenuManager = this.ProductBarManager;
-            this.NoteMemo.Name = "NoteMemo";
-            this.NoteMemo.Size = new System.Drawing.Size(860, 569);
-            this.NoteMemo.TabIndex = 0;
+            this.OperationNoteText.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.OperationNoteText.Location = new System.Drawing.Point(0, 0);
+            this.OperationNoteText.MenuManager = this.ProductBarManager;
+            this.OperationNoteText.Name = "OperationNoteText";
+            this.OperationNoteText.Size = new System.Drawing.Size(860, 569);
+            this.OperationNoteText.TabIndex = 0;
             // 
             // OperationTab
             // 
@@ -1828,6 +1825,101 @@
             this.OperationTab.Name = "OperationTab";
             this.OperationTab.Size = new System.Drawing.Size(860, 569);
             this.OperationTab.Text = "Əməliyyatlar";
+            // 
+            // OperationsGridControl
+            // 
+            this.OperationsGridControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.OperationsGridControl.Location = new System.Drawing.Point(0, 29);
+            this.OperationsGridControl.MainView = this.OperationsGridView;
+            this.OperationsGridControl.MenuManager = this.ProductBarManager;
+            this.OperationsGridControl.Name = "OperationsGridControl";
+            this.OperationsGridControl.Size = new System.Drawing.Size(860, 540);
+            this.OperationsGridControl.TabIndex = 2;
+            this.OperationsGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.OperationsGridView});
+            // 
+            // OperationsGridView
+            // 
+            this.OperationsGridView.Appearance.FooterPanel.FontStyleDelta = System.Drawing.FontStyle.Bold;
+            this.OperationsGridView.Appearance.FooterPanel.Options.UseFont = true;
+            this.OperationsGridView.Appearance.FooterPanel.Options.UseTextOptions = true;
+            this.OperationsGridView.Appearance.FooterPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.OperationsGridView.Appearance.FooterPanel.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.OperationsGridView.Appearance.HeaderPanel.Options.UseTextOptions = true;
+            this.OperationsGridView.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.OperationsGridView.Appearance.HeaderPanel.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.OperationsGridView.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.Operation_SS,
+            this.Operation_Name,
+            this.Operation_UserName,
+            this.Operation_Date});
+            this.OperationsGridView.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFullFocus;
+            this.OperationsGridView.GridControl = this.OperationsGridControl;
+            this.OperationsGridView.Name = "OperationsGridView";
+            this.OperationsGridView.OptionsBehavior.AutoExpandAllGroups = true;
+            this.OperationsGridView.OptionsBehavior.AutoSelectAllInEditor = false;
+            this.OperationsGridView.OptionsBehavior.Editable = false;
+            this.OperationsGridView.OptionsFilter.UseNewCustomFilterDialog = true;
+            this.OperationsGridView.OptionsFind.FindDelay = 100;
+            this.OperationsGridView.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.OperationsGridView.OptionsView.EnableAppearanceEvenRow = true;
+            this.OperationsGridView.OptionsView.ShowFooter = true;
+            this.OperationsGridView.OptionsView.ShowGroupPanel = false;
+            this.OperationsGridView.OptionsView.ShowIndicator = false;
+            this.OperationsGridView.PaintStyleName = "Skin";
+            this.OperationsGridView.ScrollStyle = DevExpress.XtraGrid.Views.Grid.ScrollStyleFlags.LiveVertScroll;
+            this.OperationsGridView.CustomUnboundColumnData += new DevExpress.XtraGrid.Views.Base.CustomColumnDataEventHandler(this.OperationsGridView_CustomUnboundColumnData);
+            // 
+            // Operation_SS
+            // 
+            this.Operation_SS.AppearanceCell.Options.UseTextOptions = true;
+            this.Operation_SS.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.Operation_SS.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.Operation_SS.AppearanceHeader.Options.UseTextOptions = true;
+            this.Operation_SS.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.Operation_SS.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.Operation_SS.Caption = "S/s";
+            this.Operation_SS.FieldName = "Operation_SS";
+            this.Operation_SS.Name = "Operation_SS";
+            this.Operation_SS.OptionsColumn.FixedWidth = true;
+            this.Operation_SS.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Count, "Operation_SS", "{0}")});
+            this.Operation_SS.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
+            this.Operation_SS.Visible = true;
+            this.Operation_SS.VisibleIndex = 0;
+            this.Operation_SS.Width = 50;
+            // 
+            // Operation_Name
+            // 
+            this.Operation_Name.Caption = "Müraciətin vəziyyəti";
+            this.Operation_Name.FieldName = "OPERATION_NAME";
+            this.Operation_Name.Name = "Operation_Name";
+            this.Operation_Name.OptionsColumn.FixedWidth = true;
+            this.Operation_Name.Visible = true;
+            this.Operation_Name.VisibleIndex = 1;
+            this.Operation_Name.Width = 150;
+            // 
+            // Operation_UserName
+            // 
+            this.Operation_UserName.Caption = "İstifadəçi adı";
+            this.Operation_UserName.FieldName = "USER_NAME";
+            this.Operation_UserName.Name = "Operation_UserName";
+            this.Operation_UserName.OptionsColumn.FixedWidth = true;
+            this.Operation_UserName.Visible = true;
+            this.Operation_UserName.VisibleIndex = 2;
+            this.Operation_UserName.Width = 150;
+            // 
+            // Operation_Date
+            // 
+            this.Operation_Date.Caption = "Tarix";
+            this.Operation_Date.DisplayFormat.FormatString = "dd.MM.yyyy";
+            this.Operation_Date.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.Operation_Date.FieldName = "INSERT_DATE";
+            this.Operation_Date.Name = "Operation_Date";
+            this.Operation_Date.OptionsColumn.FixedWidth = true;
+            this.Operation_Date.Visible = true;
+            this.Operation_Date.VisibleIndex = 3;
+            this.Operation_Date.Width = 150;
             // 
             // PanelOption
             // 
@@ -2539,105 +2631,6 @@
             this.RelativePopupMenu.Manager = this.RelativeBarManager;
             this.RelativePopupMenu.Name = "RelativePopupMenu";
             // 
-            // OperationStandaloneBarDockControl
-            // 
-            this.OperationStandaloneBarDockControl.CausesValidation = false;
-            this.OperationStandaloneBarDockControl.Dock = System.Windows.Forms.DockStyle.Top;
-            this.OperationStandaloneBarDockControl.Location = new System.Drawing.Point(0, 0);
-            this.OperationStandaloneBarDockControl.Manager = this.ProductBarManager;
-            this.OperationStandaloneBarDockControl.Name = "OperationStandaloneBarDockControl";
-            this.OperationStandaloneBarDockControl.Size = new System.Drawing.Size(860, 29);
-            this.OperationStandaloneBarDockControl.Text = "standaloneBarDockControl1";
-            // 
-            // OperationsGridControl
-            // 
-            this.OperationsGridControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.OperationsGridControl.Location = new System.Drawing.Point(0, 29);
-            this.OperationsGridControl.MainView = this.OperationsGridView;
-            this.OperationsGridControl.MenuManager = this.ProductBarManager;
-            this.OperationsGridControl.Name = "OperationsGridControl";
-            this.OperationsGridControl.Size = new System.Drawing.Size(860, 540);
-            this.OperationsGridControl.TabIndex = 2;
-            this.OperationsGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.OperationsGridView});
-            // 
-            // OperationsGridView
-            // 
-            this.OperationsGridView.Appearance.FooterPanel.FontStyleDelta = System.Drawing.FontStyle.Bold;
-            this.OperationsGridView.Appearance.FooterPanel.Options.UseFont = true;
-            this.OperationsGridView.Appearance.FooterPanel.Options.UseTextOptions = true;
-            this.OperationsGridView.Appearance.FooterPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.OperationsGridView.Appearance.FooterPanel.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.OperationsGridView.Appearance.HeaderPanel.Options.UseTextOptions = true;
-            this.OperationsGridView.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.OperationsGridView.Appearance.HeaderPanel.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.OperationsGridView.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.Operation_SS,
-            this.Operation_Name,
-            this.Operation_UserName,
-            this.Operation_Date});
-            this.OperationsGridView.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFullFocus;
-            this.OperationsGridView.GridControl = this.OperationsGridControl;
-            this.OperationsGridView.Name = "OperationsGridView";
-            this.OperationsGridView.OptionsBehavior.AutoExpandAllGroups = true;
-            this.OperationsGridView.OptionsBehavior.AutoSelectAllInEditor = false;
-            this.OperationsGridView.OptionsBehavior.Editable = false;
-            this.OperationsGridView.OptionsFilter.UseNewCustomFilterDialog = true;
-            this.OperationsGridView.OptionsFind.FindDelay = 100;
-            this.OperationsGridView.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.OperationsGridView.OptionsView.EnableAppearanceEvenRow = true;
-            this.OperationsGridView.OptionsView.ShowFooter = true;
-            this.OperationsGridView.OptionsView.ShowGroupPanel = false;
-            this.OperationsGridView.OptionsView.ShowIndicator = false;
-            this.OperationsGridView.PaintStyleName = "Skin";
-            this.OperationsGridView.ScrollStyle = DevExpress.XtraGrid.Views.Grid.ScrollStyleFlags.LiveVertScroll;
-            // 
-            // Operation_SS
-            // 
-            this.Operation_SS.AppearanceHeader.Options.UseTextOptions = true;
-            this.Operation_SS.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.Operation_SS.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.Operation_SS.Caption = "S/s";
-            this.Operation_SS.FieldName = "Operation_SS";
-            this.Operation_SS.Name = "Operation_SS";
-            this.Operation_SS.OptionsColumn.FixedWidth = true;
-            this.Operation_SS.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Count, "Operation_SS", "{0}")});
-            this.Operation_SS.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
-            this.Operation_SS.Visible = true;
-            this.Operation_SS.VisibleIndex = 0;
-            this.Operation_SS.Width = 50;
-            // 
-            // Operation_Name
-            // 
-            this.Operation_Name.Caption = "Müraciətin vəziyyəti";
-            this.Operation_Name.FieldName = "OPERATION_NAME";
-            this.Operation_Name.Name = "Operation_Name";
-            this.Operation_Name.OptionsColumn.FixedWidth = true;
-            this.Operation_Name.Visible = true;
-            this.Operation_Name.VisibleIndex = 1;
-            this.Operation_Name.Width = 150;
-            // 
-            // Operation_UserName
-            // 
-            this.Operation_UserName.Caption = "İstifadəçi adı";
-            this.Operation_UserName.FieldName = "USER_NAME";
-            this.Operation_UserName.Name = "Operation_UserName";
-            this.Operation_UserName.OptionsColumn.FixedWidth = true;
-            this.Operation_UserName.Visible = true;
-            this.Operation_UserName.VisibleIndex = 2;
-            this.Operation_UserName.Width = 150;
-            // 
-            // Operation_Date
-            // 
-            this.Operation_Date.Caption = "Tarix";
-            this.Operation_Date.FieldName = "INSERT_DATE";
-            this.Operation_Date.Name = "Operation_Date";
-            this.Operation_Date.OptionsColumn.FixedWidth = true;
-            this.Operation_Date.Visible = true;
-            this.Operation_Date.VisibleIndex = 3;
-            this.Operation_Date.Width = 150;
-            // 
             // OperationBarManager
             // 
             this.OperationBarManager.Bars.AddRange(new DevExpress.XtraBars.Bar[] {
@@ -2653,6 +2646,45 @@
             this.barButtonItem8});
             this.OperationBarManager.MainMenu = this.OperationBar;
             this.OperationBarManager.MaxItemId = 3;
+            // 
+            // OperationBar
+            // 
+            this.OperationBar.BarName = "Main menu";
+            this.OperationBar.DockCol = 0;
+            this.OperationBar.DockRow = 0;
+            this.OperationBar.DockStyle = DevExpress.XtraBars.BarDockStyle.Standalone;
+            this.OperationBar.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem4),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem7),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem8)});
+            this.OperationBar.OptionsBar.DrawBorder = false;
+            this.OperationBar.OptionsBar.DrawDragBorder = false;
+            this.OperationBar.OptionsBar.MultiLine = true;
+            this.OperationBar.OptionsBar.UseWholeRow = true;
+            this.OperationBar.StandaloneBarDockControl = this.OperationStandaloneBarDockControl;
+            this.OperationBar.Text = "Main menu";
+            // 
+            // barButtonItem4
+            // 
+            this.barButtonItem4.Caption = "Yenilə";
+            this.barButtonItem4.Id = 0;
+            this.barButtonItem4.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.ImageOptions.Image")));
+            this.barButtonItem4.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.ImageOptions.LargeImage")));
+            this.barButtonItem4.Name = "barButtonItem4";
+            // 
+            // barButtonItem7
+            // 
+            this.barButtonItem7.Caption = "Çap et";
+            this.barButtonItem7.Id = 1;
+            this.barButtonItem7.ImageOptions.Image = global::ELMS.Properties.Resources.print_16x16;
+            this.barButtonItem7.Name = "barButtonItem7";
+            // 
+            // barButtonItem8
+            // 
+            this.barButtonItem8.Caption = "İxrac et";
+            this.barButtonItem8.Id = 2;
+            this.barButtonItem8.ImageOptions.Image = global::ELMS.Properties.Resources.excel_16;
+            this.barButtonItem8.Name = "barButtonItem8";
             // 
             // barDockControl19
             // 
@@ -2686,31 +2718,6 @@
             this.barDockControl34.Manager = this.OperationBarManager;
             this.barDockControl34.Size = new System.Drawing.Size(0, 659);
             // 
-            // OperationBar
-            // 
-            this.OperationBar.BarName = "Main menu";
-            this.OperationBar.DockCol = 0;
-            this.OperationBar.DockRow = 0;
-            this.OperationBar.DockStyle = DevExpress.XtraBars.BarDockStyle.Standalone;
-            this.OperationBar.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem4),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem7),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem8)});
-            this.OperationBar.OptionsBar.DrawBorder = false;
-            this.OperationBar.OptionsBar.DrawDragBorder = false;
-            this.OperationBar.OptionsBar.MultiLine = true;
-            this.OperationBar.OptionsBar.UseWholeRow = true;
-            this.OperationBar.StandaloneBarDockControl = this.OperationStandaloneBarDockControl;
-            this.OperationBar.Text = "Main menu";
-            // 
-            // barButtonItem4
-            // 
-            this.barButtonItem4.Caption = "Yenilə";
-            this.barButtonItem4.Id = 0;
-            this.barButtonItem4.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.ImageOptions.Image")));
-            this.barButtonItem4.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.ImageOptions.LargeImage")));
-            this.barButtonItem4.Name = "barButtonItem4";
-            // 
             // OperationPopupMenu
             // 
             this.OperationPopupMenu.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
@@ -2719,18 +2726,6 @@
             new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem8)});
             this.OperationPopupMenu.Manager = this.OperationBarManager;
             this.OperationPopupMenu.Name = "OperationPopupMenu";
-            // 
-            // barButtonItem7
-            // 
-            this.barButtonItem7.Caption = "Çap et";
-            this.barButtonItem7.Id = 1;
-            this.barButtonItem7.Name = "barButtonItem7";
-            // 
-            // barButtonItem8
-            // 
-            this.barButtonItem8.Caption = "İxrac et";
-            this.barButtonItem8.Id = 2;
-            this.barButtonItem8.Name = "barButtonItem8";
             // 
             // FConfirmAddEdit
             // 
@@ -2773,7 +2768,6 @@
             this.OtherInfoTabControl.ResumeLayout(false);
             this.IDCardTab.ResumeLayout(false);
             this.IDCardTab.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.OperationNoteText.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ProductGridControl)).EndInit();
@@ -2821,15 +2815,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.DocumentGridControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DocumentGridView)).EndInit();
             this.NoteTab.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.NoteMemo.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.OperationNoteText.Properties)).EndInit();
             this.OperationTab.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.OperationsGridControl)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.OperationsGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PanelOption)).EndInit();
             this.PanelOption.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DocumentPopupMenu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.RelativeBarManager)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.RelativePopupMenu)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.OperationsGridControl)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.OperationsGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.OperationBarManager)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.OperationPopupMenu)).EndInit();
             this.ResumeLayout(false);
@@ -3035,18 +3029,16 @@
         private DevExpress.XtraEditors.GroupControl groupControl1;
         private DevExpress.XtraGrid.GridControl ProductGridControl;
         private DevExpress.XtraGrid.Views.Grid.GridView ProductGridView;
-        private DevExpress.XtraGrid.Columns.GridColumn CustomerProduct_SS;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn31;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn32;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn33;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn34;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn35;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn36;
+        private DevExpress.XtraGrid.Columns.GridColumn Product_SS;
+        private DevExpress.XtraGrid.Columns.GridColumn Product_Name;
+        private DevExpress.XtraGrid.Columns.GridColumn Product_Count;
+        private DevExpress.XtraGrid.Columns.GridColumn Product_Price;
+        private DevExpress.XtraGrid.Columns.GridColumn Product_TotalPrice;
+        private DevExpress.XtraGrid.Columns.GridColumn Product_Note;
+        private DevExpress.XtraGrid.Columns.GridColumn Product_ID;
         private ManiXButton.XButton BOK;
-        private DevExpress.XtraEditors.TextEdit OperationNoteText;
-        private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraTab.XtraTabPage NoteTab;
-        private DevExpress.XtraEditors.MemoEdit NoteMemo;
+        private DevExpress.XtraEditors.MemoEdit OperationNoteText;
         private DevExpress.XtraTab.XtraTabPage OperationTab;
         private DevExpress.XtraBars.StandaloneBarDockControl OperationStandaloneBarDockControl;
         private DevExpress.XtraGrid.GridControl OperationsGridControl;

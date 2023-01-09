@@ -16,6 +16,7 @@ namespace ELMS.Class
         public static int V_BranchID = 1;
         public static int V_UserGroupID = 1;
         public static string V_BranchName = null;
+        //public static string V_ExecutingFolder= "C:\\Users\\user\\Documents\\Github\\ELMS\\ELMS\\bin\\Debug\\TEMP\\";
         public static string V_ExecutingFolder;
         public static string V_WindowsUserName;
         public static string V_UserName = "SuperAdmin";
