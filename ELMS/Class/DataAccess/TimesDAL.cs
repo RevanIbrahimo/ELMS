@@ -15,7 +15,7 @@ namespace ELMS.Class.DataAccess
         public static DataSet SelectTimesByID(int? typeID)
         {
             string sql = null;
-            if (typeID == null)
+            if (!typeID.HasValue)
                 sql = $@"SELECT C.ID,
                                  C.PERIOD,
                                  C.PERCENT,
@@ -54,7 +54,7 @@ namespace ELMS.Class.DataAccess
         public static DataSet SelectTimes(int? timesID)
         {
             string sql = null;
-            if (timesID == null)
+            if (!timesID.HasValue)
                 sql = $@"SELECT C.ID,
                                  C.PERIOD,
                                  C.PERCENT
@@ -103,9 +103,9 @@ namespace ELMS.Class.DataAccess
                         transaction = connection.BeginTransaction();
                         command.Transaction = transaction;
                         command.CommandText = $@"INSERT INTO ELMS_USER.TIMES(PERIOD,
-                                                                                    PERCENT,
-                                                                                    NOTE,
-                                                                                    INSERT_USER)
+                                                                             PERCENT,
+                                                                             NOTE,
+                                                                             INSERT_USER)
                                                     VALUES(:inPERIOD,
                                                            :inPERCENT,
                                                            :inNOTE,

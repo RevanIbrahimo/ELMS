@@ -318,6 +318,7 @@
             this.TotalPriceValue.Properties.ReadOnly = true;
             this.TotalPriceValue.Size = new System.Drawing.Size(113, 20);
             this.TotalPriceValue.TabIndex = 196;
+            this.TotalPriceValue.TabStop = false;
             // 
             // CountValue
             // 

@@ -66,6 +66,7 @@
             this.Customer_UsedUserID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.RepositoryItemPictureEdit = new DevExpress.XtraEditors.Repository.RepositoryItemPictureEdit();
             this.CustomerPopupMenu = new DevExpress.XtraBars.PopupMenu(this.components);
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.BarManager)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CustomerGridControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CustomerGridView)).BeginInit();
@@ -98,8 +99,9 @@
             this.MhtBarButton,
             this.ScheduleBarButton,
             this.HistroryBarButton,
-            this.RtfBarButton});
-            this.BarManager.MaxItemId = 15;
+            this.RtfBarButton,
+            this.barButtonItem1});
+            this.BarManager.MaxItemId = 16;
             this.BarManager.StatusBar = this.bar3;
             // 
             // ToolBar
@@ -113,6 +115,7 @@
             new DevExpress.XtraBars.LinkPersistInfo(this.EditBarButton),
             new DevExpress.XtraBars.LinkPersistInfo(this.DeleteBarButton),
             new DevExpress.XtraBars.LinkPersistInfo(this.RefreshBarButton),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem1),
             new DevExpress.XtraBars.LinkPersistInfo(this.PrintBarButton, true),
             new DevExpress.XtraBars.LinkPersistInfo(this.ExportBarButton)});
             this.ToolBar.OptionsBar.DrawBorder = false;
@@ -504,6 +507,14 @@
             this.CustomerPopupMenu.Manager = this.BarManager;
             this.CustomerPopupMenu.Name = "CustomerPopupMenu";
             // 
+            // barButtonItem1
+            // 
+            this.barButtonItem1.Caption = "Yeni müraciət";
+            this.barButtonItem1.Id = 15;
+            this.barButtonItem1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
+            this.barButtonItem1.Name = "barButtonItem1";
+            this.barButtonItem1.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            // 
             // CustomerUserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -566,5 +577,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn Customer_ID;
         private DevExpress.XtraGrid.Columns.GridColumn Customer_RegisteredAddress;
         private DevExpress.XtraGrid.Columns.GridColumn Customer_Country;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
     }
 }

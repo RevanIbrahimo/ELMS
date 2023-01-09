@@ -74,19 +74,16 @@ namespace ELMS.Forms.Order
             if (!OrderID.HasValue)
                 OrderID = 0;
 
-            ProductGridControl.DataSource = ProductCardDAL.SelectViewData(OrderID.Value);
+            DataTable dt = ProductCardDAL.SelectViewData(OrderID.Value);
+            ProductGridControl.DataSource = dt;
 
             EditProductBarButton.Enabled = DeleteProductBarButton.Enabled = ProductGridView.RowCount > 0;
+            if (dt.Rows.Count > 0)
+                calcTotalPrice = Convert.ToDecimal(dt.Compute("SUM(TOTAL)", string.Empty));
+            else
+                calcTotalPrice = 0;
 
             OrderAmountValue.EditValue = calcTotalPrice;
-
-
-            //DataTable dt = ProductCardDAL.SelectTotal(null);
-
-            //if (dt.Rows.Count > 0)
-            //{
-            //    OrderAmountValue.EditValue = Convert.ToDecimal(dt.Rows[0]["ORDER_AMOUNT"].ToString());
-            //}
         }
 
         private void LoadFProductAddEdit(TransactionTypeEnum transactionType, int? id)
@@ -269,9 +266,9 @@ namespace ELMS.Forms.Order
             //if (contract_click && File.Exists(filePath))
             //{
 
-                file_name = Path.GetFileName(filePath);
-                code = DocumentCode(1);
-                sql = $@"INSERT INTO ELMS_USER.CONTRACT_DOCUMENTS(CONTRACT_ID,
+            file_name = Path.GetFileName(filePath);
+            code = DocumentCode(1);
+            sql = $@"INSERT INTO ELMS_USER.CONTRACT_DOCUMENTS(CONTRACT_ID,
                                                                  CONTRACT_DOCUMENT_TYPE_ID,
                                                                  DOCUMENT_FILE,
                                                                  CODE,
@@ -282,8 +279,8 @@ namespace ELMS.Forms.Order
                                                 '{code}',
                                                 '{file_name}')";
 
-                GlobalFunctions.ExecuteQueryWithBlob(sql, filePath,
-                                                        "Müqavilən hazır çap faylı bazaya daxil edilmədi.");
+            GlobalFunctions.ExecuteQueryWithBlob(sql, filePath,
+                                                    "Müqavilən hazır çap faylı bazaya daxil edilmədi.");
 
             //}
             //#endregion
@@ -382,7 +379,7 @@ namespace ELMS.Forms.Order
             return b;
         }
 
-       
+
 
         private void FinCodeSearch_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
@@ -434,27 +431,7 @@ namespace ELMS.Forms.Order
 
         private void ProductGridView_CustomSummaryCalculate(object sender, DevExpress.Data.CustomSummaryEventArgs e)
         {
-            GridView currentView = sender as GridView;
-            if (currentView.RowCount == 0)
-                return;
 
-            if (e.SummaryProcess == CustomSummaryProcess.Start)
-            {                
-                if (((GridSummaryItem)e.Item).FieldName.CompareTo("Product_TotalPrice") == 0) //qaliq
-                    calcTotalPrice = 0;
-            }
-
-            if (e.SummaryProcess == CustomSummaryProcess.Calculate)
-            {
-                if (((GridSummaryItem)e.Item).FieldName.CompareTo("Product_TotalPrice") > 0)
-                    calcTotalPrice += Convert.ToDecimal(e.FieldValue);
-            }
-
-            if (e.SummaryProcess == CustomSummaryProcess.Finalize)
-            {
-                if (((GridSummaryItem)e.Item).FieldName.CompareTo("Product_TotalPrice") == 0) //verilen              
-                    e.TotalValue = calcTotalPrice;
-            }
         }
 
         private void BranchLookUp_EditValueChanged(object sender, EventArgs e)
@@ -489,6 +466,11 @@ namespace ELMS.Forms.Order
 
         }
 
+        private void ProductGridView_CustomDrawFooterCell(object sender, FooterCellCustomDrawEventArgs e)
+        {
+            GlobalProcedures.GridCustomDrawFooterCell(Product_TotalPrice, "Far", e);
+        }
+
         private void BCancel_Click(object sender, EventArgs e)
         {
             OrderID = 0;
@@ -507,7 +489,7 @@ namespace ELMS.Forms.Order
             }
             else
             {
-             DataTable dt = CustomerDAL.SelectCustomerData(pinCode);
+                DataTable dt = CustomerDAL.SelectCustomerData(pinCode);
                 if (FinCodeSearch.Text.Length != 7)
                 {
                     NameText.Text =
@@ -541,7 +523,7 @@ namespace ELMS.Forms.Order
 
                     LoadImage();
                 }
-           
+
             }
         }
 
@@ -624,7 +606,7 @@ namespace ELMS.Forms.Order
                 qep = " tam yüzdə " + GlobalFunctions.IntegerToWritten(mod);
 
             fifd_with_word = "(" + GlobalFunctions.IntegerToWritten(div) + qep + ")";
-            
+
             try
             {
                 GlobalProcedures.FindAndReplace(wordApp, "[$contractcode]", RegisterCodeText.Text);
@@ -709,7 +691,7 @@ namespace ELMS.Forms.Order
         {
             switch (index)
             {
-               
+
                 case 8:
                     GlobalProcedures.FillLookUpEdit(TimeLookUp, TimesDAL.SelectTimesByID(null).Tables[0]);
                     break;
@@ -718,7 +700,7 @@ namespace ELMS.Forms.Order
                     break;
             }
         }
-        
+
 
 
 
@@ -727,19 +709,19 @@ namespace ELMS.Forms.Order
         /// /////////
         /// /////////
         /// /////////
-        
+
         private void SourceLookUp_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
             if (e.Button.Index == 1)
                 LoadDictionaries(TransactionTypeEnum.Update, 9);
         }
-        
+
         private void TimeLookUp_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
             if (e.Button.Index == 1)
                 LoadDictionaries(TransactionTypeEnum.Update, 8);
         }
-        
+
         private void TimeLookUp_EditValueChanged(object sender, EventArgs e)
         {
             timeID = GlobalFunctions.GetLookUpID(sender);
@@ -793,7 +775,7 @@ namespace ELMS.Forms.Order
             {
                 this.Text = "Müraciətin əlavə edilməsi";
                 OrderDate.DateTime = DateTime.Today;
-              
+
                 OrderID = GlobalFunctions.GetOracleSequenceValue("ORDER_TAB_SEQUENCE");
                 RegisterCodeText.EditValue = OrderID;
                 ContractID = Convert.ToInt32(RegisterCodeText.Text.Trim());

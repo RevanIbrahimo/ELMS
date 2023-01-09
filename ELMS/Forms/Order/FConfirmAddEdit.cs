@@ -110,13 +110,19 @@ namespace ELMS.Forms.Order
                     ORDER_ID = OrderID.Value,
                     ID = OperationID.Value,
                     NOTE = OperationNoteText.Text.Trim(),
-                    OPERATION_ID = (int)OperationTypeEnum.Tesdiq_edildi
+                    OPERATION_ID = (int)OperationTypeEnum.Tesdiq_edildi,
+                    INSERT_USER = GlobalVariables.V_UserID
                 };
 
-                OperationDAL.UpdateOrderOperation(order);
+                OperationDAL.InsertOrderOperation(order);
             }
-
+            GenerateDocument();
             this.Close();
+
+        }
+
+        private void GenerateDocument()
+        {
 
         }
 

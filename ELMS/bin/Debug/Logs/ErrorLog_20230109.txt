@@ -40,3 +40,21 @@ Log Entry : 4:07:49 PM Monday, January 9, 2023
                                                 '01',
                                                 '1_Müqavilə.docx')
 -------------------------------------------------
+
+Log Entry : 7:41:31 PM Monday, January 9, 2023
+  
+   UserName =  SuperAdmin
+   FormName =  TimesDAL
+   ProcedureName =  SelectTimesByID
+  
+   ShowMessage: Müddətlər açılmadı.
+   Exception Message: Specified cast is not valid.
+   SQL Text      :  SELECT C.ID,
+                                 C.PERIOD,
+                                 C.PERCENT,
+                                 C.NOTE,
+                                 C.USED_USER_ID,
+                                 C.ORDER_ID
+                            FROM ELMS_USER.TIMES C
+                            ORDER BY C.ID
+-------------------------------------------------

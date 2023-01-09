@@ -97,6 +97,7 @@
             this.Product_Note = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Product_ID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.PanelOption = new DevExpress.XtraEditors.PanelControl();
+            this.BContract = new DevExpress.XtraEditors.SimpleButton();
             this.BCancel = new ManiXButton.XButton();
             this.BOK = new ManiXButton.XButton();
             this.labelControl12 = new DevExpress.XtraEditors.LabelControl();
@@ -137,7 +138,6 @@
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
             this.TotalOrderAmountValue = new DevExpress.XtraEditors.CalcEdit();
             this.bar4 = new DevExpress.XtraBars.Bar();
-            this.BContract = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PersonalDetailsGroupBox)).BeginInit();
             this.PersonalDetailsGroupBox.SuspendLayout();
@@ -196,11 +196,11 @@
             // 
             // RegisterAddressText
             // 
-            this.RegisterAddressText.Location = new System.Drawing.Point(106, 116);
+            this.RegisterAddressText.Location = new System.Drawing.Point(135, 116);
             this.RegisterAddressText.Margin = new System.Windows.Forms.Padding(4);
             this.RegisterAddressText.Name = "RegisterAddressText";
             this.RegisterAddressText.Properties.ReadOnly = true;
-            this.RegisterAddressText.Size = new System.Drawing.Size(569, 20);
+            this.RegisterAddressText.Size = new System.Drawing.Size(540, 20);
             this.RegisterAddressText.TabIndex = 32;
             // 
             // labelControl6
@@ -233,7 +233,7 @@
             // FinCodeSearch
             // 
             this.FinCodeSearch.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.FinCodeSearch.Location = new System.Drawing.Point(106, 32);
+            this.FinCodeSearch.Location = new System.Drawing.Point(135, 32);
             this.FinCodeSearch.Margin = new System.Windows.Forms.Padding(4);
             this.FinCodeSearch.Name = "FinCodeSearch";
             this.FinCodeSearch.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -265,11 +265,11 @@
             // 
             // ActualAddressText
             // 
-            this.ActualAddressText.Location = new System.Drawing.Point(106, 88);
+            this.ActualAddressText.Location = new System.Drawing.Point(135, 88);
             this.ActualAddressText.Margin = new System.Windows.Forms.Padding(4);
             this.ActualAddressText.Name = "ActualAddressText";
             this.ActualAddressText.Properties.ReadOnly = true;
-            this.ActualAddressText.Size = new System.Drawing.Size(569, 20);
+            this.ActualAddressText.Size = new System.Drawing.Size(540, 20);
             this.ActualAddressText.TabIndex = 25;
             // 
             // Address2Label
@@ -314,11 +314,11 @@
             // 
             // PhoneAllText
             // 
-            this.PhoneAllText.Location = new System.Drawing.Point(106, 143);
+            this.PhoneAllText.Location = new System.Drawing.Point(135, 143);
             this.PhoneAllText.Margin = new System.Windows.Forms.Padding(4);
             this.PhoneAllText.Name = "PhoneAllText";
             this.PhoneAllText.Properties.ReadOnly = true;
-            this.PhoneAllText.Size = new System.Drawing.Size(569, 20);
+            this.PhoneAllText.Size = new System.Drawing.Size(540, 20);
             this.PhoneAllText.TabIndex = 14;
             // 
             // labelControl5
@@ -332,13 +332,13 @@
             // 
             // NameText
             // 
-            this.NameText.Location = new System.Drawing.Point(106, 60);
+            this.NameText.Location = new System.Drawing.Point(135, 60);
             this.NameText.Margin = new System.Windows.Forms.Padding(4);
             this.NameText.Name = "NameText";
             this.NameText.Properties.NullValuePrompt = "Soyadı, adı və atasının adını daxil edin";
             this.NameText.Properties.NullValuePromptShowForEmptyValue = true;
             this.NameText.Properties.ReadOnly = true;
-            this.NameText.Size = new System.Drawing.Size(569, 20);
+            this.NameText.Size = new System.Drawing.Size(540, 20);
             toolTipTitleItem5.Text = "<color=255,0,0>Müştərinin tam adı</color>";
             toolTipItem3.LeftIndent = 6;
             toolTipItem3.Text = "Bu xanaya dırnaq işarəsi daxil etmək olmaz. Əgər daxil etsəz, müştərinin məlumatl" +
@@ -620,8 +620,8 @@
             this.ProductGridView.OptionsView.ShowIndicator = false;
             this.ProductGridView.PaintStyleName = "Skin";
             this.ProductGridView.ScrollStyle = DevExpress.XtraGrid.Views.Grid.ScrollStyleFlags.LiveVertScroll;
+            this.ProductGridView.CustomDrawFooterCell += new DevExpress.XtraGrid.Views.Grid.FooterCellCustomDrawEventHandler(this.ProductGridView_CustomDrawFooterCell);
             this.ProductGridView.RowCellStyle += new DevExpress.XtraGrid.Views.Grid.RowCellStyleEventHandler(this.ProductGridView_RowCellStyle);
-            this.ProductGridView.CustomSummaryCalculate += new DevExpress.Data.CustomSummaryEventHandler(this.ProductGridView_CustomSummaryCalculate);
             this.ProductGridView.FocusedRowObjectChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowObjectChangedEventHandler(this.ProductGridView_FocusedRowObjectChanged);
             this.ProductGridView.CustomUnboundColumnData += new DevExpress.XtraGrid.Views.Base.CustomColumnDataEventHandler(this.ProductGridView_CustomUnboundColumnData);
             this.ProductGridView.MouseUp += new System.Windows.Forms.MouseEventHandler(this.ProductGridView_MouseUp);
@@ -682,13 +682,11 @@
             this.Product_TotalPrice.Caption = "Yekun";
             this.Product_TotalPrice.DisplayFormat.FormatString = "n2";
             this.Product_TotalPrice.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.Product_TotalPrice.FieldName = "Product_TotalPrice";
+            this.Product_TotalPrice.FieldName = "TOTAL";
             this.Product_TotalPrice.Name = "Product_TotalPrice";
             this.Product_TotalPrice.OptionsColumn.FixedWidth = true;
             this.Product_TotalPrice.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Custom, "TOTAL", "{0:n2}")});
-            this.Product_TotalPrice.UnboundExpression = "[PRICE] * [PRODUCT_COUNT]";
-            this.Product_TotalPrice.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "TOTAL", "{0:n2}")});
             this.Product_TotalPrice.Visible = true;
             this.Product_TotalPrice.VisibleIndex = 5;
             this.Product_TotalPrice.Width = 100;
@@ -718,6 +716,15 @@
             this.PanelOption.Name = "PanelOption";
             this.PanelOption.Size = new System.Drawing.Size(885, 50);
             this.PanelOption.TabIndex = 3;
+            // 
+            // BContract
+            // 
+            this.BContract.Location = new System.Drawing.Point(632, 13);
+            this.BContract.Name = "BContract";
+            this.BContract.Size = new System.Drawing.Size(75, 25);
+            this.BContract.TabIndex = 3;
+            this.BContract.Text = "Müqavilə";
+            this.BContract.Click += new System.EventHandler(this.BContract_Click);
             // 
             // BCancel
             // 
@@ -1195,15 +1202,6 @@
             this.bar4.OptionsBar.MultiLine = true;
             this.bar4.OptionsBar.UseWholeRow = true;
             this.bar4.Text = "Main menu";
-            // 
-            // BContract
-            // 
-            this.BContract.Location = new System.Drawing.Point(632, 13);
-            this.BContract.Name = "BContract";
-            this.BContract.Size = new System.Drawing.Size(75, 25);
-            this.BContract.TabIndex = 3;
-            this.BContract.Text = "Müqavilə";
-            this.BContract.Click += new System.EventHandler(this.BContract_Click);
             // 
             // FOrderAddEdit
             // 

@@ -96,11 +96,14 @@ namespace ELMS.Class.DataAccess
             Int32 id = 0;
             OracleCommand command = tran.Connection.CreateCommand();
             command.CommandText = $@"INSERT INTO ELMS_USER.ORDER_OPERATION(ORDER_ID,                               
-                                                            OPERATION_TYPE_ID)
+                                                                           OPERATION_TYPE_ID,
+                                                                           INSERT_USER)
                                                     VALUES(:inORDER_ID,
-                                                           :inOPERATION_TYPE_ID) RETURNING ID INTO :outID";
+                                                           :inOPERATION_TYPE_ID,
+                                                           :inINSERTUSER) RETURNING ID INTO :outID";
             command.Parameters.Add(new OracleParameter("inORDER_ID", order.ORDER_ID));
             command.Parameters.Add(new OracleParameter("inOPERATION_TYPE_ID", order.OPERATION_ID));
+            command.Parameters.Add(new OracleParameter("inINSERTUSER", order.INSERT_USER));
             command.Parameters.Add(new OracleParameter("outID", OracleDbType.Int32, ParameterDirection.Output));
 
             if (tran != null)
@@ -113,8 +116,6 @@ namespace ELMS.Class.DataAccess
 
             return id;
         }
-
-
 
         public static void UpdateOrderOperation(OrderOperation order)
         {

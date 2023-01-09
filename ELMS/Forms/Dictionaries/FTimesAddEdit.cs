@@ -69,7 +69,8 @@ namespace ELMS.Forms.Dictionaries
 
         private void ComponentEnabled(bool status)
         {
-            NameText.Enabled =
+            PeriodValue.Enabled =
+                PercentValue.Enabled =
                 NoteText.Enabled =
                 BOK.Visible = !status;
         }
@@ -80,8 +81,8 @@ namespace ELMS.Forms.Dictionaries
             if (lstTimes.Count > 0)
             {
                 var times = lstTimes.LastOrDefault();
-                NameText.EditValue = times.PERIOD;
-                PercentText.EditValue = times.PERCENT;
+                PeriodValue.EditValue = times.PERIOD;
+                PercentValue.EditValue = times.PERCENT;
                 NoteText.EditValue = times.NOTE;
                 UsedUserID = times.USED_USER_ID;
                 orderID = times.ORDER_ID;
@@ -92,17 +93,27 @@ namespace ELMS.Forms.Dictionaries
         {
             bool b = false;
 
-            if (NameText.Text.Length == 0)
+            if (PeriodValue.Value == 0)
             {
-                NameText.BackColor = Color.Red;
-                GlobalProcedures.ShowErrorMessage("Müddətin periodu daxil edilməyib.");
-                NameText.Focus();
-                NameText.BackColor = GlobalFunctions.ElementColor();
+                PeriodValue.BackColor = Color.Red;
+                GlobalProcedures.ShowErrorMessage("Müddət daxil edilməyib.");
+                PeriodValue.Focus();
+                PeriodValue.BackColor = GlobalFunctions.ElementColor();
                 return false;
             }
             else
                 b = true;
-           
+
+            if (PercentValue.Value == 0)
+            {
+                PercentValue.BackColor = Color.Red;
+                GlobalProcedures.ShowErrorMessage("Faiz daxil edilməyib.");
+                PercentValue.Focus();
+                PercentValue.BackColor = GlobalFunctions.ElementColor();
+                return false;
+            }
+            else
+                b = true;
 
             return b;            
         }
@@ -111,21 +122,21 @@ namespace ELMS.Forms.Dictionaries
         {
             Times times = new Times
             {
-                PERIOD = NameText.Text.Trim(),
-                PERCENT = PercentText.Text.Trim(),
+                PERIOD = (int)PeriodValue.Value,
+                PERCENT = PercentValue.Value,
                 NOTE = NoteText.Text.Trim()
             };
             TimesDAL.InsertTimes(times);            
         }
-
+        
         private void UpdateDetail()
         {
             isClickBOK = true;
 
             Times times = new Times
             {
-                PERIOD = NameText.Text.Trim(),
-                PERCENT = PercentText.Text.Trim(),
+                PERIOD = (int)PeriodValue.Value,
+                PERCENT = PercentValue.Value,
                 NOTE = NoteText.Text.Trim(),
                 ID = TimesID.Value,
                 ORDER_ID = orderID,

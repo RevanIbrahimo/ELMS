@@ -2491,10 +2491,10 @@
             this.TimesGridView.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.Times_SS,
             this.Times_Period,
+            this.Times_Percent,
             this.Times_ID,
             this.Times_Note,
-            this.Times_UsedUserId,
-            this.Times_Percent});
+            this.Times_UsedUserId});
             this.TimesGridView.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFullFocus;
             this.TimesGridView.GridControl = this.TimesGridControl;
             this.TimesGridView.Name = "TimesGridView";
@@ -2536,7 +2536,12 @@
             // 
             // Times_Period
             // 
+            this.Times_Period.AppearanceCell.Options.UseTextOptions = true;
+            this.Times_Period.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.Times_Period.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Times_Period.Caption = "Müddət";
+            this.Times_Period.DisplayFormat.FormatString = "{0:n0} ay";
+            this.Times_Period.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.Times_Period.FieldName = "PERIOD";
             this.Times_Period.Name = "Times_Period";
             this.Times_Period.Visible = true;
@@ -2564,7 +2569,12 @@
             // 
             // Times_Percent
             // 
+            this.Times_Percent.AppearanceCell.Options.UseTextOptions = true;
+            this.Times_Percent.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.Times_Percent.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Times_Percent.Caption = "Faiz";
+            this.Times_Percent.DisplayFormat.FormatString = "{0:n2} %";
+            this.Times_Percent.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.Times_Percent.FieldName = "PERCENT";
             this.Times_Percent.Name = "Times_Percent";
             this.Times_Percent.Visible = true;
