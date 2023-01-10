@@ -169,3 +169,7 @@ C:\Users\user\Documents\Github\ELMS\ELMS\obj\Debug\ELMS.Forms.Dictionaries.FSour
 C:\Users\user\Documents\Github\ELMS\ELMS\obj\Debug\ELMS.Forms.Dictionaries.FTimesAddEdit.resources
 C:\Users\user\Documents\Github\ELMS\ELMS\obj\Debug\ELMS.Forms.General.FLoginSystem.resources
 C:\Users\user\Documents\Github\ELMS\ELMS\obj\Debug\ELMS.WaitForms.FPrintDocumentWait.resources
+C:\Users\user\Documents\Github\ELMS\ELMS\obj\Debug\Elloni Management System.exe.licenses
+C:\Users\user\Documents\Github\ELMS\ELMS\obj\Debug\ELMS.UserControls.AKBUserControl.resources
+C:\Users\user\Documents\Github\ELMS\ELMS\obj\Debug\ELMS.UserControls.BookkeepingUserControl.resources
+C:\Users\user\Documents\Github\ELMS\ELMS\obj\Debug\ELMS.UserControls.TotalUserControl.resources

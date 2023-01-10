@@ -35,6 +35,13 @@
             this.barSubItemNavigation = new DevExpress.XtraBars.BarSubItem();
             this.employeesBarButtonItem = new DevExpress.XtraBars.BarButtonItem();
             this.customersBarButtonItem = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem7 = new DevExpress.XtraBars.BarButtonItem();
             this.UserNameBarStaticItem = new DevExpress.XtraBars.BarStaticItem();
             this.barStaticItem1 = new DevExpress.XtraBars.BarStaticItem();
             this.CurrentDayBarStatic = new DevExpress.XtraBars.BarStaticItem();
@@ -59,17 +66,17 @@
             this.accordionControlSeparator1 = new DevExpress.XtraBars.Navigation.AccordionControlSeparator();
             this.confirmationAccordionControlElement = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlSeparator3 = new DevExpress.XtraBars.Navigation.AccordionControlSeparator();
-            this.accordionControlElement2 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.contractAccordionControlElement = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlSeparator4 = new DevExpress.XtraBars.Navigation.AccordionControlSeparator();
             this.accordionControlElement3 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlSeparator5 = new DevExpress.XtraBars.Navigation.AccordionControlSeparator();
             this.accordionControlElement4 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlSeparator6 = new DevExpress.XtraBars.Navigation.AccordionControlSeparator();
-            this.accordionControlElement5 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.bookkeepingAccordionControlElement = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlSeparator7 = new DevExpress.XtraBars.Navigation.AccordionControlSeparator();
-            this.accordionControlElement6 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.totalAccordionControlElement = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlSeparator8 = new DevExpress.XtraBars.Navigation.AccordionControlSeparator();
-            this.accordionControlElement7 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.akbAccordionControlElement = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.tabbedView = new DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView(this.components);
             this.documentManager = new DevExpress.XtraBars.Docking2010.DocumentManager(this.components);
             this.notifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
@@ -96,9 +103,16 @@
             this.CurrentDayBarStatic,
             this.DictionaryBarButton,
             this.OptionBarButton,
-            this.UserBarButton});
+            this.UserBarButton,
+            this.barButtonItem1,
+            this.barButtonItem2,
+            this.barButtonItem3,
+            this.barButtonItem4,
+            this.barButtonItem5,
+            this.barButtonItem6,
+            this.barButtonItem7});
             this.ribbonControl.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl.MaxItemId = 54;
+            this.ribbonControl.MaxItemId = 61;
             this.ribbonControl.MdiMergeStyle = DevExpress.XtraBars.Ribbon.RibbonMdiMergeStyle.Always;
             this.ribbonControl.Name = "ribbonControl";
             this.ribbonControl.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
@@ -122,22 +136,71 @@
             this.barSubItemNavigation.ImageOptions.ImageUri.Uri = "NavigationBar";
             this.barSubItemNavigation.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(this.employeesBarButtonItem),
-            new DevExpress.XtraBars.LinkPersistInfo(this.customersBarButtonItem)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.customersBarButtonItem),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem1),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem2),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem3),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem4),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem5),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem6),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem7)});
             this.barSubItemNavigation.Name = "barSubItemNavigation";
             // 
             // employeesBarButtonItem
             // 
-            this.employeesBarButtonItem.Caption = "Employees";
+            this.employeesBarButtonItem.Caption = "Müştərilər";
             this.employeesBarButtonItem.Id = 46;
             this.employeesBarButtonItem.Name = "employeesBarButtonItem";
             this.employeesBarButtonItem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonNavigation_ItemClick);
             // 
             // customersBarButtonItem
             // 
-            this.customersBarButtonItem.Caption = "Cutomers";
+            this.customersBarButtonItem.Caption = "Müraciətlər";
             this.customersBarButtonItem.Id = 47;
             this.customersBarButtonItem.Name = "customersBarButtonItem";
             this.customersBarButtonItem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonNavigation_ItemClick);
+            // 
+            // barButtonItem1
+            // 
+            this.barButtonItem1.Caption = "Təsdiq gözləyənlər";
+            this.barButtonItem1.Id = 54;
+            this.barButtonItem1.Name = "barButtonItem1";
+            // 
+            // barButtonItem2
+            // 
+            this.barButtonItem2.Caption = "Müqavilələr";
+            this.barButtonItem2.Id = 55;
+            this.barButtonItem2.Name = "barButtonItem2";
+            // 
+            // barButtonItem3
+            // 
+            this.barButtonItem3.Caption = "Reqreslər";
+            this.barButtonItem3.Id = 56;
+            this.barButtonItem3.Name = "barButtonItem3";
+            // 
+            // barButtonItem4
+            // 
+            this.barButtonItem4.Caption = "Sazişlər";
+            this.barButtonItem4.Id = 57;
+            this.barButtonItem4.Name = "barButtonItem4";
+            // 
+            // barButtonItem5
+            // 
+            this.barButtonItem5.Caption = "Mühasibatlıq";
+            this.barButtonItem5.Id = 58;
+            this.barButtonItem5.Name = "barButtonItem5";
+            // 
+            // barButtonItem6
+            // 
+            this.barButtonItem6.Caption = "Kredit portfeli";
+            this.barButtonItem6.Id = 59;
+            this.barButtonItem6.Name = "barButtonItem6";
+            // 
+            // barButtonItem7
+            // 
+            this.barButtonItem7.Caption = "AKB";
+            this.barButtonItem7.Id = 60;
+            this.barButtonItem7.Name = "barButtonItem7";
             // 
             // UserNameBarStaticItem
             // 
@@ -293,17 +356,17 @@
             this.accordionControlSeparator1,
             this.confirmationAccordionControlElement,
             this.accordionControlSeparator3,
-            this.accordionControlElement2,
+            this.contractAccordionControlElement,
             this.accordionControlSeparator4,
             this.accordionControlElement3,
             this.accordionControlSeparator5,
             this.accordionControlElement4,
             this.accordionControlSeparator6,
-            this.accordionControlElement5,
+            this.bookkeepingAccordionControlElement,
             this.accordionControlSeparator7,
-            this.accordionControlElement6,
+            this.totalAccordionControlElement,
             this.accordionControlSeparator8,
-            this.accordionControlElement7});
+            this.akbAccordionControlElement});
             this.mainAccordionGroup.Expanded = true;
             this.mainAccordionGroup.HeaderVisible = false;
             this.mainAccordionGroup.Name = "mainAccordionGroup";
@@ -311,6 +374,7 @@
             // 
             // customerAccordionControlElement
             // 
+            this.customerAccordionControlElement.ImageOptions.Image = global::ELMS.Properties.Resources.crowd_16;
             this.customerAccordionControlElement.Name = "customerAccordionControlElement";
             this.customerAccordionControlElement.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.customerAccordionControlElement.Text = "Müştərilər";
@@ -321,6 +385,7 @@
             // 
             // ordersAccordionControlElement
             // 
+            this.ordersAccordionControlElement.ImageOptions.Image = global::ELMS.Properties.Resources.order2_16;
             this.ordersAccordionControlElement.Name = "ordersAccordionControlElement";
             this.ordersAccordionControlElement.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.ordersAccordionControlElement.Text = "Müraciətlər";
@@ -331,6 +396,7 @@
             // 
             // confirmationAccordionControlElement
             // 
+            this.confirmationAccordionControlElement.ImageOptions.Image = global::ELMS.Properties.Resources.icons8_hourglass_16;
             this.confirmationAccordionControlElement.Name = "confirmationAccordionControlElement";
             this.confirmationAccordionControlElement.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.confirmationAccordionControlElement.Text = "Təsdiq gözləyənlər";
@@ -339,11 +405,12 @@
             // 
             this.accordionControlSeparator3.Name = "accordionControlSeparator3";
             // 
-            // accordionControlElement2
+            // contractAccordionControlElement
             // 
-            this.accordionControlElement2.Name = "accordionControlElement2";
-            this.accordionControlElement2.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.accordionControlElement2.Text = "Müqavilələr";
+            this.contractAccordionControlElement.ImageOptions.Image = global::ELMS.Properties.Resources.contract_16;
+            this.contractAccordionControlElement.Name = "contractAccordionControlElement";
+            this.contractAccordionControlElement.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.contractAccordionControlElement.Text = "Müqavilələr";
             // 
             // accordionControlSeparator4
             // 
@@ -351,6 +418,7 @@
             // 
             // accordionControlElement3
             // 
+            this.accordionControlElement3.ImageOptions.Image = global::ELMS.Properties.Resources.order_16;
             this.accordionControlElement3.Name = "accordionControlElement3";
             this.accordionControlElement3.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.accordionControlElement3.Text = "Reqreslər";
@@ -361,6 +429,7 @@
             // 
             // accordionControlElement4
             // 
+            this.accordionControlElement4.ImageOptions.Image = global::ELMS.Properties.Resources.agreement2_16;
             this.accordionControlElement4.Name = "accordionControlElement4";
             this.accordionControlElement4.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.accordionControlElement4.Text = "Sazişlər";
@@ -369,31 +438,34 @@
             // 
             this.accordionControlSeparator6.Name = "accordionControlSeparator6";
             // 
-            // accordionControlElement5
+            // bookkeepingAccordionControlElement
             // 
-            this.accordionControlElement5.Name = "accordionControlElement5";
-            this.accordionControlElement5.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.accordionControlElement5.Text = "Mühasibatlıq";
+            this.bookkeepingAccordionControlElement.ImageOptions.Image = global::ELMS.Properties.Resources.estimate_16;
+            this.bookkeepingAccordionControlElement.Name = "bookkeepingAccordionControlElement";
+            this.bookkeepingAccordionControlElement.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.bookkeepingAccordionControlElement.Text = "Mühasibatlıq";
             // 
             // accordionControlSeparator7
             // 
             this.accordionControlSeparator7.Name = "accordionControlSeparator7";
             // 
-            // accordionControlElement6
+            // totalAccordionControlElement
             // 
-            this.accordionControlElement6.Name = "accordionControlElement6";
-            this.accordionControlElement6.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.accordionControlElement6.Text = "Kredit portfeli";
+            this.totalAccordionControlElement.ImageOptions.Image = global::ELMS.Properties.Resources.loan2_16;
+            this.totalAccordionControlElement.Name = "totalAccordionControlElement";
+            this.totalAccordionControlElement.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.totalAccordionControlElement.Text = "Kredit portfeli";
             // 
             // accordionControlSeparator8
             // 
             this.accordionControlSeparator8.Name = "accordionControlSeparator8";
             // 
-            // accordionControlElement7
+            // akbAccordionControlElement
             // 
-            this.accordionControlElement7.Name = "accordionControlElement7";
-            this.accordionControlElement7.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.accordionControlElement7.Text = "AKB";
+            this.akbAccordionControlElement.ImageOptions.Image = global::ELMS.Properties.Resources.department_16;
+            this.akbAccordionControlElement.Name = "akbAccordionControlElement";
+            this.akbAccordionControlElement.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.akbAccordionControlElement.Text = "AKB";
             // 
             // tabbedView
             // 
@@ -471,20 +543,27 @@
         private DevExpress.XtraBars.Navigation.AccordionControlSeparator accordionControlSeparator1;
         private DevExpress.XtraBars.Navigation.AccordionControlElement confirmationAccordionControlElement;
         private DevExpress.XtraBars.Navigation.AccordionControlSeparator accordionControlSeparator3;
-        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement2;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement contractAccordionControlElement;
         private DevExpress.XtraBars.Navigation.AccordionControlSeparator accordionControlSeparator4;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement3;
         private DevExpress.XtraBars.Navigation.AccordionControlSeparator accordionControlSeparator5;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement4;
         private DevExpress.XtraBars.Navigation.AccordionControlSeparator accordionControlSeparator6;
-        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement5;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement bookkeepingAccordionControlElement;
         private DevExpress.XtraBars.Navigation.AccordionControlSeparator accordionControlSeparator7;
-        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement6;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement totalAccordionControlElement;
         private DevExpress.XtraBars.Navigation.AccordionControlSeparator accordionControlSeparator8;
-        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement7;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement akbAccordionControlElement;
         private DevExpress.XtraBars.BarButtonItem OptionBarButton;
         private DevExpress.XtraBars.BarButtonItem UserBarButton;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage1;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem2;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem3;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem4;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem5;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem6;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem7;
     }
 }

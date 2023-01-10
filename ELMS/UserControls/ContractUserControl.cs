@@ -8,6 +8,13 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using ELMS.Class.DataAccess;
+using ELMS.Class;
+using DevExpress.XtraGrid.Views.Grid;
+using static ELMS.Class.Enum;
+using ELMS.Class.Tables;
+using ELMS.Forms.Customer;
+using ELMS.Forms.Order;
 
 namespace ELMS.UserControls
 {
@@ -17,5 +24,6 @@ namespace ELMS.UserControls
         {
             InitializeComponent();
         }
+        
     }
 }

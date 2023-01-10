@@ -2,11 +2,14 @@
   "ExpandedNodes": [
     "",
     "\\ELMS",
+    "\\ELMS\\Forms",
     "\\ELMS\\Forms\\Customer",
     "\\ELMS\\Forms\\Dictionaries",
     "\\ELMS\\Forms\\General",
-    "\\ELMS\\Forms\\Order"
+    "\\ELMS\\Forms\\Order",
+    "\\ELMS\\UserControls",
+    "\\ELMS\\WaitForms"
   ],
-  "SelectedNode": "\\ELMS\\Class",
+  "SelectedNode": "\\ELMS\\UserControls\\ContractUserControl.cs",
   "PreviewInSolutionExplorer": false
 }

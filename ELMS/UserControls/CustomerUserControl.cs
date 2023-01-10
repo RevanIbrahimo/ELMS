@@ -14,6 +14,7 @@ using DevExpress.XtraGrid.Views.Grid;
 using static ELMS.Class.Enum;
 using ELMS.Class.Tables;
 using ELMS.Forms.Customer;
+using ELMS.Forms.Order;
 
 namespace ELMS.UserControls
 {
@@ -219,6 +220,27 @@ namespace ELMS.UserControls
         {
             customerID = Convert.ToInt32(GlobalFunctions.GetGridRowCellValue((sender as GridView), "ID"));
             customerName = GlobalFunctions.GetGridRowCellValue((sender as GridView), "FULL_NAME").ToString();
+        }
+
+        private void NewOrderBarButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            LoadFOrderAddEdit(TransactionTypeEnum.Insert, customerID);
+        }
+
+        private void LoadFOrderAddEdit(TransactionTypeEnum transaction, int? id)
+        {
+            topindex = CustomerGridView.TopRowIndex;
+            old_row_id = CustomerGridView.FocusedRowHandle;
+            FOrderAddEdit fc = new FOrderAddEdit()
+            {
+                TransactionType = transaction,
+                CustomerID = id,
+                EnumID = 2,
+            };
+            fc.RefreshDataGridView += new FOrderAddEdit.DoEvent(RefreshCustomer);
+            fc.ShowDialog();
+            CustomerGridView.TopRowIndex = topindex;
+            CustomerGridView.FocusedRowHandle = old_row_id;
         }
 
         private void HistroryBarButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

@@ -19,7 +19,11 @@ namespace ELMS
     {
         XtraUserControl orderUserControl;
         XtraUserControl customerUserControl;
+        XtraUserControl contractUserControl;
         XtraUserControl confirmationUserControl;
+        XtraUserControl bookkeepingUserControl;
+        XtraUserControl totalUserControl;
+        XtraUserControl akbUserControl;
         XtraUserControl userControl = null;
 
         int a = 0;
@@ -29,6 +33,10 @@ namespace ELMS
             public static readonly string Customer = "Müştərilər";
             public static readonly string Order = "Müraciətlər";
             public static readonly string Confirm = "Təsdiq gözləyənlər";
+            public static readonly string Contract = "Müqavilələr";
+            public static readonly string Bookkeeping = "Mühasibatlıq";
+            public static readonly string Total = "Kredit portfeli";
+            public static readonly string AKB = "AKB";
         }
 
         public MainForm()
@@ -37,6 +45,10 @@ namespace ELMS
             orderUserControl = CreateUserControl(NavigationNameClass.Order);
             confirmationUserControl = CreateUserControl(NavigationNameClass.Confirm);
             customerUserControl = CreateUserControl(NavigationNameClass.Customer);
+            contractUserControl = CreateUserControl(NavigationNameClass.Contract);
+            bookkeepingUserControl = CreateUserControl(NavigationNameClass.Bookkeeping);
+            totalUserControl = CreateUserControl(NavigationNameClass.Total);
+            akbUserControl = CreateUserControl(NavigationNameClass.AKB);
             accordionControl.SelectedElement = customerAccordionControlElement;
         }
         XtraUserControl CreateUserControl(string navigationText)
@@ -58,7 +70,26 @@ namespace ELMS
                 result = new UserControls.ConfirmationUserControl();
                 result.Text = NavigationNameClass.Confirm;
             }
-
+            else if (navigationText == NavigationNameClass.Contract)
+            {
+                result = new UserControls.ContractUserControl();
+                result.Text = NavigationNameClass.Contract;
+            }
+            else if (navigationText == NavigationNameClass.Bookkeeping)
+            {
+                result = new UserControls.BookkeepingUserControl();
+                result.Text = NavigationNameClass.Bookkeeping;
+            }
+            else if (navigationText == NavigationNameClass.Total)
+            {
+                result = new UserControls.TotalUserControl();
+                result.Text = NavigationNameClass.Total;
+            }
+            else if (navigationText == NavigationNameClass.AKB)
+            {
+                result = new UserControls.AKBUserControl();
+                result.Text = NavigationNameClass.AKB;
+            }
             return result;
         }
 
@@ -70,7 +101,14 @@ namespace ELMS
                 userControl = customerUserControl;
             else if (elementName == NavigationNameClass.Confirm)
                 userControl = confirmationUserControl;
-
+            else if (elementName == NavigationNameClass.Contract)
+                userControl = contractUserControl;
+            else if (elementName == NavigationNameClass.Bookkeeping)
+                userControl = bookkeepingUserControl;
+            else if (elementName == NavigationNameClass.Total)
+                userControl = totalUserControl;
+            else if (elementName == NavigationNameClass.AKB)
+                userControl = akbUserControl;
             tabbedView.AddDocument(userControl);
             tabbedView.ActivateDocument(userControl);
         }
@@ -101,6 +139,14 @@ namespace ELMS
                             accordionControl.SelectedElement = customerAccordionControlElement;
                         if (document.Caption == NavigationNameClass.Confirm)
                             accordionControl.SelectedElement = confirmationAccordionControlElement;
+                        if (document.Caption == NavigationNameClass.Contract)
+                            accordionControl.SelectedElement = contractAccordionControlElement;
+                        if (document.Caption == NavigationNameClass.Bookkeeping)
+                            accordionControl.SelectedElement = bookkeepingAccordionControlElement;
+                        if (document.Caption == NavigationNameClass.Total)
+                            accordionControl.SelectedElement = totalAccordionControlElement;
+                        if (document.Caption == NavigationNameClass.AKB)
+                            accordionControl.SelectedElement = akbAccordionControlElement;
                     }
                 }
             }
@@ -135,6 +181,14 @@ namespace ELMS
                 orderUserControl = CreateUserControl(NavigationNameClass.Order);
             else if (e.Document.Caption == NavigationNameClass.Confirm)
                 confirmationUserControl = CreateUserControl(NavigationNameClass.Confirm);
+            else if (e.Document.Caption == NavigationNameClass.Contract)
+                contractUserControl = CreateUserControl(NavigationNameClass.Contract);
+            else if (e.Document.Caption == NavigationNameClass.Bookkeeping)
+                bookkeepingUserControl = CreateUserControl(NavigationNameClass.Bookkeeping);
+            else if (e.Document.Caption == NavigationNameClass.Total)
+                totalUserControl = CreateUserControl(NavigationNameClass.Total);
+            else if (e.Document.Caption == NavigationNameClass.AKB)
+                akbUserControl = CreateUserControl(NavigationNameClass.AKB);
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -254,6 +308,14 @@ namespace ELMS
                 accordionControl.SelectedElement = ordersAccordionControlElement;
             else if (e.Document.Caption == NavigationNameClass.Confirm)
                 accordionControl.SelectedElement = confirmationAccordionControlElement;
+            else if (e.Document.Caption == NavigationNameClass.Contract)
+                accordionControl.SelectedElement = contractAccordionControlElement;
+            else if (e.Document.Caption == NavigationNameClass.Bookkeeping)
+                accordionControl.SelectedElement = bookkeepingAccordionControlElement;
+            else if (e.Document.Caption == NavigationNameClass.Total)
+                accordionControl.SelectedElement = totalAccordionControlElement;
+            else if (e.Document.Caption == NavigationNameClass.AKB)
+                accordionControl.SelectedElement = akbAccordionControlElement;
         }
 
         private void DictionaryBarButton_ItemClick(object sender, ItemClickEventArgs e)

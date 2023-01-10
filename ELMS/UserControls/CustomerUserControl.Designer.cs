@@ -36,6 +36,7 @@
             this.EditBarButton = new DevExpress.XtraBars.BarButtonItem();
             this.DeleteBarButton = new DevExpress.XtraBars.BarButtonItem();
             this.RefreshBarButton = new DevExpress.XtraBars.BarButtonItem();
+            this.NewOrderBarButton = new DevExpress.XtraBars.BarButtonItem();
             this.PrintBarButton = new DevExpress.XtraBars.BarButtonItem();
             this.ExportBarButton = new DevExpress.XtraBars.BarSubItem();
             this.ExcelBarButton = new DevExpress.XtraBars.BarButtonItem();
@@ -66,7 +67,6 @@
             this.Customer_UsedUserID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.RepositoryItemPictureEdit = new DevExpress.XtraEditors.Repository.RepositoryItemPictureEdit();
             this.CustomerPopupMenu = new DevExpress.XtraBars.PopupMenu(this.components);
-            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.BarManager)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CustomerGridControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CustomerGridView)).BeginInit();
@@ -100,7 +100,7 @@
             this.ScheduleBarButton,
             this.HistroryBarButton,
             this.RtfBarButton,
-            this.barButtonItem1});
+            this.NewOrderBarButton});
             this.BarManager.MaxItemId = 16;
             this.BarManager.StatusBar = this.bar3;
             // 
@@ -115,7 +115,7 @@
             new DevExpress.XtraBars.LinkPersistInfo(this.EditBarButton),
             new DevExpress.XtraBars.LinkPersistInfo(this.DeleteBarButton),
             new DevExpress.XtraBars.LinkPersistInfo(this.RefreshBarButton),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem1),
+            new DevExpress.XtraBars.LinkPersistInfo(this.NewOrderBarButton),
             new DevExpress.XtraBars.LinkPersistInfo(this.PrintBarButton, true),
             new DevExpress.XtraBars.LinkPersistInfo(this.ExportBarButton)});
             this.ToolBar.OptionsBar.DrawBorder = false;
@@ -166,6 +166,15 @@
             this.RefreshBarButton.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
             this.RefreshBarButton.ShowItemShortcut = DevExpress.Utils.DefaultBoolean.True;
             this.RefreshBarButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.RefreshBarButton_ItemClick);
+            // 
+            // NewOrderBarButton
+            // 
+            this.NewOrderBarButton.Caption = "Yeni müraciət";
+            this.NewOrderBarButton.Id = 15;
+            this.NewOrderBarButton.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
+            this.NewOrderBarButton.Name = "NewOrderBarButton";
+            this.NewOrderBarButton.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.NewOrderBarButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.NewOrderBarButton_ItemClick);
             // 
             // PrintBarButton
             // 
@@ -507,14 +516,6 @@
             this.CustomerPopupMenu.Manager = this.BarManager;
             this.CustomerPopupMenu.Name = "CustomerPopupMenu";
             // 
-            // barButtonItem1
-            // 
-            this.barButtonItem1.Caption = "Yeni müraciət";
-            this.barButtonItem1.Id = 15;
-            this.barButtonItem1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
-            this.barButtonItem1.Name = "barButtonItem1";
-            this.barButtonItem1.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            // 
             // CustomerUserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -577,6 +578,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn Customer_ID;
         private DevExpress.XtraGrid.Columns.GridColumn Customer_RegisteredAddress;
         private DevExpress.XtraGrid.Columns.GridColumn Customer_Country;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
+        private DevExpress.XtraBars.BarButtonItem NewOrderBarButton;
     }
 }

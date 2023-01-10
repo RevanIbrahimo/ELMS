@@ -41,7 +41,7 @@ namespace ELMS.Class.DataAccess
                                    ELMS_USER.PRODUCT P
                              WHERE CC.PRODUCT_ID = P.ID
                                    AND CC.IS_CHANGE <> {(int)ChangeTypeEnum.Delete}
-                              AND CC.CUSTOMER_ID = {typeID}";
+                              AND CC.ID = {typeID}";
 
             try
             {
@@ -54,7 +54,7 @@ namespace ELMS.Class.DataAccess
             }
             catch (Exception exx)
             {
-                GlobalProcedures.LogWrite("Sənəd növü açılmadı.", sql, GlobalVariables.V_UserName, "ProductCardDAL", "SelectProductCardByID", exx);
+                GlobalProcedures.LogWrite("Sifarişlər açılmadı.", sql, GlobalVariables.V_UserName, "ProductCardDAL", "SelectProductCardByID", exx);
                 return null;
             }
         }
@@ -71,7 +71,7 @@ namespace ELMS.Class.DataAccess
                               FROM ELMS_USER_TEMP.PRODUCT_CARDS_TEMP CC,
                                    ELMS_USER.PRODUCT P
                              WHERE CC.PRODUCT_ID = P.ID
-                                   AND CC.IS_CHANGE <> {(int)ChangeTypeEnum.Delete} {(ID.HasValue ? $@" AND CC.ORDER_TAB_ID = {ID}" : null)}
+                                   AND CC.IS_CHANGE <> {(int)ChangeTypeEnum.Delete} {(ID.HasValue ? $@" AND CC.ID = {ID}" : null)}
                         ORDER BY CC.ID";
 
             try
@@ -85,7 +85,7 @@ namespace ELMS.Class.DataAccess
             }
             catch (Exception exx)
             {
-                GlobalProcedures.LogWrite("Musterinin məlumatları açılmadı.", s, GlobalVariables.V_UserName, "ProductCardDAL", "SelectViewData", exx);
+                GlobalProcedures.LogWrite("Sifarişlər açılmadı.", s, GlobalVariables.V_UserName, "ProductCardDAL", "SelectViewData", exx);
                 return null;
             }
         }
@@ -155,7 +155,7 @@ namespace ELMS.Class.DataAccess
                 catch (Exception exx)
                 {
                     transaction.Rollback();
-                    GlobalProcedures.LogWrite("Sənəd bazaya daxil edilmədi.", commandSql, GlobalVariables.V_UserName, "ProductCardDAL", "InsertProductCard", exx);
+                    GlobalProcedures.LogWrite("Sifarişlər bazaya daxil edilmədi.", commandSql, GlobalVariables.V_UserName, "ProductCardDAL", "InsertProductCard", exx);
                 }
                 finally
                 {
@@ -209,7 +209,7 @@ namespace ELMS.Class.DataAccess
                 catch (Exception exx)
                 {
                     transaction.Rollback();
-                    GlobalProcedures.LogWrite("Sənəd bazada dəyişdirilmədi.", commandSql, GlobalVariables.V_UserName, "ProductCardDAL", "UpdateProductCard", exx);
+                    GlobalProcedures.LogWrite("Sifarişlər bazada dəyişdirilmədi.", commandSql, GlobalVariables.V_UserName, "ProductCardDAL", "UpdateProductCard", exx);
                 }
                 finally
                 {
@@ -251,7 +251,7 @@ namespace ELMS.Class.DataAccess
                 catch (Exception exx)
                 {
                     transaction.Rollback();
-                    GlobalProcedures.LogWrite("Sənəd temp cədvəldən silinmədi.", commandSql, GlobalVariables.V_UserName, "ProductCardDAL", "DeleteProductCard", exx);
+                    GlobalProcedures.LogWrite("Sifarişlər temp cədvəldən silinmədi.", commandSql, GlobalVariables.V_UserName, "ProductCardDAL", "DeleteProductCard", exx);
                 }
                 finally
                 {

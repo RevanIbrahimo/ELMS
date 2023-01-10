@@ -361,6 +361,18 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserControls\AKBUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\AKBUserControl.designer.cs">
+      <DependentUpon>AKBUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\BookkeepingUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\BookkeepingUserControl.designer.cs">
+      <DependentUpon>BookkeepingUserControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\ConfirmationUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -390,6 +402,12 @@
     </Compile>
     <Compile Include="UserControls\RegressionUserControl.Designer.cs">
       <DependentUpon>RegressionUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\TotalUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\TotalUserControl.designer.cs">
+      <DependentUpon>TotalUserControl.cs</DependentUpon>
     </Compile>
     <Compile Include="WaitForms\FPrintDocumentWait.cs">
       <SubType>Form</SubType>
@@ -499,6 +517,7 @@
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -509,6 +528,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="UserControls\AKBUserControl.resx">
+      <DependentUpon>AKBUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\BookkeepingUserControl.resx">
+      <DependentUpon>BookkeepingUserControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\ConfirmationUserControl.resx">
       <DependentUpon>ConfirmationUserControl.cs</DependentUpon>
     </EmbeddedResource>
@@ -523,6 +548,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\RegressionUserControl.resx">
       <DependentUpon>RegressionUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\TotalUserControl.resx">
+      <DependentUpon>TotalUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="WaitForms\FPrintDocumentWait.resx">
       <DependentUpon>FPrintDocumentWait.cs</DependentUpon>
@@ -744,8 +772,20 @@
     <Content Include="bin\Debug\ru\DevExpress.XtraTreeList.v17.1.resources.dll" />
     <Content Include="bin\Debug\Tulpep.NotificationWindow.dll" />
     <Content Include="management.ico" />
+    <None Include="Resources\waiting-16.png" />
+    <None Include="Resources\contract-icon.png" />
+    <None Include="Resources\contract-16.png" />
+    <None Include="Resources\agreement2-16.png" />
+    <None Include="Resources\crowd-16.png" />
+    <None Include="Resources\department-16.png" />
     <Content Include="Resources\download.png" />
+    <None Include="Resources\estimate-16.png" />
     <Content Include="Resources\excel-16.png" />
+    <None Include="Resources\loan-16.png" />
+    <None Include="Resources\loan2-16.png" />
+    <None Include="Resources\order2-16.png" />
+    <None Include="Resources\icons8-hourglass-16.png" />
+    <None Include="Resources\order-16.png" />
     <Content Include="Resources\print_16x16.png" />
     <Content Include="Resources\user-group-32.png" />
     <None Include="Resources\webcamera-16.png" />

@@ -29,7 +29,7 @@ namespace ELMS.Forms.Order
         }
 
         public TransactionTypeEnum TransactionType;
-        public int? OrderID, CustomerID;
+        public int? OrderID, CustomerID, EnumID;
 
         bool CurrentStatus = false, Used = false, isClickBOK = false,
             contract_click = false;
@@ -779,9 +779,45 @@ namespace ELMS.Forms.Order
                 OrderID = GlobalFunctions.GetOracleSequenceValue("ORDER_TAB_SEQUENCE");
                 RegisterCodeText.EditValue = OrderID;
                 ContractID = Convert.ToInt32(RegisterCodeText.Text.Trim());
+                if(EnumID.Value == 2)
+                {
+                    FinCodeSearch.EditValue = "1234567";
+                    LoadCustomerData();
+                }
             }
             InsertTemps();
             LoadProduct();
+        }
+
+
+        private void LoadCustomerData()
+        {
+                DataTable dt = CustomerDAL.SelectCustomerDataView(CustomerID.Value);
+                if (FinCodeSearch.Text.Length != 7)
+                {
+                    NameText.Text =
+                      RegisterAddressText.Text =
+                        ActualAddressText.Text =
+                        PhoneAllText.Text = null;
+                    CustomerID = 0;
+                    PictureEdit.Image = null;
+                }
+
+                if (dt.Rows.Count > 0)
+                {
+                    NameText.EditValue = dt.Rows[0]["FULL_NAME"];
+                    ActualAddressText.EditValue = dt.Rows[0]["ADDRESS"];
+                    RegisterAddressText.EditValue = dt.Rows[0]["REGISTERED_ADDRESS"];
+                    PhoneAllText.EditValue = dt.Rows[0]["PHONE"];
+                    UsedUserID = Convert.ToInt16(dt.Rows[0]["USED_USER_ID"]);
+                    CustomerID = Convert.ToInt32(dt.Rows[0]["ID"]);
+                    string str = dt.Rows[0]["PINCODE"].ToString();
+                    FinCodeSearch.EditValue = str;
+
+                    LoadImage();
+                }
+
+            
         }
 
         private void FOrderAddEdit_FormClosing(object sender, FormClosingEventArgs e)

@@ -170,6 +170,53 @@ namespace ELMS.Class.DataAccess
             }
         }
 
+        public static DataTable SelectCustomerDataView(int? ID)
+        {
+            string s = $@"SELECT CU.ID,
+                               P.PHONE,
+                               CC.PINCODE,                               
+                               B.NAME BRANCH_NAME,
+                               C.NAME COUNTRY_NAME,
+                               SE.NAME SEX_NAME,
+                               CU.FULL_NAME,                            
+                               CU.BIRTHDAY,
+                               CU.BIRTH_PLACE,                          
+                               CU.ADDRESS,
+                               CU.REGISTERED_ADDRESS,                                
+                               CU.CLOSED_DATE,
+                               CU.NOTE,
+                               CU.INSERT_DATE,
+                               CU.USED_USER_ID
+                          FROM ELMS_USER.CUSTOMER CU,
+                               ELMS_USER.SEX SE,
+                               ELMS_USER.COUNTRY C,
+                               ELMS_USER.BRANCH B,
+                               ELMS_USER.CUSTOMER_CARDS CC,
+                               (SELECT * FROM ELMS_USER.V_PHONE WHERE OWNER_TYPE = {(int)PhoneOwnerEnum.Customer}) P
+                          WHERE  CU.ID = CC.CUSTOMER_ID
+                                 AND CU.COUNTRY_ID = C.ID
+                                 AND CU.SEX_ID = SE.ID
+                                 AND CU.BRANCH_ID = B.ID
+                                 AND CU.ID = P.OWNER_ID(+)
+                                 AND CU.ID = {ID}
+                        ORDER BY CU.ID";
+
+            try
+            {
+                using (OracleDataAdapter da = new OracleDataAdapter(s, GlobalFunctions.GetConnectionString()))
+                {
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+                    return dt;
+                }
+            }
+            catch (Exception exx)
+            {
+                GlobalProcedures.LogWrite("Musterinin məlumatları açılmadı.", s, GlobalVariables.V_UserName, "CustomerDAL", "SelectCustomerDataView", exx);
+                return null;
+            }
+        }
+
         public static DataTable SelectViewCustomer(int? ID)
         {
             string s = $@"SELECT CU.ID,
