@@ -45,11 +45,14 @@
             this.CsvBarButton = new DevExpress.XtraBars.BarButtonItem();
             this.MhtBarButton = new DevExpress.XtraBars.BarButtonItem();
             this.RtfBarButton = new DevExpress.XtraBars.BarButtonItem();
+            this.DocumentsBarSubItem = new DevExpress.XtraBars.BarSubItem();
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             this.bar3 = new DevExpress.XtraBars.Bar();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
-            this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();            
+            this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.OrderGridControl = new DevExpress.XtraGrid.GridControl();
             this.OrderGridView = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.Customer_SS = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -65,9 +68,6 @@
             this.Order_CreditAmount = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Order_TypeID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.OrderPopupMenu = new DevExpress.XtraBars.PopupMenu(this.components);
-            this.DocumentsBarSubItem = new DevExpress.XtraBars.BarSubItem();
-            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.BarManager)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.OrderGridControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.OrderGridView)).BeginInit();
@@ -250,6 +250,29 @@
             this.RtfBarButton.Name = "RtfBarButton";
             this.RtfBarButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.RtfBarButton_ItemClick);
             // 
+            // DocumentsBarSubItem
+            // 
+            this.DocumentsBarSubItem.Caption = "Sənədlər";
+            this.DocumentsBarSubItem.Id = 15;
+            this.DocumentsBarSubItem.ImageOptions.Image = global::ELMS.Properties.Resources.pdf_32;
+            this.DocumentsBarSubItem.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem1),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem2)});
+            this.DocumentsBarSubItem.Name = "DocumentsBarSubItem";
+            this.DocumentsBarSubItem.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            // 
+            // barButtonItem1
+            // 
+            this.barButtonItem1.Caption = "Müqavilə";
+            this.barButtonItem1.Id = 16;
+            this.barButtonItem1.Name = "barButtonItem1";
+            // 
+            // barButtonItem2
+            // 
+            this.barButtonItem2.Caption = "AKB üçün razılıq ərizəsi";
+            this.barButtonItem2.Id = 17;
+            this.barButtonItem2.Name = "barButtonItem2";
+            // 
             // bar3
             // 
             this.bar3.BarName = "Status bar";
@@ -296,7 +319,7 @@
             this.barDockControlRight.Location = new System.Drawing.Point(1430, 47);
             this.barDockControlRight.Manager = this.BarManager;
             this.barDockControlRight.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 566);            
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 566);
             // 
             // OrderGridControl
             // 
@@ -493,29 +516,6 @@
             new DevExpress.XtraBars.LinkPersistInfo(this.DocumentsBarSubItem, true)});
             this.OrderPopupMenu.Manager = this.BarManager;
             this.OrderPopupMenu.Name = "OrderPopupMenu";
-            // 
-            // DocumentsBarSubItem
-            // 
-            this.DocumentsBarSubItem.Caption = "Sənədlər";
-            this.DocumentsBarSubItem.Id = 15;
-            this.DocumentsBarSubItem.ImageOptions.Image = global::ELMS.Properties.Resources.pdf_32;
-            this.DocumentsBarSubItem.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem1),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem2)});
-            this.DocumentsBarSubItem.Name = "DocumentsBarSubItem";
-            this.DocumentsBarSubItem.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            // 
-            // barButtonItem1
-            // 
-            this.barButtonItem1.Caption = "Müqavilə";
-            this.barButtonItem1.Id = 16;
-            this.barButtonItem1.Name = "barButtonItem1";
-            // 
-            // barButtonItem2
-            // 
-            this.barButtonItem2.Caption = "AKB üçün razılıq ərizəsi";
-            this.barButtonItem2.Id = 17;
-            this.barButtonItem2.Name = "barButtonItem2";
             // 
             // OrderUserControl
             // 

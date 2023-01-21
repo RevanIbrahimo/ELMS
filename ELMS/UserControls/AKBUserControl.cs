@@ -24,6 +24,10 @@ namespace ELMS.UserControls
         {
             InitializeComponent();
         }
-        
+
+        private void CreditGridControl_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

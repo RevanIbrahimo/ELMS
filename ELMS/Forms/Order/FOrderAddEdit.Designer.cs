@@ -258,7 +258,7 @@
             superToolTip1.Items.Add(toolTipSeparatorItem1);
             superToolTip1.Items.Add(toolTipTitleItem2);
             this.FinCodeSearch.SuperTip = superToolTip1;
-            this.FinCodeSearch.TabIndex = 26;
+            this.FinCodeSearch.TabIndex = 3;
             this.FinCodeSearch.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.FinCodeSearch_ButtonClick);
             this.FinCodeSearch.EditValueChanged += new System.EventHandler(this.FinCodeSearch_EditValueChanged);
             this.FinCodeSearch.Click += new System.EventHandler(this.FinCodeSearch_Click);
@@ -498,7 +498,7 @@
             this.SourceLookUp.Properties.ValidateOnEnterKey = true;
             this.SourceLookUp.Properties.ValueMember = "ID";
             this.SourceLookUp.Size = new System.Drawing.Size(127, 20);
-            this.SourceLookUp.TabIndex = 13;
+            this.SourceLookUp.TabIndex = 3;
             this.SourceLookUp.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.SourceLookUp_ButtonClick);
             this.SourceLookUp.EditValueChanged += new System.EventHandler(this.SourceLookUp_EditValueChanged);
             // 
@@ -520,7 +520,7 @@
             this.OrderDate.Properties.NullValuePrompt = "dd.mm.yyyy";
             this.OrderDate.Properties.NullValuePromptShowForEmptyValue = true;
             this.OrderDate.Size = new System.Drawing.Size(90, 20);
-            this.OrderDate.TabIndex = 9;
+            this.OrderDate.TabIndex = 1;
             // 
             // labelControl3
             // 
@@ -555,7 +555,7 @@
             this.BranchLookUp.Properties.ValidateOnEnterKey = true;
             this.BranchLookUp.Properties.ValueMember = "ID";
             this.BranchLookUp.Size = new System.Drawing.Size(706, 20);
-            this.BranchLookUp.TabIndex = 6;
+            this.BranchLookUp.TabIndex = 2;
             this.BranchLookUp.EditValueChanged += new System.EventHandler(this.BranchLookUp_EditValueChanged);
             // 
             // OtherGroupControl
@@ -956,7 +956,7 @@
             this.RegisterCodeText.Name = "RegisterCodeText";
             this.RegisterCodeText.Properties.ReadOnly = true;
             this.RegisterCodeText.Size = new System.Drawing.Size(90, 20);
-            this.RegisterCodeText.TabIndex = 2;
+            this.RegisterCodeText.TabIndex = 0;
             // 
             // labelControl14
             // 
@@ -1037,7 +1037,7 @@
             this.FirstPaymentValue.Properties.NullValuePromptShowForEmptyValue = true;
             this.FirstPaymentValue.Properties.Precision = 2;
             this.FirstPaymentValue.Size = new System.Drawing.Size(127, 20);
-            this.FirstPaymentValue.TabIndex = 145;
+            this.FirstPaymentValue.TabIndex = 5;
             this.FirstPaymentValue.EditValueChanged += new System.EventHandler(this.FirstPaymentValue_EditValueChanged);
             // 
             // InitialPaymentLabel
@@ -1119,7 +1119,7 @@
             this.TimeLookUp.Properties.ShowHeader = false;
             this.TimeLookUp.Properties.ValueMember = "ID";
             this.TimeLookUp.Size = new System.Drawing.Size(127, 20);
-            this.TimeLookUp.TabIndex = 183;
+            this.TimeLookUp.TabIndex = 4;
             this.TimeLookUp.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.TimeLookUp_ButtonClick);
             this.TimeLookUp.EditValueChanged += new System.EventHandler(this.TimeLookUp_EditValueChanged);
             // 
@@ -1150,7 +1150,7 @@
             this.NoteText.MenuManager = this.ProductBarManager;
             this.NoteText.Name = "NoteText";
             this.NoteText.Size = new System.Drawing.Size(724, 20);
-            this.NoteText.TabIndex = 186;
+            this.NoteText.TabIndex = 6;
             // 
             // labelControl7
             // 

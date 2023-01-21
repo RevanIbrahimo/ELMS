@@ -110,7 +110,7 @@ namespace ELMS.Forms.General
             //if (!is_connected)
             //    return;
 
-            //FLoginSystem fc = new FLoginSystem();
+            //Forms.General.FLoginSystem fc = new Forms.General.FLoginSystem();
             //fc.ShowDialog();
             MainForm fm = new MainForm();
             fm.ShowDialog();

@@ -29,6 +29,7 @@ namespace ELMS.Forms.Order
         }
 
         public TransactionTypeEnum TransactionType;
+        public NewOrderEnum NewOrder;
         public int? OrderID, CustomerID, EnumID;
 
         bool CurrentStatus = false, Used = false, isClickBOK = false,
@@ -551,8 +552,8 @@ namespace ELMS.Forms.Order
                 fifd_with_word,
                 phone = null,
                 period = null,
-                date = GlobalFunctions.DateWithDayMonthYear(OrderDate.DateTime),
-                filePath = GlobalVariables.V_ExecutingFolder + "\\TEMP\\Documents\\" + RegisterCodeText.Text.Replace("/", "") + "_Müqavilə.docx";
+                date = GlobalFunctions.DateWithDayMonthYear(ContractStartDate.DateTime),
+                filePath = GlobalVariables.V_ExecutingFolder + "\\TEMP\\Documents\\" + ContractCodeText.Text.Replace("/", "") + "_Müqavilə.docx";
 
             object missing = System.Reflection.Missing.Value;
             Microsoft.Office.Interop.Word.Application wordApp = new Microsoft.Office.Interop.Word.Application();
@@ -567,7 +568,7 @@ namespace ELMS.Forms.Order
             aDoc.Activate();
             double d = 0, div = 0;
             int mod = 0;
-            d = (double)OrderAmountValue.Value * 100;
+            d = (double)CreditAmountValue.Value * 100;
 
             div = (int)(d / 100);
             mod = (int)(d % 100);
@@ -582,7 +583,7 @@ namespace ELMS.Forms.Order
             amount_with_word = "(" + GlobalFunctions.IntegerToWritten(div) + ") " + credit_currency_name + qep;
 
             //Komissiya
-            d = (double)OrderAmountValue.Value * 100;
+            d = (double)CommissionValue.Value * 100;
 
             div = (int)(d / 100);
             mod = (int)(d % 100);
@@ -597,7 +598,7 @@ namespace ELMS.Forms.Order
             com_with_word = "(" + GlobalFunctions.IntegerToWritten(div) + ") " + credit_currency_name + qep;
 
             //FIFD
-            decimal fifd = Math.Round(OrderAmountValue.Value, 2);
+            decimal fifd = Math.Round(FifdValue.Value, 2);
             d = (double)fifd * 100;
 
             div = (int)(d / 100);
@@ -607,44 +608,51 @@ namespace ELMS.Forms.Order
 
             fifd_with_word = "(" + GlobalFunctions.IntegerToWritten(div) + qep + ")";
 
+            if (PeriodCheckEdit.Checked)
+                period = ContractEndDate.Text + " tarixinə qədər";
+            else
+                period = PeriodValue.Value + " (" + GlobalFunctions.IntegerToWritten((int)PeriodValue.Value) + ") ay";
+
+            phone = GlobalFunctions.GetName($@"SELECT PHONE FROM CRS_USER.V_PHONE WHERE OWNER_TYPE = '{person_description}' AND OWNER_ID = {CustomerID}");
+
             try
             {
-                GlobalProcedures.FindAndReplace(wordApp, "[$contractcode]", RegisterCodeText.Text);
+                GlobalProcedures.FindAndReplace(wordApp, "[$contractcode]", ContractCodeText.Text);
                 GlobalProcedures.FindAndReplace(wordApp, "[$contractdate]", date);
-                //if (customer_type_id == 1)
-                //{
-                //    GlobalProcedures.FindAndReplace(wordApp, "[$customer]", NameText.Text + " (" + CardDescriptionText.Text + ", " + OrderDateText.Text + " tarixində " + IssuingText.Text + " tərəfindən verilib)");
-                //    GlobalProcedures.FindAndReplace(wordApp, "[$carddate]", IssuingDateText.Text + " tarixində " + IssuingText.Text + " tərəfindən verilib");
-                //}
-                //else
-                //{
-                //    GlobalProcedures.FindAndReplace(wordApp, "[$customer]", CustomerFullNameText.Text + " (" + CardDescriptionText.Text + ")");
-                //    GlobalProcedures.FindAndReplace(wordApp, "[$carddate]", null);
-                //}
-                //GlobalProcedures.FindAndReplace(wordApp, "[$companyname]", GlobalVariables.V_CompanyName);
-                //GlobalProcedures.FindAndReplace(wordApp, "[$companyvoen]", GlobalVariables.V_CompanyVoen);
-                //GlobalProcedures.FindAndReplace(wordApp, "[$companyphone]", GlobalVariables.V_CompanyPhone);
-                //GlobalProcedures.FindAndReplace(wordApp, "[$companyaddress]", GlobalVariables.V_CompanyAddress);
-                //GlobalProcedures.FindAndReplace(wordApp, "[$companydirector]", GlobalVariables.V_CompanyDirector);
-                //GlobalProcedures.FindAndReplace(wordApp, "[$card]", CardDescriptionText.Text);
-                //GlobalProcedures.FindAndReplace(wordApp, "[$cur]", credit_currency_name);
-                //GlobalProcedures.FindAndReplace(wordApp, "[$creditpurpose]", "biznes tələblərinin ödənilməsi");
-                //GlobalProcedures.FindAndReplace(wordApp, "[$percent]", InterestValue.Value);
-                //GlobalProcedures.FindAndReplace(wordApp, "[$percentwrite]", "(" + GlobalFunctions.IntegerToWritten((double)InterestValue.Value) + ")");
-                //GlobalProcedures.FindAndReplace(wordApp, "[$amount]", CreditAmountValue.Value.ToString("N2"));
-                //GlobalProcedures.FindAndReplace(wordApp, "[$amountwrite]", amount_with_word);
-                //GlobalProcedures.FindAndReplace(wordApp, "[$grace]", GracePeriodValue.Text);
-                //GlobalProcedures.FindAndReplace(wordApp, "[$gracewrite]", "(" + GlobalFunctions.IntegerToWritten((int)GracePeriodValue.Value) + ")");
-                //GlobalProcedures.FindAndReplace(wordApp, "[$period]", PeriodValue.Value);
-                //GlobalProcedures.FindAndReplace(wordApp, "[$periodwrite]", "(" + GlobalFunctions.IntegerToWritten((double)PeriodValue.Value) + ")");
-                //GlobalProcedures.FindAndReplace(wordApp, "[$com]", CommissionValue.Value);
-                //GlobalProcedures.FindAndReplace(wordApp, "[$comwrite]", com_with_word);
-                //GlobalProcedures.FindAndReplace(wordApp, "[$fifd]", fifd);
-                //GlobalProcedures.FindAndReplace(wordApp, "[$fifdwrite]", fifd_with_word);
-                //GlobalProcedures.FindAndReplace(wordApp, "[$contractenddate]", GlobalFunctions.DateWithDayMonthYear(ContractEndDate.DateTime));
-                //GlobalProcedures.FindAndReplace(wordApp, "[$customername]", CustomerFullNameText.Text);
-                //GlobalProcedures.FindAndReplace(wordApp, "[$address]", RegistrationAddressText.Text);
-                //GlobalProcedures.FindAndReplace(wordApp, "[$phones]", phone);
+                if (customer_type_id == 1)
+                {
+                    GlobalProcedures.FindAndReplace(wordApp, "[$customer]", CustomerFullNameText.Text + " (" + CardDescriptionText.Text + ", " + IssuingDateText.Text + " tarixində " + IssuingText.Text + " tərəfindən verilib)");
+                    GlobalProcedures.FindAndReplace(wordApp, "[$carddate]", IssuingDateText.Text + " tarixində " + IssuingText.Text + " tərəfindən verilib");
+                }
+                else
+                {
+                    GlobalProcedures.FindAndReplace(wordApp, "[$customer]", CustomerFullNameText.Text + " (" + CardDescriptionText.Text + ")");
+                    GlobalProcedures.FindAndReplace(wordApp, "[$carddate]", null);
+                }
+                GlobalProcedures.FindAndReplace(wordApp, "[$companyname]", GlobalVariables.V_CompanyName);
+                GlobalProcedures.FindAndReplace(wordApp, "[$companyvoen]", GlobalVariables.V_CompanyVoen);
+                GlobalProcedures.FindAndReplace(wordApp, "[$companyphone]", GlobalVariables.V_CompanyPhone);
+                GlobalProcedures.FindAndReplace(wordApp, "[$companyaddress]", GlobalVariables.V_CompanyAddress);
+                GlobalProcedures.FindAndReplace(wordApp, "[$companydirector]", GlobalVariables.V_CompanyDirector);
+                GlobalProcedures.FindAndReplace(wordApp, "[$card]", CardDescriptionText.Text);
+                GlobalProcedures.FindAndReplace(wordApp, "[$cur]", credit_currency_name);
+                GlobalProcedures.FindAndReplace(wordApp, "[$creditpurpose]", "biznes tələblərinin ödənilməsi");
+                GlobalProcedures.FindAndReplace(wordApp, "[$percent]", InterestValue.Value);
+                GlobalProcedures.FindAndReplace(wordApp, "[$percentwrite]", "(" + GlobalFunctions.IntegerToWritten((double)InterestValue.Value) + ")");
+                GlobalProcedures.FindAndReplace(wordApp, "[$amount]", CreditAmountValue.Value.ToString("N2"));
+                GlobalProcedures.FindAndReplace(wordApp, "[$amountwrite]", amount_with_word);
+                GlobalProcedures.FindAndReplace(wordApp, "[$grace]", GracePeriodValue.Text);
+                GlobalProcedures.FindAndReplace(wordApp, "[$gracewrite]", "(" + GlobalFunctions.IntegerToWritten((int)GracePeriodValue.Value) + ")");
+                GlobalProcedures.FindAndReplace(wordApp, "[$period]", PeriodValue.Value);
+                GlobalProcedures.FindAndReplace(wordApp, "[$periodwrite]", "(" + GlobalFunctions.IntegerToWritten((double)PeriodValue.Value) + ")");
+                GlobalProcedures.FindAndReplace(wordApp, "[$com]", CommissionValue.Value);
+                GlobalProcedures.FindAndReplace(wordApp, "[$comwrite]", com_with_word);
+                GlobalProcedures.FindAndReplace(wordApp, "[$fifd]", fifd);
+                GlobalProcedures.FindAndReplace(wordApp, "[$fifdwrite]", fifd_with_word);
+                GlobalProcedures.FindAndReplace(wordApp, "[$contractenddate]", GlobalFunctions.DateWithDayMonthYear(ContractEndDate.DateTime));
+                GlobalProcedures.FindAndReplace(wordApp, "[$customername]", CustomerFullNameText.Text);
+                GlobalProcedures.FindAndReplace(wordApp, "[$address]", RegistrationAddressText.Text);
+                GlobalProcedures.FindAndReplace(wordApp, "[$phones]", phone);
 
                 if (File.Exists(filePath))
                     File.Delete(filePath);
@@ -660,7 +668,7 @@ namespace ELMS.Forms.Order
             catch
             {
                 GlobalProcedures.SplashScreenClose();
-                GlobalProcedures.ShowErrorMessage(RegisterCodeText.Text + "_Müqavilə.docx faylı açıq olduğu üçün bu faylı yenidən yaratmaq olmaz.");
+                GlobalProcedures.ShowErrorMessage(ContractCodeText.Text + "_Müqavilə.docx faylı açıq olduğu üçün bu faylı yenidən yaratmaq olmaz.");
             }
             finally
             {
@@ -779,7 +787,7 @@ namespace ELMS.Forms.Order
                 OrderID = GlobalFunctions.GetOracleSequenceValue("ORDER_TAB_SEQUENCE");
                 RegisterCodeText.EditValue = OrderID;
                 ContractID = Convert.ToInt32(RegisterCodeText.Text.Trim());
-                if(EnumID.Value == 2)
+                if(NewOrder == NewOrderEnum.FromCustomerUserControl)
                 {
                     FinCodeSearch.EditValue = "1234567";
                     LoadCustomerData();

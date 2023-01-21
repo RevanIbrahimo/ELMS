@@ -29,16 +29,28 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AKBUserControl));
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions3 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            this.BarManager = new DevExpress.XtraBars.BarManager(this.components);
+            this.AKBBarManager = new DevExpress.XtraBars.BarManager(this.components);
             this.ToolBar = new DevExpress.XtraBars.Bar();
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem7 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem8 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem9 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem10 = new DevExpress.XtraBars.BarButtonItem();
+            this.barSubItem1 = new DevExpress.XtraBars.BarSubItem();
             this.bar3 = new DevExpress.XtraBars.Bar();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
-            this.OrderPopupMenu = new DevExpress.XtraBars.PopupMenu(this.components);
+            this.AKBPopupMenu = new DevExpress.XtraBars.PopupMenu(this.components);
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
@@ -97,8 +109,8 @@
             this.Data_IsMkr = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Data_IsAkbDescription = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Data_IsMkrDescription = new DevExpress.XtraGrid.Columns.GridColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.BarManager)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.OrderPopupMenu)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AKBBarManager)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AKBPopupMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.OrganizationLookUp.Properties)).BeginInit();
@@ -110,18 +122,30 @@
             ((System.ComponentModel.ISupportInitialize)(this.CreditGridView)).BeginInit();
             this.SuspendLayout();
             // 
-            // BarManager
+            // AKBBarManager
             // 
-            this.BarManager.Bars.AddRange(new DevExpress.XtraBars.Bar[] {
+            this.AKBBarManager.Bars.AddRange(new DevExpress.XtraBars.Bar[] {
             this.ToolBar,
             this.bar3});
-            this.BarManager.DockControls.Add(this.barDockControlTop);
-            this.BarManager.DockControls.Add(this.barDockControlBottom);
-            this.BarManager.DockControls.Add(this.barDockControlLeft);
-            this.BarManager.DockControls.Add(this.barDockControlRight);
-            this.BarManager.Form = this;
-            this.BarManager.MaxItemId = 16;
-            this.BarManager.StatusBar = this.bar3;
+            this.AKBBarManager.DockControls.Add(this.barDockControlTop);
+            this.AKBBarManager.DockControls.Add(this.barDockControlBottom);
+            this.AKBBarManager.DockControls.Add(this.barDockControlLeft);
+            this.AKBBarManager.DockControls.Add(this.barDockControlRight);
+            this.AKBBarManager.Form = this;
+            this.AKBBarManager.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
+            this.barButtonItem1,
+            this.barButtonItem2,
+            this.barButtonItem3,
+            this.barButtonItem4,
+            this.barButtonItem5,
+            this.barButtonItem6,
+            this.barButtonItem7,
+            this.barButtonItem8,
+            this.barButtonItem9,
+            this.barButtonItem10,
+            this.barSubItem1});
+            this.AKBBarManager.MaxItemId = 29;
+            this.AKBBarManager.StatusBar = this.bar3;
             // 
             // ToolBar
             // 
@@ -129,10 +153,110 @@
             this.ToolBar.DockCol = 0;
             this.ToolBar.DockRow = 0;
             this.ToolBar.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
+            this.ToolBar.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem1),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem2),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem3),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem4),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem5, true),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem6),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem7, true),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem8, true),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem9),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem10, true),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barSubItem1)});
             this.ToolBar.OptionsBar.DrawBorder = false;
             this.ToolBar.OptionsBar.DrawDragBorder = false;
             this.ToolBar.OptionsBar.UseWholeRow = true;
             this.ToolBar.Text = "Tools";
+            // 
+            // barButtonItem1
+            // 
+            this.barButtonItem1.Caption = "Yeni";
+            this.barButtonItem1.Id = 16;
+            this.barButtonItem1.ImageOptions.Image = global::ELMS.Properties.Resources.plus_32;
+            this.barButtonItem1.Name = "barButtonItem1";
+            this.barButtonItem1.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            // 
+            // barButtonItem2
+            // 
+            this.barButtonItem2.Caption = "Dəyiş";
+            this.barButtonItem2.Id = 17;
+            this.barButtonItem2.ImageOptions.Image = global::ELMS.Properties.Resources.pencil_32;
+            this.barButtonItem2.Name = "barButtonItem2";
+            this.barButtonItem2.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            // 
+            // barButtonItem3
+            // 
+            this.barButtonItem3.Caption = "Sil";
+            this.barButtonItem3.Id = 18;
+            this.barButtonItem3.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.ImageOptions.Image")));
+            this.barButtonItem3.Name = "barButtonItem3";
+            this.barButtonItem3.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            // 
+            // barButtonItem4
+            // 
+            this.barButtonItem4.Caption = "Yenilə";
+            this.barButtonItem4.Id = 19;
+            this.barButtonItem4.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.ImageOptions.Image")));
+            this.barButtonItem4.Name = "barButtonItem4";
+            this.barButtonItem4.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            // 
+            // barButtonItem5
+            // 
+            this.barButtonItem5.Caption = "Surətini çıxar";
+            this.barButtonItem5.Id = 20;
+            this.barButtonItem5.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem5.ImageOptions.Image")));
+            this.barButtonItem5.Name = "barButtonItem5";
+            this.barButtonItem5.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            // 
+            // barButtonItem6
+            // 
+            this.barButtonItem6.Caption = "Krediti dayandır";
+            this.barButtonItem6.Id = 21;
+            this.barButtonItem6.ImageOptions.Image = global::ELMS.Properties.Resources.stop_32;
+            this.barButtonItem6.Name = "barButtonItem6";
+            this.barButtonItem6.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            // 
+            // barButtonItem7
+            // 
+            this.barButtonItem7.Caption = "Kreditləri excel-ə yüklə";
+            this.barButtonItem7.Id = 22;
+            this.barButtonItem7.ImageOptions.Image = global::ELMS.Properties.Resources.export_excel_32;
+            this.barButtonItem7.Name = "barButtonItem7";
+            this.barButtonItem7.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            // 
+            // barButtonItem8
+            // 
+            this.barButtonItem8.Caption = "XML-ə köçür";
+            this.barButtonItem8.Id = 23;
+            this.barButtonItem8.ImageOptions.Image = global::ELMS.Properties.Resources.add_files_to_archive_32x32;
+            this.barButtonItem8.Name = "barButtonItem8";
+            this.barButtonItem8.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            // 
+            // barButtonItem9
+            // 
+            this.barButtonItem9.Caption = "Excel-dən yüklə";
+            this.barButtonItem9.Id = 24;
+            this.barButtonItem9.ImageOptions.Image = global::ELMS.Properties.Resources.table_excel_32;
+            this.barButtonItem9.Name = "barButtonItem9";
+            this.barButtonItem9.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            // 
+            // barButtonItem10
+            // 
+            this.barButtonItem10.Caption = "Çap et";
+            this.barButtonItem10.Id = 25;
+            this.barButtonItem10.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem10.ImageOptions.Image")));
+            this.barButtonItem10.Name = "barButtonItem10";
+            this.barButtonItem10.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            // 
+            // barSubItem1
+            // 
+            this.barSubItem1.Caption = "İxrac et";
+            this.barSubItem1.Id = 28;
+            this.barSubItem1.ImageOptions.Image = global::ELMS.Properties.Resources.table_export_32;
+            this.barSubItem1.Name = "barSubItem1";
+            this.barSubItem1.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
             // 
             // bar3
             // 
@@ -151,16 +275,16 @@
             this.barDockControlTop.CausesValidation = false;
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
-            this.barDockControlTop.Manager = this.BarManager;
+            this.barDockControlTop.Manager = this.AKBBarManager;
             this.barDockControlTop.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.barDockControlTop.Size = new System.Drawing.Size(1430, 29);
+            this.barDockControlTop.Size = new System.Drawing.Size(1430, 47);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.barDockControlBottom.Location = new System.Drawing.Point(0, 613);
-            this.barDockControlBottom.Manager = this.BarManager;
+            this.barDockControlBottom.Manager = this.AKBBarManager;
             this.barDockControlBottom.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.barDockControlBottom.Size = new System.Drawing.Size(1430, 23);
             // 
@@ -168,24 +292,36 @@
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 29);
-            this.barDockControlLeft.Manager = this.BarManager;
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 47);
+            this.barDockControlLeft.Manager = this.AKBBarManager;
             this.barDockControlLeft.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 584);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 566);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1430, 29);
-            this.barDockControlRight.Manager = this.BarManager;
+            this.barDockControlRight.Location = new System.Drawing.Point(1430, 47);
+            this.barDockControlRight.Manager = this.AKBBarManager;
             this.barDockControlRight.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 584);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 566);
             // 
-            // OrderPopupMenu
+            // AKBPopupMenu
             // 
-            this.OrderPopupMenu.Manager = this.BarManager;
-            this.OrderPopupMenu.Name = "OrderPopupMenu";
+            this.AKBPopupMenu.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem1),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem2),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem3),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem4),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem5),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem6),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem7),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem8),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem9),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem10),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barSubItem1)});
+            this.AKBPopupMenu.Manager = this.AKBBarManager;
+            this.AKBPopupMenu.Name = "AKBPopupMenu";
             // 
             // panelControl1
             // 
@@ -202,7 +338,7 @@
             this.panelControl1.Controls.Add(this.ReportDate);
             this.panelControl1.Controls.Add(this.labelControl2);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl1.Location = new System.Drawing.Point(0, 29);
+            this.panelControl1.Location = new System.Drawing.Point(0, 47);
             this.panelControl1.Margin = new System.Windows.Forms.Padding(2);
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Size = new System.Drawing.Size(1430, 40);
@@ -257,7 +393,7 @@
             this.OrganizationLookUp.Margin = new System.Windows.Forms.Padding(2);
             this.OrganizationLookUp.Name = "OrganizationLookUp";
             this.OrganizationLookUp.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), "Siyahını aç")});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo, "", -1, true, true, false, editorButtonImageOptions3, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), "Siyahını aç")});
             this.OrganizationLookUp.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("ID", "ID", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default),
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("NAME", "Name")});
@@ -325,7 +461,7 @@
             this.ReportDate.Margin = new System.Windows.Forms.Padding(2);
             this.ReportDate.Name = "ReportDate";
             this.ReportDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), "Kalendarı aç")});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), "Kalendarı aç")});
             this.ReportDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.ReportDate.Properties.Mask.EditMask = "dd\\/MM\\/yyyy";
@@ -349,14 +485,15 @@
             // 
             this.CreditGridControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.CreditGridControl.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(2);
-            this.CreditGridControl.Location = new System.Drawing.Point(0, 69);
+            this.CreditGridControl.Location = new System.Drawing.Point(0, 87);
             this.CreditGridControl.MainView = this.CreditGridView;
             this.CreditGridControl.Margin = new System.Windows.Forms.Padding(2);
             this.CreditGridControl.Name = "CreditGridControl";
-            this.CreditGridControl.Size = new System.Drawing.Size(1430, 544);
+            this.CreditGridControl.Size = new System.Drawing.Size(1430, 526);
             this.CreditGridControl.TabIndex = 62;
             this.CreditGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.CreditGridView});
+            this.CreditGridControl.Click += new System.EventHandler(this.CreditGridControl_Click);
             // 
             // CreditGridView
             // 
@@ -966,8 +1103,8 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "AKBUserControl";
             this.Size = new System.Drawing.Size(1430, 636);
-            ((System.ComponentModel.ISupportInitialize)(this.BarManager)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.OrderPopupMenu)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AKBBarManager)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AKBPopupMenu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
@@ -985,14 +1122,14 @@
 
         #endregion
 
-        private DevExpress.XtraBars.BarManager BarManager;
+        private DevExpress.XtraBars.BarManager AKBBarManager;
         private DevExpress.XtraBars.Bar ToolBar;
         private DevExpress.XtraBars.Bar bar3;
         private DevExpress.XtraBars.BarDockControl barDockControlTop;
         private DevExpress.XtraBars.BarDockControl barDockControlBottom;
         private DevExpress.XtraBars.BarDockControl barDockControlLeft;
         private DevExpress.XtraBars.BarDockControl barDockControlRight;
-        private DevExpress.XtraBars.PopupMenu OrderPopupMenu;
+        private DevExpress.XtraBars.PopupMenu AKBPopupMenu;
         private DevExpress.XtraEditors.PanelControl panelControl1;
         private DevExpress.XtraEditors.LabelControl labelControl7;
         private DevExpress.XtraEditors.LabelControl labelControl6;
@@ -1051,5 +1188,16 @@
         private DevExpress.XtraGrid.Columns.GridColumn Data_IsMkr;
         private DevExpress.XtraGrid.Columns.GridColumn Data_IsAkbDescription;
         private DevExpress.XtraGrid.Columns.GridColumn Data_IsMkrDescription;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem2;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem3;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem4;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem5;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem6;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem7;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem8;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem9;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem10;
+        private DevExpress.XtraBars.BarSubItem barSubItem1;
     }
 }

@@ -251,6 +251,12 @@ namespace ELMS.Forms.Customer
             GlobalProcedures.GenerateAutoRowNumber(sender, Document_SS, e);
         }
 
+        private void DocumentGridView_MouseUp(object sender, MouseEventArgs e)
+        {
+            GlobalProcedures.GridMouseUpForPopupMenu(DocumentGridView, DocumentPopupMenu, e);
+
+        }
+
 
 
 
@@ -438,6 +444,13 @@ namespace ELMS.Forms.Customer
             GlobalProcedures.GenerateAutoRowNumber(sender, CustomerWork_SS, e);
         }
 
+        private void WorkGridView_MouseUp(object sender, MouseEventArgs e)
+        {
+            GlobalProcedures.GridMouseUpForPopupMenu(WorkGridView, WorkPopupMenu, e);
+
+        }
+
+
 
 
 
@@ -525,7 +538,13 @@ namespace ELMS.Forms.Customer
                 relativeID = Convert.ToInt32(row["ID"].ToString());
         }
 
-        
+        private void RelativeGridView_MouseUp(object sender, MouseEventArgs e)
+        {
+            GlobalProcedures.GridMouseUpForPopupMenu(RelativeGridView, RelativePopupMenu, e);
+        }
+
+
+
 
 
 

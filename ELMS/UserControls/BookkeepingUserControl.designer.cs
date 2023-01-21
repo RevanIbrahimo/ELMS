@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BookkeepingUserControl));
             DevExpress.XtraGrid.GridFormatRule gridFormatRule1 = new DevExpress.XtraGrid.GridFormatRule();
             DevExpress.XtraEditors.FormatConditionRuleValue formatConditionRuleValue1 = new DevExpress.XtraEditors.FormatConditionRuleValue();
             DevExpress.XtraGrid.GridFormatRule gridFormatRule2 = new DevExpress.XtraGrid.GridFormatRule();
@@ -49,6 +50,18 @@
             this.Bookkeeping_CDEBT = new DevExpress.XtraGrid.Columns.GridColumn();
             this.BarManager = new DevExpress.XtraBars.BarManager(this.components);
             this.ToolBar = new DevExpress.XtraBars.Bar();
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem7 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem8 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem9 = new DevExpress.XtraBars.BarButtonItem();
+            this.barSubItem1 = new DevExpress.XtraBars.BarSubItem();
+            this.barButtonItem11 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem12 = new DevExpress.XtraBars.BarButtonItem();
             this.bar3 = new DevExpress.XtraBars.Bar();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
@@ -185,7 +198,20 @@
             this.BarManager.DockControls.Add(this.barDockControlLeft);
             this.BarManager.DockControls.Add(this.barDockControlRight);
             this.BarManager.Form = this;
-            this.BarManager.MaxItemId = 16;
+            this.BarManager.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
+            this.barButtonItem1,
+            this.barButtonItem2,
+            this.barButtonItem3,
+            this.barButtonItem4,
+            this.barButtonItem5,
+            this.barButtonItem6,
+            this.barButtonItem7,
+            this.barButtonItem8,
+            this.barButtonItem9,
+            this.barButtonItem11,
+            this.barButtonItem12,
+            this.barSubItem1});
+            this.BarManager.MaxItemId = 30;
             this.BarManager.StatusBar = this.bar3;
             // 
             // ToolBar
@@ -194,10 +220,124 @@
             this.ToolBar.DockCol = 0;
             this.ToolBar.DockRow = 0;
             this.ToolBar.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
+            this.ToolBar.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem1),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem2),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem3),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem4),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem5),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem6),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem7),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem8),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem9, true),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barSubItem1),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem11, true),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem12)});
             this.ToolBar.OptionsBar.DrawBorder = false;
             this.ToolBar.OptionsBar.DrawDragBorder = false;
             this.ToolBar.OptionsBar.UseWholeRow = true;
             this.ToolBar.Text = "Tools";
+            // 
+            // barButtonItem1
+            // 
+            this.barButtonItem1.Caption = "Jurnal";
+            this.barButtonItem1.Id = 16;
+            this.barButtonItem1.ImageOptions.Image = global::ELMS.Properties.Resources.journal_32;
+            this.barButtonItem1.Name = "barButtonItem1";
+            this.barButtonItem1.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            // 
+            // barButtonItem2
+            // 
+            this.barButtonItem2.Caption = "Detallar";
+            this.barButtonItem2.Id = 17;
+            this.barButtonItem2.ImageOptions.Image = global::ELMS.Properties.Resources.view_detail_32;
+            this.barButtonItem2.Name = "barButtonItem2";
+            this.barButtonItem2.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            // 
+            // barButtonItem3
+            // 
+            this.barButtonItem3.Caption = "Yenilə";
+            this.barButtonItem3.Id = 18;
+            this.barButtonItem3.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.ImageOptions.Image")));
+            this.barButtonItem3.Name = "barButtonItem3";
+            this.barButtonItem3.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            // 
+            // barButtonItem4
+            // 
+            this.barButtonItem4.Caption = "Hesablar planı";
+            this.barButtonItem4.Id = 19;
+            this.barButtonItem4.ImageOptions.Image = global::ELMS.Properties.Resources.notebook;
+            this.barButtonItem4.Name = "barButtonItem4";
+            this.barButtonItem4.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            // 
+            // barButtonItem5
+            // 
+            this.barButtonItem5.Caption = "Hesabların ilkin qalıqları";
+            this.barButtonItem5.Id = 20;
+            this.barButtonItem5.ImageOptions.Image = global::ELMS.Properties.Resources.safe_32;
+            this.barButtonItem5.Name = "barButtonItem5";
+            this.barButtonItem5.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            // 
+            // barButtonItem6
+            // 
+            this.barButtonItem6.Caption = "Mənfəət və zərər";
+            this.barButtonItem6.Id = 21;
+            this.barButtonItem6.ImageOptions.Image = global::ELMS.Properties.Resources.profits_32;
+            this.barButtonItem6.Name = "barButtonItem6";
+            this.barButtonItem6.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            // 
+            // barButtonItem7
+            // 
+            this.barButtonItem7.Caption = "Məzuniyyətlər tarixləri";
+            this.barButtonItem7.Id = 22;
+            this.barButtonItem7.ImageOptions.Image = global::ELMS.Properties.Resources.calendar_month_32;
+            this.barButtonItem7.Name = "barButtonItem7";
+            this.barButtonItem7.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            // 
+            // barButtonItem8
+            // 
+            this.barButtonItem8.Caption = "Kassa";
+            this.barButtonItem8.Id = 23;
+            this.barButtonItem8.ImageOptions.Image = global::ELMS.Properties.Resources.cash_32png;
+            this.barButtonItem8.Name = "barButtonItem8";
+            this.barButtonItem8.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            // 
+            // barButtonItem9
+            // 
+            this.barButtonItem9.Caption = "Çap";
+            this.barButtonItem9.Id = 24;
+            this.barButtonItem9.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem9.ImageOptions.Image")));
+            this.barButtonItem9.Name = "barButtonItem9";
+            this.barButtonItem9.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            // 
+            // barSubItem1
+            // 
+            this.barSubItem1.Caption = "İxrac";
+            this.barSubItem1.Id = 29;
+            this.barSubItem1.ImageOptions.Image = global::ELMS.Properties.Resources.table_export_32;
+            this.barSubItem1.Name = "barSubItem1";
+            this.barSubItem1.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            // 
+            // barButtonItem11
+            // 
+            this.barButtonItem11.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.Check;
+            this.barButtonItem11.Caption = "Ətraflı axtar";
+            this.barButtonItem11.Down = true;
+            this.barButtonItem11.Id = 26;
+            this.barButtonItem11.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem11.ImageOptions.Image")));
+            this.barButtonItem11.ItemShortcut = new DevExpress.XtraBars.BarShortcut(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
+                | System.Windows.Forms.Keys.F));
+            this.barButtonItem11.Name = "barButtonItem11";
+            this.barButtonItem11.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.barButtonItem11.ShowItemShortcut = DevExpress.Utils.DefaultBoolean.True;
+            // 
+            // barButtonItem12
+            // 
+            this.barButtonItem12.Caption = "Filtrləri sil";
+            this.barButtonItem12.Id = 27;
+            this.barButtonItem12.ImageOptions.Image = global::ELMS.Properties.Resources.filter_delete_32;
+            this.barButtonItem12.Name = "barButtonItem12";
+            this.barButtonItem12.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
             // 
             // bar3
             // 
@@ -218,7 +358,7 @@
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.BarManager;
             this.barDockControlTop.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.barDockControlTop.Size = new System.Drawing.Size(1430, 29);
+            this.barDockControlTop.Size = new System.Drawing.Size(1430, 47);
             // 
             // barDockControlBottom
             // 
@@ -233,32 +373,45 @@
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 29);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 47);
             this.barDockControlLeft.Manager = this.BarManager;
             this.barDockControlLeft.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 584);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 566);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1430, 29);
+            this.barDockControlRight.Location = new System.Drawing.Point(1430, 47);
             this.barDockControlRight.Manager = this.BarManager;
             this.barDockControlRight.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 584);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 566);
             // 
             // BookeepingPopupMenu
             // 
+            this.BookeepingPopupMenu.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem1),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem2),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem3),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem4),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem5),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem6),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem7),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem8),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem9),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barSubItem1),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem11),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem12)});
             this.BookeepingPopupMenu.Manager = this.BarManager;
             this.BookeepingPopupMenu.Name = "BookeepingPopupMenu";
             // 
             // OperationsGridControl
             // 
             this.OperationsGridControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.OperationsGridControl.Location = new System.Drawing.Point(0, 29);
+            this.OperationsGridControl.Location = new System.Drawing.Point(0, 47);
             this.OperationsGridControl.MainView = this.OperationsGridView;
             this.OperationsGridControl.Name = "OperationsGridControl";
-            this.OperationsGridControl.Size = new System.Drawing.Size(1430, 584);
+            this.OperationsGridControl.Size = new System.Drawing.Size(1430, 566);
             this.OperationsGridControl.TabIndex = 79;
             this.OperationsGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.OperationsGridView});
@@ -473,5 +626,17 @@
         private DevExpress.XtraGrid.Columns.GridColumn Bookkeeping_DDEBT;
         private DevExpress.XtraGrid.Columns.GridColumn Bookkeeping_CDEBT;
         private DevExpress.XtraGrid.Columns.GridColumn Bookkeeping_FullAccountName;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem2;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem3;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem4;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem5;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem6;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem7;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem8;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem9;
+        private DevExpress.XtraBars.BarSubItem barSubItem1;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem11;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem12;
     }
 }

@@ -7,9 +7,10 @@
     "\\ELMS\\Forms\\Dictionaries",
     "\\ELMS\\Forms\\General",
     "\\ELMS\\Forms\\Order",
+    "\\ELMS\\Resources",
     "\\ELMS\\UserControls",
     "\\ELMS\\WaitForms"
   ],
-  "SelectedNode": "\\ELMS\\UserControls\\ContractUserControl.cs",
+  "SelectedNode": "\\ELMS\\MainForm.cs",
   "PreviewInSolutionExplorer": false
 }

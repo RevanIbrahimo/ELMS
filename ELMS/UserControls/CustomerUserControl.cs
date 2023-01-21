@@ -224,10 +224,10 @@ namespace ELMS.UserControls
 
         private void NewOrderBarButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            LoadFOrderAddEdit(TransactionTypeEnum.Insert, customerID);
+            LoadFOrderAddEdit(TransactionTypeEnum.Insert, NewOrderEnum.FromCustomerUserControl , customerID);
         }
 
-        private void LoadFOrderAddEdit(TransactionTypeEnum transaction, int? id)
+        private void LoadFOrderAddEdit(TransactionTypeEnum transaction,NewOrderEnum newOrderEnum, int? id)
         {
             topindex = CustomerGridView.TopRowIndex;
             old_row_id = CustomerGridView.FocusedRowHandle;
@@ -235,7 +235,7 @@ namespace ELMS.UserControls
             {
                 TransactionType = transaction,
                 CustomerID = id,
-                EnumID = 2,
+                NewOrder = newOrderEnum,
             };
             fc.RefreshDataGridView += new FOrderAddEdit.DoEvent(RefreshCustomer);
             fc.ShowDialog();

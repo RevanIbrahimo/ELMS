@@ -122,5 +122,11 @@ namespace ELMS.Class
             YeniSexsiyyetVesiqesi = 94,
             VoenFizikiSexs = 9
         }
+
+        public enum NewOrderEnum
+        {
+            FromCustomerUserControl = 1,
+            FromOrderUserControl = 2
+        }
     }
 }

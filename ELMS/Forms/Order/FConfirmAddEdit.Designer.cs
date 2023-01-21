@@ -107,27 +107,27 @@
             this.LiquidLabel = new DevExpress.XtraEditors.LabelControl();
             this.OrderAmountValue = new DevExpress.XtraEditors.CalcEdit();
             this.CustomerTab = new DevExpress.XtraTab.XtraTabPage();
-            this.xtraScrollableControl2 = new DevExpress.XtraEditors.XtraScrollableControl();
+            this.CustomerScrollableControl2 = new DevExpress.XtraEditors.XtraScrollableControl();
             this.groupControl10 = new DevExpress.XtraEditors.GroupControl();
             this.RelativeGridControl = new DevExpress.XtraGrid.GridControl();
             this.RelativeGridView = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.Relative_SS = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn23 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn24 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn25 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn26 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn27 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn28 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn29 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Relative_ID = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Relative_Name = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Relative_KindShip = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Relative_Phone = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Relative_PhoneDescription = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Relative_Profession = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Relative_Salary = new DevExpress.XtraGrid.Columns.GridColumn();
             this.groupControl9 = new DevExpress.XtraEditors.GroupControl();
             this.WorkGridControl = new DevExpress.XtraGrid.GridControl();
             this.WorkGridView = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.Work_SS = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn17 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn18 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn19 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn20 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn21 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Work_ID = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Work_Name = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Work_Profession = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Work_Salary = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Work_Note = new DevExpress.XtraGrid.Columns.GridColumn();
             this.groupControl8 = new DevExpress.XtraEditors.GroupControl();
             this.PhoneGridControl = new DevExpress.XtraGrid.GridControl();
             this.PhoneGridView = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -165,14 +165,14 @@
             this.DocumentGridControl = new DevExpress.XtraGrid.GridControl();
             this.DocumentGridView = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.CustomerDocument_SS = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.CustomerDocument_Group = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.CustomerDocument_Type = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.CustomerDocument_Number = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.CustomerDocument_PinCode = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.CustomerDocument_Issue = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.CustomerDocument_IssueDate = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.CustomerDocument_ReliableDate = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.CustomerDocument_ID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.NoteTab = new DevExpress.XtraTab.XtraTabPage();
             this.OperationNoteText = new DevExpress.XtraEditors.MemoEdit();
             this.OperationTab = new DevExpress.XtraTab.XtraTabPage();
@@ -289,7 +289,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.NoteText.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.OrderAmountValue.Properties)).BeginInit();
             this.CustomerTab.SuspendLayout();
-            this.xtraScrollableControl2.SuspendLayout();
+            this.CustomerScrollableControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl10)).BeginInit();
             this.groupControl10.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.RelativeGridControl)).BeginInit();
@@ -968,24 +968,24 @@
             // 
             // CustomerTab
             // 
-            this.CustomerTab.Controls.Add(this.xtraScrollableControl2);
+            this.CustomerTab.Controls.Add(this.CustomerScrollableControl2);
             this.CustomerTab.Controls.Add(this.ProductStandaloneBarDockControl);
             this.CustomerTab.Name = "CustomerTab";
             this.CustomerTab.Size = new System.Drawing.Size(860, 569);
             this.CustomerTab.Text = "Müştəri";
             // 
-            // xtraScrollableControl2
+            // CustomerScrollableControl2
             // 
-            this.xtraScrollableControl2.Controls.Add(this.groupControl10);
-            this.xtraScrollableControl2.Controls.Add(this.groupControl9);
-            this.xtraScrollableControl2.Controls.Add(this.groupControl8);
-            this.xtraScrollableControl2.Controls.Add(this.groupControl6);
-            this.xtraScrollableControl2.Controls.Add(this.groupControl7);
-            this.xtraScrollableControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.xtraScrollableControl2.Location = new System.Drawing.Point(0, 0);
-            this.xtraScrollableControl2.Name = "xtraScrollableControl2";
-            this.xtraScrollableControl2.Size = new System.Drawing.Size(860, 569);
-            this.xtraScrollableControl2.TabIndex = 1;
+            this.CustomerScrollableControl2.Controls.Add(this.groupControl10);
+            this.CustomerScrollableControl2.Controls.Add(this.groupControl9);
+            this.CustomerScrollableControl2.Controls.Add(this.groupControl8);
+            this.CustomerScrollableControl2.Controls.Add(this.groupControl6);
+            this.CustomerScrollableControl2.Controls.Add(this.groupControl7);
+            this.CustomerScrollableControl2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.CustomerScrollableControl2.Location = new System.Drawing.Point(0, 0);
+            this.CustomerScrollableControl2.Name = "CustomerScrollableControl2";
+            this.CustomerScrollableControl2.Size = new System.Drawing.Size(860, 569);
+            this.CustomerScrollableControl2.TabIndex = 1;
             // 
             // groupControl10
             // 
@@ -1023,13 +1023,13 @@
             this.RelativeGridView.Appearance.HeaderPanel.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.RelativeGridView.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.Relative_SS,
-            this.gridColumn23,
-            this.gridColumn24,
-            this.gridColumn25,
-            this.gridColumn26,
-            this.gridColumn27,
-            this.gridColumn28,
-            this.gridColumn29});
+            this.Relative_ID,
+            this.Relative_Name,
+            this.Relative_KindShip,
+            this.Relative_Phone,
+            this.Relative_PhoneDescription,
+            this.Relative_Profession,
+            this.Relative_Salary});
             this.RelativeGridView.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFullFocus;
             this.RelativeGridView.GridControl = this.RelativeGridControl;
             this.RelativeGridView.Name = "RelativeGridView";
@@ -1064,72 +1064,72 @@
             this.Relative_SS.VisibleIndex = 0;
             this.Relative_SS.Width = 50;
             // 
-            // gridColumn23
+            // Relative_ID
             // 
-            this.gridColumn23.Caption = "ID";
-            this.gridColumn23.FieldName = "ID";
-            this.gridColumn23.Name = "gridColumn23";
-            this.gridColumn23.OptionsColumn.AllowShowHide = false;
+            this.Relative_ID.Caption = "ID";
+            this.Relative_ID.FieldName = "ID";
+            this.Relative_ID.Name = "Relative_ID";
+            this.Relative_ID.OptionsColumn.AllowShowHide = false;
             // 
-            // gridColumn24
+            // Relative_Name
             // 
-            this.gridColumn24.Caption = "Adı";
-            this.gridColumn24.FieldName = "NAME";
-            this.gridColumn24.Name = "gridColumn24";
-            this.gridColumn24.OptionsColumn.FixedWidth = true;
-            this.gridColumn24.Visible = true;
-            this.gridColumn24.VisibleIndex = 1;
-            this.gridColumn24.Width = 130;
+            this.Relative_Name.Caption = "Adı";
+            this.Relative_Name.FieldName = "NAME";
+            this.Relative_Name.Name = "Relative_Name";
+            this.Relative_Name.OptionsColumn.FixedWidth = true;
+            this.Relative_Name.Visible = true;
+            this.Relative_Name.VisibleIndex = 1;
+            this.Relative_Name.Width = 130;
             // 
-            // gridColumn25
+            // Relative_KindShip
             // 
-            this.gridColumn25.Caption = "Qohumluq dərəcəsi";
-            this.gridColumn25.FieldName = "KIND_NAME";
-            this.gridColumn25.Name = "gridColumn25";
-            this.gridColumn25.OptionsColumn.FixedWidth = true;
-            this.gridColumn25.Visible = true;
-            this.gridColumn25.VisibleIndex = 2;
-            this.gridColumn25.Width = 140;
+            this.Relative_KindShip.Caption = "Qohumluq dərəcəsi";
+            this.Relative_KindShip.FieldName = "KIND_NAME";
+            this.Relative_KindShip.Name = "Relative_KindShip";
+            this.Relative_KindShip.OptionsColumn.FixedWidth = true;
+            this.Relative_KindShip.Visible = true;
+            this.Relative_KindShip.VisibleIndex = 2;
+            this.Relative_KindShip.Width = 140;
             // 
-            // gridColumn26
+            // Relative_Phone
             // 
-            this.gridColumn26.Caption = "Telefon";
-            this.gridColumn26.FieldName = "PHONE_NUMBER";
-            this.gridColumn26.Name = "gridColumn26";
-            this.gridColumn26.OptionsColumn.FixedWidth = true;
-            this.gridColumn26.Visible = true;
-            this.gridColumn26.VisibleIndex = 3;
-            this.gridColumn26.Width = 140;
+            this.Relative_Phone.Caption = "Telefon";
+            this.Relative_Phone.FieldName = "PHONE_NUMBER";
+            this.Relative_Phone.Name = "Relative_Phone";
+            this.Relative_Phone.OptionsColumn.FixedWidth = true;
+            this.Relative_Phone.Visible = true;
+            this.Relative_Phone.VisibleIndex = 3;
+            this.Relative_Phone.Width = 140;
             // 
-            // gridColumn27
+            // Relative_PhoneDescription
             // 
-            this.gridColumn27.Caption = "Təsviri";
-            this.gridColumn27.FieldName = "DESCRIPTION_NAME";
-            this.gridColumn27.Name = "gridColumn27";
-            this.gridColumn27.OptionsColumn.FixedWidth = true;
-            this.gridColumn27.Visible = true;
-            this.gridColumn27.VisibleIndex = 4;
-            this.gridColumn27.Width = 140;
+            this.Relative_PhoneDescription.Caption = "Təsviri";
+            this.Relative_PhoneDescription.FieldName = "DESCRIPTION_NAME";
+            this.Relative_PhoneDescription.Name = "Relative_PhoneDescription";
+            this.Relative_PhoneDescription.OptionsColumn.FixedWidth = true;
+            this.Relative_PhoneDescription.Visible = true;
+            this.Relative_PhoneDescription.VisibleIndex = 4;
+            this.Relative_PhoneDescription.Width = 140;
             // 
-            // gridColumn28
+            // Relative_Profession
             // 
-            this.gridColumn28.Caption = "Peşəsi";
-            this.gridColumn28.FieldName = "PROFESSION_NAME";
-            this.gridColumn28.Name = "gridColumn28";
-            this.gridColumn28.OptionsColumn.FixedWidth = true;
-            this.gridColumn28.Visible = true;
-            this.gridColumn28.VisibleIndex = 5;
-            this.gridColumn28.Width = 140;
+            this.Relative_Profession.Caption = "Peşəsi";
+            this.Relative_Profession.FieldName = "PROFESSION_NAME";
+            this.Relative_Profession.Name = "Relative_Profession";
+            this.Relative_Profession.OptionsColumn.FixedWidth = true;
+            this.Relative_Profession.Visible = true;
+            this.Relative_Profession.VisibleIndex = 5;
+            this.Relative_Profession.Width = 140;
             // 
-            // gridColumn29
+            // Relative_Salary
             // 
-            this.gridColumn29.Caption = "Əmək haqqı";
-            this.gridColumn29.FieldName = "SALARY";
-            this.gridColumn29.Name = "gridColumn29";
-            this.gridColumn29.OptionsColumn.FixedWidth = true;
-            this.gridColumn29.Visible = true;
-            this.gridColumn29.VisibleIndex = 6;
-            this.gridColumn29.Width = 130;
+            this.Relative_Salary.Caption = "Əmək haqqı";
+            this.Relative_Salary.FieldName = "SALARY";
+            this.Relative_Salary.Name = "Relative_Salary";
+            this.Relative_Salary.OptionsColumn.FixedWidth = true;
+            this.Relative_Salary.Visible = true;
+            this.Relative_Salary.VisibleIndex = 6;
+            this.Relative_Salary.Width = 130;
             // 
             // groupControl9
             // 
@@ -1167,11 +1167,11 @@
             this.WorkGridView.Appearance.HeaderPanel.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.WorkGridView.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.Work_SS,
-            this.gridColumn17,
-            this.gridColumn18,
-            this.gridColumn19,
-            this.gridColumn20,
-            this.gridColumn21});
+            this.Work_ID,
+            this.Work_Name,
+            this.Work_Profession,
+            this.Work_Salary,
+            this.Work_Note});
             this.WorkGridView.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFullFocus;
             this.WorkGridView.GridControl = this.WorkGridControl;
             this.WorkGridView.Name = "WorkGridView";
@@ -1206,51 +1206,51 @@
             this.Work_SS.VisibleIndex = 0;
             this.Work_SS.Width = 50;
             // 
-            // gridColumn17
+            // Work_ID
             // 
-            this.gridColumn17.Caption = "ID";
-            this.gridColumn17.FieldName = "ID";
-            this.gridColumn17.Name = "gridColumn17";
+            this.Work_ID.Caption = "ID";
+            this.Work_ID.FieldName = "ID";
+            this.Work_ID.Name = "Work_ID";
             // 
-            // gridColumn18
+            // Work_Name
             // 
-            this.gridColumn18.Caption = "İş yerinin adı";
-            this.gridColumn18.FieldName = "PLACE_NAME";
-            this.gridColumn18.Name = "gridColumn18";
-            this.gridColumn18.Visible = true;
-            this.gridColumn18.VisibleIndex = 1;
+            this.Work_Name.Caption = "İş yerinin adı";
+            this.Work_Name.FieldName = "PLACE_NAME";
+            this.Work_Name.Name = "Work_Name";
+            this.Work_Name.Visible = true;
+            this.Work_Name.VisibleIndex = 1;
             // 
-            // gridColumn19
+            // Work_Profession
             // 
-            this.gridColumn19.Caption = "Vəzifəsi";
-            this.gridColumn19.FieldName = "POSITION";
-            this.gridColumn19.Name = "gridColumn19";
-            this.gridColumn19.Visible = true;
-            this.gridColumn19.VisibleIndex = 2;
+            this.Work_Profession.Caption = "Vəzifəsi";
+            this.Work_Profession.FieldName = "POSITION";
+            this.Work_Profession.Name = "Work_Profession";
+            this.Work_Profession.Visible = true;
+            this.Work_Profession.VisibleIndex = 2;
             // 
-            // gridColumn20
+            // Work_Salary
             // 
-            this.gridColumn20.AppearanceCell.Options.UseTextOptions = true;
-            this.gridColumn20.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn20.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.gridColumn20.Caption = "Əmək haqqı";
-            this.gridColumn20.FieldName = "SALARY";
-            this.gridColumn20.Name = "gridColumn20";
-            this.gridColumn20.OptionsColumn.FixedWidth = true;
-            this.gridColumn20.Visible = true;
-            this.gridColumn20.VisibleIndex = 3;
+            this.Work_Salary.AppearanceCell.Options.UseTextOptions = true;
+            this.Work_Salary.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.Work_Salary.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.Work_Salary.Caption = "Əmək haqqı";
+            this.Work_Salary.FieldName = "SALARY";
+            this.Work_Salary.Name = "Work_Salary";
+            this.Work_Salary.OptionsColumn.FixedWidth = true;
+            this.Work_Salary.Visible = true;
+            this.Work_Salary.VisibleIndex = 3;
             // 
-            // gridColumn21
+            // Work_Note
             // 
-            this.gridColumn21.AppearanceCell.Options.UseTextOptions = true;
-            this.gridColumn21.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn21.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.gridColumn21.Caption = "Qeyd";
-            this.gridColumn21.FieldName = "NOTE";
-            this.gridColumn21.Name = "gridColumn21";
-            this.gridColumn21.OptionsColumn.FixedWidth = true;
-            this.gridColumn21.Visible = true;
-            this.gridColumn21.VisibleIndex = 4;
+            this.Work_Note.AppearanceCell.Options.UseTextOptions = true;
+            this.Work_Note.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.Work_Note.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.Work_Note.Caption = "Qeyd";
+            this.Work_Note.FieldName = "NOTE";
+            this.Work_Note.Name = "Work_Note";
+            this.Work_Note.OptionsColumn.FixedWidth = true;
+            this.Work_Note.Visible = true;
+            this.Work_Note.VisibleIndex = 4;
             // 
             // groupControl8
             // 
@@ -1408,7 +1408,7 @@
             this.BirthPlaceText.Name = "BirthPlaceText";
             this.BirthPlaceText.Properties.ReadOnly = true;
             this.BirthPlaceText.Size = new System.Drawing.Size(528, 20);
-            this.BirthPlaceText.TabIndex = 42;
+            this.BirthPlaceText.TabIndex = 9;
             // 
             // SexText
             // 
@@ -1417,7 +1417,7 @@
             this.SexText.Name = "SexText";
             this.SexText.Properties.ReadOnly = true;
             this.SexText.Size = new System.Drawing.Size(84, 20);
-            this.SexText.TabIndex = 41;
+            this.SexText.TabIndex = 7;
             // 
             // CountryText
             // 
@@ -1426,7 +1426,7 @@
             this.CountryText.Name = "CountryText";
             this.CountryText.Properties.ReadOnly = true;
             this.CountryText.Size = new System.Drawing.Size(528, 20);
-            this.CountryText.TabIndex = 40;
+            this.CountryText.TabIndex = 6;
             // 
             // BirthdayText
             // 
@@ -1439,7 +1439,7 @@
             this.BirthdayText.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.BirthdayText.Properties.ReadOnly = true;
             this.BirthdayText.Size = new System.Drawing.Size(78, 20);
-            this.BirthdayText.TabIndex = 39;
+            this.BirthdayText.TabIndex = 8;
             // 
             // BranchCustomerText
             // 
@@ -1448,7 +1448,7 @@
             this.BranchCustomerText.Name = "BranchCustomerText";
             this.BranchCustomerText.Properties.ReadOnly = true;
             this.BranchCustomerText.Size = new System.Drawing.Size(333, 20);
-            this.BranchCustomerText.TabIndex = 38;
+            this.BranchCustomerText.TabIndex = 1;
             // 
             // labelControl24
             // 
@@ -1497,7 +1497,7 @@
             this.RegisterAddressText.Name = "RegisterAddressText";
             this.RegisterAddressText.Properties.ReadOnly = true;
             this.RegisterAddressText.Size = new System.Drawing.Size(528, 20);
-            this.RegisterAddressText.TabIndex = 32;
+            this.RegisterAddressText.TabIndex = 4;
             // 
             // labelControl29
             // 
@@ -1552,7 +1552,7 @@
             superToolTip1.Items.Add(toolTipSeparatorItem1);
             superToolTip1.Items.Add(toolTipTitleItem2);
             this.FinCodeSearch.SuperTip = superToolTip1;
-            this.FinCodeSearch.TabIndex = 26;
+            this.FinCodeSearch.TabIndex = 0;
             // 
             // ActualAddressText
             // 
@@ -1561,7 +1561,7 @@
             this.ActualAddressText.Name = "ActualAddressText";
             this.ActualAddressText.Properties.ReadOnly = true;
             this.ActualAddressText.Size = new System.Drawing.Size(528, 20);
-            this.ActualAddressText.TabIndex = 25;
+            this.ActualAddressText.TabIndex = 3;
             // 
             // labelControl32
             // 
@@ -1591,7 +1591,7 @@
             superToolTip2.Items.Add(toolTipItem2);
             superToolTip2.Items.Add(toolTipTitleItem4);
             this.PictureEdit.SuperTip = superToolTip2;
-            this.PictureEdit.TabIndex = 18;
+            this.PictureEdit.TabIndex = 10;
             // 
             // separatorControl2
             // 
@@ -1610,7 +1610,7 @@
             this.PhoneAllText.Name = "PhoneAllText";
             this.PhoneAllText.Properties.ReadOnly = true;
             this.PhoneAllText.Size = new System.Drawing.Size(528, 20);
-            this.PhoneAllText.TabIndex = 14;
+            this.PhoneAllText.TabIndex = 5;
             // 
             // labelControl33
             // 
@@ -1637,7 +1637,7 @@
             superToolTip3.Items.Add(toolTipTitleItem5);
             superToolTip3.Items.Add(toolTipItem3);
             this.NameText.SuperTip = superToolTip3;
-            this.NameText.TabIndex = 0;
+            this.NameText.TabIndex = 2;
             this.NameText.ToolTip = "Yalnız hərf yazmağınız tövsiyə olunur.";
             // 
             // labelControl34
@@ -1684,14 +1684,14 @@
             this.DocumentGridView.Appearance.HeaderPanel.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.DocumentGridView.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.CustomerDocument_SS,
-            this.gridColumn2,
-            this.gridColumn3,
-            this.gridColumn4,
-            this.gridColumn5,
-            this.gridColumn6,
-            this.gridColumn7,
-            this.gridColumn8,
-            this.gridColumn9});
+            this.CustomerDocument_Group,
+            this.CustomerDocument_Type,
+            this.CustomerDocument_Number,
+            this.CustomerDocument_PinCode,
+            this.CustomerDocument_Issue,
+            this.CustomerDocument_IssueDate,
+            this.CustomerDocument_ReliableDate,
+            this.CustomerDocument_ID});
             this.DocumentGridView.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFullFocus;
             this.DocumentGridView.GridControl = this.DocumentGridControl;
             this.DocumentGridView.Name = "DocumentGridView";
@@ -1723,84 +1723,84 @@
             this.CustomerDocument_SS.VisibleIndex = 0;
             this.CustomerDocument_SS.Width = 50;
             // 
-            // gridColumn2
+            // CustomerDocument_Group
             // 
-            this.gridColumn2.Caption = "Sənədin qrupu";
-            this.gridColumn2.FieldName = "DOCUMENT_GROUP";
-            this.gridColumn2.Name = "gridColumn2";
-            this.gridColumn2.OptionsColumn.FixedWidth = true;
-            this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 1;
-            this.gridColumn2.Width = 140;
+            this.CustomerDocument_Group.Caption = "Sənədin qrupu";
+            this.CustomerDocument_Group.FieldName = "DOCUMENT_GROUP";
+            this.CustomerDocument_Group.Name = "CustomerDocument_Group";
+            this.CustomerDocument_Group.OptionsColumn.FixedWidth = true;
+            this.CustomerDocument_Group.Visible = true;
+            this.CustomerDocument_Group.VisibleIndex = 1;
+            this.CustomerDocument_Group.Width = 140;
             // 
-            // gridColumn3
+            // CustomerDocument_Type
             // 
-            this.gridColumn3.Caption = "Sənədin növü";
-            this.gridColumn3.FieldName = "DOCUMENT_TYPE";
-            this.gridColumn3.Name = "gridColumn3";
-            this.gridColumn3.OptionsColumn.FixedWidth = true;
-            this.gridColumn3.Visible = true;
-            this.gridColumn3.VisibleIndex = 2;
-            this.gridColumn3.Width = 140;
+            this.CustomerDocument_Type.Caption = "Sənədin növü";
+            this.CustomerDocument_Type.FieldName = "DOCUMENT_TYPE";
+            this.CustomerDocument_Type.Name = "CustomerDocument_Type";
+            this.CustomerDocument_Type.OptionsColumn.FixedWidth = true;
+            this.CustomerDocument_Type.Visible = true;
+            this.CustomerDocument_Type.VisibleIndex = 2;
+            this.CustomerDocument_Type.Width = 140;
             // 
-            // gridColumn4
+            // CustomerDocument_Number
             // 
-            this.gridColumn4.Caption = "Sənədin nömrəsi";
-            this.gridColumn4.FieldName = "CARD_NUMBER";
-            this.gridColumn4.Name = "gridColumn4";
-            this.gridColumn4.OptionsColumn.FixedWidth = true;
-            this.gridColumn4.Visible = true;
-            this.gridColumn4.VisibleIndex = 3;
-            this.gridColumn4.Width = 100;
+            this.CustomerDocument_Number.Caption = "Sənədin nömrəsi";
+            this.CustomerDocument_Number.FieldName = "CARD_NUMBER";
+            this.CustomerDocument_Number.Name = "CustomerDocument_Number";
+            this.CustomerDocument_Number.OptionsColumn.FixedWidth = true;
+            this.CustomerDocument_Number.Visible = true;
+            this.CustomerDocument_Number.VisibleIndex = 3;
+            this.CustomerDocument_Number.Width = 100;
             // 
-            // gridColumn5
+            // CustomerDocument_PinCode
             // 
-            this.gridColumn5.Caption = "Fin kodu";
-            this.gridColumn5.FieldName = "PINCODE";
-            this.gridColumn5.Name = "gridColumn5";
-            this.gridColumn5.OptionsColumn.FixedWidth = true;
-            this.gridColumn5.Visible = true;
-            this.gridColumn5.VisibleIndex = 4;
-            this.gridColumn5.Width = 85;
+            this.CustomerDocument_PinCode.Caption = "Fin kodu";
+            this.CustomerDocument_PinCode.FieldName = "PINCODE";
+            this.CustomerDocument_PinCode.Name = "CustomerDocument_PinCode";
+            this.CustomerDocument_PinCode.OptionsColumn.FixedWidth = true;
+            this.CustomerDocument_PinCode.Visible = true;
+            this.CustomerDocument_PinCode.VisibleIndex = 4;
+            this.CustomerDocument_PinCode.Width = 85;
             // 
-            // gridColumn6
+            // CustomerDocument_Issue
             // 
-            this.gridColumn6.Caption = "Sənəd verən orqan";
-            this.gridColumn6.FieldName = "ISSUE_NAME";
-            this.gridColumn6.Name = "gridColumn6";
-            this.gridColumn6.Visible = true;
-            this.gridColumn6.VisibleIndex = 5;
-            this.gridColumn6.Width = 250;
+            this.CustomerDocument_Issue.Caption = "Sənəd verən orqan";
+            this.CustomerDocument_Issue.FieldName = "ISSUE_NAME";
+            this.CustomerDocument_Issue.Name = "CustomerDocument_Issue";
+            this.CustomerDocument_Issue.Visible = true;
+            this.CustomerDocument_Issue.VisibleIndex = 5;
+            this.CustomerDocument_Issue.Width = 250;
             // 
-            // gridColumn7
+            // CustomerDocument_IssueDate
             // 
-            this.gridColumn7.Caption = "Verilmə tarixi";
-            this.gridColumn7.DisplayFormat.FormatString = "dd.MM.yyyy";
-            this.gridColumn7.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            this.gridColumn7.FieldName = "ISSUE_DATE";
-            this.gridColumn7.Name = "gridColumn7";
-            this.gridColumn7.OptionsColumn.FixedWidth = true;
-            this.gridColumn7.Visible = true;
-            this.gridColumn7.VisibleIndex = 6;
-            this.gridColumn7.Width = 90;
+            this.CustomerDocument_IssueDate.Caption = "Verilmə tarixi";
+            this.CustomerDocument_IssueDate.DisplayFormat.FormatString = "dd.MM.yyyy";
+            this.CustomerDocument_IssueDate.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.CustomerDocument_IssueDate.FieldName = "ISSUE_DATE";
+            this.CustomerDocument_IssueDate.Name = "CustomerDocument_IssueDate";
+            this.CustomerDocument_IssueDate.OptionsColumn.FixedWidth = true;
+            this.CustomerDocument_IssueDate.Visible = true;
+            this.CustomerDocument_IssueDate.VisibleIndex = 6;
+            this.CustomerDocument_IssueDate.Width = 90;
             // 
-            // gridColumn8
+            // CustomerDocument_ReliableDate
             // 
-            this.gridColumn8.Caption = "Bitmə tarixi";
-            this.gridColumn8.DisplayFormat.FormatString = "dd.MM.yyyy";
-            this.gridColumn8.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            this.gridColumn8.FieldName = "RELIABLE_DATE";
-            this.gridColumn8.Name = "gridColumn8";
-            this.gridColumn8.OptionsColumn.FixedWidth = true;
-            this.gridColumn8.Visible = true;
-            this.gridColumn8.VisibleIndex = 7;
-            this.gridColumn8.Width = 90;
+            this.CustomerDocument_ReliableDate.Caption = "Bitmə tarixi";
+            this.CustomerDocument_ReliableDate.DisplayFormat.FormatString = "dd.MM.yyyy";
+            this.CustomerDocument_ReliableDate.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.CustomerDocument_ReliableDate.FieldName = "RELIABLE_DATE";
+            this.CustomerDocument_ReliableDate.Name = "CustomerDocument_ReliableDate";
+            this.CustomerDocument_ReliableDate.OptionsColumn.FixedWidth = true;
+            this.CustomerDocument_ReliableDate.Visible = true;
+            this.CustomerDocument_ReliableDate.VisibleIndex = 7;
+            this.CustomerDocument_ReliableDate.Width = 90;
             // 
-            // gridColumn9
+            // CustomerDocument_ID
             // 
-            this.gridColumn9.Caption = "Document_ID";
-            this.gridColumn9.FieldName = "ID";
-            this.gridColumn9.Name = "gridColumn9";
+            this.CustomerDocument_ID.Caption = "CustomerDocument_ID";
+            this.CustomerDocument_ID.FieldName = "ID";
+            this.CustomerDocument_ID.Name = "CustomerDocument_ID";
             // 
             // NoteTab
             // 
@@ -2782,7 +2782,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.NoteText.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.OrderAmountValue.Properties)).EndInit();
             this.CustomerTab.ResumeLayout(false);
-            this.xtraScrollableControl2.ResumeLayout(false);
+            this.CustomerScrollableControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl10)).EndInit();
             this.groupControl10.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.RelativeGridControl)).EndInit();
@@ -2955,7 +2955,7 @@
         private DevExpress.XtraBars.BarDockControl barDockControl98;
         private DevExpress.XtraBars.BarButtonItem barButtonItem5;
         private DevExpress.XtraBars.PopupMenu RelativePopupMenu;
-        private DevExpress.XtraEditors.XtraScrollableControl xtraScrollableControl2;
+        private DevExpress.XtraEditors.XtraScrollableControl CustomerScrollableControl2;
         private DevExpress.XtraEditors.GroupControl groupControl6;
         private DevExpress.XtraEditors.LabelControl labelControl24;
         private DevExpress.XtraEditors.LabelControl labelControl25;
@@ -2978,23 +2978,23 @@
         private DevExpress.XtraGrid.GridControl DocumentGridControl;
         private DevExpress.XtraGrid.Views.Grid.GridView DocumentGridView;
         private DevExpress.XtraGrid.Columns.GridColumn CustomerDocument_SS;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn8;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn9;
+        private DevExpress.XtraGrid.Columns.GridColumn CustomerDocument_Group;
+        private DevExpress.XtraGrid.Columns.GridColumn CustomerDocument_Type;
+        private DevExpress.XtraGrid.Columns.GridColumn CustomerDocument_Number;
+        private DevExpress.XtraGrid.Columns.GridColumn CustomerDocument_PinCode;
+        private DevExpress.XtraGrid.Columns.GridColumn CustomerDocument_Issue;
+        private DevExpress.XtraGrid.Columns.GridColumn CustomerDocument_IssueDate;
+        private DevExpress.XtraGrid.Columns.GridColumn CustomerDocument_ReliableDate;
+        private DevExpress.XtraGrid.Columns.GridColumn CustomerDocument_ID;
         private DevExpress.XtraEditors.GroupControl groupControl9;
         private DevExpress.XtraGrid.GridControl WorkGridControl;
         private DevExpress.XtraGrid.Views.Grid.GridView WorkGridView;
         private DevExpress.XtraGrid.Columns.GridColumn Work_SS;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn17;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn18;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn19;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn20;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn21;
+        private DevExpress.XtraGrid.Columns.GridColumn Work_ID;
+        private DevExpress.XtraGrid.Columns.GridColumn Work_Name;
+        private DevExpress.XtraGrid.Columns.GridColumn Work_Profession;
+        private DevExpress.XtraGrid.Columns.GridColumn Work_Salary;
+        private DevExpress.XtraGrid.Columns.GridColumn Work_Note;
         private DevExpress.XtraEditors.GroupControl groupControl8;
         private DevExpress.XtraGrid.GridControl PhoneGridControl;
         private DevExpress.XtraGrid.Views.Grid.GridView PhoneGridView;
@@ -3013,13 +3013,13 @@
         private DevExpress.XtraGrid.GridControl RelativeGridControl;
         private DevExpress.XtraGrid.Views.Grid.GridView RelativeGridView;
         private DevExpress.XtraGrid.Columns.GridColumn Relative_SS;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn23;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn24;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn25;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn26;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn27;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn28;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn29;
+        private DevExpress.XtraGrid.Columns.GridColumn Relative_ID;
+        private DevExpress.XtraGrid.Columns.GridColumn Relative_Name;
+        private DevExpress.XtraGrid.Columns.GridColumn Relative_KindShip;
+        private DevExpress.XtraGrid.Columns.GridColumn Relative_Phone;
+        private DevExpress.XtraGrid.Columns.GridColumn Relative_PhoneDescription;
+        private DevExpress.XtraGrid.Columns.GridColumn Relative_Profession;
+        private DevExpress.XtraGrid.Columns.GridColumn Relative_Salary;
         private DevExpress.XtraEditors.LabelControl labelControl27;
         private DevExpress.XtraEditors.CalcEdit FirstPaymentValue;
         private DevExpress.XtraEditors.TextEdit TimeText;

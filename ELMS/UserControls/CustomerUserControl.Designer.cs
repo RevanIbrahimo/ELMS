@@ -171,7 +171,7 @@
             // 
             this.NewOrderBarButton.Caption = "Yeni müraciət";
             this.NewOrderBarButton.Id = 15;
-            this.NewOrderBarButton.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
+            this.NewOrderBarButton.ImageOptions.Image = global::ELMS.Properties.Resources.iconorder_32;
             this.NewOrderBarButton.Name = "NewOrderBarButton";
             this.NewOrderBarButton.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
             this.NewOrderBarButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.NewOrderBarButton_ItemClick);
