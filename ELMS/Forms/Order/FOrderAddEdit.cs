@@ -18,6 +18,7 @@ using DevExpress.Data;
 using DevExpress.XtraGrid;
 using System.IO;
 using System.Diagnostics;
+using System.Text.RegularExpressions;
 
 namespace ELMS.Forms.Order
 {
@@ -535,145 +536,7 @@ namespace ELMS.Forms.Order
 
         private void BContract_Click(object sender, EventArgs e)
         {
-            GlobalProcedures.SplashScreenShow(this, typeof(WaitForms.FPrintDocumentWait));
-            object fileName = Path.Combine(GlobalVariables.V_ExecutingFolder + "\\Documents\\Müqavilə.docx");
-            if (!File.Exists(fileName.ToString()))
-            {
-                contract_click = false;
-                GlobalVariables.WordDocumentUsed = false;
-                XtraMessageBox.Show("Müqavilənin faylı tapılmadı.");
-                GlobalProcedures.SplashScreenClose();
-                return;
-            }
-
-            string qep = null,
-                amount_with_word,
-                com_with_word,
-                fifd_with_word,
-                phone = null,
-                period = null,
-                date = GlobalFunctions.DateWithDayMonthYear(ContractStartDate.DateTime),
-                filePath = GlobalVariables.V_ExecutingFolder + "\\TEMP\\Documents\\" + ContractCodeText.Text.Replace("/", "") + "_Müqavilə.docx";
-
-            object missing = System.Reflection.Missing.Value;
-            Microsoft.Office.Interop.Word.Application wordApp = new Microsoft.Office.Interop.Word.Application();
-            Microsoft.Office.Interop.Word.Document aDoc = null;
-            object saveAs = Path.Combine(filePath);
-            object readOnly = false;
-            object isVisible = false;
-            wordApp.Visible = false;
-
-            aDoc = wordApp.Documents.Open(ref fileName, ref missing, ref readOnly, ref missing, ref missing, ref missing, ref missing, ref missing, ref missing, ref missing, missing, ref isVisible, ref missing, ref missing, ref missing, ref missing);
-
-            aDoc.Activate();
-            double d = 0, div = 0;
-            int mod = 0;
-            d = (double)CreditAmountValue.Value * 100;
-
-            div = (int)(d / 100);
-            mod = (int)(d % 100);
-            if (mod > 0)
-            {
-                if (credit_currency_id == 1)
-                    qep = " " + mod.ToString() + " qəpik";
-                else
-                    qep = " " + mod.ToString();
-            }
-
-            amount_with_word = "(" + GlobalFunctions.IntegerToWritten(div) + ") " + credit_currency_name + qep;
-
-            //Komissiya
-            d = (double)CommissionValue.Value * 100;
-
-            div = (int)(d / 100);
-            mod = (int)(d % 100);
-            if (mod > 0)
-            {
-                if (credit_currency_id == 1)
-                    qep = " " + mod.ToString() + " qəpik";
-                else
-                    qep = " " + mod.ToString();
-            }
-
-            com_with_word = "(" + GlobalFunctions.IntegerToWritten(div) + ") " + credit_currency_name + qep;
-
-            //FIFD
-            decimal fifd = Math.Round(FifdValue.Value, 2);
-            d = (double)fifd * 100;
-
-            div = (int)(d / 100);
-            mod = (int)(d % 100);
-            if (mod > 0)
-                qep = " tam yüzdə " + GlobalFunctions.IntegerToWritten(mod);
-
-            fifd_with_word = "(" + GlobalFunctions.IntegerToWritten(div) + qep + ")";
-
-            if (PeriodCheckEdit.Checked)
-                period = ContractEndDate.Text + " tarixinə qədər";
-            else
-                period = PeriodValue.Value + " (" + GlobalFunctions.IntegerToWritten((int)PeriodValue.Value) + ") ay";
-
-            phone = GlobalFunctions.GetName($@"SELECT PHONE FROM CRS_USER.V_PHONE WHERE OWNER_TYPE = '{person_description}' AND OWNER_ID = {CustomerID}");
-
-            try
-            {
-                GlobalProcedures.FindAndReplace(wordApp, "[$contractcode]", ContractCodeText.Text);
-                GlobalProcedures.FindAndReplace(wordApp, "[$contractdate]", date);
-                if (customer_type_id == 1)
-                {
-                    GlobalProcedures.FindAndReplace(wordApp, "[$customer]", CustomerFullNameText.Text + " (" + CardDescriptionText.Text + ", " + IssuingDateText.Text + " tarixində " + IssuingText.Text + " tərəfindən verilib)");
-                    GlobalProcedures.FindAndReplace(wordApp, "[$carddate]", IssuingDateText.Text + " tarixində " + IssuingText.Text + " tərəfindən verilib");
-                }
-                else
-                {
-                    GlobalProcedures.FindAndReplace(wordApp, "[$customer]", CustomerFullNameText.Text + " (" + CardDescriptionText.Text + ")");
-                    GlobalProcedures.FindAndReplace(wordApp, "[$carddate]", null);
-                }
-                GlobalProcedures.FindAndReplace(wordApp, "[$companyname]", GlobalVariables.V_CompanyName);
-                GlobalProcedures.FindAndReplace(wordApp, "[$companyvoen]", GlobalVariables.V_CompanyVoen);
-                GlobalProcedures.FindAndReplace(wordApp, "[$companyphone]", GlobalVariables.V_CompanyPhone);
-                GlobalProcedures.FindAndReplace(wordApp, "[$companyaddress]", GlobalVariables.V_CompanyAddress);
-                GlobalProcedures.FindAndReplace(wordApp, "[$companydirector]", GlobalVariables.V_CompanyDirector);
-                GlobalProcedures.FindAndReplace(wordApp, "[$card]", CardDescriptionText.Text);
-                GlobalProcedures.FindAndReplace(wordApp, "[$cur]", credit_currency_name);
-                GlobalProcedures.FindAndReplace(wordApp, "[$creditpurpose]", "biznes tələblərinin ödənilməsi");
-                GlobalProcedures.FindAndReplace(wordApp, "[$percent]", InterestValue.Value);
-                GlobalProcedures.FindAndReplace(wordApp, "[$percentwrite]", "(" + GlobalFunctions.IntegerToWritten((double)InterestValue.Value) + ")");
-                GlobalProcedures.FindAndReplace(wordApp, "[$amount]", CreditAmountValue.Value.ToString("N2"));
-                GlobalProcedures.FindAndReplace(wordApp, "[$amountwrite]", amount_with_word);
-                GlobalProcedures.FindAndReplace(wordApp, "[$grace]", GracePeriodValue.Text);
-                GlobalProcedures.FindAndReplace(wordApp, "[$gracewrite]", "(" + GlobalFunctions.IntegerToWritten((int)GracePeriodValue.Value) + ")");
-                GlobalProcedures.FindAndReplace(wordApp, "[$period]", PeriodValue.Value);
-                GlobalProcedures.FindAndReplace(wordApp, "[$periodwrite]", "(" + GlobalFunctions.IntegerToWritten((double)PeriodValue.Value) + ")");
-                GlobalProcedures.FindAndReplace(wordApp, "[$com]", CommissionValue.Value);
-                GlobalProcedures.FindAndReplace(wordApp, "[$comwrite]", com_with_word);
-                GlobalProcedures.FindAndReplace(wordApp, "[$fifd]", fifd);
-                GlobalProcedures.FindAndReplace(wordApp, "[$fifdwrite]", fifd_with_word);
-                GlobalProcedures.FindAndReplace(wordApp, "[$contractenddate]", GlobalFunctions.DateWithDayMonthYear(ContractEndDate.DateTime));
-                GlobalProcedures.FindAndReplace(wordApp, "[$customername]", CustomerFullNameText.Text);
-                GlobalProcedures.FindAndReplace(wordApp, "[$address]", RegistrationAddressText.Text);
-                GlobalProcedures.FindAndReplace(wordApp, "[$phones]", phone);
-
-                if (File.Exists(filePath))
-                    File.Delete(filePath);
-
-                aDoc.SaveAs2(ref saveAs, ref missing, ref missing, ref missing, ref missing, ref missing, ref missing, ref missing, ref missing, ref missing, ref missing, ref missing, ref missing, ref missing, ref missing, ref missing, ref missing);
-                aDoc.Close(ref missing, ref missing, ref missing);
-
-                GlobalVariables.WordDocumentUsed = true;
-                contract_click = true;
-
-                Process.Start(filePath);
-            }
-            catch
-            {
-                GlobalProcedures.SplashScreenClose();
-                GlobalProcedures.ShowErrorMessage(ContractCodeText.Text + "_Müqavilə.docx faylı açıq olduğu üçün bu faylı yenidən yaratmaq olmaz.");
-            }
-            finally
-            {
-                GlobalProcedures.SplashScreenClose();
-            }
+            
         }
 
         private void ProductGridView_MouseUp(object sender, MouseEventArgs e)

@@ -60,6 +60,32 @@ namespace ELMS.Forms.General
                 Directory.CreateDirectory(GlobalVariables.V_ExecutingFolder + "\\TEMP\\XmlFile");
         }
 
+        private void DownloadTemplateFiles()
+        {
+            DataTable dt = GlobalFunctions.GenerateDataTable($@"SELECT NAME,TEMPLATE_FILE FROM ELMS_USER.TEMPLATE_FILES WHERE TEMPLATE_FILE IS NOT NULL ORDER BY ID");
+
+            if (dt == null)
+                return;
+
+            foreach (DataRow dr in dt.Rows)
+            {
+                if (!DBNull.Value.Equals(dr["TEMPLATE_FILE"]))
+                {
+                    string filePath = GlobalVariables.V_ExecutingFolder + "\\Documents\\" + GlobalVariables.V_WindowsUserName + "\\" + dr["NAME"] + ".docx";
+
+                    GlobalProcedures.DeleteFile(filePath);
+
+                    Byte[] BLOBData = (byte[])dr["TEMPLATE_FILE"];
+                    MemoryStream stmBLOBData = new MemoryStream(BLOBData);
+                    GlobalProcedures.DeleteFile(filePath);
+                    FileStream fs = new FileStream(filePath, FileMode.Create, FileAccess.Write);
+                    stmBLOBData.WriteTo(fs);
+                    fs.Close();
+                    stmBLOBData.Close();
+                }
+            }
+        }
+
         private void BackgroundWorker_DoWork(object sender, DoWorkEventArgs e)
         {
             DescriptionLabel.Invoke((MethodInvoker)delegate
@@ -83,6 +109,13 @@ namespace ELMS.Forms.General
             {
                 DescriptionLabel.Text = "Qovluqlar mövcuddur";
             });
+
+            DescriptionLabel.Invoke((MethodInvoker)delegate
+            {
+                DescriptionLabel.Text = "Temp fayllar yüklənir";
+            });
+
+            DownloadTemplateFiles();
 
             is_connected = true;
 
