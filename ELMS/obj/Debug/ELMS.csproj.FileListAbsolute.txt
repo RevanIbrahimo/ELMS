@@ -173,3 +173,4 @@ C:\Users\user\Documents\Github\ELMS\ELMS\obj\Debug\Elloni Management System.exe.
 C:\Users\user\Documents\Github\ELMS\ELMS\obj\Debug\ELMS.UserControls.AKBUserControl.resources
 C:\Users\user\Documents\Github\ELMS\ELMS\obj\Debug\ELMS.UserControls.BookkeepingUserControl.resources
 C:\Users\user\Documents\Github\ELMS\ELMS\obj\Debug\ELMS.UserControls.TotalUserControl.resources
+C:\Users\user\Documents\Github\ELMS\ELMS\bin\Debug\WordToPDF.dll

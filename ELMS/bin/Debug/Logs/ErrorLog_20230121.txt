@@ -1,0 +1,22 @@
+
+Log Entry : 11:30:46 PM Saturday, January 21, 2023
+  
+   UserName =  SuperAdmin
+   FormName =  GlobalFunctions
+   ProcedureName =  GenerateDataTable : GetMax
+  
+   ShowMessage: DataTable yaradılmadı.
+   Exception Message: ORA-00942: table or view does not exist
+   SQL Text      :  SELECT NVL(MAX(LTRIM(CODE,'0')),0) + 1 MAXCODE FROM ELMS_USER.CONTRACT_DOCUMENTS WHERE CONTRACT_DOCUMENT_TYPE_ID = 1 AND CONTRACT_ID = 3
+-------------------------------------------------
+
+Log Entry : 11:30:49 PM Saturday, January 21, 2023
+  
+   UserName =  SuperAdmin
+   FormName =  GlobalFunctions
+   ProcedureName =  GetMax
+  
+   ShowMessage: Ən böyük ədəd tapılmadı.
+   Exception Message: Object reference not set to an instance of an object.
+   SQL Text      :  SELECT NVL(MAX(LTRIM(CODE,'0')),0) + 1 MAXCODE FROM ELMS_USER.CONTRACT_DOCUMENTS WHERE CONTRACT_DOCUMENT_TYPE_ID = 1 AND CONTRACT_ID = 3
+-------------------------------------------------

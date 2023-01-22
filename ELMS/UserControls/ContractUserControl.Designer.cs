@@ -32,68 +32,43 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ContractUserControl));
             this.BarManager = new DevExpress.XtraBars.BarManager(this.components);
             this.ToolBar = new DevExpress.XtraBars.Bar();
-            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
-            this.barSubItem1 = new DevExpress.XtraBars.BarSubItem();
-            this.barButtonItem8 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem9 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem10 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem11 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem12 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem13 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem14 = new DevExpress.XtraBars.BarButtonItem();
+            this.EditBarButton = new DevExpress.XtraBars.BarButtonItem();
+            this.RefreshBarButton = new DevExpress.XtraBars.BarButtonItem();
+            this.PrintBarButton = new DevExpress.XtraBars.BarButtonItem();
+            this.ExportBarButton = new DevExpress.XtraBars.BarSubItem();
+            this.ExcelBarButton = new DevExpress.XtraBars.BarButtonItem();
+            this.PdfBarButton = new DevExpress.XtraBars.BarButtonItem();
+            this.TxtBarButton = new DevExpress.XtraBars.BarButtonItem();
+            this.HtmlBarButton = new DevExpress.XtraBars.BarButtonItem();
+            this.CsvBarButton = new DevExpress.XtraBars.BarButtonItem();
+            this.MhtBarButton = new DevExpress.XtraBars.BarButtonItem();
+            this.RtfBarButton = new DevExpress.XtraBars.BarButtonItem();
             this.bar3 = new DevExpress.XtraBars.Bar();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
+            this.OrderGridControl = new DevExpress.XtraGrid.GridControl();
+            this.OrderGridView = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.Order_SS = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Order_ID = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Order_OperationName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Order_RegisterNumber = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Order_Branch = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Order_Time = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Order_Percent = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Order_Source = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Order_FirstPayment = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Order_Amount = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Order_UsedUserID = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Order_CreditAmount = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Order_OperationNote = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Order_TypeID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.OrderPopupMenu = new DevExpress.XtraBars.PopupMenu(this.components);
-            this.ContractsGridControl = new DevExpress.XtraGrid.GridControl();
-            this.ContractsGridView = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.Contract_SS = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Contract_Code = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Contract_CustomerFullName = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Contract_StartDate = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Contract_EndDate = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Contract_Period = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Contract_Interest = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Contract_Fifd = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Contract_Grace = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Contract_Commission = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Contract_Amount = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Contract_CurrencyCode = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Contract_StatusName = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Contract_Notes = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.RepositoryItemPictureEdit = new DevExpress.XtraEditors.Repository.RepositoryItemPictureEdit();
-            this.Contract_Note = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Contract_ID = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Contract_UsedUserID = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Contract_CustomerID = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Contract_IsCommit = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Contract_StatusID = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Contract_NoteChangeUser = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Contract_NoteChangeDate = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Contract_IntInterest = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Contract_IntPeriod = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Contract_CreditTypeID = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Contract_RowNumber = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Contract_CustomerTypeID = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Contract_ParentID = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Contract_CustomerCode = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Contract_CustomerName = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Contract_IntExtendMountCount = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Contract_IsSpecialAttention = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Contract_SpecialAttention = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.barSubItem2 = new DevExpress.XtraBars.BarSubItem();
             ((System.ComponentModel.ISupportInitialize)(this.BarManager)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.OrderGridControl)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.OrderGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.OrderPopupMenu)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ContractsGridControl)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ContractsGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.RepositoryItemPictureEdit)).BeginInit();
             this.SuspendLayout();
             // 
             // BarManager
@@ -107,22 +82,18 @@
             this.BarManager.DockControls.Add(this.barDockControlRight);
             this.BarManager.Form = this;
             this.BarManager.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
-            this.barButtonItem1,
-            this.barButtonItem2,
-            this.barButtonItem3,
-            this.barButtonItem4,
-            this.barButtonItem5,
-            this.barButtonItem6,
-            this.barButtonItem8,
-            this.barButtonItem9,
-            this.barButtonItem10,
-            this.barButtonItem11,
-            this.barButtonItem12,
-            this.barButtonItem13,
-            this.barButtonItem14,
-            this.barSubItem1,
-            this.barSubItem2});
-            this.BarManager.MaxItemId = 36;
+            this.EditBarButton,
+            this.RefreshBarButton,
+            this.PrintBarButton,
+            this.ExportBarButton,
+            this.ExcelBarButton,
+            this.PdfBarButton,
+            this.TxtBarButton,
+            this.HtmlBarButton,
+            this.CsvBarButton,
+            this.MhtBarButton,
+            this.RtfBarButton});
+            this.BarManager.MaxItemId = 16;
             this.BarManager.StatusBar = this.bar3;
             // 
             // ToolBar
@@ -132,137 +103,119 @@
             this.ToolBar.DockRow = 0;
             this.ToolBar.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
             this.ToolBar.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem1),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem2),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem3),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem4),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem5),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem6, true),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barSubItem1),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem8, true),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem9),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem10),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem11, true),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem12),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem13, true),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem14, true),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barSubItem2)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.EditBarButton),
+            new DevExpress.XtraBars.LinkPersistInfo(this.RefreshBarButton),
+            new DevExpress.XtraBars.LinkPersistInfo(this.PrintBarButton, true),
+            new DevExpress.XtraBars.LinkPersistInfo(this.ExportBarButton)});
             this.ToolBar.OptionsBar.DrawBorder = false;
             this.ToolBar.OptionsBar.DrawDragBorder = false;
             this.ToolBar.OptionsBar.UseWholeRow = true;
             this.ToolBar.Text = "Tools";
             // 
-            // barButtonItem1
+            // EditBarButton
             // 
-            this.barButtonItem1.Caption = "Yeni";
-            this.barButtonItem1.Id = 16;
-            this.barButtonItem1.ImageOptions.Image = global::ELMS.Properties.Resources.plus_32;
-            this.barButtonItem1.Name = "barButtonItem1";
-            this.barButtonItem1.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.EditBarButton.Caption = "Müqaviləyə bax";
+            this.EditBarButton.Id = 1;
+            this.EditBarButton.ImageOptions.Image = global::ELMS.Properties.Resources.pencil_32;
+            this.EditBarButton.ItemShortcut = new DevExpress.XtraBars.BarShortcut((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.E));
+            this.EditBarButton.Name = "EditBarButton";
+            this.EditBarButton.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.EditBarButton.ShowItemShortcut = DevExpress.Utils.DefaultBoolean.True;
+            this.EditBarButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.EditBarButton_ItemClick);
             // 
-            // barButtonItem2
+            // RefreshBarButton
             // 
-            this.barButtonItem2.Caption = "Dəyiş";
-            this.barButtonItem2.Id = 17;
-            this.barButtonItem2.ImageOptions.Image = global::ELMS.Properties.Resources.pencil_32;
-            this.barButtonItem2.Name = "barButtonItem2";
-            this.barButtonItem2.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.RefreshBarButton.Caption = "Yenilə";
+            this.RefreshBarButton.Id = 3;
+            this.RefreshBarButton.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("RefreshBarButton.ImageOptions.Image")));
+            this.RefreshBarButton.ItemShortcut = new DevExpress.XtraBars.BarShortcut(System.Windows.Forms.Keys.F5);
+            this.RefreshBarButton.Name = "RefreshBarButton";
+            this.RefreshBarButton.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.RefreshBarButton.ShowItemShortcut = DevExpress.Utils.DefaultBoolean.True;
+            this.RefreshBarButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.RefreshBarButton_ItemClick);
             // 
-            // barButtonItem3
+            // PrintBarButton
             // 
-            this.barButtonItem3.Caption = "Sil";
-            this.barButtonItem3.Id = 18;
-            this.barButtonItem3.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.ImageOptions.Image")));
-            this.barButtonItem3.Name = "barButtonItem3";
-            this.barButtonItem3.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.PrintBarButton.Caption = "Çap et";
+            this.PrintBarButton.Id = 4;
+            this.PrintBarButton.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("PrintBarButton.ImageOptions.Image")));
+            this.PrintBarButton.ItemShortcut = new DevExpress.XtraBars.BarShortcut((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.P));
+            this.PrintBarButton.Name = "PrintBarButton";
+            this.PrintBarButton.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.PrintBarButton.ShowItemShortcut = DevExpress.Utils.DefaultBoolean.True;
+            this.PrintBarButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.PrintBarButton_ItemClick);
             // 
-            // barButtonItem4
+            // ExportBarButton
             // 
-            this.barButtonItem4.Caption = "Yenilə";
-            this.barButtonItem4.Id = 19;
-            this.barButtonItem4.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.ImageOptions.Image")));
-            this.barButtonItem4.Name = "barButtonItem4";
-            this.barButtonItem4.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.ExportBarButton.Caption = "İxrac et";
+            this.ExportBarButton.Id = 5;
+            this.ExportBarButton.ImageOptions.Image = global::ELMS.Properties.Resources.table_export_32;
+            this.ExportBarButton.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.ExcelBarButton),
+            new DevExpress.XtraBars.LinkPersistInfo(this.PdfBarButton),
+            new DevExpress.XtraBars.LinkPersistInfo(this.TxtBarButton),
+            new DevExpress.XtraBars.LinkPersistInfo(this.HtmlBarButton),
+            new DevExpress.XtraBars.LinkPersistInfo(this.CsvBarButton),
+            new DevExpress.XtraBars.LinkPersistInfo(this.MhtBarButton),
+            new DevExpress.XtraBars.LinkPersistInfo(this.RtfBarButton)});
+            this.ExportBarButton.Name = "ExportBarButton";
+            this.ExportBarButton.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
             // 
-            // barButtonItem5
+            // ExcelBarButton
             // 
-            this.barButtonItem5.Caption = "Razılaşma";
-            this.barButtonItem5.Id = 20;
-            this.barButtonItem5.ImageOptions.Image = global::ELMS.Properties.Resources.agreement_32;
-            this.barButtonItem5.Name = "barButtonItem5";
-            this.barButtonItem5.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.ExcelBarButton.Caption = "Excel";
+            this.ExcelBarButton.Id = 6;
+            this.ExcelBarButton.ImageOptions.Image = global::ELMS.Properties.Resources.excel_32;
+            this.ExcelBarButton.Name = "ExcelBarButton";
+            this.ExcelBarButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ExcelBarButton_ItemClick);
             // 
-            // barButtonItem6
+            // PdfBarButton
             // 
-            this.barButtonItem6.Caption = "Qeyd";
-            this.barButtonItem6.Id = 21;
-            this.barButtonItem6.ImageOptions.Image = global::ELMS.Properties.Resources.notes_32;
-            this.barButtonItem6.Name = "barButtonItem6";
-            this.barButtonItem6.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.PdfBarButton.Caption = "Pdf";
+            this.PdfBarButton.Id = 7;
+            this.PdfBarButton.ImageOptions.Image = global::ELMS.Properties.Resources.pdf_32;
+            this.PdfBarButton.Name = "PdfBarButton";
+            this.PdfBarButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.PdfBarButton_ItemClick);
             // 
-            // barSubItem1
+            // TxtBarButton
             // 
-            this.barSubItem1.Caption = "Məhkəmələr";
-            this.barSubItem1.Id = 34;
-            this.barSubItem1.ImageOptions.Image = global::ELMS.Properties.Resources.law_32;
-            this.barSubItem1.Name = "barSubItem1";
-            this.barSubItem1.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.TxtBarButton.Caption = "Txt";
+            this.TxtBarButton.Id = 8;
+            this.TxtBarButton.ImageOptions.Image = global::ELMS.Properties.Resources.txt_32;
+            this.TxtBarButton.Name = "TxtBarButton";
+            this.TxtBarButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.TxtBarButton_ItemClick);
             // 
-            // barButtonItem8
+            // HtmlBarButton
             // 
-            this.barButtonItem8.Caption = "Zaminlər";
-            this.barButtonItem8.Id = 23;
-            this.barButtonItem8.ImageOptions.Image = global::ELMS.Properties.Resources.seller_32;
-            this.barButtonItem8.Name = "barButtonItem8";
-            this.barButtonItem8.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.HtmlBarButton.Caption = "Html";
+            this.HtmlBarButton.Id = 9;
+            this.HtmlBarButton.ImageOptions.Image = global::ELMS.Properties.Resources.html_32;
+            this.HtmlBarButton.Name = "HtmlBarButton";
+            this.HtmlBarButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.HtmlBarButton_ItemClick);
             // 
-            // barButtonItem9
+            // CsvBarButton
             // 
-            this.barButtonItem9.Caption = "Statistika";
-            this.barButtonItem9.Id = 24;
-            this.barButtonItem9.ImageOptions.Image = global::ELMS.Properties.Resources.search_contract_32;
-            this.barButtonItem9.Name = "barButtonItem9";
-            this.barButtonItem9.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.CsvBarButton.Caption = "Csv";
+            this.CsvBarButton.Id = 10;
+            this.CsvBarButton.ImageOptions.Image = global::ELMS.Properties.Resources.csv_32;
+            this.CsvBarButton.Name = "CsvBarButton";
+            this.CsvBarButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.CsvBarButton_ItemClick);
             // 
-            // barButtonItem10
+            // MhtBarButton
             // 
-            this.barButtonItem10.Caption = "Bağlanmış müqavilələr";
-            this.barButtonItem10.Id = 25;
-            this.barButtonItem10.ImageOptions.Image = global::ELMS.Properties.Resources.finish_32;
-            this.barButtonItem10.Name = "barButtonItem10";
-            this.barButtonItem10.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.MhtBarButton.Caption = "Mht";
+            this.MhtBarButton.Id = 11;
+            this.MhtBarButton.ImageOptions.Image = global::ELMS.Properties.Resources.explorer_32;
+            this.MhtBarButton.Name = "MhtBarButton";
+            this.MhtBarButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.MhtBarButton_ItemClick);
             // 
-            // barButtonItem11
+            // RtfBarButton
             // 
-            this.barButtonItem11.Caption = "Müqaviləni aç";
-            this.barButtonItem11.Id = 26;
-            this.barButtonItem11.ImageOptions.Image = global::ELMS.Properties.Resources.lock_open_32;
-            this.barButtonItem11.Name = "barButtonItem11";
-            this.barButtonItem11.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            // 
-            // barButtonItem12
-            // 
-            this.barButtonItem12.Caption = "Müqaviləni bağla";
-            this.barButtonItem12.Id = 27;
-            this.barButtonItem12.ImageOptions.Image = global::ELMS.Properties.Resources.lock_close_32;
-            this.barButtonItem12.Name = "barButtonItem12";
-            this.barButtonItem12.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            // 
-            // barButtonItem13
-            // 
-            this.barButtonItem13.Caption = "Ödənişlər";
-            this.barButtonItem13.Id = 28;
-            this.barButtonItem13.ImageOptions.Image = global::ELMS.Properties.Resources.payment_32;
-            this.barButtonItem13.Name = "barButtonItem13";
-            this.barButtonItem13.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            // 
-            // barButtonItem14
-            // 
-            this.barButtonItem14.Caption = "Çap";
-            this.barButtonItem14.Id = 29;
-            this.barButtonItem14.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem14.ImageOptions.Image")));
-            this.barButtonItem14.Name = "barButtonItem14";
-            this.barButtonItem14.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.RtfBarButton.Caption = "Rtf";
+            this.RtfBarButton.Id = 14;
+            this.RtfBarButton.ImageOptions.Image = global::ELMS.Properties.Resources.rtf_32;
+            this.RtfBarButton.Name = "RtfBarButton";
+            this.RtfBarButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.RtfBarButton_ItemClick);
             // 
             // bar3
             // 
@@ -312,449 +265,227 @@
             this.barDockControlRight.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.barDockControlRight.Size = new System.Drawing.Size(0, 566);
             // 
+            // OrderGridControl
+            // 
+            this.OrderGridControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.OrderGridControl.Location = new System.Drawing.Point(0, 47);
+            this.OrderGridControl.MainView = this.OrderGridView;
+            this.OrderGridControl.Name = "OrderGridControl";
+            this.OrderGridControl.Size = new System.Drawing.Size(1430, 566);
+            this.OrderGridControl.TabIndex = 56;
+            this.OrderGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.OrderGridView});
+            // 
+            // OrderGridView
+            // 
+            this.OrderGridView.Appearance.FooterPanel.FontStyleDelta = System.Drawing.FontStyle.Bold;
+            this.OrderGridView.Appearance.FooterPanel.Options.UseFont = true;
+            this.OrderGridView.Appearance.FooterPanel.Options.UseTextOptions = true;
+            this.OrderGridView.Appearance.FooterPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.OrderGridView.Appearance.FooterPanel.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.OrderGridView.Appearance.HeaderPanel.Options.UseTextOptions = true;
+            this.OrderGridView.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.OrderGridView.Appearance.HeaderPanel.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.OrderGridView.Appearance.ViewCaption.Options.UseTextOptions = true;
+            this.OrderGridView.Appearance.ViewCaption.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.OrderGridView.Appearance.ViewCaption.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.OrderGridView.Appearance.ViewCaption.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.OrderGridView.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.Order_SS,
+            this.Order_ID,
+            this.Order_OperationName,
+            this.Order_RegisterNumber,
+            this.Order_Branch,
+            this.Order_Time,
+            this.Order_Percent,
+            this.Order_Source,
+            this.Order_FirstPayment,
+            this.Order_Amount,
+            this.Order_UsedUserID,
+            this.Order_CreditAmount,
+            this.Order_OperationNote,
+            this.Order_TypeID});
+            this.OrderGridView.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFullFocus;
+            this.OrderGridView.GridControl = this.OrderGridControl;
+            this.OrderGridView.Name = "OrderGridView";
+            this.OrderGridView.OptionsBehavior.AutoExpandAllGroups = true;
+            this.OrderGridView.OptionsBehavior.AutoSelectAllInEditor = false;
+            this.OrderGridView.OptionsBehavior.Editable = false;
+            this.OrderGridView.OptionsFilter.UseNewCustomFilterDialog = true;
+            this.OrderGridView.OptionsFind.FindDelay = 100;
+            this.OrderGridView.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.OrderGridView.OptionsView.EnableAppearanceEvenRow = true;
+            this.OrderGridView.OptionsView.ShowFooter = true;
+            this.OrderGridView.OptionsView.ShowGroupPanel = false;
+            this.OrderGridView.OptionsView.ShowIndicator = false;
+            this.OrderGridView.PaintStyleName = "Skin";
+            this.OrderGridView.ScrollStyle = DevExpress.XtraGrid.Views.Grid.ScrollStyleFlags.LiveVertScroll;
+            this.OrderGridView.ViewCaption = "Müraciətlərin Siyahısı";
+            this.OrderGridView.RowCellStyle += new DevExpress.XtraGrid.Views.Grid.RowCellStyleEventHandler(this.OrderGridView_RowCellStyle);
+            this.OrderGridView.FocusedRowObjectChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowObjectChangedEventHandler(this.OrderGridView_FocusedRowObjectChanged);
+            this.OrderGridView.ColumnFilterChanged += new System.EventHandler(this.OrderGridView_ColumnFilterChanged);
+            this.OrderGridView.CustomUnboundColumnData += new DevExpress.XtraGrid.Views.Base.CustomColumnDataEventHandler(this.OrderGridView_CustomUnboundColumnData);
+            this.OrderGridView.MouseUp += new System.Windows.Forms.MouseEventHandler(this.OrderGridView_MouseUp);
+            this.OrderGridView.DoubleClick += new System.EventHandler(this.OrderGridView_DoubleClick);
+            // 
+            // Order_SS
+            // 
+            this.Order_SS.AppearanceCell.Options.UseTextOptions = true;
+            this.Order_SS.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.Order_SS.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.Order_SS.Caption = "S/s";
+            this.Order_SS.FieldName = "Customer_SS";
+            this.Order_SS.Name = "Order_SS";
+            this.Order_SS.OptionsColumn.FixedWidth = true;
+            this.Order_SS.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Count, "Customer_SS", "{0}")});
+            this.Order_SS.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
+            this.Order_SS.Visible = true;
+            this.Order_SS.VisibleIndex = 0;
+            this.Order_SS.Width = 80;
+            // 
+            // Order_ID
+            // 
+            this.Order_ID.Caption = "ID";
+            this.Order_ID.FieldName = "ID";
+            this.Order_ID.Name = "Order_ID";
+            this.Order_ID.OptionsColumn.AllowShowHide = false;
+            this.Order_ID.OptionsColumn.FixedWidth = true;
+            // 
+            // Order_OperationName
+            // 
+            this.Order_OperationName.Caption = "Müqavilənin vəziyyəti";
+            this.Order_OperationName.FieldName = "OPERATION_NAME";
+            this.Order_OperationName.Name = "Order_OperationName";
+            this.Order_OperationName.OptionsColumn.FixedWidth = true;
+            this.Order_OperationName.Visible = true;
+            this.Order_OperationName.VisibleIndex = 1;
+            this.Order_OperationName.Width = 250;
+            // 
+            // Order_RegisterNumber
+            // 
+            this.Order_RegisterNumber.Caption = "Qeydiyyat nömrəsi";
+            this.Order_RegisterNumber.FieldName = "ID";
+            this.Order_RegisterNumber.Name = "Order_RegisterNumber";
+            this.Order_RegisterNumber.OptionsColumn.FixedWidth = true;
+            this.Order_RegisterNumber.Visible = true;
+            this.Order_RegisterNumber.VisibleIndex = 2;
+            this.Order_RegisterNumber.Width = 110;
+            // 
+            // Order_Branch
+            // 
+            this.Order_Branch.Caption = "Filial";
+            this.Order_Branch.FieldName = "BRANCH_NAME";
+            this.Order_Branch.Name = "Order_Branch";
+            this.Order_Branch.OptionsColumn.FixedWidth = true;
+            this.Order_Branch.Visible = true;
+            this.Order_Branch.VisibleIndex = 3;
+            this.Order_Branch.Width = 150;
+            // 
+            // Order_Time
+            // 
+            this.Order_Time.AppearanceCell.Options.UseTextOptions = true;
+            this.Order_Time.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.Order_Time.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.Order_Time.Caption = "Müddət";
+            this.Order_Time.FieldName = "TIME";
+            this.Order_Time.Name = "Order_Time";
+            this.Order_Time.OptionsColumn.FixedWidth = true;
+            this.Order_Time.Visible = true;
+            this.Order_Time.VisibleIndex = 4;
+            this.Order_Time.Width = 80;
+            // 
+            // Order_Percent
+            // 
+            this.Order_Percent.Caption = "Faiz";
+            this.Order_Percent.FieldName = "PERCENT";
+            this.Order_Percent.Name = "Order_Percent";
+            this.Order_Percent.OptionsColumn.FixedWidth = true;
+            this.Order_Percent.Visible = true;
+            this.Order_Percent.VisibleIndex = 5;
+            this.Order_Percent.Width = 80;
+            // 
+            // Order_Source
+            // 
+            this.Order_Source.AppearanceCell.Options.UseTextOptions = true;
+            this.Order_Source.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.Order_Source.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.Order_Source.Caption = "Sifarişin mənbəyi";
+            this.Order_Source.FieldName = "ORDER_SOURCE";
+            this.Order_Source.Name = "Order_Source";
+            this.Order_Source.OptionsColumn.FixedWidth = true;
+            this.Order_Source.Visible = true;
+            this.Order_Source.VisibleIndex = 6;
+            this.Order_Source.Width = 200;
+            // 
+            // Order_FirstPayment
+            // 
+            this.Order_FirstPayment.Caption = "İlkin ödəniş";
+            this.Order_FirstPayment.FieldName = "FIRST_PAYMENT";
+            this.Order_FirstPayment.Name = "Order_FirstPayment";
+            this.Order_FirstPayment.OptionsColumn.FixedWidth = true;
+            this.Order_FirstPayment.Visible = true;
+            this.Order_FirstPayment.VisibleIndex = 8;
+            this.Order_FirstPayment.Width = 100;
+            // 
+            // Order_Amount
+            // 
+            this.Order_Amount.Caption = "Məbləğ";
+            this.Order_Amount.FieldName = "ORDER_AMOUNT";
+            this.Order_Amount.Name = "Order_Amount";
+            this.Order_Amount.OptionsColumn.FixedWidth = true;
+            this.Order_Amount.Visible = true;
+            this.Order_Amount.VisibleIndex = 7;
+            this.Order_Amount.Width = 100;
+            // 
+            // Order_UsedUserID
+            // 
+            this.Order_UsedUserID.Caption = "UsedUserID";
+            this.Order_UsedUserID.FieldName = "USED_USER_ID";
+            this.Order_UsedUserID.Name = "Order_UsedUserID";
+            this.Order_UsedUserID.OptionsColumn.AllowShowHide = false;
+            // 
+            // Order_CreditAmount
+            // 
+            this.Order_CreditAmount.Caption = "Nisyə məbləği";
+            this.Order_CreditAmount.FieldName = "CREDIT_AMOUNT";
+            this.Order_CreditAmount.Name = "Order_CreditAmount";
+            this.Order_CreditAmount.OptionsColumn.FixedWidth = true;
+            this.Order_CreditAmount.Visible = true;
+            this.Order_CreditAmount.VisibleIndex = 9;
+            this.Order_CreditAmount.Width = 100;
+            // 
+            // Order_OperationNote
+            // 
+            this.Order_OperationNote.Caption = "Qeyd";
+            this.Order_OperationNote.FieldName = "OPERATION_NOTE";
+            this.Order_OperationNote.Name = "Order_OperationNote";
+            this.Order_OperationNote.OptionsColumn.FixedWidth = true;
+            this.Order_OperationNote.Visible = true;
+            this.Order_OperationNote.VisibleIndex = 10;
+            this.Order_OperationNote.Width = 250;
+            // 
+            // Order_TypeID
+            // 
+            this.Order_TypeID.Caption = "Order_TypeID";
+            this.Order_TypeID.FieldName = "TYPE_ID";
+            this.Order_TypeID.Name = "Order_TypeID";
+            // 
             // OrderPopupMenu
             // 
             this.OrderPopupMenu.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem1),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem2),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem3),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem4),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem5),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem6),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barSubItem1),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem8),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem9),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem10),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem11),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem12),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem13),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem14),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barSubItem2)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.EditBarButton),
+            new DevExpress.XtraBars.LinkPersistInfo(this.RefreshBarButton),
+            new DevExpress.XtraBars.LinkPersistInfo(this.PrintBarButton, true),
+            new DevExpress.XtraBars.LinkPersistInfo(this.ExportBarButton)});
             this.OrderPopupMenu.Manager = this.BarManager;
             this.OrderPopupMenu.Name = "OrderPopupMenu";
-            // 
-            // ContractsGridControl
-            // 
-            this.ContractsGridControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ContractsGridControl.Location = new System.Drawing.Point(0, 47);
-            this.ContractsGridControl.MainView = this.ContractsGridView;
-            this.ContractsGridControl.Name = "ContractsGridControl";
-            this.ContractsGridControl.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
-            this.RepositoryItemPictureEdit});
-            this.ContractsGridControl.Size = new System.Drawing.Size(1430, 566);
-            this.ContractsGridControl.TabIndex = 68;
-            this.ContractsGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.ContractsGridView});
-            // 
-            // ContractsGridView
-            // 
-            this.ContractsGridView.Appearance.FooterPanel.FontStyleDelta = System.Drawing.FontStyle.Bold;
-            this.ContractsGridView.Appearance.FooterPanel.Options.UseFont = true;
-            this.ContractsGridView.Appearance.FooterPanel.Options.UseTextOptions = true;
-            this.ContractsGridView.Appearance.FooterPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
-            this.ContractsGridView.Appearance.FooterPanel.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.ContractsGridView.Appearance.HeaderPanel.Options.UseTextOptions = true;
-            this.ContractsGridView.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.ContractsGridView.Appearance.HeaderPanel.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.ContractsGridView.Appearance.ViewCaption.Options.UseTextOptions = true;
-            this.ContractsGridView.Appearance.ViewCaption.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
-            this.ContractsGridView.Appearance.ViewCaption.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.ContractsGridView.Appearance.ViewCaption.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.ContractsGridView.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.Contract_SS,
-            this.Contract_Code,
-            this.Contract_CustomerFullName,
-            this.Contract_StartDate,
-            this.Contract_EndDate,
-            this.Contract_Period,
-            this.Contract_Interest,
-            this.Contract_Fifd,
-            this.Contract_Grace,
-            this.Contract_Commission,
-            this.Contract_Amount,
-            this.Contract_CurrencyCode,
-            this.Contract_StatusName,
-            this.Contract_Notes,
-            this.Contract_Note,
-            this.Contract_ID,
-            this.Contract_UsedUserID,
-            this.Contract_CustomerID,
-            this.Contract_IsCommit,
-            this.Contract_StatusID,
-            this.Contract_NoteChangeUser,
-            this.Contract_NoteChangeDate,
-            this.Contract_IntInterest,
-            this.Contract_IntPeriod,
-            this.Contract_CreditTypeID,
-            this.Contract_RowNumber,
-            this.Contract_CustomerTypeID,
-            this.Contract_ParentID,
-            this.Contract_CustomerCode,
-            this.Contract_CustomerName,
-            this.Contract_IntExtendMountCount,
-            this.Contract_IsSpecialAttention,
-            this.Contract_SpecialAttention});
-            this.ContractsGridView.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFullFocus;
-            this.ContractsGridView.GridControl = this.ContractsGridControl;
-            this.ContractsGridView.Name = "ContractsGridView";
-            this.ContractsGridView.OptionsBehavior.AutoExpandAllGroups = true;
-            this.ContractsGridView.OptionsBehavior.AutoSelectAllInEditor = false;
-            this.ContractsGridView.OptionsBehavior.Editable = false;
-            this.ContractsGridView.OptionsFilter.UseNewCustomFilterDialog = true;
-            this.ContractsGridView.OptionsFind.FindDelay = 100;
-            this.ContractsGridView.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.ContractsGridView.OptionsView.EnableAppearanceEvenRow = true;
-            this.ContractsGridView.OptionsView.ShowFooter = true;
-            this.ContractsGridView.OptionsView.ShowGroupPanel = false;
-            this.ContractsGridView.OptionsView.ShowIndicator = false;
-            this.ContractsGridView.OptionsView.ShowViewCaption = true;
-            this.ContractsGridView.PaintStyleName = "Skin";
-            this.ContractsGridView.ScrollStyle = DevExpress.XtraGrid.Views.Grid.ScrollStyleFlags.LiveVertScroll;
-            this.ContractsGridView.ViewCaption = "Müqavilələrin siyahısı";
-            // 
-            // Contract_SS
-            // 
-            this.Contract_SS.AppearanceCell.Options.UseTextOptions = true;
-            this.Contract_SS.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.Contract_SS.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.Contract_SS.Caption = "S/s";
-            this.Contract_SS.FieldName = "Contract_SS";
-            this.Contract_SS.Name = "Contract_SS";
-            this.Contract_SS.OptionsColumn.FixedWidth = true;
-            this.Contract_SS.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Count, "Contract_SS", "{0}")});
-            this.Contract_SS.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
-            this.Contract_SS.Visible = true;
-            this.Contract_SS.VisibleIndex = 0;
-            this.Contract_SS.Width = 45;
-            // 
-            // Contract_Code
-            // 
-            this.Contract_Code.AppearanceCell.Options.UseTextOptions = true;
-            this.Contract_Code.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.Contract_Code.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.Contract_Code.Caption = "Kodu";
-            this.Contract_Code.FieldName = "CONTRACT_CODE";
-            this.Contract_Code.Name = "Contract_Code";
-            this.Contract_Code.OptionsColumn.FixedWidth = true;
-            this.Contract_Code.Visible = true;
-            this.Contract_Code.VisibleIndex = 1;
-            this.Contract_Code.Width = 70;
-            // 
-            // Contract_CustomerFullName
-            // 
-            this.Contract_CustomerFullName.Caption = "Müştəri";
-            this.Contract_CustomerFullName.FieldName = "CUSTOMERFULLNAME";
-            this.Contract_CustomerFullName.Name = "Contract_CustomerFullName";
-            this.Contract_CustomerFullName.Visible = true;
-            this.Contract_CustomerFullName.VisibleIndex = 2;
-            this.Contract_CustomerFullName.Width = 258;
-            // 
-            // Contract_StartDate
-            // 
-            this.Contract_StartDate.AppearanceCell.Options.UseTextOptions = true;
-            this.Contract_StartDate.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.Contract_StartDate.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.Contract_StartDate.Caption = "Verilmə tarixi";
-            this.Contract_StartDate.DisplayFormat.FormatString = "dd.MM.yyyy";
-            this.Contract_StartDate.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            this.Contract_StartDate.FieldName = "START_DATE";
-            this.Contract_StartDate.Name = "Contract_StartDate";
-            this.Contract_StartDate.OptionsColumn.FixedWidth = true;
-            this.Contract_StartDate.Visible = true;
-            this.Contract_StartDate.VisibleIndex = 3;
-            // 
-            // Contract_EndDate
-            // 
-            this.Contract_EndDate.AppearanceCell.Options.UseTextOptions = true;
-            this.Contract_EndDate.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.Contract_EndDate.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.Contract_EndDate.Caption = "Bitmə tarixi";
-            this.Contract_EndDate.DisplayFormat.FormatString = "dd.MM.yyyy";
-            this.Contract_EndDate.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            this.Contract_EndDate.FieldName = "END_DATE";
-            this.Contract_EndDate.Name = "Contract_EndDate";
-            this.Contract_EndDate.OptionsColumn.FixedWidth = true;
-            this.Contract_EndDate.Visible = true;
-            this.Contract_EndDate.VisibleIndex = 4;
-            // 
-            // Contract_Period
-            // 
-            this.Contract_Period.AppearanceCell.Options.UseTextOptions = true;
-            this.Contract_Period.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.Contract_Period.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.Contract_Period.Caption = "Müddəti";
-            this.Contract_Period.DisplayFormat.FormatString = "{0} ay";
-            this.Contract_Period.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
-            this.Contract_Period.FieldName = "PERIOD";
-            this.Contract_Period.Name = "Contract_Period";
-            this.Contract_Period.OptionsColumn.FixedWidth = true;
-            this.Contract_Period.Visible = true;
-            this.Contract_Period.VisibleIndex = 5;
-            this.Contract_Period.Width = 50;
-            // 
-            // Contract_Interest
-            // 
-            this.Contract_Interest.AppearanceCell.Options.UseTextOptions = true;
-            this.Contract_Interest.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.Contract_Interest.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.Contract_Interest.Caption = "Faizi";
-            this.Contract_Interest.DisplayFormat.FormatString = "{0} %";
-            this.Contract_Interest.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
-            this.Contract_Interest.FieldName = "INTEREST";
-            this.Contract_Interest.Name = "Contract_Interest";
-            this.Contract_Interest.OptionsColumn.FixedWidth = true;
-            this.Contract_Interest.Visible = true;
-            this.Contract_Interest.VisibleIndex = 6;
-            this.Contract_Interest.Width = 50;
-            // 
-            // Contract_Fifd
-            // 
-            this.Contract_Fifd.AppearanceCell.Options.UseTextOptions = true;
-            this.Contract_Fifd.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.Contract_Fifd.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.Contract_Fifd.Caption = "FİFD";
-            this.Contract_Fifd.DisplayFormat.FormatString = "{0:n2} %";
-            this.Contract_Fifd.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
-            this.Contract_Fifd.FieldName = "FIFD";
-            this.Contract_Fifd.Name = "Contract_Fifd";
-            this.Contract_Fifd.OptionsColumn.FixedWidth = true;
-            this.Contract_Fifd.ToolTip = "Faktiki İllik Faiz Dərəcəsi";
-            this.Contract_Fifd.Visible = true;
-            this.Contract_Fifd.VisibleIndex = 7;
-            this.Contract_Fifd.Width = 50;
-            // 
-            // Contract_Grace
-            // 
-            this.Contract_Grace.AppearanceCell.Options.UseTextOptions = true;
-            this.Contract_Grace.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.Contract_Grace.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.Contract_Grace.Caption = "Güzəşt müddəti";
-            this.Contract_Grace.DisplayFormat.FormatString = "{0} ay";
-            this.Contract_Grace.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
-            this.Contract_Grace.FieldName = "GRACE";
-            this.Contract_Grace.Name = "Contract_Grace";
-            this.Contract_Grace.OptionsColumn.FixedWidth = true;
-            this.Contract_Grace.Visible = true;
-            this.Contract_Grace.VisibleIndex = 8;
-            this.Contract_Grace.Width = 85;
-            // 
-            // Contract_Commission
-            // 
-            this.Contract_Commission.Caption = "Kommisiya";
-            this.Contract_Commission.DisplayFormat.FormatString = "n2";
-            this.Contract_Commission.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.Contract_Commission.FieldName = "COMMISSION";
-            this.Contract_Commission.Name = "Contract_Commission";
-            this.Contract_Commission.OptionsColumn.FixedWidth = true;
-            this.Contract_Commission.Visible = true;
-            this.Contract_Commission.VisibleIndex = 9;
-            // 
-            // Contract_Amount
-            // 
-            this.Contract_Amount.Caption = "Kreditin məbləği";
-            this.Contract_Amount.DisplayFormat.FormatString = "n2";
-            this.Contract_Amount.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.Contract_Amount.FieldName = "AMOUNT";
-            this.Contract_Amount.Name = "Contract_Amount";
-            this.Contract_Amount.OptionsColumn.FixedWidth = true;
-            this.Contract_Amount.Visible = true;
-            this.Contract_Amount.VisibleIndex = 10;
-            this.Contract_Amount.Width = 100;
-            // 
-            // Contract_CurrencyCode
-            // 
-            this.Contract_CurrencyCode.AppearanceCell.Options.UseTextOptions = true;
-            this.Contract_CurrencyCode.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.Contract_CurrencyCode.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.Contract_CurrencyCode.Caption = "Valyutası";
-            this.Contract_CurrencyCode.FieldName = "CURRENCY_CODE";
-            this.Contract_CurrencyCode.Name = "Contract_CurrencyCode";
-            this.Contract_CurrencyCode.OptionsColumn.FixedWidth = true;
-            this.Contract_CurrencyCode.Visible = true;
-            this.Contract_CurrencyCode.VisibleIndex = 11;
-            this.Contract_CurrencyCode.Width = 55;
-            // 
-            // Contract_StatusName
-            // 
-            this.Contract_StatusName.Caption = "Statusu";
-            this.Contract_StatusName.FieldName = "STATUS_NAME";
-            this.Contract_StatusName.Name = "Contract_StatusName";
-            this.Contract_StatusName.OptionsColumn.FixedWidth = true;
-            this.Contract_StatusName.Visible = true;
-            this.Contract_StatusName.VisibleIndex = 12;
-            // 
-            // Contract_Notes
-            // 
-            this.Contract_Notes.Caption = "Qeyd";
-            this.Contract_Notes.ColumnEdit = this.RepositoryItemPictureEdit;
-            this.Contract_Notes.FieldName = "Contract_Notes";
-            this.Contract_Notes.Name = "Contract_Notes";
-            this.Contract_Notes.OptionsColumn.FixedWidth = true;
-            this.Contract_Notes.UnboundType = DevExpress.Data.UnboundColumnType.Object;
-            this.Contract_Notes.Visible = true;
-            this.Contract_Notes.VisibleIndex = 13;
-            this.Contract_Notes.Width = 35;
-            // 
-            // RepositoryItemPictureEdit
-            // 
-            this.RepositoryItemPictureEdit.Name = "RepositoryItemPictureEdit";
-            this.RepositoryItemPictureEdit.NullText = " ";
-            this.RepositoryItemPictureEdit.ZoomAccelerationFactor = 1D;
-            // 
-            // Contract_Note
-            // 
-            this.Contract_Note.Caption = "Qeyd";
-            this.Contract_Note.FieldName = "CONTRACT_NOTE";
-            this.Contract_Note.Name = "Contract_Note";
-            this.Contract_Note.OptionsColumn.FixedWidth = true;
-            this.Contract_Note.Width = 35;
-            // 
-            // Contract_ID
-            // 
-            this.Contract_ID.Caption = "ID";
-            this.Contract_ID.FieldName = "ID";
-            this.Contract_ID.Name = "Contract_ID";
-            this.Contract_ID.OptionsColumn.AllowShowHide = false;
-            // 
-            // Contract_UsedUserID
-            // 
-            this.Contract_UsedUserID.Caption = "UsedUserID";
-            this.Contract_UsedUserID.FieldName = "USED_USER_ID";
-            this.Contract_UsedUserID.Name = "Contract_UsedUserID";
-            this.Contract_UsedUserID.OptionsColumn.AllowShowHide = false;
-            // 
-            // Contract_CustomerID
-            // 
-            this.Contract_CustomerID.Caption = "CustomerID";
-            this.Contract_CustomerID.FieldName = "CUSTOMER_ID";
-            this.Contract_CustomerID.Name = "Contract_CustomerID";
-            this.Contract_CustomerID.OptionsColumn.AllowShowHide = false;
-            // 
-            // Contract_IsCommit
-            // 
-            this.Contract_IsCommit.Caption = "IsCommit";
-            this.Contract_IsCommit.FieldName = "IS_COMMIT";
-            this.Contract_IsCommit.Name = "Contract_IsCommit";
-            this.Contract_IsCommit.OptionsColumn.AllowShowHide = false;
-            // 
-            // Contract_StatusID
-            // 
-            this.Contract_StatusID.Caption = "StatusID";
-            this.Contract_StatusID.FieldName = "STATUS_ID";
-            this.Contract_StatusID.Name = "Contract_StatusID";
-            this.Contract_StatusID.OptionsColumn.AllowShowHide = false;
-            // 
-            // Contract_NoteChangeUser
-            // 
-            this.Contract_NoteChangeUser.Caption = "NoteChangeUser";
-            this.Contract_NoteChangeUser.FieldName = "NOTE_CHANGE_USER";
-            this.Contract_NoteChangeUser.Name = "Contract_NoteChangeUser";
-            this.Contract_NoteChangeUser.OptionsColumn.AllowShowHide = false;
-            // 
-            // Contract_NoteChangeDate
-            // 
-            this.Contract_NoteChangeDate.Caption = "NoteChangeDate";
-            this.Contract_NoteChangeDate.DisplayFormat.FormatString = "dd.MM.yyyy HH24:mm:ss";
-            this.Contract_NoteChangeDate.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            this.Contract_NoteChangeDate.FieldName = "NOTE_CHANGE_DATE";
-            this.Contract_NoteChangeDate.Name = "Contract_NoteChangeDate";
-            this.Contract_NoteChangeDate.OptionsColumn.AllowShowHide = false;
-            // 
-            // Contract_IntInterest
-            // 
-            this.Contract_IntInterest.Caption = "IntInterest";
-            this.Contract_IntInterest.FieldName = "INT_INTEREST";
-            this.Contract_IntInterest.Name = "Contract_IntInterest";
-            this.Contract_IntInterest.OptionsColumn.AllowShowHide = false;
-            // 
-            // Contract_IntPeriod
-            // 
-            this.Contract_IntPeriod.Caption = "IntPeriod";
-            this.Contract_IntPeriod.FieldName = "INT_PERIOD";
-            this.Contract_IntPeriod.Name = "Contract_IntPeriod";
-            this.Contract_IntPeriod.OptionsColumn.AllowShowHide = false;
-            // 
-            // Contract_CreditTypeID
-            // 
-            this.Contract_CreditTypeID.Caption = "CreditTypeID";
-            this.Contract_CreditTypeID.FieldName = "CREDIT_TYPE_ID";
-            this.Contract_CreditTypeID.Name = "Contract_CreditTypeID";
-            this.Contract_CreditTypeID.OptionsColumn.AllowShowHide = false;
-            // 
-            // Contract_RowNumber
-            // 
-            this.Contract_RowNumber.Caption = "ROW_NUM";
-            this.Contract_RowNumber.Name = "Contract_RowNumber";
-            this.Contract_RowNumber.OptionsColumn.AllowShowHide = false;
-            // 
-            // Contract_CustomerTypeID
-            // 
-            this.Contract_CustomerTypeID.Caption = "CustomerTypeID";
-            this.Contract_CustomerTypeID.FieldName = "CUSTOMER_TYPE_ID";
-            this.Contract_CustomerTypeID.Name = "Contract_CustomerTypeID";
-            this.Contract_CustomerTypeID.OptionsColumn.AllowShowHide = false;
-            // 
-            // Contract_ParentID
-            // 
-            this.Contract_ParentID.Caption = "Razılaşdırılmış müqavilə";
-            this.Contract_ParentID.FieldName = "PARENT_ID";
-            this.Contract_ParentID.Name = "Contract_ParentID";
-            this.Contract_ParentID.OptionsColumn.AllowShowHide = false;
-            // 
-            // Contract_CustomerCode
-            // 
-            this.Contract_CustomerCode.Caption = "CustomerCode";
-            this.Contract_CustomerCode.FieldName = "CUSTOMER_CODE";
-            this.Contract_CustomerCode.Name = "Contract_CustomerCode";
-            this.Contract_CustomerCode.OptionsColumn.AllowShowHide = false;
-            // 
-            // Contract_CustomerName
-            // 
-            this.Contract_CustomerName.Caption = "CustomerName";
-            this.Contract_CustomerName.FieldName = "CUSTOMER_NAME";
-            this.Contract_CustomerName.Name = "Contract_CustomerName";
-            this.Contract_CustomerName.OptionsColumn.AllowShowHide = false;
-            // 
-            // Contract_IntExtendMountCount
-            // 
-            this.Contract_IntExtendMountCount.Caption = "Uzadılmış aylar";
-            this.Contract_IntExtendMountCount.FieldName = "INT_EXTEND_MOUNT_COUNT";
-            this.Contract_IntExtendMountCount.Name = "Contract_IntExtendMountCount";
-            this.Contract_IntExtendMountCount.OptionsColumn.AllowShowHide = false;
-            // 
-            // Contract_IsSpecialAttention
-            // 
-            this.Contract_IsSpecialAttention.Caption = "Xüsusi nəzarət";
-            this.Contract_IsSpecialAttention.FieldName = "IS_SPECIAL_ATTENTION";
-            this.Contract_IsSpecialAttention.Name = "Contract_IsSpecialAttention";
-            this.Contract_IsSpecialAttention.OptionsColumn.AllowShowHide = false;
-            // 
-            // Contract_SpecialAttention
-            // 
-            this.Contract_SpecialAttention.Caption = "Nəzarət";
-            this.Contract_SpecialAttention.ColumnEdit = this.RepositoryItemPictureEdit;
-            this.Contract_SpecialAttention.FieldName = "Contract_SpecialAttention";
-            this.Contract_SpecialAttention.Name = "Contract_SpecialAttention";
-            this.Contract_SpecialAttention.OptionsColumn.FixedWidth = true;
-            this.Contract_SpecialAttention.UnboundType = DevExpress.Data.UnboundColumnType.Object;
-            this.Contract_SpecialAttention.Visible = true;
-            this.Contract_SpecialAttention.VisibleIndex = 14;
-            this.Contract_SpecialAttention.Width = 50;
-            // 
-            // barSubItem2
-            // 
-            this.barSubItem2.Caption = "İxrac";
-            this.barSubItem2.Id = 35;
-            this.barSubItem2.ImageOptions.Image = global::ELMS.Properties.Resources.table_export_32;
-            this.barSubItem2.Name = "barSubItem2";
-            this.barSubItem2.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
             // 
             // ContractUserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.ContractsGridControl);
+            this.Controls.Add(this.OrderGridControl);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
@@ -762,11 +493,12 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "ContractUserControl";
             this.Size = new System.Drawing.Size(1430, 636);
+            this.Load += new System.EventHandler(this.OrderUserControl_Load);
+            this.Enter += new System.EventHandler(this.OrderUserControl_Enter);
             ((System.ComponentModel.ISupportInitialize)(this.BarManager)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.OrderGridControl)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.OrderGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.OrderPopupMenu)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ContractsGridControl)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ContractsGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.RepositoryItemPictureEdit)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -781,57 +513,33 @@
         private DevExpress.XtraBars.BarDockControl barDockControlBottom;
         private DevExpress.XtraBars.BarDockControl barDockControlLeft;
         private DevExpress.XtraBars.BarDockControl barDockControlRight;
+        private DevExpress.XtraBars.BarButtonItem EditBarButton;
+        private DevExpress.XtraBars.BarButtonItem RefreshBarButton;
+        private DevExpress.XtraBars.BarButtonItem PrintBarButton;
+        private DevExpress.XtraBars.BarSubItem ExportBarButton;
+        private DevExpress.XtraBars.BarButtonItem ExcelBarButton;
+        private DevExpress.XtraBars.BarButtonItem PdfBarButton;
+        private DevExpress.XtraBars.BarButtonItem TxtBarButton;
+        private DevExpress.XtraBars.BarButtonItem HtmlBarButton;
+        private DevExpress.XtraBars.BarButtonItem CsvBarButton;
+        private DevExpress.XtraBars.BarButtonItem MhtBarButton;
+        private DevExpress.XtraGrid.GridControl OrderGridControl;
+        private DevExpress.XtraGrid.Views.Grid.GridView OrderGridView;
+        private DevExpress.XtraGrid.Columns.GridColumn Order_SS;
+        private DevExpress.XtraGrid.Columns.GridColumn Order_Branch;
+        private DevExpress.XtraGrid.Columns.GridColumn Order_Source;
+        private DevExpress.XtraGrid.Columns.GridColumn Order_FirstPayment;
+        private DevExpress.XtraGrid.Columns.GridColumn Order_Amount;
+        private DevExpress.XtraGrid.Columns.GridColumn Order_Time;
+        private DevExpress.XtraGrid.Columns.GridColumn Order_UsedUserID;
+        private DevExpress.XtraBars.BarButtonItem RtfBarButton;
         private DevExpress.XtraBars.PopupMenu OrderPopupMenu;
-        private DevExpress.XtraGrid.GridControl ContractsGridControl;
-        private DevExpress.XtraGrid.Views.Grid.GridView ContractsGridView;
-        private DevExpress.XtraGrid.Columns.GridColumn Contract_SS;
-        private DevExpress.XtraGrid.Columns.GridColumn Contract_Code;
-        private DevExpress.XtraGrid.Columns.GridColumn Contract_CustomerFullName;
-        private DevExpress.XtraGrid.Columns.GridColumn Contract_StartDate;
-        private DevExpress.XtraGrid.Columns.GridColumn Contract_EndDate;
-        private DevExpress.XtraGrid.Columns.GridColumn Contract_Period;
-        private DevExpress.XtraGrid.Columns.GridColumn Contract_Interest;
-        private DevExpress.XtraGrid.Columns.GridColumn Contract_Fifd;
-        private DevExpress.XtraGrid.Columns.GridColumn Contract_Grace;
-        private DevExpress.XtraGrid.Columns.GridColumn Contract_Commission;
-        private DevExpress.XtraGrid.Columns.GridColumn Contract_Amount;
-        private DevExpress.XtraGrid.Columns.GridColumn Contract_CurrencyCode;
-        private DevExpress.XtraGrid.Columns.GridColumn Contract_StatusName;
-        private DevExpress.XtraGrid.Columns.GridColumn Contract_Notes;
-        private DevExpress.XtraEditors.Repository.RepositoryItemPictureEdit RepositoryItemPictureEdit;
-        private DevExpress.XtraGrid.Columns.GridColumn Contract_Note;
-        private DevExpress.XtraGrid.Columns.GridColumn Contract_ID;
-        private DevExpress.XtraGrid.Columns.GridColumn Contract_UsedUserID;
-        private DevExpress.XtraGrid.Columns.GridColumn Contract_CustomerID;
-        private DevExpress.XtraGrid.Columns.GridColumn Contract_IsCommit;
-        private DevExpress.XtraGrid.Columns.GridColumn Contract_StatusID;
-        private DevExpress.XtraGrid.Columns.GridColumn Contract_NoteChangeUser;
-        private DevExpress.XtraGrid.Columns.GridColumn Contract_NoteChangeDate;
-        private DevExpress.XtraGrid.Columns.GridColumn Contract_IntInterest;
-        private DevExpress.XtraGrid.Columns.GridColumn Contract_IntPeriod;
-        private DevExpress.XtraGrid.Columns.GridColumn Contract_CreditTypeID;
-        private DevExpress.XtraGrid.Columns.GridColumn Contract_RowNumber;
-        private DevExpress.XtraGrid.Columns.GridColumn Contract_CustomerTypeID;
-        private DevExpress.XtraGrid.Columns.GridColumn Contract_ParentID;
-        private DevExpress.XtraGrid.Columns.GridColumn Contract_CustomerCode;
-        private DevExpress.XtraGrid.Columns.GridColumn Contract_CustomerName;
-        private DevExpress.XtraGrid.Columns.GridColumn Contract_IntExtendMountCount;
-        private DevExpress.XtraGrid.Columns.GridColumn Contract_IsSpecialAttention;
-        private DevExpress.XtraGrid.Columns.GridColumn Contract_SpecialAttention;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem2;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem3;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem4;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem5;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem6;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem8;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem9;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem10;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem11;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem12;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem13;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem14;
-        private DevExpress.XtraBars.BarSubItem barSubItem1;
-        private DevExpress.XtraBars.BarSubItem barSubItem2;
+        private DevExpress.XtraGrid.Columns.GridColumn Order_ID;
+        private DevExpress.XtraGrid.Columns.GridColumn Order_RegisterNumber;
+        private DevExpress.XtraGrid.Columns.GridColumn Order_CreditAmount;
+        private DevExpress.XtraGrid.Columns.GridColumn Order_OperationName;
+        private DevExpress.XtraGrid.Columns.GridColumn Order_OperationNote;
+        private DevExpress.XtraGrid.Columns.GridColumn Order_TypeID;
+        private DevExpress.XtraGrid.Columns.GridColumn Order_Percent;
     }
 }

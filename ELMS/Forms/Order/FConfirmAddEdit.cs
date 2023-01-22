@@ -20,6 +20,7 @@ using ELMS.Forms.Customer;
 using System.IO;
 using System.Text.RegularExpressions;
 using System.Diagnostics;
+using WordToPDF;
 
 namespace ELMS.Forms.Order
 {
@@ -31,6 +32,7 @@ namespace ELMS.Forms.Order
         }
 
         public TransactionTypeEnum TransactionType;
+        public UserControlTypeEnum UserControlType;
         public int? OrderID, CustomerID = 1, OperationID;
 
         bool CurrentStatus = false, Used = false, isClickBOK = false;
@@ -41,7 +43,8 @@ namespace ELMS.Forms.Order
             branchID = 0,
             sourceID = 0,
             timeID = 0,
-            code_number;
+            code_number,
+            ContractID;
         decimal calcTotalPrice = 0;
         string OrderImage, pinCode;
         string UserImagePath = GlobalVariables.V_ExecutingFolder + "\\TEMP\\Images";
@@ -73,18 +76,20 @@ namespace ELMS.Forms.Order
 
         private void LoadOrderDetails()
         {
-            DataTable dt = OrderDAL.SelectViewData(OrderID);
+            DataTable dt = OrderDAL.SelectConfirmData(OrderID);
 
             if (dt.Rows.Count > 0)
             {
+                OperationNoteText.EditValue = dt.Rows[0]["OPERATION_NOTE"].ToString();
                 pinCode = dt.Rows[0]["PINCODE"].ToString();
                 RegisterCodeText.EditValue = dt.Rows[0]["ID"];
+                ContractID = Convert.ToInt16(dt.Rows[0]["ID"]);
                 NoteText.EditValue = dt.Rows[0]["NOTE"];
                 OrderDateText.EditValue = dt.Rows[0]["ORDER_DATE"];
                 SourceText.EditValue = dt.Rows[0]["ORDER_SOURCE"];
                 BranchText.EditValue = dt.Rows[0]["BRANCH_NAME"];
                 TimeText.EditValue = dt.Rows[0]["TIME"];
-                FirstPaymentValue.EditValue = Convert.ToDecimal(dt.Rows[0]["FIRST_PAYMENT"].ToString());
+                FirstPaymentValue.EditValue = dt.Rows[0]["FIRST_PAYMENT"].ToString();
                 OrderAmountValue.EditValue = Convert.ToDecimal(dt.Rows[0]["ORDER_AMOUNT"].ToString());
                 TotalOrderAmountValue.EditValue = Convert.ToDecimal(dt.Rows[0]["CREDIT_AMOUNT"].ToString());
                 UsedUserID = Convert.ToInt16(dt.Rows[0]["USED_USER_ID"]);
@@ -104,7 +109,7 @@ namespace ELMS.Forms.Order
                 PhoneAllText.Enabled =
                 BClose.Visible = !status;
         }
-
+        //Təsdiqin kliki........................................
         private void BOK_Click(object sender, EventArgs e)
         {
             if (TransactionType == TransactionTypeEnum.Update)
@@ -114,19 +119,96 @@ namespace ELMS.Forms.Order
                     ORDER_ID = OrderID.Value,
                     ID = OperationID.Value,
                     NOTE = OperationNoteText.Text.Trim(),
-                    OPERATION_ID = (int)OperationTypeEnum.Tesdiq_edildi,
-                    INSERT_USER = GlobalVariables.V_UserID
+                     INSERT_USER = GlobalVariables.V_UserID
                 };
-
-                OperationDAL.InsertOrderOperation(order);
+                if (UserControlType == UserControlTypeEnum.Confirm)
+                {
+                    order.OPERATION_ID = (int)OperationTypeEnum.Tesdiq_edildi;
+                    GenerateContract();
+                    InsertContractDocument();
+                }
+                else
+                {
+                    order.OPERATION_ID = (int)OperationTypeEnum.Muqavile_tesdiq_edildi;
+                }
+                OperationDAL.UpdateOrderOperation(order);
             }
-            GenerateContract();
             this.Close();
 
         }
+        private void InsertContractDocument()
+        {
+            string file_name = null, sql = null, filePath = null;
+            if (GlobalVariables.WordDocumentUsed)
+            {
+                GlobalProcedures.SplashScreenClose();
+                XtraMessageBox.Show("Açıq olan bütün word fayllar avtomatik olaraq bağlanılacaq.", "Məlumat", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                GlobalProcedures.KillWord();
+                GlobalVariables.WordDocumentUsed = false;
+            }
+            filePath = GlobalVariables.V_ExecutingFolder + "\\TEMP\\Documents\\" + RegisterCodeText.Text.Replace("/", "") + "_Müqavilə.pdf";
+            if (File.Exists(filePath))
+            {
+                file_name = Path.GetFileName(filePath);
+                sql = $@"INSERT INTO ELMS_USER.ORDER_DOCUMENTS(ORDER_ID,
+                                                                 ORDER_DOCUMENT_TYPE_ID,
+                                                                 DOCUMENT_FILE)
+                                        VALUES({ContractID},
+                                                1,
+                                                :BlobFile)";
+
+                GlobalFunctions.ExecuteQueryWithBlob(sql, filePath,
+                                                        "Müqavilən hazır çap faylı bazaya daxil edilmədi.");
+            }
+        }
+        //private void InsertContractDocument()
+        //{
+        //    string file_name = null, code = "01", sql = null, filePath = null;
+        //    if (GlobalVariables.WordDocumentUsed)
+        //    {
+        //        GlobalProcedures.SplashScreenClose();
+        //        XtraMessageBox.Show("Açıq olan bütün word fayllar avtomatik olaraq bağlanılacaq.", "Məlumat", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        //        GlobalProcedures.KillWord();
+        //        GlobalVariables.WordDocumentUsed = false;
+        //    }
+
+        //    //ProgressPanel.Description = "Hazırlanmış fayllar bazaya yüklənir...";
+
+        //    //#region muqavile
+        //    filePath = GlobalVariables.V_ExecutingFolder + "\\TEMP\\Documents\\" + RegisterCodeText.Text.Replace("/", "") + "_Müqavilə.pdf";
+        //    //if (contract_click && File.Exists(filePath))
+        //    //{
+        //    DataTable dt = OrderDAL.SelectDocumentByOrderID(OrderID);
+
+        //    if (dt.Rows.Count > 0)
+        //    {
+        //        file_name = Path.GetFileName(filePath);
+        //        sql = $@"UPDATE ELMS_USER.ORDER_DOCUMENTS SET ORDER_ID = {ContractID}, ORDER_DOCUMENT_TYPE_ID = 1, DOCUMENT_FILE = :BlobFile, UPDATE_DATE = SYSDATE ";
+
+        //        GlobalFunctions.ExecuteQueryWithBlob(sql, filePath,
+        //                                                "Müqavilən hazır çap faylı bazaya daxil edilmədi.");
+        //    }
+        //    else
+        //    {
+        //        file_name = Path.GetFileName(filePath);
+        //        sql = $@"INSERT INTO ELMS_USER.ORDER_DOCUMENTS(ORDER_ID,
+        //                                                         ORDER_DOCUMENT_TYPE_ID,
+        //                                                         DOCUMENT_FILE)
+        //                                VALUES({ContractID},
+        //                                        1,
+        //                                        :BlobFile)";
+
+        //        GlobalFunctions.ExecuteQueryWithBlob(sql, filePath,
+        //                                                "Müqavilən hazır çap faylı bazaya daxil edilmədi.");
+        //    }
+
+        //    //}
+        //    //#endregion
+        //}
 
         private void GenerateContract()
         {
+            Word2Pdf objWorPdf = new Word2Pdf();
             GlobalProcedures.SplashScreenShow(this, typeof(WaitForms.FPrintDocumentWait));
             object fileName = Path.Combine(GlobalVariables.V_ExecutingFolder + "\\Documents\\" + GlobalVariables.V_WindowsUserName + "\\Müqavilə.docx");
             if (!File.Exists(fileName.ToString()))
@@ -137,6 +219,7 @@ namespace ELMS.Forms.Order
             }
             code_number = int.Parse(Regex.Replace(RegisterCodeText.Text, "[^0-9]", ""));
             string filePath = GlobalVariables.V_ExecutingFolder + "\\TEMP\\Documents\\" + code_number + "_Müqavilə.docx";
+            
 
             object missing = System.Reflection.Missing.Value;
             Microsoft.Office.Interop.Word.Application wordApp = new Microsoft.Office.Interop.Word.Application();
@@ -202,6 +285,10 @@ namespace ELMS.Forms.Order
             {
                 GlobalProcedures.FindAndReplace(wordApp, "[$contractcode]", RegisterCodeText.Text);
                 GlobalProcedures.FindAndReplace(wordApp, "[$contractdate]", OrderDateText.Text);
+                GlobalProcedures.FindAndReplace(wordApp, "[$customername]", NameText.Text);
+                GlobalProcedures.FindAndReplace(wordApp, "[$customerpincode]", FinCodeSearch.Text);
+                GlobalProcedures.FindAndReplace(wordApp, "[$amount]", OrderAmountValue.Value.ToString());
+                GlobalProcedures.FindAndReplace(wordApp, "[$firstpayment]", FirstPaymentValue.Text);
                 //if (customer_type_id == 1)
                 //{
                 //    GlobalProcedures.FindAndReplace(wordApp, "[$customer]", CustomerFullNameText.Text + " (" + CardDescriptionText.Text + ", " + IssuingDateText.Text + " tarixində " + IssuingText.Text + " tərəfindən verilib)");
@@ -224,8 +311,19 @@ namespace ELMS.Forms.Order
 
                 aDoc.SaveAs2(ref saveAs, ref missing, ref missing, ref missing, ref missing, ref missing, ref missing, ref missing, ref missing, ref missing, ref missing, ref missing, ref missing, ref missing, ref missing, ref missing, ref missing);
                 aDoc.Close(ref missing, ref missing, ref missing);
-                
-                //Process.Start(filePath);
+
+                string strFileName = "Müqavilə.docx";
+                object FromLocation = GlobalVariables.V_ExecutingFolder + "\\TEMP\\Documents\\" + code_number + "_Müqavilə.docx";
+                string FileExtension = Path.GetExtension(strFileName);
+                string ChangeExtension = strFileName.Replace(FileExtension, ".pdf");
+                if (FileExtension == ".doc" || FileExtension == ".docx")
+                {
+                    object ToLocation = GlobalVariables.V_ExecutingFolder + "\\TEMP\\Documents\\" + code_number + "_Müqavilə.pdf";
+                    objWorPdf.InputLocation = FromLocation;
+                    objWorPdf.OutputLocation = ToLocation;
+                    objWorPdf.Word2PdfCOnversion();
+                }
+                Process.Start(GlobalVariables.V_ExecutingFolder + "\\TEMP\\Documents\\" + code_number + "_Müqavilə.pdf");
             }
             catch
             {
@@ -246,10 +344,16 @@ namespace ELMS.Forms.Order
                 {
                     ORDER_ID = OrderID.Value,
                     ID = OperationID.Value,
-                    NOTE = OperationNoteText.Text.Trim(),
-                    OPERATION_ID = (int)OperationTypeEnum.Tesdiq_edilmedi
+                    NOTE = OperationNoteText.Text.Trim()
                 };
-
+                if (UserControlType == UserControlTypeEnum.Confirm)
+                {
+                    order.OPERATION_ID = (int)OperationTypeEnum.Tesdiq_edilmedi;
+                }
+                else
+                {
+                    order.OPERATION_ID = (int)OperationTypeEnum.Muqavile_tesdiq_edilmedi;
+                }
                 OperationDAL.UpdateOrderOperation(order);
             }
 
@@ -261,15 +365,15 @@ namespace ELMS.Forms.Order
             this.Close();
         }
 
-        void CalcTotalAmount()
-        {
-            TotalOrderAmountValue.EditValue = OrderAmountValue.Value - FirstPaymentValue.Value;
-        }
+        //void CalcTotalAmount()
+        //{
+        //    TotalOrderAmountValue.EditValue = OrderAmountValue.Value - FirstPaymentValue.Value;
+        //}
 
-        private void FirstPaymentValue_EditValueChanged(object sender, EventArgs e)
-        {
-            CalcTotalAmount();
-        }
+        //private void FirstPaymentValue_EditValueChanged(object sender, EventArgs e)
+        //{
+        //    CalcTotalAmount();
+        //}
 
         private void ProductGridView_CustomUnboundColumnData(object sender, DevExpress.XtraGrid.Views.Base.CustomColumnDataEventArgs e)
         {
@@ -303,43 +407,57 @@ namespace ELMS.Forms.Order
 
         private void LoadCustomerDetails()
         {
-            DataTable dt = CustomerDAL.SelectCustomerData(pinCode);
-            if (FinCodeSearch.Text.Length != 7)
+
+            if (pinCode.Length < 1)
             {
                 NameText.Text =
-                    ActualAddressText.Text =
-                    PhoneAllText.Text = null;
+                    RegisterAddressText.Text =
+                        ActualAddressText.Text =
+                        PhoneAllText.Text = null;
                 CustomerID = 0;
                 PictureEdit.Image = null;
             }
-
-            if (dt.Rows.Count > 0)
+            else
             {
-                NameText.EditValue = dt.Rows[0]["FULL_NAME"];
-                ActualAddressText.EditValue = dt.Rows[0]["ADDRESS"];
-                RegisterAddressText.EditValue = dt.Rows[0]["REGISTERED_ADDRESS"];
-                PhoneAllText.EditValue = dt.Rows[0]["PHONE"];
-                BranchCustomerText.EditValue = dt.Rows[0]["BRANCH_NAME"];
-                CountryText.EditValue = dt.Rows[0]["COUNTRY_NAME"];
-                SexText.EditValue = dt.Rows[0]["SEX_NAME"];
-                BirthdayText.EditValue = dt.Rows[0]["BIRTHDAY"];
-                BirthPlaceText.EditValue = dt.Rows[0]["BIRTH_PLACE"];
-                UsedUserID = Convert.ToInt16(dt.Rows[0]["USED_USER_ID"]);
-                CustomerID = Convert.ToInt32(dt.Rows[0]["ID"]);
-                string str = dt.Rows[0]["PINCODE"].ToString();
-                char[] result;
-                string fin = "";
-                // copies str to result
-                result = str.ToCharArray();
-
-                // prints result
-                for (int i = 1; i < result.Length; i++)
+                DataTable dt = CustomerDAL.SelectCustomerData(pinCode);
+                if (FinCodeSearch.Text.Length != 7)
                 {
-                    fin = fin + (result[i] + "").ToString();
+                    NameText.Text =
+                        ActualAddressText.Text =
+                        PhoneAllText.Text = null;
+                    CustomerID = 0;
+                    PictureEdit.Image = null;
                 }
-                FinCodeSearch.EditValue = fin;
 
-                LoadImage();
+                if (dt.Rows.Count > 0)
+                {
+                    NameText.EditValue = dt.Rows[0]["FULL_NAME"];
+                    ActualAddressText.EditValue = dt.Rows[0]["ADDRESS"];
+                    RegisterAddressText.EditValue = dt.Rows[0]["REGISTERED_ADDRESS"];
+                    PhoneAllText.EditValue = dt.Rows[0]["PHONE"];
+                    BranchCustomerText.EditValue = dt.Rows[0]["BRANCH_NAME"];
+                    CountryText.EditValue = dt.Rows[0]["COUNTRY_NAME"];
+                    SexText.EditValue = dt.Rows[0]["SEX_NAME"];
+                    BirthdayText.EditValue = dt.Rows[0]["BIRTHDAY"];
+                    BirthPlaceText.EditValue = dt.Rows[0]["BIRTH_PLACE"];
+                    UsedUserID = Convert.ToInt16(dt.Rows[0]["USED_USER_ID"]);
+                    CustomerID = Convert.ToInt32(dt.Rows[0]["ID"]);
+                    string str = dt.Rows[0]["PINCODE"].ToString();
+                    //char[] result;
+                    //string fin = "";
+                    //// copies str to result
+                    //result = str.ToCharArray();
+
+                    //// prints result
+                    //for (int i = 1; i < result.Length; i++)
+                    //{
+                    //    fin = fin + (result[i] + "").ToString();
+                    //}
+                    FinCodeSearch.EditValue = str;
+
+                    LoadImage();
+                }
+
             }
         }
 
@@ -381,6 +499,12 @@ namespace ELMS.Forms.Order
             LoadPhone();
             LoadWork();
             LoadRelative();
+            if(UserControlType == UserControlTypeEnum.Contract)
+            {
+                RelativeBarManager.DockingEnabled = false;
+                RelativeBar.Visible = false;
+                RelativeStandaloneBarDockControl.Visible = false;
+            }
         }
 
         private void OperationsGridView_CustomUnboundColumnData(object sender, DevExpress.XtraGrid.Views.Base.CustomColumnDataEventArgs e)

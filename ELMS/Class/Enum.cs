@@ -9,12 +9,20 @@ namespace ELMS.Class
 {
     public class Enum
     {
+        public enum UserControlTypeEnum
+        {
+            Confirm = 1,
+            Contract = 2
+        }
+
         public enum OperationTypeEnum
         {
             Yeni_muraciet = 1,
             Tesdiq_edildi = 2,
             Tesdiq_edilmedi = 3,
-            Zaminlikle_qayitdi = 4
+            Zaminlikle_qayitdi = 4,
+            Muqavile_tesdiq_edildi = 5,
+            Muqavile_tesdiq_edilmedi = 6
         }
 
         public enum TransactionTypeEnum

@@ -15,6 +15,9 @@ using static ELMS.Class.Enum;
 using ELMS.Class.Tables;
 using ELMS.Forms.Customer;
 using ELMS.Forms.Order;
+using System.IO;
+using System.Diagnostics;
+using System.Text.RegularExpressions;
 
 namespace ELMS.UserControls
 {
@@ -24,12 +27,12 @@ namespace ELMS.UserControls
         {
             InitializeComponent();
         }
-        int topindex, old_row_id, orderID, typeID;
+        int topindex, old_row_id, orderID, typeID,code_number;
         string orderName;
 
         private void OrderUserControl_Load(object sender, EventArgs e)
         {
-            LoadCustomerData();
+            LoadOrderData();
         }
 
         private void OrderUserControl_Enter(object sender, EventArgs e)
@@ -37,7 +40,7 @@ namespace ELMS.UserControls
             //LoadCustomerData();
         }
 
-        private void LoadCustomerData()
+        private void LoadOrderData()
         {
             OrderGridControl.DataSource = OrderDAL.SelectConfirmData(null);
 
@@ -62,7 +65,7 @@ namespace ELMS.UserControls
 
          void RefreshCustomer()
         {
-            LoadCustomerData();
+            LoadOrderData();
         }
 
         private void LoadFCustomerAddEdit(TransactionTypeEnum transaction, int? id)
@@ -82,14 +85,9 @@ namespace ELMS.UserControls
 
         private void RefreshBarButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            LoadCustomerData();
+            LoadOrderData();
         }
-
-        private void OrderGridView_ColumnFilterChanged(object sender, EventArgs e)
-        {
-            EnabledButton();
-        }
-
+        
         void UpdateCustomer()
         {
             LoadFCustomerAddEdit(TransactionTypeEnum.Update, orderID);
@@ -101,6 +99,11 @@ namespace ELMS.UserControls
                 UpdateCustomer();
         }
 
+        private void OrderGridView_ColumnFilterChanged(object sender, EventArgs e)
+        {
+            EnabledButton();
+        }
+
         private void OrderGridView_MouseUp(object sender, MouseEventArgs e)
         {
             GlobalProcedures.GridMouseUpForPopupMenu(OrderGridView, OrderPopupMenu, e);
@@ -108,13 +111,32 @@ namespace ELMS.UserControls
 
         private void OrderGridView_CustomUnboundColumnData(object sender, DevExpress.XtraGrid.Views.Base.CustomColumnDataEventArgs e)
         {
-            GlobalProcedures.GenerateAutoRowNumber(sender, Customer_SS, e);
+            GlobalProcedures.GenerateAutoRowNumber(sender, Order_SS, e);
         }
 
         private void OrderGridView_DoubleClick(object sender, EventArgs e)
         {
             if (EditBarButton.Enabled)
                 UpdateCustomer();
+        }
+
+        private void OrderGridView_RowCellStyle(object sender, RowCellStyleEventArgs e)
+        {
+            if ((e.RowHandle >= 0) && (int.Parse(OrderGridView.GetRowCellDisplayText(e.RowHandle, OrderGridView.Columns["TYPE_ID"])) == 1))
+            {
+                e.Appearance.BackColor = Color.Yellow;
+            }
+            else if ((e.RowHandle >= 0) && (int.Parse(OrderGridView.GetRowCellDisplayText(e.RowHandle, OrderGridView.Columns["TYPE_ID"])) == 3))
+            {
+                e.Appearance.BackColor = Color.Gray;
+            }
+
+            GlobalProcedures.GridRowCellStyleForBlock((sender as GridView), e);
+        }
+
+        private void OrderGridView_FocusedRowObjectChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowObjectChangedEventArgs e)
+        {
+            orderID = Convert.ToInt32(GlobalFunctions.GetGridRowCellValue((sender as GridView), "ID"));
         }
 
         private void PrintBarButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -139,23 +161,10 @@ namespace ELMS.UserControls
         private void DeleteBarButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             DeleteCustomer();
-            LoadCustomerData();
+            LoadOrderData();
         }
 
-        private void OrderGridView_RowCellStyle(object sender, RowCellStyleEventArgs e)
-        {
-            if ((e.RowHandle >= 0) && (int.Parse(OrderGridView.GetRowCellDisplayText(e.RowHandle, OrderGridView.Columns["TYPE_ID"])) == 1))
-            {
-                e.Appearance.BackColor = Color.Yellow;
-            }
-            else if ((e.RowHandle >= 0) && (int.Parse(OrderGridView.GetRowCellDisplayText(e.RowHandle, OrderGridView.Columns["TYPE_ID"])) == 3))
-            {
-                e.Appearance.BackColor = Color.Gray;
-            }
-            
-            GlobalProcedures.GridRowCellStyleForBlock((sender as GridView), e);
-        }
-
+        
         private void LoadFScheduleAddEdit()
         {
             topindex = OrderGridView.TopRowIndex;
@@ -200,22 +209,44 @@ namespace ELMS.UserControls
             GlobalProcedures.GridExportToFile(OrderGridControl, "csv");
         }
 
+        private void ViewFileBarButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            LoadFile();
+        }
+
+        private void LoadFile()
+        {
+            DataTable dt = GlobalFunctions.GenerateDataTable($@"SELECT T.DOCUMENT_FILE FROM ELMS_USER.ORDER_DOCUMENTS T WHERE T.ORDER_ID = {orderID}", this.Name + "/LoadFile");
+
+            if (dt == null)
+                return;
+
+            foreach (DataRow dr in dt.Rows)
+            {
+                if (!DBNull.Value.Equals(dr["DOCUMENT_FILE"]))
+                {
+                    Byte[] BLOBData = (byte[])dr["DOCUMENT_FILE"];
+                    MemoryStream stmBLOBData = new MemoryStream(BLOBData);
+                    // code_number = int.Parse(Regex.Replace(RegisterCodeText.Text, "[^0-9]", ""));
+                    GlobalProcedures.DeleteFile(GlobalVariables.V_ExecutingFolder + "\\TEMP\\Documents\\" + orderID + "_Müqavilə.pdf");
+                    FileStream fs = new FileStream(GlobalVariables.V_ExecutingFolder + "\\TEMP\\Documents\\" + orderID + "_Müqavilə.pdf", FileMode.Create, FileAccess.Write);
+                    stmBLOBData.WriteTo(fs);
+                    fs.Close();
+                    stmBLOBData.Close();
+                    Process.Start(GlobalVariables.V_ExecutingFolder + "\\TEMP\\Documents\\" + orderID + "_Müqavilə.pdf");
+                }
+            }
+        }
+
         private void MhtBarButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             GlobalProcedures.GridExportToFile(OrderGridControl, "mht");
-        }
-
-        private void OrderGridView_FocusedRowObjectChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowObjectChangedEventArgs e)
-        {
-            orderID = Convert.ToInt32(GlobalFunctions.GetGridRowCellValue((sender as GridView), "ID"));
         }
 
         private void HistroryBarButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             
         }
-
-        
 
         private void NewBarButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {

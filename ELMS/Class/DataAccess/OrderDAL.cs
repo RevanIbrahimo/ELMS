@@ -11,6 +11,30 @@ namespace ELMS.Class.DataAccess
 {
     class OrderDAL
     {
+
+        public static DataTable SelectDocumentByOrderID(int? ID)
+        {
+            string s = $@"SELECT OD.ORDER_ID
+                          FROM ELMS_USER.ORDER_DOCUMENTS OD ,
+                               ELMS_USER.ORDER_TAB CU
+                          WHERE     OD.ORDER_ID = CU.ID  {(ID.HasValue ? $@" AND CU.ID = {ID}" : null)}
+                        ORDER BY OD.ID";
+
+            try
+            {
+                using (OracleDataAdapter da = new OracleDataAdapter(s, GlobalFunctions.GetConnectionString()))
+                {
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+                    return dt;
+                }
+            }
+            catch (Exception exx)
+            {
+                GlobalProcedures.LogWrite("Senedin məlumatları açılmadı.", s, GlobalVariables.V_UserName, "OrderDAL", "SelectDocumentByOrderID", exx);
+                return null;
+            }
+        }
         public static DataSet SelectOrderByID(int? ID)
         {
             string sql = null;
@@ -163,6 +187,60 @@ namespace ELMS.Class.DataAccess
                                AND CU.ID = OO.ORDER_ID 
                                AND OO.OPERATION_TYPE_ID = OT.ID
                                AND CU.BRANCH_ID = B.ID {(ID.HasValue ? $@" AND CU.ID = {ID}" : null)}
+                        ORDER BY CU.ID";
+
+            try
+            {
+                using (OracleDataAdapter da = new OracleDataAdapter(s, GlobalFunctions.GetConnectionString()))
+                {
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+                    return dt;
+                }
+            }
+            catch (Exception exx)
+            {
+                GlobalProcedures.LogWrite("Musterinin məlumatları açılmadı.", s, GlobalVariables.V_UserName, "OrderDAL", "SelectConfirmData", exx);
+                return null;
+            }
+        }
+
+        public static DataTable SelectContractData(int? ID_One,int? ID_Two,int? ID_Three)
+        {
+            string s = $@"SELECT CU.ID,
+                               OO.ID OPERATION_ID,
+                               OO.OPERATION_TYPE_ID TYPE_ID,
+                               OO.NOTE OPERATION_NOTE,
+                               OT.NAME OPERATION_NAME,
+                               CC.PINCODE,
+                               CU.REGISTER_NUMBER,                               
+                               B.NAME BRANCH_NAME,
+                               S.NAME ORDER_SOURCE,
+                               T.PERIOD TIME,                           
+                               T.PERCENT,                           
+                               CU.ORDER_DATE,                              
+                               CU.ADDRESS,
+                               CU.FIRST_PAYMENT,
+                               CU.ORDER_AMOUNT,
+                               CU.CREDIT_AMOUNT,
+                               CU.NOTE,
+                               CU.INSERT_DATE,
+                               CU.USED_USER_ID
+                          FROM ELMS_USER.ORDER_TAB CU,
+                               ELMS_USER.BRANCH B,
+                               ELMS_USER.TIMES T,
+                               ELMS_USER.SOURCE S,
+                               ELMS_USER.CUSTOMER C,
+                               ELMS_USER.CUSTOMER_CARDS CC,
+                               ELMS_USER.ORDER_OPERATION OO,
+                               ELMS_USER.OPERATION_TYPE OT
+                          WHERE     CU.SOURCE_ID = S.ID
+                               AND CU.TIME_ID = T.ID
+                               AND CU.CUSTOMER_ID = C.ID
+                               AND C.ID = CC.CUSTOMER_ID
+                               AND CU.ID = OO.ORDER_ID 
+                               AND OO.OPERATION_TYPE_ID = OT.ID
+                               AND CU.BRANCH_ID = B.ID AND ( OT.ID = {ID_One} OR OT.ID = {ID_Two} OR OT.ID = {ID_Three} )
                         ORDER BY CU.ID";
 
             try

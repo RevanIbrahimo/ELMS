@@ -75,6 +75,7 @@
             this.RefreshDocumentBarButton = new DevExpress.XtraBars.BarButtonItem();
             this.OtherInfoTabControl = new DevExpress.XtraTab.XtraTabControl();
             this.IDCardTab = new DevExpress.XtraTab.XtraTabPage();
+            this.FirstPaymentValue = new DevExpress.XtraEditors.TextEdit();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.ProductGridControl = new DevExpress.XtraGrid.GridControl();
             this.ProductGridView = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -85,7 +86,6 @@
             this.Product_TotalPrice = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Product_Note = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Product_ID = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.FirstPaymentValue = new DevExpress.XtraEditors.CalcEdit();
             this.TimeText = new DevExpress.XtraEditors.TextEdit();
             this.SourceText = new DevExpress.XtraEditors.TextEdit();
             this.OrderDateText = new DevExpress.XtraEditors.TextEdit();
@@ -275,11 +275,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.OtherInfoTabControl)).BeginInit();
             this.OtherInfoTabControl.SuspendLayout();
             this.IDCardTab.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.FirstPaymentValue.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ProductGridControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ProductGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.FirstPaymentValue.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TimeText.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SourceText.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.OrderDateText.Properties)).BeginInit();
@@ -564,8 +564,8 @@
             // 
             // IDCardTab
             // 
-            this.IDCardTab.Controls.Add(this.groupControl1);
             this.IDCardTab.Controls.Add(this.FirstPaymentValue);
+            this.IDCardTab.Controls.Add(this.groupControl1);
             this.IDCardTab.Controls.Add(this.TimeText);
             this.IDCardTab.Controls.Add(this.SourceText);
             this.IDCardTab.Controls.Add(this.OrderDateText);
@@ -589,6 +589,15 @@
             this.IDCardTab.Name = "IDCardTab";
             this.IDCardTab.Size = new System.Drawing.Size(860, 569);
             this.IDCardTab.Text = "Müraciət";
+            // 
+            // FirstPaymentValue
+            // 
+            this.FirstPaymentValue.Location = new System.Drawing.Point(411, 145);
+            this.FirstPaymentValue.MenuManager = this.ProductBarManager;
+            this.FirstPaymentValue.Name = "FirstPaymentValue";
+            this.FirstPaymentValue.Properties.ReadOnly = true;
+            this.FirstPaymentValue.Size = new System.Drawing.Size(124, 20);
+            this.FirstPaymentValue.TabIndex = 200;
             // 
             // groupControl1
             // 
@@ -728,25 +737,6 @@
             this.Product_ID.Caption = "Product_ID";
             this.Product_ID.FieldName = "ID";
             this.Product_ID.Name = "Product_ID";
-            // 
-            // FirstPaymentValue
-            // 
-            this.FirstPaymentValue.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.FirstPaymentValue.Location = new System.Drawing.Point(412, 145);
-            this.FirstPaymentValue.Margin = new System.Windows.Forms.Padding(4);
-            this.FirstPaymentValue.Name = "FirstPaymentValue";
-            this.FirstPaymentValue.Properties.DisplayFormat.FormatString = "n2";
-            this.FirstPaymentValue.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.FirstPaymentValue.Properties.EditFormat.FormatString = "n2";
-            this.FirstPaymentValue.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.FirstPaymentValue.Properties.Mask.EditMask = "n2";
-            this.FirstPaymentValue.Properties.NullValuePrompt = "0.00";
-            this.FirstPaymentValue.Properties.NullValuePromptShowForEmptyValue = true;
-            this.FirstPaymentValue.Properties.Precision = 2;
-            this.FirstPaymentValue.Properties.ReadOnly = true;
-            this.FirstPaymentValue.Size = new System.Drawing.Size(127, 20);
-            this.FirstPaymentValue.TabIndex = 198;
-            this.FirstPaymentValue.TabStop = false;
             // 
             // TimeText
             // 
@@ -964,7 +954,6 @@
             this.OrderAmountValue.Size = new System.Drawing.Size(127, 20);
             this.OrderAmountValue.TabIndex = 178;
             this.OrderAmountValue.TabStop = false;
-            this.OrderAmountValue.EditValueChanged += new System.EventHandler(this.FirstPaymentValue_EditValueChanged);
             // 
             // CustomerTab
             // 
@@ -1911,15 +1900,18 @@
             // 
             // Operation_Date
             // 
+            this.Operation_Date.AppearanceCell.Options.UseTextOptions = true;
+            this.Operation_Date.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.Operation_Date.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Operation_Date.Caption = "Tarix";
-            this.Operation_Date.DisplayFormat.FormatString = "dd.MM.yyyy";
+            this.Operation_Date.DisplayFormat.FormatString = "dd.MM.yyyy hh:mm:ss tt";
             this.Operation_Date.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.Operation_Date.FieldName = "INSERT_DATE";
             this.Operation_Date.Name = "Operation_Date";
             this.Operation_Date.OptionsColumn.FixedWidth = true;
             this.Operation_Date.Visible = true;
             this.Operation_Date.VisibleIndex = 3;
-            this.Operation_Date.Width = 150;
+            this.Operation_Date.Width = 100;
             // 
             // PanelOption
             // 
@@ -2768,11 +2760,11 @@
             this.OtherInfoTabControl.ResumeLayout(false);
             this.IDCardTab.ResumeLayout(false);
             this.IDCardTab.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.FirstPaymentValue.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ProductGridControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ProductGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.FirstPaymentValue.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TimeText.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SourceText.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.OrderDateText.Properties)).EndInit();
@@ -3021,7 +3013,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn Relative_Profession;
         private DevExpress.XtraGrid.Columns.GridColumn Relative_Salary;
         private DevExpress.XtraEditors.LabelControl labelControl27;
-        private DevExpress.XtraEditors.CalcEdit FirstPaymentValue;
         private DevExpress.XtraEditors.TextEdit TimeText;
         private DevExpress.XtraEditors.TextEdit SourceText;
         private DevExpress.XtraEditors.TextEdit OrderDateText;
@@ -3057,5 +3048,6 @@
         private DevExpress.XtraBars.BarDockControl barDockControl32;
         private DevExpress.XtraBars.BarDockControl barDockControl34;
         private DevExpress.XtraBars.PopupMenu OperationPopupMenu;
+        private DevExpress.XtraEditors.TextEdit FirstPaymentValue;
     }
 }

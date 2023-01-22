@@ -58,13 +58,14 @@ namespace ELMS.UserControls
             LoadCustomerData();
         }
 
-        private void LoadFConfirmAddEdit(TransactionTypeEnum transaction, int? id)
+        private void LoadFConfirmAddEdit(TransactionTypeEnum transaction, UserControlTypeEnum userControl, int? id)
         {
             topindex = OrderGridView.TopRowIndex;
             old_row_id = OrderGridView.FocusedRowHandle;
             FConfirmAddEdit fc = new FConfirmAddEdit()
             {
                 TransactionType = transaction,
+                UserControlType = userControl,
                 OrderID = id,
                 OperationID = operationID
             };
@@ -86,7 +87,7 @@ namespace ELMS.UserControls
 
         void UpdateConfirm()
         {
-            LoadFConfirmAddEdit(TransactionTypeEnum.Update, orderID);
+            LoadFConfirmAddEdit(TransactionTypeEnum.Update, UserControlTypeEnum.Confirm, orderID);
         }
 
         private void EditBarButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -102,7 +103,7 @@ namespace ELMS.UserControls
 
         private void OrderGridView_CustomUnboundColumnData(object sender, DevExpress.XtraGrid.Views.Base.CustomColumnDataEventArgs e)
         {
-            GlobalProcedures.GenerateAutoRowNumber(sender, Customer_SS, e);
+            GlobalProcedures.GenerateAutoRowNumber(sender, Order_SS, e);
         }
 
         private void OrderGridView_DoubleClick(object sender, EventArgs e)
