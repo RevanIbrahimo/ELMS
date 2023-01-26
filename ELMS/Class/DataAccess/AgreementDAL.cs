@@ -25,7 +25,7 @@ namespace ELMS.Class.DataAccess
                           FROM ELMS_USER.AGREEMENT AG,
                                ELMS_USER.BRANCH B
                           WHERE     AG.BRANCH_ID = B.ID {(ID.HasValue ? $@" AND AG.ID = {ID}" : null)}
-                        ORDER BY AG.ID";
+                        ORDER BY B.NAME";
 
             try
             {
@@ -488,13 +488,16 @@ namespace ELMS.Class.DataAccess
             OracleCommand command = tran.Connection.CreateCommand();
             command.CommandText = $@"INSERT INTO ELMS_USER.AGREEMENT(AGREEMENT_NUMBER,
                                                             AGREEMENT_AMOUNT,                           
-                                                            AGREEMENT_DATE)
+                                                            AGREEMENT_DATE,
+                                                            BRANCH_ID)
                                                     VALUES(:inAGREEMENT_NUMBER,
                                                            :inAGREEMENT_AMOUNT,
-                                                           :inAGREEMENT_DATE) RETURNING ID INTO :outID";
+                                                           :inAGREEMENT_DATE,
+                                                           :inBRANCH_ID) RETURNING ID INTO :outID";
             command.Parameters.Add(new OracleParameter("inAGREEMENT_NUMBER", order.AGREEMENT_NUMBER));
             command.Parameters.Add(new OracleParameter("inAGREEMENT_AMOUNT", order.AGREEMENT_AMOUNT));
             command.Parameters.Add(new OracleParameter("inAGREEMENT_DATE", order.AGREEMENT_DATE));
+            command.Parameters.Add(new OracleParameter("inBRANCH_ID", order.BRANCH_ID));
             command.Parameters.Add(new OracleParameter("outID", OracleDbType.Int32, ParameterDirection.Output));
 
             if (tran != null)
@@ -514,6 +517,7 @@ namespace ELMS.Class.DataAccess
             command.CommandText = $@"UPDATE ELMS_USER.AGREEMENT SET AGREEMENT_NUMBER = :inAGREEMENT_NUMBER,
                                                                         AGREEMENT_AMOUNT = :inAGREEMENT_AMOUNT,
                                                                         AGREEMENT_DATE = :inAGREEMENT_DATE,
+                                                                        BRANCH_ID = :inBRANCH_ID,
                                                                         USED_USER_ID = :inUSEDUSERID,
                                                                         UPDATE_USER = :inUPDATEUSER,
                                                                         UPDATE_DATE = SYSDATE
@@ -521,6 +525,7 @@ namespace ELMS.Class.DataAccess
             command.Parameters.Add(new OracleParameter("inAGREEMENT_NUMBER", order.AGREEMENT_NUMBER));
             command.Parameters.Add(new OracleParameter("inAGREEMENT_AMOUNT", order.AGREEMENT_AMOUNT));
             command.Parameters.Add(new OracleParameter("inAGREEMENT_DATE", order.AGREEMENT_DATE));
+            command.Parameters.Add(new OracleParameter("inBRANCH_ID", order.BRANCH_ID));
             command.Parameters.Add(new OracleParameter("inUSEDUSERID", order.USED_USER_ID));
             command.Parameters.Add(new OracleParameter("inUPDATEUSER", GlobalVariables.V_UserID));
             command.Parameters.Add(new OracleParameter("inID", order.ID));

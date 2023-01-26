@@ -92,7 +92,10 @@ namespace ELMS.Forms.Agreement
                
         }
 
+        private void ContractsGridControl_Click(object sender, EventArgs e)
+        {
 
+        }
 
         private void LoadAgreementDetails()
         {
@@ -100,7 +103,7 @@ namespace ELMS.Forms.Agreement
 
             if (dt.Rows.Count > 0)
             {
-                RegisterCodeText.EditValue = dt.Rows[0]["ID"];
+                RegisterCodeText.EditValue = dt.Rows[0]["AGREEMENT_NUMBER"];
                 AgreementDate.EditValue = dt.Rows[0]["AGREEMENT_DATE"];
                 if (AgreementDate.DateTime == DateTime.MinValue)
                     AgreementDate.EditValue = null;
@@ -132,6 +135,7 @@ namespace ELMS.Forms.Agreement
         {
             Class.Tables.Agreement order = new Class.Tables.Agreement
             {
+                BRANCH_ID = 1,
                 AGREEMENT_NUMBER = agreement_number,
                 AGREEMENT_DATE = AgreementDate.DateTime,
                 AGREEMENT_AMOUNT = calcTotalPrice
@@ -145,6 +149,7 @@ namespace ELMS.Forms.Agreement
             isClickBOK = true;
             Class.Tables.Agreement order = new Class.Tables.Agreement
             {
+                BRANCH_ID = 1,
                 AGREEMENT_NUMBER = agreement_number,
                 AGREEMENT_DATE = AgreementDate.DateTime,
                 AGREEMENT_AMOUNT = calcTotalPrice,

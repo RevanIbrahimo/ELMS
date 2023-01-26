@@ -423,6 +423,8 @@
             this.Agreement_Amount.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.Agreement_Amount.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Agreement_Amount.Caption = "Sazişin məbləği";
+            this.Agreement_Amount.DisplayFormat.FormatString = "n2";
+            this.Agreement_Amount.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.Agreement_Amount.FieldName = "AGREEMENT_AMOUNT";
             this.Agreement_Amount.Name = "Agreement_Amount";
             this.Agreement_Amount.OptionsColumn.FixedWidth = true;
