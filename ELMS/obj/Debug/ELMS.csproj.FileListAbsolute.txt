@@ -174,3 +174,5 @@ C:\Users\user\Documents\Github\ELMS\ELMS\obj\Debug\ELMS.UserControls.AKBUserCont
 C:\Users\user\Documents\Github\ELMS\ELMS\obj\Debug\ELMS.UserControls.BookkeepingUserControl.resources
 C:\Users\user\Documents\Github\ELMS\ELMS\obj\Debug\ELMS.UserControls.TotalUserControl.resources
 C:\Users\user\Documents\Github\ELMS\ELMS\bin\Debug\WordToPDF.dll
+C:\Users\user\Documents\Github\ELMS\ELMS\obj\Debug\ELMS.UserControls.AgreementUserControl.resources
+C:\Users\user\Documents\Github\ELMS\ELMS\obj\Debug\ELMS.Forms.Agreement.FAgreementAddEdit.resources

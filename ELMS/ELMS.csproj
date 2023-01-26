@@ -101,6 +101,7 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Class\ComponentLocalization.cs" />
+    <Compile Include="Class\DataAccess\AgreementDAL.cs" />
     <Compile Include="Class\DataAccess\BranchDAL.cs" />
     <Compile Include="Class\DataAccess\CardIssuingDAL.cs" />
     <Compile Include="Class\DataAccess\CountriesDAL.cs" />
@@ -138,6 +139,7 @@
     <Compile Include="Class\GlobalProcedures.cs" />
     <Compile Include="Class\GlobalVariables.cs" />
     <Compile Include="Class\RegexUtilities.cs" />
+    <Compile Include="Class\Tables\Agreement.cs" />
     <Compile Include="Class\Tables\Branch.cs" />
     <Compile Include="Class\Tables\CardIssuing.cs" />
     <Compile Include="Class\Tables\ColumnPrintable.cs" />
@@ -320,6 +322,12 @@
     <Compile Include="Forms\Option\FUsersGroups.Designer.cs">
       <DependentUpon>FUsersGroups.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Order\FAgreementAddEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Order\FAgreementAddEdit.Designer.cs">
+      <DependentUpon>FAgreementAddEdit.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Order\FConfirmAddEdit.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -364,6 +372,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserControls\AgreementUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\AgreementUserControl.Designer.cs">
+      <DependentUpon>AgreementUserControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\AKBUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -499,6 +513,9 @@
     <EmbeddedResource Include="Forms\Option\FUsersGroups.resx">
       <DependentUpon>FUsersGroups.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Order\FAgreementAddEdit.resx">
+      <DependentUpon>FAgreementAddEdit.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Order\FConfirmAddEdit.resx">
       <DependentUpon>FConfirmAddEdit.cs</DependentUpon>
     </EmbeddedResource>
@@ -531,6 +548,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="UserControls\AgreementUserControl.resx">
+      <DependentUpon>AgreementUserControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\AKBUserControl.resx">
       <DependentUpon>AKBUserControl.cs</DependentUpon>
     </EmbeddedResource>

@@ -22,7 +22,8 @@ namespace ELMS.Class
             Tesdiq_edilmedi = 3,
             Zaminlikle_qayitdi = 4,
             Muqavile_tesdiq_edildi = 5,
-            Muqavile_tesdiq_edilmedi = 6
+            Muqavile_tesdiq_edilmedi = 6,
+            Saziş_yaradıldı = 7
         }
 
         public enum TransactionTypeEnum

@@ -1,0 +1,22 @@
+
+Log Entry : 11:45:35 PM Wednesday, January 25, 2023
+  
+   UserName =  SuperAdmin
+   FormName =  GlobalProcedures
+   ProcedureName =  ExecuteQuery/Lock_or_UnLock_UserID
+  
+   ShowMessage: ELMS_USER.ORDER_TAB cədvəli bloka düşmədi.
+   Exception Message: ORA-00936: missing expression
+   SQL Text      :  UPDATE ELMS_USER.ORDER_TAB SET USED_USER_ID = 0 WHERE ID =  AND USED_USER_ID = -1
+-------------------------------------------------
+
+Log Entry : 11:49:13 PM Wednesday, January 25, 2023
+  
+   UserName =  SuperAdmin
+   FormName =  GlobalProcedures
+   ProcedureName =  ExecuteQuery/Lock_or_UnLock_UserID
+  
+   ShowMessage: ELMS_USER.ORDER_TAB cədvəli bloka düşmədi.
+   Exception Message: ORA-00936: missing expression
+   SQL Text      :  UPDATE ELMS_USER.ORDER_TAB SET USED_USER_ID = 0 WHERE ID =  AND USED_USER_ID = -1
+-------------------------------------------------

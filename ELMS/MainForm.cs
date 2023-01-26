@@ -18,6 +18,7 @@ namespace ELMS
     public partial class MainForm : DevExpress.XtraBars.Ribbon.RibbonForm
     {
         XtraUserControl orderUserControl;
+        XtraUserControl agreementUserControl;
         XtraUserControl customerUserControl;
         XtraUserControl contractUserControl;
         XtraUserControl confirmationUserControl;
@@ -32,6 +33,7 @@ namespace ELMS
         {
             public static readonly string Customer = "Müştərilər";
             public static readonly string Order = "Müraciətlər";
+            public static readonly string Agreement = "Sazişlər";
             public static readonly string Confirm = "Təsdiq gözləyənlər";
             public static readonly string Contract = "Müqavilələr";
             public static readonly string Bookkeeping = "Mühasibatlıq";
@@ -43,6 +45,7 @@ namespace ELMS
         {
             InitializeComponent();
             orderUserControl = CreateUserControl(NavigationNameClass.Order);
+            agreementUserControl = CreateUserControl(NavigationNameClass.Agreement);
             confirmationUserControl = CreateUserControl(NavigationNameClass.Confirm);
             customerUserControl = CreateUserControl(NavigationNameClass.Customer);
             contractUserControl = CreateUserControl(NavigationNameClass.Contract);
@@ -64,6 +67,10 @@ namespace ELMS
             {
                 result = new UserControls.OrderUserControl();
                 result.Text = NavigationNameClass.Order;
+            } else if (navigationText == NavigationNameClass.Agreement)
+            {
+                result = new UserControls.AgreementUserControl();
+                result.Text = NavigationNameClass.Agreement;
             } 
             else if (navigationText == NavigationNameClass.Confirm)
             {
@@ -97,6 +104,8 @@ namespace ELMS
         {
             if (elementName == NavigationNameClass.Order)
                 userControl = orderUserControl;
+            else if (elementName == NavigationNameClass.Agreement)
+                userControl = agreementUserControl;
             else if (elementName == NavigationNameClass.Customer)
                 userControl = customerUserControl;
             else if (elementName == NavigationNameClass.Confirm)
@@ -137,6 +146,8 @@ namespace ELMS
                             accordionControl.SelectedElement = ordersAccordionControlElement;
                        if (document.Caption == NavigationNameClass.Customer)
                             accordionControl.SelectedElement = customerAccordionControlElement;
+                        if (document.Caption == NavigationNameClass.Agreement)
+                            accordionControl.SelectedElement = agreementAccordionControlElement;
                         if (document.Caption == NavigationNameClass.Confirm)
                             accordionControl.SelectedElement = confirmationAccordionControlElement;
                         if (document.Caption == NavigationNameClass.Contract)
@@ -181,6 +192,8 @@ namespace ELMS
                 orderUserControl = CreateUserControl(NavigationNameClass.Order);
             else if (e.Document.Caption == NavigationNameClass.Confirm)
                 confirmationUserControl = CreateUserControl(NavigationNameClass.Confirm);
+            else if (e.Document.Caption == NavigationNameClass.Agreement)
+                agreementUserControl = CreateUserControl(NavigationNameClass.Agreement);
             else if (e.Document.Caption == NavigationNameClass.Contract)
                 contractUserControl = CreateUserControl(NavigationNameClass.Contract);
             else if (e.Document.Caption == NavigationNameClass.Bookkeeping)
@@ -306,6 +319,8 @@ namespace ELMS
                 accordionControl.SelectedElement = customerAccordionControlElement;
             else if (e.Document.Caption == NavigationNameClass.Order)
                 accordionControl.SelectedElement = ordersAccordionControlElement;
+            else if (e.Document.Caption == NavigationNameClass.Agreement)
+                accordionControl.SelectedElement = agreementAccordionControlElement;
             else if (e.Document.Caption == NavigationNameClass.Confirm)
                 accordionControl.SelectedElement = confirmationAccordionControlElement;
             else if (e.Document.Caption == NavigationNameClass.Contract)

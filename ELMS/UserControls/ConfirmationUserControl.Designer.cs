@@ -281,7 +281,7 @@
             this.OrderGridView.Appearance.FooterPanel.FontStyleDelta = System.Drawing.FontStyle.Bold;
             this.OrderGridView.Appearance.FooterPanel.Options.UseFont = true;
             this.OrderGridView.Appearance.FooterPanel.Options.UseTextOptions = true;
-            this.OrderGridView.Appearance.FooterPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.OrderGridView.Appearance.FooterPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.OrderGridView.Appearance.FooterPanel.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.OrderGridView.Appearance.HeaderPanel.Options.UseTextOptions = true;
             this.OrderGridView.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -314,6 +314,7 @@
             this.OrderGridView.OptionsFilter.UseNewCustomFilterDialog = true;
             this.OrderGridView.OptionsFind.FindDelay = 100;
             this.OrderGridView.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.OrderGridView.OptionsView.ColumnAutoWidth = false;
             this.OrderGridView.OptionsView.EnableAppearanceEvenRow = true;
             this.OrderGridView.OptionsView.ShowFooter = true;
             this.OrderGridView.OptionsView.ShowGroupPanel = false;
@@ -321,6 +322,7 @@
             this.OrderGridView.PaintStyleName = "Skin";
             this.OrderGridView.ScrollStyle = DevExpress.XtraGrid.Views.Grid.ScrollStyleFlags.LiveVertScroll;
             this.OrderGridView.ViewCaption = "Müraciətlərin Siyahısı";
+            this.OrderGridView.CustomDrawFooterCell += new DevExpress.XtraGrid.Views.Grid.FooterCellCustomDrawEventHandler(this.OrderGridView_CustomDrawFooterCell);
             this.OrderGridView.RowCellStyle += new DevExpress.XtraGrid.Views.Grid.RowCellStyleEventHandler(this.OrderGridView_RowCellStyle);
             this.OrderGridView.FocusedRowObjectChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowObjectChangedEventHandler(this.OrderGridView_FocusedRowObjectChanged);
             this.OrderGridView.ColumnFilterChanged += new System.EventHandler(this.OrderGridView_ColumnFilterChanged);
@@ -360,17 +362,21 @@
             this.Order_OperationName.OptionsColumn.FixedWidth = true;
             this.Order_OperationName.Visible = true;
             this.Order_OperationName.VisibleIndex = 1;
-            this.Order_OperationName.Width = 250;
+            this.Order_OperationName.Width = 130;
             // 
             // Order_RegisterNumber
             // 
-            this.Order_RegisterNumber.Caption = "Qeydiyyat nömrəsi";
+            this.Order_RegisterNumber.AppearanceCell.Options.UseTextOptions = true;
+            this.Order_RegisterNumber.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.Order_RegisterNumber.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.Order_RegisterNumber.Caption = "Qeydiyyat №";
             this.Order_RegisterNumber.FieldName = "ID";
             this.Order_RegisterNumber.Name = "Order_RegisterNumber";
             this.Order_RegisterNumber.OptionsColumn.FixedWidth = true;
+            this.Order_RegisterNumber.ToolTip = "Qeydiyyat nömrəsi";
             this.Order_RegisterNumber.Visible = true;
             this.Order_RegisterNumber.VisibleIndex = 2;
-            this.Order_RegisterNumber.Width = 110;
+            this.Order_RegisterNumber.Width = 90;
             // 
             // Order_Branch
             // 
@@ -421,9 +427,13 @@
             // Order_FirstPayment
             // 
             this.Order_FirstPayment.Caption = "İlkin ödəniş";
+            this.Order_FirstPayment.DisplayFormat.FormatString = "n2";
+            this.Order_FirstPayment.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.Order_FirstPayment.FieldName = "FIRST_PAYMENT";
             this.Order_FirstPayment.Name = "Order_FirstPayment";
             this.Order_FirstPayment.OptionsColumn.FixedWidth = true;
+            this.Order_FirstPayment.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "FIRST_PAYMENT", "{0:n2}")});
             this.Order_FirstPayment.Visible = true;
             this.Order_FirstPayment.VisibleIndex = 8;
             this.Order_FirstPayment.Width = 100;
@@ -431,9 +441,13 @@
             // Order_Amount
             // 
             this.Order_Amount.Caption = "Məbləğ";
+            this.Order_Amount.DisplayFormat.FormatString = "n2";
+            this.Order_Amount.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.Order_Amount.FieldName = "ORDER_AMOUNT";
             this.Order_Amount.Name = "Order_Amount";
             this.Order_Amount.OptionsColumn.FixedWidth = true;
+            this.Order_Amount.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "ORDER_AMOUNT", "{0:n2}")});
             this.Order_Amount.Visible = true;
             this.Order_Amount.VisibleIndex = 7;
             this.Order_Amount.Width = 100;
@@ -448,9 +462,13 @@
             // Order_CreditAmount
             // 
             this.Order_CreditAmount.Caption = "Nisyə məbləği";
+            this.Order_CreditAmount.DisplayFormat.FormatString = "n2";
+            this.Order_CreditAmount.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.Order_CreditAmount.FieldName = "CREDIT_AMOUNT";
             this.Order_CreditAmount.Name = "Order_CreditAmount";
             this.Order_CreditAmount.OptionsColumn.FixedWidth = true;
+            this.Order_CreditAmount.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "CREDIT_AMOUNT", "{0:n2}")});
             this.Order_CreditAmount.Visible = true;
             this.Order_CreditAmount.VisibleIndex = 9;
             this.Order_CreditAmount.Width = 100;
@@ -460,10 +478,9 @@
             this.Order_OperationNote.Caption = "Qeyd";
             this.Order_OperationNote.FieldName = "OPERATION_NOTE";
             this.Order_OperationNote.Name = "Order_OperationNote";
-            this.Order_OperationNote.OptionsColumn.FixedWidth = true;
             this.Order_OperationNote.Visible = true;
             this.Order_OperationNote.VisibleIndex = 10;
-            this.Order_OperationNote.Width = 250;
+            this.Order_OperationNote.Width = 500;
             // 
             // Order_TypeID
             // 

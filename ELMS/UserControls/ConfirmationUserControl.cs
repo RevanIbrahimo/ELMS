@@ -168,6 +168,13 @@ namespace ELMS.UserControls
             GlobalProcedures.GridExportToFile(OrderGridControl, "rtf");
         }
 
+        private void OrderGridView_CustomDrawFooterCell(object sender, FooterCellCustomDrawEventArgs e)
+        {
+            GlobalProcedures.GridCustomDrawFooterCell(Order_Amount, HorzalignmentEnum.Right, e);
+            GlobalProcedures.GridCustomDrawFooterCell(Order_FirstPayment, HorzalignmentEnum.Right, e);
+            GlobalProcedures.GridCustomDrawFooterCell(Order_CreditAmount, HorzalignmentEnum.Right, e);
+        }
+
         private void HtmlBarButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             GlobalProcedures.GridExportToFile(OrderGridControl, "html");

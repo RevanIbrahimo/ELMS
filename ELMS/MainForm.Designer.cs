@@ -70,7 +70,7 @@
             this.accordionControlSeparator4 = new DevExpress.XtraBars.Navigation.AccordionControlSeparator();
             this.accordionControlElement3 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlSeparator5 = new DevExpress.XtraBars.Navigation.AccordionControlSeparator();
-            this.accordionControlElement4 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.agreementAccordionControlElement = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlSeparator6 = new DevExpress.XtraBars.Navigation.AccordionControlSeparator();
             this.bookkeepingAccordionControlElement = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlSeparator7 = new DevExpress.XtraBars.Navigation.AccordionControlSeparator();
@@ -360,7 +360,7 @@
             this.accordionControlSeparator4,
             this.accordionControlElement3,
             this.accordionControlSeparator5,
-            this.accordionControlElement4,
+            this.agreementAccordionControlElement,
             this.accordionControlSeparator6,
             this.bookkeepingAccordionControlElement,
             this.accordionControlSeparator7,
@@ -427,12 +427,12 @@
             // 
             this.accordionControlSeparator5.Name = "accordionControlSeparator5";
             // 
-            // accordionControlElement4
+            // agreementAccordionControlElement
             // 
-            this.accordionControlElement4.ImageOptions.Image = global::ELMS.Properties.Resources.agreement2_16;
-            this.accordionControlElement4.Name = "accordionControlElement4";
-            this.accordionControlElement4.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.accordionControlElement4.Text = "Sazişlər";
+            this.agreementAccordionControlElement.ImageOptions.Image = global::ELMS.Properties.Resources.agreement2_16;
+            this.agreementAccordionControlElement.Name = "agreementAccordionControlElement";
+            this.agreementAccordionControlElement.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.agreementAccordionControlElement.Text = "Sazişlər";
             // 
             // accordionControlSeparator6
             // 
@@ -547,7 +547,7 @@
         private DevExpress.XtraBars.Navigation.AccordionControlSeparator accordionControlSeparator4;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement3;
         private DevExpress.XtraBars.Navigation.AccordionControlSeparator accordionControlSeparator5;
-        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement4;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement agreementAccordionControlElement;
         private DevExpress.XtraBars.Navigation.AccordionControlSeparator accordionControlSeparator6;
         private DevExpress.XtraBars.Navigation.AccordionControlElement bookkeepingAccordionControlElement;
         private DevExpress.XtraBars.Navigation.AccordionControlSeparator accordionControlSeparator7;

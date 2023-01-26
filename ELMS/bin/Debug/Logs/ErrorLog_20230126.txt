@@ -1,0 +1,36 @@
+
+Log Entry : 4:31:20 PM Thursday, January 26, 2023
+  
+   UserName =  SuperAdmin
+   FormName =  GlobalFunctions
+   ProcedureName =  RunInOneTransaction
+  
+   ShowMessage: Müraciət məlumatları bazada dəyişdirilmədi.
+   Exception Message: ORA-01008: not all variables bound
+-------------------------------------------------
+
+Log Entry : 4:43:07 PM Thursday, January 26, 2023
+  
+   UserName =  SuperAdmin
+   FormName =  PhoneDAL
+   ProcedureName =  DeletePhone
+  
+   ShowMessage: Müqavilənin statusu cədvəldə dəyişmədi.
+   Exception Message: ORA-01008: not all variables bound
+   SQL Text      :  UPDATE ELMS_USER.ORDER_TAB SET AGREEMENT_ID = 6
+                                                        WHERE AGREEMENT_ID = :inAGREEMENTID
+                                                          AND ID = :inID
+-------------------------------------------------
+
+Log Entry : 4:43:11 PM Thursday, January 26, 2023
+  
+   UserName =  SuperAdmin
+   FormName =  PhoneDAL
+   ProcedureName =  DeletePhone
+  
+   ShowMessage: Müqavilənin statusu cədvəldə dəyişmədi.
+   Exception Message: ORA-01008: not all variables bound
+   SQL Text      :  UPDATE ELMS_USER.ORDER_TAB SET AGREEMENT_ID = 6
+                                                        WHERE AGREEMENT_ID = :inAGREEMENTID
+                                                          AND ID = :inID
+-------------------------------------------------
