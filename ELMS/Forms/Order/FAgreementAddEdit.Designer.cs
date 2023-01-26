@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FAgreementAddEdit));
             ManiXButton.Office2010White office2010White1 = new ManiXButton.Office2010White();
-            ManiXButton.Office2010Red office2010Red1 = new ManiXButton.Office2010Red();
             ManiXButton.Office2010Green office2010Green1 = new ManiXButton.Office2010Green();
             DevExpress.Utils.SuperToolTip superToolTip1 = new DevExpress.Utils.SuperToolTip();
             DevExpress.Utils.ToolTipTitleItem toolTipTitleItem1 = new DevExpress.Utils.ToolTipTitleItem();
@@ -64,7 +63,6 @@
             this.Contracts_OperationID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.PanelOption = new DevExpress.XtraEditors.PanelControl();
             this.BClose = new ManiXButton.XButton();
-            this.BCancel = new ManiXButton.XButton();
             this.BOK = new ManiXButton.XButton();
             this.labelControl12 = new DevExpress.XtraEditors.LabelControl();
             this.barDockControl9 = new DevExpress.XtraBars.BarDockControl();
@@ -86,6 +84,8 @@
             this.oracleCommand1 = new Oracle.ManagedDataAccess.Client.OracleCommand();
             this.bar4 = new DevExpress.XtraBars.Bar();
             this.popupMenu1 = new DevExpress.XtraBars.PopupMenu(this.components);
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ContractsBarManager)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.AgreementDate.Properties.CalendarTimeProperties)).BeginInit();
@@ -113,9 +113,11 @@
             this.ContractsBarManager.DockControls.Add(this.ContractsStandaloneBarDockControl);
             this.ContractsBarManager.Form = this;
             this.ContractsBarManager.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
-            this.RefreshContractsBarButton});
+            this.RefreshContractsBarButton,
+            this.barButtonItem1,
+            this.barButtonItem2});
             this.ContractsBarManager.MainMenu = this.bar2;
-            this.ContractsBarManager.MaxItemId = 4;
+            this.ContractsBarManager.MaxItemId = 6;
             // 
             // bar2
             // 
@@ -124,6 +126,8 @@
             this.bar2.DockRow = 0;
             this.bar2.DockStyle = DevExpress.XtraBars.BarDockStyle.Standalone;
             this.bar2.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem1),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem2),
             new DevExpress.XtraBars.LinkPersistInfo(this.RefreshContractsBarButton)});
             this.bar2.OptionsBar.DrawBorder = false;
             this.bar2.OptionsBar.DrawDragBorder = false;
@@ -398,11 +402,13 @@
             this.Contracts_PaymentAmount.Caption = "Ödəniləcək məbləğ";
             this.Contracts_PaymentAmount.DisplayFormat.FormatString = "n2";
             this.Contracts_PaymentAmount.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.Contracts_PaymentAmount.FieldName = "CREDIT_AMOUNT";
+            this.Contracts_PaymentAmount.FieldName = "Contracts_PaymentAmount";
             this.Contracts_PaymentAmount.Name = "Contracts_PaymentAmount";
             this.Contracts_PaymentAmount.OptionsColumn.FixedWidth = true;
             this.Contracts_PaymentAmount.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "CREDIT_AMOUNT", "{0:n2}")});
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Contracts_PaymentAmount", "{0:n2}")});
+            this.Contracts_PaymentAmount.UnboundExpression = "[CREDIT_AMOUNT] - Round([CREDIT_AMOUNT] * [PERCENT] / 100, 2)";
+            this.Contracts_PaymentAmount.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
             this.Contracts_PaymentAmount.Visible = true;
             this.Contracts_PaymentAmount.VisibleIndex = 9;
             // 
@@ -415,7 +421,6 @@
             // PanelOption
             // 
             this.PanelOption.Controls.Add(this.BClose);
-            this.PanelOption.Controls.Add(this.BCancel);
             this.PanelOption.Controls.Add(this.BOK);
             this.PanelOption.Controls.Add(this.labelControl12);
             this.PanelOption.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -455,38 +460,6 @@
             this.BClose.UseVisualStyleBackColor = true;
             this.BClose.Click += new System.EventHandler(this.BClose_Click);
             // 
-            // BCancel
-            // 
-            this.BCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            office2010Red1.BorderColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(72)))), ((int)(((byte)(161)))));
-            office2010Red1.BorderColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(135)))), ((int)(((byte)(228)))));
-            office2010Red1.ButtonMouseOverColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(199)))), ((int)(((byte)(87)))));
-            office2010Red1.ButtonMouseOverColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(243)))), ((int)(((byte)(215)))));
-            office2010Red1.ButtonMouseOverColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(225)))), ((int)(((byte)(137)))));
-            office2010Red1.ButtonMouseOverColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(249)))), ((int)(((byte)(224)))));
-            office2010Red1.ButtonNormalColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(77)))), ((int)(((byte)(45)))));
-            office2010Red1.ButtonNormalColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(148)))), ((int)(((byte)(64)))));
-            office2010Red1.ButtonNormalColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(77)))), ((int)(((byte)(45)))));
-            office2010Red1.ButtonNormalColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(148)))), ((int)(((byte)(64)))));
-            office2010Red1.ButtonSelectedColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(199)))), ((int)(((byte)(87)))));
-            office2010Red1.ButtonSelectedColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(243)))), ((int)(((byte)(215)))));
-            office2010Red1.ButtonSelectedColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(229)))), ((int)(((byte)(117)))));
-            office2010Red1.ButtonSelectedColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(216)))), ((int)(((byte)(107)))));
-            office2010Red1.HoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
-            office2010Red1.SelectedTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
-            office2010Red1.TextColor = System.Drawing.Color.White;
-            this.BCancel.ColorTable = office2010Red1;
-            this.BCancel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BCancel.Location = new System.Drawing.Point(715, 13);
-            this.BCancel.Name = "BCancel";
-            this.BCancel.Size = new System.Drawing.Size(75, 25);
-            this.BCancel.TabIndex = 2;
-            this.BCancel.TabStop = false;
-            this.BCancel.Text = "İmtina et";
-            this.BCancel.Theme = ManiXButton.Theme.MSOffice2010_RED;
-            this.BCancel.UseVisualStyleBackColor = true;
-            this.BCancel.Click += new System.EventHandler(this.BCancel_Click);
-            // 
             // BOK
             // 
             this.BOK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -509,7 +482,7 @@
             office2010Green1.TextColor = System.Drawing.Color.White;
             this.BOK.ColorTable = office2010Green1;
             this.BOK.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BOK.Location = new System.Drawing.Point(634, 13);
+            this.BOK.Location = new System.Drawing.Point(715, 13);
             this.BOK.Name = "BOK";
             this.BOK.Size = new System.Drawing.Size(75, 25);
             this.BOK.TabIndex = 1;
@@ -709,6 +682,18 @@
             this.popupMenu1.Manager = this.ContractsBarManager;
             this.popupMenu1.Name = "popupMenu1";
             // 
+            // barButtonItem1
+            // 
+            this.barButtonItem1.Caption = "Yeni";
+            this.barButtonItem1.Id = 4;
+            this.barButtonItem1.Name = "barButtonItem1";
+            // 
+            // barButtonItem2
+            // 
+            this.barButtonItem2.Caption = "Sil";
+            this.barButtonItem2.Id = 5;
+            this.barButtonItem2.Name = "barButtonItem2";
+            // 
             // FAgreementAddEdit
             // 
             this.AcceptButton = this.BOK;
@@ -762,7 +747,6 @@
         private DevExpress.XtraEditors.GroupControl OtherGroupControl;
         private DevExpress.XtraEditors.PanelControl PanelOption;
         private DevExpress.XtraEditors.LabelControl labelControl12;
-        private ManiXButton.XButton BCancel;
         private ManiXButton.XButton BOK;
         private DevExpress.XtraBars.StandaloneBarDockControl ContractsStandaloneBarDockControl;
         private DevExpress.XtraBars.BarManager ContractsBarManager;
@@ -805,5 +789,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn Contracts_Branch;
         private DevExpress.XtraBars.PopupMenu popupMenu1;
         private DevExpress.XtraGrid.Columns.GridColumn Contracts_OperationID;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem2;
     }
 }
