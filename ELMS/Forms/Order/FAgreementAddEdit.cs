@@ -60,6 +60,11 @@ namespace ELMS.Forms.Agreement
             LoadContracts();
         }
 
+        private void BClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
         private void LoadContracts()
         {
             if (TransactionType == TransactionTypeEnum.Update)
@@ -159,31 +164,7 @@ namespace ELMS.Forms.Agreement
 
             AgreementDAL.UpdateAgreement(tran, order);
         }
-
-        private void BOK_Click(object sender, EventArgs e)
-        {
-            if (ControlCardDetails())
-            {
-                GlobalFunctions.RunInOneTransaction<int>(tran =>
-                {
-
-                    if (TransactionType == TransactionTypeEnum.Insert)
-                    {
-                        InsertAgreement(tran);
-                    }
-                    else
-                    {
-                        UpdateAgreement(tran);
-                    }
-                    return 1;
-                }, TransactionType == TransactionTypeEnum.Insert ? "Müraciət məlumatları bazaya daxil edilmədi." : "Müraciət məlumatları bazada dəyişdirilmədi.");
-
-                UpdateContracts(OperationTypeEnum.Saziş_yaradıldı);
-                this.Close();
-            }
-        }
         
-
         private bool ControlCardDetails()
         {
 
@@ -193,7 +174,7 @@ namespace ELMS.Forms.Agreement
 
             if (rows.Count == 0)
             {
-                GlobalProcedures.ShowWarningMessage("Müqaviləni seçin.");
+                GlobalProcedures.ShowWarningMessage("Müqavilə seçilməyib.");
                 return false;
             }
             else
@@ -262,20 +243,53 @@ namespace ELMS.Forms.Agreement
         {
             branchID = GlobalFunctions.GetLookUpID(sender);
         }
-        
+
+        private void BOK_Click(object sender, EventArgs e)
+        {
+            if (ControlCardDetails())
+            {
+                GlobalFunctions.RunInOneTransaction<int>(tran =>
+                {
+
+                    if (TransactionType == TransactionTypeEnum.Insert)
+                    {
+                        InsertAgreement(tran);
+                    }
+                    else
+                    {
+                        UpdateAgreement(tran);
+                    }
+                    return 1;
+                }, TransactionType == TransactionTypeEnum.Insert ? "Saziş məlumatları bazaya daxil edilmədi." : "Saziş məlumatları bazada dəyişdirilmədi.");
+
+                UpdateContracts(OperationTypeEnum.Saziş_yaradıldı);
+                this.Close();
+            }
+        }
+
         private void BCancel_Click(object sender, EventArgs e)
         {
-            AgreementID = 0;
+            if (ControlCardDetails())
+            {
+                GlobalFunctions.RunInOneTransaction<int>(tran =>
+                {
+
+                    if (TransactionType == TransactionTypeEnum.Insert)
+                    {
+                        InsertAgreement(tran);
+                    }
+                    else
+                    {
+                        UpdateAgreement(tran);
+                    }
+                    return 1;
+                }, TransactionType == TransactionTypeEnum.Insert ? "Saziş məlumatları bazaya daxil edilmədi." : "Saziş məlumatları bazada dəyişdirilmədi.");
+
+                UpdateContracts(OperationTypeEnum.Muqavile_tesdiq_edildi);
+                this.Close();
+            }
         }
-
         
-        
-
-        private void ContractsGridView_MouseUp(object sender, MouseEventArgs e)
-        {
-
-        }
-
 
         private void FAgreementAddEdit_Load(object sender, EventArgs e)
         {
@@ -285,7 +299,6 @@ namespace ELMS.Forms.Agreement
                 this.Text = "Sazişin düzəliş edilməsi";
                 GlobalProcedures.Lock_or_UnLock_UserID("ELMS_USER.AGREEMENT", GlobalVariables.V_UserID, "WHERE ID = " + AgreementID + " AND USED_USER_ID = -1");
                 LoadAgreementDetails();
-                //LoadImage();
 
                 Used = (UsedUserID > 0);
 
@@ -313,7 +326,6 @@ namespace ELMS.Forms.Agreement
                 agreement_number = "000" + AgreementID.ToString();
                 RegisterCodeText.EditValue = agreement_number;
             }
-           // InsertTemps();
             LoadContracts();
         }
         
@@ -322,47 +334,11 @@ namespace ELMS.Forms.Agreement
         {
             if (!isClickBOK && TransactionType == TransactionTypeEnum.Update)
                 GlobalProcedures.Lock_or_UnLock_UserID("ELMS_USER.AGREEMENT", -1, "WHERE ID = " + AgreementID + " AND USED_USER_ID = " + GlobalVariables.V_UserID);
-            DeleteAllTemp();
-
-            if (TransactionType == TransactionTypeEnum.Insert)
-                AgreementID = 0;
-            AgreementDAL.DeleteAgreement(AgreementID.Value);
-
+            
             this.RefreshDataGridView();
         }
 
-        private void DeleteAllTemp()
-        {
-            GlobalProcedures.ExecuteProcedureWithParametr("ELMS_USER_TEMP.PROC_DELETE_ORDER_TEMP", "P_USED_USER_ID", GlobalVariables.V_UserID, "İstifadəçinin məlumatları temp cədvəldən silinmədi.");
-        }
 
-
-
-        //private void LoadFContractsAddEdit(TransactionTypeEnum transaction, UserControlTypeEnum userControl, int? id)
-        //{
-        //    topindex = ContractsGridView.TopRowIndex;
-        //    old_row_id = ContractsGridView.FocusedRowHandle;
-        //    FConfirmAddEdit fd = new FConfirmAddEdit()
-        //    {
-        //        TransactionType = transaction,
-        //        UserControlType = userControl,
-        //        OrderID = id,
-        //        OperationID = operationID
-        //    };
-        //    fd.RefreshDataGridView += new FConfirmAddEdit.DoEvent(LoadContracts);
-        //    fd.ShowDialog();
-        //    ContractsGridView.TopRowIndex = topindex;
-        //    ContractsGridView.FocusedRowHandle = old_row_id;
-        //}
-
-
-
-        //private void NewContractsBarButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        //{
-        //    LoadFContractsAddEdit(TransactionTypeEnum.Insert, UserControlTypeEnum.Contract, null);
-        //}
-
-
-
+        
     }
 }
