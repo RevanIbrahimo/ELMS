@@ -1,0 +1,637 @@
+﻿namespace ELMS.Forms.Agreement
+{
+    partial class FContractsAddEdit
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FContractsAddEdit));
+            ManiXButton.Office2010White office2010White2 = new ManiXButton.Office2010White();
+            ManiXButton.Office2010Green office2010Green2 = new ManiXButton.Office2010Green();
+            this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
+            this.behaviorManager1 = new DevExpress.Utils.Behaviors.BehaviorManager(this.components);
+            this.ContractsBarManager = new DevExpress.XtraBars.BarManager(this.components);
+            this.bar2 = new DevExpress.XtraBars.Bar();
+            this.RefreshContractsBarButton = new DevExpress.XtraBars.BarButtonItem();
+            this.ContractsStandaloneBarDockControl = new DevExpress.XtraBars.StandaloneBarDockControl();
+            this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
+            this.OtherGroupControl = new DevExpress.XtraEditors.GroupControl();
+            this.ContractsGridControl = new DevExpress.XtraGrid.GridControl();
+            this.ContractsGridView = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.Contracts_SS = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Contracts_RegisterNumber = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Contracts_Branch = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Contracts_Time = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Contracts_Percent = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Contracts_FirstPayment = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Contracts_OrderAmount = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Contracts_CreditAmount = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Contracts_ID = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Contracts_PaymentAmount = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Contracts_OperationID = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.PanelOption = new DevExpress.XtraEditors.PanelControl();
+            this.BClose = new ManiXButton.XButton();
+            this.BOK = new ManiXButton.XButton();
+            this.labelControl12 = new DevExpress.XtraEditors.LabelControl();
+            this.barDockControl9 = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControl8 = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControl10 = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControl7 = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControl11 = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControl12 = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControl6 = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControl13 = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControl14 = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControl15 = new DevExpress.XtraBars.BarDockControl();
+            this.oracleCommand1 = new Oracle.ManagedDataAccess.Client.OracleCommand();
+            this.bar4 = new DevExpress.XtraBars.Bar();
+            this.popupMenu1 = new DevExpress.XtraBars.PopupMenu(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ContractsBarManager)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.OtherGroupControl)).BeginInit();
+            this.OtherGroupControl.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ContractsGridControl)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ContractsGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PanelOption)).BeginInit();
+            this.PanelOption.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // ContractsBarManager
+            // 
+            this.ContractsBarManager.Bars.AddRange(new DevExpress.XtraBars.Bar[] {
+            this.bar2});
+            this.ContractsBarManager.DockControls.Add(this.barDockControlTop);
+            this.ContractsBarManager.DockControls.Add(this.barDockControlBottom);
+            this.ContractsBarManager.DockControls.Add(this.barDockControlLeft);
+            this.ContractsBarManager.DockControls.Add(this.barDockControlRight);
+            this.ContractsBarManager.DockControls.Add(this.ContractsStandaloneBarDockControl);
+            this.ContractsBarManager.Form = this;
+            this.ContractsBarManager.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
+            this.RefreshContractsBarButton});
+            this.ContractsBarManager.MainMenu = this.bar2;
+            this.ContractsBarManager.MaxItemId = 6;
+            // 
+            // bar2
+            // 
+            this.bar2.BarName = "Main menu";
+            this.bar2.DockCol = 0;
+            this.bar2.DockRow = 0;
+            this.bar2.DockStyle = DevExpress.XtraBars.BarDockStyle.Standalone;
+            this.bar2.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.RefreshContractsBarButton)});
+            this.bar2.OptionsBar.DrawBorder = false;
+            this.bar2.OptionsBar.DrawDragBorder = false;
+            this.bar2.OptionsBar.MultiLine = true;
+            this.bar2.OptionsBar.UseWholeRow = true;
+            this.bar2.StandaloneBarDockControl = this.ContractsStandaloneBarDockControl;
+            this.bar2.Text = "Main menu";
+            // 
+            // RefreshContractsBarButton
+            // 
+            this.RefreshContractsBarButton.Caption = "Yenilə";
+            this.RefreshContractsBarButton.Id = 3;
+            this.RefreshContractsBarButton.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("RefreshContractsBarButton.ImageOptions.Image")));
+            this.RefreshContractsBarButton.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("RefreshContractsBarButton.ImageOptions.LargeImage")));
+            this.RefreshContractsBarButton.Name = "RefreshContractsBarButton";
+            this.RefreshContractsBarButton.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.RefreshContractsBarButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.RefreshContractsBarButton_ItemClick);
+            // 
+            // ContractsStandaloneBarDockControl
+            // 
+            this.ContractsStandaloneBarDockControl.CausesValidation = false;
+            this.ContractsStandaloneBarDockControl.Dock = System.Windows.Forms.DockStyle.Top;
+            this.ContractsStandaloneBarDockControl.Location = new System.Drawing.Point(2, 20);
+            this.ContractsStandaloneBarDockControl.Manager = this.ContractsBarManager;
+            this.ContractsStandaloneBarDockControl.Name = "ContractsStandaloneBarDockControl";
+            this.ContractsStandaloneBarDockControl.Size = new System.Drawing.Size(855, 29);
+            this.ContractsStandaloneBarDockControl.Text = "standaloneBarDockControl1";
+            // 
+            // barDockControlTop
+            // 
+            this.barDockControlTop.CausesValidation = false;
+            this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
+            this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
+            this.barDockControlTop.Manager = this.ContractsBarManager;
+            this.barDockControlTop.Size = new System.Drawing.Size(885, 0);
+            // 
+            // barDockControlBottom
+            // 
+            this.barDockControlBottom.CausesValidation = false;
+            this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 394);
+            this.barDockControlBottom.Manager = this.ContractsBarManager;
+            this.barDockControlBottom.Size = new System.Drawing.Size(885, 0);
+            // 
+            // barDockControlLeft
+            // 
+            this.barDockControlLeft.CausesValidation = false;
+            this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
+            this.barDockControlLeft.Manager = this.ContractsBarManager;
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 394);
+            // 
+            // barDockControlRight
+            // 
+            this.barDockControlRight.CausesValidation = false;
+            this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
+            this.barDockControlRight.Location = new System.Drawing.Point(885, 0);
+            this.barDockControlRight.Manager = this.ContractsBarManager;
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 394);
+            // 
+            // OtherGroupControl
+            // 
+            this.OtherGroupControl.AppearanceCaption.FontStyleDelta = System.Drawing.FontStyle.Bold;
+            this.OtherGroupControl.AppearanceCaption.ForeColor = System.Drawing.Color.Navy;
+            this.OtherGroupControl.AppearanceCaption.Options.UseFont = true;
+            this.OtherGroupControl.AppearanceCaption.Options.UseForeColor = true;
+            this.OtherGroupControl.Controls.Add(this.ContractsGridControl);
+            this.OtherGroupControl.Controls.Add(this.ContractsStandaloneBarDockControl);
+            this.OtherGroupControl.Location = new System.Drawing.Point(12, 12);
+            this.OtherGroupControl.Name = "OtherGroupControl";
+            this.OtherGroupControl.Size = new System.Drawing.Size(859, 326);
+            this.OtherGroupControl.TabIndex = 2;
+            this.OtherGroupControl.Text = "Müqavilələr";
+            // 
+            // ContractsGridControl
+            // 
+            this.ContractsGridControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ContractsGridControl.Location = new System.Drawing.Point(2, 49);
+            this.ContractsGridControl.MainView = this.ContractsGridView;
+            this.ContractsGridControl.MenuManager = this.ContractsBarManager;
+            this.ContractsGridControl.Name = "ContractsGridControl";
+            this.ContractsGridControl.Size = new System.Drawing.Size(855, 275);
+            this.ContractsGridControl.TabIndex = 18;
+            this.ContractsGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.ContractsGridView});
+            this.ContractsGridControl.Click += new System.EventHandler(this.ContractsGridControl_Click);
+            // 
+            // ContractsGridView
+            // 
+            this.ContractsGridView.Appearance.FooterPanel.Options.UseTextOptions = true;
+            this.ContractsGridView.Appearance.FooterPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.ContractsGridView.Appearance.FooterPanel.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.ContractsGridView.Appearance.HeaderPanel.Options.UseTextOptions = true;
+            this.ContractsGridView.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.ContractsGridView.Appearance.HeaderPanel.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.ContractsGridView.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.Contracts_SS,
+            this.Contracts_RegisterNumber,
+            this.Contracts_Branch,
+            this.Contracts_Time,
+            this.Contracts_Percent,
+            this.Contracts_FirstPayment,
+            this.Contracts_OrderAmount,
+            this.Contracts_CreditAmount,
+            this.Contracts_ID,
+            this.Contracts_PaymentAmount,
+            this.Contracts_OperationID});
+            this.ContractsGridView.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFullFocus;
+            this.ContractsGridView.GridControl = this.ContractsGridControl;
+            this.ContractsGridView.Name = "ContractsGridView";
+            this.ContractsGridView.OptionsBehavior.AutoExpandAllGroups = true;
+            this.ContractsGridView.OptionsBehavior.AutoSelectAllInEditor = false;
+            this.ContractsGridView.OptionsBehavior.Editable = false;
+            this.ContractsGridView.OptionsFilter.UseNewCustomFilterDialog = true;
+            this.ContractsGridView.OptionsFind.FindDelay = 100;
+            this.ContractsGridView.OptionsSelection.CheckBoxSelectorColumnWidth = 40;
+            this.ContractsGridView.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.ContractsGridView.OptionsSelection.MultiSelect = true;
+            this.ContractsGridView.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.CheckBoxRowSelect;
+            this.ContractsGridView.OptionsSelection.ShowCheckBoxSelectorInColumnHeader = DevExpress.Utils.DefaultBoolean.True;
+            this.ContractsGridView.OptionsSelection.ShowCheckBoxSelectorInGroupRow = DevExpress.Utils.DefaultBoolean.True;
+            this.ContractsGridView.OptionsView.EnableAppearanceEvenRow = true;
+            this.ContractsGridView.OptionsView.ShowFooter = true;
+            this.ContractsGridView.OptionsView.ShowGroupPanel = false;
+            this.ContractsGridView.OptionsView.ShowIndicator = false;
+            this.ContractsGridView.PaintStyleName = "Skin";
+            this.ContractsGridView.ScrollStyle = DevExpress.XtraGrid.Views.Grid.ScrollStyleFlags.LiveVertScroll;
+            this.ContractsGridView.CustomDrawFooterCell += new DevExpress.XtraGrid.Views.Grid.FooterCellCustomDrawEventHandler(this.ContractsGridView_CustomDrawFooterCell);
+            this.ContractsGridView.FocusedRowObjectChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowObjectChangedEventHandler(this.ContractsGridView_FocusedRowObjectChanged);
+            this.ContractsGridView.CustomUnboundColumnData += new DevExpress.XtraGrid.Views.Base.CustomColumnDataEventHandler(this.ContractsGridView_CustomUnboundColumnData);
+            // 
+            // Contracts_SS
+            // 
+            this.Contracts_SS.AppearanceCell.Options.UseTextOptions = true;
+            this.Contracts_SS.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.Contracts_SS.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.Contracts_SS.Caption = "S/s";
+            this.Contracts_SS.FieldName = "Contracts_SS";
+            this.Contracts_SS.Name = "Contracts_SS";
+            this.Contracts_SS.OptionsColumn.FixedWidth = true;
+            this.Contracts_SS.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Count, "Contracts_SS", "{0}")});
+            this.Contracts_SS.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
+            this.Contracts_SS.Visible = true;
+            this.Contracts_SS.VisibleIndex = 1;
+            this.Contracts_SS.Width = 50;
+            // 
+            // Contracts_RegisterNumber
+            // 
+            this.Contracts_RegisterNumber.Caption = "Qeydiyyat №";
+            this.Contracts_RegisterNumber.FieldName = "ID";
+            this.Contracts_RegisterNumber.Name = "Contracts_RegisterNumber";
+            this.Contracts_RegisterNumber.OptionsColumn.FixedWidth = true;
+            this.Contracts_RegisterNumber.Visible = true;
+            this.Contracts_RegisterNumber.VisibleIndex = 2;
+            // 
+            // Contracts_Branch
+            // 
+            this.Contracts_Branch.Caption = "Filial";
+            this.Contracts_Branch.FieldName = "BRANCH_NAME";
+            this.Contracts_Branch.Name = "Contracts_Branch";
+            this.Contracts_Branch.OptionsColumn.FixedWidth = true;
+            this.Contracts_Branch.Visible = true;
+            this.Contracts_Branch.VisibleIndex = 3;
+            // 
+            // Contracts_Time
+            // 
+            this.Contracts_Time.Caption = "Müddət";
+            this.Contracts_Time.DisplayFormat.FormatString = "{0:n0} ay";
+            this.Contracts_Time.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
+            this.Contracts_Time.FieldName = "TIME";
+            this.Contracts_Time.Name = "Contracts_Time";
+            this.Contracts_Time.OptionsColumn.FixedWidth = true;
+            this.Contracts_Time.Visible = true;
+            this.Contracts_Time.VisibleIndex = 4;
+            // 
+            // Contracts_Percent
+            // 
+            this.Contracts_Percent.Caption = "Faiz";
+            this.Contracts_Percent.DisplayFormat.FormatString = "{0:n2} %";
+            this.Contracts_Percent.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
+            this.Contracts_Percent.FieldName = "PERCENT";
+            this.Contracts_Percent.Name = "Contracts_Percent";
+            this.Contracts_Percent.OptionsColumn.FixedWidth = true;
+            this.Contracts_Percent.Visible = true;
+            this.Contracts_Percent.VisibleIndex = 5;
+            // 
+            // Contracts_FirstPayment
+            // 
+            this.Contracts_FirstPayment.AppearanceCell.Options.UseTextOptions = true;
+            this.Contracts_FirstPayment.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.Contracts_FirstPayment.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.Contracts_FirstPayment.Caption = "İlkin ödəniş";
+            this.Contracts_FirstPayment.DisplayFormat.FormatString = "n2";
+            this.Contracts_FirstPayment.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.Contracts_FirstPayment.FieldName = "FIRST_PAYMENT";
+            this.Contracts_FirstPayment.Name = "Contracts_FirstPayment";
+            this.Contracts_FirstPayment.OptionsColumn.FixedWidth = true;
+            this.Contracts_FirstPayment.Visible = true;
+            this.Contracts_FirstPayment.VisibleIndex = 6;
+            // 
+            // Contracts_OrderAmount
+            // 
+            this.Contracts_OrderAmount.AppearanceCell.Options.UseTextOptions = true;
+            this.Contracts_OrderAmount.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.Contracts_OrderAmount.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.Contracts_OrderAmount.Caption = "Məbləğ";
+            this.Contracts_OrderAmount.DisplayFormat.FormatString = "n2";
+            this.Contracts_OrderAmount.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.Contracts_OrderAmount.FieldName = "ORDER_AMOUNT";
+            this.Contracts_OrderAmount.Name = "Contracts_OrderAmount";
+            this.Contracts_OrderAmount.OptionsColumn.FixedWidth = true;
+            this.Contracts_OrderAmount.Visible = true;
+            this.Contracts_OrderAmount.VisibleIndex = 7;
+            // 
+            // Contracts_CreditAmount
+            // 
+            this.Contracts_CreditAmount.AppearanceCell.Options.UseTextOptions = true;
+            this.Contracts_CreditAmount.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.Contracts_CreditAmount.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.Contracts_CreditAmount.Caption = "Nisyə";
+            this.Contracts_CreditAmount.DisplayFormat.FormatString = "n2";
+            this.Contracts_CreditAmount.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.Contracts_CreditAmount.FieldName = "CREDIT_AMOUNT";
+            this.Contracts_CreditAmount.Name = "Contracts_CreditAmount";
+            this.Contracts_CreditAmount.OptionsColumn.FixedWidth = true;
+            this.Contracts_CreditAmount.Visible = true;
+            this.Contracts_CreditAmount.VisibleIndex = 8;
+            // 
+            // Contracts_ID
+            // 
+            this.Contracts_ID.Caption = "ID";
+            this.Contracts_ID.FieldName = "ID";
+            this.Contracts_ID.Name = "Contracts_ID";
+            // 
+            // Contracts_PaymentAmount
+            // 
+            this.Contracts_PaymentAmount.AppearanceCell.Options.UseTextOptions = true;
+            this.Contracts_PaymentAmount.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.Contracts_PaymentAmount.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.Contracts_PaymentAmount.Caption = "Ödəniləcək məbləğ";
+            this.Contracts_PaymentAmount.DisplayFormat.FormatString = "n2";
+            this.Contracts_PaymentAmount.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.Contracts_PaymentAmount.FieldName = "Contracts_PaymentAmount";
+            this.Contracts_PaymentAmount.Name = "Contracts_PaymentAmount";
+            this.Contracts_PaymentAmount.OptionsColumn.FixedWidth = true;
+            this.Contracts_PaymentAmount.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Contracts_PaymentAmount", "{0:n2}")});
+            this.Contracts_PaymentAmount.UnboundExpression = "[CREDIT_AMOUNT] - Round([CREDIT_AMOUNT] * [PERCENT] / 100, 2)";
+            this.Contracts_PaymentAmount.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
+            this.Contracts_PaymentAmount.Visible = true;
+            this.Contracts_PaymentAmount.VisibleIndex = 9;
+            // 
+            // Contracts_OperationID
+            // 
+            this.Contracts_OperationID.Caption = "Contracts_OperationID";
+            this.Contracts_OperationID.FieldName = "OPERATION_ID";
+            this.Contracts_OperationID.Name = "Contracts_OperationID";
+            // 
+            // PanelOption
+            // 
+            this.PanelOption.Controls.Add(this.BClose);
+            this.PanelOption.Controls.Add(this.BOK);
+            this.PanelOption.Controls.Add(this.labelControl12);
+            this.PanelOption.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.PanelOption.Location = new System.Drawing.Point(0, 344);
+            this.PanelOption.Name = "PanelOption";
+            this.PanelOption.Size = new System.Drawing.Size(885, 50);
+            this.PanelOption.TabIndex = 3;
+            // 
+            // BClose
+            // 
+            office2010White2.BorderColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(72)))), ((int)(((byte)(161)))));
+            office2010White2.BorderColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(135)))), ((int)(((byte)(228)))));
+            office2010White2.ButtonMouseOverColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(199)))), ((int)(((byte)(87)))));
+            office2010White2.ButtonMouseOverColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(243)))), ((int)(((byte)(215)))));
+            office2010White2.ButtonMouseOverColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(225)))), ((int)(((byte)(137)))));
+            office2010White2.ButtonMouseOverColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(249)))), ((int)(((byte)(224)))));
+            office2010White2.ButtonNormalColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(154)))), ((int)(((byte)(154)))));
+            office2010White2.ButtonNormalColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            office2010White2.ButtonNormalColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            office2010White2.ButtonNormalColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            office2010White2.ButtonSelectedColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(199)))), ((int)(((byte)(87)))));
+            office2010White2.ButtonSelectedColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(243)))), ((int)(((byte)(215)))));
+            office2010White2.ButtonSelectedColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(229)))), ((int)(((byte)(117)))));
+            office2010White2.ButtonSelectedColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(216)))), ((int)(((byte)(107)))));
+            office2010White2.HoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
+            office2010White2.SelectedTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
+            office2010White2.TextColor = System.Drawing.Color.Black;
+            this.BClose.ColorTable = office2010White2;
+            this.BClose.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.BClose.Location = new System.Drawing.Point(796, 13);
+            this.BClose.Name = "BClose";
+            this.BClose.Size = new System.Drawing.Size(75, 25);
+            this.BClose.TabIndex = 3;
+            this.BClose.Text = "Bağla";
+            this.BClose.Theme = ManiXButton.Theme.MSOffice2010_WHITE;
+            this.BClose.UseVisualStyleBackColor = true;
+            this.BClose.Click += new System.EventHandler(this.BClose_Click);
+            // 
+            // BOK
+            // 
+            this.BOK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            office2010Green2.BorderColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(72)))), ((int)(((byte)(161)))));
+            office2010Green2.BorderColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(135)))), ((int)(((byte)(228)))));
+            office2010Green2.ButtonMouseOverColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(199)))), ((int)(((byte)(87)))));
+            office2010Green2.ButtonMouseOverColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(243)))), ((int)(((byte)(215)))));
+            office2010Green2.ButtonMouseOverColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(225)))), ((int)(((byte)(137)))));
+            office2010Green2.ButtonMouseOverColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(249)))), ((int)(((byte)(224)))));
+            office2010Green2.ButtonNormalColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(126)))), ((int)(((byte)(43)))));
+            office2010Green2.ButtonNormalColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(184)))), ((int)(((byte)(67)))));
+            office2010Green2.ButtonNormalColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(126)))), ((int)(((byte)(43)))));
+            office2010Green2.ButtonNormalColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(184)))), ((int)(((byte)(67)))));
+            office2010Green2.ButtonSelectedColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(199)))), ((int)(((byte)(87)))));
+            office2010Green2.ButtonSelectedColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(243)))), ((int)(((byte)(215)))));
+            office2010Green2.ButtonSelectedColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(229)))), ((int)(((byte)(117)))));
+            office2010Green2.ButtonSelectedColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(216)))), ((int)(((byte)(107)))));
+            office2010Green2.HoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
+            office2010Green2.SelectedTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
+            office2010Green2.TextColor = System.Drawing.Color.White;
+            this.BOK.ColorTable = office2010Green2;
+            this.BOK.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BOK.Location = new System.Drawing.Point(715, 13);
+            this.BOK.Name = "BOK";
+            this.BOK.Size = new System.Drawing.Size(75, 25);
+            this.BOK.TabIndex = 1;
+            this.BOK.TabStop = false;
+            this.BOK.Text = "Təsdiq et";
+            this.BOK.Theme = ManiXButton.Theme.MSOffice2010_Green;
+            this.BOK.UseVisualStyleBackColor = true;
+            this.BOK.Click += new System.EventHandler(this.BOK_Click);
+            // 
+            // labelControl12
+            // 
+            this.labelControl12.AllowHtmlString = true;
+            this.labelControl12.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Italic);
+            this.labelControl12.Appearance.Options.UseFont = true;
+            this.labelControl12.Location = new System.Drawing.Point(12, 19);
+            this.labelControl12.Name = "labelControl12";
+            this.labelControl12.Size = new System.Drawing.Size(172, 13);
+            this.labelControl12.TabIndex = 0;
+            this.labelControl12.Text = "<color=255,0,0>*</color> - lu xanalar mütləq doldurulmalıdır";
+            // 
+            // barDockControl9
+            // 
+            this.barDockControl9.CausesValidation = false;
+            this.barDockControl9.Dock = System.Windows.Forms.DockStyle.Right;
+            this.barDockControl9.Location = new System.Drawing.Point(0, 0);
+            this.barDockControl9.Manager = null;
+            this.barDockControl9.Size = new System.Drawing.Size(0, 0);
+            // 
+            // barDockControl8
+            // 
+            this.barDockControl8.CausesValidation = false;
+            this.barDockControl8.Dock = System.Windows.Forms.DockStyle.Left;
+            this.barDockControl8.Location = new System.Drawing.Point(0, 0);
+            this.barDockControl8.Manager = null;
+            this.barDockControl8.Size = new System.Drawing.Size(0, 0);
+            // 
+            // barDockControl10
+            // 
+            this.barDockControl10.CausesValidation = false;
+            this.barDockControl10.Dock = System.Windows.Forms.DockStyle.Right;
+            this.barDockControl10.Location = new System.Drawing.Point(0, 0);
+            this.barDockControl10.Manager = null;
+            this.barDockControl10.Size = new System.Drawing.Size(0, 0);
+            // 
+            // barDockControl7
+            // 
+            this.barDockControl7.CausesValidation = false;
+            this.barDockControl7.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.barDockControl7.Location = new System.Drawing.Point(0, 0);
+            this.barDockControl7.Manager = null;
+            this.barDockControl7.Size = new System.Drawing.Size(0, 0);
+            // 
+            // barDockControl11
+            // 
+            this.barDockControl11.CausesValidation = false;
+            this.barDockControl11.Dock = System.Windows.Forms.DockStyle.Left;
+            this.barDockControl11.Location = new System.Drawing.Point(0, 0);
+            this.barDockControl11.Manager = null;
+            this.barDockControl11.Size = new System.Drawing.Size(0, 0);
+            // 
+            // barDockControl12
+            // 
+            this.barDockControl12.CausesValidation = false;
+            this.barDockControl12.Dock = System.Windows.Forms.DockStyle.Right;
+            this.barDockControl12.Location = new System.Drawing.Point(0, 0);
+            this.barDockControl12.Manager = null;
+            this.barDockControl12.Size = new System.Drawing.Size(0, 0);
+            // 
+            // barDockControl6
+            // 
+            this.barDockControl6.CausesValidation = false;
+            this.barDockControl6.Dock = System.Windows.Forms.DockStyle.Top;
+            this.barDockControl6.Location = new System.Drawing.Point(0, 0);
+            this.barDockControl6.Manager = null;
+            this.barDockControl6.Size = new System.Drawing.Size(0, 0);
+            // 
+            // barDockControl13
+            // 
+            this.barDockControl13.CausesValidation = false;
+            this.barDockControl13.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.barDockControl13.Location = new System.Drawing.Point(0, 0);
+            this.barDockControl13.Manager = null;
+            this.barDockControl13.Size = new System.Drawing.Size(0, 0);
+            // 
+            // barDockControl14
+            // 
+            this.barDockControl14.CausesValidation = false;
+            this.barDockControl14.Dock = System.Windows.Forms.DockStyle.Left;
+            this.barDockControl14.Location = new System.Drawing.Point(0, 0);
+            this.barDockControl14.Manager = null;
+            this.barDockControl14.Size = new System.Drawing.Size(0, 0);
+            // 
+            // barDockControl15
+            // 
+            this.barDockControl15.CausesValidation = false;
+            this.barDockControl15.Dock = System.Windows.Forms.DockStyle.Right;
+            this.barDockControl15.Location = new System.Drawing.Point(0, 0);
+            this.barDockControl15.Manager = null;
+            this.barDockControl15.Size = new System.Drawing.Size(0, 0);
+            // 
+            // oracleCommand1
+            // 
+            this.oracleCommand1.Transaction = null;
+            // 
+            // bar4
+            // 
+            this.bar4.BarName = "Main menu";
+            this.bar4.DockCol = 0;
+            this.bar4.DockRow = 0;
+            this.bar4.DockStyle = DevExpress.XtraBars.BarDockStyle.Standalone;
+            this.bar4.OptionsBar.DrawBorder = false;
+            this.bar4.OptionsBar.DrawDragBorder = false;
+            this.bar4.OptionsBar.MultiLine = true;
+            this.bar4.OptionsBar.UseWholeRow = true;
+            this.bar4.Text = "Main menu";
+            // 
+            // popupMenu1
+            // 
+            this.popupMenu1.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.RefreshContractsBarButton)});
+            this.popupMenu1.Manager = this.ContractsBarManager;
+            this.popupMenu1.Name = "popupMenu1";
+            // 
+            // FContractsAddEdit
+            // 
+            this.AcceptButton = this.BOK;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.BClose;
+            this.ClientSize = new System.Drawing.Size(885, 394);
+            this.Controls.Add(this.PanelOption);
+            this.Controls.Add(this.OtherGroupControl);
+            this.Controls.Add(this.barDockControlLeft);
+            this.Controls.Add(this.barDockControlRight);
+            this.Controls.Add(this.barDockControlBottom);
+            this.Controls.Add(this.barDockControlTop);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Name = "FContractsAddEdit";
+            this.ShowInTaskbar = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Müqavilə əlavə edilməsi";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FAgreementAddEdit_FormClosing);
+            this.Load += new System.EventHandler(this.FAgreementAddEdit_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ContractsBarManager)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.OtherGroupControl)).EndInit();
+            this.OtherGroupControl.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.ContractsGridControl)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ContractsGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PanelOption)).EndInit();
+            this.PanelOption.ResumeLayout(false);
+            this.PanelOption.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
+        }
+
+        #endregion
+
+        private DevExpress.LookAndFeel.DefaultLookAndFeel defaultLookAndFeel1;
+        private DevExpress.Utils.Behaviors.BehaviorManager behaviorManager1;
+        private DevExpress.XtraEditors.GroupControl OtherGroupControl;
+        private DevExpress.XtraEditors.PanelControl PanelOption;
+        private DevExpress.XtraEditors.LabelControl labelControl12;
+        private ManiXButton.XButton BOK;
+        private DevExpress.XtraBars.StandaloneBarDockControl ContractsStandaloneBarDockControl;
+        private DevExpress.XtraBars.BarManager ContractsBarManager;
+        private DevExpress.XtraBars.Bar bar2;
+        private DevExpress.XtraBars.BarButtonItem RefreshContractsBarButton;
+        private DevExpress.XtraBars.BarDockControl barDockControlTop;
+        private DevExpress.XtraBars.BarDockControl barDockControlBottom;
+        private DevExpress.XtraBars.BarDockControl barDockControlLeft;
+        private DevExpress.XtraBars.BarDockControl barDockControlRight;
+        private DevExpress.XtraGrid.GridControl ContractsGridControl;
+        private DevExpress.XtraGrid.Views.Grid.GridView ContractsGridView;
+        private DevExpress.XtraGrid.Columns.GridColumn Contracts_SS;
+        private DevExpress.XtraGrid.Columns.GridColumn Contracts_ID;
+        private DevExpress.XtraBars.BarDockControl barDockControl9;
+        private DevExpress.XtraBars.BarDockControl barDockControl8;
+        private DevExpress.XtraBars.BarDockControl barDockControl10;
+        private DevExpress.XtraBars.BarDockControl barDockControl7;
+        private DevExpress.XtraBars.BarDockControl barDockControl11;
+        private DevExpress.XtraBars.BarDockControl barDockControl12;
+        private DevExpress.XtraBars.BarDockControl barDockControl6;
+        private DevExpress.XtraBars.BarDockControl barDockControl13;
+        private DevExpress.XtraBars.BarDockControl barDockControl14;
+        private DevExpress.XtraBars.BarDockControl barDockControl15;
+        private Oracle.ManagedDataAccess.Client.OracleCommand oracleCommand1;
+        private DevExpress.XtraBars.Bar bar4;
+        private ManiXButton.XButton BClose;
+        private DevExpress.XtraGrid.Columns.GridColumn Contracts_RegisterNumber;
+        private DevExpress.XtraGrid.Columns.GridColumn Contracts_Time;
+        private DevExpress.XtraGrid.Columns.GridColumn Contracts_Percent;
+        private DevExpress.XtraGrid.Columns.GridColumn Contracts_FirstPayment;
+        private DevExpress.XtraGrid.Columns.GridColumn Contracts_OrderAmount;
+        private DevExpress.XtraGrid.Columns.GridColumn Contracts_CreditAmount;
+        private DevExpress.XtraGrid.Columns.GridColumn Contracts_PaymentAmount;
+        private DevExpress.XtraGrid.Columns.GridColumn Contracts_Branch;
+        private DevExpress.XtraBars.PopupMenu popupMenu1;
+        private DevExpress.XtraGrid.Columns.GridColumn Contracts_OperationID;
+    }
+}

@@ -161,50 +161,7 @@ namespace ELMS.Forms.Order
                                                         "Müqavilən hazır çap faylı bazaya daxil edilmədi.");
             }
         }
-        //private void InsertContractDocument()
-        //{
-        //    string file_name = null, code = "01", sql = null, filePath = null;
-        //    if (GlobalVariables.WordDocumentUsed)
-        //    {
-        //        GlobalProcedures.SplashScreenClose();
-        //        XtraMessageBox.Show("Açıq olan bütün word fayllar avtomatik olaraq bağlanılacaq.", "Məlumat", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        //        GlobalProcedures.KillWord();
-        //        GlobalVariables.WordDocumentUsed = false;
-        //    }
-
-        //    //ProgressPanel.Description = "Hazırlanmış fayllar bazaya yüklənir...";
-
-        //    //#region muqavile
-        //    filePath = GlobalVariables.V_ExecutingFolder + "\\TEMP\\Documents\\" + RegisterCodeText.Text.Replace("/", "") + "_Müqavilə.pdf";
-        //    //if (contract_click && File.Exists(filePath))
-        //    //{
-        //    DataTable dt = OrderDAL.SelectDocumentByOrderID(OrderID);
-
-        //    if (dt.Rows.Count > 0)
-        //    {
-        //        file_name = Path.GetFileName(filePath);
-        //        sql = $@"UPDATE ELMS_USER.ORDER_DOCUMENTS SET ORDER_ID = {ContractID}, ORDER_DOCUMENT_TYPE_ID = 1, DOCUMENT_FILE = :BlobFile, UPDATE_DATE = SYSDATE ";
-
-        //        GlobalFunctions.ExecuteQueryWithBlob(sql, filePath,
-        //                                                "Müqavilən hazır çap faylı bazaya daxil edilmədi.");
-        //    }
-        //    else
-        //    {
-        //        file_name = Path.GetFileName(filePath);
-        //        sql = $@"INSERT INTO ELMS_USER.ORDER_DOCUMENTS(ORDER_ID,
-        //                                                         ORDER_DOCUMENT_TYPE_ID,
-        //                                                         DOCUMENT_FILE)
-        //                                VALUES({ContractID},
-        //                                        1,
-        //                                        :BlobFile)";
-
-        //        GlobalFunctions.ExecuteQueryWithBlob(sql, filePath,
-        //                                                "Müqavilən hazır çap faylı bazaya daxil edilmədi.");
-        //    }
-
-        //    //}
-        //    //#endregion
-        //}
+        
 
         private void GenerateContract()
         {

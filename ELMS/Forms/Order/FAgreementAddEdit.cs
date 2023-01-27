@@ -65,6 +65,52 @@ namespace ELMS.Forms.Agreement
             this.Close();
         }
 
+        private void NewContractBarButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            LoadFContractAddEdit(TransactionTypeEnum.Insert);
+        }
+
+
+        private void DeleteContractBarButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            //DeleteProduct();
+            LoadContracts();
+        }
+
+
+        void DeleteContract()
+        {
+            var rows = GlobalFunctions.GridviewSelectedRow(ContractsGridView);
+
+            if (rows.Count == 0)
+            {
+                GlobalProcedures.ShowWarningMessage("Silmək istədiyiniz məhsulu seçin.");
+                return;
+            }
+
+            if (GlobalFunctions.CallDialogResult("Seçilmiş məhsulları silmək istəyirsiniz?", "Məhsulların silinməsi") == DialogResult.Yes)
+                for (int i = 0; i < rows.Count; i++)
+                {
+                    DataRow row = rows[i] as DataRow;
+                    AgreementDAL.DeleteContract(Convert.ToInt32(row["ID"]));
+                }
+        }
+
+        private void LoadFContractAddEdit(TransactionTypeEnum transactionType)
+        {
+            topindex = ContractsGridView.TopRowIndex;
+            old_row_id = ContractsGridView.FocusedRowHandle;
+            FContractsAddEdit fd = new FContractsAddEdit()
+            {
+                TransactionType = transactionType,
+                AgreementID = AgreementID.Value
+            };
+            fd.RefreshDataGridView += new FContractsAddEdit.DoEvent(LoadContracts);
+            fd.ShowDialog();
+            ContractsGridView.TopRowIndex = topindex;
+            ContractsGridView.FocusedRowHandle = old_row_id;
+        }
+
         private void LoadContracts()
         {
             if (TransactionType == TransactionTypeEnum.Update)
@@ -72,7 +118,7 @@ namespace ELMS.Forms.Agreement
                 if (!AgreementID.HasValue)
                     AgreementID = 0;
 
-                DataTable dt = AgreementDAL.SelectDataByAgreementID(AgreementID);
+                DataTable dt = AgreementContractDAL.SelectTempByAgreementID(AgreementID);
                 ContractsGridControl.DataSource = dt;
 
                 if (dt.Rows.Count > 0)
@@ -82,16 +128,15 @@ namespace ELMS.Forms.Agreement
             }
             else
             {
-                if (!AgreementID.HasValue)
                     AgreementID = 0;
 
-                DataTable dt = AgreementDAL.SelectDataByOperationTypeID(5);
-                ContractsGridControl.DataSource = dt;
+                //DataTable dt = AgreementDAL.SelectDataByOperationTypeID(5);
+                //ContractsGridControl.DataSource = dt;
 
-                if (dt.Rows.Count > 0)
-                    calcTotalPrice = Convert.ToDecimal(dt.Compute("SUM(CREDIT_AMOUNT)", string.Empty));
-                else
-                    calcTotalPrice = 0;
+                //if (dt.Rows.Count > 0)
+                //    calcTotalPrice = Convert.ToDecimal(dt.Compute("SUM(CREDIT_AMOUNT)", string.Empty));
+                //else
+                //    calcTotalPrice = 0;
 
             }
                
@@ -319,6 +364,7 @@ namespace ELMS.Forms.Agreement
             }
             else
             {
+                AgreementID = 0;
                 this.Text = "Sazişin əlavə edilməsi";
                 AgreementDate.DateTime = DateTime.Today;
 
@@ -327,8 +373,18 @@ namespace ELMS.Forms.Agreement
                 RegisterCodeText.EditValue = agreement_number;
             }
             LoadContracts();
+            InsertTemps();
         }
-        
+
+
+        private void InsertTemps()
+        {
+            if (TransactionType == TransactionTypeEnum.Insert)
+                return;
+            GlobalProcedures.ExecuteProcedureWithParametr("ELMS_USER_TEMP.PROC_INSERT_AGREEMENT_DATA", "P_USED_USER_ID", 1, "Müştərinin məlumatları temp cədvələ daxil edilmədi.");
+
+        }
+
 
         private void FAgreementAddEdit_FormClosing(object sender, FormClosingEventArgs e)
         {

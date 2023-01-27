@@ -30,15 +30,17 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FAgreementAddEdit));
-            ManiXButton.Office2010White office2010White1 = new ManiXButton.Office2010White();
-            ManiXButton.Office2010Green office2010Green1 = new ManiXButton.Office2010Green();
-            DevExpress.Utils.SuperToolTip superToolTip1 = new DevExpress.Utils.SuperToolTip();
-            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem1 = new DevExpress.Utils.ToolTipTitleItem();
-            DevExpress.Utils.ToolTipItem toolTipItem1 = new DevExpress.Utils.ToolTipItem();
+            ManiXButton.Office2010White office2010White3 = new ManiXButton.Office2010White();
+            ManiXButton.Office2010Green office2010Green3 = new ManiXButton.Office2010Green();
+            DevExpress.Utils.SuperToolTip superToolTip3 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem3 = new DevExpress.Utils.ToolTipTitleItem();
+            DevExpress.Utils.ToolTipItem toolTipItem3 = new DevExpress.Utils.ToolTipItem();
             this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
             this.behaviorManager1 = new DevExpress.Utils.Behaviors.BehaviorManager(this.components);
             this.ContractsBarManager = new DevExpress.XtraBars.BarManager(this.components);
             this.bar2 = new DevExpress.XtraBars.Bar();
+            this.NewContractBarButton = new DevExpress.XtraBars.BarButtonItem();
+            this.DeleteContractBarButton = new DevExpress.XtraBars.BarButtonItem();
             this.RefreshContractsBarButton = new DevExpress.XtraBars.BarButtonItem();
             this.ContractsStandaloneBarDockControl = new DevExpress.XtraBars.StandaloneBarDockControl();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
@@ -84,8 +86,6 @@
             this.oracleCommand1 = new Oracle.ManagedDataAccess.Client.OracleCommand();
             this.bar4 = new DevExpress.XtraBars.Bar();
             this.popupMenu1 = new DevExpress.XtraBars.PopupMenu(this.components);
-            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ContractsBarManager)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.AgreementDate.Properties.CalendarTimeProperties)).BeginInit();
@@ -114,8 +114,8 @@
             this.ContractsBarManager.Form = this;
             this.ContractsBarManager.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.RefreshContractsBarButton,
-            this.barButtonItem1,
-            this.barButtonItem2});
+            this.NewContractBarButton,
+            this.DeleteContractBarButton});
             this.ContractsBarManager.MainMenu = this.bar2;
             this.ContractsBarManager.MaxItemId = 6;
             // 
@@ -126,8 +126,8 @@
             this.bar2.DockRow = 0;
             this.bar2.DockStyle = DevExpress.XtraBars.BarDockStyle.Standalone;
             this.bar2.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem1),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem2),
+            new DevExpress.XtraBars.LinkPersistInfo(this.NewContractBarButton),
+            new DevExpress.XtraBars.LinkPersistInfo(this.DeleteContractBarButton),
             new DevExpress.XtraBars.LinkPersistInfo(this.RefreshContractsBarButton)});
             this.bar2.OptionsBar.DrawBorder = false;
             this.bar2.OptionsBar.DrawDragBorder = false;
@@ -135,6 +135,24 @@
             this.bar2.OptionsBar.UseWholeRow = true;
             this.bar2.StandaloneBarDockControl = this.ContractsStandaloneBarDockControl;
             this.bar2.Text = "Main menu";
+            // 
+            // NewContractBarButton
+            // 
+            this.NewContractBarButton.Caption = "Yeni";
+            this.NewContractBarButton.Id = 4;
+            this.NewContractBarButton.ImageOptions.Image = global::ELMS.Properties.Resources.plus_16;
+            this.NewContractBarButton.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("NewContractBarButton.ImageOptions.LargeImage")));
+            this.NewContractBarButton.Name = "NewContractBarButton";
+            this.NewContractBarButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.NewContractBarButton_ItemClick);
+            // 
+            // DeleteContractBarButton
+            // 
+            this.DeleteContractBarButton.Caption = "Sil";
+            this.DeleteContractBarButton.Id = 5;
+            this.DeleteContractBarButton.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("DeleteContractBarButton.ImageOptions.Image")));
+            this.DeleteContractBarButton.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("DeleteContractBarButton.ImageOptions.LargeImage")));
+            this.DeleteContractBarButton.Name = "DeleteContractBarButton";
+            this.DeleteContractBarButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.DeleteContractBarButton_ItemClick);
             // 
             // RefreshContractsBarButton
             // 
@@ -431,24 +449,24 @@
             // 
             // BClose
             // 
-            office2010White1.BorderColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(72)))), ((int)(((byte)(161)))));
-            office2010White1.BorderColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(135)))), ((int)(((byte)(228)))));
-            office2010White1.ButtonMouseOverColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(199)))), ((int)(((byte)(87)))));
-            office2010White1.ButtonMouseOverColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(243)))), ((int)(((byte)(215)))));
-            office2010White1.ButtonMouseOverColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(225)))), ((int)(((byte)(137)))));
-            office2010White1.ButtonMouseOverColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(249)))), ((int)(((byte)(224)))));
-            office2010White1.ButtonNormalColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(154)))), ((int)(((byte)(154)))));
-            office2010White1.ButtonNormalColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            office2010White1.ButtonNormalColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            office2010White1.ButtonNormalColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            office2010White1.ButtonSelectedColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(199)))), ((int)(((byte)(87)))));
-            office2010White1.ButtonSelectedColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(243)))), ((int)(((byte)(215)))));
-            office2010White1.ButtonSelectedColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(229)))), ((int)(((byte)(117)))));
-            office2010White1.ButtonSelectedColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(216)))), ((int)(((byte)(107)))));
-            office2010White1.HoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
-            office2010White1.SelectedTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
-            office2010White1.TextColor = System.Drawing.Color.Black;
-            this.BClose.ColorTable = office2010White1;
+            office2010White3.BorderColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(72)))), ((int)(((byte)(161)))));
+            office2010White3.BorderColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(135)))), ((int)(((byte)(228)))));
+            office2010White3.ButtonMouseOverColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(199)))), ((int)(((byte)(87)))));
+            office2010White3.ButtonMouseOverColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(243)))), ((int)(((byte)(215)))));
+            office2010White3.ButtonMouseOverColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(225)))), ((int)(((byte)(137)))));
+            office2010White3.ButtonMouseOverColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(249)))), ((int)(((byte)(224)))));
+            office2010White3.ButtonNormalColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(154)))), ((int)(((byte)(154)))));
+            office2010White3.ButtonNormalColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            office2010White3.ButtonNormalColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            office2010White3.ButtonNormalColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            office2010White3.ButtonSelectedColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(199)))), ((int)(((byte)(87)))));
+            office2010White3.ButtonSelectedColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(243)))), ((int)(((byte)(215)))));
+            office2010White3.ButtonSelectedColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(229)))), ((int)(((byte)(117)))));
+            office2010White3.ButtonSelectedColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(216)))), ((int)(((byte)(107)))));
+            office2010White3.HoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
+            office2010White3.SelectedTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
+            office2010White3.TextColor = System.Drawing.Color.Black;
+            this.BClose.ColorTable = office2010White3;
             this.BClose.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.BClose.Location = new System.Drawing.Point(796, 13);
@@ -463,24 +481,24 @@
             // BOK
             // 
             this.BOK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            office2010Green1.BorderColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(72)))), ((int)(((byte)(161)))));
-            office2010Green1.BorderColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(135)))), ((int)(((byte)(228)))));
-            office2010Green1.ButtonMouseOverColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(199)))), ((int)(((byte)(87)))));
-            office2010Green1.ButtonMouseOverColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(243)))), ((int)(((byte)(215)))));
-            office2010Green1.ButtonMouseOverColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(225)))), ((int)(((byte)(137)))));
-            office2010Green1.ButtonMouseOverColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(249)))), ((int)(((byte)(224)))));
-            office2010Green1.ButtonNormalColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(126)))), ((int)(((byte)(43)))));
-            office2010Green1.ButtonNormalColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(184)))), ((int)(((byte)(67)))));
-            office2010Green1.ButtonNormalColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(126)))), ((int)(((byte)(43)))));
-            office2010Green1.ButtonNormalColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(184)))), ((int)(((byte)(67)))));
-            office2010Green1.ButtonSelectedColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(199)))), ((int)(((byte)(87)))));
-            office2010Green1.ButtonSelectedColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(243)))), ((int)(((byte)(215)))));
-            office2010Green1.ButtonSelectedColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(229)))), ((int)(((byte)(117)))));
-            office2010Green1.ButtonSelectedColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(216)))), ((int)(((byte)(107)))));
-            office2010Green1.HoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
-            office2010Green1.SelectedTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
-            office2010Green1.TextColor = System.Drawing.Color.White;
-            this.BOK.ColorTable = office2010Green1;
+            office2010Green3.BorderColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(72)))), ((int)(((byte)(161)))));
+            office2010Green3.BorderColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(135)))), ((int)(((byte)(228)))));
+            office2010Green3.ButtonMouseOverColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(199)))), ((int)(((byte)(87)))));
+            office2010Green3.ButtonMouseOverColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(243)))), ((int)(((byte)(215)))));
+            office2010Green3.ButtonMouseOverColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(225)))), ((int)(((byte)(137)))));
+            office2010Green3.ButtonMouseOverColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(249)))), ((int)(((byte)(224)))));
+            office2010Green3.ButtonNormalColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(126)))), ((int)(((byte)(43)))));
+            office2010Green3.ButtonNormalColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(184)))), ((int)(((byte)(67)))));
+            office2010Green3.ButtonNormalColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(126)))), ((int)(((byte)(43)))));
+            office2010Green3.ButtonNormalColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(184)))), ((int)(((byte)(67)))));
+            office2010Green3.ButtonSelectedColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(199)))), ((int)(((byte)(87)))));
+            office2010Green3.ButtonSelectedColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(243)))), ((int)(((byte)(215)))));
+            office2010Green3.ButtonSelectedColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(229)))), ((int)(((byte)(117)))));
+            office2010Green3.ButtonSelectedColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(216)))), ((int)(((byte)(107)))));
+            office2010Green3.HoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
+            office2010Green3.SelectedTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
+            office2010Green3.TextColor = System.Drawing.Color.White;
+            this.BOK.ColorTable = office2010Green3;
             this.BOK.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BOK.Location = new System.Drawing.Point(715, 13);
             this.BOK.Name = "BOK";
@@ -610,16 +628,16 @@
             this.BChangeCode.Location = new System.Drawing.Point(231, 31);
             this.BChangeCode.Name = "BChangeCode";
             this.BChangeCode.Size = new System.Drawing.Size(21, 21);
-            superToolTip1.AllowHtmlText = DevExpress.Utils.DefaultBoolean.True;
-            toolTipTitleItem1.Text = "<color=255,0,0>Müqavilənin nömrəsini dəyişdir</color>";
-            toolTipItem1.Appearance.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
-            toolTipItem1.Appearance.Options.UseImage = true;
-            toolTipItem1.Image = ((System.Drawing.Image)(resources.GetObject("toolTipItem1.Image")));
-            toolTipItem1.LeftIndent = 6;
-            toolTipItem1.Text = "Müqavilənin nömrəsini manual olaraq dəyişdirmək üçün nəzərdə tutulub.";
-            superToolTip1.Items.Add(toolTipTitleItem1);
-            superToolTip1.Items.Add(toolTipItem1);
-            this.BChangeCode.SuperTip = superToolTip1;
+            superToolTip3.AllowHtmlText = DevExpress.Utils.DefaultBoolean.True;
+            toolTipTitleItem3.Text = "<color=255,0,0>Müqavilənin nömrəsini dəyişdir</color>";
+            toolTipItem3.Appearance.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
+            toolTipItem3.Appearance.Options.UseImage = true;
+            toolTipItem3.Image = ((System.Drawing.Image)(resources.GetObject("toolTipItem3.Image")));
+            toolTipItem3.LeftIndent = 6;
+            toolTipItem3.Text = "Müqavilənin nömrəsini manual olaraq dəyişdirmək üçün nəzərdə tutulub.";
+            superToolTip3.Items.Add(toolTipTitleItem3);
+            superToolTip3.Items.Add(toolTipItem3);
+            this.BChangeCode.SuperTip = superToolTip3;
             this.BChangeCode.TabIndex = 187;
             this.BChangeCode.TabStop = false;
             this.BChangeCode.Visible = false;
@@ -681,18 +699,6 @@
             new DevExpress.XtraBars.LinkPersistInfo(this.RefreshContractsBarButton)});
             this.popupMenu1.Manager = this.ContractsBarManager;
             this.popupMenu1.Name = "popupMenu1";
-            // 
-            // barButtonItem1
-            // 
-            this.barButtonItem1.Caption = "Yeni";
-            this.barButtonItem1.Id = 4;
-            this.barButtonItem1.Name = "barButtonItem1";
-            // 
-            // barButtonItem2
-            // 
-            this.barButtonItem2.Caption = "Sil";
-            this.barButtonItem2.Id = 5;
-            this.barButtonItem2.Name = "barButtonItem2";
             // 
             // FAgreementAddEdit
             // 
@@ -789,7 +795,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn Contracts_Branch;
         private DevExpress.XtraBars.PopupMenu popupMenu1;
         private DevExpress.XtraGrid.Columns.GridColumn Contracts_OperationID;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem2;
+        private DevExpress.XtraBars.BarButtonItem NewContractBarButton;
+        private DevExpress.XtraBars.BarButtonItem DeleteContractBarButton;
     }
 }

@@ -13,6 +13,102 @@ namespace ELMS.Class.DataAccess
     class AgreementDAL
     {
 
+        public static void InsertContracts(CustomerWork customer)
+        {
+            string commandSql = null;
+            using (OracleConnection connection = new OracleConnection())
+            {
+                OracleTransaction transaction = null;
+                try
+                {
+                    if (connection.State == ConnectionState.Closed || connection.State == ConnectionState.Broken)
+                    {
+                        connection.ConnectionString = GlobalFunctions.GetConnectionString();
+                        connection.Open();
+                    }
+
+                    using (OracleCommand command = connection.CreateCommand())
+                    {
+                        transaction = connection.BeginTransaction();
+                        command.Transaction = transaction;
+                        command.CommandText = $@"INSERT INTO ELMS_USER_TEMP.CUSTOMER_WORKPLACE_TEMP(PROFESSION_ID,
+                                                                                                PLACE_NAME,
+                                                                                                SALARY,
+                                                                                                NOAVAILABLE,
+                                                                                                NOTE,
+                                                                                                CUSTOMER_ID)
+                                                    VALUES(:inPROFESSION_ID,
+                                                           :inPLACE_NAME,
+                                                           :inSALARY,
+                                                           :inNOAVAILABLE,
+                                                           :inNOTE,
+                                                           :inCUSTOMER_ID)";
+                        command.Parameters.Add(new OracleParameter("inPROFESSION_ID", customer.PROFESSION_ID));
+                        command.Parameters.Add(new OracleParameter("inPLACE_NAME", customer.PLACE_NAME));
+                        command.Parameters.Add(new OracleParameter("inSALARY", customer.SALARY));
+                        command.Parameters.Add(new OracleParameter("inNOAVAILABLE", customer.NOAVAILABLE));
+                        command.Parameters.Add(new OracleParameter("inNOTE", customer.NOTE));
+                        command.Parameters.Add(new OracleParameter("inCUSTOMER_ID", customer.CUSTOMER_ID));
+                        commandSql = command.CommandText;
+                        command.ExecuteNonQuery();
+                        transaction.Commit();
+                        command.Connection.Close();
+                    }
+                }
+                catch (Exception exx)
+                {
+                    transaction.Rollback();
+                    GlobalProcedures.LogWrite("İş yeri bazaya daxil edilmədi.", commandSql, GlobalVariables.V_UserName, "CustomerWorkDAL", "InsertCustomerWork", exx);
+                }
+                finally
+                {
+                    transaction.Dispose();
+                    connection.Dispose();
+                }
+            }
+        }
+
+        public static void DeleteContract(int phoneID)
+        {
+            string commandSql = null;
+            using (OracleConnection connection = new OracleConnection())
+            {
+                OracleTransaction transaction = null;
+                try
+                {
+                    if (connection.State == ConnectionState.Closed || connection.State == ConnectionState.Broken)
+                    {
+                        connection.ConnectionString = GlobalFunctions.GetConnectionString();
+                        connection.Open();
+                    }
+
+                    using (OracleCommand command = connection.CreateCommand())
+                    {
+                        transaction = connection.BeginTransaction();
+                        command.Transaction = transaction;
+                        command.CommandText = $@"UPDATE ELMS_USER_TEMP.ORDER_TAB_TEMP SET IS_CHANGE = {(int)ChangeTypeEnum.Delete}
+                                                        WHERE  ORDER_TAB_ID = :inORDER_TAB_ID
+                                                          AND ID = :inID";
+                        command.Parameters.Add(new OracleParameter("inID", phoneID));
+                        commandSql = command.CommandText;
+                        command.ExecuteNonQuery();
+                        transaction.Commit();
+                        command.Connection.Close();
+                    }
+                }
+                catch (Exception exx)
+                {
+                    transaction.Rollback();
+                    GlobalProcedures.LogWrite("Sifarişlər temp cədvəldən silinmədi.", commandSql, GlobalVariables.V_UserName, "ProductCardDAL", "DeleteProductCard", exx);
+                }
+                finally
+                {
+                    transaction.Dispose();
+                    connection.Dispose();
+                }
+            }
+        }
+
         public static DataTable SelectAgreements(int? ID)
         {
             string s = $@"SELECT AG.ID,
@@ -201,7 +297,8 @@ namespace ELMS.Class.DataAccess
                                CU.NOTE,
                                CU.INSERT_DATE,
                                CU.USED_USER_ID
-                          FROM ELMS_USER.ORDER_TAB CU,
+                          FROM ELMS_USER_TEMP.AGREEMENT_TEMP AT,
+                               ELMS_USER.ORDER_TAB CU,
                                ELMS_USER.BRANCH B,
                                ELMS_USER.TIMES T,
                                ELMS_USER.SOURCE S,
@@ -209,7 +306,8 @@ namespace ELMS.Class.DataAccess
                                ELMS_USER.CUSTOMER_CARDS CC,
                                ELMS_USER.ORDER_OPERATION OO,
                                ELMS_USER.OPERATION_TYPE OT
-                          WHERE     CU.SOURCE_ID = S.ID
+                          WHERE     CU.ID = AT.ID
+                               AND CU.SOURCE_ID = S.ID
                                AND CU.TIME_ID = T.ID
                                AND CU.CUSTOMER_ID = C.ID
                                AND C.ID = CC.CUSTOMER_ID

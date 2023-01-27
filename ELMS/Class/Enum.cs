@@ -32,6 +32,13 @@ namespace ELMS.Class
             Update = 2
         }
 
+        public enum TransactionContractTypeEnum
+        {
+            Insert = 1,
+            Update = 2
+        }
+
+
         public enum ChangeTypeEnum
         {
             Default = 0,
